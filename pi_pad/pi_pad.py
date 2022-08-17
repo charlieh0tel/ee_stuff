@@ -35,6 +35,7 @@ def pi_pad(impedance, amplitude_db, series=None):
 def dump(impedance=50,
          pad_dbs=[1, 2, 3, 6, 9, 10, 20],
          series=['', 'E24', 'E48', 'E96', 'E192']):
+    print("r1 is shunt, r2 is series")
     for pad_db in pad_dbs:
         print(f"{pad_db} dB")
         for s in series:
