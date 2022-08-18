@@ -4,6 +4,9 @@ import numpy as np
 
 from common import pi_pad
 
+def _relative_error(target, value):
+    return np.abs(target - value) / target
+
 
 # TODO(charliehotel): pick up defaults from command line.
 def Main(impedance=50,
@@ -26,9 +29,12 @@ def Main(impedance=50,
             r_shunt = resistors['r_shunt']
             r_series = resistors['r_series']
             z = pi_pad.Z(resistors)
-            z_error = np.abs(z - impedance) / impedance
+            z_error = _relative_error(z, impedance)
+            l_db = pi_pad.L_dB(resistors)
+            l_db_error = _relative_error(l_db, pad_db)
             print(f"  {s:4s} R_shunt={r_shunt:.3f} R_series={r_series:.3f}, "
-                  f"Z={z:.3f}, Z_err={z_error * 100.:.2f} %")
+                  f"Z={z:.3f}, Z_err={z_error * 100.:.2f}%",
+                  f"L_dB={l_db:.3f}, L_db_err={l_db_error * 100.:.2f}%")
         print()
 
 
