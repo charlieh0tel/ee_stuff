@@ -3,7 +3,7 @@ import numpy as np
 from . import resistors
 
 
-def K(amplitude_db):
+def _K(amplitude_db):
     return np.power(10., amplitude_db / 20.)
 
 
@@ -32,9 +32,9 @@ def L_dB(resistors):
 
 
 def ComputePad(impedance, amplitude_db, series=None):
-    k = K(amplitude_db)
-    r_shunt = R_shunt(impedance, k)
-    r_series = R_series(impedance, k)
+    K = _K(amplitude_db)
+    r_shunt = R_shunt(impedance, K)
+    r_series = R_series(impedance, K)
     if series:
         r_shunt = resistors.closest_value(r_shunt, series)
         r_series = resistors.closest_value(r_series, series)
