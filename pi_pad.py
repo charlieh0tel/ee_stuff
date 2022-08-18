@@ -4,6 +4,7 @@ import numpy as np
 
 from common import pi_pad
 
+
 def _relative_error(target, value):
     return np.abs(target - value) / target
 
