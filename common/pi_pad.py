@@ -4,7 +4,7 @@ from . import resistors
 
 
 def K(amplitude_db):
-    return 10.**(amplitude_db/20)
+    return np.power(10., amplitude_db / 20.)
 
 
 def R_shunt(z0, K):
