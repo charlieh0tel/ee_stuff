@@ -12,7 +12,7 @@ def R_shunt(z0, K):
 
 
 def R_series(z0, K):
-    return (z0 / 2.) * (K - 1/K)
+    return (z0 / 2.) * (K - np.reciprocal(K))
 
 
 def Z(resistors):
