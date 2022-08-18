@@ -31,7 +31,7 @@ def L_dB(resistors):
     return l_db
 
 
-def CalculatePiPad(impedance, amplitude_db, series=None):
+def ComputePad(impedance, amplitude_db, series=None):
     k = K(amplitude_db)
     r_shunt = R_shunt(impedance, k)
     r_series = R_series(impedance, k)

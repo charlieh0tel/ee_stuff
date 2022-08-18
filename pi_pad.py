@@ -25,7 +25,7 @@ def Main(impedance=50,
     for pad_db in pad_dbs:
         print(f"{pad_db} dB:")
         for s in series:
-            resistors = pi_pad.CalculatePiPad(impedance, pad_db, s)
+            resistors = pi_pad.ComputePad(impedance, pad_db, s)
             r_shunt = resistors['r_shunt']
             r_series = resistors['r_series']
             z = pi_pad.Z(resistors)
