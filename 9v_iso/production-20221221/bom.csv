@@ -1,0 +1,10 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"C1, C2",C_1210_3225Metric_Pad1.33x2.70mm_HandSolder,2,4.7u 100V,
+"C3, C4",C_1812_4532Metric_Pad1.57x3.40mm_HandSolder,2,DNI / 1000p 3KV,
+"H1, H2, H3, H4",MountingHole_3mm_Pad,4,MountingHole_Pad,
+"J1, J2",TerminalBlock_bornier-2_P5.08mm,2,Conn_01x02,
+J3,PinHeader_1x03_P2.54mm_Vertical,1,DNI,
+JP2,SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm,1,SolderJumper_2_Open,
+L1,L_Taiyo-Yuden_NR-24xx_HandSoldering,1,10u,
+R1,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,1,DNI/0,
+U1,CONV_ICZ0912S12,1,ICZ_SINGLE,
