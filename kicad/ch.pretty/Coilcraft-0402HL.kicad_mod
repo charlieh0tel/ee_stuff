@@ -1,6 +1,6 @@
 (footprint "Coilcraft-0402HL" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 63EC26F5)
+  (tedit 63EC980C)
   (descr "Inductor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
   (tags "inductor handsolder")
   (attr smd)
@@ -29,8 +29,8 @@
   (pad "1" smd roundrect (at -0.51 0) (size 0.36 0.66) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp 77ebf8a2-ffbb-4289-9281-945467439290))
   (pad "2" smd roundrect (at 0.51 0) (size 0.36 0.66) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp ec43f5a3-b028-4021-9ca0-4908dcd9863d))
   (model "/home/ch/src/ee_stuff/kicad/3dmodels/Coilcraft-0402HL.step"
-    (offset (xyz 0 0 0.5))
+    (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
-    (rotate (xyz 90 0 90))
+    (rotate (xyz 90 180 90))
   )
 )
