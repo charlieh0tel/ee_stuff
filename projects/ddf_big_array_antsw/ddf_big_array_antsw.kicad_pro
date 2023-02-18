@@ -390,14 +390,18 @@
         "nets": [
           "/E_IN",
           "/E_SW",
+          "/E_SW_DCB",
           "/N_IN",
           "/N_SW",
-          "/RF_COM",
+          "/N_SW_DCB",
           "/RF_OUT",
           "/S_IN",
           "/S_SW",
+          "/S_SW_DCB",
+          "/TUNE",
           "/W_IN",
-          "/W_SW"
+          "/W_SW",
+          "/W_SW_DCB"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
