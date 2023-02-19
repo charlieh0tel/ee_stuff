@@ -339,8 +339,9 @@
     (tags "mounting hole 3.2mm m3")
     (property "Sheetfile" "ddf_big_array_antterm.kicad_sch")
     (property "Sheetname" "")
+    (property "exclude_from_bom" "")
     (path "/b90233d8-1c5b-4acf-9f19-c6898b8f8064")
-    (attr exclude_from_pos_files)
+    (attr exclude_from_pos_files exclude_from_bom)
     (fp_text reference "H4" (at 0 -4.2) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp dc7523a5-4408-4a51-bc92-6a47a538c094)
