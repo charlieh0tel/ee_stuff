@@ -262,8 +262,9 @@
     (tags "mounting hole 3.2mm m3")
     (property "Sheetfile" "ddf_big_array_antterm.kicad_sch")
     (property "Sheetname" "")
+    (property "exclude_from_bom" "")
     (path "/06ec02af-fd00-443d-933f-6b6c1c86333c")
-    (attr exclude_from_pos_files)
+    (attr exclude_from_pos_files exclude_from_bom)
     (fp_text reference "H2" (at 0 -4.2) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b632afec-1444-4246-8afb-cc14a57567e7)
@@ -515,8 +516,9 @@
     (tags "mounting hole 3.2mm m3")
     (property "Sheetfile" "ddf_big_array_antterm.kicad_sch")
     (property "Sheetname" "")
+    (property "exclude_from_bom" "")
     (path "/1460f8f7-a6fd-40e9-b2a4-25c6c0494f42")
-    (attr exclude_from_pos_files)
+    (attr exclude_from_pos_files exclude_from_bom)
     (fp_text reference "H3" (at 0 -4.2) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp c81031ca-cd56-4ea3-b0db-833cbbdd7b2e)
@@ -546,8 +548,9 @@
     (tags "mounting hole 3.2mm m3")
     (property "Sheetfile" "ddf_big_array_antterm.kicad_sch")
     (property "Sheetname" "")
+    (property "exclude_from_bom" "")
     (path "/05fffef8-58dc-48e2-9031-38e15264fecb")
-    (attr exclude_from_pos_files)
+    (attr exclude_from_pos_files exclude_from_bom)
     (fp_text reference "H1" (at 0 -4.2) (layer "F.SilkS") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 92bd1111-b941-4c03-b7ec-a08a9359bc50)
