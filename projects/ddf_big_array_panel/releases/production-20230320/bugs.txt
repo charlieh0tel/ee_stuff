@@ -1,0 +1,10 @@
+SMP1340 SC-79 fooprint is needs to be reworked.  The SOD-523 KiCad
+footprint is not a good match (maybe not even for SOD-523).
+
+L5 should be 0402 0R in BOM, e.g., C17168 (0402WGF0000TCE) 
+
+FB1,FB2,FB3,FB4 should be C19330 (BLM18AG601SN1D) (not C94375)
+
+C1_5, C2, C3, C4 are 0603 in layout but should be 0402
+   0603 sub: C296718 (CL10C391JB8NNNC)
+
