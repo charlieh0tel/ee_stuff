@@ -1,4 +1,4 @@
-# DDF Array.
+# DDF Array
 
 Broadband DDF Array.
 
