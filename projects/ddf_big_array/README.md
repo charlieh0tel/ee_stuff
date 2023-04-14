@@ -1,6 +1,12 @@
 # DDF Antenna Array Switching System
 
-This is a broadband switching system for a 4-way pseudo-Doppler Direction Finding array.  The goal is to cover at least 2m and 70cm and ideally down to 6m and up to 33cm.  There is a central switching board that provides bias distribution to four antenna switches.    The antenna switch boards have a vertical SMA that will take a 1/4-wave SMA whip and are designed to be affixed to a ground plane.   There is ESD protection on all the goes-in-tos and goes-out-ofs.
+This is a broadband switching system for a 4-way pseudo-Doppler Direction Finding array.  The goal is to cover 2m and 70cm and ideally up to 33cm.  
+
+There is a central switching board that provides bias distribution to the four antenna switches via coax.   Switched bias voltages to rotate the array can be delivered over CAT 5/6 into an RJ-45 jack.
+
+Each antenna switch board has a vertical SMA that will take a 1/4-wave SMA whip.  The board itself can be affixed to a ground plane to provide "the rest of the antenna."
+
+There is ESD protection on all the goes-in-to's and goes-out-of's.
 
 ## Releases
 
