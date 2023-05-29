@@ -1,6 +1,12 @@
-# DDF Array
+# DDF Antenna Array Switching System
 
-Broadband DDF Array.
+This is a broadband switching system for a 4-way pseudo-Doppler Direction Finding array.  The goal is to cover 2m and 70cm and ideally up to 33cm.  
+
+There is a central switching board that provides bias distribution to the four antenna switches via coax.   Switched bias voltages to rotate the array are delivered over CAT 5/6 into an RJ-45 jack.  
+
+Each antenna switch board has a vertical SMA that will take a 1/4-wave SMA whip.  The board itself can be affixed to a ground plane to provide "the rest of the antenna."  
+
+There is ESD protection on all the goes-in-to's and goes-out-of's.
 
 ## Releases
 
@@ -9,14 +15,3 @@ Broadband DDF Array.
 - [Antenna Switch](https://charlieh0tel.github.io/ee_stuff/projects/ddf_big_array/ddf_big_array_antsw/releases/production-20230320/)
 - [Antenna Termination](https://charlieh0tel.github.io/ee_stuff/projects/ddf_big_array/ddf_big_array_antterm/releases/production-20230320/)
 - [Panel](https://charlieh0tel.github.io/ee_stuff/projects/ddf_big_array/ddf_big_array_panel/releases/production-20230320/)
-
-#### Sweeps
-
-NanoVNA V2 Plus4 Pro.
-
-Bias of If = 5 mA to S.  All other ports (N, E, W) terminated in 50Z
-with If = 0 mA, Vr = 0 V.
-
-[Untrimmed Sweep with port 0 attached to SOUTH and port 1 attached to RX](https://github.com/charlieh0tel/ee_stuff/blob/main/projects/ddf_big_array/ddf_big_array_panel/releases/production-20230320/sweep-s-0-rx-1.png)
-
-[Untrimmed Sweep with port 0 attached to RX and port  attached to SOUTH](https://github.com/charlieh0tel/ee_stuff/blob/main/projects/ddf_big_array/ddf_big_array_panel/releases/production-20230320/sweep-rx-0-s-1.png)
