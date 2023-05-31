@@ -1722,7 +1722,7 @@
   (symbol (lib_id "Device:C") (at 217.17 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 0c0d1c21-dd69-40e4-9189-9fd838de63ae)
-    (property "Reference" "C2" (id 0) (at 220.98 69.8499 0)
+    (property "Reference" "C1" (id 0) (at 220.98 69.8499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.33u 50V X7R" (id 1) (at 220.98 72.3899 0)
@@ -1776,7 +1776,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 104.14 111.76 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 178947f0-85d4-4ac5-ae5e-c47756e55c20)
-    (property "Reference" "J3" (id 0) (at 106.68 111.7599 0)
+    (property "Reference" "J14" (id 0) (at 106.68 111.7599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 97.79 108.204 0)
@@ -1795,7 +1795,7 @@
   (symbol (lib_id "Connector:Conn_Coaxial") (at 172.72 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 22434423-e877-4825-9af7-459782d0251f)
-    (property "Reference" "J14" (id 0) (at 175.26 72.6831 0)
+    (property "Reference" "J1" (id 0) (at 175.26 72.6831 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_Coaxial" (id 1) (at 175.26 75.2231 0)
@@ -1814,7 +1814,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 113.03 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 3111651b-af1a-46fc-b47d-4f547787e7cc)
-    (property "Reference" "J9" (id 0) (at 115.57 181.6099 0)
+    (property "Reference" "J6" (id 0) (at 115.57 181.6099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 115.57 184.1499 0)
@@ -1946,7 +1946,7 @@
   (symbol (lib_id "Jumper:SolderJumper_2_Bridged") (at 93.98 121.92 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 4c2d9040-5183-4822-beef-fbe2be3ff09e)
-    (property "Reference" "JP1" (id 0) (at 96.52 120.6499 90)
+    (property "Reference" "JP2" (id 0) (at 96.52 120.6499 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "SolderJumper_2_Bridged" (id 1) (at 96.52 123.1899 90)
@@ -2000,7 +2000,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 113.03 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 5bd228ea-ad0c-44aa-a493-73253b7b8b33)
-    (property "Reference" "J8" (id 0) (at 115.57 163.8299 0)
+    (property "Reference" "J4" (id 0) (at 115.57 163.8299 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 115.57 166.3699 0)
@@ -2069,7 +2069,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 172.72 97.79 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 6cffb7c7-dac8-4fc9-8e8d-f4cea137efab)
-    (property "Reference" "J13" (id 0) (at 175.26 97.7899 0)
+    (property "Reference" "J5" (id 0) (at 175.26 97.7899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 175.26 100.3299 0)
@@ -2104,7 +2104,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 247.65 31.75 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 70122144-1d7d-4be0-88dd-903cb0ad5506)
-    (property "Reference" "J15" (id 0) (at 250.19 31.7499 0)
+    (property "Reference" "J8" (id 0) (at 250.19 31.7499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 250.19 34.2899 0)
@@ -2139,7 +2139,7 @@
   (symbol (lib_id "Connector:Conn_Coaxial") (at 62.23 88.9 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 7867ab52-7f73-4417-8c45-2b09f05d379d)
-    (property "Reference" "J7" (id 0) (at 64.77 87.9231 0)
+    (property "Reference" "J10" (id 0) (at 64.77 87.9231 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_Coaxial" (id 1) (at 64.77 90.4631 0)
@@ -2174,7 +2174,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 152.4 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a59b610f-c09a-42fa-959b-c0c2709cfa54)
-    (property "Reference" "J4" (id 0) (at 154.94 49.5299 0)
+    (property "Reference" "J3" (id 0) (at 154.94 49.5299 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (id 1) (at 154.94 52.0699 0)
@@ -2194,7 +2194,7 @@
   (symbol (lib_id "Device:C") (at 21.59 106.68 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid aaab67ec-5b10-4cd6-afdd-ebbc6e8df3c4)
-    (property "Reference" "C1" (id 0) (at 25.4 105.4099 0)
+    (property "Reference" "C4" (id 0) (at 25.4 105.4099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DNI" (id 1) (at 25.4 107.9499 0)
@@ -2229,7 +2229,7 @@
   (symbol (lib_id "Device:R") (at 30.48 106.68 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid b0c5723f-3e32-4297-b270-9ec72d96287f)
-    (property "Reference" "R1" (id 0) (at 33.02 105.4099 0)
+    (property "Reference" "R4" (id 0) (at 33.02 105.4099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DNI" (id 1) (at 33.02 107.9499 0)
@@ -2280,7 +2280,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 64.77 20.32 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid baac6bbf-76ec-4536-ab4c-ac9a11dfc57c)
-    (property "Reference" "J2" (id 0) (at 67.31 20.3199 0)
+    (property "Reference" "J7" (id 0) (at 67.31 20.3199 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 67.31 22.8599 0)
@@ -2351,7 +2351,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 149.86 111.76 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid c6fad9c0-dd8e-4d56-8877-1e3c776424cc)
-    (property "Reference" "J5" (id 0) (at 152.4 111.7599 0)
+    (property "Reference" "J2" (id 0) (at 152.4 111.7599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 145.034 108.712 0)
@@ -2386,7 +2386,7 @@
   (symbol (lib_id "Jumper:SolderJumper_2_Bridged") (at 139.7 121.92 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid c9b0e458-be4a-4f32-8f02-0fa09716e137)
-    (property "Reference" "JP2" (id 0) (at 142.24 120.65 90)
+    (property "Reference" "JP1" (id 0) (at 142.24 120.65 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "SolderJumper_2_Bridged" (id 1) (at 142.24 123.1899 90)
@@ -2421,7 +2421,7 @@
   (symbol (lib_id "Connector:Conn_Coaxial") (at 73.66 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d24e4065-baeb-4573-8da1-f2d52460eaa7)
-    (property "Reference" "J10" (id 0) (at 76.2 82.8431 0)
+    (property "Reference" "J11" (id 0) (at 76.2 82.8431 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_Coaxial" (id 1) (at 76.2 85.3831 0)
@@ -2440,7 +2440,7 @@
   (symbol (lib_id "Device:C") (at 247.65 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d355c739-d1c7-4417-b2ce-dff091cd72f1)
-    (property "Reference" "C4" (id 0) (at 251.46 69.8499 0)
+    (property "Reference" "C2" (id 0) (at 251.46 69.8499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1u 10V X7R" (id 1) (at 251.46 72.3899 0)
@@ -2475,7 +2475,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x03") (at 102.87 50.8 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d7a7b1cc-2dc0-4143-b479-23b454420de9)
-    (property "Reference" "J6" (id 0) (at 105.41 49.5299 0)
+    (property "Reference" "J13" (id 0) (at 105.41 49.5299 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x03" (id 1) (at 105.41 52.0699 0)
@@ -2495,7 +2495,7 @@
   (symbol (lib_id "Device:R") (at 97.79 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid da797dd7-6350-4393-9be9-3f7362e75b0c)
-    (property "Reference" "R4" (id 0) (at 100.33 41.9099 0)
+    (property "Reference" "R6" (id 0) (at 100.33 41.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "33" (id 1) (at 100.33 44.4499 0)
@@ -2514,7 +2514,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 119.38 97.79 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e0efe4e1-2265-4a12-b33e-867b7111fefc)
-    (property "Reference" "J11" (id 0) (at 121.92 97.7899 0)
+    (property "Reference" "J15" (id 0) (at 121.92 97.7899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (id 1) (at 121.92 100.3299 0)
@@ -2568,7 +2568,7 @@
   (symbol (lib_id "Device:R") (at 73.66 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e90f63e4-0536-40d1-ba6a-dc2cb4aab5a9)
-    (property "Reference" "R6" (id 0) (at 76.2 97.7899 0)
+    (property "Reference" "R3" (id 0) (at 76.2 97.7899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "DNI" (id 1) (at 76.2 100.3299 0)
@@ -2634,7 +2634,7 @@
   (symbol (lib_id "Device:R") (at 147.32 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid fd3d9773-922e-41cc-b486-19ed8a75f40a)
-    (property "Reference" "R3" (id 0) (at 149.86 41.9099 0)
+    (property "Reference" "R1" (id 0) (at 149.86 41.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "33" (id 1) (at 149.86 44.4499 0)
@@ -2653,7 +2653,7 @@
   (symbol (lib_id "Connector:DB25_Male_MountingHoles") (at 26.67 63.5 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid fd470e95-4861-44fe-b1e4-6d8a7c66e144)
-    (property "Reference" "J1" (id 0) (at 26.67 24.638 0))
+    (property "Reference" "J9" (id 0) (at 26.67 24.638 0))
     (property "Value" "DB25_Male_MountingHoles" (id 1) (at 26.67 27.178 0))
     (property "Footprint" "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset8.20mm" (id 2) (at 26.67 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -2801,17 +2801,17 @@
     (path "/6e64e709-703d-4fc5-8bcb-345f2769d708"
       (reference "#PWR025") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/aaab67ec-5b10-4cd6-afdd-ebbc6e8df3c4"
-      (reference "C1") (unit 1) (value "DNI") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-    )
     (path "/0c0d1c21-dd69-40e4-9189-9fd838de63ae"
-      (reference "C2") (unit 1) (value "0.33u 50V X7R") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+      (reference "C1") (unit 1) (value "0.33u 50V X7R") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    )
+    (path "/d355c739-d1c7-4417-b2ce-dff091cd72f1"
+      (reference "C2") (unit 1) (value "0.1u 10V X7R") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/0ccf85ba-8037-403c-90bf-596a25dd4cc4"
       (reference "C3") (unit 1) (value "22u 50V X7S") (footprint "Capacitor_SMD:C_2220_5650Metric_Pad1.97x5.40mm_HandSolder")
     )
-    (path "/d355c739-d1c7-4417-b2ce-dff091cd72f1"
-      (reference "C4") (unit 1) (value "0.1u 10V X7R") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+    (path "/aaab67ec-5b10-4cd6-afdd-ebbc6e8df3c4"
+      (reference "C4") (unit 1) (value "DNI") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/fc191d56-a42a-4644-9f30-70e38a18c847"
       (reference "F1") (unit 1) (value "Polyfuse") (footprint "Fuse:Fuse_2920_7451Metric_Pad2.10x5.45mm_HandSolder")
@@ -2828,74 +2828,74 @@
     (path "/68e4cce8-df3e-4bc9-a42c-301ef253540c"
       (reference "H4") (unit 1) (value "MountingHole_Pad") (footprint "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad")
     )
-    (path "/fd470e95-4861-44fe-b1e4-6d8a7c66e144"
-      (reference "J1") (unit 1) (value "DB25_Male_MountingHoles") (footprint "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset8.20mm")
-    )
-    (path "/baac6bbf-76ec-4536-ab4c-ac9a11dfc57c"
-      (reference "J2") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
-    )
-    (path "/178947f0-85d4-4ac5-ae5e-c47756e55c20"
-      (reference "J3") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
-    )
-    (path "/a59b610f-c09a-42fa-959b-c0c2709cfa54"
-      (reference "J4") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+    (path "/22434423-e877-4825-9af7-459782d0251f"
+      (reference "J1") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
     )
     (path "/c6fad9c0-dd8e-4d56-8877-1e3c776424cc"
-      (reference "J5") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "J2") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/d7a7b1cc-2dc0-4143-b479-23b454420de9"
-      (reference "J6") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
-    )
-    (path "/7867ab52-7f73-4417-8c45-2b09f05d379d"
-      (reference "J7") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
+    (path "/a59b610f-c09a-42fa-959b-c0c2709cfa54"
+      (reference "J3") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
     )
     (path "/5bd228ea-ad0c-44aa-a493-73253b7b8b33"
-      (reference "J8") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "J4") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+    )
+    (path "/6cffb7c7-dac8-4fc9-8e8d-f4cea137efab"
+      (reference "J5") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/3111651b-af1a-46fc-b47d-4f547787e7cc"
-      (reference "J9") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+      (reference "J6") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/d24e4065-baeb-4573-8da1-f2d52460eaa7"
+    (path "/baac6bbf-76ec-4536-ab4c-ac9a11dfc57c"
+      (reference "J7") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+    )
+    (path "/70122144-1d7d-4be0-88dd-903cb0ad5506"
+      (reference "J8") (unit 1) (value "Conn_01x02") (footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
+    )
+    (path "/fd470e95-4861-44fe-b1e4-6d8a7c66e144"
+      (reference "J9") (unit 1) (value "DB25_Male_MountingHoles") (footprint "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset8.20mm")
+    )
+    (path "/7867ab52-7f73-4417-8c45-2b09f05d379d"
       (reference "J10") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
     )
-    (path "/e0efe4e1-2265-4a12-b33e-867b7111fefc"
-      (reference "J11") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+    (path "/d24e4065-baeb-4573-8da1-f2d52460eaa7"
+      (reference "J11") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
     )
     (path "/e88867d3-4eae-435d-87df-ab7581523a44"
       (reference "J12") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
     )
-    (path "/6cffb7c7-dac8-4fc9-8e8d-f4cea137efab"
-      (reference "J13") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+    (path "/d7a7b1cc-2dc0-4143-b479-23b454420de9"
+      (reference "J13") (unit 1) (value "Conn_01x03") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
     )
-    (path "/22434423-e877-4825-9af7-459782d0251f"
-      (reference "J14") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
+    (path "/178947f0-85d4-4ac5-ae5e-c47756e55c20"
+      (reference "J14") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
-    (path "/70122144-1d7d-4be0-88dd-903cb0ad5506"
-      (reference "J15") (unit 1) (value "Conn_01x02") (footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
-    )
-    (path "/4c2d9040-5183-4822-beef-fbe2be3ff09e"
-      (reference "JP1") (unit 1) (value "SolderJumper_2_Bridged") (footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
+    (path "/e0efe4e1-2265-4a12-b33e-867b7111fefc"
+      (reference "J15") (unit 1) (value "Conn_01x02") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/c9b0e458-be4a-4f32-8f02-0fa09716e137"
+      (reference "JP1") (unit 1) (value "SolderJumper_2_Bridged") (footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
+    )
+    (path "/4c2d9040-5183-4822-beef-fbe2be3ff09e"
       (reference "JP2") (unit 1) (value "SolderJumper_2_Bridged") (footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
     )
-    (path "/b0c5723f-3e32-4297-b270-9ec72d96287f"
-      (reference "R1") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    (path "/fd3d9773-922e-41cc-b486-19ed8a75f40a"
+      (reference "R1") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/451502fc-1d65-442d-9678-aa8bd12287a1"
       (reference "R2") (unit 1) (value "0") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
-    (path "/fd3d9773-922e-41cc-b486-19ed8a75f40a"
-      (reference "R3") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    (path "/e90f63e4-0536-40d1-ba6a-dc2cb4aab5a9"
+      (reference "R3") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
-    (path "/da797dd7-6350-4393-9be9-3f7362e75b0c"
-      (reference "R4") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    (path "/b0c5723f-3e32-4297-b270-9ec72d96287f"
+      (reference "R4") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/5ba56254-1b8a-443f-92f5-8d902a5c2c91"
       (reference "R5") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
-    (path "/e90f63e4-0536-40d1-ba6a-dc2cb4aab5a9"
-      (reference "R6") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    (path "/da797dd7-6350-4393-9be9-3f7362e75b0c"
+      (reference "R6") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/ad2f2abc-60fe-4d7a-83c1-5b98c8469882"
       (reference "U1") (unit 1) (value "L78L05_SOT89") (footprint "Package_TO_SOT_SMD:SOT-89-3")
