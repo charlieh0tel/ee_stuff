@@ -1078,7 +1078,6 @@
     )
   )
 
-
   (junction (at 73.66 90.17) (diameter 0) (color 0 0 0 0)
     (uuid 0341e5a6-607d-43ee-bdc8-dd9c1545fe38)
   )
@@ -1632,6 +1631,10 @@
   (label "10MHZ_OUT_B-" (at 43.18 81.28 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 54b900c6-7a11-4419-a2a2-8c0329408ba0)
+  )
+  (label "CONNSHIELD" (at 22.86 100.33 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7c4a67d7-ec40-4398-83bd-f53e0c68645f)
   )
   (label "TIMEREF2_PPS_IN" (at 43.18 63.5 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -2428,7 +2431,7 @@
   (symbol (lib_id "Device:R") (at 97.79 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid da797dd7-6350-4393-9be9-3f7362e75b0c)
-    (property "Reference" "R6" (id 0) (at 100.33 41.9099 0)
+    (property "Reference" "R2" (id 0) (at 100.33 41.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "33" (id 1) (at 100.33 44.4499 0)
@@ -2588,7 +2591,7 @@
     (uuid fd470e95-4861-44fe-b1e4-6d8a7c66e144)
     (property "Reference" "J9" (id 0) (at 26.67 24.638 0))
     (property "Value" "DB25_Male_MountingHoles" (id 1) (at 26.67 27.178 0))
-    (property "Footprint" "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset8.20mm" (id 2) (at 26.67 63.5 0)
+    (property "Footprint" "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm" (id 2) (at 26.67 63.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (id 3) (at 26.67 63.5 0)
@@ -2783,7 +2786,7 @@
       (reference "J8") (unit 1) (value "Conn_01x02") (footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
     )
     (path "/fd470e95-4861-44fe-b1e4-6d8a7c66e144"
-      (reference "J9") (unit 1) (value "DB25_Male_MountingHoles") (footprint "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset8.20mm")
+      (reference "J9") (unit 1) (value "DB25_Male_MountingHoles") (footprint "Connector_Dsub:DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm")
     )
     (path "/7867ab52-7f73-4417-8c45-2b09f05d379d"
       (reference "J10") (unit 1) (value "Conn_Coaxial") (footprint "Connector_Coaxial:SMA_Molex_73251-2200_Horizontal")
@@ -2812,6 +2815,9 @@
     (path "/fd3d9773-922e-41cc-b486-19ed8a75f40a"
       (reference "R1") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
+    (path "/da797dd7-6350-4393-9be9-3f7362e75b0c"
+      (reference "R2") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
     (path "/e90f63e4-0536-40d1-ba6a-dc2cb4aab5a9"
       (reference "R3") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
@@ -2820,9 +2826,6 @@
     )
     (path "/5ba56254-1b8a-443f-92f5-8d902a5c2c91"
       (reference "R5") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
-    )
-    (path "/da797dd7-6350-4393-9be9-3f7362e75b0c"
-      (reference "R6") (unit 1) (value "33") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/ad2f2abc-60fe-4d7a-83c1-5b98c8469882"
       (reference "U1") (unit 1) (value "L78L05_SOT89") (footprint "Package_TO_SOT_SMD:SOT-89-3")
