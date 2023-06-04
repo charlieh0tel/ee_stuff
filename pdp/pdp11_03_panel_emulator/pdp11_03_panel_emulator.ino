@@ -1,7 +1,6 @@
 // PDP 11/03 QBus Front Panel Emulator
 //
 // Christopher Hoover <ch@murgatroid.com>
-//
 
 #if defined(ARDUINO_AVR_UNO)
 
