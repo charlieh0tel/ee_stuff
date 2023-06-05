@@ -77,12 +77,12 @@ void loop() {
     Serial.println();
     Serial.println();
 
-    digitalWrite(BPOK_H, 0);
-    digitalWrite(BDCOK_H, 0);
-    digitalWrite(BHALT_L, 1);
-    digitalWrite(BEVNT_L, 0);
-    digitalWrite(POWER_GOOD_LED, 0);
-    digitalWrite(RUN_LED, 0);
+    digitalWrite(BPOK_H, LOW);
+    digitalWrite(BDCOK_H, LOW);
+    digitalWrite(BHALT_L, HIGH);
+    digitalWrite(BEVNT_L, LOW);
+    digitalWrite(POWER_GOOD_LED, LOW);
+    digitalWrite(RUN_LED, LOW);
 
     Serial.println("CPU is off.");
 
@@ -98,10 +98,10 @@ void loop() {
     Serial.flush();
     //RemotePowerOn();
     delay(3 /*ms*/);
-    digitalWrite(BDCOK_H, 1);
+    digitalWrite(BDCOK_H, HIGH);
     delay(70 /*ms*/);
-    digitalWrite(BPOK_H, 1);
-    digitalWrite(POWER_GOOD_LED, 1);
+    digitalWrite(BPOK_H, HIGH);
+    digitalWrite(POWER_GOOD_LED, HIGH);
     Serial.println("finished.");
 
     delay_seconds(1);
@@ -115,7 +115,7 @@ void loop() {
       digitalWrite(RUN_LED, !srun_l);
       if (last_srun_l != srun_l) {
         last_srun_l = srun_l;
-        if (srun_l) {
+        if (srun_l == HIGH) {
           Serial.println("SRUN_L went high (stopped).");
         } else {
           Serial.println("SRUN_L went low (running).");
@@ -131,10 +131,10 @@ void loop() {
         if ((ch == 'h') || ch == 'H') {
           if (halted) {
             Serial.println("Resuming; press H to halt.");
-            digitalWrite(BHALT_L, 1);
+            digitalWrite(BHALT_L, HIGH);
             halted = false;
           } else {
-            digitalWrite(BHALT_L, 0);
+            digitalWrite(BHALT_L, LOW);
             Serial.println("Processor halted; press H to resume.");
             halted = true;
           }
@@ -144,9 +144,9 @@ void loop() {
 
     Serial.print("Power down sequence starting ... ");
     Serial.flush();
-    digitalWrite(BPOK_H, 0);
+    digitalWrite(BPOK_H, LOW);
     delay(4 /*ms*/);
-    digitalWrite(BDCOK_H, 0);
+    digitalWrite(BDCOK_H, LOW);
     delay(5 /*ms*/);
     //remotePowerOff();
     Serial.println("done.");
