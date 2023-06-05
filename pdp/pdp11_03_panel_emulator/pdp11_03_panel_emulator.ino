@@ -68,18 +68,23 @@ void setup() {
   pinMode(POWER_GOOD_LED, OUTPUT);
   pinMode(RUN_LED, OUTPUT);
   pinMode(POWER_SW, INPUT);
-
-  Serial.println("\n\n\nQBus Front Panel Emulator");
 }
 
 void loop() {
   while (true) {
+    Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
+    Serial.println("Christopher Hoover <ch@murgatroid.com>");
+    Serial.println();
+    Serial.println();
+
     digitalWrite(BPOK_H, 0);
     digitalWrite(BDCOK_H, 0);
     digitalWrite(BHALT_L, 1);
     digitalWrite(BEVNT_L, 0);
     digitalWrite(POWER_GOOD_LED, 0);
     digitalWrite(RUN_LED, 0);
+
+    Serial.println("CPU is off.");
 
     Serial.print("Waiting for power switch ... ");
     Serial.flush();
@@ -101,6 +106,7 @@ void loop() {
 
     delay_seconds(1);
 
+    Serial.println("CPU is on.");
     Serial.println("Press H to halt.  Press power switch to power off.");
     bool halted = false;
     int8_t last_srun_l = -1;
@@ -144,6 +150,8 @@ void loop() {
     delay(5 /*ms*/);
     //remotePowerOff();
     Serial.println("done.");
+
+    Serial.println("CPU is off.");
 
     delay_seconds(2);
   }
