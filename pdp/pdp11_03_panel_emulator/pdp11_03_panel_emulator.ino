@@ -72,11 +72,6 @@ void setup() {
 
 void loop() {
   while (true) {
-    Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
-    Serial.println("Christopher Hoover <ch@murgatroid.com>");
-    Serial.println();
-    Serial.println();
-
     digitalWrite(BPOK_H, LOW);
     digitalWrite(BDCOK_H, LOW);
     digitalWrite(BHALT_L, HIGH);
@@ -84,6 +79,9 @@ void loop() {
     digitalWrite(POWER_GOOD_LED, LOW);
     digitalWrite(RUN_LED, LOW);
 
+    Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
+    Serial.println("Christopher Hoover <ch@murgatroid.com>");
+    Serial.println();
     Serial.println("CPU is off.");
 
     Serial.print("Waiting for power switch ... ");
