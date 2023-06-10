@@ -21,6 +21,12 @@
 #define POWER_SW_DOWN LOW
 #define POWER_SW_UP HIGH
 
+// Halt toggle.
+// Monetary NO Switch, 5V pull up, buton down shorts pin to GROUND.
+#define HALT_SW 8
+#define HALT_SW_DOWN LOW
+#define HALT_SW_UP HIGH
+
 // Run indicator.
 // LED with R to GROUND.
 #define RUN_LED 11
@@ -105,9 +111,10 @@ void loop() {
     delay_seconds(1);
 
     Serial.println("CPU is on.");
-    Serial.println("Press H to halt.  Press power switch to power off.");
-    bool halted = false;
+    Serial.println("Press power switch to power off.  Press halt switch to toggle halt state.");
+
     int8_t last_srun_l = -1;
+    bool halted = false;
     while (1) {
       auto srun_l = digitalRead(SRUN_L);
       digitalWrite(RUN_LED, !srun_l);
@@ -124,18 +131,15 @@ void loop() {
         break;
       }
 
-      if (Serial.available() > 0) {
-        auto ch = Serial.read();
-        if ((ch == 'h') || ch == 'H') {
-          if (halted) {
-            Serial.println("Resuming; press H to halt.");
+      if (buttonPressedAndReleased(HALT_SW, HALT_SW_DOWN)) {
+        if (halted) {
             digitalWrite(BHALT_L, HIGH);
+            Serial.println("Releasing HALT_L.");
             halted = false;
-          } else {
+        } else {
             digitalWrite(BHALT_L, LOW);
-            Serial.println("Processor halted; press H to resume.");
+            Serial.println("HALT_L asserted");
             halted = true;
-          }
         }
       }
     }
