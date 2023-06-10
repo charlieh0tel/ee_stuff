@@ -75,7 +75,7 @@ void loop() {
     digitalWrite(BPOK_H, LOW);
     digitalWrite(BDCOK_H, LOW);
     digitalWrite(BHALT_L, HIGH);
-    digitalWrite(BEVNT_L, LOW);
+    digitalWrite(BEVNT_L, HIGH);
     digitalWrite(POWER_GOOD_LED, LOW);
     digitalWrite(RUN_LED, LOW);
 
