@@ -1,3 +1,5 @@
+#include <MsTimer2.h>
+
 // PDP 11/03 QBus Front Panel Emulator
 //
 // Christopher Hoover <ch@murgatroid.com>
@@ -38,6 +40,15 @@
 #error "No pin definitions for this board."
 #endif
 
+// Line clock.
+constexpr bool supply_line_clock = true;
+constexpr int line_clock_freq_hz = 50;   // 60 Hz doesn't really work.
+constexpr int line_clock_half_period_ms = (int) (1000. * 1.0 / (double) (2 * line_clock_freq_hz));
+
+// Power on first time automagically.
+const bool initial_power_on = true;
+
+
 bool buttonIs(int8_t pin, int8_t state) {
   auto button = digitalRead(pin);
   if (button != state) return false;
@@ -64,8 +75,18 @@ void delay_seconds(uint8_t s) {
   }
 }
 
+void toggle_bevent() {
+  static bool value = true;
+  digitalWrite(BEVNT_L, value);
+  value = !value;
+}
+
 void setup() {
   Serial.begin(115200);
+  Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
+  Serial.println("Christopher Hoover <ch@murgatroid.com>");
+  Serial.println();
+
   pinMode(SRUN_L, INPUT);
   pinMode(BPOK_H, OUTPUT);
   pinMode(BHALT_L, OUTPUT);
@@ -74,27 +95,36 @@ void setup() {
   pinMode(POWER_GOOD_LED, OUTPUT);
   pinMode(RUN_LED, OUTPUT);
   pinMode(POWER_SW, INPUT);
+
+
+  if (supply_line_clock) {
+    Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
+    Serial.print("(half_period="); Serial.print(line_clock_half_period_ms); Serial.println(" ms).");
+    MsTimer2::set(line_clock_half_period_ms, toggle_bevent);
+    MsTimer2::start();
+  } 
 }
 
 void loop() {
+  bool first = true;
+
   while (true) {
     digitalWrite(BPOK_H, LOW);
     digitalWrite(BDCOK_H, LOW);
     digitalWrite(BHALT_L, HIGH);
-    digitalWrite(BEVNT_L, HIGH);
     digitalWrite(POWER_GOOD_LED, LOW);
     digitalWrite(RUN_LED, LOW);
 
-    Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
-    Serial.println("Christopher Hoover <ch@murgatroid.com>");
-    Serial.println();
     Serial.println("CPU is off.");
 
-    Serial.print("Waiting for power switch ... ");
-    Serial.flush();
-    while (!buttonPressedAndReleased(POWER_SW, POWER_SW_DOWN))
-      ;
-    Serial.println("pressed.");
+    if (!first || !initial_power_on) {
+      Serial.print("Waiting for power switch ... ");
+      Serial.flush();
+      while (!buttonPressedAndReleased(POWER_SW, POWER_SW_DOWN))
+        ;
+      Serial.println("pressed.");
+    }
+    first = false;
 
     delay_seconds(1);
 
@@ -118,6 +148,7 @@ void loop() {
     while (1) {
       auto srun_l = digitalRead(SRUN_L);
       digitalWrite(RUN_LED, !srun_l);
+#ifdef DEBUG
       if (last_srun_l != srun_l) {
         last_srun_l = srun_l;
         if (srun_l == HIGH) {
@@ -126,6 +157,7 @@ void loop() {
           Serial.println("SRUN_L went low (running).");
         }
       }
+#endif
 
       if (buttonPressedAndReleased(POWER_SW, POWER_SW_DOWN)) {
         break;
@@ -133,13 +165,13 @@ void loop() {
 
       if (buttonPressedAndReleased(HALT_SW, HALT_SW_DOWN)) {
         if (halted) {
-            digitalWrite(BHALT_L, HIGH);
-            Serial.println("Releasing HALT_L.");
-            halted = false;
+          digitalWrite(BHALT_L, HIGH);
+          Serial.println("Releasing HALT_L.");
+          halted = false;
         } else {
-            digitalWrite(BHALT_L, LOW);
-            Serial.println("HALT_L asserted");
-            halted = true;
+          digitalWrite(BHALT_L, LOW);
+          Serial.println("HALT_L asserted");
+          halted = true;
         }
       }
     }
