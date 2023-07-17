@@ -452,7 +452,7 @@
       "Debounced Switch1"
     ],
     [
-      "48ec5c41-bdf1-45f7-9034-4defa6aa7296",
+      "25fe9e03-a231-44dc-96d1-9307cff67739",
       "Debounced Switch2"
     ],
     [
@@ -460,8 +460,16 @@
       "Backplane Power"
     ],
     [
+      "0103d819-3f4e-43a7-9cab-b96b68e596fc",
+      "PowerSequence"
+    ],
+    [
       "48854766-3438-4455-aaf3-36ea48f913cb",
       "Debounced Switch"
+    ],
+    [
+      "c25c2a31-419c-43c1-8c60-ed0675ffeced",
+      "LineClock"
     ]
   ],
   "text_variables": {}
