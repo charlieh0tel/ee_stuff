@@ -448,20 +448,20 @@
       "SRUN Annunciator"
     ],
     [
-      "f2de1be6-4da2-434a-b4a7-37f306c52e5e",
-      "LTC"
+      "ee444592-02b9-4a6d-bd44-edb99a2cfe0b",
+      "Debounced Switch1"
     ],
     [
-      "c6d704f0-86e3-42c3-9061-d3da5727757b",
-      "BHALT"
+      "48ec5c41-bdf1-45f7-9034-4defa6aa7296",
+      "Debounced Switch2"
     ],
     [
       "df970fa7-5aa4-472d-a7dd-5fd89464f2b4",
       "Backplane Power"
     ],
     [
-      "2eeb6d3e-d873-4985-b5be-08d3a73299b8",
-      "Power Button"
+      "48854766-3438-4455-aaf3-36ea48f913cb",
+      "Debounced Switch"
     ]
   ],
   "text_variables": {}
