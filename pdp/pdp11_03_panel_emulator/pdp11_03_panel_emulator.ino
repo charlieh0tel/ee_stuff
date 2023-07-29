@@ -10,7 +10,7 @@
 //
 //  2/ BEVNT_L   4/ (KEY)  6/ CL3_L   8/ CS3_L   10/ BDCOK_H
 //  1/ BPOK_H    3/ SRUN   5/ GND     7/ X        9/ BHALT_L
-//
+//b
 #define SRUN_L 2
 #define BPOK_H 3
 #define BHALT_L 4
@@ -41,7 +41,7 @@
 #endif
 
 // Line clock.
-constexpr bool supply_line_clock = true;
+constexpr bool supply_line_clock = false;
 constexpr int line_clock_freq_hz = 50;   // 60 Hz doesn't really work.
 constexpr int line_clock_half_period_ms = (int) (1000. * 1.0 / (double) (2 * line_clock_freq_hz));
 
