@@ -36,6 +36,11 @@
 // Power good indicator.
 // LED with R to GROUND.
 #define POWER_GOOD_LED 12
+
+// ATX.
+#define ATX_PWROK 5
+#define ATX_PSON_N 7
+
 #else
 #error "No pin definitions for this board."
 #endif
@@ -87,6 +92,10 @@ void setup() {
   Serial.println("Christopher Hoover <ch@murgatroid.com>");
   Serial.println();
 
+  pinMode(ATX_PWROK, INPUT);
+  pinMode(ATX_PSON_N, OUTPUT);
+  digitalWrite(ATX_PSON_N, HIGH);
+
   pinMode(SRUN_L, INPUT);
   pinMode(BPOK_H, OUTPUT);
   pinMode(BHALT_L, OUTPUT);
@@ -95,7 +104,6 @@ void setup() {
   pinMode(POWER_GOOD_LED, OUTPUT);
   pinMode(RUN_LED, OUTPUT);
   pinMode(POWER_SW, INPUT);
-
 
   if (supply_line_clock) {
     Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
@@ -109,6 +117,7 @@ void loop() {
   bool first = true;
 
   while (true) {
+    digitalWrite(ATX_PSON_N, HIGH);
     digitalWrite(BPOK_H, LOW);
     digitalWrite(BDCOK_H, LOW);
     digitalWrite(BHALT_L, HIGH);
@@ -126,6 +135,13 @@ void loop() {
     }
     first = false;
 
+    digitalWrite(ATX_PSON_N, LOW);
+
+    Serial.print("Turning on ATX power supply; waiting for power ... ");
+    while (!digitalRead(ATX_PWROK)) {
+    }
+    Serial.println("OK");
+    
     delay_seconds(1);
 
     Serial.print("Power up sequence starting ... ");
