@@ -46,7 +46,7 @@
 #endif
 
 // Line clock.
-constexpr bool supply_line_clock = false;
+constexpr bool supply_line_clock = true;
 constexpr int line_clock_freq_hz = 50;   // 60 Hz doesn't really work.
 constexpr int line_clock_half_period_ms = (int) (1000. * 1.0 / (double) (2 * line_clock_freq_hz));
 
