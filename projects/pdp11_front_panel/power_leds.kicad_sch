@@ -797,7 +797,7 @@
   (symbol (lib_name "GND_1") (lib_id "power:GND") (at 46.99 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 580599d3-c41d-4e06-b66b-297c58003f83)
-    (property "Reference" "#PWR021" (at 46.99 66.04 0)
+    (property "Reference" "#PWR025" (at 46.99 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 46.99 64.77 0)
@@ -812,15 +812,6 @@
     (pin "1" (uuid b41a1ad7-6c61-45d1-8983-b5c8139f9bdd))
     (instances
       (project "pdp11_front_panel"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ee444592-02b9-4a6d-bd44-edb99a2cfe0b"
-          (reference "#PWR021") (unit 1)
-        )
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/25fe9e03-a231-44dc-96d1-9307cff67739"
-          (reference "#PWR022") (unit 1)
-        )
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/48854766-3438-4455-aaf3-36ea48f913cb"
-          (reference "#PWR023") (unit 1)
-        )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/ac18ea73-065c-46aa-ad52-732cc0cb5b05"
           (reference "#PWR025") (unit 1)
         )

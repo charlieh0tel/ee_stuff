@@ -1735,7 +1735,7 @@
       giA0Nja2traSKwkAAAAAwN/1H3g3q4MU6IrEAAAAAElFTkSuQmCC
     )
   )
-  (image (at 59.69 112.395) (scale 0.437084)
+  (image (at 176.53 122.555) (scale 0.836821)
     (uuid 7a7f1486-da06-4f30-9ce5-a1685f48535a)
     (data
       iVBORw0KGgoAAAANSUhEUgAABaoAAASMCAIAAADm+S2vAAAAA3NCSVQICAjb4U/gAAAgAElEQVR4
@@ -6035,7 +6035,7 @@
     )
   )
 
-  (hierarchical_label "-12V" (shape input) (at 25.4 50.8 180) (fields_autoplaced)
+  (hierarchical_label "-12V" (shape passive) (at 25.4 50.8 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 6bcaea96-f922-4f91-97db-c2a7f7f6a95a)
   )
@@ -6043,11 +6043,11 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 78fb0bf0-5992-4750-8d23-5749139070d8)
   )
-  (hierarchical_label "+12V" (shape input) (at 25.4 48.26 180) (fields_autoplaced)
+  (hierarchical_label "+12V" (shape passive) (at 25.4 48.26 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid a4e09d28-e004-4338-aacb-e7991fcd7707)
   )
-  (hierarchical_label "+5V" (shape input) (at 25.4 43.18 180) (fields_autoplaced)
+  (hierarchical_label "+5V" (shape passive) (at 25.4 43.18 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid c8a991dc-38ed-4560-921f-3aa116bd3ec5)
   )

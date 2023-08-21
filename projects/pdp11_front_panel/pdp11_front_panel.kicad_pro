@@ -433,7 +433,7 @@
     ],
     [
       "d4d8f7cc-faea-4935-ab3d-bc61af3c0a31",
-      "ATX Power"
+      "ATX Power Connector"
     ],
     [
       "ac18ea73-065c-46aa-ad52-732cc0cb5b05",
@@ -444,32 +444,36 @@
       "Backplane Connection"
     ],
     [
-      "847f4119-abc7-484f-b3c7-1ea238d60dea",
-      "SRUN Annunciator"
+      "669aaf70-788c-4b33-8ecd-d90927d9d66c",
+      "Bus Driver BEVENT_L"
     ],
     [
-      "ee444592-02b9-4a6d-bd44-edb99a2cfe0b",
-      "Debounced Switch1"
+      "b2f93a2d-7ab3-4cc6-b73b-2cf5ac19abf9",
+      "Bus Driver BDCOK_H"
     ],
     [
-      "25fe9e03-a231-44dc-96d1-9307cff67739",
-      "Debounced Switch2"
+      "a8fe62e6-be9c-4c12-ab49-b303a002172f",
+      "Bus Driver BHALT_L"
+    ],
+    [
+      "9c91720a-c48c-49a5-8459-4bb13d4bbf8a",
+      "Controller"
     ],
     [
       "df970fa7-5aa4-472d-a7dd-5fd89464f2b4",
       "Backplane Power"
     ],
     [
-      "0103d819-3f4e-43a7-9cab-b96b68e596fc",
-      "PowerSequence"
+      "a63e3bef-f5f0-4510-833c-b1f57998fd5a",
+      "Bus Interface"
     ],
     [
-      "48854766-3438-4455-aaf3-36ea48f913cb",
-      "Debounced Switch"
+      "776cfbe6-eb0a-4c39-ab04-2fd595b35a38",
+      "Bus Translator SRUN_L"
     ],
     [
-      "c25c2a31-419c-43c1-8c60-ed0675ffeced",
-      "LineClock"
+      "1c6a9b45-e815-4074-9c99-ea8fbb825eb2",
+      "Front Panel Connection (optional)"
     ]
   ],
   "text_variables": {}
