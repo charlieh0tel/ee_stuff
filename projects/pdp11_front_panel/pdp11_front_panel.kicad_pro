@@ -478,10 +478,6 @@
     [
       "59fc456b-559c-449a-8e95-a250764020fc",
       "Bus Driver BPOK_H"
-    ],
-    [
-      "6fbe760b-2617-47f3-864b-d1532a032902",
-      "Bus Driver ATX_PS_ON#"
     ]
   ],
   "text_variables": {}
