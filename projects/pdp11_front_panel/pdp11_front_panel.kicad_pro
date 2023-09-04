@@ -444,18 +444,6 @@
       "Backplane Connection"
     ],
     [
-      "669aaf70-788c-4b33-8ecd-d90927d9d66c",
-      "Bus Driver Translator BEVENT_L"
-    ],
-    [
-      "b2f93a2d-7ab3-4cc6-b73b-2cf5ac19abf9",
-      "Bus Driver Translator BDCOK_H"
-    ],
-    [
-      "a8fe62e6-be9c-4c12-ab49-b303a002172f",
-      "Bus Driver Translator BHALT_L"
-    ],
-    [
       "9c91720a-c48c-49a5-8459-4bb13d4bbf8a",
       "Controller"
     ],
@@ -464,20 +452,12 @@
       "Backplane Power"
     ],
     [
-      "a63e3bef-f5f0-4510-833c-b1f57998fd5a",
-      "Bus Interface"
-    ],
-    [
-      "776cfbe6-eb0a-4c39-ab04-2fd595b35a38",
-      "Bus Translator SRUN_L"
+      "6921a5ea-b943-4dc1-8acb-8a754944c3ee",
+      "Backplane Pullups"
     ],
     [
       "1c6a9b45-e815-4074-9c99-ea8fbb825eb2",
       "Front Panel Connection (optional)"
-    ],
-    [
-      "59fc456b-559c-449a-8e95-a250764020fc",
-      "Bus Driver BPOK_H"
     ]
   ],
   "text_variables": {}
