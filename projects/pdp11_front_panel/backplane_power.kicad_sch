@@ -6055,13 +6055,13 @@
   (symbol (lib_id "Connector:Screw_Terminal_01x07") (at 64.77 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 60f501a2-f078-4308-b354-4176f7f8e6a0)
-    (property "Reference" "J4" (at 67.31 46.99 0)
+    (property "Reference" "J5" (at 67.31 46.99 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Screw_Terminal_01x07" (at 67.31 49.53 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 64.77 48.26 0)
+    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-7-5.08_1x07_P5.08mm_Horizontal" (at 64.77 48.26 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 64.77 48.26 0)
@@ -6077,7 +6077,7 @@
     (instances
       (project "pdp11_front_panel"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/df970fa7-5aa4-472d-a7dd-5fd89464f2b4"
-          (reference "J4") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )

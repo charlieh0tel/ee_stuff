@@ -4392,7 +4392,7 @@
           (reference "#PWR018") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "#PWR039") (unit 1)
+          (reference "#PWR041") (unit 1)
         )
       )
     )
@@ -4423,7 +4423,7 @@
           (reference "#PWR019") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "#PWR040") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -4438,7 +4438,7 @@
     (property "Value" "Conn_02x05_Odd_Even" (at 146.05 106.68 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 144.78 115.57 0)
+    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical_SMD" (at 144.78 115.57 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 144.78 115.57 0)
@@ -4460,7 +4460,7 @@
           (reference "J2") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "J5") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
