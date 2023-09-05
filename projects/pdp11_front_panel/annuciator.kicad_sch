@@ -189,9 +189,6 @@
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a/638cb921-b9ae-4c91-b203-4ec559e7a787"
           (reference "D7") (unit 1)
         )
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a/9647f0a2-f63e-455e-bec4-1ac39c098421"
-          (reference "D8") (unit 1)
-        )
       )
       (project "srun_annunciator"
         (path "/f9d3716c-a6a2-4c1f-a114-c5f293c406ec"
@@ -228,9 +225,6 @@
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a/638cb921-b9ae-4c91-b203-4ec559e7a787"
           (reference "R9") (unit 1)
-        )
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a/9647f0a2-f63e-455e-bec4-1ac39c098421"
-          (reference "R10") (unit 1)
         )
       )
     )
