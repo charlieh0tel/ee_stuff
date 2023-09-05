@@ -4345,7 +4345,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9d259c91-1d69-4bfb-8ea3-5020fff0b836)
   )
-  (label "{SRUN_L,BEVNT_L,BDCOK_H,BPOK_H,BHALT_L}" (at 29.21 86.36 0) (fields_autoplaced)
+  (label "{H9XX}" (at 34.29 86.36 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b981c534-dd1a-4eb2-890f-b8d4fccae19c)
   )
@@ -4358,7 +4358,7 @@
     (uuid f07a2c56-bb41-4bb1-bc0d-a4625e905bd9)
   )
 
-  (hierarchical_label "H9XX_CONN" (shape bidirectional) (at 27.94 86.36 180) (fields_autoplaced)
+  (hierarchical_label "{H9XX}" (shape bidirectional) (at 27.94 86.36 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 5ff30aa8-8b84-4a14-8fe7-575ea331eee8)
   )
@@ -4389,10 +4389,10 @@
           (reference "#PWR026") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a264bf2f-3de9-43eb-af67-5739949c50d9"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR018") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "#PWR044") (unit 1)
+          (reference "#PWR039") (unit 1)
         )
       )
     )
@@ -4420,10 +4420,10 @@
           (reference "#PWR026") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a264bf2f-3de9-43eb-af67-5739949c50d9"
-          (reference "#PWR033") (unit 1)
+          (reference "#PWR019") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR040") (unit 1)
         )
       )
     )
@@ -4432,7 +4432,7 @@
   (symbol (lib_id "Connector_Generic:Conn_02x05_Odd_Even") (at 144.78 115.57 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 683e34dc-1e9b-40cd-b4da-8784309b7baa)
-    (property "Reference" "J3" (at 146.05 104.14 0)
+    (property "Reference" "J2" (at 146.05 104.14 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_02x05_Odd_Even" (at 146.05 106.68 0)
@@ -4457,10 +4457,10 @@
     (instances
       (project "pdp11_front_panel"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/a264bf2f-3de9-43eb-af67-5739949c50d9"
-          (reference "J3") (unit 1)
+          (reference "J2") (unit 1)
         )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/1c6a9b45-e815-4074-9c99-ea8fbb825eb2"
-          (reference "J6") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )

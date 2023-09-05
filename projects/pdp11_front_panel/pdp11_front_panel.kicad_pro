@@ -444,6 +444,18 @@
       "Backplane Connection"
     ],
     [
+      "638cb921-b9ae-4c91-b203-4ec559e7a787",
+      "Pwr OK Annuciator"
+    ],
+    [
+      "9647f0a2-f63e-455e-bec4-1ac39c098421",
+      "Spare 0 Annunciator"
+    ],
+    [
+      "b89f43e1-0f50-478b-ba15-0cf7977e6432",
+      "Power Switch"
+    ],
+    [
       "9c91720a-c48c-49a5-8459-4bb13d4bbf8a",
       "Controller"
     ],
@@ -454,6 +466,22 @@
     [
       "6921a5ea-b943-4dc1-8acb-8a754944c3ee",
       "Backplane Pullups"
+    ],
+    [
+      "40ace73e-cad9-46a3-91d7-cccc1c67e387",
+      "Run Annunciator"
+    ],
+    [
+      "b9a90149-907d-418a-99b6-1b0dfcd047ff",
+      "Restart Switch"
+    ],
+    [
+      "9ff020da-711e-42e7-aa10-8ef407e2bd65",
+      "Power Switch2"
+    ],
+    [
+      "f2405389-79c5-45c7-90a8-7b3da2b876ad",
+      "Run Switch"
     ],
     [
       "1c6a9b45-e815-4074-9c99-ea8fbb825eb2",
