@@ -2393,7 +2393,7 @@
     (property "Sheetname" "Restart Switch" (at 74.93 133.9084 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "switch.kicad_sch" (at 74.93 142.8246 0)
+    (property "Sheetfile" "switch_mom.kicad_sch" (at 74.93 142.8246 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "VCC" passive (at 77.47 134.62 90)
