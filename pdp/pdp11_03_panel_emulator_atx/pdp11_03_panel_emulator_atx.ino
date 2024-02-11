@@ -1,10 +1,8 @@
-#include <MsTimer2.h>
-
 // PDP 11/03 QBus Front Panel Emulator
 //
 // Christopher Hoover <ch@murgatroid.com>
 
-#if defined(ARDUINO_AVR_UNO)
+//#define ATX
 
 // Pins connected to H9720 backplane connector.
 //
@@ -37,22 +35,53 @@
 // LED with R to GROUND.
 #define POWER_GOOD_LED 12
 
+#ifdef ATX
 // ATX.
 #define ATX_PWROK 5
 #define ATX_PSON_N 7
-
-#else
-#error "No pin definitions for this board."
 #endif
 
 // Line clock.
 constexpr bool supply_line_clock = true;
-constexpr int line_clock_freq_hz = 50;   // 60 Hz doesn't really work.
-constexpr int line_clock_half_period_ms = (int) (1000. * 1.0 / (double) (2 * line_clock_freq_hz));
+constexpr int line_clock_freq_hz = 60;
+
+
+#if defined (ARDUINO_UNOR4_MINIMA) || defined (ARDUINO_UNOR4_WIFI)
+#include <pwm.h>
+
+PwmOut pwm(BEVNT_L);
+
+void setup_ltc() {
+  constexpr unsigned long line_clock_period_us = (int) (1000000. / (double) line_clock_freq_hz);
+  Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
+  Serial.print("(period="); Serial.print(line_clock_period_us); Serial.println(" us).");
+  pwm.begin(line_clock_period_us, line_clock_period_us / 2);
+}
+#else
+#include <MsTimer2.h>
+
+void toggle_bevent() {
+  static bool value = true;
+  digitalWrite(BEVNT_L, value);
+  value = !value;
+}
+
+void setup_ltc() {
+  constexpr unsigned long line_clock_half_period_ms = (int) (1000. / (double) (2 * line_clock_freq_hz));
+
+  Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
+  Serial.print("(half_period="); Serial.print(line_clock_half_period_ms); Serial.println(" ms).");
+  if (line_clock_freq_hz == 60) {
+    Serial.println("Warning: 60 Hz LTC setting actually ticks at 62.5 Hz.");
+  }
+  pinMode(BEVNT_L, OUTPUT);
+  MsTimer2::set(line_clock_half_period_ms, toggle_bevent);
+  MsTimer2::start();
+}
+#endif
 
 // Power on first time automagically.
 const bool initial_power_on = true;
-
 
 bool buttonIs(int8_t pin, int8_t state) {
   auto button = digitalRead(pin);
@@ -80,36 +109,28 @@ void delay_seconds(uint8_t s) {
   }
 }
 
-void toggle_bevent() {
-  static bool value = true;
-  digitalWrite(BEVNT_L, value);
-  value = !value;
-}
-
 void setup() {
   Serial.begin(115200);
   Serial.println("\n\n\nPDP 11/03 QBUS Front Panel Emulator");
   Serial.println("Christopher Hoover <ch@murgatroid.com>");
   Serial.println();
 
+#ifdef ATX
   pinMode(ATX_PWROK, INPUT);
   pinMode(ATX_PSON_N, OUTPUT);
   digitalWrite(ATX_PSON_N, HIGH);
+#endif
 
   pinMode(SRUN_L, INPUT);
   pinMode(BPOK_H, OUTPUT);
   pinMode(BHALT_L, OUTPUT);
   pinMode(BDCOK_H, OUTPUT);
-  pinMode(BEVNT_L, OUTPUT);
   pinMode(POWER_GOOD_LED, OUTPUT);
   pinMode(RUN_LED, OUTPUT);
   pinMode(POWER_SW, INPUT);
 
   if (supply_line_clock) {
-    Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
-    Serial.print("(half_period="); Serial.print(line_clock_half_period_ms); Serial.println(" ms).");
-    MsTimer2::set(line_clock_half_period_ms, toggle_bevent);
-    MsTimer2::start();
+    setup_ltc();
   } 
 }
 
@@ -117,7 +138,9 @@ void loop() {
   bool first = true;
 
   while (true) {
+#ifdef ATX
     digitalWrite(ATX_PSON_N, HIGH);
+#endif
     digitalWrite(BPOK_H, LOW);
     digitalWrite(BDCOK_H, LOW);
     digitalWrite(BHALT_L, HIGH);
@@ -135,6 +158,7 @@ void loop() {
     }
     first = false;
 
+#ifdef ATX
     digitalWrite(ATX_PSON_N, LOW);
 
     Serial.print("Turning on ATX power supply; waiting for power ... ");
@@ -143,6 +167,7 @@ void loop() {
     Serial.println("OK");
     
     delay_seconds(1);
+#endif
 
     Serial.print("Power up sequence starting ... ");
     Serial.flush();
