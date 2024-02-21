@@ -2962,6 +2962,11 @@
     (uuid fedcb5d4-b37e-4320-a82d-137cec9bf939)
   )
 
+  (text "8 MHz 3225" (at 26.67 123.19 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 381ab3d1-f51a-41e4-9400-5e3f5d443365)
+  )
+
   (label "NRESET" (at 154.94 166.37 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 015814f5-c9a7-41ae-a187-08ca95ce098e)
