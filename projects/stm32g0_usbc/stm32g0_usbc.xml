@@ -2,8 +2,8 @@
 <export version="E">
   <design>
     <source>/home/ch/src/ee_stuff/projects/stm32g0_usbc/stm32g0_usbc.kicad_sch</source>
-    <date>Fri 08 Mar 2024 10:04:22 AM PST</date>
-    <tool>Eeschema 7.0.10-7.0.10~ubuntu22.04.1</tool>
+    <date>Mon 11 Mar 2024 08:24:40 PM PDT</date>
+    <tool>Eeschema 7.0.11-7.0.11~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -289,11 +289,11 @@
     </comp>
     <comp ref="J4">
       <value>Conn_01x02</value>
-      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
-      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x03" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="stm32g0_usbc.kicad_sch"/>
-      <property name="ki_description" value="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_description" value="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1a796501-1ef5-4c0a-8aa5-50b5a01a0b03</tstamps>
@@ -762,20 +762,21 @@
         <pin num="S1" name="SHIELD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Connector_Generic" part="Conn_01x02">
-      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+    <libpart lib="Connector_Generic" part="Conn_01x03">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <docs>~</docs>
       <footprints>
         <fp>Connector*:*_1x??_*</fp>
       </footprints>
       <fields>
         <field name="Reference">J</field>
-        <field name="Value">Conn_01x02</field>
+        <field name="Value">Conn_01x03</field>
         <field name="Datasheet">~</field>
       </fields>
       <pins>
         <pin num="1" name="Pin_1" type="passive"/>
         <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="C">
@@ -1127,7 +1128,7 @@
     <net code="6" name="/CAN1_H">
       <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="J2" pin="7" pinfunction="7" pintype="passive"/>
-      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J6" pin="9" pinfunction="9" pintype="passive"/>
       <node ref="U3" pin="7" pinfunction="CANH" pintype="bidirectional"/>
@@ -1280,8 +1281,8 @@
       <node ref="J1" pin="B5" pinfunction="CC2" pintype="bidirectional"/>
       <node ref="R2" pin="1" pintype="passive"/>
     </net>
-    <net code="29" name="Net-(J4-Pin_2)">
-      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    <net code="29" name="Net-(J4-Pin_3)">
+      <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="R8" pin="1" pintype="passive"/>
     </net>
     <net code="30" name="unconnected-(J1-SBU1-PadA8)">
@@ -1314,103 +1315,106 @@
     <net code="39" name="unconnected-(J3-SWO{slash}TDO-Pad6)">
       <node ref="J3" pin="6" pinfunction="SWO/TDO" pintype="input+no_connect"/>
     </net>
-    <net code="40" name="unconnected-(U1A-PA0-Pad11)">
+    <net code="40" name="unconnected-(J4-Pin_1-Pad1)">
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U1A-PA0-Pad11)">
       <node ref="U1" pin="11" pinfunction="PA0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="41" name="unconnected-(U1A-PA1-Pad12)">
+    <net code="42" name="unconnected-(U1A-PA1-Pad12)">
       <node ref="U1" pin="12" pinfunction="PA1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="42" name="unconnected-(U1A-PA2-Pad13)">
+    <net code="43" name="unconnected-(U1A-PA2-Pad13)">
       <node ref="U1" pin="13" pinfunction="PA2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="43" name="unconnected-(U1A-PA5-Pad16)">
+    <net code="44" name="unconnected-(U1A-PA5-Pad16)">
       <node ref="U1" pin="16" pinfunction="PA5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="44" name="unconnected-(U1A-PA6-Pad17)">
+    <net code="45" name="unconnected-(U1A-PA6-Pad17)">
       <node ref="U1" pin="17" pinfunction="PA6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="45" name="unconnected-(U1A-PA7-Pad18)">
+    <net code="46" name="unconnected-(U1A-PA7-Pad18)">
       <node ref="U1" pin="18" pinfunction="PA7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="46" name="unconnected-(U1A-PA8-Pad28)">
+    <net code="47" name="unconnected-(U1A-PA8-Pad28)">
       <node ref="U1" pin="28" pinfunction="PA8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="47" name="unconnected-(U1A-PA9-Pad29)">
+    <net code="48" name="unconnected-(U1A-PA9-Pad29)">
       <node ref="U1" pin="29" pinfunction="PA9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="48" name="unconnected-(U1A-PA10-Pad32)">
+    <net code="49" name="unconnected-(U1A-PA10-Pad32)">
       <node ref="U1" pin="32" pinfunction="PA10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="49" name="unconnected-(U1B-PB0-Pad19)">
+    <net code="50" name="unconnected-(U1B-PB0-Pad19)">
       <node ref="U1" pin="19" pinfunction="PB0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="50" name="unconnected-(U1B-PB1-Pad20)">
+    <net code="51" name="unconnected-(U1B-PB1-Pad20)">
       <node ref="U1" pin="20" pinfunction="PB1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="51" name="unconnected-(U1B-PB2-Pad21)">
+    <net code="52" name="unconnected-(U1B-PB2-Pad21)">
       <node ref="U1" pin="21" pinfunction="PB2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="52" name="unconnected-(U1B-PB3-Pad42)">
+    <net code="53" name="unconnected-(U1B-PB3-Pad42)">
       <node ref="U1" pin="42" pinfunction="PB3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="53" name="unconnected-(U1B-PB4-Pad43)">
+    <net code="54" name="unconnected-(U1B-PB4-Pad43)">
       <node ref="U1" pin="43" pinfunction="PB4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="54" name="unconnected-(U1B-PB5-Pad44)">
+    <net code="55" name="unconnected-(U1B-PB5-Pad44)">
       <node ref="U1" pin="44" pinfunction="PB5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="55" name="unconnected-(U1B-PB6-Pad45)">
+    <net code="56" name="unconnected-(U1B-PB6-Pad45)">
       <node ref="U1" pin="45" pinfunction="PB6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="56" name="unconnected-(U1B-PB7-Pad46)">
+    <net code="57" name="unconnected-(U1B-PB7-Pad46)">
       <node ref="U1" pin="46" pinfunction="PB7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="57" name="unconnected-(U1B-PB8-Pad47)">
+    <net code="58" name="unconnected-(U1B-PB8-Pad47)">
       <node ref="U1" pin="47" pinfunction="PB8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="58" name="unconnected-(U1B-PB9-Pad48)">
+    <net code="59" name="unconnected-(U1B-PB9-Pad48)">
       <node ref="U1" pin="48" pinfunction="PB9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="59" name="unconnected-(U1B-PB10-Pad22)">
+    <net code="60" name="unconnected-(U1B-PB10-Pad22)">
       <node ref="U1" pin="22" pinfunction="PB10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="60" name="unconnected-(U1B-PB11-Pad23)">
+    <net code="61" name="unconnected-(U1B-PB11-Pad23)">
       <node ref="U1" pin="23" pinfunction="PB11" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="61" name="unconnected-(U1B-PB12-Pad24)">
+    <net code="62" name="unconnected-(U1B-PB12-Pad24)">
       <node ref="U1" pin="24" pinfunction="PB12" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="62" name="unconnected-(U1B-PB13-Pad25)">
+    <net code="63" name="unconnected-(U1B-PB13-Pad25)">
       <node ref="U1" pin="25" pinfunction="PB13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="63" name="unconnected-(U1B-PB14-Pad26)">
+    <net code="64" name="unconnected-(U1B-PB14-Pad26)">
       <node ref="U1" pin="26" pinfunction="PB14" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="64" name="unconnected-(U1B-PB15-Pad27)">
+    <net code="65" name="unconnected-(U1B-PB15-Pad27)">
       <node ref="U1" pin="27" pinfunction="PB15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="65" name="unconnected-(U1C-PC6-Pad30)">
+    <net code="66" name="unconnected-(U1C-PC6-Pad30)">
       <node ref="U1" pin="30" pinfunction="PC6" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="66" name="unconnected-(U1C-PC7-Pad31)">
+    <net code="67" name="unconnected-(U1C-PC7-Pad31)">
       <node ref="U1" pin="31" pinfunction="PC7" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="67" name="unconnected-(U1C-PC13-Pad1)">
+    <net code="68" name="unconnected-(U1C-PC13-Pad1)">
       <node ref="U1" pin="1" pinfunction="PC13" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="68" name="unconnected-(U1C-PC14{slash}OSC32_IN-Pad2)">
+    <net code="69" name="unconnected-(U1C-PC14{slash}OSC32_IN-Pad2)">
       <node ref="U1" pin="2" pinfunction="PC14/OSC32_IN" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="69" name="unconnected-(U1C-PC15{slash}OSC32_OUT-Pad3)">
+    <net code="70" name="unconnected-(U1C-PC15{slash}OSC32_OUT-Pad3)">
       <node ref="U1" pin="3" pinfunction="PC15/OSC32_OUT" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="70" name="unconnected-(U1D-PD2-Pad40)">
+    <net code="71" name="unconnected-(U1D-PD2-Pad40)">
       <node ref="U1" pin="40" pinfunction="PD2" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="71" name="unconnected-(U1D-PD3-Pad41)">
+    <net code="72" name="unconnected-(U1D-PD3-Pad41)">
       <node ref="U1" pin="41" pinfunction="PD3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="72" name="unconnected-(U4-NC-Pad4)">
+    <net code="73" name="unconnected-(U4-NC-Pad4)">
       <node ref="U4" pin="4" pinfunction="NC" pintype="no_connect"/>
     </net>
   </nets>
