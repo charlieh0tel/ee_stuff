@@ -395,7 +395,9 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_symbol_libs": [
+      "rpi_s8x8hat"
+    ]
   },
   "meta": {
     "filename": "rpi_sa8x8hat.kicad_pro",
