@@ -7,7 +7,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
     (tstamp c497bf05-1b4f-49d1-8ec2-412aa849687b)
   )
-  (fp_text value "" (at 0.09906 3.59918) (layer "F.Fab") hide
+  (fp_text value "Val**" (at 0.09906 3.59918) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 98553110-d71f-4893-b299-6f6546fde5f6)
   )
@@ -25,4 +25,5 @@
     (stroke (width 0.15) (type solid)) (fill none) (layer "F.Fab") (tstamp 1c32c163-d84a-4104-a80b-b214c7eeb396))
   (pad "" np_thru_hole circle (at 0 0) (size 2.75 2.75) (drill 2.75) (layers "*.Cu" "*.Mask")
     (solder_mask_margin 1.725) (clearance 1.725) (tstamp 3750a792-861d-4110-afa3-187c5f349cc9))
+  (pad "1" thru_hole circle (at 0 0) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask") (tstamp 1a1cbdb2-4ee4-4c62-a315-082abe64e0dc))
 )
