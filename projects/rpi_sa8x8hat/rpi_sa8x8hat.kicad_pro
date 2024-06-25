@@ -439,7 +439,8 @@
       "rpi_sa8x8hat"
     ],
     "pinned_symbol_libs": [
-      "rpi_s8x8hat"
+      "rpi_s8x8hat",
+      "rpi_sa8x8hat"
     ]
   },
   "meta": {

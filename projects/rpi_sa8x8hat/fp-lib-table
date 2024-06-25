@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "rpi_sa8x8hat")(type "KiCad")(uri "${KIPRJMOD}/rpi_sa8x8hat.pretty")(options "")(descr ""))
+)
