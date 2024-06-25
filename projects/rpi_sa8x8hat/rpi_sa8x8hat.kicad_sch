@@ -2248,7 +2248,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "rpi_sa8x8hat:SA8x8"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2595,6 +2595,24 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 7.62 -12.7 0)
+					(length 2.54) hide
+					(name "PAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "PAD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -9403,7 +9421,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "rpi_sa8x8hat:SA8x8"
 			(at 62.23 134.62 0)
 			(effects
 				(font
@@ -9483,6 +9501,9 @@
 		)
 		(pin "4"
 			(uuid "0c4428df-6445-42c7-a980-5d767d39495f")
+		)
+		(pin "PAD"
+			(uuid "cedc5a31-b183-4838-8216-40765127d811")
 		)
 		(instances
 			(project "rpi_sa8x8hat"
