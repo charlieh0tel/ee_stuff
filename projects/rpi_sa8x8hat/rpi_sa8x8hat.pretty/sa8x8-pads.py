@@ -1,3 +1,5 @@
+# Really crappy code.
+
 L=35.60
 W=19.00
 LPITCH=4.45
@@ -129,10 +131,12 @@ def pads_top():
         pads.append(pad(pin, 0, y_offset + pitch * (11 - pin), size=(4, 2)))
     return pads
 
+"""
 def pads_bottom():
     pad_w = 4.
     return [pad(19, L, W - 4, size=(pad_w, 8.00)),
             pad(20, L, 3.30, size=(pad_w, 6.60))]
+"""
 
 def pads_thermal():
     # guess
@@ -142,7 +146,6 @@ def pads():
     return (pads_left() +
             pads_right() +
             pads_top() +
-            pads_bottom() + 
             pads_thermal())
 
 def footprint():
