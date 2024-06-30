@@ -413,7 +413,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 104.14 63.5 0)
 			(effects
 				(font
@@ -678,7 +678,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 86.36 58.42 0)
 			(effects
 				(font
@@ -742,7 +742,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 104.14 58.42 0)
 			(effects
 				(font
@@ -805,7 +805,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 86.36 63.5 0)
 			(effects
 				(font
@@ -935,7 +935,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 104.14 53.34 0)
 			(effects
 				(font
@@ -999,7 +999,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1.5mm"
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
 			(at 86.36 53.34 0)
 			(effects
 				(font
