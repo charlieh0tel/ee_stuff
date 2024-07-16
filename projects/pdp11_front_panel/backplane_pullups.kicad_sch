@@ -509,7 +509,7 @@
   (symbol (lib_id "power:+5VA") (at 167.64 67.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 72e7c580-1456-49f4-9874-a5f070111f88)
-    (property "Reference" "#PWR05" (at 167.64 71.12 0)
+    (property "Reference" "#PWR040" (at 167.64 71.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5VA" (at 167.64 62.23 0)
@@ -524,9 +524,6 @@
     (pin "1" (uuid 6cb4c188-0cd4-467d-aea0-e23808f2252b))
     (instances
       (project "pdp11_front_panel"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/6921a5ea-b943-4dc1-8acb-8a754944c3ee"
           (reference "#PWR040") (unit 1)
         )
@@ -563,7 +560,7 @@
   (symbol (lib_id "power:GND") (at 57.15 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 85b9db8e-dbf0-4242-839d-d54cf91c1c82)
-    (property "Reference" "#PWR04" (at 57.15 120.65 0)
+    (property "Reference" "#PWR039" (at 57.15 120.65 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 57.15 119.38 0)
@@ -578,9 +575,6 @@
     (pin "1" (uuid 4e585bde-050c-4cd8-8e81-156d284cc7d4))
     (instances
       (project "pdp11_front_panel"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a"
-          (reference "#PWR04") (unit 1)
-        )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/6921a5ea-b943-4dc1-8acb-8a754944c3ee"
           (reference "#PWR039") (unit 1)
         )
@@ -643,7 +637,7 @@
   (symbol (lib_id "power:+5VA") (at 50.8 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid db191f7a-8e0f-41f2-b17f-096cbb688b25)
-    (property "Reference" "#PWR05" (at 50.8 106.68 0)
+    (property "Reference" "#PWR038" (at 50.8 106.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5VA" (at 50.8 97.79 0)
@@ -658,9 +652,6 @@
     (pin "1" (uuid fcd7be8b-7e9a-44e7-bd70-ebb9af05e9fd))
     (instances
       (project "pdp11_front_panel"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/9c91720a-c48c-49a5-8459-4bb13d4bbf8a"
-          (reference "#PWR05") (unit 1)
-        )
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/6921a5ea-b943-4dc1-8acb-8a754944c3ee"
           (reference "#PWR038") (unit 1)
         )

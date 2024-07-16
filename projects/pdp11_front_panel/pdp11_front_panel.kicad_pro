@@ -482,6 +482,10 @@
     [
       "1c6a9b45-e815-4074-9c99-ea8fbb825eb2",
       "Front Panel Connection (optional)"
+    ],
+    [
+      "a48b12dd-4fce-4093-ac42-b34fae1c1c43",
+      "MCU"
     ]
   ],
   "text_variables": {}

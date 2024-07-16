@@ -16790,6 +16790,23 @@
     )
   )
 
+  (sheet (at 38.1 149.86) (size 54.61 30.48) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid a48b12dd-4fce-4093-ac42-b34fae1c1c43)
+    (property "Sheetname" "MCU" (at 38.1 149.1484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "mcu.kicad_sch" (at 38.1 180.9246 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "pdp11_front_panel"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55" (page "15"))
+      )
+    )
+  )
+
   (sheet (at 149.86 27.94) (size 16.51 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
