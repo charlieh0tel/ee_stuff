@@ -51,7 +51,7 @@ def main(argv):
     for k, g in itertools.groupby(active_clocks_sorted_by_rate,
                                   lambda c: c.rate):
         print(f"{k / 1e6} MHz")
-        #print(f"  (2x={2 * k / 1e6} MHz, 3x={3 * k / 1e6} MHz, 4x={4 * k / 1e6} MHz, 5x={5 * k / 1e6} MHz)")
+        print(f"  (2x={2 * k / 1e6} MHz, 3x={3 * k / 1e6} MHz, 4x={4 * k / 1e6} MHz, 5x={5 * k / 1e6} MHz)")
         names = ", ".join(map(lambda c: c.name, g))
         print(textwrap.fill(names, initial_indent="  ", subsequent_indent="  "))
         print()

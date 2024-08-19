@@ -1662,16 +1662,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 91.44) (xy 142.24 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f80b611-1c6a-4172-8281-80b5c024ae21")
-	)
-	(wire
-		(pts
 			(xy 129.54 66.04) (xy 189.23 66.04)
 		)
 		(stroke
@@ -1699,16 +1689,6 @@
 			(type default)
 		)
 		(uuid "1ecb7796-ed44-41d6-98ad-7f04de6fd945")
-	)
-	(wire
-		(pts
-			(xy 138.43 96.52) (xy 138.43 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f2fa4a8-93d3-448f-ac37-dc9c5fccc78b")
 	)
 	(wire
 		(pts
@@ -1742,23 +1722,13 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 69.85) (xy 67.31 69.85)
+			(xy 67.31 69.85) (xy 92.71 69.85)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "25d69492-4347-4cf1-844e-f84d3a992770")
-	)
-	(wire
-		(pts
-			(xy 129.54 69.85) (xy 142.24 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "308248a6-ef20-4cbe-8f8f-8dbd6ab63b9e")
 	)
 	(wire
 		(pts
@@ -1782,7 +1752,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 34.29) (xy 33.02 34.29)
+			(xy 72.39 34.29) (xy 33.02 34.29)
 		)
 		(stroke
 			(width 0)
@@ -1842,16 +1812,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 96.52) (xy 138.43 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4405b429-1f78-4173-a4e7-f94127cd13db")
-	)
-	(wire
-		(pts
 			(xy 111.76 154.94) (xy 111.76 156.21)
 		)
 		(stroke
@@ -1902,6 +1862,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 96.52) (xy 149.86 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "514f8858-41a1-419e-8f4c-7d510bc83f0e")
+	)
+	(wire
+		(pts
 			(xy 60.96 153.67) (xy 60.96 154.94)
 		)
 		(stroke
@@ -1939,6 +1909,16 @@
 			(type default)
 		)
 		(uuid "68cb6893-7353-45a3-8f53-25bfaaf29ae2")
+	)
+	(wire
+		(pts
+			(xy 133.35 96.52) (xy 133.35 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d1d84e4-49ae-4da0-ac17-65862a02dd3b")
 	)
 	(wire
 		(pts
@@ -1982,6 +1962,26 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 91.44) (xy 140.97 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a31fb12-bf6f-49c9-9bcf-01dec4253b51")
+	)
+	(wire
+		(pts
+			(xy 72.39 60.96) (xy 104.14 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b3155e0-f89f-4f71-af25-18b2d5cf149e")
+	)
+	(wire
+		(pts
 			(xy 100.33 44.45) (xy 100.33 45.72)
 		)
 		(stroke
@@ -2022,7 +2022,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 60.96) (xy 73.66 34.29)
+			(xy 72.39 60.96) (xy 72.39 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2082,6 +2082,26 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 91.44) (xy 149.86 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1626cfb-8721-4e99-a3cd-c38c76149143")
+	)
+	(wire
+		(pts
+			(xy 140.97 69.85) (xy 129.54 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4bdc472-ba8b-46a7-89c7-1c1f54313fc2")
+	)
+	(wire
+		(pts
 			(xy 120.65 144.78) (xy 111.76 144.78)
 		)
 		(stroke
@@ -2099,16 +2119,6 @@
 			(type default)
 		)
 		(uuid "b8cd2d9f-32eb-4437-8b5c-1a19c322945e")
-	)
-	(wire
-		(pts
-			(xy 104.14 60.96) (xy 73.66 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8e7c8e4-3b2c-44e9-af38-32041278de24")
 	)
 	(wire
 		(pts
@@ -2159,26 +2169,6 @@
 			(type default)
 		)
 		(uuid "c1aaf870-a82d-4afe-8ba1-990a4a786f66")
-	)
-	(wire
-		(pts
-			(xy 142.24 91.44) (xy 142.24 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c260202c-3c74-407b-aa1d-ac6f3d7a00b1")
-	)
-	(wire
-		(pts
-			(xy 138.43 73.66) (xy 129.54 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c81fd3cd-82d2-4096-a561-c4d6160401cb")
 	)
 	(wire
 		(pts
@@ -2279,6 +2269,16 @@
 			(type default)
 		)
 		(uuid "e5f73903-38ac-4ca2-8313-5067f200ff94")
+	)
+	(wire
+		(pts
+			(xy 133.35 73.66) (xy 129.54 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef799d57-6a29-4a8d-82df-7282f66323fc")
 	)
 	(wire
 		(pts
@@ -3853,7 +3853,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 112.7252 153.67 0)
 			(effects
 				(font
@@ -4303,10 +4303,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b78763d2-f818-4b12-bb09-b43ec5843ce4")
 		(property "Reference" "R21"
-			(at 97.79 48.2599 0)
+			(at 99.06 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4315,7 +4314,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 97.79 50.7999 0)
+			(at 98.806 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
