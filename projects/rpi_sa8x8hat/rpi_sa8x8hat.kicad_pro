@@ -106,12 +106,7 @@
         "solder_mask_bridge|147618000|132820000|9e61800f-6e33-490a-a82d-f4c91af146bc|c4253596-0041-478e-a83a-81cbff841e98",
         "solder_mask_bridge|147618000|83820000|6b4f790a-8aa4-4c21-b9a9-9f7c8e246ad9|7eb1d643-0041-4d09-809f-aff5ecd0a288",
         "solder_mask_bridge|89618000|132820000|80e652fb-2353-4bab-a1e0-37cfd1361a98|258d35a5-9c40-49f9-921a-2562fb3d43c6",
-        "solder_mask_bridge|89618000|83820000|7e2edb9d-7825-4141-8305-9efadef7f91d|a2bb91b4-44c2-4787-b0f2-da8cea136d10",
-        "starved_thermal|104648000|86537800|11336dac-5d5b-4775-9f08-9462a8e7873d|190ad6d9-3db2-4f3d-8217-11e0fc3449db|F.Cu",
-        "starved_thermal|104980000|113800000|11336dac-5d5b-4775-9f08-9462a8e7873d|b83523fd-f527-470c-95b5-5efa744e2542|F.Cu",
-        "starved_thermal|107300000|94395000|11336dac-5d5b-4775-9f08-9462a8e7873d|eb53fba5-8ef1-484b-93ad-d9906fec600a|F.Cu",
-        "starved_thermal|107300000|97195000|11336dac-5d5b-4775-9f08-9462a8e7873d|5cad958a-f60d-4d02-bd94-bc974bfd7584|F.Cu",
-        "starved_thermal|142748000|86537800|11336dac-5d5b-4775-9f08-9462a8e7873d|1a5963ec-7a15-4c56-b7a8-fbeb7aac638c|F.Cu"
+        "solder_mask_bridge|89618000|83820000|7e2edb9d-7825-4141-8305-9efadef7f91d|a2bb91b4-44c2-4787-b0f2-da8cea136d10"
       ],
       "meta": {
         "filename": "board_design_settings.json",
@@ -239,7 +234,11 @@
         0.05,
         0.1,
         0.16,
-        0.2
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
