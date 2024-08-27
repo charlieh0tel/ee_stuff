@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "impulse_powercal")(type "KiCad")(uri "${KIPRJMOD}/impulse_powercal.kicad_sym")(options "")(descr ""))
+)
