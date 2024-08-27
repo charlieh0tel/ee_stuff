@@ -2507,113 +2507,6 @@
 				)
 			)
 		)
-		(symbol "power:GNDD"
-			(power)
-			(pin_numbers hide)
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "GNDD"
-				(at 0 -3.175 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "GNDD_0_1"
-				(rectangle
-					(start -1.27 -1.524)
-					(end 1.27 -2.032)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "GNDD_1_1"
-				(pin power_in line
-					(at 0 0 270)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 	)
 	(junction
 		(at 147.32 71.12)
@@ -2730,19 +2623,139 @@
 		(uuid "f9080037-de1c-4812-ac0b-fe1237e35191")
 	)
 	(no_connect
-		(at 72.39 139.7)
+		(at 205.74 105.41)
+		(uuid "06209ffb-839a-47b3-a554-2bf613642995")
+	)
+	(no_connect
+		(at 205.74 97.79)
+		(uuid "1269dbf1-760f-4dac-990d-48f70e385951")
+	)
+	(no_connect
+		(at 205.74 54.61)
+		(uuid "16c2f2de-1be7-4838-acb6-abf403dc661a")
+	)
+	(no_connect
+		(at 205.74 128.27)
+		(uuid "1de3e16f-4cd0-430c-9ced-49e6f38d2d74")
+	)
+	(no_connect
+		(at 205.74 80.01)
+		(uuid "2061cf61-9a6f-426b-8a4e-bf56b1854118")
+	)
+	(no_connect
+		(at 205.74 67.31)
+		(uuid "23964e05-3360-4707-826d-42df4a80854b")
+	)
+	(no_connect
+		(at 205.74 59.69)
+		(uuid "25ba26b2-7c34-4f31-90c0-bc76f2e9f01c")
+	)
+	(no_connect
+		(at 205.74 64.77)
+		(uuid "2c26c2e8-dcff-43db-8419-02c3d7f5ede1")
+	)
+	(no_connect
+		(at 205.74 115.57)
+		(uuid "2dffbd7d-579b-4539-abfa-3bd05a95dc47")
+	)
+	(no_connect
+		(at 205.74 85.09)
+		(uuid "3dde59e7-7ead-4125-8cb3-1df4ee51e9ca")
+	)
+	(no_connect
+		(at 205.74 113.03)
+		(uuid "3eb8dedd-4efc-47e1-93e4-0fa21078bd62")
+	)
+	(no_connect
+		(at 205.74 133.35)
+		(uuid "43931863-644f-4b1a-8406-fba9b1375f75")
+	)
+	(no_connect
+		(at 205.74 87.63)
+		(uuid "43a4a234-3332-47bd-bb9b-3cfae2db9966")
+	)
+	(no_connect
+		(at 205.74 77.47)
+		(uuid "5133a5ec-def1-4324-a6b5-9f0278088e1c")
+	)
+	(no_connect
+		(at 205.74 57.15)
+		(uuid "56b79879-cefc-4559-9217-463828e468a5")
+	)
+	(no_connect
+		(at 205.74 125.73)
+		(uuid "5ba67906-329a-4cf3-81fc-446ed8092378")
+	)
+	(no_connect
+		(at 205.74 120.65)
+		(uuid "6af38792-de6b-4c37-92a9-abe801d1f036")
+	)
+	(no_connect
+		(at 205.74 123.19)
+		(uuid "71621b2a-ba15-4da4-baaa-690defefde3f")
+	)
+	(no_connect
+		(at 205.74 118.11)
+		(uuid "7921e40d-bd75-4b9d-87a7-455d906d550f")
+	)
+	(no_connect
+		(at 205.74 62.23)
+		(uuid "7d63aa0e-195f-4848-8358-e8b98c7e63d1")
+	)
+	(no_connect
+		(at 205.74 72.39)
+		(uuid "8c691bfc-c2e9-424f-8dc9-eacad9da196d")
+	)
+	(no_connect
+		(at 33.02 186.69)
 		(uuid "8cf67f98-32a7-4f89-87cf-b329c9a45cf8")
 	)
 	(no_connect
-		(at 72.39 116.84)
+		(at 205.74 52.07)
+		(uuid "994442e8-8d51-4262-a8d2-364f368b1b6c")
+	)
+	(no_connect
+		(at 205.74 92.71)
+		(uuid "9eecf264-0a4f-408b-a7e9-96989b35b03e")
+	)
+	(no_connect
+		(at 205.74 110.49)
+		(uuid "a98aac46-cef0-46df-89b5-07c4bbac1eb1")
+	)
+	(no_connect
+		(at 33.02 163.83)
 		(uuid "c04a6658-9fcd-44d1-a4c8-6478bfd49a7b")
 	)
 	(no_connect
-		(at 72.39 124.46)
+		(at 33.02 171.45)
 		(uuid "c8ae1f88-ff87-47f7-8b75-ce583239c5fd")
 	)
 	(no_connect
-		(at 72.39 132.08)
+		(at 205.74 95.25)
+		(uuid "d976e6b6-429e-4a82-984a-269331bac2ec")
+	)
+	(no_connect
+		(at 205.74 107.95)
+		(uuid "e09d6ea4-953c-4175-87d4-db3fc7f5be03")
+	)
+	(no_connect
+		(at 205.74 69.85)
+		(uuid "e47fb03f-e99b-415f-9e84-7eb44af884c5")
+	)
+	(no_connect
+		(at 205.74 74.93)
+		(uuid "e64e66d8-3ab4-4d96-9623-ef793dbc7a23")
+	)
+	(no_connect
+		(at 205.74 102.87)
+		(uuid "e84e628a-62a2-4f66-ae86-74461d45a7d9")
+	)
+	(no_connect
+		(at 205.74 130.81)
+		(uuid "f63b56b4-0276-49de-9551-39d2a1250cb0")
+	)
+	(no_connect
+		(at 33.02 179.07)
 		(uuid "fb4f81ff-aacb-443c-9a12-0359cae2285d")
 	)
 	(wire
@@ -3014,16 +3027,6 @@
 			(type default)
 		)
 		(uuid "4bda7c36-3a9f-4512-8e8b-e295cd5d38fc")
-	)
-	(wire
-		(pts
-			(xy 161.29 135.89) (xy 163.83 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "502d6f03-f12d-42ec-844d-b6ce76e2bfd2")
 	)
 	(wire
 		(pts
@@ -3327,16 +3330,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 135.89) (xy 152.4 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7855da5-d5b5-4c53-8da8-af4135234612")
-	)
-	(wire
-		(pts
 			(xy 86.36 71.12) (xy 100.33 71.12)
 		)
 		(stroke
@@ -3347,16 +3340,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 135.89) (xy 163.83 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b998023a-8f93-4d18-ac33-872253f1f422")
-	)
-	(wire
-		(pts
 			(xy 220.98 100.33) (xy 220.98 135.89)
 		)
 		(stroke
@@ -3364,16 +3347,6 @@
 			(type default)
 		)
 		(uuid "bbfd3814-8620-43b9-ad89-0a3abd55cace")
-	)
-	(wire
-		(pts
-			(xy 153.67 135.89) (xy 152.4 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bcfea90b-aed6-4395-a083-e0a8de8c86b2")
 	)
 	(wire
 		(pts
@@ -3615,9 +3588,9 @@
 		)
 		(uuid "feee082e-81b3-40bb-ae6d-904c0fc94ed2")
 	)
-	(text "Vshunt out\nto DMM"
+	(text "To DMM"
 		(exclude_from_sim no)
-		(at 124.968 64.77 0)
+		(at 124.46 63.246 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4123,7 +4096,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 137.16 0)
+		(at 33.02 184.15 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4132,7 +4105,7 @@
 		(fields_autoplaced yes)
 		(uuid "37351422-c8c2-4323-be20-de0cb9718d82")
 		(property "Reference" "H4"
-			(at 74.93 134.6199 0)
+			(at 35.56 181.6099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4141,7 +4114,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 74.93 137.1599 0)
+			(at 35.56 184.1499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4150,7 +4123,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 72.39 137.16 0)
+			(at 33.02 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4159,7 +4132,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 137.16 0)
+			(at 33.02 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4168,7 +4141,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 72.39 137.16 0)
+			(at 33.02 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4389,33 +4362,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 157.48 135.89 90)
+		(lib_id "power:GND")
+		(at 220.98 140.97 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "585007b6-b8b1-4502-8117-2e72b170d0fd")
-		(property "Reference" "R9"
-			(at 157.48 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 157.48 132.08 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 157.48 137.668 90)
+		(uuid "48da81a2-8e5b-4423-8718-17a3cd607628")
+		(property "Reference" "#PWR05"
+			(at 220.98 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4423,8 +4380,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 157.48 135.89 0)
+		(property "Value" "GND"
+			(at 220.98 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4432,8 +4397,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 157.48 135.89 0)
+		(property "Datasheet" ""
+			(at 220.98 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 220.98 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4442,15 +4416,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "865f703b-e30d-42e8-a274-7fce0ac96fea")
-		)
-		(pin "2"
-			(uuid "6b315ef6-9cd7-4b5b-9792-7f17c786328f")
+			(uuid "185d4c5b-9e6f-47ca-b025-23e3ccd0bd03")
 		)
 		(instances
-			(project ""
+			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R9")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -4522,7 +4493,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 114.3 0)
+		(at 33.02 161.29 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4531,7 +4502,7 @@
 		(fields_autoplaced yes)
 		(uuid "70f372f4-3eae-4fd1-abc9-7076c668bfcf")
 		(property "Reference" "H1"
-			(at 74.93 111.7599 0)
+			(at 35.56 158.7499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4540,7 +4511,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 74.93 114.2999 0)
+			(at 35.56 161.2899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4549,7 +4520,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 72.39 114.3 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4558,7 +4529,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 114.3 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4567,7 +4538,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 72.39 114.3 0)
+			(at 33.02 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4795,7 +4766,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 129.54 0)
+		(at 33.02 176.53 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4804,7 +4775,7 @@
 		(fields_autoplaced yes)
 		(uuid "8375918c-13e1-4e20-8c05-dd42d95aeeeb")
 		(property "Reference" "H3"
-			(at 74.93 126.9999 0)
+			(at 35.56 173.9899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4813,7 +4784,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 74.93 129.5399 0)
+			(at 35.56 176.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4822,7 +4793,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 72.39 129.54 0)
+			(at 33.02 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4831,7 +4802,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 129.54 0)
+			(at 33.02 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4840,7 +4811,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 72.39 129.54 0)
+			(at 33.02 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4855,72 +4826,6 @@
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "H3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 152.4 138.43 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8a09e3ba-8a21-468f-aa17-0680835c8240")
-		(property "Reference" "#PWR01"
-			(at 152.4 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 152.4 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "351268df-058d-4f3d-a8af-966f9886b77d")
-		)
-		(instances
-			(project ""
-				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -5238,72 +5143,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDD")
-		(at 163.83 138.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a61211fc-12e6-4b1e-8f22-52a3eafe064e")
-		(property "Reference" "#PWR02"
-			(at 163.83 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDJ"
-			(at 163.83 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 163.83 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 163.83 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 163.83 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8dbea767-d2b8-4f74-834a-5fec7d213fe9")
-		)
-		(instances
-			(project "impulse_powercal"
-				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
 		(at 31.75 58.42 0)
 		(unit 1)
@@ -5366,71 +5205,6 @@
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDD")
-		(at 147.32 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dce7c39d-387b-4355-8a4e-b952ca876335")
-		(property "Reference" "#PWR06"
-			(at 147.32 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDJ"
-			(at 147.32 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 147.32 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1d62f0e0-a220-4256-88d2-58c9092b29ba")
-		)
-		(instances
-			(project "impulse_powercal"
-				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -5501,6 +5275,72 @@
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 83.82 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ea1e6dd4-6a99-4c37-9464-89b30f68b61c")
+		(property "Reference" "#PWR01"
+			(at 147.32 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4626490f-b523-4f74-a258-9ee7d2b3a4c9")
+		)
+		(instances
+			(project "impulse_powercal"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -5648,7 +5488,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 72.39 121.92 0)
+		(at 33.02 168.91 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -5657,7 +5497,7 @@
 		(fields_autoplaced yes)
 		(uuid "fc309413-5c70-4ebf-8458-51a0534a4f9a")
 		(property "Reference" "H2"
-			(at 74.93 119.3799 0)
+			(at 35.56 166.3699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5666,7 +5506,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 74.93 121.9199 0)
+			(at 35.56 168.9099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5675,7 +5515,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 72.39 121.92 0)
+			(at 33.02 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5684,7 +5524,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 121.92 0)
+			(at 33.02 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5693,7 +5533,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 72.39 121.92 0)
+			(at 33.02 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5708,72 +5548,6 @@
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDD")
-		(at 220.98 140.97 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fdfb6378-8711-4fce-9ce0-fd630241bd28")
-		(property "Reference" "#PWR05"
-			(at 220.98 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDJ"
-			(at 220.98 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 220.98 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 220.98 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 220.98 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "03d2357d-35bd-4d1c-a947-48355748a4fb")
-		)
-		(instances
-			(project ""
-				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "#PWR05")
 					(unit 1)
 				)
 			)

@@ -58,7 +58,10 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_edge_clearance|127855000|60000000|19fc87d5-ce89-45a3-b69e-e980c2f72448|377dfcf8-bbd0-4f97-80d7-c856525f2e79",
+        "silk_edge_clearance|72135000|60000000|19fc87d5-ce89-45a3-b69e-e980c2f72448|d0b711f1-f22c-45a7-b1b1-5b1d765cc675"
+      ],
       "meta": {
         "version": 2
       },
@@ -234,7 +237,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "power_pin_not_driven|1473200|838200|4626490f-b523-4f74-a258-9ee7d2b3a4c9|00000000-0000-0000-0000-000000000000|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|"
+    ],
     "meta": {
       "version": 0
     },
