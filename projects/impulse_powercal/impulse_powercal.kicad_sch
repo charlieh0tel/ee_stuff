@@ -451,22 +451,280 @@
 				)
 			)
 		)
-		(symbol "Connector:DC37_Plug"
+		(symbol "Device:C"
+			(pin_numbers hide)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J"
-				(at 0 50.8 0)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "DC37_Plug"
-				(at 0 -50.8 0)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -491,7 +749,108 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "37-pin male plug pin D-SUB connector"
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "impulse_powercal:7472524-SINGLE"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 52.705 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "7472524-SINGLE"
+				(at 0 50.8 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "37-pin male plug pin D-SUB connector, Mounting Hole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -518,7 +877,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "DC37_Plug_0_1"
+			(symbol "7472524-SINGLE_0_1"
 				(circle
 					(center -1.778 -45.72)
 					(radius 0.762)
@@ -1383,7 +1742,7 @@
 					)
 				)
 			)
-			(symbol "DC37_Plug_1_1"
+			(symbol "7472524-SINGLE_1_1"
 				(pin passive line
 					(at -7.62 -45.72 0)
 					(length 3.81)
@@ -2050,117 +2409,17 @@
 						)
 					)
 				)
-			)
-		)
-		(symbol "Device:C"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_1_1"
 				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
+					(at 0 -50.8 90)
+					(length 3.81)
+					(name "PAD"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number "MH1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2169,239 +2428,16 @@
 					)
 				)
 				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name "~"
+					(at 0 -50.8 90)
+					(length 3.81)
+					(name "PAD"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Device:R"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Mechanical:MountingHole_Pad"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim yes)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MountingHole_Pad"
-				(at 0 4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Mounting Hole with connection"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "mounting hole"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "MountingHole*Pad*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MountingHole_Pad_0_1"
-				(circle
-					(center 0 1.27)
-					(radius 1.27)
-					(stroke
-						(width 1.27)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MountingHole_Pad_1_1"
-				(pin input line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
+					(number "MH2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2543,6 +2579,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "306685ef-d908-40f0-8a26-005db9f78c7b")
+	)
+	(junction
+		(at 220.98 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32cd7005-3528-4b5b-ab91-87947ec75a6e")
 	)
 	(junction
 		(at 220.98 100.33)
@@ -2810,6 +2852,16 @@
 	)
 	(wire
 		(pts
+			(xy 231.14 140.97) (xy 231.14 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fcd7f01-e9bb-4648-aced-9737b9c960e5")
+	)
+	(wire
+		(pts
 			(xy 205.74 77.47) (xy 223.52 77.47)
 		)
 		(stroke
@@ -2850,7 +2902,7 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 135.89) (xy 220.98 140.97)
+			(xy 220.98 135.89) (xy 220.98 143.51)
 		)
 		(stroke
 			(width 0)
@@ -3130,6 +3182,16 @@
 	)
 	(wire
 		(pts
+			(xy 220.98 143.51) (xy 220.98 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73792511-7907-4d8d-bb57-dfd7e09a8996")
+	)
+	(wire
+		(pts
 			(xy 39.37 60.96) (xy 39.37 71.12)
 		)
 		(stroke
@@ -3257,6 +3319,16 @@
 			(type default)
 		)
 		(uuid "948b062e-549f-41ae-a9a1-70a1e66b0d5a")
+	)
+	(wire
+		(pts
+			(xy 231.14 143.51) (xy 220.98 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c1d1b56-7cd0-49a7-9a10-71153cac3b5f")
 	)
 	(wire
 		(pts
@@ -4034,7 +4106,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1885e210-14bf-4432-88f8-d2ded84703c3")
-		(property "Reference" "J1"
+		(property "Reference" "J4"
 			(at 120.65 57.4431 0)
 			(effects
 				(font
@@ -4088,7 +4160,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J1")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -4104,7 +4176,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37351422-c8c2-4323-be20-de0cb9718d82")
-		(property "Reference" "H4"
+		(property "Reference" "H3"
 			(at 35.56 181.6099 0)
 			(effects
 				(font
@@ -4155,7 +4227,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H4")
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -4363,8 +4435,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 220.98 140.97 0)
-		(mirror y)
+		(at 220.98 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4372,7 +4443,7 @@
 		(dnp no)
 		(uuid "48da81a2-8e5b-4423-8718-17a3cd607628")
 		(property "Reference" "#PWR05"
-			(at 220.98 147.32 0)
+			(at 220.98 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4381,7 +4452,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 220.98 146.05 0)
+			(at 220.98 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4389,7 +4460,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 140.97 0)
+			(at 220.98 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4398,7 +4469,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 140.97 0)
+			(at 220.98 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4407,7 +4478,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 220.98 140.97 0)
+			(at 220.98 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4436,7 +4507,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59f06413-7217-438f-a482-43dea45c543f")
-		(property "Reference" "J4"
+		(property "Reference" "J1"
 			(at 93.98 77.978 0)
 			(effects
 				(font
@@ -4485,7 +4556,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J4")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -4501,7 +4572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70f372f4-3eae-4fd1-abc9-7076c668bfcf")
-		(property "Reference" "H1"
+		(property "Reference" "H2"
 			(at 35.56 158.7499 0)
 			(effects
 				(font
@@ -4552,7 +4623,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H1")
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -4568,7 +4639,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "730f969d-42b5-4118-ac88-89556ffed1bd")
-		(property "Reference" "R8"
+		(property "Reference" "R7"
 			(at 140.97 64.77 90)
 			(effects
 				(font
@@ -4620,7 +4691,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R8")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -4636,7 +4707,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7494bcc1-4a7e-4d54-895d-870345eb2287")
-		(property "Reference" "R7"
+		(property "Reference" "R8"
 			(at 140.97 45.72 90)
 			(effects
 				(font
@@ -4688,7 +4759,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R7")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -4704,7 +4775,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7565fb6d-21cb-40de-8846-f14c8a579dde")
-		(property "Reference" "R6"
+		(property "Reference" "R5"
 			(at 41.91 74.9299 0)
 			(effects
 				(font
@@ -4758,7 +4829,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R6")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -4774,7 +4845,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8375918c-13e1-4e20-8c05-dd42d95aeeeb")
-		(property "Reference" "H3"
+		(property "Reference" "H4"
 			(at 35.56 173.9899 0)
 			(effects
 				(font
@@ -4825,7 +4896,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H3")
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -4968,7 +5039,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:DC37_Plug")
+		(lib_id "impulse_powercal:7472524-SINGLE")
 		(at 231.14 90.17 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4976,7 +5047,7 @@
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9e4418ba-e8dd-4ab8-9158-974e54dd8ef0")
+		(uuid "d14f3a46-840a-4fb4-9758-4c57730a6cd1")
 		(property "Reference" "J5"
 			(at 236.22 88.5824 0)
 			(effects
@@ -4986,7 +5057,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DC37_Plug"
+		(property "Value" "7472524-SINGLE"
 			(at 236.22 91.1224 0)
 			(effects
 				(font
@@ -4995,7 +5066,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Dsub:DSUB-37_Male_Horizontal_P2.77x2.54mm_EdgePinOffset9.40mm"
+		(property "Footprint" "impulse_powercal:7472524"
 			(at 231.14 90.17 0)
 			(effects
 				(font
@@ -5013,7 +5084,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "37-pin male plug pin D-SUB connector"
+		(property "Description" "37-pin male plug pin D-SUB connector, Mounting Hole"
 			(at 231.14 90.17 0)
 			(effects
 				(font
@@ -5022,116 +5093,122 @@
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "f9fda11a-edee-4141-bb85-fa64f562736a")
-		)
-		(pin "28"
-			(uuid "ea767e0c-3e00-4bbd-8477-6b40696cd31b")
-		)
-		(pin "2"
-			(uuid "1c2dc970-4790-4f22-b493-1b3b8de993b4")
-		)
-		(pin "30"
-			(uuid "b6a6c446-228d-45a4-af72-9b7e75978ee7")
-		)
-		(pin "5"
-			(uuid "68fe600a-7aba-4799-9d46-3719735a50dc")
-		)
-		(pin "26"
-			(uuid "686fc9d4-5842-48d5-a989-755e6ec31a19")
+		(pin "9"
+			(uuid "88b87206-b8e2-408d-83bd-979dd35ce91e")
 		)
 		(pin "36"
-			(uuid "12c30dce-ebe5-44cf-af07-d9c9cacec4f3")
-		)
-		(pin "33"
-			(uuid "a7ae1aad-7021-46fb-b898-8a81c49c37dc")
-		)
-		(pin "37"
-			(uuid "85bfc72b-f4a1-461e-beb6-af062194d2d3")
-		)
-		(pin "21"
-			(uuid "dc9783e6-0227-463c-b97b-e4ec0b610f27")
-		)
-		(pin "32"
-			(uuid "2591fbc3-f7c8-48f6-b160-d22043dd497e")
+			(uuid "fff6f27f-a1f6-46f4-87d3-65d1725d5196")
 		)
 		(pin "22"
-			(uuid "1336696a-9bbf-437b-afe8-8bf144ee2df2")
-		)
-		(pin "27"
-			(uuid "d06fb62b-c6a9-4ba8-b712-3b8f031fdcae")
-		)
-		(pin "1"
-			(uuid "0c636d5d-1aa2-480b-b672-9b13fda63399")
-		)
-		(pin "12"
-			(uuid "0d7f92cf-2049-467b-929b-ca33dc185961")
-		)
-		(pin "10"
-			(uuid "abb306f9-e2a4-46c4-b0d2-107e53198a49")
-		)
-		(pin "13"
-			(uuid "a26d52ec-2da1-44c8-8423-06b60a3a9fcc")
-		)
-		(pin "11"
-			(uuid "5b7edba4-a6e7-4bf0-8f35-584bb4466609")
-		)
-		(pin "20"
-			(uuid "e1efaaf5-335d-4fa7-9142-6d0e903a0c2d")
-		)
-		(pin "6"
-			(uuid "8a765ee4-6619-437b-96c3-bcb2fefced29")
-		)
-		(pin "31"
-			(uuid "77306921-dafa-4834-ac4c-844435a774bb")
-		)
-		(pin "8"
-			(uuid "e9b56df6-74d2-475c-8695-c50da527c723")
-		)
-		(pin "19"
-			(uuid "1af4ca92-1095-44c5-be8a-56ef75b3a2ab")
-		)
-		(pin "34"
-			(uuid "7fa61858-11bf-4933-a26d-c94a7df5db77")
-		)
-		(pin "35"
-			(uuid "871d6bd9-c7ea-4bde-8d32-db82e6bca0d9")
-		)
-		(pin "4"
-			(uuid "8c6eeaab-8b38-4b80-be2e-e1686b7f162e")
-		)
-		(pin "23"
-			(uuid "06864d1d-09d2-4a6b-8238-83484ba0f621")
-		)
-		(pin "9"
-			(uuid "4d121814-c7ab-43d1-93a7-d962a6cb6f67")
-		)
-		(pin "17"
-			(uuid "a99b83f5-c388-48c4-bb8a-9f406cd12496")
-		)
-		(pin "29"
-			(uuid "b720d6a0-366b-40a9-8b57-38f9b7831884")
-		)
-		(pin "7"
-			(uuid "069835dc-9ba5-4143-9ddd-09b13a6dbb74")
-		)
-		(pin "18"
-			(uuid "c5a4286c-b449-4969-bb10-19d60efd96a1")
+			(uuid "e6f4d0bd-5339-4e64-8236-708e729e2fa4")
 		)
 		(pin "16"
-			(uuid "09d84588-e75a-4098-ac9e-c4d99513d7f6")
+			(uuid "1b2fc31b-236c-4a79-b3d8-5c4ded8c0285")
 		)
-		(pin "24"
-			(uuid "360dd746-1a0f-4f29-9f9d-d231facf5739")
+		(pin "21"
+			(uuid "47c290fa-883a-45ca-9307-be13da00b7cc")
 		)
-		(pin "25"
-			(uuid "1df29dde-92d2-4140-8957-4220c09326e8")
+		(pin "20"
+			(uuid "55b146c6-4e45-42ac-9f77-9d44aaa3f353")
 		)
-		(pin "14"
-			(uuid "75dd0d43-95ea-4787-9d04-b5005ef417c9")
+		(pin "26"
+			(uuid "f269d633-f710-4256-9629-a5b794ec73fd")
+		)
+		(pin "7"
+			(uuid "c3423a3c-4c96-4940-b018-92716c144aae")
+		)
+		(pin "30"
+			(uuid "d2a1d3f2-1b51-4d82-886f-281bc76d8c53")
+		)
+		(pin "13"
+			(uuid "425eab0e-c056-4b1b-ac20-421451842df9")
 		)
 		(pin "15"
-			(uuid "d02d4d06-8d99-43d2-9514-10e3939b40d1")
+			(uuid "dd23670c-0f03-4fbd-a77a-26b712f9c77c")
+		)
+		(pin "5"
+			(uuid "fb1b7d28-d1ef-4525-bb0d-f31654fd3f56")
+		)
+		(pin "23"
+			(uuid "7c82b025-a3bd-447d-9148-be01141b48c5")
+		)
+		(pin "10"
+			(uuid "1b5b9079-c748-4779-92ef-8d7bf32b91c8")
+		)
+		(pin "MH2"
+			(uuid "0fb73bc8-f7dd-41ad-b75e-5bc71b90f98b")
+		)
+		(pin "32"
+			(uuid "41b00b96-05b6-4f00-ad52-c3491cabf3e9")
+		)
+		(pin "1"
+			(uuid "6e5d4d7d-c77c-4067-a663-008f4f517367")
+		)
+		(pin "34"
+			(uuid "e15e1b64-8e32-41b5-bfd7-c3947e6571c6")
+		)
+		(pin "35"
+			(uuid "28e74a04-9448-4831-8766-f7d554ac0df3")
+		)
+		(pin "6"
+			(uuid "e0154ed6-c625-46f2-91f1-0ea8d2b4d580")
+		)
+		(pin "11"
+			(uuid "24e20bc2-c3a0-4a7d-b48f-b6cfe03d448e")
+		)
+		(pin "12"
+			(uuid "9fd64f78-b19b-4a18-9843-4b13240d19ee")
+		)
+		(pin "14"
+			(uuid "3fa53f70-22e4-4bbf-a5e8-9e56c2e3756e")
+		)
+		(pin "17"
+			(uuid "0211bc32-5c20-4812-aae2-e5571dbdcb3e")
+		)
+		(pin "25"
+			(uuid "995a2f50-c579-40a8-a61b-fd9ccea1b848")
+		)
+		(pin "37"
+			(uuid "2e9e9658-e675-4b4c-a3a7-b91388755089")
+		)
+		(pin "18"
+			(uuid "a60cd5a4-063d-4b9f-b476-fe4bc821fd44")
+		)
+		(pin "27"
+			(uuid "b97a69c0-9671-4b4f-8e65-944e12263827")
+		)
+		(pin "28"
+			(uuid "e3c5d4ae-aebd-4700-af11-c87975bec0e9")
+		)
+		(pin "4"
+			(uuid "28b942f1-0051-4848-a42c-6fd5ed19a809")
+		)
+		(pin "24"
+			(uuid "95fa490b-6fb1-4469-8ab3-3ebb0cc07d6a")
+		)
+		(pin "33"
+			(uuid "8556b46c-ce41-4947-8090-869abc7779ca")
+		)
+		(pin "MH1"
+			(uuid "9cbe565a-2127-45ca-a093-1d798311d85f")
+		)
+		(pin "31"
+			(uuid "2c859231-a695-4cce-bb94-01d3cfd431d6")
+		)
+		(pin "29"
+			(uuid "5a5b34fc-708f-4608-b736-2b6848e7360d")
+		)
+		(pin "2"
+			(uuid "089ef2d4-87fd-4d0b-aef4-73c204fa7c30")
+		)
+		(pin "8"
+			(uuid "0b3a18f4-b4c3-4061-9afb-6f555f3b67fb")
+		)
+		(pin "19"
+			(uuid "bef5b00d-5956-471b-8c1e-3208682e3518")
+		)
+		(pin "3"
+			(uuid "1c8c3f03-4985-4287-9dcb-b58071228a3a")
 		)
 		(instances
 			(project ""
@@ -5356,7 +5433,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ecab8e47-80d2-4e90-9e79-437e4889cc02")
-		(property "Reference" "R5"
+		(property "Reference" "R6"
 			(at 149.86 74.9299 0)
 			(effects
 				(font
@@ -5410,7 +5487,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R5")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -5496,7 +5573,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc309413-5c70-4ebf-8458-51a0534a4f9a")
-		(property "Reference" "H2"
+		(property "Reference" "H1"
 			(at 35.56 166.3699 0)
 			(effects
 				(font
@@ -5547,7 +5624,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H2")
+					(reference "H1")
 					(unit 1)
 				)
 			)
