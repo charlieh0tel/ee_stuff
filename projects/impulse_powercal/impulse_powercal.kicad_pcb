@@ -126,7 +126,7 @@
 		(descr "747252-4-1")
 		(tags "Connector")
 		(property "Reference" "J5"
-			(at -33.5 -14.35 360)
+			(at -33.5 -14.35 0)
 			(layer "F.SilkS")
 			(uuid "e6617a64-ecfd-4ab5-8208-dfba308b50ad")
 			(effects
@@ -137,7 +137,7 @@
 			)
 		)
 		(property "Value" "7472524-SINGLE"
-			(at 0 -3.56 360)
+			(at 0 -3.56 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "35873af1-26db-419b-a0f0-0c57b3ecac18")
@@ -149,7 +149,7 @@
 			)
 		)
 		(property "Footprint" "impulse_powercal:7472524"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4e3a058b-4827-4d33-9f69-aad29b99050f")
@@ -161,7 +161,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6ef450eb-99d4-41b5-8cd4-1429a6463ff7")
@@ -173,7 +173,7 @@
 			)
 		)
 		(property "Description" "37-pin male plug pin D-SUB connector, Mounting Hole"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "14d52f07-5621-4e5d-8a47-a401a77023a7")
@@ -392,7 +392,7 @@
 			(uuid "34e7bd2e-69cc-4f8f-8244-e99e468dff4f")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -3.56 360)
+			(at 0 -3.56 0)
 			(layer "F.Fab")
 			(uuid "756b3503-b7fb-4d7c-a80e-51ecb68d62cd")
 			(effects
@@ -4189,8 +4189,8 @@
 		)
 	)
 	(gr_rect
-		(start 57.075 87.2)
-		(end 82.5 97.5)
+		(start 64.2875 102.25)
+		(end 89.7125 112.05)
 		(stroke
 			(width 0.1)
 			(type solid)
@@ -4198,6 +4198,16 @@
 		(fill solid)
 		(layer "F.SilkS")
 		(uuid "a554488a-f804-4368-bb8c-2b1bc565896d")
+	)
+	(gr_line
+		(start 70 85)
+		(end 70 97.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "2cf15c48-dcf2-42ff-8dae-0000ca0765ce")
 	)
 	(gr_line
 		(start 55 108.5)
@@ -4218,6 +4228,36 @@
 		)
 		(layer "Dwgs.User")
 		(uuid "54a4af2b-bb36-4a01-88b4-22f86cd3c91b")
+	)
+	(gr_line
+		(start 70 97.5)
+		(end 57.5 97.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "7905e1a9-8904-4afe-913a-fcc1268c0695")
+	)
+	(gr_line
+		(start 57.5 97.5)
+		(end 57.5 85)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "90c7f1d8-7587-4a0c-b803-ba717c72cdee")
+	)
+	(gr_line
+		(start 57.5 85)
+		(end 70 85)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "fe2c451b-2f19-4db4-a3e8-1a94ebc14cd0")
 	)
 	(gr_line
 		(start 139.75 60)
@@ -4317,7 +4357,7 @@
 		)
 	)
 	(gr_text "Impulse Labs\nHEB Power Cal\nv1.0 ch@"
-		(at 56.75 85 0)
+		(at 57 83.5 0)
 		(layer "F.SilkS")
 		(uuid "1546ed06-bb10-4d17-841a-ca2568184659")
 		(effects
@@ -4338,6 +4378,18 @@
 				(size 1.5 1.5)
 				(thickness 0.3)
 				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "DATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\n########"
+		(at 57.75 94.75 0)
+		(layer "Dwgs.User")
+		(uuid "aea1fe4d-bbe9-4916-9bd6-ecb201efc12a")
+		(effects
+			(font
+				(size 0.9 0.9)
+				(thickness 0.15)
 			)
 			(justify left bottom)
 		)
