@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 3.0,
+          "height": 4.0,
+          "width": 4.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -131,7 +131,7 @@
         "min_track_width": 0.0,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.005,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -183,7 +183,12 @@
         0.5,
         1.0,
         2.0,
-        3.0
+        2.25,
+        2.5,
+        2.75,
+        3.0,
+        3.5,
+        4.0
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -235,7 +240,7 @@
   },
   "erc": {
     "erc_exclusions": [
-      "power_pin_not_driven|1473200|838200|4626490f-b523-4f74-a258-9ee7d2b3a4c9|00000000-0000-0000-0000-000000000000|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|"
+      "power_pin_not_driven|393700|812800|45eae636-f53b-458c-94d9-146882eb271b|00000000-0000-0000-0000-000000000000|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb|"
     ],
     "meta": {
       "version": 0
@@ -547,23 +552,11 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "",
+      "name": "Grouped By Value",
       "sort_asc": true,
       "sort_field": "Reference"
     },
