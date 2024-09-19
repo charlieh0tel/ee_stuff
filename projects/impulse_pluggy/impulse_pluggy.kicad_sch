@@ -167,330 +167,6 @@
 				)
 			)
 		)
-		(symbol "Connector:Conn_01x06_Pin"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x06_Pin"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x06, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x06_Pin_1_1"
-				(polyline
-					(pts
-						(xy 1.27 -7.62) (xy 0.8636 -7.62)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -5.08) (xy 0.8636 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy 0.8636 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 5.08) (xy 0.8636 5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 0.8636 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(pin passive line
-					(at 5.08 5.08 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -5.08 180)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -7.62 180)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector:Conn_01x06_Socket"
 			(pin_names
 				(offset 1.016) hide)
@@ -942,187 +618,6 @@
 				)
 			)
 		)
-		(symbol "Jumper:SolderJumper_2_Open"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim yes)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Solder Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "solder jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2656 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2656 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2656 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2656 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -1221,14 +716,46 @@
 		)
 	)
 	(junction
-		(at 115.57 91.44)
+		(at 88.9 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8bdedca9-df26-4a56-822b-c974064d00fe")
 	)
+	(no_connect
+		(at 95.25 91.44)
+		(uuid "21723ae3-df9f-4e9b-bdf4-b14999a9fce6")
+	)
+	(no_connect
+		(at 95.25 104.14)
+		(uuid "2b175831-4de0-492d-adb0-2ae720ba59a7")
+	)
+	(no_connect
+		(at 95.25 96.52)
+		(uuid "4eea93ce-dcc8-4684-a67d-fbad703643ca")
+	)
+	(no_connect
+		(at 95.25 85.09)
+		(uuid "5a001e85-3552-45d7-a75d-9bf24a4a1cea")
+	)
+	(no_connect
+		(at 95.25 82.55)
+		(uuid "614ea811-699a-4b94-b843-353e625d2678")
+	)
+	(no_connect
+		(at 95.25 93.98)
+		(uuid "9f14b5c4-e0fe-4608-b24f-d5154a4d2de9")
+	)
+	(no_connect
+		(at 95.25 101.6)
+		(uuid "d1e2bda4-0c7d-4c1e-b4e5-6f90b34daa52")
+	)
+	(no_connect
+		(at 95.25 99.06)
+		(uuid "e061cee1-bb2c-421f-b02c-063f9fb357cf")
+	)
 	(wire
 		(pts
-			(xy 115.57 91.44) (xy 115.57 109.22)
+			(xy 88.9 91.44) (xy 88.9 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1278,7 +805,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 91.44 82.55)
+			(xy 73.66 82.55) (xy 95.25 82.55)
 		)
 		(stroke
 			(width 0)
@@ -1288,27 +815,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 82.55) (xy 100.33 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b77f96f-4b0e-4a7c-9a87-e74aeb23d884")
-	)
-	(wire
-		(pts
-			(xy 100.33 82.55) (xy 100.33 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2369d3ef-1c71-4d16-a241-47172986b27f")
-	)
-	(wire
-		(pts
-			(xy 73.66 104.14) (xy 121.92 104.14)
+			(xy 73.66 104.14) (xy 95.25 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1328,7 +835,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 91.44) (xy 115.57 91.44)
+			(xy 73.66 91.44) (xy 88.9 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1338,7 +845,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 91.44) (xy 121.92 91.44)
+			(xy 88.9 91.44) (xy 95.25 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1358,7 +865,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 93.98) (xy 121.92 93.98)
+			(xy 73.66 93.98) (xy 95.25 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1378,7 +885,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 101.6) (xy 121.92 101.6)
+			(xy 73.66 101.6) (xy 95.25 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1408,7 +915,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 99.06) (xy 121.92 99.06)
+			(xy 73.66 99.06) (xy 95.25 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1418,7 +925,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 96.52) (xy 121.92 96.52)
+			(xy 73.66 96.52) (xy 95.25 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1528,7 +1035,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 85.09) (xy 100.33 85.09)
+			(xy 73.66 85.09) (xy 95.25 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1741,7 +1248,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "047238b9-bd29-4978-b7c2-04534e86271e")
 		(property "Reference" "J6"
 			(at 66.04 82.804 0)
@@ -1759,7 +1266,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 82.55 0)
 			(effects
 				(font
@@ -1803,7 +1310,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 49.53 90)
+		(at 90.17 49.53 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1811,7 +1318,7 @@
 		(dnp no)
 		(uuid "0b25e713-5501-4b7d-911f-50dbbda998b8")
 		(property "Reference" "R2"
-			(at 99.822 46.99 90)
+			(at 100.076 49.022 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1819,7 +1326,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 99.822 49.53 90)
+			(at 100.076 51.562 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1827,7 +1334,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 51.308 90)
+			(at 90.17 47.752 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1896,7 +1403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 71.12 0)
 			(effects
 				(font
@@ -1967,7 +1474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 58.42 0)
 			(effects
 				(font
@@ -2010,86 +1517,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x06_Pin")
-		(at 127 96.52 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "4a1b3223-3b99-4d1f-9563-5fa7cd4d00dd")
-		(property "Reference" "J11"
-			(at 133.35 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x06_Pin"
-			(at 138.938 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
-			(at 127 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 127 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x06, script generated"
-			(at 127 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "ebd7c205-df98-4083-ab35-f0b2e1855fae")
-		)
-		(pin "3"
-			(uuid "8ec500b9-ec53-4439-9886-345c85c5000f")
-		)
-		(pin "1"
-			(uuid "7b285ea1-314d-4544-a613-01fa9879874c")
-		)
-		(pin "4"
-			(uuid "998598a0-fcd6-4fdf-9171-75c7286a9ff1")
-		)
-		(pin "2"
-			(uuid "2964bacf-501f-45b7-8c06-10119567fe6b")
-		)
-		(pin "6"
-			(uuid "43109275-ec60-41e4-b063-923fa5d4d365")
-		)
-		(instances
-			(project ""
-				(path "/76bb9dec-8a85-4610-a158-592c61e529b4"
-					(reference "J11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x02_Socket")
 		(at 68.58 64.77 0)
 		(mirror y)
@@ -2118,7 +1545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 64.77 0)
 			(effects
 				(font
@@ -2162,7 +1589,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 58.42 90)
+		(at 90.17 58.42 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2170,7 +1597,7 @@
 		(dnp no)
 		(uuid "5f2c27b4-f5b0-4a19-9e20-83682dc4b529")
 		(property "Reference" "R3"
-			(at 99.822 55.88 90)
+			(at 100.33 57.658 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2178,7 +1605,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 99.822 58.42 90)
+			(at 100.33 60.198 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2186,7 +1613,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 60.198 90)
+			(at 90.17 56.642 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2229,7 +1656,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 64.77 90)
+		(at 90.17 64.77 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2237,7 +1664,7 @@
 		(dnp no)
 		(uuid "753f40ca-157b-4718-b7ee-355339909ca3")
 		(property "Reference" "R4"
-			(at 99.822 62.23 90)
+			(at 100.584 64.262 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2245,7 +1672,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 99.822 64.77 90)
+			(at 100.584 66.802 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2253,7 +1680,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 66.548 90)
+			(at 90.17 62.992 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2296,7 +1723,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 43.18 90)
+		(at 90.17 43.18 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2304,7 +1731,7 @@
 		(dnp no)
 		(uuid "8893875f-fe1f-4617-ab0a-5830e5809e49")
 		(property "Reference" "R1"
-			(at 99.822 40.64 90)
+			(at 99.822 42.418 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2312,7 +1739,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 99.822 43.18 90)
+			(at 99.822 44.958 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2320,7 +1747,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 44.958 90)
+			(at 90.17 41.402 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2363,7 +1790,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 71.12 90)
+		(at 90.17 71.12 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2371,7 +1798,7 @@
 		(dnp no)
 		(uuid "8b2d40e7-50ca-46d4-9fda-56a850a5b5e1")
 		(property "Reference" "R5"
-			(at 99.822 68.58 90)
+			(at 100.584 70.612 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2379,7 +1806,7 @@
 			)
 		)
 		(property "Value" "R"
-			(at 99.822 71.12 90)
+			(at 100.584 73.152 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2387,7 +1814,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 90.17 72.898 90)
+			(at 90.17 69.342 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2436,7 +1863,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "8e9542dc-94eb-4d16-9862-c76f47201c50")
 		(property "Reference" "J7"
 			(at 67.056 95.25 0)
@@ -2456,7 +1883,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-106-L-SV-BE"
 			(at 68.58 96.52 0)
 			(effects
 				(font
@@ -2539,7 +1966,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 49.53 0)
 			(effects
 				(font
@@ -2582,75 +2009,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 95.25 82.55 180)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "c7470adc-c434-4ee7-96b0-54d0f5b5b503")
-		(property "Reference" "JP1"
-			(at 115.062 82.042 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_2_Open"
-			(at 115.062 84.582 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm"
-			(at 95.25 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 95.25 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 95.25 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "502c2e5b-68b2-4179-aaed-b2d8ff2be80b")
-		)
-		(pin "1"
-			(uuid "1a3df93f-5702-4c2f-86aa-9990a5fc4048")
-		)
-		(instances
-			(project ""
-				(path "/76bb9dec-8a85-4610-a158-592c61e529b4"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 115.57 109.22 0)
+		(at 88.9 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2659,7 +2019,7 @@
 		(fields_autoplaced yes)
 		(uuid "f21c4b0b-f056-4cac-9cad-f2179544e553")
 		(property "Reference" "#PWR01"
-			(at 115.57 115.57 0)
+			(at 88.9 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2668,7 +2028,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 115.57 114.3 0)
+			(at 88.9 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2676,7 +2036,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 109.22 0)
+			(at 88.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2685,7 +2045,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 109.22 0)
+			(at 88.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2694,7 +2054,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 109.22 0)
+			(at 88.9 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2743,7 +2103,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "impulse_pluggy:SAMTEC_SSM-102-L-SV-BE"
 			(at 68.58 43.18 0)
 			(effects
 				(font
