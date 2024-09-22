@@ -4585,7 +4585,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02"
-			(at 1.27 4.16 360)
+			(at 1.27 4.16 0)
 			(layer "F.Fab")
 			(uuid "b816310b-0bfc-475f-ab2a-6a43bcc16a44")
 			(effects
@@ -4932,7 +4932,7 @@
 			(uuid "5d31b894-0dba-4973-85c1-ed3436856bc3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 1.27 2 360)
+			(at 1.27 2 0)
 			(layer "F.Fab")
 			(uuid "498ae007-d48d-45bc-8df0-98ac14696dd5")
 			(effects
@@ -6471,7 +6471,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "8c4cbd1c-6921-43d5-b407-68725a45622a")
@@ -7438,7 +7438,7 @@
 				)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "2000"
 			(at 0 1.65 180)
 			(layer "F.Fab")
 			(uuid "1153fc80-f84a-488e-af4f-0977764d5dca")

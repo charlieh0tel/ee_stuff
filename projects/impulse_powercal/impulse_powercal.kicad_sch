@@ -3056,7 +3056,7 @@
 		(uuid "2982ea63-fbbe-409f-bbc9-bfc8a5941f4b")
 	)
 	(junction
-		(at 48.26 101.6)
+		(at 52.07 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c093ad9-a76c-4e63-b5d9-fbf7708e2ed1")
@@ -3086,7 +3086,7 @@
 		(uuid "3405a3b7-5827-4e60-947a-2dfe4db9e576")
 	)
 	(junction
-		(at 182.88 71.12)
+		(at 185.42 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3cad84cc-1866-4473-b65f-17516109dc39")
@@ -3176,7 +3176,7 @@
 		(uuid "d97b0d00-a1ca-4a28-bb2e-3c81d4c0c9d2")
 	)
 	(junction
-		(at 177.8 44.45)
+		(at 180.34 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db37e321-e65a-434e-80b0-f57ca436d772")
@@ -3379,7 +3379,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 99.06) (xy 48.26 101.6)
+			(xy 52.07 99.06) (xy 52.07 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3399,7 +3399,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 101.6) (xy 48.26 101.6)
+			(xy 48.26 101.6) (xy 52.07 101.6)
 		)
 		(stroke
 			(width 0)
@@ -3459,7 +3459,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 99.06) (xy 71.12 92.71)
+			(xy 101.6 138.43) (xy 101.6 132.08)
 		)
 		(stroke
 			(width 0)
@@ -3579,7 +3579,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 99.06) (xy 71.12 99.06)
+			(xy 97.79 138.43) (xy 101.6 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3589,7 +3589,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 71.12) (xy 182.88 71.12)
+			(xy 167.64 71.12) (xy 185.42 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3719,7 +3719,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 101.6) (xy 48.26 109.22)
+			(xy 52.07 101.6) (xy 52.07 109.22)
 		)
 		(stroke
 			(width 0)
@@ -3749,7 +3749,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 99.06) (xy 48.26 99.06)
+			(xy 48.26 99.06) (xy 52.07 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3769,7 +3769,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 71.12) (xy 198.12 71.12)
+			(xy 185.42 71.12) (xy 200.66 71.12)
 		)
 		(stroke
 			(width 0)
@@ -3839,7 +3839,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 63.5) (xy 182.88 71.12)
+			(xy 185.42 63.5) (xy 185.42 71.12)
 		)
 		(stroke
 			(width 0)
@@ -4039,7 +4039,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 44.45) (xy 198.12 44.45)
+			(xy 180.34 44.45) (xy 200.66 44.45)
 		)
 		(stroke
 			(width 0)
@@ -4169,7 +4169,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 101.6) (xy 71.12 109.22)
+			(xy 101.6 140.97) (xy 101.6 148.59)
 		)
 		(stroke
 			(width 0)
@@ -4309,7 +4309,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 58.42) (xy 177.8 44.45)
+			(xy 180.34 58.42) (xy 180.34 44.45)
 		)
 		(stroke
 			(width 0)
@@ -4579,7 +4579,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 101.6) (xy 71.12 101.6)
+			(xy 97.79 140.97) (xy 101.6 140.97)
 		)
 		(stroke
 			(width 0)
@@ -4609,7 +4609,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 44.45) (xy 177.8 44.45)
+			(xy 167.64 44.45) (xy 180.34 44.45)
 		)
 		(stroke
 			(width 0)
@@ -4750,7 +4750,7 @@
 		(uuid "0cafed41-65bf-4fba-bfc1-90f48864c3e8")
 	)
 	(label "AIN0{slash}1_N"
-		(at 189.23 71.12 0)
+		(at 191.77 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4772,7 +4772,7 @@
 		(uuid "1f576026-de16-4ff8-93cc-9cf6d711a8d4")
 	)
 	(label "AIN0{slash}1_P"
-		(at 189.23 44.45 0)
+		(at 191.77 44.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5158,7 +5158,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 39.37 101.6 180)
+		(at 43.18 101.6 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5167,7 +5167,7 @@
 		(fields_autoplaced yes)
 		(uuid "0702ad1c-3ad0-4717-a1e5-8018aa9b1c5f")
 		(property "Reference" "J7"
-			(at 39.37 92.71 0)
+			(at 43.18 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5175,7 +5175,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02"
-			(at 39.37 95.25 0)
+			(at 43.18 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5183,7 +5183,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal"
-			(at 39.37 101.6 0)
+			(at 43.18 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5192,7 +5192,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 39.37 101.6 0)
+			(at 43.18 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5201,7 +5201,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 39.37 101.6 0)
+			(at 43.18 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5226,7 +5226,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 71.12 109.22 0)
+		(at 101.6 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5235,7 +5235,7 @@
 		(fields_autoplaced yes)
 		(uuid "091a8133-208b-4e54-b3ad-2db5963769da")
 		(property "Reference" "#PWR014"
-			(at 71.12 115.57 0)
+			(at 101.6 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5244,7 +5244,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 71.12 114.3 0)
+			(at 101.6 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5252,7 +5252,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 109.22 0)
+			(at 101.6 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5261,7 +5261,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 109.22 0)
+			(at 101.6 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5270,7 +5270,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 71.12 109.22 0)
+			(at 101.6 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6239,7 +6239,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 48.26 109.22 0)
+		(at 52.07 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6248,7 +6248,7 @@
 		(fields_autoplaced yes)
 		(uuid "4f59dc68-0069-427e-93d3-3522bde9ab32")
 		(property "Reference" "#PWR03"
-			(at 48.26 115.57 0)
+			(at 52.07 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6257,7 +6257,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 48.26 114.3 0)
+			(at 52.07 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6265,7 +6265,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 109.22 0)
+			(at 52.07 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6274,7 +6274,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 109.22 0)
+			(at 52.07 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6283,7 +6283,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 48.26 109.22 0)
+			(at 52.07 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6584,7 +6584,7 @@
 				)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "2000"
 			(at 140.97 67.31 90)
 			(effects
 				(font
@@ -6704,7 +6704,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
-		(at 182.88 58.42 0)
+		(at 185.42 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6713,7 +6713,7 @@
 		(fields_autoplaced yes)
 		(uuid "78ef4f93-03ba-4c08-b968-1e5036996f31")
 		(property "Reference" "J1"
-			(at 186.69 57.4431 0)
+			(at 189.23 57.4431 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6722,7 +6722,7 @@
 			)
 		)
 		(property "Value" "Conn_Coaxial"
-			(at 186.69 59.9831 0)
+			(at 189.23 59.9831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6731,7 +6731,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132291-12_Vertical"
-			(at 182.88 58.42 0)
+			(at 185.42 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6740,7 +6740,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 182.88 58.42 0)
+			(at 185.42 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6749,7 +6749,7 @@
 			)
 		)
 		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 182.88 58.42 0)
+			(at 185.42 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7317,7 +7317,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 62.23 101.6 180)
+		(at 92.71 140.97 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7326,7 +7326,7 @@
 		(fields_autoplaced yes)
 		(uuid "b04680b9-a120-47d2-9325-77ae3ec0ddc7")
 		(property "Reference" "J8"
-			(at 62.23 92.71 0)
+			(at 92.71 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7334,7 +7334,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02"
-			(at 62.23 95.25 0)
+			(at 92.71 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7342,7 +7342,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal"
-			(at 62.23 101.6 0)
+			(at 92.71 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7351,7 +7351,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 62.23 101.6 0)
+			(at 92.71 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7360,7 +7360,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 62.23 101.6 0)
+			(at 92.71 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7583,7 +7583,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "0"
 			(at 132.08 133.3499 0)
 			(effects
 				(font
@@ -7905,7 +7905,7 @@
 	)
 	(symbol
 		(lib_id "power:+VDC")
-		(at 71.12 92.71 0)
+		(at 101.6 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7914,7 +7914,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebaa84e2-acf7-4b60-af01-8b18ee96adbe")
 		(property "Reference" "#PWR015"
-			(at 71.12 95.25 0)
+			(at 101.6 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7923,7 +7923,7 @@
 			)
 		)
 		(property "Value" "+VDC"
-			(at 71.12 85.09 0)
+			(at 101.6 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7931,7 +7931,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 92.71 0)
+			(at 101.6 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7940,7 +7940,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 92.71 0)
+			(at 101.6 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7949,7 +7949,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+VDC\""
-			(at 71.12 92.71 0)
+			(at 101.6 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
