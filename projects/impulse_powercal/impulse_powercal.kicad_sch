@@ -3459,6 +3459,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 99.06) (xy 71.12 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e55a7ec-2f9f-4435-98e3-376c61d2ee1a")
+	)
+	(wire
+		(pts
 			(xy 260.35 142.24) (xy 260.35 144.78)
 		)
 		(stroke
@@ -3566,6 +3576,16 @@
 			(type default)
 		)
 		(uuid "26d9ff71-f8fc-4c47-948c-eede7eb2efa8")
+	)
+	(wire
+		(pts
+			(xy 67.31 99.06) (xy 71.12 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c8de29a-18d7-4405-852a-9416ab157231")
 	)
 	(wire
 		(pts
@@ -4149,6 +4169,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.12 101.6) (xy 71.12 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3dfe234-d6ec-48b9-96bf-3e2b02bb6f22")
+	)
+	(wire
+		(pts
 			(xy 234.95 109.22) (xy 252.73 109.22)
 		)
 		(stroke
@@ -4546,6 +4576,16 @@
 			(type default)
 		)
 		(uuid "e8353dda-ae78-43f4-ae7e-91694dd58687")
+	)
+	(wire
+		(pts
+			(xy 67.31 101.6) (xy 71.12 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e871b679-eaec-4c81-afa0-cffe34657959")
 	)
 	(wire
 		(pts
@@ -5126,7 +5166,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0702ad1c-3ad0-4717-a1e5-8018aa9b1c5f")
-		(property "Reference" "J6"
+		(property "Reference" "J7"
 			(at 39.37 92.71 0)
 			(effects
 				(font
@@ -5178,7 +5218,73 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J6")
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 71.12 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "091a8133-208b-4e54-b3ad-2db5963769da")
+		(property "Reference" "#PWR014"
+			(at 71.12 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 71.12 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0d212033-f765-4818-8a71-d3d90298c44d")
+		)
+		(instances
+			(project "impulse_powercal"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -5194,7 +5300,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1885e210-14bf-4432-88f8-d2ded84703c3")
-		(property "Reference" "J3"
+		(property "Reference" "J2"
 			(at 120.65 57.4431 0)
 			(effects
 				(font
@@ -5212,7 +5318,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132291-12_Vertical"
 			(at 116.84 58.42 0)
 			(effects
 				(font
@@ -5248,7 +5354,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J3")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5330,7 +5436,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1fc12f19-7a75-4b44-ba90-6460f2cbdafa")
-		(property "Reference" "R10"
+		(property "Reference" "R1"
 			(at 149.86 48.2599 0)
 			(effects
 				(font
@@ -5384,7 +5490,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R10")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -5466,7 +5572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "232985c4-52a0-4880-b637-d0d877d2bef9")
-		(property "Reference" "J7"
+		(property "Reference" "J9"
 			(at 152.4 110.49 0)
 			(effects
 				(font
@@ -5589,7 +5695,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J7")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -5671,7 +5777,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "321e442b-6d67-46f6-8a77-8b8bb6155d9a")
-		(property "Reference" "C1"
+		(property "Reference" "C2"
 			(at 161.29 48.2599 0)
 			(effects
 				(font
@@ -5680,7 +5786,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1u"
 			(at 161.29 50.7999 0)
 			(effects
 				(font
@@ -5725,7 +5831,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "C1")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -5875,7 +5981,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37351422-c8c2-4323-be20-de0cb9718d82")
-		(property "Reference" "H2"
+		(property "Reference" "H3"
 			(at 64.77 168.9099 0)
 			(effects
 				(font
@@ -5926,7 +6032,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H2")
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -5942,7 +6048,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3aa80540-f87e-442f-9f66-f34411042273")
-		(property "Reference" "R4"
+		(property "Reference" "R6"
 			(at 81.28 63.4999 0)
 			(effects
 				(font
@@ -5996,7 +6102,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R4")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -6011,7 +6117,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4781194f-ea92-427d-b69a-b65678c3a358")
-		(property "Reference" "J1"
+		(property "Reference" "J3"
 			(at 93.98 48.006 0)
 			(effects
 				(font
@@ -6060,7 +6166,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J1")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -6272,7 +6378,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59f06413-7217-438f-a482-43dea45c543f")
-		(property "Reference" "J4"
+		(property "Reference" "J6"
 			(at 93.98 77.978 0)
 			(effects
 				(font
@@ -6321,7 +6427,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J4")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -6403,7 +6509,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70f372f4-3eae-4fd1-abc9-7076c668bfcf")
-		(property "Reference" "H3"
+		(property "Reference" "H2"
 			(at 38.1 176.5299 0)
 			(effects
 				(font
@@ -6454,7 +6560,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "H3")
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -6470,7 +6576,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "730f969d-42b5-4118-ac88-89556ffed1bd")
-		(property "Reference" "R6"
+		(property "Reference" "R3"
 			(at 140.97 64.77 90)
 			(effects
 				(font
@@ -6478,7 +6584,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "1u"
 			(at 140.97 67.31 90)
 			(effects
 				(font
@@ -6522,7 +6628,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R6")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -6538,7 +6644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7494bcc1-4a7e-4d54-895d-870345eb2287")
-		(property "Reference" "R1"
+		(property "Reference" "R2"
 			(at 140.97 38.1 90)
 			(effects
 				(font
@@ -6546,7 +6652,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "2000"
 			(at 140.97 40.64 90)
 			(effects
 				(font
@@ -6590,7 +6696,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R1")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -6606,7 +6712,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78ef4f93-03ba-4c08-b968-1e5036996f31")
-		(property "Reference" "J9"
+		(property "Reference" "J1"
 			(at 186.69 57.4431 0)
 			(effects
 				(font
@@ -6624,7 +6730,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132291-12_Vertical"
 			(at 182.88 58.42 0)
 			(effects
 				(font
@@ -6660,7 +6766,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J9")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -6743,7 +6849,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "90072bdb-9fa0-43b0-bdb5-6d84e4315cef")
-		(property "Reference" "R2"
+		(property "Reference" "R8"
 			(at 66.04 63.4999 0)
 			(effects
 				(font
@@ -6797,7 +6903,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R2")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -6883,7 +6989,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95282ea1-e3e9-4151-98f1-69e199d2bad7")
-		(property "Reference" "J2"
+		(property "Reference" "J4"
 			(at 31.75 67.31 0)
 			(effects
 				(font
@@ -6935,7 +7041,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J2")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -7083,7 +7189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7c6af01-be71-47bc-bc1f-f4657b9d9c9e")
-		(property "Reference" "C2"
+		(property "Reference" "C3"
 			(at 161.29 74.9299 0)
 			(effects
 				(font
@@ -7092,7 +7198,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1u"
 			(at 161.29 77.4699 0)
 			(effects
 				(font
@@ -7137,7 +7243,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "C2")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -7204,6 +7310,74 @@
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 62.23 101.6 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b04680b9-a120-47d2-9325-77ae3ec0ddc7")
+		(property "Reference" "J8"
+			(at 62.23 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 62.23 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal"
+			(at 62.23 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.23 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 62.23 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "34193a03-297e-4f89-bf35-72ca9ca28628")
+		)
+		(pin "2"
+			(uuid "6cde678a-e839-4956-95b6-a88ccf8599cc")
+		)
+		(instances
+			(project "impulse_powercal"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -7400,7 +7574,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d958cd16-10f4-403b-a1b9-c51997654157")
-		(property "Reference" "R7"
+		(property "Reference" "R10"
 			(at 132.08 130.8099 0)
 			(effects
 				(font
@@ -7454,7 +7628,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R7")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -7470,7 +7644,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "df31710d-fce3-4161-ba9e-896af7c4590d")
-		(property "Reference" "J8"
+		(property "Reference" "J10"
 			(at 28.702 141.478 0)
 			(effects
 				(font
@@ -7486,7 +7660,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock_RND:TerminalBlock_RND_205-00287_1x02_P5.08mm_Horizontal"
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal"
 			(at 43.18 138.43 0)
 			(effects
 				(font
@@ -7522,7 +7696,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "J8")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -7537,7 +7711,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e1caea69-9ebd-4560-bf66-d67f549abb1d")
-		(property "Reference" "C3"
+		(property "Reference" "C1"
 			(at 171.45 55.8799 0)
 			(effects
 				(font
@@ -7546,7 +7720,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "500n"
 			(at 171.45 58.4199 0)
 			(effects
 				(font
@@ -7591,7 +7765,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "C3")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -7730,6 +7904,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+VDC")
+		(at 71.12 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebaa84e2-acf7-4b60-af01-8b18ee96adbe")
+		(property "Reference" "#PWR015"
+			(at 71.12 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+VDC"
+			(at 71.12 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+VDC\""
+			(at 71.12 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "594c9d4a-2df1-4d04-bdd0-aa8bad200bb0")
+		)
+		(instances
+			(project "impulse_powercal"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 147.32 76.2 0)
 		(unit 1)
@@ -7739,7 +7979,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ecab8e47-80d2-4e90-9e79-437e4889cc02")
-		(property "Reference" "R8"
+		(property "Reference" "R4"
 			(at 149.86 74.9299 0)
 			(effects
 				(font
@@ -7793,7 +8033,7 @@
 		(instances
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R8")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -7946,7 +8186,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff9f4a54-ced2-4fa7-8ae0-0fbd82a964f8")
-		(property "Reference" "R3"
+		(property "Reference" "R7"
 			(at 73.66 63.4999 0)
 			(effects
 				(font
@@ -8000,7 +8240,7 @@
 		(instances
 			(project "impulse_powercal"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
-					(reference "R3")
+					(reference "R7")
 					(unit 1)
 				)
 			)
