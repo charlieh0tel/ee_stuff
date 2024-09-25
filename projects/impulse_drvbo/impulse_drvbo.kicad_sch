@@ -3080,6 +3080,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 36.83) (xy 55.88 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01e0b4a9-54f2-4c4e-8687-9107504739ee")
+	)
+	(wire
+		(pts
 			(xy 82.55 91.44) (xy 82.55 86.36)
 		)
 		(stroke
@@ -3540,16 +3550,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 41.91) (xy 55.88 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "463fc060-eed4-4c5f-b8c2-8de507bba72f")
-	)
-	(wire
-		(pts
 			(xy 33.02 31.75) (xy 55.88 31.75)
 		)
 		(stroke
@@ -3777,16 +3777,6 @@
 			(type default)
 		)
 		(uuid "6451aeae-670e-499d-b001-8ddc753e82ed")
-	)
-	(wire
-		(pts
-			(xy 33.02 36.83) (xy 55.88 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6572b486-8241-4729-8169-35f93ce82d99")
 	)
 	(wire
 		(pts
@@ -4427,6 +4417,16 @@
 			(type default)
 		)
 		(uuid "d728d7c4-b30f-468a-8312-149cb1fcecf6")
+	)
+	(wire
+		(pts
+			(xy 24.13 41.91) (xy 55.88 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dce25320-c390-438f-937c-3bfd93ad9eff")
 	)
 	(wire
 		(pts
@@ -6666,6 +6666,54 @@
 			(justify left bottom)
 		)
 		(uuid "fedd9151-ae8b-40b4-9c10-f4751d2a1f77")
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 24.13 41.91 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "31e0dc49-8e78-49e2-aab6-be622205aac3")
+		(property "Netclass" "Power"
+			(at 21.59 41.2115 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 30.48 36.83 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "52582135-9936-474b-b9ca-7e4cb6be5c93")
+		(property "Netclass" "Power"
+			(at 27.94 36.1315 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:R")
