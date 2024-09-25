@@ -429,6 +429,85 @@
 				)
 			)
 		)
+		(symbol "Mechanical:Fiducial"
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "FID"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fiducial"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Fiducial Marker"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "fiducial marker"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Fiducial*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fiducial_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+		)
 		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers hide)
 			(pin_names
@@ -2873,6 +2952,12 @@
 		(uuid "6fcd5a21-7140-403d-aaa2-587fb6ee0049")
 	)
 	(junction
+		(at 121.92 238.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77112666-3a1f-415d-bac4-5eba926e4563")
+	)
+	(junction
 		(at 54.61 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2931,6 +3016,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d0a0f5e3-88e1-40b8-bed0-2dbbbe66c358")
+	)
+	(junction
+		(at 121.92 250.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4684736-f4c1-4b33-a2dc-5a154901c380")
 	)
 	(junction
 		(at 219.71 31.75)
@@ -3117,6 +3208,16 @@
 			(type default)
 		)
 		(uuid "0af84921-3108-4cf8-8eb6-2a9c064910d8")
+	)
+	(wire
+		(pts
+			(xy 135.89 248.92) (xy 135.89 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cba5f85-f241-4917-bcaf-5493c63f4913")
 	)
 	(wire
 		(pts
@@ -3610,6 +3711,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 238.76) (xy 121.92 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4faf8c23-5a56-46ac-a2d2-642ad315d9a9")
+	)
+	(wire
+		(pts
 			(xy 173.99 139.7) (xy 209.55 139.7)
 		)
 		(stroke
@@ -3820,6 +3931,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 241.3) (xy 135.89 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6efa4bc3-e86a-496e-9e9d-26ff2f4028e6")
+	)
+	(wire
+		(pts
 			(xy 229.87 163.83) (xy 229.87 165.1)
 		)
 		(stroke
@@ -3960,6 +4081,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 238.76) (xy 121.92 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d831de0-1110-42d3-bcff-d5d6dd369f81")
+	)
+	(wire
+		(pts
 			(xy 33.02 99.06) (xy 55.88 99.06)
 		)
 		(stroke
@@ -4017,6 +4148,16 @@
 			(type default)
 		)
 		(uuid "84f57b91-f248-4d00-b869-181622cba4d3")
+	)
+	(wire
+		(pts
+			(xy 121.92 241.3) (xy 121.92 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "854ccc0b-d9b7-44d2-98e9-2841482d9fdb")
 	)
 	(wire
 		(pts
@@ -4270,6 +4411,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 250.19) (xy 121.92 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9f6db2c-038b-4841-8ff6-aec0c44c7011")
+	)
+	(wire
+		(pts
 			(xy 217.17 58.42) (xy 219.71 58.42)
 		)
 		(stroke
@@ -4287,6 +4438,16 @@
 			(type default)
 		)
 		(uuid "b6380b42-f1f1-4e0a-a7b4-10ee5208db7e")
+	)
+	(wire
+		(pts
+			(xy 121.92 248.92) (xy 121.92 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b772fa46-7231-45ed-a66c-b3e59cf33cad")
 	)
 	(wire
 		(pts
@@ -4397,6 +4558,16 @@
 			(type default)
 		)
 		(uuid "cfd36629-022f-4060-8196-c849e5ddbd97")
+	)
+	(wire
+		(pts
+			(xy 135.89 250.19) (xy 121.92 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d31d025a-8362-44cb-80e2-7e0728c0699b")
 	)
 	(wire
 		(pts
@@ -6513,6 +6684,17 @@
 		)
 		(uuid "c79a005a-4a14-40ca-abd8-d2d799f96ce9")
 	)
+	(label "SHIELD"
+		(at 107.95 238.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c97b90de-8a0d-4eb6-a89c-cd7e77137dd0")
+	)
 	(label "PWM_A_H"
 		(at 217.17 201.93 0)
 		(fields_autoplaced yes)
@@ -6784,6 +6966,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:Fiducial")
+		(at 63.5 232.41 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0fd332d6-26b8-4082-9f35-adc632843922")
+		(property "Reference" "FID1"
+			(at 66.04 231.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Fiducial"
+			(at 66.04 233.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
+			(at 63.5 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fiducial Marker"
+			(at 63.5 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "FID1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 236.22 227.33 0)
 		(unit 1)
@@ -6910,6 +7156,70 @@
 			(project "impulse_drvbo"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:Fiducial")
+		(at 63.5 247.65 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "13ab397d-6678-4c81-832e-605edcd8fb38")
+		(property "Reference" "FID4"
+			(at 66.04 246.3799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Fiducial"
+			(at 66.04 248.9199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
+			(at 63.5 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fiducial Marker"
+			(at 63.5 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "FID4")
 					(unit 1)
 				)
 			)
@@ -7205,7 +7515,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "258ad7ab-1d1a-4c76-bfe9-cef22cb03eb8")
 		(property "Reference" "J4"
@@ -7275,7 +7585,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2835324a-9cf2-4880-860e-be0ed305fb92")
 		(property "Reference" "J6"
@@ -7569,7 +7879,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "38ee6e5f-f266-4292-af7e-4c125aa7ec07")
 		(property "Reference" "J8"
@@ -7902,7 +8212,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "53d707e7-4d69-4085-92b7-d7d0d92027a8")
 		(property "Reference" "J10"
@@ -8100,13 +8410,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 135.89 245.11 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6745f48b-c375-423e-bf9a-9ef54d1b80b7")
+		(property "Reference" "R9"
+			(at 133.35 243.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0"
+			(at 133.35 246.3799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 134.112 245.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 135.89 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "89ad1d75-60d1-4407-8ae4-efbe293036ef")
+		)
+		(pin "2"
+			(uuid "d19554e2-c43b-42fe-af18-3d3d691f2a59")
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_Coaxial")
 		(at 195.58 220.98 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "6961bca7-b4cd-4a05-a36d-131f8fd620b0")
 		(property "Reference" "J9"
@@ -8376,6 +8756,70 @@
 			(project "impulse_drvbo"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:Fiducial")
+		(at 63.5 237.49 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79116d98-ed25-4c7e-88c3-0612b26d0b96")
+		(property "Reference" "FID2"
+			(at 66.04 236.2199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Fiducial"
+			(at 66.04 238.7599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
+			(at 63.5 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fiducial Marker"
+			(at 63.5 237.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "FID2")
 					(unit 1)
 				)
 			)
@@ -8657,7 +9101,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "85dbd4ac-ac27-4c98-8e3b-62859bf39f59")
 		(property "Reference" "J3"
@@ -8715,6 +9159,70 @@
 			(project "impulse_drvbo"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:Fiducial")
+		(at 63.5 242.57 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "919d1330-963c-4fbc-84c8-772fb0ddbffe")
+		(property "Reference" "FID3"
+			(at 66.04 241.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Fiducial"
+			(at 66.04 243.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Fiducial:Fiducial_0.5mm_Mask1mm"
+			(at 63.5 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fiducial Marker"
+			(at 63.5 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "FID3")
 					(unit 1)
 				)
 			)
@@ -9075,6 +9583,85 @@
 			(project "impulse_drvbo"
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 121.92 245.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "a677906d-c9db-403e-8a35-0196e2d33d1f")
+		(property "Reference" "C8"
+			(at 125.73 243.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 125.73 246.3799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 122.8852 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 121.92 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" " C5199872"
+			(at 121.92 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aad015c6-775a-4caa-ac31-880a796f2f88")
+		)
+		(pin "2"
+			(uuid "296670b0-1486-4f37-82b7-c7dd50ba9499")
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -9846,7 +10433,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "dc55cd37-5b7d-4cfa-ac25-05cf232073c7")
 		(property "Reference" "J7"
@@ -9970,6 +10557,72 @@
 			(project ""
 				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
 					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 251.46 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ec662bf5-af66-4724-aa8e-2c432391548a")
+		(property "Reference" "#PWR020"
+			(at 121.92 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 121.92 256.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 251.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 251.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 121.92 251.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "614b17a0-d74a-4e16-98b2-7a251f7cc7fa")
+		)
+		(instances
+			(project "impulse_drvbo"
+				(path "/f8546dce-e2ff-44e2-b5c2-9c8da4722ddb"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
