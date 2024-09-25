@@ -5908,7 +5908,7 @@
 		)
 		(uuid "18c9e731-8ce2-42a8-8e9d-0e3b032961c7")
 	)
-	(label "I_DC_COIL"
+	(label "I_DC_BUS"
 		(at 176.53 110.49 0)
 		(fields_autoplaced yes)
 		(effects
