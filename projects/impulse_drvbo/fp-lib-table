@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "impulse_drvbo")(type "KiCad")(uri "${KIPRJMOD}/impulse_drvbo.pretty")(options "")(descr ""))
+)
