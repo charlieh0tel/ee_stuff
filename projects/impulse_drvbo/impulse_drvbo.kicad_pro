@@ -58,7 +58,16 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "solder_mask_bridge|122469315|124530681|18da6081-be68-44c6-81fe-c541797b89f9|c5fbd882-a640-4ed7-ba6b-8b5f38330833",
+        "solder_mask_bridge|126969315|122530681|efd5e698-5826-4488-9d50-1d8448f3096f|c5fbd882-a640-4ed7-ba6b-8b5f38330833",
+        "solder_mask_bridge|66030685|79469319|4b2dc198-f662-4574-b2d1-9cf71630f9c5|c5fbd882-a640-4ed7-ba6b-8b5f38330833",
+        "solder_mask_bridge|70458384|79002125|686a7a12-d458-4946-9135-7ad066a71d12|c5fbd882-a640-4ed7-ba6b-8b5f38330833",
+        "starved_thermal|141675000|91125000|c5fbd882-a640-4ed7-ba6b-8b5f38330833|88388239-d24c-494a-8317-e3c8ddfdb7eb|F.Cu",
+        "starved_thermal|141675000|93625000|c5fbd882-a640-4ed7-ba6b-8b5f38330833|776c24ae-2d2e-455d-a8ee-dc7600690695|F.Cu",
+        "starved_thermal|58325000|92375000|c5fbd882-a640-4ed7-ba6b-8b5f38330833|041fe34f-6967-4efa-81d0-90bb66e778ff|F.Cu",
+        "starved_thermal|58325000|94875000|c5fbd882-a640-4ed7-ba6b-8b5f38330833|7d93632b-c7a5-45bc-9a72-a4436a218596|F.Cu"
+      ],
       "meta": {
         "version": 2
       },
