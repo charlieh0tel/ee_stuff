@@ -2643,16 +2643,15 @@
 			)
 		)
 	)
-	(footprint "Connector_Wire:SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm"
+	(footprint "impulse_powercal:2.5sqmm_D2.5mm"
 		(layer "F.Cu")
 		(uuid "24ca90ed-fbba-43df-95b4-16e3519f2e5f")
 		(at 92.3 96.3)
-		(descr "Soldered wire connection, for a single 2.5 mm² wire, basic insulation, conductor diameter 2.4mm, outer diameter 3.6mm, size source Multi-Contact FLEXI-E 2.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 2.5sqmm")
 		(property "Reference" "J3"
-			(at -1.2 -3.2 0)
+			(at 0 -3.2 0)
 			(layer "F.SilkS")
-			(uuid "47226471-556e-4dfe-99c9-a55d7666e06e")
+			(uuid "3b31dbe1-498d-40f1-8d57-e2ea9d507f51")
 			(effects
 				(font
 					(size 1 1)
@@ -2663,7 +2662,7 @@
 		(property "Value" "Conn_01x01_Pin"
 			(at 0 3.2 0)
 			(layer "F.Fab")
-			(uuid "9754efc5-f0a6-4d27-9367-7247b09ced28")
+			(uuid "d76b0a13-6b6b-4472-9e2e-4e35cb3cfeb6")
 			(effects
 				(font
 					(size 1 1)
@@ -2671,12 +2670,12 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Wire:SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm"
+		(property "Footprint" "impulse_powercal:2.5sqmm_D2.5mm"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "47b9710d-ce9b-4cad-8641-d5a512b5da61")
+			(uuid "febbaf0f-e750-4cd6-8c82-320bded1a593")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2689,7 +2688,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "845b9770-96f6-469c-b00f-8194c1c7950d")
+			(uuid "f7ddf748-60a2-4387-be97-1dde784c4415")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2702,7 +2701,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "562d1276-b151-42a7-9ae3-6654e35794e6")
+			(uuid "f3d23a43-045a-45cb-8af1-cded1ea7bb91")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2723,7 +2722,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "e735a3bd-afff-41bc-ae19-8c2312cf9959")
+			(uuid "cca3bdd1-caf8-42df-a5bb-702371625648")
 		)
 		(fp_line
 			(start -2.55 2.5)
@@ -2733,7 +2732,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "a16411af-28d9-424f-815e-1975a7b716d8")
+			(uuid "3d7aedf0-8d31-448f-9c65-d9f9f7663efe")
 		)
 		(fp_line
 			(start 2.55 -2.5)
@@ -2743,7 +2742,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "d3b38002-7b53-436d-84d7-3a6d53392b05")
+			(uuid "77cadefd-f53b-48e9-a94a-035397eec18e")
 		)
 		(fp_line
 			(start 2.55 2.5)
@@ -2753,7 +2752,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "e9bd119a-b9b5-4cbe-8337-34cab9c072da")
+			(uuid "86740b48-e3b0-418c-b050-68b742e09c97")
 		)
 		(fp_circle
 			(center 0 0)
@@ -2764,12 +2763,12 @@
 			)
 			(fill none)
 			(layer "F.Fab")
-			(uuid "1a5a7a75-3a7a-48b1-81e0-a22fd1082bbe")
+			(uuid "5ed430cf-92c3-485a-ad72-4bca6faaea98")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "8081681b-baae-4e8c-a306-36b2f18527c2")
+			(uuid "20c2cc32-9c54-46c2-a6e7-8490a9c2d06f")
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -2780,14 +2779,14 @@
 		(pad "1" thru_hole roundrect
 			(at 0 0)
 			(size 4 4)
-			(drill 3)
+			(drill 2.5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.0625)
 			(net 5 "/HEAT_P")
 			(pinfunction "Pin_1")
 			(pintype "passive")
-			(uuid "53ecc24e-987b-4706-8897-69e89459790e")
+			(uuid "50f2f081-754f-4fb7-a61c-92e526bb7299")
 		)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Wire.3dshapes/SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm.wrl"
 			(offset
@@ -2801,16 +2800,15 @@
 			)
 		)
 	)
-	(footprint "Connector_Wire:SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm"
+	(footprint "impulse_powercal:2.5sqmm_D2.5mm"
 		(layer "F.Cu")
 		(uuid "2547187c-ec78-43ba-b39e-438d3bd6f81b")
 		(at 107.65 96.3)
-		(descr "Soldered wire connection, for a single 2.5 mm² wire, basic insulation, conductor diameter 2.4mm, outer diameter 3.6mm, size source Multi-Contact FLEXI-E 2.5 (https://ec.staubli.com/AcroFiles/Catalogues/TM_Cab-Main-11014119_(en)_hi.pdf), bend radius 3 times outer diameter, generated with kicad-footprint-generator")
 		(tags "connector wire 2.5sqmm")
 		(property "Reference" "J6"
-			(at 1.45 -3.3 0)
+			(at 0 -3.2 0)
 			(layer "F.SilkS")
-			(uuid "50e8c6df-c042-4670-9ba6-b24b12914e0c")
+			(uuid "110ec687-dfb8-480a-877a-ac423dba7136")
 			(effects
 				(font
 					(size 1 1)
@@ -2821,7 +2819,7 @@
 		(property "Value" "Conn_01x01_Pin"
 			(at 0 3.2 0)
 			(layer "F.Fab")
-			(uuid "980fb8c9-7e75-49b7-acc3-1cc9b7bd7cf1")
+			(uuid "e4b6d649-76ba-4f92-a090-e3cd2f9ee102")
 			(effects
 				(font
 					(size 1 1)
@@ -2829,12 +2827,12 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Wire:SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm"
+		(property "Footprint" "impulse_powercal:2.5sqmm_D2.5mm"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "278a905d-b0d3-47df-bc4c-d4a05a1ffc68")
+			(uuid "9d15821b-fdae-441a-b74e-6cd7285a0904")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2847,7 +2845,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3b972195-4e4b-441d-be0a-35605c1b5303")
+			(uuid "c52a497c-f283-4dc3-860c-83c0b5f9ec36")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2860,7 +2858,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "26a53308-d694-41ae-8ee3-5f43f4622358")
+			(uuid "e0429573-6676-439e-a8dd-b35e6f08296f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2881,7 +2879,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "ff6eb4e6-bb67-468e-9534-45381257c01d")
+			(uuid "daf1ed74-b6df-470a-8f98-6144ba067519")
 		)
 		(fp_line
 			(start -2.55 2.5)
@@ -2891,7 +2889,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "87e1bab2-1a26-408f-9650-25fbe42ac64f")
+			(uuid "da686ad6-0151-4134-8db7-c627265031fe")
 		)
 		(fp_line
 			(start 2.55 -2.5)
@@ -2901,7 +2899,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "119836ae-4b69-4866-a6f4-e30c2ac23608")
+			(uuid "8d4e1fb0-224c-4dc8-a6b0-16fa8123faf0")
 		)
 		(fp_line
 			(start 2.55 2.5)
@@ -2911,7 +2909,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "8a0ec8fa-bb9f-4a4d-99c2-9df1c881e8df")
+			(uuid "8bb9578c-21e7-4911-8f04-ec7d75dc5f59")
 		)
 		(fp_circle
 			(center 0 0)
@@ -2922,12 +2920,12 @@
 			)
 			(fill none)
 			(layer "F.Fab")
-			(uuid "48fe850a-521c-4a99-935a-3f9d3b6ee72b")
+			(uuid "7b6a5485-ff66-4b02-b4c3-f4664ac5df5b")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "cfee85f7-d8ff-4f06-9379-74e0d95b43d5")
+			(uuid "6163755d-2a24-4c46-b298-848a848ecb08")
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -2938,14 +2936,14 @@
 		(pad "1" thru_hole roundrect
 			(at 0 0)
 			(size 4 4)
-			(drill 3)
+			(drill 2.5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.0625)
 			(net 6 "/HEAT_N")
 			(pinfunction "Pin_1")
 			(pintype "passive")
-			(uuid "a10be6fe-2bbf-4203-8f98-01890166f226")
+			(uuid "d7b83ea1-e740-4bb9-81dc-3e301fd540fe")
 		)
 		(model "${KICAD8_3DMODEL_DIR}/Connector_Wire.3dshapes/SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm.wrl"
 			(offset
@@ -3179,7 +3177,7 @@
 		(descr "Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R6"
-			(at 6.5 -8 0)
+			(at 6.5 -9.25 0)
 			(layer "F.SilkS")
 			(uuid "e9cc3ad6-d9c9-4300-a334-201e5e629fea")
 			(effects
@@ -5462,7 +5460,7 @@
 		(descr "Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R8"
-			(at 6.5 -1 0)
+			(at 6.5 -2.25 0)
 			(layer "F.SilkS")
 			(uuid "bab81773-0bc0-4c6b-a196-3bba39a5cbbb")
 			(effects
@@ -5675,7 +5673,7 @@
 		(descr "Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R7"
-			(at 6.5 -4.5 0)
+			(at 6.5 -5.75 0)
 			(layer "F.SilkS")
 			(uuid "66373e2d-9546-4c45-8db8-daab9980d688")
 			(effects
@@ -6006,7 +6004,7 @@
 		(descr "Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R5"
-			(at 6.5 -11.5 0)
+			(at 6.5 -12.75 0)
 			(layer "F.SilkS")
 			(uuid "00f8ed7f-10b6-415b-a892-cfcba385f506")
 			(effects
@@ -7686,36 +7684,6 @@
 			)
 		)
 	)
-	(gr_line
-		(start 125 76.45)
-		(end 125 88.95)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "2cf15c48-dcf2-42ff-8dae-0000ca0765ce")
-	)
-	(gr_line
-		(start 125 88.95)
-		(end 112.5 88.95)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "7905e1a9-8904-4afe-913a-fcc1268c0695")
-	)
-	(gr_line
-		(start 112.5 88.95)
-		(end 112.5 76.45)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "90c7f1d8-7587-4a0c-b803-ba717c72cdee")
-	)
 	(gr_rect
 		(start 64.2875 101.25)
 		(end 89.7125 112.05)
@@ -7726,16 +7694,6 @@
 		(fill solid)
 		(layer "F.SilkS")
 		(uuid "a554488a-f804-4368-bb8c-2b1bc565896d")
-	)
-	(gr_line
-		(start 112.5 76.45)
-		(end 125 76.45)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "fe2c451b-2f19-4db4-a3e8-1a94ebc14cd0")
 	)
 	(gr_line
 		(start 55 108.5)
@@ -7853,7 +7811,7 @@
 			(justify right bottom)
 		)
 	)
-	(gr_text "Impulse Labs\nHEB Power Cal\nv1.2 ch@"
+	(gr_text "Impulse Labs\nHEB Power Cal\nv1.2b ch@"
 		(at 57.2 83.3 0)
 		(layer "F.SilkS")
 		(uuid "1546ed06-bb10-4d17-841a-ca2568184659")
@@ -7914,18 +7872,6 @@
 				(size 1.5 1.5)
 				(thickness 0.3)
 				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
-	(gr_text "..REPLACE WITH.. \nDATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\nDATAMATRIX CODE\n\n###SERIALNO###"
-		(at 112.75 88.1 0)
-		(layer "F.SilkS")
-		(uuid "aea1fe4d-bbe9-4916-9bd6-ecb201efc12a")
-		(effects
-			(font
-				(size 0.9 0.9)
-				(thickness 0.15)
 			)
 			(justify left bottom)
 		)
