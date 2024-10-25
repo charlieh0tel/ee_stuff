@@ -3237,6 +3237,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C2079698"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51e88bbb-492d-4d4f-b241-5d9ce2d7a8e9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/3aa80540-f87e-442f-9f66-f34411042273")
 		(sheetname "Root")
@@ -5520,6 +5533,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C2079698"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6af31134-fd50-4a11-8806-c47fc3f94c42")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/90072bdb-9fa0-43b0-bdb5-6d84e4315cef")
 		(sheetname "Root")
@@ -5729,6 +5755,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2079698"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "075c3480-1269-48e9-9c70-f3bee955fef4")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -6060,6 +6099,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2079698"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98185533-8665-47ab-a88a-f89150cd051f")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -7684,6 +7736,36 @@
 			)
 		)
 	)
+	(gr_line
+		(start 111.5 79.5)
+		(end 123.5 79.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1d24a7f7-f21a-43dc-9099-fcba622b1165")
+	)
+	(gr_line
+		(start 123.5 79.5)
+		(end 123.5 91.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1f262167-1cb8-46f3-91df-873e2963be1f")
+	)
+	(gr_line
+		(start 111.5 91.5)
+		(end 111.5 79.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "52146bf7-c066-4606-9e72-a3d547fac83c")
+	)
 	(gr_rect
 		(start 64.2875 101.25)
 		(end 89.7125 112.05)
@@ -7694,6 +7776,16 @@
 		(fill solid)
 		(layer "F.SilkS")
 		(uuid "a554488a-f804-4368-bb8c-2b1bc565896d")
+	)
+	(gr_line
+		(start 123.5 91.5)
+		(end 111.5 91.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c1d7bd63-b061-483f-a3f6-d47561d301ab")
 	)
 	(gr_line
 		(start 55 108.5)
@@ -7811,7 +7903,7 @@
 			(justify right bottom)
 		)
 	)
-	(gr_text "Impulse Labs\nHEB Power Cal\nv1.2b ch@"
+	(gr_text "Impulse Labs\nHEB Power Cal\nv1.2c ch@"
 		(at 57.2 83.3 0)
 		(layer "F.SilkS")
 		(uuid "1546ed06-bb10-4d17-841a-ca2568184659")
@@ -7884,6 +7976,19 @@
 			(font
 				(size 1.5 1.5)
 				(thickness 0.1875)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "此处显示\n条形码"
+		(at 112.75 85 0)
+		(layer "F.Fab")
+		(uuid "0f7116c9-d761-4f0d-b313-94d340ad9d33")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
 			)
 			(justify left bottom)
 		)

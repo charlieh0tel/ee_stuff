@@ -1,0 +1,13 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,0603,1,500n,C513577
+"C2, C3",0603,2,1u, C5199872
+"J1, J2",SMA_Amphenol_132291-12_Vertical,2,Conn_Coaxial,
+J10,TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal,1,Screw_Terminal_01x02,
+"J3, J6",2.5sqmm_D2.5mm,2,Conn_01x01_Pin,
+"J4, J7, J8","TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal",3,Screw_Terminal_01x02,
+J5,7472524,1,7472524-SINGLE,
+J9,MOLEX_5054481071,1,5054481071,C5367647
+R1,0805,1,100K,
+"R10, R11, R9",0805,3,0,
+"R2, R3",0805,2,2000,
+"R5, R6, R7, R8",2512,4,R,C2079698
