@@ -506,12 +506,7 @@
     "net_colors": null,
     "netclass_assignments": {
       "/Radio/RF": "50Z_SE",
-      "Net-(J2-In)": "50Z_SE",
-      "Net-(U1-ANT)": "50Z_SE",
-      "Net-(U2-ANT)": "50Z_SE",
-      "unconnected-(U2-ANT-Pad12)": "50Z_SE",
-      "unconnected-(U2-IN-Pad1)": "50Z_SE",
-      "unconnected-(U2-OUT-Pad2)": "50Z_SE"
+      "Net-(J2-In)": "50Z_SE"
     },
     "netclass_patterns": [
       {
