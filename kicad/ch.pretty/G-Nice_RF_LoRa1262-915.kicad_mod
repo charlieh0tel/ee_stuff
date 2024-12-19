@@ -66,6 +66,18 @@
 			)
 		)
 	)
+	(property "LCSC" "C5356643"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "69dd85a1-7cd2-4bb8-9b5f-50f25de5b12f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
 	(attr smd)
 	(fp_line
 		(start -8 -8)

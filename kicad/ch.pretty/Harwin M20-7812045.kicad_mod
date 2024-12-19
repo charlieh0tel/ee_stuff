@@ -61,6 +61,52 @@
 			)
 		)
 	)
+	(property "Mfr" "Hawrin"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f0df7392-823f-4411-ac76-07d0ad10182d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "MPN" "M20-7812045"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "84d31604-8f79-4a77-bb64-12a01b16fa05")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "LCSC" "C42411761"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "3e9a5fae-3c52-4816-a88d-63d95ea25115")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "LCSC2" "C2684661"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "356c16f8-043e-4653-a02c-0787ea3e4ade")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
 	(attr smd)
 	(fp_line
 		(start -25.14 -4.3)
