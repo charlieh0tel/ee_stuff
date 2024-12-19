@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.25
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -468,7 +468,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.156464,
+        "clearance": 0.45,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -478,14 +478,14 @@
         "name": "50Z",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgb(204, 102, 0)",
-        "track_width": 0.508,
+        "track_width": 0.156,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 8
       },
       {
         "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.4572,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -495,7 +495,7 @@
         "name": "POWER",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.8,
+        "track_width": 0.156464,
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 8
