@@ -1,0 +1,9 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,0805,1,1u X7R,
+"C2, C3",0805,2,4.7u X7R,
+J1,Harwin M20-7812045,1,GPIO,C42411761
+J2,SMA_Molex-73391-0070_Vertical,1,Conn_Coaxial,
+L1,0402,1,0R,
+TP1,TestPoint_THTPad_2.0x2.0mm_Drill1.0mm,1,TestPoint,
+U1,SOT-23,1,TPS7A0533PDBZ,
+U2,G-Nice_RF_LoRa1262-915,1,LoRa1262-915,C5356643
