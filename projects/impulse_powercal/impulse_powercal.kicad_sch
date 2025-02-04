@@ -4889,7 +4889,6 @@
 	)
 	(label "FIO6"
 		(at 236.22 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4900,7 +4899,6 @@
 	)
 	(label "FIO3"
 		(at 236.22 119.38 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4909,9 +4907,8 @@
 		)
 		(uuid "0cafed41-65bf-4fba-bfc1-90f48864c3e8")
 	)
-	(label "AIN0{slash}1_N"
+	(label "AIN1{slash}0_N"
 		(at 191.77 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4922,7 +4919,6 @@
 	)
 	(label "200uA"
 		(at 236.22 132.08 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4931,9 +4927,8 @@
 		)
 		(uuid "1f576026-de16-4ff8-93cc-9cf6d711a8d4")
 	)
-	(label "AIN0{slash}1_P"
+	(label "AIN0{slash}0_P"
 		(at 191.77 44.45 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4942,9 +4937,8 @@
 		)
 		(uuid "30c9aeed-b30d-4986-b023-ca4481cb7d40")
 	)
-	(label "AIN2{slash}3_P"
+	(label "AIN2{slash}2_P"
 		(at 72.39 138.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4955,7 +4949,6 @@
 	)
 	(label "VS"
 		(at 236.22 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4964,9 +4957,8 @@
 		)
 		(uuid "3a97b050-49d4-453b-910d-d0fce8751d60")
 	)
-	(label "AIN10{slash}11_N"
+	(label "AIN11{slash}10_N"
 		(at 236.22 76.2 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4975,9 +4967,8 @@
 		)
 		(uuid "3fa03a2d-d306-4994-a266-9eb856e36bc3")
 	)
-	(label "AIN0{slash}1_P"
+	(label "AIN0{slash}0_P"
 		(at 236.22 48.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4988,7 +4979,6 @@
 	)
 	(label "DAC1"
 		(at 236.22 88.9 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4999,7 +4989,6 @@
 	)
 	(label "FIO7"
 		(at 236.22 129.54 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5010,7 +4999,6 @@
 	)
 	(label "VM+"
 		(at 236.22 93.98 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5021,7 +5009,6 @@
 	)
 	(label "MIO0"
 		(at 236.22 109.22 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5030,9 +5017,8 @@
 		)
 		(uuid "618ff394-0372-47cc-8825-491f0586816f")
 	)
-	(label "AIN8{slash}9_P"
+	(label "AIN8{slash}8_P"
 		(at 236.22 68.58 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5043,7 +5029,6 @@
 	)
 	(label "HEAT_P"
 		(at 40.64 58.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5054,7 +5039,6 @@
 	)
 	(label "FIO1"
 		(at 236.22 114.3 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5065,7 +5049,6 @@
 	)
 	(label "FIO2"
 		(at 236.22 116.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5074,9 +5057,8 @@
 		)
 		(uuid "71b3e80d-d118-4e35-94d9-464459e5e74c")
 	)
-	(label "AIN6{slash}7_N"
+	(label "AIN7{slash}6_N"
 		(at 236.22 66.04 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5085,9 +5067,8 @@
 		)
 		(uuid "76eb65df-72d1-4f68-aa8d-eb1c6125b313")
 	)
-	(label "AIN4{slash}5_P"
+	(label "AIN4{slash}4_P"
 		(at 236.22 58.42 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5096,9 +5077,8 @@
 		)
 		(uuid "7d74d23f-1ac5-40b3-86ab-7879b9a2d4b3")
 	)
-	(label "AIN2{slash}3_P"
+	(label "AIN2{slash}2_P"
 		(at 236.22 53.34 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5107,9 +5087,8 @@
 		)
 		(uuid "7e88d016-4daa-406b-a814-7c895ff9b090")
 	)
-	(label "AIN6{slash}7_P"
+	(label "AIN6{slash}6_P"
 		(at 236.22 63.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5120,7 +5099,6 @@
 	)
 	(label "12V_SHIELD"
 		(at 129.54 125.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5129,9 +5107,8 @@
 		)
 		(uuid "8486efda-3ebf-4440-a56d-1492a817e8d3")
 	)
-	(label "AIN0{slash}1_N"
+	(label "AIN1{slash}0_N"
 		(at 236.22 50.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5142,7 +5119,6 @@
 	)
 	(label "FIO4"
 		(at 236.22 121.92 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5153,7 +5129,6 @@
 	)
 	(label "VM-"
 		(at 236.22 96.52 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5162,9 +5137,8 @@
 		)
 		(uuid "9df2fb10-bf9a-460d-9ccd-97e1b52ceaf0")
 	)
-	(label "AIN2{slash}3_N"
+	(label "AIN3{slash}2_N"
 		(at 236.22 55.88 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5173,9 +5147,8 @@
 		)
 		(uuid "a4fa8de5-8085-42b7-9e0b-d3323ccb32f4")
 	)
-	(label "AIN12{slash}13_P"
+	(label "AIN12{slash}12_P"
 		(at 236.22 78.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5186,7 +5159,6 @@
 	)
 	(label "SHIELD"
 		(at 170.18 125.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5195,9 +5167,8 @@
 		)
 		(uuid "aa4ee6ca-74af-4fab-8273-9f5f8e0a9e63")
 	)
-	(label "AIN10{slash}11_P"
+	(label "AIN10{slash}10_P"
 		(at 236.22 73.66 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5208,7 +5179,6 @@
 	)
 	(label "FIO0"
 		(at 236.22 111.76 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5219,7 +5189,6 @@
 	)
 	(label "FIO5"
 		(at 236.22 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5230,7 +5199,6 @@
 	)
 	(label "HEAT_N"
 		(at 40.64 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5239,9 +5207,8 @@
 		)
 		(uuid "dbac0529-7a10-4912-8831-6a1e3a946070")
 	)
-	(label "AIN4{slash}5_N"
+	(label "AIN5{slash}4_N"
 		(at 236.22 60.96 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5252,7 +5219,6 @@
 	)
 	(label "MIO2"
 		(at 236.22 104.14 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5263,7 +5229,6 @@
 	)
 	(label "10uA"
 		(at 236.22 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5272,9 +5237,8 @@
 		)
 		(uuid "e637bcf0-9d16-4ec8-be7f-d9da1d2e90a4")
 	)
-	(label "AIN12{slash}13_N"
+	(label "AIN13{slash}12_N"
 		(at 236.22 81.28 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5285,7 +5249,6 @@
 	)
 	(label "DAC0"
 		(at 236.22 86.36 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5296,7 +5259,6 @@
 	)
 	(label "MIO1"
 		(at 236.22 106.68 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5305,9 +5267,8 @@
 		)
 		(uuid "f99c192b-9883-4868-b464-f91a5b302439")
 	)
-	(label "AN9{slash}10_N"
+	(label "AIN9{slash}8_N"
 		(at 236.22 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
