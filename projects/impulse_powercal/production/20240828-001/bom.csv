@@ -1,8 +1,0 @@
-﻿Designator,Footprint,Quantity,Value,LCSC Part #
-"J1, J4",SolderWire-2.5sqmm_1x01_D2.4mm_OD3.6mm,2,Conn_01x01_Pin,
-"J2, J6","TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal",2,Screw_Terminal_01x02,
-J3,BNC_Amphenol_B6252HB-NPP3G-50_Horizontal,1,Conn_Coaxial,
-J5,7472524,1,7472524-SINGLE,
-"R1, R6, R7",1206,3,0,
-"R2, R3, R4, R5",2512,4,R,
-R8,1206,1,100K,
