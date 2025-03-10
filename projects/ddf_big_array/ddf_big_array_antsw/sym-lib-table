@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ddf_big_array")(type "KiCad")(uri "${KIPRJMOD}/ddf_big_array.kicad_sym")(options "")(descr ""))
+)
