@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "46971ef6-8262-474c-809b-33c612e960fe")
 	(paper "A4")
 	(lib_symbols
@@ -86,16 +86,70 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 13.97 180)
+					(at -24.13 21.59 0)
 					(length 5.08)
-					(name "BCM15_RXD"
+					(name "BCM2_SDA"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "10"
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -24.13 19.05 0)
+					(length 5.08)
+					(name "BCM3_SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -24.13 16.51 0)
+					(length 5.08)
+					(name "BCM4_GPCLK0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -24.13 13.97 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -122,24 +176,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 11.43 180)
-					(length 5.08)
-					(name "BCM18_PCM_C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 8.89 0)
 					(length 5.08)
 					(name "BCM27"
@@ -150,24 +186,6 @@
 						)
 					)
 					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 24.13 8.89 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -186,24 +204,6 @@
 						)
 					)
 					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 24.13 6.35 180)
-					(length 5.08)
-					(name "BCM23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -230,24 +230,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 3.81 180)
-					(length 5.08)
-					(name "BCM24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 1.27 0)
 					(length 5.08)
 					(name "BCM10_MOSI"
@@ -258,42 +240,6 @@
 						)
 					)
 					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 24.13 24.13 180)
-					(length 5.08)
-					(name "5V"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 24.13 1.27 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -320,24 +266,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 -1.27 180)
-					(length 5.08)
-					(name "BCM25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 -3.81 0)
 					(length 5.08)
 					(name "BCM11_SCLK"
@@ -348,24 +276,6 @@
 						)
 					)
 					(number "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 24.13 -3.81 180)
-					(length 5.08)
-					(name "BCM8_CE0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "24"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -392,24 +302,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 -6.35 180)
-					(length 5.08)
-					(name "BCM7_CE1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 -8.89 0)
 					(length 5.08)
 					(name "BCM0_ID_SD"
@@ -420,24 +312,6 @@
 						)
 					)
 					(number "27"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 24.13 -8.89 180)
-					(length 5.08)
-					(name "BCM1_ID_SC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "28"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -464,42 +338,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at -24.13 21.59 0)
-					(length 5.08)
-					(name "BCM2_SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 24.13 -11.43 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "30"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 -13.97 0)
 					(length 5.08)
 					(name "BCM6"
@@ -518,24 +356,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 -13.97 180)
-					(length 5.08)
-					(name "BCM12_PWM0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "32"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 -16.51 0)
 					(length 5.08)
 					(name "BCM13_PWM1"
@@ -546,24 +366,6 @@
 						)
 					)
 					(number "33"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 24.13 -16.51 180)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "34"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -590,24 +392,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at 24.13 -19.05 180)
-					(length 5.08)
-					(name "BCM16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "36"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at -24.13 -21.59 0)
 					(length 5.08)
 					(name "BCM26"
@@ -618,24 +402,6 @@
 						)
 					)
 					(number "37"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 24.13 -21.59 180)
-					(length 5.08)
-					(name "BCM20_MOSI_PCM_DI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "38"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -662,6 +428,24 @@
 					)
 				)
 				(pin power_in line
+					(at 24.13 24.13 180)
+					(length 5.08)
+					(name "5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at 24.13 21.59 180)
 					(length 5.08)
 					(name "5V"
@@ -672,42 +456,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 24.13 -24.13 180)
-					(length 5.08)
-					(name "BCM21_SCLK_PCM_DO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "40"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -24.13 19.05 0)
-					(length 5.08)
-					(name "BCM3_SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -734,24 +482,6 @@
 					)
 				)
 				(pin bidirectional line
-					(at -24.13 16.51 0)
-					(length 5.08)
-					(name "BCM4_GPCLK0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
 					(at 24.13 16.51 180)
 					(length 5.08)
 					(name "BCM14_TXD"
@@ -769,8 +499,44 @@
 						)
 					)
 				)
+				(pin bidirectional line
+					(at 24.13 13.97 180)
+					(length 5.08)
+					(name "BCM15_RXD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 11.43 180)
+					(length 5.08)
+					(name "BCM18_PCM_C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin power_in line
-					(at -24.13 13.97 0)
+					(at 24.13 8.89 180)
 					(length 5.08)
 					(name "GND"
 						(effects
@@ -779,7 +545,241 @@
 							)
 						)
 					)
-					(number "9"
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 6.35 180)
+					(length 5.08)
+					(name "BCM23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 3.81 180)
+					(length 5.08)
+					(name "BCM24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 24.13 1.27 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -1.27 180)
+					(length 5.08)
+					(name "BCM25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -3.81 180)
+					(length 5.08)
+					(name "BCM8_CE0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -6.35 180)
+					(length 5.08)
+					(name "BCM7_CE1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -8.89 180)
+					(length 5.08)
+					(name "BCM1_ID_SC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 24.13 -11.43 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -13.97 180)
+					(length 5.08)
+					(name "BCM12_PWM0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 24.13 -16.51 180)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "34"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -19.05 180)
+					(length 5.08)
+					(name "BCM16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -21.59 180)
+					(length 5.08)
+					(name "BCM20_MOSI_PCM_DI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 24.13 -24.13 180)
+					(length 5.08)
+					(name "BCM21_SCLK_PCM_DO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "40"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -788,6 +788,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
 	(symbol
@@ -1004,4 +1005,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )
