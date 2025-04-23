@@ -3399,7 +3399,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 104.902 142.24 90)
 			(effects
 				(font
@@ -3940,7 +3940,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3bebc2d0-b81f-47a0-9ee9-d8904bd77758")
 		(property "Reference" "R20"
 			(at 118.11 116.8399 0)
@@ -4456,7 +4455,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 101.6 138.938 90)
 			(effects
 				(font
@@ -4646,7 +4645,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 59.182 55.88 90)
 			(effects
 				(font
@@ -4919,7 +4918,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 198.12 138.938 90)
 			(effects
 				(font
@@ -4989,7 +4988,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 51.562 55.88 90)
 			(effects
 				(font
@@ -5332,7 +5331,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 113.792 45.72 90)
 			(effects
 				(font
@@ -6078,7 +6077,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 201.422 142.24 90)
 			(effects
 				(font
