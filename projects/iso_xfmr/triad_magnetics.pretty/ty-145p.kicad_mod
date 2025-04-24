@@ -1,4 +1,4 @@
-(footprint "Untitled"
+(footprint "ty-145p"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
@@ -53,7 +53,7 @@
 			)
 		)
 	)
-	(attr smd)
+	(attr through_hole)
 	(fp_rect
 		(start -9.525 -11.43)
 		(end 9.525 11.43)

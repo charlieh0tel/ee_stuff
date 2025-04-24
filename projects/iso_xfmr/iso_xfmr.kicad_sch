@@ -1350,7 +1350,7 @@
 					)
 				)
 			)
-			(property "Footprint" "TriadMagnetics:TY-145P"
+			(property "Footprint" "triad_magnetics:ty-145p"
 				(at -0.762 -9.144 0)
 				(effects
 					(font
@@ -3246,7 +3246,7 @@
 				)
 			)
 		)
-		(property "Footprint" "triad_magnetics:Untitled"
+		(property "Footprint" "triad_magnetics:ty-145p"
 			(at 69.088 67.564 0)
 			(effects
 				(font

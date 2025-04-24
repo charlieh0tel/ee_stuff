@@ -1654,12 +1654,12 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "triad_magnetics:Untitled"
+	(footprint "triad_magnetics:ty-145p"
 		(layer "F.Cu")
 		(uuid "3ebdabcb-9895-4633-a37b-ddafb84ba887")
 		(at 146.05 95.25)
 		(property "Reference" "TR1"
-			(at 7.62 -12.065 0)
+			(at 0 -12.7 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "c76f37aa-4b5f-4889-8665-452c5ef58f55")
@@ -1711,7 +1711,7 @@
 		(path "/e7a0d9f9-031f-4395-ab5f-ee230dedaaff")
 		(sheetname "/")
 		(sheetfile "iso_xfmr.kicad_sch")
-		(attr smd)
+		(attr through_hole)
 		(fp_rect
 			(start -9.525 -11.43)
 			(end 9.525 11.43)
@@ -1721,7 +1721,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "bf66c60b-9372-41dc-bf16-4077eeb778c0")
+			(uuid "99e6dfd2-7c04-45f8-b193-ed15ced86dba")
 		)
 		(fp_circle
 			(center -7.5 -8.5)
@@ -1732,7 +1732,7 @@
 			)
 			(fill yes)
 			(layer "F.SilkS")
-			(uuid "492f08ed-3c28-4399-9b89-0ae4ecb47de5")
+			(uuid "6dd5e0e8-26b0-4481-8443-c8fdab1ed27b")
 		)
 		(fp_rect
 			(start -9.525 -11.43)
@@ -1743,7 +1743,7 @@
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "1dba509c-5a90-422f-9a69-0f772350caa7")
+			(uuid "0dfef04c-c8b2-4dcc-8af7-4bfaa8f979bd")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 8 0)
