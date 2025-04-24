@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "triad_magnetics")(type "KiCad")(uri "${KIPRJMOD}/triad_magnetics.pretty")(options "")(descr ""))
+)
