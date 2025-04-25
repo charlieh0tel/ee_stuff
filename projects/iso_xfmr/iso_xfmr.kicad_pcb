@@ -7,6 +7,9 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(comment 4 "AISLER Project ID: DIKBZYEF")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(2 "B.Cu" signal)
@@ -3121,7 +3124,7 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "1.5"
+		(gr_text "38.1"
 			(at 214.115 95.25 90)
 			(layer "Dwgs.User")
 			(uuid "28e89a75-aa42-45a4-a35c-c1d958760692")
@@ -3159,7 +3162,7 @@
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
-		(gr_text "2.5"
+		(gr_text "63.5"
 			(at 146.05 50.285 0)
 			(layer "Dwgs.User")
 			(uuid "6b605279-7f1b-4cee-af2b-94d0cd486cd7")
