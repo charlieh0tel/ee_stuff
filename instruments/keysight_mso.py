@@ -45,7 +45,8 @@ class KeysightMSO(object):
         return self
 
     def close(self):
-        self.inst.close()
+        if self.inst:
+            self.inst.close()
         self.inst = None
 
     def get_png(self):
@@ -68,6 +69,7 @@ class KeysightMSO(object):
         self.inst.write(":STOP")
 
     def measure_channel(self, channel, measure: Measurement, *options):
+        assert self.inst
         assert 1 <= channel <= 4
         options = list(options) + [f"CHAN{channel}"]
         options_string = ",".join(options)
@@ -96,16 +98,22 @@ def main(argv):
         print("single")
         scope.single()
         time.sleep(0.25)
-        print("DUTYCYCLE(1) = %.3f" % scope.measure_channel(1, Measurement.DUTYCYCLE))
-        print("FREQUENCY(1) = %.3f" % scope.measure_channel(1, Measurement.FREQUENCY))
-        print("VAMPLITUDE(1) = %.3f" % scope.measure_channel(1, Measurement.VAMPLITUDE))
-        print("VAVERAGE(1) = %.3f" % scope.measure_channel(1, Measurement.VAVERAGE))
+        print("DUTYCYCLE(1) = %.3f" %
+              scope.measure_channel(1, Measurement.DUTYCYCLE))
+        print("FREQUENCY(1) = %.3f" %
+              scope.measure_channel(1, Measurement.FREQUENCY))
+        print("VAMPLITUDE(1) = %.3f" %
+              scope.measure_channel(1, Measurement.VAMPLITUDE))
+        print("VAVERAGE(1) = %.3f" %
+              scope.measure_channel(1, Measurement.VAVERAGE))
         print("VBASE(1) = %.3f" % scope.measure_channel(1, Measurement.VBASE))
         print("VMAX(1) = %.3f" % scope.measure_channel(1, Measurement.VMAX))
         print("VMIN(1) = %.3f" % scope.measure_channel(1, Measurement.VMIN))
         print("VPP(1) = %.3f" % scope.measure_channel(1, Measurement.VPP))
-        print("VRMS_AC(1) = %.3f" % scope.measure_channel(1, Measurement.VRMS, "CYCLE", "AC"))
-        print("VRMS_DC(1) = %.3f" % scope.measure_channel(1, Measurement.VRMS, "CYCLE", "DC"))
+        print("VRMS_AC(1) = %.3f" % scope.measure_channel(
+            1, Measurement.VRMS, "CYCLE", "AC"))
+        print("VRMS_DC(1) = %.3f" % scope.measure_channel(
+            1, Measurement.VRMS, "CYCLE", "DC"))
         print("VTOP(1) = %.3f" % scope.measure_channel(1, Measurement.VTOP))
 
         png = scope.get_png()

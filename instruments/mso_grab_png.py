@@ -5,6 +5,7 @@ import sys
 from bs4 import BeautifulSoup
 import requests
 
+
 def get_png(hostname):
     page_url = f"http://{hostname}/InfiniiVision/ImageScreenCapture.asp?invert=false"
     page = requests.get(page_url)
@@ -26,4 +27,3 @@ def main(argv):
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv))
-    

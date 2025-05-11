@@ -9,8 +9,8 @@ import rs_smb100a
 
 def main(argv):
     rm = pyvisa.ResourceManager('@py')
-    #resources = rm.list_resources()
-    #print(resources)
+    # resources = rm.list_resources()
+    # print(resources)
 
     resource_name = (argv[1] if len(argv) >= 2
                      else "TCPIP::rssmb100a180609.local::INSTR")
@@ -19,7 +19,7 @@ def main(argv):
         siggen.reset()
         siggen.system_preset()
 
-        test_points_ghz_cf=[
+        test_points_ghz_cf = [
             (0.050, 97.0),
             (0.100, 95.0),
             (0.500, 94.5),
@@ -53,7 +53,7 @@ def main(argv):
                 print()
         finally:
             siggen.set_output(False)
-    
+
     return 0
 
 

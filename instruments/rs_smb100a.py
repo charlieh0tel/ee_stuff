@@ -28,7 +28,6 @@ class RhodeSchwarzSMB100A(object):
             self.inst.close()
         self.inst = None
 
-        
     def reset(self):
         assert self.inst
         self.inst.write("*RST")
@@ -48,12 +47,12 @@ class RhodeSchwarzSMB100A(object):
     def set_power(self, power_dBm: float):
         assert self.inst
         self.inst.write(f":POWER {power_dBm}")
-        
+
 
 def main(argv):
     rm = pyvisa.ResourceManager('@py')
-    #resources = rm.list_resources()
-    #print(resources)
+    # resources = rm.list_resources()
+    # print(resources)
 
     resource_name = (argv[1] if len(argv) >= 2
                      else "TCPIP::rssmb100a180609.local::INSTR")
@@ -66,8 +65,7 @@ def main(argv):
         siggen.set_output(True)
         time.sleep(5)
         siggen.set_output(False)
-        
-        
+
     return 0
 
 
