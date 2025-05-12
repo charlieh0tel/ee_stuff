@@ -27,7 +27,7 @@ class Measurement(StrEnum):
     VTOP = auto()
 
 
-class KeysightMSO(object):
+class KeysightMSO:
     def __init__(self, resource_manager, resource_name):
         self.resource_manager = resource_manager
         self.resource_name = resource_name
