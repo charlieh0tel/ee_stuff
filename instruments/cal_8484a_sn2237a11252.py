@@ -37,7 +37,7 @@ SENSOR_INFO = cal_rf_sensor.SensorInfo(
 
 
 def main(argv):
-    return cal_rf_sensor.run(argv, SENSOR_INFO, [-30.])
+    return cal_rf_sensor.run(argv, SENSOR_INFO, [-55., -45., -35., -25.])
 
 
 if __name__ == "__main__":
