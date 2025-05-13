@@ -5,15 +5,18 @@ import datetime
 import sys
 import time
 
+import matplotlib.pyplot as plt
 import pandas as pd
 import pyvisa
 
 import rs_smb100a
 import hp_436a
+import hp_8662a
 
 
-DEFAULT_SIG_GEN_RESOURCE="TCPIP::rssmb100a180609.local::INSTR"
-DEFAULT_POWER_METER_RESOURCE="TCPIP::e5810a::gpib0,13::INSTR"
+#DEFAULT_SIG_GEN_RESOURCE = "TCPIP::rssmb100a180609.local::INSTR"
+DEFAULT_SIG_GEN_RESOURCE = "TCPIP::e5810a::gpib0,25::INSTR"
+DEFAULT_POWER_METER_RESOURCE = "TCPIP::e5810a::gpib0,13::INSTR"
 
 
 @dataclasses.dataclass
@@ -30,14 +33,15 @@ def run(argv, sensor_info, power_levels_dBm):
 
     sig_gen_resource = (argv[1] if len(argv) >= 2
                         else DEFAULT_SIG_GEN_RESOURCE)
+
     power_meter_resource = (argv[2] if len(argv) >= 3
                             else DEFAULT_POWER_METER_RESOURCE)
 
-    readings=[]
-    with rs_smb100a.RhodeSchwarzSMB100A(rm, sig_gen_resource) as siggen:
+    readings = []
+    #with rs_smb100a.RhodeSchwarzSMB100A(rm, sig_gen_resource) as siggen:
+    with hp_8662a.HP8662A(sig_gen_resource) as siggen:
         siggen.reset()
         siggen.system_preset()
-
         siggen.set_output(False)
 
         try:
@@ -48,21 +52,30 @@ def run(argv, sensor_info, power_levels_dBm):
 
                 for power_level_dBm in power_levels_dBm:
                     assert sensor_info.min_dBm <= power_level_dBm <= sensor_info.max_dBm
+
                     siggen.set_output(False)
+                    print("zeroing....")
+                    pm.zero_meter()
                     siggen.set_power(power_level_dBm)
                     siggen.set_output(True)
 
                     for (hz, cf) in sensor_info.cal_points:
+                        if hz > 2.560e9: continue
+
                         siggen.set_frequency(hz)
                         print(f"frequency set to {hz} Hz")
-                        time.sleep(2.0)
+                        time.sleep(0.1)
 
-                        pm.set_rate(pm.Rate.TriggerWithSettling)
-                        (measured_dBm, status, range_, mode) = pm.read()
+                        try:
+                            measured_dBm = pm.read_with_settling_dBm()
+                        except TimeoutError:
+                            print("timeout!")
+                            continue
                         corrected_measured_dBm = measured_dBm * (cf / 100.)
-                        assert status == pm.StatusOutput.MeasurementValid
-                        assert mode == pm.ModeOutput.dBm
-                        print(f"corrected read: {corrected_measured_dBm:6.3f} dBm, abs_error={abs(corrected_measured_dBm - power_level_dBm):6.3f} dB")
+                        print(f"power_level: {power_level_dBm} dBm, ", end="")
+                        print(f"corrected: {corrected_measured_dBm:6.2f} dBm, ", end="")
+                        abs_err_dB = abs(corrected_measured_dBm - power_level_dBm)
+                        print(f"abs_error_dB: {abs_err_dB:4.2f} dB")
                         readings.append({'hz': hz,
                                          'cf': cf,
                                          'power_level_dBm': power_level_dBm,
@@ -75,8 +88,24 @@ def run(argv, sensor_info, power_levels_dBm):
     print(df)
 
     yyyymmdd = datetime.datetime.today().strftime("%Y%m%d")
-    csv_name = f"sensor_{sensor_info.model}_SN{sensor_info.serial}_{yyyymmdd}.csv"
-    df.to_csv(csv_name)
+    output_basename = (f"sensor_{sensor_info.model}_"
+                   f"SN{sensor_info.serial}_{yyyymmdd}")
+    df.to_csv(output_basename + ".csv", index=False)
+    
+    # Plot.
+    plt.figure(figsize=(10, 6))
+    for level in df['power_level_dBm'].unique():
+        level_df = df[df['power_level_dBm'] == level]
+        plt.plot(level_df['hz'], level_df['corrected_measured_dBm'],
+                 label=f'{level} dBm', marker='x')
+    plt.xscale('log')
+    plt.xlabel('Frequency (Hz)')
+    plt.ylabel('Corrected Measured Power (dBm)')
+    plt.title(output_basename)
+    plt.legend()
+    plt.grid(True, which="both", ls="--", linewidth=0.5)
+    plt.savefig(output_basename + ".png")
+    plt.show()
 
     return 0
 
