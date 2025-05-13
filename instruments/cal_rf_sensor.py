@@ -14,7 +14,7 @@ import hp_436a
 import hp_8662a
 
 
-#DEFAULT_SIG_GEN_RESOURCE = "TCPIP::rssmb100a180609.local::INSTR"
+# DEFAULT_SIG_GEN_RESOURCE = "TCPIP::rssmb100a180609.local::INSTR"
 DEFAULT_SIG_GEN_RESOURCE = "TCPIP::e5810a::gpib0,25::INSTR"
 DEFAULT_POWER_METER_RESOURCE = "TCPIP::e5810a::gpib0,13::INSTR"
 
@@ -38,7 +38,7 @@ def run(argv, sensor_info, power_levels_dBm):
                             else DEFAULT_POWER_METER_RESOURCE)
 
     readings = []
-    #with rs_smb100a.RhodeSchwarzSMB100A(rm, sig_gen_resource) as siggen:
+    # with rs_smb100a.RhodeSchwarzSMB100A(rm, sig_gen_resource) as siggen:
     with hp_8662a.HP8662A(sig_gen_resource) as siggen:
         siggen.reset()
         siggen.system_preset()
@@ -60,7 +60,8 @@ def run(argv, sensor_info, power_levels_dBm):
                     siggen.set_output(True)
 
                     for (hz, cf) in sensor_info.cal_points:
-                        if hz > 2.560e9: continue
+                        if hz > 2.560e9:
+                            continue
 
                         siggen.set_frequency(hz)
                         print(f"frequency set to {hz} Hz")
@@ -73,8 +74,10 @@ def run(argv, sensor_info, power_levels_dBm):
                             continue
                         corrected_measured_dBm = measured_dBm * (cf / 100.)
                         print(f"power_level: {power_level_dBm} dBm, ", end="")
-                        print(f"corrected: {corrected_measured_dBm:6.2f} dBm, ", end="")
-                        abs_err_dB = abs(corrected_measured_dBm - power_level_dBm)
+                        print(f"corrected: {
+                              corrected_measured_dBm:6.2f} dBm, ", end="")
+                        abs_err_dB = abs(
+                            corrected_measured_dBm - power_level_dBm)
                         print(f"abs_error_dB: {abs_err_dB:4.2f} dB")
                         readings.append({'hz': hz,
                                          'cf': cf,
@@ -89,9 +92,9 @@ def run(argv, sensor_info, power_levels_dBm):
 
     yyyymmdd = datetime.datetime.today().strftime("%Y%m%d")
     output_basename = (f"sensor_{sensor_info.model}_"
-                   f"SN{sensor_info.serial}_{yyyymmdd}")
+                       f"SN{sensor_info.serial}_{yyyymmdd}")
     df.to_csv(output_basename + ".csv", index=False)
-    
+
     # Plot.
     plt.figure(figsize=(10, 6))
     for level in df['power_level_dBm'].unique():

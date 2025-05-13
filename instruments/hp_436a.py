@@ -107,7 +107,7 @@ class HP436A:
             (_, status, _, _, _, _) = self.read()
             if status < self.StatusOutput.AutoZeroNormalRange1:
                 break
-        
+
     def read_with_settling_dBm(self, timeout_seconds=100.):
         timeout_at = time.time() + timeout_seconds
         # Following Figure 3-8 of 436A Power Meter Operating and Service Manual.

@@ -51,8 +51,8 @@ class RhodeSchwarzSMB100A:
 
 def main(argv):
     rm = pyvisa.ResourceManager('@py')
-    #resources = rm.list_resources()
-    #print(resources)
+    # resources = rm.list_resources()
+    # print(resources)
 
     resource_name = (argv[1] if len(argv) >= 2
                      else "TCPIP::rssmb100a180609.local::INSTR")
