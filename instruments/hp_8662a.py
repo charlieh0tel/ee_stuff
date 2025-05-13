@@ -56,6 +56,7 @@ class HP8662A:
             ap = f"AP{self.power_dBm:.1f}DM\n"
             self._write_string(ap)
             if self.first_ap_quirk:
+                # First one doesn't take for some reason.
                 self._write_string(ap)
                 self.first_ap_quirk = False
         else:
