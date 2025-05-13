@@ -40,8 +40,15 @@ class RhodeSchwarzSMB100A:
         assert self.inst
         self.inst.write(f":OUTPUT {int(on)}")
 
+    def _check_frequency(self, frequency_hz: float):
+        # Depends on model.   The one I'm borrowing goes VERY HIGH.
+        if 100e3 <= frequency_hz <= 20e9:
+            return
+        raise ValueError(f"Frequency {frequency_hz} Hz out of range.")
+
     def set_frequency(self, frequency_hz: float):
         assert self.inst
+        self._check_frequency(frequency_hz)
         self.inst.write(f":FREQ {frequency_hz}")
 
     def set_power(self, power_dBm: float):
