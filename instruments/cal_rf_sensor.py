@@ -14,8 +14,8 @@ import hp_436a
 import hp_8662a
 
 
-# DEFAULT_SIG_GEN_RESOURCE = "TCPIP::rssmb100a180609.local::INSTR"
-DEFAULT_SIG_GEN_RESOURCE = "TCPIP::e5810a::gpib0,25::INSTR"
+DEFAULT_RS_SMB100A_SIG_GEN_RESOURCE = "TCPIP::rssmb100a180609.local::INSTR"
+DEFAULT_HP_8663A_SIG_GEN_RESOURCE = "TCPIP::e5810a::gpib0,25::INSTR"
 DEFAULT_POWER_METER_RESOURCE = "TCPIP::e5810a::gpib0,13::INSTR"
 
 
@@ -31,15 +31,17 @@ class SensorInfo:
 def run(argv, sensor_info, power_levels_dBm):
     rm = pyvisa.ResourceManager('@py')
 
-    sig_gen_resource = (argv[1] if len(argv) >= 2
-                        else DEFAULT_SIG_GEN_RESOURCE)
+    # TODO: some way to configure this.
+    if False:
+        siggy = rs_smb100a.RhodeSchwarzSMB100A(
+            rm, DEFAULT_RS_SMB100A_SIG_GEN_RESOURCE)
+    else:
+        siggy = hp_8662a.HP8663A(DEFAULT_HP_8663A_SIG_GEN_RESOURCE)
 
-    power_meter_resource = (argv[2] if len(argv) >= 3
-                            else DEFAULT_POWER_METER_RESOURCE)
+    power_meter_resource = DEFAULT_POWER_METER_RESOURCE
 
     readings = []
-    # with rs_smb100a.RhodeSchwarzSMB100A(rm, sig_gen_resource) as siggen:
-    with hp_8662a.HP8662A(sig_gen_resource) as siggen:
+    with siggy as siggen:
         siggen.reset()
         siggen.system_preset()
         siggen.set_output(False)
@@ -60,11 +62,13 @@ def run(argv, sensor_info, power_levels_dBm):
                     siggen.set_output(True)
 
                     for (hz, cf) in sensor_info.cal_points:
-                        if hz > 2.560e9:
+                        print(f"frequency set to {hz} Hz")
+                        try:
+                            siggen.set_frequency(hz)
+                        except ValueError:
+                            print(f"{hz} Hz is out of range")
                             continue
 
-                        siggen.set_frequency(hz)
-                        print(f"frequency set to {hz} Hz")
                         time.sleep(0.1)
 
                         try:
