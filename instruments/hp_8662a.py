@@ -45,8 +45,14 @@ class HP8662A:
         time.sleep(0.1)
         self._write_string("AO\n")
 
+    def _check_frequency(self, frequency_hz: float):
+        if 10e3 <= frequency_hz <= 1280e6:
+            return
+        raise ValueError(f"Frequency {frequency_hz} Hz out of range.")
+
     def set_frequency(self, frequency_hz: float):
         assert self.inst
+        self._check_frequency(frequency_hz)
         self._write_string(f"FR{frequency_hz}HZ\n")
 
     def set_output(self, on: bool):
@@ -64,6 +70,13 @@ class HP8662A:
 
     def set_power(self, power_dBm: float):
         self.power_dBm = power_dBm
+
+
+class HP8663A(HP8662A):
+    def _check_frequency(self, frequency_hz: float):
+        if 100e3 <= frequency_hz <= 2560e6:
+            return
+        raise ValueError(f"Frequency {frequency_hz} Hz out of range.")
 
 
 def main(argv):
