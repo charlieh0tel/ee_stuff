@@ -67,12 +67,16 @@ def main(argv):
             plt.plot(df_subset['hz'], df_subset['difference_dB'],
                      label=f'Power Level: {level} dBm', marker='x')
             max_abs_err = df_subset['difference_dB'].abs().max()
-            max_abs_err_hz = df_subset.loc[
+            x = df_subset.loc[
                 df_subset['difference_dB'].abs().idxmax(), 'hz']
+            y = df_subset.loc[df_subset['difference_dB'].abs().idxmax(),
+                              'difference_dB']
+            x_text = 1.1 * x
+            y_text = y + 0.1 * max_abs_err
             plt.annotate(
                 f'Max Abs Err: {max_abs_err:.2f} dB',
-                xy=(max_abs_err_hz, df_subset.loc[df_subset['difference_dB'].abs().idxmax(), 'difference_dB']),
-                xytext=(max_abs_err_hz + max_abs_err_hz*0.1, df_subset.loc[df_subset['difference_dB'].abs().idxmax(), 'difference_dB'] + max_abs_err*0.1),
+                xy=(x, y),
+                xytext=(x_text, y_text),
                 arrowprops=dict(facecolor='red', shrink=0.02))
 
         plt.xscale('log')
