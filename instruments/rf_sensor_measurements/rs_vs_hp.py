@@ -42,46 +42,44 @@ def main(argv):
         combined_df.to_parquet(f"{outname}.parquet")
 
         siggens = sorted(combined_df['siggen'].unique())
+        assert len(siggens) == 2
         siggen1 = siggens[0]
         siggen2 = siggens[1]
 
-        assert len(siggens) == 2
-
-        df_filtered = combined_df.dropna(
-            subset=['hz', 'power_level_dBm',
-                    'corrected_measured_dBm', 'siggen'])
-
-        # Pivot the DataFrame to have 'hz' and 'power_level_dBm' as index
-        # and 'siggen' as columns, with 'corrected_measured_dBm' as values.
-        # This automatically aligns based on the index (hz and power_level_dBm)
-        df_pivot = df_filtered.pivot_table(
+        df_pivot = combined_df.pivot_table(
             index=['hz', 'power_level_dBm'],
             columns='siggen',
-            values='corrected_measured_dBm')
+            values='corrected_measured_dBm'
+        )
 
         df_pivot['difference_dB'] = df_pivot[siggen1] - df_pivot[siggen2]
-        # df_pivot.iloc[:, 1] - df_pivot.iloc[:, 0])
+        df_pivot.dropna(inplace=True)
 
-        # Reset index to make 'hz' and 'power_level_dBm' columns again
-        df_diff = df_pivot.reset_index()
+        # Reset index to make 'hz' and 'power_level_dBm' columns again.
+        df_pivot = df_pivot.reset_index()
 
-        # Get unique power levels
-        power_levels = df_diff['power_level_dBm'].unique()
+        print(df_pivot)
+        power_levels = df_pivot['power_level_dBm'].unique()
 
-        # Plotting
         plt.figure(figsize=(15, 10))
-
         for level in power_levels:
-            df_subset = df_diff[df_diff['power_level_dBm'] == level]
+            df_subset = df_pivot[df_pivot['power_level_dBm'] == level]
             plt.plot(df_subset['hz'], df_subset['difference_dB'],
                      label=f'Power Level: {level} dBm', marker='x')
+            max_abs_err = df_subset['difference_dB'].abs().max()
+            max_abs_err_hz = df_subset.loc[
+                df_subset['difference_dB'].abs().idxmax(), 'hz']
+            plt.annotate(
+                f'Max Abs Err: {max_abs_err:.2f} dB',
+                xy=(max_abs_err_hz, df_subset.loc[df_subset['difference_dB'].abs().idxmax(), 'difference_dB']),
+                xytext=(max_abs_err_hz + max_abs_err_hz*0.1, df_subset.loc[df_subset['difference_dB'].abs().idxmax(), 'difference_dB'] + max_abs_err*0.1),
+                arrowprops=dict(facecolor='red', shrink=0.02))
 
         plt.xscale('log')
-        plt.xlabel('Frequency (Hz)')
+        plt.xlabel('Frequency [Hz]')
         plt.ylabel(f'({siggen1} - {siggen2}) [dB]')
         plt.suptitle(outname)
-        plt.title(
-            'Difference in Corrected Measured dBm vs. Frequency by Power Level')
+        plt.title('Difference in Corrected Measured dBm vs. Frequency')
         plt.legend(title='Power Level')
         plt.grid(True, which="both", ls="--", linewidth=0.5)
 
