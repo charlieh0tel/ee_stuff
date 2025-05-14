@@ -25,7 +25,7 @@ class SensorInfo:
     serial: str
     min_dBm: float
     max_dBm: float
-    cal_points: list([float, float, float]) # Hz, CF%, Rho
+    cal_points: list([float, float, float])  # Hz, CF%, Rho
 
 
 def run(argv, sensor_info, power_levels_dBm):
@@ -68,7 +68,7 @@ def run(argv, sensor_info, power_levels_dBm):
                     except ValueError:
                         print(f"{power_level_dBm} dBm is out of range")
                         continue
-                        
+
                     siggen.set_output(True)
 
                     for (hz, cf, _rho) in sensor_info.cal_points:
@@ -138,7 +138,7 @@ def run(argv, sensor_info, power_levels_dBm):
     plt.grid(True, which="both", ls="--", linewidth=0.5)
     plt.savefig(output_basename + "_error.png")
     plt.show()
-    
+
     return 0
 
 
