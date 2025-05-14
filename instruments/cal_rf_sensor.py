@@ -140,7 +140,3 @@ def run(argv, sensor_info, power_levels_dBm):
     plt.show()
 
     return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main(sys.argv))
