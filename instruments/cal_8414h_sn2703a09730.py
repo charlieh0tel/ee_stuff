@@ -26,10 +26,10 @@ SENSOR_INFO = cal_rf_sensor.SensorInfo(
         (12.0e9, 97.6, 0.011),
         (13.0e9, 97.5, 0.019),
         (14.0e9, 95.8, 0.023),
-        (15.0e9, 94.9, 0.016),    # obscured, likely correct
-        (16.0e9, 95.6, 0.024),    # obsscured, maybe correct
-        (17.0e9, 94.4, 0.034),    # only last digit for sure
-        (18.0e9, 94.6, 0.037)]    # only last digit for sure
+        (15.0e9, 94.9, 0.016),    # CF% obscured, likely correct
+        (16.0e9, 95.6, 0.024),    # CF% obscured, maybe correct
+        (17.0e9, 94.4, 0.034),    # CF% obscured, only last digit for sure
+        (18.0e9, 94.6, 0.037)]    # CF% obscured, only last digit for sure
 )
 
 
