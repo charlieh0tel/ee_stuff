@@ -51,8 +51,14 @@ class RhodeSchwarzSMB100A:
         self._check_frequency(frequency_hz)
         self.inst.write(f":FREQ {frequency_hz}")
 
+    def _check_power(self, power_dBm: float):
+        if -145. <= power_dBm <= 14.:
+            return
+        raise ValueError(f"Power {power_dBm} dBm out of range.")
+
     def set_power(self, power_dBm: float):
         assert self.inst
+        self._check_power(power_dBm)
         self.inst.write(f":POWER {power_dBm}")
 
 

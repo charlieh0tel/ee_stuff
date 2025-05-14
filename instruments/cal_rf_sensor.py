@@ -25,18 +25,23 @@ class SensorInfo:
     serial: str
     min_dBm: float
     max_dBm: float
-    cal_points: list([float, float])
+    cal_points: list([float, float, float]) # Hz, CF%, Rho
 
 
 def run(argv, sensor_info, power_levels_dBm):
     rm = pyvisa.ResourceManager('@py')
 
-    # TODO: some way to configure this.
-    if False:
+    # TODO: a better way than this
+    if len(argv) >= 2 and "rs" in argv[1]:
         siggy = rs_smb100a.RhodeSchwarzSMB100A(
             rm, DEFAULT_RS_SMB100A_SIG_GEN_RESOURCE)
+        siggy_name = "rssmb100a"
     else:
-        siggy = hp_8662a.HP8663A(DEFAULT_HP_8663A_SIG_GEN_RESOURCE)
+        siggy = hp_8662a.HP8663A(
+            DEFAULT_HP_8663A_SIG_GEN_RESOURCE)
+        siggy_name = "hp8663a"
+
+    print(siggy_name)
 
     power_meter_resource = DEFAULT_POWER_METER_RESOURCE
 
@@ -58,10 +63,15 @@ def run(argv, sensor_info, power_levels_dBm):
                     siggen.set_output(False)
                     print("zeroing....")
                     pm.zero_meter()
-                    siggen.set_power(power_level_dBm)
+                    try:
+                        siggen.set_power(power_level_dBm)
+                    except ValueError:
+                        print(f"{power_level_dBm} dBm is out of range")
+                        continue
+                        
                     siggen.set_output(True)
 
-                    for (hz, cf) in sensor_info.cal_points:
+                    for (hz, cf, _rho) in sensor_info.cal_points:
                         print(f"frequency set to {hz} Hz")
                         try:
                             siggen.set_frequency(hz)
@@ -69,8 +79,7 @@ def run(argv, sensor_info, power_levels_dBm):
                             print(f"{hz} Hz is out of range")
                             continue
 
-                        time.sleep(0.1)
-
+                        time.sleep(1.0)
                         try:
                             measured_dBm = pm.read_with_settling_dBm()
                         except TimeoutError:
@@ -96,24 +105,40 @@ def run(argv, sensor_info, power_levels_dBm):
 
     yyyymmdd = datetime.datetime.today().strftime("%Y%m%d")
     output_basename = (f"sensor_{sensor_info.model}_"
-                       f"SN{sensor_info.serial}_{yyyymmdd}")
+                       f"SN{sensor_info.serial}_"
+                       f"{siggy_name}_{yyyymmdd}")
     df.to_csv(output_basename + ".csv", index=False)
 
-    # Plot.
+    # Plot measurements.
     plt.figure(figsize=(10, 6))
     for level in df['power_level_dBm'].unique():
         level_df = df[df['power_level_dBm'] == level]
         plt.plot(level_df['hz'], level_df['corrected_measured_dBm'],
                  label=f'{level} dBm', marker='x')
     plt.xscale('log')
-    plt.xlabel('Frequency (Hz)')
-    plt.ylabel('Corrected Measured Power (dBm)')
+    plt.xlabel('Frequency [Hz]')
+    plt.ylabel('Measured Power (Corrected) [dBm]')
     plt.title(output_basename)
     plt.legend()
     plt.grid(True, which="both", ls="--", linewidth=0.5)
-    plt.savefig(output_basename + ".png")
+    plt.savefig(output_basename + "_measured.png")
     plt.show()
 
+    plt.figure(figsize=(10, 6))
+    for level in df['power_level_dBm'].unique():
+        level_df = df[df['power_level_dBm'] == level]
+        plt.plot(level_df['hz'],
+                 level_df['corrected_measured_dBm'] - level,
+                 label=f'{level} dBm', marker='x')
+    plt.xscale('log')
+    plt.xlabel('Frequency [Hz]')
+    plt.ylabel('Error [dB]')
+    plt.title(output_basename)
+    plt.legend()
+    plt.grid(True, which="both", ls="--", linewidth=0.5)
+    plt.savefig(output_basename + "_error.png")
+    plt.show()
+    
     return 0
 
 

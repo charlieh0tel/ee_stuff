@@ -68,7 +68,13 @@ class HP8662A:
         else:
             self._write_string(f"AO\n")
 
+    def _check_power(self, power_dBm: float):
+        if -129.9 <= power_dBm <= 19.9:
+            return
+        raise ValueError(f"Power {power_dBm} dBm out of range.")
+
     def set_power(self, power_dBm: float):
+        self._check_power(power_dBm)
         self.power_dBm = power_dBm
 
 
