@@ -5,7 +5,6 @@ import datetime
 import sys
 import time
 
-import matplotlib.pyplot as plt
 import pandas as pd
 import pyvisa
 
@@ -108,35 +107,5 @@ def run(argv, sensor_info, power_levels_dBm):
                        f"SN{sensor_info.serial}_"
                        f"{siggy_name}_{yyyymmdd}")
     df.to_csv(output_basename + ".csv", index=False)
-
-    # Plot measurements.
-    plt.figure(figsize=(10, 6))
-    for level in df['power_level_dBm'].unique():
-        level_df = df[df['power_level_dBm'] == level]
-        plt.plot(level_df['hz'], level_df['corrected_measured_dBm'],
-                 label=f'{level} dBm', marker='x')
-    plt.xscale('log')
-    plt.xlabel('Frequency [Hz]')
-    plt.ylabel('Measured Power (Corrected) [dBm]')
-    plt.title(output_basename)
-    plt.legend()
-    plt.grid(True, which="both", ls="--", linewidth=0.5)
-    plt.savefig(output_basename + "_measured.png")
-    plt.show()
-
-    plt.figure(figsize=(10, 6))
-    for level in df['power_level_dBm'].unique():
-        level_df = df[df['power_level_dBm'] == level]
-        plt.plot(level_df['hz'],
-                 level_df['corrected_measured_dBm'] - level,
-                 label=f'{level} dBm', marker='x')
-    plt.xscale('log')
-    plt.xlabel('Frequency [Hz]')
-    plt.ylabel('Error [dB]')
-    plt.title(output_basename)
-    plt.legend()
-    plt.grid(True, which="both", ls="--", linewidth=0.5)
-    plt.savefig(output_basename + "_error.png")
-    plt.show()
 
     return 0
