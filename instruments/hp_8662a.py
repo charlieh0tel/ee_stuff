@@ -22,7 +22,6 @@ class HP8662A:
     def open(self):
         assert self.inst is None
         self.inst = vxi11.Instrument(self.resource_name)
-        self.inst.clear()
         return self
 
     def close(self):
@@ -38,6 +37,7 @@ class HP8662A:
 
     def reset(self):
         assert self.inst
+        self.inst.clear()
 
     def system_preset(self):
         assert self.inst
