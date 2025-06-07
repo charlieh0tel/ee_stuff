@@ -41,9 +41,6 @@ class Keithley2015:
     def query(self, *args, **kwargs):
         return self.inst.query(*args, **kwargs)
 
-    def read(self, *args, **kwargs):
-        return self.inst.read(*args, **kwargs)
-
 
 def main(argv):
     rm = pyvisa.ResourceManager('@py')
