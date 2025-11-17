@@ -58,72 +58,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "hole_clearance|86451000|76960000|204c9d28-62e0-4f94-afeb-e6aacf5c3388|1b942f7e-611b-4ca7-8fca-87ab1f396ef6",
-          ""
-        ],
-        [
-          "hole_clearance|86451000|76960000|2d67b606-5829-45dd-abf9-1a865abaa76d|1b942f7e-611b-4ca7-8fca-87ab1f396ef6",
-          ""
-        ],
-        [
-          "hole_clearance|86451000|83060000|1b00e962-d412-4a46-ad5a-6c38d7c2935d|22e549d3-fb8a-47a9-ad0d-bde674051031",
-          ""
-        ],
-        [
-          "hole_clearance|86451000|83060000|5517a2da-b0e5-4336-b1dd-28d0df2019ee|22e549d3-fb8a-47a9-ad0d-bde674051031",
-          ""
-        ],
-        [
-          "silk_overlap|102944000|78050800|d48c029e-db7f-46f4-9031-ef7c34d9efcf|657c1c18-7d32-4dac-9c4b-1f0ac8ac01a4",
-          ""
-        ],
-        [
-          "silk_overlap|104644000|78050800|d48c029e-db7f-46f4-9031-ef7c34d9efcf|389d5870-5cc2-4dae-b329-b4fe9f480fb6",
-          ""
-        ],
-        [
-          "silk_overlap|105844000|75850800|4e917fc4-2cbd-4bea-b317-b10ec044b17a|65d298b3-2fc6-44e2-bb8f-a4455500df7c",
-          ""
-        ],
-        [
-          "silk_overlap|105844000|78050800|4e917fc4-2cbd-4bea-b317-b10ec044b17a|389d5870-5cc2-4dae-b329-b4fe9f480fb6",
-          ""
-        ],
-        [
-          "silk_overlap|106978564|77008400|a71a7e49-7290-4e15-b9d3-50647affb370|3dcdeb7d-757e-42b7-93aa-45b04d28a76a",
-          ""
-        ],
-        [
-          "silk_overlap|106978564|77728400|4c3dfc67-77c4-404e-9d88-76f2dcf17a3f|3dcdeb7d-757e-42b7-93aa-45b04d28a76a",
-          ""
-        ],
-        [
-          "silk_overlap|106981164|74849400|edfa09ec-84a3-4725-b00d-230dad257901|bfbc5f7b-57c2-4777-9170-bee49817e85f",
-          ""
-        ],
-        [
-          "silk_overlap|106981164|75569400|0d64bdb4-9af2-499e-bfe9-b811852f116a|bfbc5f7b-57c2-4777-9170-bee49817e85f",
-          ""
-        ],
-        [
-          "silk_overlap|107194236|77008400|a71a7e49-7290-4e15-b9d3-50647affb370|72201656-e4c7-4af9-850d-ab670810df4e",
-          ""
-        ],
-        [
-          "silk_overlap|107194236|77728400|4c3dfc67-77c4-404e-9d88-76f2dcf17a3f|72201656-e4c7-4af9-850d-ab670810df4e",
-          ""
-        ],
-        [
-          "silk_overlap|107196836|74849400|edfa09ec-84a3-4725-b00d-230dad257901|de2d54a3-ab69-49e5-828a-cddde8502bd0",
-          ""
-        ],
-        [
-          "silk_overlap|107196836|75569400|0d64bdb4-9af2-499e-bfe9-b811852f116a|de2d54a3-ab69-49e5-828a-cddde8502bd0",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -681,7 +616,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "canob.step",
       "svg": "",
       "vrml": ""
     },
