@@ -5346,6 +5346,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Iout(max) = 100 mA\nVin = 3-65 V"
+		(exclude_from_sim no)
+		(at 288.544 62.484 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "13c8ee11-8d1d-40d2-86cd-79c8cdc6ebe7")
+	)
 	(text "8 MHz 3225"
 		(exclude_from_sim no)
 		(at 39.37 130.81 0)
@@ -5356,6 +5366,16 @@
 			(justify left bottom)
 		)
 		(uuid "381ab3d1-f51a-41e4-9400-5e3f5d443365")
+	)
+	(text "If(max) = 300 mA"
+		(exclude_from_sim no)
+		(at 207.264 40.132 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a1e11746-e466-45de-b9f8-cad65b159b51")
 	)
 	(junction
 		(at 294.64 33.02)
@@ -12795,7 +12815,7 @@
 				)
 			)
 		)
-		(property "Value" "tbd"
+		(property "Value" "BAT54CWFILM"
 			(at 212.0265 26.67 0)
 			(effects
 				(font

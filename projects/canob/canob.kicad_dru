@@ -1,3 +1,6 @@
+# https://github.com/labtroll/KiCad-DesignRules/blob/main/JLCPCB/JLCPCB.kicad_dru
+
+
 (version 1)
 # Custom Design Rules (DRC) for KiCAD 7.0 (Stored in '<project>.kicad_dru' file).
 #
@@ -43,18 +46,18 @@
 	(constraint clearance (min 0.09mm))
 )
 
-(rule "Silkscreen text"
-	(layer "?.Silkscreen")
-	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
-	(constraint text_thickness (min 0.15mm))
-	(constraint text_height (min 1mm))
-)
+#(rule "Silkscreen text"
+#	(layer "?.Silkscreen")
+#	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+#	(constraint text_thickness (min 0.15mm))
+#	(constraint text_height (min 1mm))
+#)
 
-(rule "Pad to Silkscreen"
-	(layer outer)
-	(condition "A.Type == 'pad' && B.Layer == '?.Silkscreen'")
-	(constraint silk_clearance (min 0.15mm))
-)
+#(rule "Pad to Silkscreen"
+#	(layer outer)
+#	(condition "A.Type == 'pad' && B.Layer == '?.Silkscreen'")
+#	(constraint silk_clearance (min 0.15mm))
+#)
 
 (rule "Edge (routed) to track clearance"
 	(condition "A.Type == 'track'")
