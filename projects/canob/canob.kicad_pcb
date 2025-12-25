@@ -1442,7 +1442,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C9900012286"
+		(property "LCSC" ""
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2450,7 +2450,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C5252984"
+		(property "LCSC" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5296,7 +5296,7 @@
 			)
 		)
 		(property ki_fp_filters "QFP:LQFP-48_7mmx7mm_Pitch0.5mm*")
-		(path "/c217108c-39ce-4a65-a430-e4c66729adc4")
+		(path "/77d80ceb-01d4-4c1a-88f9-de73b40a1ec3")
 		(sheetname "/")
 		(sheetfile "canob.kicad_sch")
 		(attr smd)
@@ -9474,7 +9474,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" ""
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10899,7 +10899,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C3030991"
+		(property "LCSC" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11153,7 +11153,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C473612"
+		(property "LCSC" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12400,7 +12400,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
