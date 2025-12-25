@@ -74,14 +74,6 @@
         [
           "hole_clearance|176518877|83864748|5517a2da-b0e5-4336-b1dd-28d0df2019ee|46961de4-113d-4d84-88de-3d7ecbfae33b",
           ""
-        ],
-        [
-          "lib_footprint_mismatch|151669250|73000000|5297f0b2-ffe4-4404-b9d2-9e7e2e063854|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|181980750|73000000|6527d6b8-13b2-4b49-be6a-8c8a2ededd56|00000000-0000-0000-0000-000000000000",
-          ""
         ]
       ],
       "meta": {
@@ -275,7 +267,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_to_pin|2997200|355600|964a5013-6a25-4853-b0a8-a7e85ecb94f7|75adcb3a-2be0-4abf-986b-574dc7cd836c|/a5f55489-8083-4ed1-a137-3f799946f30f|/a5f55489-8083-4ed1-a137-3f799946f30f|/a5f55489-8083-4ed1-a137-3f799946f30f",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
