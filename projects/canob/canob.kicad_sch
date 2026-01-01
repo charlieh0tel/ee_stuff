@@ -7423,16 +7423,6 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 240.03) (xy 57.15 242.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9985118b-cea9-407d-bfbf-30e924dd19cd")
-	)
-	(wire
-		(pts
 			(xy 266.7 35.56) (xy 266.7 33.02)
 		)
 		(stroke
@@ -7513,7 +7503,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 240.03) (xy 57.15 240.03)
+			(xy 63.5 233.68) (xy 76.2 233.68)
 		)
 		(stroke
 			(width 0)
@@ -7963,7 +7953,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 232.41) (xy 69.85 232.41)
+			(xy 63.5 241.3) (xy 78.74 241.3)
 		)
 		(stroke
 			(width 0)
@@ -9132,7 +9122,7 @@
 		(uuid "f3464528-dea2-49ee-9033-1949645ac19f")
 	)
 	(label "SWCLK"
-		(at 69.85 232.41 180)
+		(at 78.74 241.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12208,71 +12198,6 @@
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 242.57 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5239fcd2-bbe2-4cbf-9a82-6ac566175a7d")
-		(property "Reference" "#PWR012"
-			(at 57.15 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 247.015 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 57.15 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "14dcef61-4a1a-45a8-a6e5-24481f5c501c")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -15771,7 +15696,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 54.61 232.41 90)
+		(at 63.5 241.3 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -15779,7 +15704,7 @@
 		(dnp no)
 		(uuid "c535e019-86e9-495b-9d9d-1d1e27b7e8d5")
 		(property "Reference" "TP1"
-			(at 54.61 227.33 90)
+			(at 63.5 236.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15787,7 +15712,7 @@
 			)
 		)
 		(property "Value" "TestPoint_Small"
-			(at 54.61 229.87 90)
+			(at 63.5 238.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15795,7 +15720,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 54.61 227.33 0)
+			(at 63.5 236.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15804,7 +15729,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 227.33 0)
+			(at 63.5 236.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15813,7 +15738,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 54.61 232.41 0)
+			(at 63.5 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17028,7 +16953,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 54.61 240.03 90)
+		(at 63.5 233.68 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17036,7 +16961,7 @@
 		(dnp no)
 		(uuid "eb73c846-5fd0-4130-b57f-384292d7a6e4")
 		(property "Reference" "TP2"
-			(at 54.61 234.95 90)
+			(at 63.5 228.6 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17044,7 +16969,7 @@
 			)
 		)
 		(property "Value" "TestPoint_Small"
-			(at 54.61 237.49 90)
+			(at 63.5 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17052,7 +16977,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 54.61 234.95 0)
+			(at 63.5 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17061,7 +16986,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 54.61 234.95 0)
+			(at 63.5 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17070,7 +16995,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 54.61 240.03 0)
+			(at 63.5 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
