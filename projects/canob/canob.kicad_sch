@@ -5,6 +5,113 @@
 	(uuid "a5f55489-8083-4ed1-a137-3f799946f30f")
 	(paper "B")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
 			(pin_names
 				(offset 1.016)
@@ -6686,7 +6793,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 91.44) (xy 113.03 92.71)
+			(xy 113.03 91.44) (xy 113.03 95.25)
 		)
 		(stroke
 			(width 0)
@@ -7296,6 +7403,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 240.03) (xy 57.15 242.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9985118b-cea9-407d-bfbf-30e924dd19cd")
+	)
+	(wire
+		(pts
 			(xy 266.7 35.56) (xy 266.7 33.02)
 		)
 		(stroke
@@ -7373,6 +7490,16 @@
 			(type default)
 		)
 		(uuid "a02e1277-9518-4ae4-b08a-d3cb9c354f10")
+	)
+	(wire
+		(pts
+			(xy 54.61 240.03) (xy 57.15 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0404132-55d9-4bfa-a8b1-aece348db717")
 	)
 	(wire
 		(pts
@@ -7813,6 +7940,16 @@
 			(type default)
 		)
 		(uuid "c39481d3-6ba0-4145-b43a-d6cf7c9c1aeb")
+	)
+	(wire
+		(pts
+			(xy 54.61 232.41) (xy 69.85 232.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4d570d3-8a10-492c-8bb5-09ca8b487bbc")
 	)
 	(wire
 		(pts
@@ -8973,6 +9110,16 @@
 			(justify left bottom)
 		)
 		(uuid "f3464528-dea2-49ee-9033-1949645ac19f")
+	)
+	(label "SWCLK"
+		(at 69.85 232.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe796599-6c2e-4294-aee4-6aee52ee0636")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -10229,7 +10376,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 113.03 92.71 0)
+		(at 113.03 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10237,7 +10384,7 @@
 		(dnp no)
 		(uuid "17307e76-84c2-45f2-98de-e7c6cb5a2d99")
 		(property "Reference" "#PWR016"
-			(at 113.03 99.06 0)
+			(at 113.03 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10246,7 +10393,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 113.03 96.52 0)
+			(at 113.03 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10254,7 +10401,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.03 92.71 0)
+			(at 113.03 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10263,7 +10410,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 92.71 0)
+			(at 113.03 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10272,7 +10419,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 113.03 92.71 0)
+			(at 113.03 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12041,6 +12188,71 @@
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 242.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5239fcd2-bbe2-4cbf-9a82-6ac566175a7d")
+		(property "Reference" "#PWR012"
+			(at 57.15 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 247.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 57.15 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "14dcef61-4a1a-45a8-a6e5-24481f5c501c")
+		)
+		(instances
+			(project "canob"
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -15538,6 +15750,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 54.61 232.41 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c535e019-86e9-495b-9d9d-1d1e27b7e8d5")
+		(property "Reference" "TP1"
+			(at 54.61 227.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 54.61 229.87 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 54.61 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 54.61 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a11a6eda-3eaa-4e13-8812-a332afc97138")
+		)
+		(instances
+			(project "canob"
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "molex_microlock_plus:5054481071")
 		(at 278.13 139.7 0)
 		(unit 1)
@@ -16660,6 +16936,70 @@
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 54.61 240.03 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "eb73c846-5fd0-4130-b57f-384292d7a6e4")
+		(property "Reference" "TP2"
+			(at 54.61 234.95 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint_Small"
+			(at 54.61 237.49 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 54.61 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 54.61 240.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6b3d1a55-bf2c-4d32-9c3f-3bb74e54c6d7")
+		)
+		(instances
+			(project "canob"
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
