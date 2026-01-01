@@ -5527,6 +5527,16 @@
 		)
 		(uuid "e16e31b1-d7a4-49e2-8df2-08cd69b281bb")
 	)
+	(text "For forcing DFU."
+		(exclude_from_sim no)
+		(at 86.36 235.204 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e1e5ae3e-5bad-4ab0-b772-51101e958097")
+	)
 	(junction
 		(at 125.73 217.17)
 		(diameter 0)
@@ -7150,6 +7160,16 @@
 			(type default)
 		)
 		(uuid "7ded3b83-0dd0-416a-a851-b2786d691427")
+	)
+	(wire
+		(pts
+			(xy 76.2 228.6) (xy 76.2 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fe11db7-1dee-4ca4-bc2c-f01e9ac57d3e")
 	)
 	(wire
 		(pts
@@ -16604,6 +16624,71 @@
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 76.2 228.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2665891-b06d-4480-98ce-18d0de7f8dcf")
+		(property "Reference" "#PWR012"
+			(at 76.2 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 76.2 224.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 76.2 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9faf567d-1c66-4ab5-996c-e52d88c80d34")
+		)
+		(instances
+			(project "canob"
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
