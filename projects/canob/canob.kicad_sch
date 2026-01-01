@@ -1049,7 +1049,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:D_Schottky_Dual_CommonCathode_AKA_Parallel"
+		(symbol "Device:D_Schottky_Dual_CommonCathode_AAK"
 			(pin_names
 				(offset 0.762)
 				(hide yes)
@@ -1058,15 +1058,15 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "D"
-				(at 0 5.08 0)
+				(at 1.27 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "D_Schottky_Dual_CommonCathode_AKA_Parallel"
-				(at 0 -5.08 0)
+			(property "Value" "D_Schottky_Dual_CommonCathode_AAK"
+				(at 0 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1074,7 +1074,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 1.27 0 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1083,7 +1083,7 @@
 				)
 			)
 			(property "Datasheet" "~"
-				(at 1.27 0 0)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1091,7 +1091,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Dual Schottky diode, common anode on pin 1"
+			(property "Description" "Dual Schottky diode, common cathode on pin 3"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1109,10 +1109,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "D_Schottky_Dual_CommonCathode_AKA_Parallel_0_1"
+			(symbol "D_Schottky_Dual_CommonCathode_AAK_0_1"
 				(polyline
 					(pts
-						(xy -2.54 3.81) (xy 0 2.54) (xy -2.54 1.27) (xy -2.54 3.81) (xy -2.54 3.81) (xy -2.54 3.81)
+						(xy -3.81 1.27) (xy -1.27 0) (xy -3.81 -1.27) (xy -3.81 1.27) (xy -3.81 1.27) (xy -3.81 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -1124,19 +1124,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.54 -1.27) (xy 0 -2.54) (xy -2.54 -3.81) (xy -2.54 -1.27) (xy -2.54 -1.27) (xy -2.54 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.54) (xy 1.27 -2.54) (xy 1.27 2.54) (xy -2.54 2.54)
+						(xy -3.81 0) (xy 3.81 0)
 					)
 					(stroke
 						(width 0)
@@ -1148,7 +1136,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.508 3.556) (xy 0.508 3.81) (xy 0 3.81) (xy 0 1.27) (xy -0.508 1.27) (xy -0.508 1.524)
+						(xy -1.778 1.016) (xy -1.778 1.27) (xy -1.27 1.27) (xy -1.27 1.27) (xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -1160,7 +1148,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.508 -1.524) (xy 0.508 -1.27) (xy 0 -1.27) (xy 0 -3.81) (xy -0.508 -3.81) (xy -0.508 -3.556)
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -1172,7 +1160,19 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 0) (xy 2.54 0)
+						(xy -1.27 -1.27) (xy -0.762 -1.27) (xy -0.762 -1.016) (xy -0.762 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -1183,7 +1183,7 @@
 					)
 				)
 				(circle
-					(center 1.27 0)
+					(center 0 0)
 					(radius 0.254)
 					(stroke
 						(width 0)
@@ -1193,9 +1193,57 @@
 						(type outline)
 					)
 				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 0.762 1.27) (xy 0.762 1.016) (xy 0.762 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.778 -1.27) (xy 1.778 -1.016) (xy 1.778 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.27) (xy 1.27 0) (xy 3.81 1.27) (xy 3.81 -1.27) (xy 3.81 -1.27) (xy 3.81 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at -5.08 2.54 0)
-					(length 2.54)
+					(at -7.62 0 0)
+					(length 3.81)
 					(name "A"
 						(effects
 							(font
@@ -1212,9 +1260,9 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -2.54 0)
+					(at 0 -5.08 90)
 					(length 2.54)
-					(name "A"
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1230,9 +1278,9 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "K"
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5344,7 +5392,7 @@
 	)
 	(text "Io(avg)=500 mA"
 		(exclude_from_sim no)
-		(at 210.82 39.116 0)
+		(at 209.804 40.132 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6168,6 +6216,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 40.64) (xy 200.66 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f3f4e8b-2f31-4673-b9e2-6780d2cd3ffc")
+	)
+	(wire
+		(pts
 			(xy 229.87 134.62) (xy 228.6 134.62)
 		)
 		(stroke
@@ -6208,16 +6266,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 35.56) (xy 207.01 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b8a660c-ba30-46c5-aee9-219f2bad4c0c")
-	)
-	(wire
-		(pts
 			(xy 290.83 142.24) (xy 297.18 142.24)
 		)
 		(stroke
@@ -6235,6 +6283,16 @@
 			(type default)
 		)
 		(uuid "2ce6fa74-88fe-4545-9ec3-9225be7156a9")
+	)
+	(wire
+		(pts
+			(xy 194.31 41.91) (xy 194.31 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d706c1f-60da-454f-b581-d3aac28beadd")
 	)
 	(wire
 		(pts
@@ -6368,16 +6426,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 29.21) (xy 203.2 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f4695f3-bbba-48e5-bc72-d8ff15f16a77")
-	)
-	(wire
-		(pts
 			(xy 189.23 132.08) (xy 201.93 132.08)
 		)
 		(stroke
@@ -6395,16 +6443,6 @@
 			(type default)
 		)
 		(uuid "4170b7fd-8601-4e2a-a9ad-d0dbfdf7e9c5")
-	)
-	(wire
-		(pts
-			(xy 207.01 30.48) (xy 203.2 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41891040-0a01-4110-b108-7bda69b66a06")
 	)
 	(wire
 		(pts
@@ -6628,6 +6666,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 41.91) (xy 194.31 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56c40f51-7455-4858-8fec-ed3ae8594d39")
+	)
+	(wire
+		(pts
 			(xy 78.74 59.69) (xy 88.9 59.69)
 		)
 		(stroke
@@ -6645,6 +6693,16 @@
 			(type default)
 		)
 		(uuid "5af62f96-2355-4053-9263-cf27baca1177")
+	)
+	(wire
+		(pts
+			(xy 200.66 22.86) (xy 200.66 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b027e32-f019-483d-b3ea-064ca4249d1b")
 	)
 	(wire
 		(pts
@@ -7045,6 +7103,16 @@
 			(type default)
 		)
 		(uuid "83c73bb0-29b6-452d-be56-4d534329aef3")
+	)
+	(wire
+		(pts
+			(xy 205.74 33.02) (xy 223.52 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84aaf638-ea8c-4a7c-babd-772ca536ba76")
 	)
 	(wire
 		(pts
@@ -8018,16 +8086,6 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 35.56) (xy 198.12 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ded5a9ce-9d3f-4d0a-8d9f-2aa98a8c478f")
-	)
-	(wire
-		(pts
 			(xy 46.99 148.59) (xy 50.8 148.59)
 		)
 		(stroke
@@ -8055,16 +8113,6 @@
 			(type default)
 		)
 		(uuid "e1cfcf90-a698-4807-9a6a-8b279cb81ba2")
-	)
-	(wire
-		(pts
-			(xy 217.17 33.02) (xy 223.52 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2716ec1-9909-40dd-b7d8-844ef8657a77")
 	)
 	(wire
 		(pts
@@ -11153,7 +11201,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 198.12 29.21 0)
+		(at 194.31 22.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11162,7 +11210,7 @@
 		(fields_autoplaced yes)
 		(uuid "2a90ffd9-7755-4ca2-b451-58505a9680b9")
 		(property "Reference" "#PWR01"
-			(at 198.12 33.02 0)
+			(at 194.31 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11171,7 +11219,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 198.12 24.765 0)
+			(at 194.31 18.415 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11179,7 +11227,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 198.12 29.21 0)
+			(at 194.31 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11188,7 +11236,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 29.21 0)
+			(at 194.31 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11197,7 +11245,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 198.12 29.21 0)
+			(at 194.31 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12873,7 +12921,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 203.2 29.21 0)
+		(at 200.66 22.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12882,7 +12930,7 @@
 		(fields_autoplaced yes)
 		(uuid "750e12f9-1499-4f27-97fc-0e450827d0e8")
 		(property "Reference" "#PWR02"
-			(at 203.2 33.02 0)
+			(at 200.66 26.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12891,7 +12939,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 203.2 24.765 0)
+			(at 200.66 18.415 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12899,7 +12947,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 29.21 0)
+			(at 200.66 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12908,7 +12956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 29.21 0)
+			(at 200.66 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12917,7 +12965,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 203.2 29.21 0)
+			(at 200.66 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13002,33 +13050,34 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky_Dual_CommonCathode_AKA_Parallel")
-		(at 212.09 33.02 0)
+		(lib_id "Device:D_Schottky_Dual_CommonCathode_AAK")
+		(at 200.66 33.02 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "752443ee-4b20-4b1d-8803-f27129898233")
 		(property "Reference" "D1"
-			(at 212.0265 24.13 0)
+			(at 204.978 37.592 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "SB05W05C"
-			(at 212.0265 26.67 0)
+			(at 212.344 35.306 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
-			(at 213.36 33.02 0)
+			(at 200.66 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13037,7 +13086,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 213.36 33.02 0)
+			(at 200.66 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13045,8 +13094,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Dual Schottky diode, common anode on pin 1"
-			(at 212.09 33.02 0)
+		(property "Description" "Dual Schottky diode, common cathode on pin 3"
+			(at 200.66 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
