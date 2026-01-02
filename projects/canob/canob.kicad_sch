@@ -15407,7 +15407,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:Nidec_Copal_SH-7010A"
+		(property "Footprint" "canob:SKAR-10S"
 			(at 247.65 219.71 0)
 			(effects
 				(font
