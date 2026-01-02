@@ -5,44 +5,28 @@
 	(uuid "a5f55489-8083-4ed1-a137-3f799946f30f")
 	(paper "B")
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
+		(symbol "Connector:Conn_ARM_SWD_TagConnect_TC2030"
 			(exclude_from_sim no)
-			(in_bom yes)
+			(in_bom no)
 			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
+			(property "Reference" "J"
+				(at 2.54 11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
+			(property "Value" "Conn_ARM_SWD_TagConnect_TC2030"
+				(at 5.08 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
+			(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+				(at 0 -17.78 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -50,7 +34,16 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "test point"
+			(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin"
 				(at 0 0 0)
 				(effects
 					(font
@@ -59,7 +52,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "test point tp"
+			(property "ki_keywords" "Cortex Debug Connector ARM SWD JTAG"
 				(at 0 0 0)
 				(effects
 					(font
@@ -68,7 +61,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Pin* Test*"
+			(property "ki_fp_filters" "*TC2030*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -77,24 +70,11 @@
 					(hide yes)
 				)
 			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
+			(symbol "Conn_ARM_SWD_TagConnect_TC2030_0_0"
+				(pin power_in line
+					(at -2.54 10.16 270)
 					(length 2.54)
-					(name "1"
+					(name "VCC"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -107,6 +87,112 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 7.62 5.08 180)
+					(length 2.54)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "SWCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "TCK" output line)
+				)
+				(pin bidirectional line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "SWDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "TMS" bidirectional line)
+				)
+				(pin input line
+					(at 7.62 -5.08 180)
+					(length 2.54)
+					(name "SWO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "TDO" input line)
+				)
+			)
+			(symbol "Conn_ARM_SWD_TagConnect_TC2030_0_1"
+				(rectangle
+					(start -5.08 7.62)
+					(end 5.08 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
 					)
 				)
 			)
@@ -5952,6 +6038,10 @@
 		(uuid "68ffd8c4-5a1e-4727-bbd7-2ffdfeea4472")
 	)
 	(no_connect
+		(at 129.54 205.74)
+		(uuid "728d219b-b455-4e0e-bb6e-09cb8d8c26bc")
+	)
+	(no_connect
 		(at 124.46 95.25)
 		(uuid "83792d86-e226-4627-84b7-8014b78276f9")
 	)
@@ -6189,6 +6279,26 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 200.66) (xy 142.24 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12f91e99-5da3-42a5-b66f-394c18c38b69")
+	)
+	(wire
+		(pts
+			(xy 129.54 203.2) (xy 142.24 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13951ff7-0634-4072-8832-0c024523dce2")
+	)
+	(wire
+		(pts
 			(xy 292.1 137.16) (xy 292.1 151.13)
 		)
 		(stroke
@@ -6369,16 +6479,6 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 222.25) (xy 102.87 219.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2af52512-33a1-4ed4-a3cb-b5020b22c8e9")
-	)
-	(wire
-		(pts
 			(xy 290.83 142.24) (xy 297.18 142.24)
 		)
 		(stroke
@@ -6456,16 +6556,6 @@
 			(type default)
 		)
 		(uuid "33307978-f0e4-49a3-a1f0-3bf3653f6e66")
-	)
-	(wire
-		(pts
-			(xy 101.6 204.47) (xy 116.84 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33748f1d-bc8a-426d-926f-a15fedc73735")
 	)
 	(wire
 		(pts
@@ -6569,6 +6659,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 195.58) (xy 142.24 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "421abc66-9b02-4df5-97ed-2c9ea761ea98")
+	)
+	(wire
+		(pts
 			(xy 57.15 57.15) (xy 57.15 59.69)
 		)
 		(stroke
@@ -6576,6 +6676,16 @@
 			(type default)
 		)
 		(uuid "4456f43d-702b-4fa2-9fc9-788fd394d3d4")
+	)
+	(wire
+		(pts
+			(xy 119.38 187.96) (xy 119.38 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "446b85e8-fce9-4075-b0e2-4c2031a51d8c")
 	)
 	(wire
 		(pts
@@ -7119,6 +7229,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 210.82) (xy 119.38 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70e89cc9-8577-4c50-92bf-587ced3fd42c")
+	)
+	(wire
+		(pts
 			(xy 201.93 132.08) (xy 201.93 134.62)
 		)
 		(stroke
@@ -7166,16 +7286,6 @@
 			(type default)
 		)
 		(uuid "7ded3b83-0dd0-416a-a851-b2786d691427")
-	)
-	(wire
-		(pts
-			(xy 114.3 184.15) (xy 114.3 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7fe11db7-1dee-4ca4-bc2c-f01e9ac57d3e")
 	)
 	(wire
 		(pts
@@ -7269,16 +7379,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 212.09) (xy 116.84 212.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8875b32c-c720-410a-bc4a-f433f8423ba8")
-	)
-	(wire
-		(pts
 			(xy 265.43 149.86) (xy 265.43 151.13)
 		)
 		(stroke
@@ -7296,16 +7396,6 @@
 			(type default)
 		)
 		(uuid "8a56fbb6-f183-4457-a5ef-f1524fa41346")
-	)
-	(wire
-		(pts
-			(xy 113.03 81.28) (xy 124.46 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a65a7da-f89d-452a-b54d-e5322bcc8f7b")
 	)
 	(wire
 		(pts
@@ -7519,16 +7609,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 189.23) (xy 114.3 189.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0404132-55d9-4bfa-a8b1-aece348db717")
-	)
-	(wire
-		(pts
 			(xy 43.18 148.59) (xy 46.99 148.59)
 		)
 		(stroke
@@ -7546,16 +7626,6 @@
 			(type default)
 		)
 		(uuid "a0bf71a7-b433-4cde-9d0b-7c1105db331d")
-	)
-	(wire
-		(pts
-			(xy 102.87 219.71) (xy 101.6 219.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2377992-0b07-4323-be5f-6f3a2113b709")
 	)
 	(wire
 		(pts
@@ -7859,6 +7929,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 81.28) (xy 124.46 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba158cc3-4cbd-4f58-a0f0-af3826006248")
+	)
+	(wire
+		(pts
 			(xy 264.16 48.26) (xy 264.16 49.53)
 		)
 		(stroke
@@ -7976,16 +8056,6 @@
 			(type default)
 		)
 		(uuid "c39481d3-6ba0-4145-b43a-d6cf7c9c1aeb")
-	)
-	(wire
-		(pts
-			(xy 101.6 196.85) (xy 116.84 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4d570d3-8a10-492c-8bb5-09ca8b487bbc")
 	)
 	(wire
 		(pts
@@ -8717,16 +8787,6 @@
 		)
 		(uuid "1674c28d-b24f-4016-b8a1-c048bc4e20a6")
 	)
-	(label "NRESET"
-		(at 116.84 212.09 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "18ac93c4-d878-4907-a224-160f1b0fdf74")
-	)
 	(label "12V_PRI"
 		(at 189.23 132.08 0)
 		(effects
@@ -8827,6 +8887,16 @@
 		)
 		(uuid "49f35803-5d5a-4895-9e77-8a2271b68242")
 	)
+	(label "SWDIO"
+		(at 142.24 203.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5272cced-8efc-4e6b-837d-e2baad36b411")
+	)
 	(label "USB_N"
 		(at 88.9 59.69 180)
 		(effects
@@ -8856,6 +8926,16 @@
 			(justify left bottom)
 		)
 		(uuid "5b6103f7-44c0-49fd-ae24-c5acc45b74ac")
+	)
+	(label "SWCLK"
+		(at 142.24 200.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5cff0124-d5dd-4718-8e47-984a5c8f0604")
 	)
 	(label "SW_B2"
 		(at 113.03 125.73 0)
@@ -9107,16 +9187,6 @@
 		)
 		(uuid "d793c1cb-f8e6-4a34-920c-7b11003912dc")
 	)
-	(label "SWDIO"
-		(at 115.57 81.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dd824138-4c93-49cd-bd0a-27aa57bcb5b5")
-	)
 	(label "USB_P"
 		(at 115.57 76.2 0)
 		(effects
@@ -9127,6 +9197,16 @@
 		)
 		(uuid "e0d8313e-88e7-4d4d-b16f-a2b643bea42e")
 	)
+	(label "NRESET"
+		(at 142.24 195.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e1c91d94-e1dd-4069-af95-66f542a8f434")
+	)
 	(label "SW_B1"
 		(at 113.03 128.27 0)
 		(effects
@@ -9136,16 +9216,6 @@
 			(justify left bottom)
 		)
 		(uuid "e3202b9a-5481-43ee-b72d-e9015426331d")
-	)
-	(label "SWDIO"
-		(at 116.84 204.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e6d138b7-a6e3-4c45-97d0-bb97ad5358d5")
 	)
 	(label "USB_P"
 		(at 88.9 64.77 180)
@@ -9196,16 +9266,6 @@
 			(justify left bottom)
 		)
 		(uuid "f3464528-dea2-49ee-9033-1949645ac19f")
-	)
-	(label "SWCLK"
-		(at 116.84 196.85 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fe796599-6c2e-4294-aee4-6aee52ee0636")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -9466,6 +9526,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_ARM_SWD_TagConnect_TC2030")
+		(at 121.92 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0316f96d-0692-421f-bdf1-9e85bc9bfeae")
+		(property "Reference" "J4"
+			(at 115.57 199.3899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_ARM_SWD_TagConnect_TC2030"
+			(at 115.57 201.9299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical"
+			(at 121.92 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf"
+			(at 121.92 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Tag-Connect ARM Cortex SWD JTAG connector, 6 pin"
+			(at 121.92 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "a3880396-d575-40a8-b5bd-12cb94f27599")
+		)
+		(pin "3"
+			(uuid "dcfa4c51-fb09-4c37-aa7a-4c9a0ed11c55")
+		)
+		(pin "4"
+			(uuid "c5b40944-8f42-41e8-91d8-bdd2d42d2753")
+		)
+		(pin "6"
+			(uuid "5d6389d3-4561-48ee-8149-d22b0c771a98")
+		)
+		(pin "2"
+			(uuid "3e91163b-a165-4318-ad7e-66eb458f6f4c")
+		)
+		(pin "1"
+			(uuid "4e015e1e-ec85-45cc-b314-21db3f177506")
+		)
+		(instances
+			(project ""
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 92.71 30.48 0)
 		(unit 1)
@@ -9591,71 +9733,6 @@
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 102.87 222.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "056245fb-ae98-4a60-81b1-94b097ec72b4")
-		(property "Reference" "#PWR043"
-			(at 102.87 228.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 102.87 226.695 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 102.87 222.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 102.87 222.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 102.87 222.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6a46fb03-06b2-4894-9d61-3df7e6b2407e")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -11365,70 +11442,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 204.47 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "253326c0-01bc-40dc-a225-5afc84ade54e")
-		(property "Reference" "TP3"
-			(at 101.6 199.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 101.6 201.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 101.6 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 199.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 101.6 204.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b8ad3c65-d652-4152-b096-5e7c71887b68")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 35.56 143.51 0)
 		(unit 1)
@@ -11762,70 +11775,6 @@
 			(project "stm32g0_usbc"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 212.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2d3afe66-bfbb-4241-bcef-9530e2243511")
-		(property "Reference" "TP4"
-			(at 101.6 207.01 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 101.6 209.55 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 101.6 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 207.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 101.6 212.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d364f7cf-910b-4300-a2e9-be55ba7dcf23")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -14923,70 +14872,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 219.71 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "aada7053-6302-4c20-a9ed-0776b106c95b")
-		(property "Reference" "TP5"
-			(at 101.6 214.63 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 101.6 217.17 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 101.6 214.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 214.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 101.6 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e23af1a3-7cda-4074-96cd-9445dd42f19b")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Interface_CAN_LIN:TCAN330G")
 		(at 213.36 97.79 0)
 		(unit 1)
@@ -16027,70 +15912,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 196.85 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c535e019-86e9-495b-9d9d-1d1e27b7e8d5")
-		(property "Reference" "TP1"
-			(at 101.6 191.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 101.6 194.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 101.6 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 101.6 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a11a6eda-3eaa-4e13-8812-a332afc97138")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "molex_microlock_plus:5054481071")
 		(at 278.13 139.7 0)
 		(unit 1)
@@ -16887,17 +16708,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 114.3 184.15 0)
+		(lib_id "power:GND")
+		(at 119.38 213.36 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "e2665891-b06d-4480-98ce-18d0de7f8dcf")
-		(property "Reference" "#PWR012"
-			(at 114.3 187.96 0)
+		(uuid "e250e6c7-12c6-40be-8aa3-2c9a02cf7d54")
+		(property "Reference" "#PWR044"
+			(at 119.38 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16905,8 +16726,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 114.3 179.705 0)
+		(property "Value" "GND"
+			(at 119.38 217.805 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16914,7 +16735,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 184.15 0)
+			(at 119.38 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16923,7 +16744,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 184.15 0)
+			(at 119.38 213.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16932,7 +16753,72 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 184.15 0)
+			(at 119.38 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ba23daa2-0438-4ca6-9a37-aa7da17c1951")
+		)
+		(instances
+			(project "canob"
+				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 119.38 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2665891-b06d-4480-98ce-18d0de7f8dcf")
+		(property "Reference" "#PWR012"
+			(at 119.38 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 119.38 183.515 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17278,70 +17164,6 @@
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
 					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 101.6 189.23 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "eb73c846-5fd0-4130-b57f-384292d7a6e4")
-		(property "Reference" "TP2"
-			(at 101.6 184.15 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TestPoint_Small"
-			(at 101.6 186.69 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 101.6 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 101.6 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6b3d1a55-bf2c-4d32-9c3f-3bb74e54c6d7")
-		)
-		(instances
-			(project "canob"
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "TP2")
 					(unit 1)
 				)
 			)
