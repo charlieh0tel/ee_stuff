@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "canob")(type "KiCad")(uri "${KIPRJMOD}/canob.kicad_sym")(options "")(descr ""))
+  (lib (name "molex_microlock_plus")(type "KiCad")(uri "${KIPRJMOD}/../../kicad/molex_microlock_plus.kicad_sym")(options "")(descr ""))
+  (lib (name "ch")(type "KiCad")(uri "${KIPRJMOD}/../../kicad/ch.kicad_sym")(options "")(descr ""))
+)
