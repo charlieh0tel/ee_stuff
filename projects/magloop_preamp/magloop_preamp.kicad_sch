@@ -1988,16 +1988,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 153.67) (xy 95.25 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e101f1ba-0ca2-4483-8d96-6ed505ce8744")
-	)
-	(wire
-		(pts
 			(xy 185.42 82.55) (xy 185.42 86.36)
 		)
 		(stroke
@@ -2035,16 +2025,6 @@
 			(type default)
 		)
 		(uuid "f697cbe6-87c6-4b57-b9c3-10a51f9718b5")
-	)
-	(wire
-		(pts
-			(xy 95.25 163.83) (xy 95.25 168.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fea8464e-2873-4c6a-ba0b-2eabb7626967")
 	)
 	(symbol
 		(lib_id "power:+VDC")
@@ -2269,76 +2249,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 95.25 160.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "07f92d69-9746-446d-a83a-bfd315fddcff")
-		(property "Reference" "C11"
-			(at 99.06 158.7499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100n"
-			(at 99.06 161.2899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 96.2152 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 95.25 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 95.25 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b85aa2e9-9142-4642-b57e-1129fca45842")
-		)
-		(pin "1"
-			(uuid "fa517007-fd1b-49be-9a32-ae1cb9a7c7b9")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "C11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 82.55 60.96 0)
 		(unit 1)
@@ -2400,71 +2310,6 @@
 			(project ""
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 95.25 168.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0c38f636-4082-4fdf-aba4-f014e5de04ad")
-		(property "Reference" "#PWR027"
-			(at 95.25 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 95.25 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 95.25 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 95.25 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 95.25 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "44d190da-e12c-4b3c-8885-a6a76c733e33")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -3714,72 +3559,6 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+VDC")
-		(at 95.25 153.67 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4f1ac79d-3b1f-432a-8191-a9b7a474cb3a")
-		(property "Reference" "#PWR026"
-			(at 95.25 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+VDC"
-			(at 95.25 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 95.25 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 95.25 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+VDC\""
-			(at 95.25 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e6624473-d9e8-415c-aba1-04d8b84c0a43")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "#PWR026")
 					(unit 1)
 				)
 			)
