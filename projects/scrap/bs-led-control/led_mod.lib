@@ -1,0 +1,31 @@
+* ========================================================
+* 12V LED Lamp Subcircuit - 3 Parallel Strings
+* Terminals: A = Anode (+), K = Cathode (-)
+* Internals: 3 parallel strings (each has 150 Ohm + 3x White LEDs)
+* Current draw: ~60mA total at 12V DC (3 x ~20mA)
+* ========================================================
+.SUBCKT LED_12V_3_STRINGS A K
+
+* --- String 1 ---
+R1 A N11 150
+D11 N11 N12 LED_WHITE
+D12 N12 N13 LED_WHITE
+D13 N13 K   LED_WHITE
+
+* --- String 2 ---
+R2 A N21 150
+D21 N21 N22 LED_WHITE
+D22 N22 N23 LED_WHITE
+D23 N23 K   LED_WHITE
+
+* --- String 3 ---
+R3 A N31 150
+D31 N31 N32 LED_WHITE
+D32 N32 N33 LED_WHITE
+D33 N33 K   LED_WHITE
+
+* Generic White LED Model (Shared by all diodes)
+.MODEL LED_WHITE D(IS=1E-20 N=2.2 RS=2.5 BV=5 IBV=10U CJO=35P XTI=3 EG=2.1)
+
+.ENDS LED_12V_3_STRINGS
+* ========================================================

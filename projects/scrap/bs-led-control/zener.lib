@@ -1,0 +1,211 @@
+* ========================================================================================================= *
+
+*[BZT52C10]
+*SRC=BZT52C10;DI_BZT52C10;Diodes;Zener <=10V; 10.0V  0.500W   Diodes Inc. Zener 
+*SYM=HZEN 
+.SUBCKT DI_BZT52C10  1 2 
+*        Terminals    A   K 
+D1 1 2 DF 
+DZ 3 1 DR 
+VZ 2 3 7.84 
+.MODEL DF D ( IS=20.6p RS=1.22 N=1.10 
++ CJO=45.6p VJ=0.750 M=0.330 TT=50.1n ) 
+.MODEL DR D ( IS=4.12f RS=4.60 N=2.97 ) 
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C10LP]
+*SRC=BZT52C9V1LP;DI_BZT52C9V1LP;Diodes;Zener <=10V; 9.10V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C9V1LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 7.44
+.MODEL DF D ( IS=11.3p RS=31.3 N=1.10
++ CJO=50.3p VJ=0.750 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=2.26f RS=3.45 N=2.23 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C10T]
+*SRC=BZT52C10T;DI_BZT52C10T;Diodes;Zener <=10V; 10.0V  0.500W   Diodes Inc. Zener 
+*SYM=HZEN 
+.SUBCKT DI_BZT52C10  1 2 
+*        Terminals    A   K 
+D1 1 2 DF 
+DZ 3 1 DR 
+VZ 2 3 7.84 
+.MODEL DF D ( IS=20.6p RS=1.22 N=1.10 
++ CJO=45.6p VJ=0.750 M=0.330 TT=50.1n ) 
+.MODEL DR D ( IS=4.12f RS=4.60 N=2.97 ) 
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C11LP]
+*SRC=BZT52C11LP;DI_BZT52C11LP;Diodes;Zener 10V-50V; 11.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C11LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 8.77
+.MODEL DF D ( IS=9.36p RS=30.8 N=1.10
++ CJO=33.9p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.87f RS=4.60 N=2.97 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C12LP]
+*SRC=BZT52C12LP;DI_BZT52C12LP;Diodes;Zener 10V-50V; 12.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C12LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 9.72
+.MODEL DF D ( IS=8.58p RS=30.5 N=1.10
++ CJO=31.4p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.72f RS=9.46 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C13]
+*SRC=BZT52C13;DI_BZT52C13;Diodes;Zener 10V-50V; 13.0V  0.500W   Diodes Inc. Zener 
+*SYM=HZEN 
+.SUBCKT DI_BZT52C13  1 2 
+*        Terminals    A   K 
+D1 1 2 DF 
+DZ 3 1 DR 
+VZ 2 3 12.4 
+.MODEL DF D ( IS=15.8p RS=1.24 N=1.10 
++ CJO=51.5p VJ=1.00 M=0.330 TT=50.1n ) 
+.MODEL DR D ( IS=3.17f RS=1.26 N=0.814 ) 
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C13LP]
+*SRC=BZT52C13LP;DI_BZT52C13LP;Diodes;Zener 10V-50V; 13.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C13LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 10.7
+.MODEL DF D ( IS=7.92p RS=30.3 N=1.10
++ CJO=26.4p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.58f RS=14.5 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C13T]
+*SRC=BZT52C13T;DI_BZT52C13T;Diodes;Zener 10V-50V; 13.0V  0.500W   Diodes Inc. Zener 
+*SYM=HZEN 
+.SUBCKT DI_BZT52C13  1 2 
+*        Terminals    A   K 
+D1 1 2 DF 
+DZ 3 1 DR 
+VZ 2 3 12.4 
+.MODEL DF D ( IS=15.8p RS=1.24 N=1.10 
++ CJO=51.5p VJ=1.00 M=0.330 TT=50.1n ) 
+.MODEL DR D ( IS=3.17f RS=1.26 N=0.814 ) 
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C15LP]
+*SRC=BZT52C15LP;DI_BZT52C15LP;Diodes;Zener 10V-50V; 15.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C15LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 12.7
+.MODEL DF D ( IS=6.87p RS=29.9 N=1.10
++ CJO=25.5p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.37f RS=14.5 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C16LP]
+*SRC=BZT52C16LP;DI_BZT52C16LP;Diodes;Zener 10V-50V; 16.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C16LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 13.6
+.MODEL DF D ( IS=6.44p RS=29.7 N=1.10
++ CJO=25.1p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.29f RS=24.5 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C18LP]
+*SRC=BZT52C18LP;DI_BZT52C18LP;Diodes;Zener 10V-50V; 18.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C18LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 15.6
+.MODEL DF D ( IS=5.72p RS=29.4 N=1.10
++ CJO=25.1p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=1.14f RS=29.5 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C18S]
+**********************************************************************************************************************************
+*SRC=BZT52C18S;DI_BZT52C18S;Diodes;Zener 10V-50V; 18.0V  0.200W   Diodes Inc. ZENER
+*SYM=HZEN
+.SUBCKT DI_BZT52C18S  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 15.6
+.MODEL DF D ( IS=4.58p RS=28.7 N=1.10
++ CJO=25.3p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=9.16e-016 RS=29.5 N=3.00 )
+.ENDS
+*********************************************************************************************************************************
+
+* ========================================================================================================= *
+
+*[BZT52C22LP]
+*SRC=BZT52C22LP;DI_BZT52C22LP;Diodes;Zener 10V-50V; 22.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C22LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 19.5
+.MODEL DF D ( IS=4.68p RS=28.8 N=1.10
++ CJO=20.1p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=9.36e-016 RS=39.5 N=3.00 )
+.ENDS
+
+* ========================================================================================================= *
+
+*[BZT52C24LP]
+*SRC=BZT52C24LP;DI_BZT52C24LP;Diodes;Zener 10V-50V; 24.0V  0.250W   Diodes Inc. QFN Zener
+*SYM=HZEN
+.SUBCKT DI_BZT52C24LP  1 2
+*        Terminals    A   K
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 21.4
+.MODEL DF D ( IS=4.29p RS=28.5 N=1.10
++ CJO=17.6p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=8.58e-016 RS=54.5 N=3.00 )
+.ENDS
