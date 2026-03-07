@@ -786,107 +786,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:PWR_FLAG"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#FLG"
-				(at 0 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "PWR_FLAG"
-				(at 0 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Special symbol for telling ERC where power comes from"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "flag power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PWR_FLAG_0_0"
-				(pin power_out line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "PWR_FLAG_0_1"
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(text "Io(max) = 2A"
 		(exclude_from_sim no)
@@ -938,12 +837,6 @@
 			)
 		)
 		(uuid "e16e31b1-d7a4-49e2-8df2-08cd69b281bb")
-	)
-	(junction
-		(at 156.21 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0a230f06-a336-4934-b6f2-71759615b70a")
 	)
 	(junction
 		(at 237.49 99.06)
@@ -1033,7 +926,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 88.9) (xy 193.04 88.9)
+			(xy 149.86 88.9) (xy 193.04 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1050,16 +943,6 @@
 			(type default)
 		)
 		(uuid "1156811a-610f-4309-957a-635e022e2dd4")
-	)
-	(wire
-		(pts
-			(xy 156.21 86.36) (xy 156.21 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16271407-285d-4955-8c62-34e9459cd992")
 	)
 	(wire
 		(pts
@@ -1321,16 +1204,6 @@
 		)
 		(uuid "f7de125b-6acf-44ec-9abe-3cdb0174b566")
 	)
-	(wire
-		(pts
-			(xy 149.86 88.9) (xy 156.21 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9cc8ced-483a-425b-ab19-044a50c6e572")
-	)
 	(label "VIN"
 		(at 144.78 88.9 0)
 		(effects
@@ -1351,7 +1224,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "013ec3a8-5a73-409e-9e05-f38afaa94a21")
-		(property "Reference" "R19"
+		(property "Reference" "R119"
 			(at 181.61 107.9499 0)
 			(effects
 				(font
@@ -1405,73 +1278,7 @@
 		(instances
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 156.21 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "03f569f5-757b-4392-85c2-66e7e1f60d36")
-		(property "Reference" "#FLG03"
-			(at 156.21 84.455 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 156.21 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 156.21 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 156.21 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "74e47735-994a-4f80-b98e-5ca54323eba9")
-		)
-		(instances
-			(project ""
-				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "#FLG03")
+					(reference "R119")
 					(unit 1)
 				)
 			)
@@ -1617,7 +1424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ecfe639-5058-4de1-9fec-3699b364f7d6")
-		(property "Reference" "U2"
+		(property "Reference" "U101"
 			(at 210.82 80.01 0)
 			(effects
 				(font
@@ -1698,7 +1505,7 @@
 		(instances
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "U2")
+					(reference "U101")
 					(unit 1)
 				)
 			)
@@ -1714,7 +1521,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "3b8389d5-5c4f-4849-a93a-8190da144ede")
-		(property "Reference" "C2"
+		(property "Reference" "C102"
 			(at 194.31 107.9499 0)
 			(effects
 				(font
@@ -1768,7 +1575,7 @@
 		(instances
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "C2")
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -1849,7 +1656,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "534755cd-8bf0-427e-9350-e9ba44220f99")
-		(property "Reference" "R18"
+		(property "Reference" "R118"
 			(at 240.03 102.8699 0)
 			(effects
 				(font
@@ -1903,7 +1710,7 @@
 		(instances
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "R18")
+					(reference "R118")
 					(unit 1)
 				)
 			)
@@ -1984,7 +1791,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7667fcf9-98fc-42fe-98d1-e6690b26d122")
-		(property "Reference" "C4"
+		(property "Reference" "C104"
 			(at 256.54 95.2499 0)
 			(effects
 				(font
@@ -2037,7 +1844,7 @@
 		(instances
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "C4")
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -2118,7 +1925,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "95d72464-f055-4595-ba4b-7fda1a559a48")
-		(property "Reference" "C1"
+		(property "Reference" "C101"
 			(at 153.67 93.9799 0)
 			(effects
 				(font
@@ -2172,7 +1979,7 @@
 		(instances
 			(project ""
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "C1")
+					(reference "C101")
 					(unit 1)
 				)
 			)
@@ -2318,7 +2125,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "f315ba6e-5eaf-44ca-be28-9fc4713f2944")
-		(property "Reference" "R20"
+		(property "Reference" "R120"
 			(at 240.03 92.7099 0)
 			(effects
 				(font
@@ -2372,7 +2179,7 @@
 		(instances
 			(project "canob"
 				(path "/a5f55489-8083-4ed1-a137-3f799946f30f"
-					(reference "R20")
+					(reference "R120")
 					(unit 1)
 				)
 			)
