@@ -864,36 +864,32 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_Trim"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Device:R_Potentiometer_Trim"
 			(pin_names
-				(offset 0)
+				(offset 1.016)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "R"
-				(at 2.54 -2.54 90)
+			(property "Reference" "RV"
+				(at -4.445 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "R_Trim"
-				(at -2.54 -0.635 90)
+			(property "Value" "R_Potentiometer_Trim"
+				(at -2.54 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at -1.778 0 90)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -910,7 +906,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Trimmable resistor (preset resistor)"
+			(property "Description" "Trim-potentiometer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -919,7 +915,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R res resistor variable potentiometer trimmer"
+			(property "ki_keywords" "resistor variable trimpot trimmer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -928,7 +924,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "R_*"
+			(property "ki_fp_filters" "Potentiometer*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -937,10 +933,21 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_Trim_0_1"
+			(symbol "R_Potentiometer_Trim_0_1"
+				(rectangle
+					(start 1.016 2.54)
+					(end -1.016 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
-						(xy -1.905 -1.905) (xy 1.905 1.905) (xy 2.54 1.27) (xy 1.27 2.54)
+						(xy 1.524 0.762) (xy 1.524 -0.762)
 					)
 					(stroke
 						(width 0)
@@ -950,11 +957,12 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.524 0)
+					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -962,11 +970,11 @@
 					)
 				)
 			)
-			(symbol "R_Trim_1_1"
+			(symbol "R_Potentiometer_Trim_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
-					(name "~"
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -984,7 +992,25 @@
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "~"
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1563,18 +1589,7 @@
 		)
 		(uuid "0b3870b8-baa8-4ecd-b442-08a196cc916e")
 	)
-	(text "Not ceramic!"
-		(exclude_from_sim no)
-		(at 105.664 94.234 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "19ffeddc-c9a6-41ca-93f6-0b819a14df56")
-	)
-	(text "f_{c}=1/(2.pi.100R.330uF)\n  =~ 4.8 Hz"
+	(text "f_{c}=1/(2.pi.100R.10uF)\n  =~ 160 Hz"
 		(exclude_from_sim no)
 		(at 95.25 132.08 0)
 		(effects
@@ -1585,7 +1600,7 @@
 		)
 		(uuid "200ad1cc-e7c6-4709-a400-3660bb1851dc")
 	)
-	(text "f_{c}=1/(2.pi.3470R.10uF)\n  = ~ 4.5 Hz"
+	(text "f_{c}=1/(2.pi.3470R.100nF)\n  = ~ 458 Hz"
 		(exclude_from_sim no)
 		(at 96.012 105.41 0)
 		(effects
@@ -1620,7 +1635,7 @@
 	)
 	(text "Test Points:\nTP1: Adjust R14 until ~4.5V (mid rail)\nTP2: ~4.4V   (Q2 collector, mid rail)\nTP3: ~3.85V  (Q3 emitter, at or slightly below mid rail)"
 		(exclude_from_sim no)
-		(at 301.498 141.986 0)
+		(at 299.212 81.788 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -1640,7 +1655,7 @@
 		)
 		(uuid "50e94c82-3cf5-4fdf-b01a-a22f268b785a")
 	)
-	(text "f_{c}=1/(2.pi.26R.1000uF)\n  =~ 6.1 Hz"
+	(text "f_{c}=1/(2.pi.26R.47uF)\n  =~ 130 Hz"
 		(exclude_from_sim no)
 		(at 164.846 125.73 0)
 		(effects
@@ -1684,7 +1699,7 @@
 		)
 		(uuid "719d706b-59b7-47c6-bc89-6ff527b6f3d9")
 	)
-	(text "Q1 - J310 JFET Stage\n\nJ310 is a depletion-mode N-channel JFET.\nTypical specs: Idss = 24-60 mA, Vp = -2V to -6V\n\nOperating Point:\nSource resistance = R2 (150Ω) + R14 (0-2kΩ trimmer)\nVgs = -Id × (R2 + R14)\nId = Idss × (1 - Vgs/Vp)² ≈ 5-7 mA (hot bias for lower noise)\n\nDrain Voltage Check:\nVd = 9V - Id × (R3 + R13)\nVd = 9V - (6mA × 570Ω) = 5.58V (Target: ~4.5V to 5.5V)\nNote: Tweak R14 if Vd is < 3V or > 8V.\n\nStage Gain: Av = 9-14 dB"
+	(text "Q1 - J310 JFET Stage\n\nJ310 is a depletion-mode N-channel JFET.\nTypical specs: Idss = 24-60 mA, Vp = -2V to -6V\n\nOperating Point:\nSource resistance = R2 (150Ω) + RV1 (0-2kΩ trimmer)\nVgs = -Id × (R2 + R14)\nId = Idss × (1 - Vgs/Vp)² ≈ 5-7 mA (hot bias for lower noise)\n\nDrain Voltage Check:\nVd = 9V - Id × (R3 + R13)\nVd = 9V - (6mA × 570Ω) = 5.58V (Target: ~4.5V to 5.5V)\nNote: Tweak R14 if Vd is < 3V or > 8V.\n\nStage Gain: Av = 9-14 dB"
 		(exclude_from_sim no)
 		(at 52.832 159.512 0)
 		(effects
@@ -1695,7 +1710,7 @@
 		)
 		(uuid "7d290d58-02f4-46df-87b0-8ce1c2e1ee69")
 	)
-	(text "f_{c}=1/(2.pi.102R.470uF)\n  =~ 3.3 Hz"
+	(text "f_{c}=1/(2.pi.102R.10uF)\n  =~ 156 Hz"
 		(exclude_from_sim no)
 		(at 227.838 119.126 0)
 		(effects
@@ -1717,7 +1732,7 @@
 		)
 		(uuid "8e04683c-17f7-4246-83a1-4d40ec205c99")
 	)
-	(text "All resitsors: thin film\n\nAll capacitors: >=25V WVDC\n\nAll electrolyic capacitors: Low ESR.\n  Panasonic FR or FC or Nichicon UWT recommended.\n\n100n capacitors: C0G/NP0, 50V"
+	(text "All resitsors: thin film, 1% or better\n\nAll capacitors: >=25V WVDC\n\nAll electrolyic capacitors: Low ESR.\n  Panasonic FR or FC or Nichicon UWT recommended.\n\n100n capacitors: C0G/NP0, 50V"
 		(exclude_from_sim no)
 		(at 305.054 224.028 0)
 		(effects
@@ -1728,7 +1743,7 @@
 		)
 		(uuid "a16c9ea6-cf99-4dff-871d-5bd201d8ff75")
 	)
-	(text "Gain: 41-52 dB\nBandwidth: 10 Hz to 1 MHz\nOutput Impedance: ~50Ω\nSupply: 9V\n"
+	(text "Gain: 41-52 dB\nBandwidth (3 dB): 500 Hz to 1.9 MHz\nOutput Impedance: ~50Ω\nSupply: 9V\n"
 		(exclude_from_sim no)
 		(at 199.644 28.448 0)
 		(effects
@@ -1750,7 +1765,7 @@
 		)
 		(uuid "acc832d4-4870-4830-afce-eeb503a19b15")
 	)
-	(text "f_{c}=1/(2.pi.9200R.10uF)\n  =~ 1.7 Hz"
+	(text "f_{c}=1/(2.pi.9200R.47nF)\n  =~ 368 Hz"
 		(exclude_from_sim no)
 		(at 166.116 106.68 0)
 		(effects
@@ -1866,6 +1881,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b08b4bcd-4141-4b05-a7ee-8d9802800604")
+	)
+	(junction
+		(at 82.55 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b0ecd04d-5a7e-4094-95a6-0f1cb62a7dc1")
 	)
 	(junction
 		(at 151.13 96.52)
@@ -2110,6 +2131,16 @@
 			(type default)
 		)
 		(uuid "3718514c-fab4-4f64-8d4f-f93de469620b")
+	)
+	(wire
+		(pts
+			(xy 82.55 133.35) (xy 82.55 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39c1bc98-93ed-43c4-99cd-d5bee14dc269")
 	)
 	(wire
 		(pts
@@ -2363,6 +2394,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 133.35) (xy 82.55 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "737be2cc-f493-4c91-ae91-d9cc5dd2a82d")
+	)
+	(wire
+		(pts
 			(xy 191.77 104.14) (xy 191.77 115.57)
 		)
 		(stroke
@@ -2403,6 +2444,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 128.27) (xy 87.63 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7779db91-51e2-41d0-92fa-46fc6889373e")
+	)
+	(wire
+		(pts
 			(xy 151.13 123.19) (xy 151.13 127)
 		)
 		(stroke
@@ -2410,6 +2461,16 @@
 			(type default)
 		)
 		(uuid "7e5c37e0-9913-4739-bcf8-acd635d562d2")
+	)
+	(wire
+		(pts
+			(xy 87.63 128.27) (xy 87.63 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "82908dca-edf3-4510-9c4a-e8a500cd16bb")
 	)
 	(wire
 		(pts
@@ -2453,7 +2514,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 128.27) (xy 92.71 133.35)
+			(xy 92.71 128.27) (xy 92.71 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2820,6 +2881,868 @@
 			(type default)
 		)
 		(uuid "fcd8dd35-4fae-48ab-b66c-c80928470040")
+	)
+	(table
+		(column_count 4)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 29.21 30.48 22.86 44.45)
+		(row_heights 6.35 2.54 2.54 5.08 2.54 2.54 2.54 2.54 2.54)
+		(cells
+			(table_cell "Component"
+				(exclude_from_sim no)
+				(at 273.05 168.91 0)
+				(size 29.21 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e08a1f0c-f6c3-4429-b398-70e040903874")
+			)
+			(table_cell "10 Hz"
+				(exclude_from_sim no)
+				(at 302.26 168.91 0)
+				(size 30.48 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0b3ac4b9-6981-44b7-b06b-e88f98c44e71")
+			)
+			(table_cell "500 Hz"
+				(exclude_from_sim no)
+				(at 332.74 168.91 0)
+				(size 22.86 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d08823c8-19f3-429b-bef6-82212b029948")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 355.6 168.91 0)
+				(size 44.45 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d08823c8-19f3-429b-bef6-82212b029948")
+			)
+			(table_cell "C2 (Q1 Source Bypass)"
+				(exclude_from_sim no)
+				(at 273.05 175.26 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "301a29e9-216d-4b10-b785-dbcd1124e9e9")
+			)
+			(table_cell "330µF (V-Chip / Radial)"
+				(exclude_from_sim no)
+				(at 302.26 175.26 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6ebb13bc-1d6c-4331-a46c-a083b7218fb3")
+			)
+			(table_cell "10µF (SMD Ceramic)"
+				(exclude_from_sim no)
+				(at 332.74 175.26 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "704b6f94-03b1-4ccc-a283-cd7a7852c176")
+			)
+			(table_cell "Corner moves from ~4.8 Hz to ~160 Hz."
+				(exclude_from_sim no)
+				(at 355.6 175.26 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "704b6f94-03b1-4ccc-a283-cd7a7852c176")
+			)
+			(table_cell "C3 (Q1-Q2 Interstage)"
+				(exclude_from_sim no)
+				(at 273.05 177.8 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "adbec9ba-7f20-4b1e-9cc5-b28b86bbf814")
+			)
+			(table_cell "10µF (X5R Ceramic)"
+				(exclude_from_sim no)
+				(at 302.26 177.8 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "2e425819-518d-4cb1-961f-aa72ee341062")
+			)
+			(table_cell "100nF (C0G/NP0)"
+				(exclude_from_sim no)
+				(at 332.74 177.8 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e6d19c6e-cb79-4eb0-b40b-7c932c373014")
+			)
+			(table_cell "Corner moves from ~4.5 Hz to ~458 Hz."
+				(exclude_from_sim no)
+				(at 355.6 177.8 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e6d19c6e-cb79-4eb0-b40b-7c932c373014")
+			)
+			(table_cell "C4 (Q2 Emitter Bypass)"
+				(exclude_from_sim no)
+				(at 273.05 180.34 0)
+				(size 29.21 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "08c345d6-40a6-4fe6-896e-8ae3f0cb71fc")
+			)
+			(table_cell "1000µF (V-Chip / Radial)"
+				(exclude_from_sim no)
+				(at 302.26 180.34 0)
+				(size 30.48 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "83c23214-77c9-4a9e-b78d-fee157730cd9")
+			)
+			(table_cell "47µF (SMD Ceramic/Tantalum)"
+				(exclude_from_sim no)
+				(at 332.74 180.34 0)
+				(size 22.86 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "22f7caa1-7bf5-4da1-893f-9a75e3446519")
+			)
+			(table_cell "Corner moves from ~6.1 Hz to ~130 Hz."
+				(exclude_from_sim no)
+				(at 355.6 180.34 0)
+				(size 44.45 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "22f7caa1-7bf5-4da1-893f-9a75e3446519")
+			)
+			(table_cell "C5 (Q2-Q3 Interstage)"
+				(exclude_from_sim no)
+				(at 273.05 185.42 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7f4e042c-9ed4-4473-b4bd-3e856c5a773e")
+			)
+			(table_cell "10µF (X5R Ceramic)"
+				(exclude_from_sim no)
+				(at 302.26 185.42 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0a2b1a3e-575a-4022-8c59-5af9a8b9a478")
+			)
+			(table_cell "47nF (C0G/NP0)"
+				(exclude_from_sim no)
+				(at 332.74 185.42 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "28a5ef1d-7b0c-49ed-835d-06b0aa1c90c6")
+			)
+			(table_cell "Corner moves from ~1.7 Hz to ~368 Hz."
+				(exclude_from_sim no)
+				(at 355.6 185.42 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "28a5ef1d-7b0c-49ed-835d-06b0aa1c90c6")
+			)
+			(table_cell "C6 (Output Coupling)"
+				(exclude_from_sim no)
+				(at 273.05 187.96 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "eead3355-4961-40c4-87c9-41468e8ec356")
+			)
+			(table_cell "470µF (V-Chip / Radial)"
+				(exclude_from_sim no)
+				(at 302.26 187.96 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "119939aa-b3cb-49a7-9fdb-f189b90de1ba")
+			)
+			(table_cell "10µF (SMD Ceramic)"
+				(exclude_from_sim no)
+				(at 332.74 187.96 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "3b8136b1-56d9-4ff2-82bd-00d25541d69d")
+			)
+			(table_cell "Corner moves from ~3.3 Hz to ~156 Hz."
+				(exclude_from_sim no)
+				(at 355.6 187.96 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "3b8136b1-56d9-4ff2-82bd-00d25541d69d")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 273.05 190.5 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "29facfb2-d60c-4ac6-a404-ac130e92e937")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 302.26 190.5 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b017884e-78ed-41f5-adeb-b9f113bd4d23")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 332.74 190.5 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d9f428c5-03d5-41f2-a154-1c0b6d618a67")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 355.6 190.5 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d9f428c5-03d5-41f2-a154-1c0b6d618a67")
+			)
+			(table_cell "60 Hz Rejection"
+				(exclude_from_sim no)
+				(at 273.05 193.04 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e3eb85a5-7340-40d9-aedc-5e7aa3ba1650")
+			)
+			(table_cell "0 dB (flat)"
+				(exclude_from_sim no)
+				(at 302.26 193.04 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e1fb6934-b6f4-4653-a798-109feb6e6dcd")
+			)
+			(table_cell "55 dB"
+				(exclude_from_sim no)
+				(at 332.74 193.04 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4af23cda-5b37-4570-94d2-ec46755967e5")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 355.6 193.04 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4af23cda-5b37-4570-94d2-ec46755967e5")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 273.05 195.58 0)
+				(size 29.21 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "87aef0e4-ecee-4c0f-8997-77bfa52b1607")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 302.26 195.58 0)
+				(size 30.48 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "869bba4a-505b-4c87-ba12-65f90d25e61b")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 332.74 195.58 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "411eb60c-00f2-4afb-bb09-cf9edad67365")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 355.6 195.58 0)
+				(size 44.45 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "411eb60c-00f2-4afb-bb09-cf9edad67365")
+			)
+		)
+	)
+	(table
+		(column_count 3)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 16.51 22.86 15.24)
+		(row_heights 6.35 6.35 6.35 6.35)
+		(cells
+			(table_cell "Test Point"
+				(exclude_from_sim no)
+				(at 330.2 132.08 0)
+				(size 16.51 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7f66ec15-834c-4c0f-a736-d72786eba347")
+			)
+			(table_cell "Expected"
+				(exclude_from_sim no)
+				(at 346.71 132.08 0)
+				(size 22.86 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "478bef15-a5d6-480a-a356-7f100cece43d")
+			)
+			(table_cell "Adjustment"
+				(exclude_from_sim no)
+				(at 369.57 132.08 0)
+				(size 15.24 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "5c5d7fdb-5976-4ff0-af45-83ca02d45256")
+			)
+			(table_cell "TP1"
+				(exclude_from_sim no)
+				(at 330.2 138.43 0)
+				(size 16.51 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4bc4ffd3-826d-459e-9cca-ffc151900e11")
+			)
+			(table_cell "~ 4.5 V"
+				(exclude_from_sim no)
+				(at 346.71 138.43 0)
+				(size 22.86 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "eb0a09c0-2eaa-4ab1-90b9-04742cfd4759")
+			)
+			(table_cell "RV1"
+				(exclude_from_sim no)
+				(at 369.57 138.43 0)
+				(size 15.24 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b1137bbe-b33d-4968-9f3c-446fc918c989")
+			)
+			(table_cell "TP2"
+				(exclude_from_sim no)
+				(at 330.2 144.78 0)
+				(size 16.51 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "bf6a82e9-cc2f-4d40-a300-f90ac848be09")
+			)
+			(table_cell "~ 4.4V (Mid rail)"
+				(exclude_from_sim no)
+				(at 346.71 144.78 0)
+				(size 22.86 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0ea394f3-b3f7-4cdd-a785-defa6e25582a")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 369.57 144.78 0)
+				(size 15.24 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "61521857-1aef-494a-8932-6e85e3f1b72f")
+			)
+			(table_cell "TP3"
+				(exclude_from_sim no)
+				(at 330.2 151.13 0)
+				(size 16.51 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "51c18717-eab5-41d4-80ee-e700f4903bcf")
+			)
+			(table_cell "~3.85V (At or slightly below mid rail)"
+				(exclude_from_sim no)
+				(at 346.71 151.13 0)
+				(size 22.86 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1ac223a7-1adf-48f6-a041-3f4ba56a4160")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 369.57 151.13 0)
+				(size 15.24 6.35)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "829af75f-9052-48e0-857b-e766220b5021")
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:+VDC")
@@ -3197,7 +4120,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330u"
+		(property "Value" "10u"
 			(at 96.52 125.7299 0)
 			(effects
 				(font
@@ -3544,7 +4467,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 55.88 240.538 90)
 			(effects
 				(font
@@ -3588,7 +4511,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 92.71 133.35 0)
+		(at 92.71 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3597,7 +4520,7 @@
 		(fields_autoplaced yes)
 		(uuid "1c11da34-5ce2-4aad-8892-d65170b8a0b8")
 		(property "Reference" "#PWR05"
-			(at 92.71 139.7 0)
+			(at 92.71 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3606,7 +4529,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 92.71 138.43 0)
+			(at 92.71 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3614,7 +4537,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 133.35 0)
+			(at 92.71 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3623,7 +4546,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 133.35 0)
+			(at 92.71 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3632,7 +4555,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 92.71 133.35 0)
+			(at 92.71 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4015,7 +4938,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1000u"
+		(property "Value" "47u"
 			(at 165.1 120.6499 0)
 			(effects
 				(font
@@ -4159,7 +5082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_8x10.5"
 			(at 93.6752 80.01 0)
 			(effects
 				(font
@@ -4562,7 +5485,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 82.55 133.35 0)
+		(at 82.55 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4571,7 +5494,7 @@
 		(fields_autoplaced yes)
 		(uuid "4712d9b0-c4f4-47fa-b535-b4bf9ada8838")
 		(property "Reference" "#PWR04"
-			(at 82.55 139.7 0)
+			(at 82.55 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4580,7 +5503,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 82.55 138.43 0)
+			(at 82.55 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4588,7 +5511,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 82.55 133.35 0)
+			(at 82.55 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4597,7 +5520,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 133.35 0)
+			(at 82.55 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4606,7 +5529,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 82.55 133.35 0)
+			(at 82.55 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5432,6 +6355,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 104.14 99.06 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74a9d464-f533-4b18-9fc2-864c48eefa21")
+		(property "Reference" "C3"
+			(at 104.14 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100n C0G/NP0"
+			(at 104.14 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 107.95 98.0948 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 104.14 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "24ccd3c7-b65e-4e2f-95db-011ae44d6336")
+		)
+		(pin "2"
+			(uuid "e1a3a2b5-dbc5-4648-b8a5-ccda56a5af5c")
+		)
+		(instances
+			(project ""
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 151.13 90.17 0)
 		(unit 1)
@@ -5868,7 +6859,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 80.772 64.77 90)
 			(effects
 				(font
@@ -6125,7 +7116,7 @@
 				)
 			)
 		)
-		(property "Value" "10u X5R 25V 1206"
+		(property "Value" "47 nF C0G/NP0"
 			(at 170.18 95.25 90)
 			(effects
 				(font
@@ -6133,7 +7124,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 173.99 99.3648 0)
 			(effects
 				(font
@@ -6193,7 +7184,7 @@
 				)
 			)
 		)
-		(property "Value" "470u"
+		(property "Value" "10u"
 			(at 240.03 106.68 90)
 			(effects
 				(font
@@ -6238,6 +7229,76 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 185.42 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4e77a57-b246-41de-9c41-5da64172adbb")
+		(property "Reference" "C10"
+			(at 189.23 247.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 189.23 250.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 186.3852 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 185.42 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 185.42 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a71da8e3-7005-41de-9731-eac76ef6ae3e")
+		)
+		(pin "1"
+			(uuid "1d579e41-3666-4d46-b5e1-aa000adb2e23")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -6370,6 +7431,79 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Potentiometer_Trim")
+		(at 82.55 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b421b5e6-fe9e-460a-8cee-6116864378a7")
+		(property "Reference" "RV1"
+			(at 80.01 126.9999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "2K"
+			(at 80.01 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Potentiometer_SMD:Potentiometer_Bourns_3314G_Vertical"
+			(at 82.55 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Trim-potentiometer"
+			(at 82.55 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56cf3651-74c9-45fb-8736-bc444e88b113")
+		)
+		(pin "3"
+			(uuid "ffc50477-12ad-4ef6-bf4e-33c369def0af")
+		)
+		(pin "2"
+			(uuid "afedf7dd-be78-4ef1-8375-4879360c830a")
+		)
+		(instances
+			(project ""
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "RV1")
 					(unit 1)
 				)
 			)
@@ -6612,7 +7746,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 64.4652 248.92 0)
 			(effects
 				(font
@@ -6649,76 +7783,6 @@
 			(project ""
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "C11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Trim")
-		(at 82.55 128.27 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c6da1c8f-6257-4c7d-94ea-092d0f1a4a5f")
-		(property "Reference" "R14"
-			(at 86.36 126.9999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2K"
-			(at 86.36 129.5399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 80.772 128.27 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 82.55 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Trimmable resistor (preset resistor)"
-			(at 82.55 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d9a6f133-9bbe-4193-9738-74859ab34edf")
-		)
-		(pin "2"
-			(uuid "079255dc-317b-4e7d-846b-d65b460b3f04")
-		)
-		(instances
-			(project ""
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -6857,74 +7921,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 104.14 99.06 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cb9cd14b-2034-40fe-bfde-7f8d6ff795c3")
-		(property "Reference" "C3"
-			(at 103.251 91.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10u"
-			(at 103.251 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 98.0948 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 104.14 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 104.14 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "70decae5-e64e-4408-b7b1-d46e4f7811a8")
-		)
-		(pin "1"
-			(uuid "1f840012-b73f-48b0-b060-96135c5b2bb1")
-		)
-		(instances
-			(project ""
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 44.45 238.76 0)
 		(mirror y)
@@ -6987,76 +7983,6 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 185.42 248.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ced8112a-ac0a-4d51-9651-426a91562206")
-		(property "Reference" "C15"
-			(at 189.23 246.7609 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100u"
-			(at 189.23 249.3009 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 186.3852 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 185.42 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 185.42 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e26dc9ae-6545-43c8-85d0-5cd5ad689cb7")
-		)
-		(pin "2"
-			(uuid "679a06f4-a0b4-439a-95ee-c181158087da")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -7400,76 +8326,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 143.51 248.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ec893ab9-cbc8-450d-bef4-6d144b145947")
-		(property "Reference" "C14"
-			(at 147.32 246.7609 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10u"
-			(at 147.32 249.3009 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.4752 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 143.51 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ec84f543-27ee-4e64-96b8-c3fba86d35f9")
-		)
-		(pin "2"
-			(uuid "45024e75-1c3b-4a52-83ee-c47ed155b453")
-		)
-		(instances
-			(project ""
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "C14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 63.5 257.81 0)
 		(unit 1)
@@ -7530,6 +8386,76 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 143.51 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9449a7a-4e1f-41b5-8274-99823aedcccf")
+		(property "Reference" "C9"
+			(at 147.32 247.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 147.32 250.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 144.4752 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 143.51 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 143.51 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "29ad0067-9a17-4f41-a7c7-465df6a28a72")
+		)
+		(pin "1"
+			(uuid "2d206adc-3b32-44f1-b774-0f78c5d8faf8")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "C9")
 					(unit 1)
 				)
 			)
