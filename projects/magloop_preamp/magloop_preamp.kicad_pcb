@@ -645,7 +645,7 @@
 		(descr "Fiducial, circular marking, 0.5mm bare copper, 1.5mm soldermask opening")
 		(tags "fiducial")
 		(property "Reference" "FID2"
-			(at -0.25 -1.25 0)
+			(at 0 -1.5 0)
 			(layer "F.SilkS")
 			(uuid "1a93b94d-575c-4c65-acee-47a5d026d436")
 			(effects
@@ -2476,7 +2476,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -7240,7 +7240,7 @@
 			(uuid "a958facc-ec3f-4a00-90ef-3b147742e34c")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_901-144_Vertical.step"
+		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_132291_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7514,7 +7514,7 @@
 			(uuid "5c0e5775-3681-4f53-8a69-b1f85da8d0db")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_901-144_Vertical.step"
+		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_132291_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7788,7 +7788,7 @@
 			(uuid "5dc160b9-db10-4e26-bf2d-586935452d4e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_901-144_Vertical.step"
+		(model "${KICAD9_3DMODEL_DIR}/Connector_Coaxial.3dshapes/SMA_Amphenol_132291_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -7997,19 +7997,6 @@
 		)
 		(layer "Edge.Cuts")
 		(uuid "f7573e2d-d631-43e3-aecf-7c1a761622b5")
-	)
-	(gr_text "GND"
-		(at 128.75 93.4 0)
-		(layer "F.SilkS")
-		(uuid "60827f4d-a6ad-4ab7-99bf-b1b584372084")
-		(effects
-			(font
-				(size 0.5 0.5)
-				(thickness 0.1)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
 	)
 	(gr_text "9V IN"
 		(at 125.5 90.75 0)
