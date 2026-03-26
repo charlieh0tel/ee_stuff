@@ -1957,18 +1957,7 @@
 		)
 		(uuid "41deed01-3de1-43a8-9755-25c7931fd471")
 	)
-	(text "Test Points:\nTP1: Adjust R14 until ~4.5V (mid rail)\nTP2: ~4.4V   (Q2 collector, mid rail)\nTP3: ~3.85V  (Q3 emitter, at or slightly below mid rail)"
-		(exclude_from_sim no)
-		(at 299.212 81.788 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-			(justify left)
-		)
-		(uuid "4557ee91-852b-4ed8-a8da-a5b04dfc4aad")
-	)
-	(text "R13 + C13 second pole: ~3.3 Hz"
+	(text "R13 + C13 second pole: ~34 Hz"
 		(exclude_from_sim no)
 		(at 93.472 64.262 0)
 		(effects
@@ -2012,7 +2001,7 @@
 		)
 		(uuid "671a0cfa-dd75-4ab2-877c-1fd945ef32d8")
 	)
-	(text "Supply Filter: \n  R12=33Ω + C11 (|| more)\nMain filter corner:\n  ~4.8 Hz"
+	(text "Supply Filter: \n  R12=33Ω + C11 (|| more)\nMain filter corner:\n  ~48 Hz"
 		(exclude_from_sim no)
 		(at 40.386 271.272 0)
 		(effects
@@ -2023,7 +2012,7 @@
 		)
 		(uuid "719d706b-59b7-47c6-bc89-6ff527b6f3d9")
 	)
-	(text "Q1 - J310 JFET Stage\n\nJ310 is a depletion-mode N-channel JFET.\nTypical specs: Idss = 24-60 mA, Vp = -2V to -6V\n\nOperating Point:\nSource resistance = R2 (150Ω) + RV1 (0-2kΩ trimmer)\nVgs = -Id × (R2 + R14)\nId = Idss × (1 - Vgs/Vp)² ≈ 5-7 mA (hot bias for lower noise)\n\nDrain Voltage Check:\nVd = 9V - Id × (R3 + R13)\nVd = 9V - (6mA × 570Ω) = 5.58V (Target: ~4.5V to 5.5V)\nNote: Tweak R14 if Vd is < 3V or > 8V.\n\nStage Gain: Av = 9-14 dB"
+	(text "Q1 - J310 JFET Stage\n\nJ310 is a depletion-mode N-channel JFET.\nTypical specs: Idss = 24-60 mA, Vp = -2V to -6V\n\nOperating Point:\nSource resistance = R2 (150Ω) + RV1 (0-2kΩ trimmer)\nVgs = -Id × (R2 + R14)\nId = Idss × (1 - Vgs/Vp)² ≈ 5-7 mA (hot bias for lower noise)\n\nDrain Voltage Check:\nVd = 9V - Id × (R3 + R13)\nVd = 9V - (6mA × 570Ω) = 5.58V (Target: ~4.5V to 5.5V)\nNote: Tweak RV1 if Vd is < 3V or > 8V.\n\nStage Gain: Av = 9-14 dB"
 		(exclude_from_sim no)
 		(at 52.832 159.512 0)
 		(effects
