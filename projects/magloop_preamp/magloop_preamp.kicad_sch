@@ -7,9 +7,170 @@
 	(title_block
 		(title "Magloop Preamp")
 		(date "2026-03-25")
-		(rev "2.0")
+		(rev "2.1")
 	)
 	(lib_symbols
+		(symbol "Connector:Conn_Coaxial_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0.254 3.048 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_Coaxial_Small"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "BNC SMA SMB SMC LEMO coaxial connector CINCH RCA MCX MMCX U.FL UMRF"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn_Coaxial_Small_1_1"
+				(arc
+					(start 1.3484 0.0039)
+					(mid 0.327 -1.308)
+					(end -1.1916 -0.6311)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.1916 0.6311)
+					(mid 0.327 1.3081)
+					(end 1.3484 -0.0039)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.27)
+					(name "In"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.27)
+					(name "Ext"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -2077,6 +2238,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 128.27) (xy 43.18 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "015250d5-02f1-47b8-9840-45b16480dd47")
+	)
+	(wire
+		(pts
 			(xy 151.13 100.33) (xy 151.13 101.6)
 		)
 		(stroke
@@ -2084,26 +2255,6 @@
 			(type default)
 		)
 		(uuid "01c9a63b-76b6-445e-bc2d-5f5a75828a0d")
-	)
-	(wire
-		(pts
-			(xy 43.18 130.81) (xy 41.91 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "058583d1-d4de-4db1-bf07-cac13d9a3f3d")
-	)
-	(wire
-		(pts
-			(xy 41.91 128.27) (xy 48.26 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05ada7a1-b015-4490-a5b5-e6477f1df3b3")
 	)
 	(wire
 		(pts
@@ -2124,16 +2275,6 @@
 			(type default)
 		)
 		(uuid "0e7c3590-2f99-441f-a9d9-10029fa3c144")
-	)
-	(wire
-		(pts
-			(xy 262.89 114.3) (xy 262.89 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "14b2361b-6181-4971-b424-50b69dc885c6")
 	)
 	(wire
 		(pts
@@ -2287,16 +2428,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 137.16) (xy 43.18 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3718514c-fab4-4f64-8d4f-f93de469620b")
-	)
-	(wire
-		(pts
 			(xy 82.55 133.35) (xy 82.55 134.62)
 		)
 		(stroke
@@ -2397,6 +2528,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 111.76) (xy 270.51 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ffd6e07-5d9b-4239-86da-df052a92a331")
+	)
+	(wire
+		(pts
 			(xy 185.42 242.57) (xy 185.42 245.11)
 		)
 		(stroke
@@ -2474,26 +2615,6 @@
 			(type default)
 		)
 		(uuid "671ce9e1-7113-414b-9607-3cd8d462f3a2")
-	)
-	(wire
-		(pts
-			(xy 43.18 110.49) (xy 43.18 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6741c6f2-4795-45d6-958d-08bd2bfcced9")
-	)
-	(wire
-		(pts
-			(xy 264.16 114.3) (xy 262.89 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a18afaf-df8b-426b-ab10-94e156c9c875")
 	)
 	(wire
 		(pts
@@ -2617,6 +2738,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 128.27) (xy 35.56 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78259e78-8ba2-4d49-9560-8fb8e68ce9ce")
+	)
+	(wire
+		(pts
 			(xy 151.13 123.19) (xy 151.13 127)
 		)
 		(stroke
@@ -2684,6 +2815,16 @@
 			(type default)
 		)
 		(uuid "8f35b18e-0f35-45b0-8454-52ce80c57a48")
+	)
+	(wire
+		(pts
+			(xy 36.83 107.95) (xy 35.56 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90d02189-cefc-448c-a0f7-997c2af0325a")
 	)
 	(wire
 		(pts
@@ -2767,6 +2908,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 107.95) (xy 35.56 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac2a4db4-409a-4932-a0d4-52a8c3a2b0ce")
+	)
+	(wire
+		(pts
 			(xy 151.13 100.33) (xy 166.37 100.33)
 		)
 		(stroke
@@ -2817,13 +2968,13 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 128.27) (xy 48.26 137.16)
+			(xy 269.24 111.76) (xy 270.51 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bbe88482-0fdd-4906-ae7f-9e305194129f")
+		(uuid "bab80203-f7c9-486c-9cc1-55a0deb0118a")
 	)
 	(wire
 		(pts
@@ -2947,16 +3098,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 110.49) (xy 43.18 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e10e765e-bcb3-406d-bf24-d4c888886b84")
-	)
-	(wire
-		(pts
 			(xy 82.55 132.08) (xy 82.55 133.35)
 		)
 		(stroke
@@ -2997,6 +3138,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 128.27) (xy 43.18 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e528f6ac-afd2-47b3-a97b-94a2c31a0b8c")
+	)
+	(wire
+		(pts
 			(xy 121.92 99.06) (xy 121.92 106.68)
 		)
 		(stroke
@@ -3014,6 +3165,16 @@
 			(type default)
 		)
 		(uuid "ec76acee-2293-42a9-98e0-7e81b4d61264")
+	)
+	(wire
+		(pts
+			(xy 36.83 128.27) (xy 35.56 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1a73223-75d3-40ee-8e80-0f67df535fa8")
 	)
 	(wire
 		(pts
@@ -4612,139 +4773,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 43.18 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "189d2003-15b5-49fa-95f3-68979574ff08")
-		(property "Reference" "#PWR02"
-			(at 43.18 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 43.18 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 43.18 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 43.18 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 43.18 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fece0bc2-aee8-4ec1-8972-d594017c5a16")
-		)
-		(instances
-			(project ""
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 269.24 111.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "18e18ead-2495-43da-b1ba-307ef585f7a1")
-		(property "Reference" "J3"
-			(at 269.24 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 269.24 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical"
-			(at 269.24 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 269.24 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "52ed3a63-b7c8-4abe-9f96-319e2615856d")
-		)
-		(pin "2"
-			(uuid "d7f4238c-9906-4542-aaaa-312950d15b44")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 227.33 262.89 0)
 		(unit 1)
@@ -5281,6 +5309,74 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 39.37 128.27 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "25cce65c-1d9f-4c1c-a795-c5200bc3ce3c")
+		(property "Reference" "J1"
+			(at 39.8895 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_Coaxial_Small"
+			(at 39.8895 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 39.37 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.37 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 39.37 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "581e2694-fcd5-4fd0-8fc3-27393d3aaed2")
+		)
+		(pin "1"
+			(uuid "8af55117-d01b-4123-ad01-2726a455b2e3")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -5896,6 +5992,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 39.37 107.95 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3faef7ae-0bf5-4221-a86b-990dbaaf23d7")
+		(property "Reference" "J5"
+			(at 39.8895 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_Coaxial_Small"
+			(at 39.8895 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 39.37 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.37 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 39.37 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b7634e84-38c5-49af-9b62-37c7f3d74134")
+		)
+		(pin "1"
+			(uuid "c38af83b-552b-427a-b5cf-1eee4cd06fea")
+		)
+		(instances
+			(project ""
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+VDC")
 		(at 191.77 83.82 0)
 		(unit 1)
@@ -6189,6 +6353,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 270.51 116.84 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52ddfb8a-9ed9-4c27-acb8-96a9c9eccf00")
+		(property "Reference" "#PWR023"
+			(at 270.51 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 270.51 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 270.51 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 270.51 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "383dd003-c285-45f4-9479-00798ab0455e")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 251.46 259.08 0)
 		(unit 1)
@@ -6451,74 +6682,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 36.83 107.95 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "62d2ab49-a2cd-4894-8888-18b27cbd3fc5")
-		(property "Reference" "J1"
-			(at 36.83 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 36.83 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical"
-			(at 36.83 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 36.83 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 36.83 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "24d4ef16-a2d2-47f6-b4b7-9f7ea5583270")
-		)
-		(pin "2"
-			(uuid "4ec21a51-ef6a-4f50-86be-79d2d0d2736d")
-		)
-		(instances
-			(project ""
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 143.51 257.81 0)
 		(unit 1)
@@ -6648,6 +6811,73 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 43.18 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66e1dace-0898-47b5-9658-836761333f45")
+		(property "Reference" "#PWR02"
+			(at 43.18 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.18 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 43.18 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ff009f5-be6d-4ca3-ad6e-122188c808df")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -6791,7 +7021,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 43.18 114.3 0)
+		(at 35.56 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6800,7 +7030,7 @@
 		(fields_autoplaced yes)
 		(uuid "6f9c1ec2-0b98-419b-b3b9-36f7e320a46d")
 		(property "Reference" "#PWR01"
-			(at 43.18 120.65 0)
+			(at 35.56 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6809,7 +7039,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 43.18 119.38 0)
+			(at 35.56 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6817,7 +7047,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 114.3 0)
+			(at 35.56 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6826,7 +7056,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 114.3 0)
+			(at 35.56 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6835,7 +7065,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 43.18 114.3 0)
+			(at 35.56 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7013,7 +7243,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 107.95 98.0948 0)
 			(effects
 				(font
@@ -7326,73 +7556,6 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 262.89 119.38 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "812151cb-96e4-4409-bc42-78c7b9a237d2")
-		(property "Reference" "#PWR016"
-			(at 262.89 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 262.89 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 262.89 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 262.89 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 262.89 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "938e7f4e-4968-4f2f-b0e0-336af1f407cf")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7821,7 +7984,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 173.99 99.3648 0)
 			(effects
 				(font
@@ -8550,72 +8713,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 48.26 137.16 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c8c52d3e-d04c-4b29-94cb-b22dbcb34123")
-		(property "Reference" "#PWR025"
-			(at 48.26 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 48.26 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 48.26 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 48.26 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "53350d23-fcb1-46db-80d4-36f030f54d31")
-		)
-		(instances
-			(project "magloop_preamp"
-				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+VDC")
 		(at 172.72 242.57 0)
 		(unit 1)
@@ -8707,7 +8804,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical"
+		(property "Footprint" "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical"
 			(at 44.45 238.76 0)
 			(effects
 				(font
@@ -8951,33 +9048,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 36.83 128.27 0)
-		(mirror y)
+		(lib_id "power:GND")
+		(at 35.56 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
-		(uuid "d3dea094-1124-4528-b098-c86e9b803df0")
-		(property "Reference" "J2"
-			(at 36.83 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 36.83 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical"
-			(at 36.83 128.27 0)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d66f6f1a-a0fd-4b2a-aeba-fdb63b7373f6")
+		(property "Reference" "#PWR022"
+			(at 35.56 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8985,8 +9066,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 36.83 128.27 0)
+		(property "Value" "GND"
+			(at 35.56 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8994,8 +9083,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 36.83 128.27 0)
+		(property "Datasheet" ""
+			(at 35.56 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9004,15 +9102,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "10971834-f872-46f8-8fe9-1946c3813b7e")
-		)
-		(pin "2"
-			(uuid "3765c62d-b9f6-4983-a931-40a11cb81f1e")
+			(uuid "48e93b11-11c3-44c1-8344-5dd96ad341eb")
 		)
 		(instances
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
-					(reference "J2")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -9079,6 +9174,74 @@
 			(project "magloop_preamp"
 				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial_Small")
+		(at 266.7 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e7d2feba-970f-400e-ab60-c6ba8d25e0c3")
+		(property "Reference" "J2"
+			(at 266.1804 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_Coaxial_Small"
+			(at 266.1804 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 266.7 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "small coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 266.7 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "598686b7-2a65-49af-9930-204de5211c96")
+		)
+		(pin "1"
+			(uuid "5543b403-7877-4add-b5e3-82d501381e85")
+		)
+		(instances
+			(project "magloop_preamp"
+				(path "/cff86700-693f-4b6d-a2be-b0ba4c4b66bc"
+					(reference "J2")
 					(unit 1)
 				)
 			)
