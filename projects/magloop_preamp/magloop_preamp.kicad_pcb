@@ -2229,7 +2229,7 @@
 		(path "/ccc8daa0-9c3c-43e0-aed3-c833ed1af57c")
 		(sheetname "/")
 		(sheetfile "magloop_preamp.kicad_sch")
-		(attr through_hole dnp)
+		(attr through_hole)
 		(fp_line
 			(start 0 2.99)
 			(end 0 1.99)
