@@ -14,7 +14,7 @@ def ols_linregress(x, y, force_origin=False):
         #  The model is forced to pass through (0,0)
         model = sm.OLS(y, x).fit()
         slope = model.params[0]  # Get slope
-        intercept = 0.0         # Intercept is 0
+        intercept = 0.0  # Intercept is 0
         stderr = model.bse[0]
         p_value = model.pvalues[0]  # Get p-value for slope
     else:

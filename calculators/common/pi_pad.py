@@ -4,30 +4,31 @@ from . import resistors
 
 
 def K(amplitude_db):
-    return np.power(10., amplitude_db / 20.)
+    return np.power(10.0, amplitude_db / 20.0)
 
 
 def R_shunt(z0, K):
-    return z0 * (K + 1.) / (K - 1.)
+    return z0 * (K + 1.0) / (K - 1.0)
 
 
 def R_series(z0, K):
-    return (z0 / 2.) * (K - np.reciprocal(K))
+    return (z0 / 2.0) * (K - np.reciprocal(K))
 
 
 def Z(resistors):
-    r_shunt = resistors['r_shunt']
-    r_series = resistors['r_series']
-    return np.reciprocal(np.sqrt(
-        (np.reciprocal(np.square(r_shunt)) + 2. / (r_shunt * r_series))))
+    r_shunt = resistors["r_shunt"]
+    r_series = resistors["r_series"]
+    return np.reciprocal(
+        np.sqrt((np.reciprocal(np.square(r_shunt)) + 2.0 / (r_shunt * r_series)))
+    )
 
 
 def L_dB(resistors):
-    r_shunt = resistors['r_shunt']
-    r_series = resistors['r_series']
-    gamma = 2. * np.arcsinh(np.sqrt(r_series / (2. * r_shunt)))
-    l = np.exp(gamma)
-    l_db = 20. * np.log10(l)
+    r_shunt = resistors["r_shunt"]
+    r_series = resistors["r_series"]
+    gamma = 2.0 * np.arcsinh(np.sqrt(r_series / (2.0 * r_shunt)))
+    loss = np.exp(gamma)
+    l_db = 20.0 * np.log10(loss)
     return l_db
 
 
@@ -38,4 +39,4 @@ def ComputePad(impedance, amplitude_db, series=None):
     if series:
         r_shunt = resistors.closest_value(r_shunt, series)
         r_series = resistors.closest_value(r_series, series)
-    return {'r_shunt': r_shunt, 'r_series': r_series}
+    return {"r_shunt": r_shunt, "r_series": r_series}

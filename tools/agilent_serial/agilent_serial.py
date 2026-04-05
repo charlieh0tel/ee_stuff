@@ -6,8 +6,8 @@ import csv
 
 def main(argv):
     path = argv[1]
-    with open(path, newline='') as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=',')
+    with open(path, newline="") as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=",")
         rx_buffer = []
         tx_buffer = []
 
@@ -21,9 +21,9 @@ def main(argv):
                 tx_buffer = []
 
         for row in reader:
-            rx_val = row.get('Rx', '').strip() or None
-            tx_val = row.get('Tx', '').strip() or None
-            time_val = row.get('Time', 'N/A').strip()
+            rx_val = row.get("Rx", "").strip() or None
+            tx_val = row.get("Tx", "").strip() or None
+            time_val = row.get("Time", "N/A").strip()
 
             if rx_val and tx_val:
                 flush_buffers()
@@ -39,7 +39,7 @@ def main(argv):
             else:
                 flush_buffers()
         flush_buffers()
-            
+
     return 0
 
 

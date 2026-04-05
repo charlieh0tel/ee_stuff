@@ -23,7 +23,9 @@ def main():
                     nom_bitrate=args.nom_bitrate,
                     nom_sample_point=sample_point,
                     data_bitrate=args.data_bitrate,
-                    data_sample_point=sample_point))
+                    data_sample_point=sample_point,
+                )
+            )
 
     for timing in sorted(timings, key=lambda x: x.nom_sample_point):
         print(timing)
