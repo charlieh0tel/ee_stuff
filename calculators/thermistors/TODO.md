@@ -4,9 +4,6 @@ Ordered roughly by impact.
 
 ## Missing analyses
 
-- [ ] **°C-per-ADC-LSB figure.** The real FOM for a temperature chain.
-  Given ADC bit count, show min/mid/max °C/LSB and worst-case deviation
-  from an ideal linear fit over the operating range.
 - [ ] **Op-amp constraints.** Surface required GBW (≈ G · f_signal),
   `Ib · Rpar(R_ntc, R1)` input-bias error, input common-mode range
   (+ input swings 0…Vdd — not all RRIO parts actually reach the rails),
