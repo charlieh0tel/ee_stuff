@@ -9,10 +9,14 @@ Ordered roughly by impact.
   report `Vout_actual(Tmin)` and `Vout_actual(Tmax)`. Warn if either
   violates the margin. Today only `gain_actual` is shown; rounding R3
   shifts the offset and can push an extreme into a rail invisibly.
-- [ ] **Grid-search R2/R3 over E-series neighbors** instead of rounding
-  each independently from ideal values. 3×3 search minimizing
-  `‖(G_actual, offset_actual) − (G_ideal, offset_ideal)‖` costs nothing
-  and beats the greedy pick, especially at E12/E24.
+- [x] **Grid-search R2/R3/R4 over E-series neighbors** instead of
+  rounding each independently from ideal values. Implemented as a
+  3×3×3 search (R4 is also in the search since it scales R2/R3 ideal
+  values linearly). Objective: feasibility first (both Vout extremes
+  inside the requested margin), then maximise Vout span for best ADC
+  utilisation; fall back to least-worst margin violation. Fixes the
+  notebook's own default E12 case, which was violating both rails
+  with the greedy pick.
 - [x] **Input-filter cutoff varies with T.** `fcsmall_actual` uses
   `ntc.r0` (25 °C only). Source impedance is `Rpar(R_ntc(T), R1)` and
   swings several× across the operating range. Report fc at both
