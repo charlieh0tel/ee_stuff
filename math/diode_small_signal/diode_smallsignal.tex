@@ -130,4 +130,28 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 \end{tabular}
 \end{table}
 
+\subsection*{Numerical values for common small-signal diodes}
+
+The framework above instantiates differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$:
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are approximate, drawn from typical SPICE-model parameters and datasheet curves; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ falls between \SIrange{1.1}{1.9}{\milli\volt} across all three.}
+\label{tab:diode-numbers}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Diode (example)} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4\VT$ (interm.) \\
+\midrule
+Si PN signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{450}{\milli\volt} \\
+Si Schottky (1N5711, BAT54)  & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{200}{\milli\volt} \\
+Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{95}{\milli\volt}  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two observations follow. First, the Si PN signal diode has roughly $1.7\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents; a 1N4148 mixer can accept RF input up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. Second, the much lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow --- only $\sim$\SI{95}{\milli\volt} of headroom for Ge before hard rectification --- whereas a Si PN diode has nearly half a volt of unclipped exponential operation above the square-law boundary. This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection where low $\VQ$ and low $n$ matter most, and Si PN diodes for switching, clamping, and mixer service where the wider operating range is useful.
+
+All four regime boundaries scale with absolute temperature through $\VT \propto T$: at \SI{-40}{\degreeCelsius} they shrink by $\sim$\SI{22}{\percent}; at \SI{85}{\degreeCelsius} they expand by $\sim$\SI{19}{\percent}. The $\VQ$ term in the intermediate-regime boundary is itself temperature-dependent (roughly $-2$ mV/K at constant current), partially offsetting the $\VT$ scaling on that boundary specifically.
+
 \end{document}
