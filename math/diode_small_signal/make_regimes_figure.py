@@ -2,6 +2,7 @@
 
 """
 Generate regime-boundary figure for diode small-signal note.
+Corrected to account for the ideality factor (n) in the exponential boundary.
 Fully configured for native LaTeX integration.
 """
 
@@ -28,7 +29,8 @@ IQ = IS * np.exp(VQ / (n * VT))  # ~100 uA by construction
 
 v_lin = 0.04 * n * VT  # ~ 1.9 mV
 v_quad = n * VT  # ~ 48 mV
-v_interm = VQ - 4 * VT  # ~ 446 mV
+# CRITICISM 1 & 2 FIX: Use 4*n*VT instead of 4*VT
+v_interm = VQ - 4 * n * VT  # ~ 358 mV
 
 V = np.linspace(-0.15, 0.85, 1500)
 I = IS * (np.exp(V / (n * VT)) - 1)  # noqa: E741
@@ -56,12 +58,12 @@ ax1.annotate(
     bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#c0392b", alpha=0.95, lw=0.6),
 )
 
-# 4VT boundary
-ax1.axvline(4 * VT, color="gray", linestyle=":", linewidth=0.9)
+# CRITICISM 1 FIX: 4*n*VT boundary (~191 mV)
+ax1.axvline(4 * n * VT, color="gray", linestyle=":", linewidth=0.9)
 ax1.text(
-    4 * VT + 0.008,
+    4 * n * VT + 0.008,
     1e-13,
-    r"$4V_T\approx 104$ mV",
+    r"$4nV_T\approx 191$ mV",
     fontsize=8,
     color="gray",
     ha="left",
@@ -70,7 +72,7 @@ ax1.text(
 ax1.axvline(VQ, color="#c0392b", linestyle="--", linewidth=0.7, alpha=0.4)
 
 # Highlight where the exponential approx fails
-ax1.axvspan(-0.15, 4 * VT, color="gray", alpha=0.08)
+ax1.axvspan(-0.15, 4 * n * VT, color="gray", alpha=0.08)
 ax1.text(
     -0.07,
     1e-9,
@@ -127,17 +129,18 @@ ax2.text(
 ax2.text(
     np.sqrt(v_interm * 2.0),
     0.82,
-    "Large-signal /\nrectifying",
+    "Full-Shockley /\nrectifying trans.",
     ha="center",
     va="center",
     fontsize=8.5,
 )
 
 # Boundary labels below
+# CRITICISM 1 & 2 FIX: Update boundary label to V_Q - 4nV_T and ~358 mV
 for v, label in [
     (v_lin, r"$0.04\,nV_T$" + "\n" + r"$\sim 1.9$ mV"),
     (v_quad, r"$nV_T$" + "\n" + r"$\sim 48$ mV"),
-    (v_interm, r"$V_Q-4V_T$" + "\n" + r"$\sim 446$ mV"),
+    (v_interm, r"$V_Q-4nV_T$" + "\n" + r"$\sim 358$ mV"),
 ]:
     ax2.plot([v, v], [y_lo, y_hi], color="black", linewidth=0.6)
     ax2.text(v, 0.12, label, ha="center", va="center", fontsize=8)
@@ -151,5 +154,5 @@ ax2.tick_params(axis="x", which="minor", length=2)
 for spine in ["top", "right", "left"]:
     ax2.spines[spine].set_visible(False)
 
-# Export as vector graphic (PDF ignores DPI, making it redundant)
+# Export as vector graphic
 plt.savefig("regimes_figure.pdf", format="pdf", bbox_inches="tight")
