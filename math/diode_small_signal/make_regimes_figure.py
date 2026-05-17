@@ -2,17 +2,18 @@
 
 """
 Generate regime-boundary figure for diode small-signal note.
+Fully configured for native LaTeX integration.
 """
 
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Updated rcParams for native LaTeX rendering
 plt.rcParams.update(
     {
         "font.family": "serif",
-        "font.serif": ["DejaVu Serif"],
-        "mathtext.fontset": "cm",
-        "text.usetex": False,
+        "font.serif": ["Computer Modern Roman"],
+        "text.usetex": True,
         "font.size": 10,
         "axes.labelsize": 11,
     }
@@ -46,7 +47,7 @@ ax1.semilogy(
 # Q-point
 ax1.plot(VQ, IQ, "o", color="#c0392b", markersize=7, zorder=5)
 ax1.annotate(
-    r"Q: $V_Q=0.55$ V, $I_Q\approx 100$ $\mu$A",
+    r"Q: $V_Q=0.55$ V, $I_Q\approx 100\ \mu$A",
     xy=(VQ, IQ),
     xytext=(VQ - 0.45, IQ * 200),
     arrowprops=dict(arrowstyle="->", color="#c0392b", lw=0.8),
@@ -150,4 +151,5 @@ ax2.tick_params(axis="x", which="minor", length=2)
 for spine in ["top", "right", "left"]:
     ax2.spines[spine].set_visible(False)
 
-plt.savefig("regimes_figure.pdf", format="pdf", bbox_inches="tight", dpi=300)
+# Export as vector graphic (PDF ignores DPI, making it redundant)
+plt.savefig("regimes_figure.pdf", format="pdf", bbox_inches="tight")
