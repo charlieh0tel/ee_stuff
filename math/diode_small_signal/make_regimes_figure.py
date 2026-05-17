@@ -29,7 +29,6 @@ IQ = IS * np.exp(VQ / (n * VT))  # ~100 uA by construction
 
 v_lin = 0.04 * n * VT  # ~ 1.9 mV
 v_quad = n * VT  # ~ 48 mV
-# CRITICISM 1 & 2 FIX: Use 4*n*VT instead of 4*VT
 v_interm = VQ - 4 * n * VT  # ~ 358 mV
 
 V = np.linspace(-0.15, 0.85, 1500)
@@ -58,7 +57,6 @@ ax1.annotate(
     bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#c0392b", alpha=0.95, lw=0.6),
 )
 
-# CRITICISM 1 FIX: 4*n*VT boundary (~191 mV)
 ax1.axvline(4 * n * VT, color="gray", linestyle=":", linewidth=0.9)
 ax1.text(
     4 * n * VT + 0.008,
