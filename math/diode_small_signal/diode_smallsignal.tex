@@ -5,6 +5,7 @@
 \usepackage{geometry}
 \usepackage{array}
 \usepackage{siunitx}
+\usepackage{graphicx}
 
 % Upright roman subscripts for descriptive labels (IEEE / IUPAP convention).
 \newcommand{\ID}{I_{\mathrm{D}}}
@@ -130,6 +131,13 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 \end{tabular}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{regimes_figure.pdf}
+\caption{Mapping the four operating regimes onto a diode's behaviour, using a Si PN signal diode (1N4148, $n=1.85$, $\IQ \approx \SI{100}{\micro\ampere}$) as the example. (a) Semilog $I$--$V$ curve from the full Shockley equation~\eqref{eq:shockley}. The exponential approximation~\eqref{eq:exp-approx} holds in the unshaded region $\VD \gtrsim 4\VT$; below that, the $-1$ term dominates and the curve approaches $-\IS$. (b) The four AC-amplitude regimes shown on a logarithmic $\vhd$ axis. The boundaries $0.04\,n\VT$, $n\VT$, and $\VQ - 4\VT$ span more than two decades for a typical Si diode, with the linear regime occupying less than a millivolt of amplitude headroom and the intermediate exponential regime spanning roughly an order of magnitude.}
+\label{fig:regimes}
+\end{figure}
+
 \subsection*{Numerical values for common small-signal diodes}
 
 The framework above instantiates differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$:
@@ -152,6 +160,10 @@ Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & 
 
 Two observations follow. First, the Si PN signal diode has roughly $1.7\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents; a 1N4148 mixer can accept RF input up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. Second, the much lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow --- only $\sim$\SI{95}{\milli\volt} of headroom for Ge before hard rectification --- whereas a Si PN diode has nearly half a volt of unclipped exponential operation above the square-law boundary. This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection where low $\VQ$ and low $n$ matter most, and Si PN diodes for switching, clamping, and mixer service where the wider operating range is useful.
 
-All four regime boundaries scale with absolute temperature through $\VT \propto T$: at \SI{-40}{\degreeCelsius} they shrink by $\sim$\SI{22}{\percent}; at \SI{85}{\degreeCelsius} they expand by $\sim$\SI{19}{\percent}. The $\VQ$ term in the intermediate-regime boundary is itself temperature-dependent (roughly $-2$ mV/K at constant current), partially offsetting the $\VT$ scaling on that boundary specifically.
+\subsection*{Temperature dependence and detector stability}
+
+The boundaries in Table~\ref{tab:diode-numbers} are room-temperature values. Two distinct temperature effects shift them, and the two act on different boundaries. First, $\VT = kT/q$ scales linearly with absolute temperature; across the industrial range (\SI{-40}{\degreeCelsius} to \SI{85}{\degreeCelsius}) it varies from about \SI{20}{\milli\volt} to \SI{31}{\milli\volt}, stretching the linear and square-law cutoffs ($0.04\,n\VT$ and $n\VT$) by roughly $\pm\SI{20}{\percent}$. Second, the quiescent voltage $\VQ$ at constant $\IQ$ has a strongly negative temperature coefficient: about \SI{-2}{\milli\volt\per\kelvin} for a Si PN junction, \SI{-1.7}{\milli\volt\per\kelvin} for Ge, and slightly steeper for Schottky devices. The two effects compete on the intermediate-regime upper edge $\VQ - 4\VT$: $\VQ$ drops while $4\VT$ rises, so this boundary shrinks roughly twice as fast as either term alone.
+
+The practical consequence is that the diode's bias point drifts substantially over temperature, and a fixed-bias envelope detector or RF-to-DC converter reads its own bias drift directly as a baseline shift at the output. A Si signal diode held at $\IQ = \SI{100}{\micro\ampere}$ moves from $\VQ \approx \SI{0.62}{\volt}$ at \SI{-40}{\degreeCelsius} to $\VQ \approx \SI{0.42}{\volt}$ at \SI{85}{\degreeCelsius} --- a \SI{200}{\milli\volt} baseline shift that swamps the small-signal rectified output the detector is trying to measure. Three standard mitigations: (i) AC-couple the detector output through a series capacitor, rejecting the slow drift; (ii) bias from a current source so $\IQ$ stays fixed and the entire $I$--$V$ curve translates rigidly rather than distorting; and (iii) use a matched diode pair in a balanced (back-to-back or bridge) topology so the bias-point drift appears as common-mode and cancels, leaving only the signal-dependent rectified component at the differential output. Modern microwave power detectors and log detectors almost universally combine (ii) and (iii) using matched zero-bias Schottky pairs, which is why their datasheets advertise temperature stability spec'd in tenths of a dB rather than the tens of dB that an unprotected single-diode detector would exhibit.
 
 \end{document}

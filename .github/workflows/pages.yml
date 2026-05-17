@@ -20,6 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate figures
+        run: python3 make_regimes_figure.py
+        working-directory: math/diode_small_signal
+
       - name: Build diode_smallsignal PDF
         uses: xu-cheng/latex-action@v3
         with:
