@@ -45,10 +45,10 @@
 
 The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation:
 \begin{equation}
-\ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right)
+\ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right).
 \label{eq:shockley}
 \end{equation}
-For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{190}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
+For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{191}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
 \begin{equation}
 \ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}
 \label{eq:exp-approx}
@@ -69,7 +69,7 @@ We define the Q-point current under the forward-exponential approximation as $\I
 \end{equation}
 The AC component is $\id \equiv \ID - \IQ$. Defining the small-signal conductance at the Q-point as $\gd \equiv \IQ/(n \VT) = 1/\rd$, this becomes
 \begin{equation}
-\id = \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2} + \frac{\gd}{6\,(n \VT)^2}\, \vd^{\,3} + \cdots
+\id = \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2} + \frac{\gd}{6\,(n \VT)^2}\, \vd^{\,3} + \cdots.
 \label{eq:power-series}
 \end{equation}
 
@@ -81,17 +81,31 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each term in \eqref{eq:power-s
 \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
 \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
 \end{equation}
-These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes:
-\begin{itemize}
-    \item HD2 $<$ \SI{1}{\percent} requires $\vhd \lesssim 0.04\, n \VT \approx \SI{1}{\milli\volt}$ for $n\approx 1$ --- the linear regime.
-    \item HD2 $<$ \SI{25}{\percent} (HD3 about \SI{4}{\percent}) requires $\vhd \lesssim n \VT \approx \SI{26}{\milli\volt}$ for $n\approx 1$ --- the regime in which the second-order term is the dominant nonlinearity but the series is usefully truncated at quadratic order.
-\end{itemize}
+These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
 
-\emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n \VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products $\omega_1 \pm \omega_2$ in a two-tone drive, not to the I--V being purely quadratic.
+\subsection*{Linear regime}
+
+For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\sim$\SI{2}{\milli\volt} for $n \approx 1.85$), HD2 stays below \SI{1}{\percent} and only the leading term of \eqref{eq:power-series} survives:
+\begin{equation}
+\id \approx \gd \vd.
+\label{eq:linear}
+\end{equation}
+This is the small-signal model used for biasing analysis and dynamic-resistance ($\rd = 1/\gd$) calculations; no appreciable mixing or rectification occurs to first order.
+
+\subsection*{Quadratic / square-law regime}
+
+For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} to \SI{25}{\percent} and HD3 reaches about \SI{4}{\percent} at the upper edge, but the cubic and higher terms in \eqref{eq:power-series} remain small enough to drop:
+\begin{equation}
+\id \approx \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2}.
+\label{eq:quadratic}
+\end{equation}
+The $\vd^{\,2}$ term is the workhorse nonlinearity for resistive mixing: in a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the operating principle of RF mixers, microwave power detectors, and intermodulation tests.
+
+\emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products in a two-tone drive, not to the I--V being purely quadratic.
 
 \subsection*{Intermediate exponential regime}
 
-For drive amplitudes that exceed the quadratic regime but do not yet swing the diode below the validity of the forward-bias approximation ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. The natural representation is the closed-form expansion of the full exponential.
+For drive amplitudes that exceed the quadratic regime but do not yet swing the diode below the validity of the forward-bias approximation ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise the forward-exponential approximation has already failed before a distinct intermediate regime can appear. The natural representation is the closed-form expansion of the full exponential.
 
 Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
 \begin{equation}
@@ -118,7 +132,7 @@ When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the 
 \begin{itemize}
     \item $\vhd \approx \VQ - 4n\VT$: the exponential approximation begins to lose instantaneous accuracy at the trough of the swing. Conduction is still continuous and only mildly asymmetric.
     \item $\vhd \approx \VQ$: the trough first reaches $\VD = 0$. A reverse-biased interval appears for any larger swing, but the waveform only just touches zero; the diode is not yet a hard rectifier.
-    \item $\vhd \approx \VQ + 4n\VT$: the trough reaches $\VD \lesssim -4n\VT$ where the diode hits its reverse saturation floor $\ID \to -\IS$. Only here does the waveform genuinely approach half-wave rectification, with conduction effectively confined to one half-cycle.
+    \item $\vhd \approx \VQ + 4n\VT$: the trough first reaches $\VD \lesssim -4n\VT$, where the diode is essentially at its reverse-saturation floor $\ID \to -\IS$. For still larger swings, the reverse-biased interval expands and the waveform approaches half-wave rectification.
 \end{itemize}
 
 The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a useful description at the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
@@ -157,7 +171,7 @@ Bessel expansion \eqref{eq:bessel-expansion}; rich harmonics without clipping; r
 Unclipped large-signal envelope detection, harmonic generation, mixer LO drive, oscillator amplitude limiting. \\
 
 Full-Shockley /\newline rectifying &
-$\vhd \gtrsim \VQ - 4n\VT$ \newline (reverse interval appears for $\vhd \gtrsim \VQ$; hard rectification for $\vhd \gtrsim \VQ + 4n\VT$) &
+$\vhd \gtrsim \VQ - 4n\VT$ \newline (reverse interval appears for $\vhd \gtrsim \VQ$; reverse floor first reached at the trough for $\vhd \gtrsim \VQ + 4n\VT$) &
 Full Shockley \eqref{eq:shockley} required; asymmetric conduction; reverse-bias floor reached only for sufficiently large negative swing &
 Peak AM envelope detection, power rectification, switching, clamping. \\
 \bottomrule
@@ -181,7 +195,7 @@ The framework above instantiates differently for each diode technology. $\VT = k
 \centering
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{5pt}
-\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are approximate, drawn from typical SPICE-model parameters and datasheet curves; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three.}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are approximate, extracted from typical-curve datasheet plots and SPICE-model parameters; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Consult vendor documentation for tolerance bands and lot-to-lot variation, particularly for Ge.}
 \label{tab:diode-numbers}
 
 \vspace{1\baselineskip}
@@ -279,7 +293,7 @@ yielding $|P_n| = |P_1|$: 100\% conversion efficiency is theoretically attainabl
 \end{equation}
 These no longer collapse to energy conservation. They produce the celebrated parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ where $\omega_o = \omega_p + \omega_s$, the excess output power being supplied by the pump --- so in principle the converter exhibits conversion gain in excess of unity, though practical gain is limited by loss, impedance matching, stability margins, and available pump power.
 
-This is the structural reason that varactor frequency multipliers and parametric amplifiers exist as a distinct circuit class from resistive mixers. Square-law resistive mixing dissipates real power in the diode's $\gd$ regardless of topology; a singly-balanced resistive mixer has a theoretical minimum conversion loss near \SI{3}{\deci\bel}, and \SI{6}{\deci\bel} or worse in practice. A purely reactive varactor doubler has no such floor.
+This is the structural reason that varactor frequency multipliers and parametric amplifiers exist as a distinct circuit class from resistive mixers. Square-law resistive mixing dissipates real power in the diode's $\gd$ regardless of topology; an ideal switching-mode singly-balanced resistive mixer has a theoretical minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$, and \SIrange{5}{7}{\deci\bel} in practice. A purely reactive varactor doubler has no such floor.
 
 \subsection*{Practical limits}
 
@@ -292,18 +306,18 @@ with $C_{j,\min}$ the capacitance at maximum reverse bias; modern Si and GaAs va
 |\vhd| < \min\!\left(|\VQ|,\; V_\mathrm{BR} - |\VQ|\right),
 \label{eq:swing-combined}
 \end{equation}
-the lower of the forward-crossing limit (\ref{eq:varactor-swing-limit}) and the breakdown limit. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage entirely.
+the lower of the forward-crossing limit \eqref{eq:varactor-swing-limit} and the breakdown limit. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage entirely.
 
 \bigskip
 
 \pdfbookmark[1]{Synthesis: Two Faces of Diode Nonlinearity}{synthesis}
 \section*{Synthesis: Two Faces of Diode Nonlinearity}
 
-The same Q-point Taylor expansion underlies both halves of this note and produced two qualitatively distinct theories. Under forward bias, the exponential $I$--$V$'s curvature decomposes into a small-signal conductance $\gd$ plus a hierarchy of resistive nonlinearities; the $\vd^2$ term implements square-law mixing, higher terms enrich the harmonic spectrum, and the conversion occurs in a dissipative nonlinear conductance rather than a lossless reactance. Under reverse bias, the depletion capacitance's $(1 - \VD/V_0)^{-m}$ profile produces a structurally identical series in $\vhd/\phi_Q$, but the harmonics are quadrature-phased to the drive and dissipate nothing on average; Manley--Rowe enforces lossless conversion as a constraint on the device's terminal power balance.
+The same Q-point Taylor expansion underlies both halves of this note --- applied at forward bias ($\VQ > 0$) in the first half and at reverse bias ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}) in the second --- and produced two qualitatively distinct theories. Under forward bias, the exponential $I$--$V$'s curvature decomposes into a small-signal conductance $\gd$ plus a hierarchy of resistive nonlinearities, traversing four amplitude regimes as the drive grows: \emph{linear} ($\vhd \lesssim 0.04\,n\VT$, where $\gd$ alone dominates), \emph{quadratic / square-law} ($\vhd \lesssim n\VT$, where the $\vd^2$ term implements square-law mixing and HD2 reaches \SI{25}{\percent}), \emph{intermediate exponential} ($n\VT < \vhd \lesssim \VQ - 4n\VT$, where low-order truncation fails but the closed-form Bessel expansion captures rich unclipped harmonic content), and \emph{rectifying} ($\vhd \gtrsim \VQ - 4n\VT$, where the full Shockley equation is required). Across all four, the conversion occurs in a dissipative nonlinear conductance rather than a lossless reactance. Under reverse bias, the depletion capacitance's $(1 - \VD/V_0)^{-m}$ profile produces a structurally identical series in $\vhd/\phi_Q$ governed by a single amplitude limit $\vhd < |\VQ|$, but the harmonics are quadrature-phased to the drive and dissipate nothing on average; Manley--Rowe enforces lossless conversion as a constraint on the device's terminal power balance.
 
-That bifurcation maps directly onto circuit topology. Resistive mixers, envelope detectors, and rectifiers exploit the forward-bias nonlinearity and accept the corresponding \SIrange{3}{6}{\deci\bel} conversion-loss floor in exchange for broadband, unconditional operation. Varactor multipliers, parametric amplifiers, and reactance-modulator upconverters exploit the reverse-bias nonlinearity and trade narrower bandwidth (set by the impedance match against $C_{jQ}$ and $r_s$), tighter swing tolerance, and the requirement for an external pump against the theoretical promise of \SI{100}{\percent} conversion --- or, in the three-frequency parametric case, conversion gain in excess of unity.
+That bifurcation maps directly onto circuit topology. Resistive mixers exploit the forward-bias nonlinearity and accept a conversion-loss floor, typically several decibels, in exchange for broadband operation and simple embedding. Envelope detectors and rectifiers exploit the same resistive curvature or conduction asymmetry but are usually evaluated by sensitivity, detected-output error, or rectification efficiency rather than mixer conversion loss. Varactor multipliers, parametric amplifiers, and reactance-modulator upconverters exploit the reverse-bias nonlinearity and trade narrower bandwidth (set by the impedance match against $C_{jQ}$ and $r_s$), tighter swing tolerance, and the requirement for an external pump against the theoretical promise of \SI{100}{\percent} conversion --- or, in the three-frequency parametric case, conversion gain in excess of unity.
 
-A real diode always exhibits both nonlinearities simultaneously; the operating bias and embedding impedances determine which one dominates the circuit response. Forward bias makes the resistive mechanism the larger contributor and the reactive one a parasitic; reverse bias inverts that ranking; zero bias (where both effects are weak but neither dominates) is the deliberate compromise underlying low-level Schottky detectors. The same physical device --- particularly a Schottky barrier diode --- can therefore serve either role depending on how the load impedances at the harmonics are arranged, so distinguishing the two analyses is a question of which Taylor expansion the embedding circuit allows to dominate, not of which physical effect is ``really'' present inside the junction.
+A real diode always exhibits both nonlinearities simultaneously; the operating bias and embedding impedances determine which one dominates the circuit response. Forward bias makes the resistive mechanism the larger contributor and the reactive one a parasitic; reverse bias inverts that ranking. At zero bias, especially in low-level Schottky detectors, the intended detection mechanism is still the resistive curvature of the full Shockley law about $\VD = 0$; the junction capacitance remains part of the RF embedding problem and often acts as a shunt parasitic rather than as the desired nonlinear element. The same physical device --- particularly a Schottky barrier diode --- can therefore serve either role depending on how the load impedances at the harmonics are arranged, so distinguishing the two analyses is a question of which Taylor expansion the embedding circuit allows to dominate, not of which physical effect is ``really'' present inside the junction.
 
 \bigskip
 
@@ -325,19 +339,16 @@ P.\ Penfield Jr.\ and R.\ P.\ Rafuse, \textit{Varactor Applications}.\ Cambridge
 D.\ M.\ Pozar, \textit{Microwave Engineering}, 4th ed.\ Hoboken, NJ: Wiley, 2011 --- RF mixer conversion-loss derivations, embedding-impedance effects, and detector-circuit design.
 
 \bibitem{nxp1n4148}
-Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet, rev.\ \ldots, \ldots --- Si p--n signal diode; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$ at $\IQ = \SI{100}{\micro\ampere}$ in Table~\ref{tab:diode-numbers}.
+Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet --- Si p--n signal diode; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$ at $\IQ = \SI{100}{\micro\ampere}$ in Table~\ref{tab:diode-numbers}.
 
 \bibitem{skyworks1n5711}
-Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, data sheet, rev.\ \ldots, \ldots --- Si Schottky example with $\VQ \approx \SI{0.30}{\volt}$, $n \approx 1.08$ for Table~\ref{tab:diode-numbers}.
+Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, data sheet --- Si Schottky example with $\VQ \approx \SI{0.30}{\volt}$, $n \approx 1.08$ for Table~\ref{tab:diode-numbers}.
 
 \bibitem{nxpbat54}
-Nexperia, \textit{BAT54 series --- Schottky barrier diodes (BAT54, BAT54A, BAT54C, BAT54S)}, data sheet, rev.\ \ldots, \ldots --- alternate Si Schottky for Table~\ref{tab:diode-numbers}; SOT-23 surface-mount equivalent of 1N5711.
+Nexperia, \textit{BAT54 series --- Schottky barrier diodes (BAT54, BAT54A, BAT54C, BAT54S)}, data sheet --- alternate Si Schottky for Table~\ref{tab:diode-numbers}; SOT-23 surface-mount equivalent of 1N5711.
 
 \bibitem{1n34a}
-NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet, rev.\ \ldots, \ldots --- Ge point-contact diode used for Table~\ref{tab:diode-numbers}; $\VQ \approx \SI{0.20}{\volt}$, $n \approx 1.05$ at $\IQ = \SI{100}{\micro\ampere}$. Numerical values are typical for Ge detector diodes; specific lots vary significantly.
-
-\bibitem{datasheetsnote}
-Ideality factors and $\VQ$ values in Table~\ref{tab:diode-numbers} are extracted at $\IQ \approx \SI{100}{\micro\ampere}$ from typical-curve datasheet plots and SPICE-model parameters; consult the specific vendor documentation for tolerance bands and lot-to-lot variation.
+NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet --- Ge point-contact diode used for Table~\ref{tab:diode-numbers}; $\VQ \approx \SI{0.20}{\volt}$, $n \approx 1.05$ at $\IQ = \SI{100}{\micro\ampere}$. Numerical values are typical for Ge detector diodes; specific lots vary significantly.
 
 \end{thebibliography}
 
