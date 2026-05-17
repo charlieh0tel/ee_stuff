@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended cm-super dvipng
+          sudo apt-get install -y texlive-full
           pip install matplotlib numpy
 
       - name: Generate figures
@@ -30,10 +30,8 @@ jobs:
         working-directory: math/diode_small_signal
 
       - name: Build diode_smallsignal PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          working_directory: math/diode_small_signal
-          root_file: diode_smallsignal.tex
+        run: make
+        working-directory: math/diode_small_signal
 
       - name: Assemble site
         run: |
