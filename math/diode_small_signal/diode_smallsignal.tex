@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{siunitx}
+
+% Upright roman subscripts for descriptive labels (IEEE / IUPAP convention).
+\newcommand{\ID}{I_{\mathrm{D}}}
+\newcommand{\VD}{V_{\mathrm{D}}}
+\newcommand{\IS}{I_{\mathrm{S}}}
+\newcommand{\VT}{V_{\mathrm{T}}}
+\newcommand{\VQ}{V_{\mathrm{Q}}}
+\newcommand{\IQ}{I_{\mathrm{Q}}}
+\newcommand{\vd}{v_{\mathrm{d}}}
+\newcommand{\id}{i_{\mathrm{d}}}
+\newcommand{\gd}{g_{\mathrm{d}}}
+\newcommand{\rd}{r_{\mathrm{d}}}
+\newcommand{\vhd}{\hat{v}_{\mathrm{d}}}
+
+\begin{document}
+
+\section*{Derivation of Diode Small-Signal and Square-Law Behavior}
+
+The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation:
+\begin{equation}
+\ID = \IS \left( e^{\frac{\VD}{n \VT}} - 1 \right)
+\label{eq:shockley}
+\end{equation}
+For forward bias well above the thermal voltage ($\VD \gtrsim 4 \VT$, i.e.\ $\VD \gtrsim \SI{100}{\milli\volt}$), the unity term is negligible and
+\begin{equation}
+\ID \approx \IS\, e^{\frac{\VD}{n \VT}}
+\label{eq:exp-approx}
+\end{equation}
+where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.9}{\milli\volt}$ at $T = \SI{300}{\kelvin}$.
+
+Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbation $\vd(t)$:
+\begin{equation}
+\VD = \VQ + \vd.
+\end{equation}
+Substituting and factoring,
+\begin{equation}
+\ID = \underbrace{\IS\, e^{\frac{\VQ}{n \VT}}}_{\displaystyle \IQ}\, e^{\frac{\vd}{n \VT}} = \IQ\, e^{\frac{\vd}{n \VT}}.
+\end{equation}
+The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
+\begin{equation}
+\ID = \IQ \left[ 1 + \frac{\vd}{n \VT} + \frac{1}{2!}\left(\frac{\vd}{n \VT}\right)^{\!2} + \frac{1}{3!}\left(\frac{\vd}{n \VT}\right)^{\!3} + \cdots \right].
+\end{equation}
+The AC component is $\id \equiv \ID - \IQ$. Defining the small-signal conductance at the Q-point as $\gd \equiv \IQ/(n \VT) = 1/\rd$, this becomes
+\begin{equation}
+\id = \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2} + \frac{\gd}{6\,(n \VT)^2}\, \vd^{\,3} + \cdots
+\label{eq:power-series}
+\end{equation}
+
+\subsection*{Distortion and regime boundaries}
+
+For a sinusoidal drive $\vd = \vhd \cos\omega t$, each term in \eqref{eq:power-series} generates harmonics of $\omega$. The fractional second- and third-harmonic distortions relative to the fundamental are
+\begin{equation}
+\mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
+\mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
+\end{equation}
+These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes:
+\begin{itemize}
+    \item HD2 $<$ \SI{1}{\percent} requires $\vhd \lesssim 0.04\, n \VT \approx \SI{1}{\milli\volt}$ --- the linear regime.
+    \item HD2 $<$ \SI{25}{\percent} (HD3 $\lesssim \SI{4}{\percent}$) requires $\vhd \lesssim n \VT \approx \SI{26}{\milli\volt}$ --- the regime in which the second-order term is the dominant nonlinearity but the series is usefully truncated at quadratic order.
+\end{itemize}
+
+\emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n \VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products $\omega_1 \pm \omega_2$ in a two-tone drive, not to the I--V being purely quadratic.
+
+\subsection*{Intermediate exponential regime}
+
+For drive amplitudes that exceed the quadratic regime but do not yet swing the diode into reverse bias ($n \VT \ll \vhd \lesssim \VQ - 4 \VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. The natural representation is the closed-form expansion of the full exponential.
+
+Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
+\begin{equation}
+\ID(t) = \IQ\, e^{\,x \cos\omega t}.
+\end{equation}
+The modified Jacobi--Anger identity expands this as a Fourier series in $\omega t$ with coefficients given by the modified Bessel functions of the first kind, $I_k$:
+\begin{equation}
+\ID(t) = \IQ \left[\, I_0(x) + 2 \sum_{k=1}^{\infty} I_k(x)\, \cos(k \omega t) \,\right].
+\label{eq:bessel-expansion}
+\end{equation}
+Two features of this regime are worth noting:
+
+\begin{enumerate}
+    \item The diode generates a rich spectrum of harmonics from a single tone purely through exponential nonlinearity, with \emph{no clipping involved}. The relative weight of the $k$-th harmonic is $2 I_k(x) / I_0(x)$, which approaches unity for all $k$ as $x$ grows.
+    \item The average current rises with drive amplitude: $\langle \ID \rangle = \IQ\, I_0(x)$, and $I_0(x) > 1$ for $x > 0$. This rectified DC component (and the self-bias shift it produces when the diode feeds a resistive load through a coupling capacitor) is the operating principle of large-signal envelope detectors and grid-leak / cathode-bias detectors.
+\end{enumerate}
+
+For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$ and $I_1(x) \approx x/2$, recovering the quadratic-regime results. For $x \gg 1$, $I_k(x) \sim e^x / \sqrt{2\pi x}$ independent of $k$, signaling that truncating the harmonic series at any finite order is no longer meaningful --- the transition into the rectifying regime.
+
+\subsection*{Large-signal / rectifying regime}
+
+When $\vhd$ approaches or exceeds $\VQ$, the negative half-cycle drives $\VD$ toward zero or into reverse bias and the forward-bias approximation \eqref{eq:exp-approx} fails. The full Shockley equation \eqref{eq:shockley} must be used, and for $\VD \lesssim -4 \VT$ the diode reaches its reverse saturation floor $\ID \to -\IS$. Neither the power series \eqref{eq:power-series} nor the Bessel expansion \eqref{eq:bessel-expansion} is a useful description --- the diode acts as a half-wave rectifier with strongly asymmetric conduction.
+
+A summary of these four operating regimes and their boundaries is provided in Table~\ref{tab:diode-regimes}.
+
+\bigskip
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Diode operating regimes by AC amplitude $\vhd$, with $n \approx 1$ and $\VT \approx \SI{26}{\milli\volt}$.}
+\label{tab:diode-regimes}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{3.9cm} >{\raggedright\arraybackslash}p{3.9cm}}
+\toprule
+\textbf{Regime} & \textbf{Amplitude criterion} & \textbf{Dominant behavior} & \textbf{Typical application} \\
+\midrule
+Linear small-signal &
+$\vhd \lesssim 0.04\, n \VT$ \newline (${\sim}\SI{1}{\milli\volt}$; HD2 $<$ \SI{1}{\percent}) &
+$\id \approx \gd \vd$ &
+Amplifier biasing, dynamic resistance $\rd = 1/\gd$. \\
+
+Quadratic / square-law &
+$\vhd \lesssim n \VT$ \newline (${\sim}\SI{26}{\milli\volt}$) &
+$\id \approx \gd \vd + \dfrac{\gd}{2 n \VT} \vd^{\,2}$ &
+RF mixers, microwave power detectors, frequency doublers, intermodulation analysis. \\
+
+Intermediate exponential &
+$n \VT \ll \vhd \lesssim \VQ - 4 \VT$ \newline (series fails, $\VD > 0$) &
+Bessel expansion \eqref{eq:bessel-expansion}; rich harmonics without clipping; rectified DC $\langle \ID \rangle = \IQ\, I_0(x)$ &
+Unclipped large-signal envelope detection, harmonic generation, mixer LO drive, oscillator amplitude limiting. \\
+
+Large-signal / \newline rectifying &
+$\vhd \gtrsim \VQ$ \newline (exponential approx.\ fails) &
+Full Shockley \eqref{eq:shockley} required; asymmetric conduction; reverse-bias floor reached on negative swing &
+Peak AM envelope detection, power rectification, switching, clamping. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
