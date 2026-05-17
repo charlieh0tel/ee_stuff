@@ -12,6 +12,12 @@
 \usepackage[section]{placeins}
 \usepackage[hidelinks]{hyperref}
 
+\hypersetup{
+    pdftitle={Derivation of Diode Small-Signal and Square-Law Behavior},
+    pdfauthor={ch@murgatroid.com (AI6KG)},
+    pdfsubject={Diode nonlinearity, mixers, varactors, parametric amplifiers}
+}
+
 \title{Derivation of Diode Small-Signal and Square-Law Behavior}
 \author{\texttt{ch@murgatroid.com}\ (AI6KG)}
 \date{\today}
@@ -28,6 +34,8 @@
 \newcommand{\gd}{g_{\mathrm{d}}}
 \newcommand{\rd}{r_{\mathrm{d}}}
 \newcommand{\vhd}{\hat{v}_{\mathrm{d}}}
+\newcommand{\dd}{\mathrm{d}}        % Upright differential operator (ISO/IUPAP)
+\newcommand{\eu}{\mathrm{e}}        % Upright Euler's number (ISO 80000-2)
 
 \begin{document}
 
@@ -35,12 +43,12 @@
 
 The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation:
 \begin{equation}
-\ID = \IS \left( e^{\frac{\VD}{n \VT}} - 1 \right)
+\ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right)
 \label{eq:shockley}
 \end{equation}
 For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{190}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
 \begin{equation}
-\ID \approx \IS\, e^{\frac{\VD}{n \VT}}
+\ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}
 \label{eq:exp-approx}
 \end{equation}
 where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.9}{\milli\volt}$ at $T = \SI{300}{\kelvin}$. The factor of $n$ in the validity bound matters: for Si PN diodes it is a $\sim$\SI{90}{\milli\volt} correction that propagates into every regime boundary below.
@@ -51,9 +59,9 @@ Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbati
 \end{equation}
 Substituting and factoring,
 \begin{equation}
-\ID = \underbrace{\IS\, e^{\frac{\VQ}{n \VT}}}_{\displaystyle \IQ}\, e^{\frac{\vd}{n \VT}} = \IQ\, e^{\frac{\vd}{n \VT}}.
+\ID = \underbrace{\IS\, \eu^{\frac{\VQ}{n \VT}}}_{\displaystyle \IQ}\, \eu^{\frac{\vd}{n \VT}} = \IQ\, \eu^{\frac{\vd}{n \VT}}.
 \end{equation}
-We define the Q-point current under the forward-exponential approximation as $\IQ \equiv \IS\, e^{\VQ/n\VT}$; the exact Shockley value differs by $\IS$ (the $-1$ term in \eqref{eq:shockley}), negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
+We define the Q-point current under the forward-exponential approximation as $\IQ \equiv \IS\, \eu^{\VQ/n\VT}$; the exact Shockley value differs by $\IS$ (the $-1$ term in \eqref{eq:shockley}), negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
 \begin{equation}
 \ID = \IQ \left[ 1 + \frac{\vd}{n \VT} + \frac{1}{2!}\left(\frac{\vd}{n \VT}\right)^{\!2} + \frac{1}{3!}\left(\frac{\vd}{n \VT}\right)^{\!3} + \cdots \right].
 \end{equation}
@@ -84,7 +92,7 @@ For drive amplitudes that exceed the quadratic regime but do not yet swing the d
 
 Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
 \begin{equation}
-\ID(t) \approx \IQ\, e^{\,x \cos\omega t}.
+\ID(t) \approx \IQ\, \eu^{\,x \cos\omega t}.
 \end{equation}
 The modified Jacobi--Anger identity expands this as a Fourier series in $\omega t$ with coefficients given by the modified Bessel functions of the first kind, $I_k$:
 \begin{equation}
@@ -98,7 +106,7 @@ Two features of this regime are worth noting:
     \item The average current rises with drive amplitude: $\langle \ID \rangle = \IQ\, I_0(x)$, and $I_0(x) > 1$ for $x > 0$. This rectified DC component (and the self-bias shift it produces when the diode feeds a resistive load through a coupling capacitor) is the operating principle of large-signal envelope detectors and grid-leak / cathode-bias detectors.
 \end{enumerate}
 
-For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$ and $I_1(x) \approx x/2$, recovering the quadratic-regime results. For $x \gg 1$, $I_k(x) \sim e^x / \sqrt{2\pi x}$ independent of $k$, signaling that truncating the harmonic series at any finite order is no longer meaningful --- the transition into the rectifying regime.
+For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$, $I_1(x) \approx x/2$, and $I_2(x) \approx x^2/8$, recovering the DC shift, fundamental term, and second-harmonic amplitude of the quadratic-regime expansion. For fixed $k$ and $x \gg 1$, $I_k(x) \sim \eu^x/\sqrt{2\pi x}$ up to $k$-dependent corrections, while orders $k \gtrsim x$ still roll off rapidly; truncating the harmonic series at any finite order is no longer meaningful --- the transition into the rectifying regime.
 
 \subsection*{Full-Shockley / rectifying regime}
 
@@ -112,16 +120,18 @@ When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the 
 
 The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a useful description at the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
 \begin{equation}
-\ID(t) = \IS\,e^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
+\ID(t) = \IS\,\eu^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
 \label{eq:bessel-full-shockley}
 \end{equation}
-so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful upper bound on the harmonic content of an ideal Shockley diode, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network.
+so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network.
+
+\clearpage
 
 A summary of these four operating regimes and their boundaries is provided in Table~\ref{tab:diode-regimes}.
 
 \bigskip
 
-\begin{table}[htbp]
+\begin{table}[t]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \caption{Diode operating regimes expressed as algebraic functions of the diode parameters $n$, $\VT$, and $\VQ$. Boundaries are HD-based for the first two rows (HD2 = \SI{1}{\percent} and \SI{25}{\percent} respectively) and physical-validity-based for the last two. See Table~\ref{tab:diode-numbers} for numerical instantiations at three common diode technologies.}
@@ -141,13 +151,13 @@ $\id \approx \gd \vd + \dfrac{\gd}{2 n \VT} \vd^{\,2}$ &
 RF mixers, microwave power detectors, frequency doublers, intermodulation analysis. \\
 
 Intermediate exponential &
-$n \VT < \vhd \lesssim \VQ - 4n\VT$ \newline (series fails; exp.\ approx.\ still holds) &
+$n \VT < \vhd \lesssim \VQ - 4n\VT$ \newline (low-order truncation no longer adequate; exp.\ approx.\ still holds) &
 Bessel expansion \eqref{eq:bessel-expansion}; rich harmonics without clipping; rectified DC $\langle \ID \rangle = \IQ\, I_0(x)$ &
 Unclipped large-signal envelope detection, harmonic generation, mixer LO drive, oscillator amplitude limiting. \\
 
-Full-Shockley / \newline rectifying &
-$\vhd \gtrsim \VQ - 4n\VT$ \newline (exp.\ approx.\ fails; hard rectification for $\vhd \gtrsim \VQ$) &
-Full Shockley \eqref{eq:shockley} required; asymmetric conduction; reverse-bias floor reached on negative swing &
+Full-Shockley /\newline rectifying &
+$\vhd \gtrsim \VQ - 4n\VT$ \newline (reverse interval appears for $\vhd \gtrsim \VQ$; hard rectification for $\vhd \gtrsim \VQ + 4n\VT$) &
+Full Shockley \eqref{eq:shockley} required; asymmetric conduction; reverse-bias floor reached only for sufficiently large negative swing &
 Peak AM envelope detection, power rectification, switching, clamping. \\
 \bottomrule
 \end{tabular}
@@ -156,7 +166,7 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{regimes_figure.pdf}
-\caption{Mapping the four operating regimes onto a diode's behavior, using a Si PN signal diode (1N4148, $n=1.85$, $\IQ \approx \SI{100}{\micro\ampere}$) as the example. (a) Semilog $I$--$V$ curve from the full Shockley equation~\eqref{eq:shockley}. The exponential approximation~\eqref{eq:exp-approx} holds in the unshaded region $\VD \gtrsim 4n\VT$; below that, the $-1$ term in \eqref{eq:shockley} is no longer negligible, and near $\VD = 0$ and below it controls the approach to the $-\IS$ floor. (b) The four AC-amplitude regimes shown on a logarithmic $\vhd$ axis. The boundaries $0.04\,n\VT$, $n\VT$, and $\VQ - 4n\VT$ span more than two decades for a typical Si diode; the linear regime occupies about \SI{2}{\milli\volt} of amplitude headroom for this $n=1.85$ example (or about \SI{1}{\milli\volt} for $n\!\approx\!1$ devices). The factor of $n$ in the third boundary is essential: omitting it overstates the intermediate-regime extent by $\sim$\SI{90}{\milli\volt} for $n=1.85$.}
+\caption{Four operating regimes mapped onto a Si PN signal diode (1N4148, $n=1.85$, $\IQ \approx \SI{100}{\micro\ampere}$). (a) Semilog $|\ID|$--$\VD$ plot from the full Shockley equation~\eqref{eq:shockley}; the unshaded region $\VD \gtrsim 4n\VT$ is where the exponential approximation~\eqref{eq:exp-approx} holds. (b) Regime boundaries $0.04\,n\VT$, $n\VT$, and $\VQ - 4n\VT$ on a logarithmic $\vhd$ axis, spanning more than two decades for a typical Si diode.}
 \label{fig:regimes}
 \end{figure}
 
@@ -191,7 +201,7 @@ Two observations follow. First, the Si PN signal diode has roughly $1.7\times$ t
 
 The boundaries in Table~\ref{tab:diode-numbers} are room-temperature values. Two distinct temperature effects shift them, and the two act on different boundaries. First, $\VT = kT/q$ scales linearly with absolute temperature; across the industrial range (\SI{-40}{\degreeCelsius} to \SI{85}{\degreeCelsius}) it varies from about \SI{20}{\milli\volt} to \SI{31}{\milli\volt}, stretching the linear and square-law cutoffs ($0.04\,n\VT$ and $n\VT$) by roughly $\pm\SI{20}{\percent}$. Second, the quiescent voltage $\VQ$ at constant $\IQ$ has a strongly negative temperature coefficient: about \SI{-2}{\milli\volt\per\kelvin} for a Si PN junction, \SI{-1.7}{\milli\volt\per\kelvin} for Ge, and slightly steeper for Schottky devices. The two effects compound on the intermediate-regime upper edge $\VQ - 4n\VT$: $\VQ$ drops at $\sim$\SI{-2}{\milli\volt\per\kelvin} while $4n\VT$ rises at $4n\cdot k/q \approx +0.64$~mV/K for $n=1.85$ (or about $+0.34$~mV/K for $n\approx 1$). The boundary therefore drifts at roughly $-2.64$~mV/K for a Si PN diode --- about \SI{30}{\percent} faster than the bare $\VQ$ drift, not twice as fast; for Ge and Schottky devices the additional $\VT$ contribution is smaller and the drift is closer to \SI{20}{\percent} faster than $\VQ$ alone.
 
-The practical consequence is that the diode's bias point drifts substantially over temperature, and a fixed-bias envelope detector or RF-to-DC converter reads its own bias drift directly as a baseline shift at the output. Extrapolating a $-2$~mV/K coefficient from a \SI{0.55}{\volt} reference at \SI{25}{\degreeCelsius}, a Si signal diode at $\IQ = \SI{100}{\micro\ampere}$ moves from $\VQ \approx \SI{0.68}{\volt}$ at \SI{-40}{\degreeCelsius} to $\VQ \approx \SI{0.43}{\volt}$ at \SI{85}{\degreeCelsius} --- a \SI{250}{\milli\volt} baseline shift that swamps the small-signal rectified output the detector is trying to measure. (Real devices show some moderation of the coefficient away from room temperature; the linear extrapolation is a rough upper bound.) Three standard mitigations: (i) AC-couple the detector output through a series capacitor, which rejects the slow drift when the wanted signal is time-varying (envelope/audio detection) but is \emph{not} applicable to true RF-to-DC power detectors where the DC level itself is the measurement; (ii) bias from a current source so $\IQ$ stays fixed and the entire $I$--$V$ curve translates rigidly rather than distorting; and (iii) use a matched diode pair in a balanced (back-to-back or bridge) topology so the bias-point drift appears as common-mode and cancels, leaving only the signal-dependent rectified component at the differential output. Many precision microwave detector ICs combine matched diode (or transistor) detector cells with current-source biasing and on-die temperature compensation, so residual error is specified directly in dB over temperature rather than referred back to the underlying $\VQ$ drift.
+The practical consequence is that the diode's bias point drifts substantially over temperature, and a fixed-bias envelope detector or RF-to-DC converter reads its own bias drift directly as a baseline shift at the output. Extrapolating a $-2$~mV/K coefficient from a \SI{0.55}{\volt} reference at \SI{25}{\degreeCelsius}, a Si signal diode at $\IQ = \SI{100}{\micro\ampere}$ moves from $\VQ \approx \SI{0.68}{\volt}$ at \SI{-40}{\degreeCelsius} to $\VQ \approx \SI{0.43}{\volt}$ at \SI{85}{\degreeCelsius} --- a \SI{250}{\milli\volt} baseline shift that swamps the small-signal rectified output the detector is trying to measure. (Real devices show some moderation of the coefficient away from room temperature; the linear extrapolation is a rough upper bound.) Three standard mitigations: (i) AC-couple the detector output through a series capacitor, which rejects the slow drift when the wanted signal is time-varying (envelope/audio detection) but is \emph{not} applicable to true RF-to-DC power detectors where the DC level itself is the measurement; (ii) bias from a current source so that $\IQ$ and hence $\gd$ are better controlled, reducing gain drift even though the diode voltage $\VQ(T)$ still moves; and (iii) use a matched diode pair in a balanced (back-to-back or bridge) topology so the bias-point drift appears as common-mode and cancels, leaving only the signal-dependent rectified component at the differential output. Many precision microwave detector ICs combine matched diode (or transistor) detector cells with current-source biasing and on-die temperature compensation, so residual error is specified directly in dB over temperature rather than referred back to the underlying $\VQ$ drift.
 
 \bigskip
 
@@ -206,7 +216,7 @@ The depletion (junction) capacitance of a p-n junction is
 C_j(\VD) = \frac{C_{j0}}{\left(1 - \VD/V_0\right)^m}
 \label{eq:cj-raw}
 \end{equation}
-where $C_{j0}$ is the zero-bias capacitance, $V_0$ is the built-in potential ($\sim$\SI{0.7}{\volt} for Si PN, $\sim$\SI{0.4}{\volt} for Si Schottky, $\sim$\SI{0.3}{\volt} for Ge), and the grading coefficient $m$ encodes the doping profile: $m = 1/2$ for an abrupt junction, $m \approx 1/3$ for a linearly graded one, and $m \approx 1$ to $2$ for hyperabrupt tuning varactors. Equation~\eqref{eq:cj-raw} captures only the depletion component; under forward bias above roughly $V_0/2$ the diffusion capacitance from stored minority carriers dominates and the algebraic form breaks down. The reactive analysis below therefore applies to reverse-biased operation ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}), which is the natural regime for varactor, parametric, and multiplier applications.
+where $C_{j0}$ is the zero-bias capacitance, $V_0$ is the built-in potential ($\sim$\SI{0.7}{\volt} for Si PN, $\sim$\SI{0.4}{\volt} for Si Schottky, $\sim$\SI{0.3}{\volt} for Ge), and the grading coefficient $m$ encodes the doping profile: $m = 1/2$ for an abrupt junction, $m \approx 1/3$ for a linearly graded one, and $m \approx 1$ to $2$ for hyperabrupt tuning varactors. Equation~\eqref{eq:cj-raw} captures only the depletion component. For p--n junctions under forward bias above roughly $V_0/2$, diffusion capacitance from stored minority carriers dominates and the algebraic form breaks down; for Schottky diodes (majority-carrier devices without minority-carrier storage in the same sense) the depletion-capacitance law also ceases to be the relevant large-signal model under appreciable forward conduction, though the underlying mechanism differs. The reactive analysis below therefore applies to reverse-biased operation ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}), which is the natural regime for varactor, parametric, and multiplier applications.
 
 Decomposing $\VD = \VQ + \vd$ and factoring out the Q-point value gives, with $\phi_Q \equiv V_0 - \VQ$ the effective barrier potential at the Q-point,
 \begin{equation}
@@ -226,7 +236,7 @@ Since $\phi_Q = V_0 + |\VQ|$ for $\VQ < 0$, the mathematical radius of convergen
 
 \subsection*{Reactive current and harmonic content}
 
-The displacement current is $i_c = dQ/dt = C_j(\vd)\, d\vd/dt$. Driving with $\vd = \vhd\cos\omega t$ so that $dv_d/dt = -\omega\vhd\sin\omega t$, each term of \eqref{eq:cj-series} contributes:
+The displacement current is $i_c = \dd Q/\dd t = C_j(\vd)\, \dd\vd/\dd t$. Driving with $\vd = \vhd\cos\omega t$ so that $\dd\vd/\dd t = -\omega\vhd\sin\omega t$, each term of \eqref{eq:cj-series} contributes:
 \begin{itemize}
     \item \emph{Zeroth order.} The constant $C_{jQ}$ gives the linear reactive current $-\omega C_{jQ}\vhd\sin\omega t$ --- a clean fundamental leading the voltage by $90^\circ$.
     \item \emph{First order in $\vd$.} Multiplying $-\omega\vhd\sin\omega t$ by $m\vhd\cos\omega t/\phi_Q$ produces, via $\sin\omega t \cos\omega t = \tfrac{1}{2}\sin 2\omega t$,
@@ -236,11 +246,11 @@ The displacement current is $i_c = dQ/dt = C_j(\vd)\, d\vd/dt$. Driving with $\v
     --- pure second-harmonic generation, with amplitude scaling as $m \vhd^2/\phi_Q$.
     \item \emph{Second order in $\vd$.} The $\cos^2\omega t = \tfrac{1}{2}(1 + \cos 2\omega t)$ identity reshuffles this into both a third-harmonic contribution $\propto \sin 3\omega t$ and an amplitude-dependent fundamental correction $\propto \sin\omega t$ that adds constructively to the linear reactive current (same sign), effectively renormalizing the small-signal capacitance upward at large drive. The third-harmonic generation is exactly the pattern by which the cubic term in the resistive expansion fed both $\omega$ and $3\omega$.
 \end{itemize}
-The general structure: the $k^{\text{th}}$-order capacitance coefficient excites the $(k+1)^{\text{th}}$ harmonic and contributes to all lower harmonics of matching parity. The $d/dt$ factor reshuffles cosine products into sine harmonics, so at every harmonic frequency the reactive current is in quadrature with the voltage \emph{component at that frequency}. This is the time-domain origin of the lossless property for the device in isolation: when the voltage is prescribed as a single tone, the $k\omega$ current component is $\pi/2$ out of phase with whatever harmonic voltage would form at $k\omega$ from a linear capacitor of the same value, and $\int \sin k\omega t \cdot \cos k\omega t\,dt = 0$ over a period. In a terminated multiplier circuit, however, the load impedances at $\omega, 2\omega, \ldots$ allow real harmonic voltages to develop, and individual frequency ports can exchange real power; the strict lossless statement is that the \emph{net} time-averaged power flowing into the nonlinear capacitance, summed over all frequencies, is zero. Manley--Rowe (below) lifts this conclusion into a frequency-domain constraint that survives even when multiple incommensurate tones are present at the device terminals.
+The general structure: the $k^{\text{th}}$-order capacitance coefficient excites the $(k+1)^{\text{th}}$ harmonic and contributes to all lower harmonics of matching parity. The $\dd/\dd t$ factor reshuffles cosine products into sine harmonics, so at every harmonic frequency the reactive current is in quadrature with the voltage \emph{component at that frequency}. This is the time-domain origin of the lossless property for the device in isolation: when the voltage is prescribed as a single tone, the $k\omega$ current component is $\pi/2$ out of phase with whatever harmonic voltage would form at $k\omega$ from a linear capacitor of the same value, and $\int \sin k\omega t \cdot \cos k\omega t\,\dd t = 0$ over a period. In a terminated multiplier circuit, however, the load impedances at $\omega, 2\omega, \ldots$ allow real harmonic voltages to develop, and individual frequency ports can exchange real power; the strict lossless statement is that the \emph{net} time-averaged power flowing into the nonlinear capacitance, summed over all frequencies, is zero. Manley--Rowe (below) lifts this conclusion into a frequency-domain constraint that survives even when multiple incommensurate tones are present at the device terminals.
 
 \subsection*{Manley--Rowe constraints and lossless conversion}
 
-The essential physics is that the harmonics need not carry away dissipated power. For a memoryless $Q(\VD)$ trajectory, the integral $\oint V\, dQ$ around any periodic orbit closes on itself, so the net time-averaged power flowing into the reactance is identically zero. Real power can therefore flow in at one frequency and out at another, subject to the Manley--Rowe constraints (Manley and Rowe, \textit{Proc.\ IRE}, 1956). With the convention that $P_k > 0$ denotes real power entering the nonlinear reactance at frequency $k\omega$ (so an output harmonic delivering power to a load has $P_k < 0$), the photon-counting form of the Manley--Rowe relation for a lossless nonlinear reactance driven by harmonics of a single fundamental $\omega$,
+The essential physics is that the harmonics need not carry away dissipated power. For a memoryless $Q(\VD)$ trajectory, the integral $\oint V\, \dd Q$ around any periodic orbit closes on itself, so the net time-averaged power flowing into the reactance is identically zero. Real power can therefore flow in at one frequency and out at another, subject to the Manley--Rowe constraints (Manley and Rowe, \textit{Proc.\ IRE}, 1956). With the convention that $P_k > 0$ denotes real power entering the nonlinear reactance at frequency $k\omega$ (so an output harmonic delivering power to a load has $P_k < 0$), the photon-counting form of the Manley--Rowe relation for a lossless nonlinear reactance driven by harmonics of a single fundamental $\omega$,
 \begin{equation}
 \sum_{k=1}^{\infty} \frac{k\, P_k}{k\omega} \;=\; \frac{1}{\omega}\sum_{k=1}^{\infty} P_k \;=\; 0,
 \label{eq:mr-multiplier}
@@ -250,14 +260,14 @@ collapses to simple total-power conservation $\sum_k P_k = 0$ across all harmoni
 P_1 + P_n = 0,
 \label{eq:mr-100percent}
 \end{equation}
-yielding $|P_n| = |P_1|$: 100\% conversion efficiency is theoretically attainable. The richer two-frequency form of Manley--Rowe applies when the device is driven by two \emph{incommensurate} tones $\omega_p$ and $\omega_s$ generating IM products at $m\omega_p + n\omega_s$; the two independent relations,
+yielding $|P_n| = |P_1|$: 100\% conversion efficiency is theoretically attainable. The richer two-frequency form of Manley--Rowe applies when the device is driven by two \emph{incommensurate} tones $\omega_p$ and $\omega_s$ generating IM products at $\Omega_{m,n} \equiv m\omega_p + n\omega_s$. Letting the primed sums run over one representative of each positive physical frequency $\Omega_{m,n} > 0$ (excluding the DC term and counting each $\pm(m,n)$ pair only once), the two independent relations are
 \begin{equation}
-\sum_{\substack{m\geq 0\\ n\in\mathbb{Z}}} \frac{m\, P_{m,n}}{m\omega_p+n\omega_s} \;=\; 0,
+\sum_{\Omega_{m,n}>0}^{\prime} \frac{m\, P_{m,n}}{\Omega_{m,n}} \;=\; 0,
 \qquad
-\sum_{\substack{m\in\mathbb{Z}\\ n\geq 0}} \frac{n\, P_{m,n}}{m\omega_p+n\omega_s} \;=\; 0,
+\sum_{\Omega_{m,n}>0}^{\prime} \frac{n\, P_{m,n}}{\Omega_{m,n}} \;=\; 0.
 \label{eq:mr-two-tone}
 \end{equation}
-(asymmetric limits prevent double-counting since the pairs $(m,n)$ and $(-m,-n)$ refer to the same physical frequency) no longer collapse to energy conservation. They produce the celebrated parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ where $\omega_o = \omega_p + \omega_s$, the excess output power being supplied by the pump --- so in principle the converter exhibits conversion gain in excess of unity, though practical gain is limited by loss, impedance matching, stability margins, and available pump power.
+These no longer collapse to energy conservation. They produce the celebrated parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ where $\omega_o = \omega_p + \omega_s$, the excess output power being supplied by the pump --- so in principle the converter exhibits conversion gain in excess of unity, though practical gain is limited by loss, impedance matching, stability margins, and available pump power.
 
 This is the structural reason that varactor frequency multipliers and parametric amplifiers exist as a distinct circuit class from resistive mixers. Square-law resistive mixing dissipates real power in the diode's $\gd$ regardless of topology; a singly-balanced resistive mixer has a theoretical minimum conversion loss near \SI{3}{\deci\bel}, and \SI{6}{\deci\bel} or worse in practice. A purely reactive varactor doubler has no such floor.
 

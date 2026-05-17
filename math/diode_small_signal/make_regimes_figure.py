@@ -42,7 +42,11 @@ ax2 = fig.add_subplot(gs[1])
 
 # ---------- Panel (a): I-V curve ----------
 ax1.semilogy(
-    V, I_abs, color="#1f4e79", linewidth=1.6, label=r"$I_D = I_S(e^{V_D/nV_T} - 1)$"
+    V,
+    I_abs,
+    color="#1f4e79",
+    linewidth=1.6,
+    label=r"$I_D = I_S(\mathrm{e}^{V_D/nV_T} - 1)$",
 )
 
 # Q-point
@@ -72,14 +76,17 @@ ax1.axvline(VQ, color="#c0392b", linestyle="--", linewidth=0.7, alpha=0.4)
 # Highlight where the exponential approx fails
 ax1.axvspan(-0.15, 4 * n * VT, color="gray", alpha=0.08)
 ax1.text(
-    -0.07,
-    1e-9,
+    -0.08,
+    1e-4,
     "exp. approx.\nfails ($-1$ matters)",
     fontsize=8,
-    color="gray",
+    color="dimgray",
     style="italic",
     ha="center",
     va="center",
+    bbox=dict(
+        boxstyle="round,pad=0.25", fc="white", ec="lightgray", alpha=0.95, lw=0.5
+    ),
 )
 
 ax1.set_xlim(-0.15, 0.85)
@@ -127,7 +134,7 @@ ax2.text(
 ax2.text(
     np.sqrt(v_interm * 2.0),
     0.82,
-    "Full-Shockley /\nrectifying trans.",
+    "Full-Shockley /\nrectifying",
     ha="center",
     va="center",
     fontsize=8.5,

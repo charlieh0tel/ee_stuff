@@ -12,6 +12,10 @@ $(DOC).pdf: $(DOC).tex regimes_figure.pdf
 	$(COMPILER) $(FLAGS) $(DOC).tex
 	$(COMPILER) $(FLAGS) $(DOC).tex
 
+import:
+	sed -i 's|^% \\usepackage{lmodern}.*|\\usepackage{lmodern}|' $(DOC).tex
+	sed -i 's|\\usepackage\[expansion=false\]{microtype}.*|\\usepackage{microtype}|' $(DOC).tex
+
 lint: make_regimes_figure.py
 	ruff check make_regimes_figure.py
 	ruff format make_regimes_figure.py
@@ -22,4 +26,4 @@ clean:
 cleanall: clean
 	rm -f $(DOC).pdf regimes_figure.pdf
 
-.PHONY: all lint clean cleanall
+.PHONY: all import lint clean cleanall
