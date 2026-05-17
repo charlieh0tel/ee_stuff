@@ -21,7 +21,7 @@ lint: make_regimes_figure.py
 	ruff format make_regimes_figure.py
 
 clean:
-	rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz
+	rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz *.pdf
 
 cleanall: clean
 	rm -f $(DOC).pdf regimes_figure.pdf
