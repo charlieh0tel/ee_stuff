@@ -29,7 +29,7 @@ jobs:
         run: python3 make_regimes_figure.py
         working-directory: math/diode_small_signal
 
-      - name: Build diode_smallsignal PDF
+      - name: Build PDFs
         run: make
         working-directory: math/diode_small_signal
 
@@ -37,6 +37,7 @@ jobs:
         run: |
           mkdir -p _site/math/diode_small_signal
           cp math/diode_small_signal/diode_smallsignal.pdf _site/math/diode_small_signal/
+          cp math/diode_small_signal/diode_reactive.pdf _site/math/diode_small_signal/
           cat > _site/index.html <<'EOF'
           <!DOCTYPE html>
           <html lang="en">
@@ -47,6 +48,7 @@ jobs:
           <h1>EE Notes</h1>
           <ul>
             <li><a href="math/diode_small_signal/diode_smallsignal.pdf">Diode Small Signal Model Derivation</a></li>
+            <li><a href="math/diode_small_signal/diode_reactive.pdf">Reactive Small-Signal: Nonlinear Junction Capacitance</a></li>
           </ul>
           </body>
           </html>
