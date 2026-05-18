@@ -130,19 +130,12 @@ For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$, $I_1(x) \approx x/2$, and $I_2(x) \ap
 When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the validity range of the forward-bias approximation \eqref{eq:exp-approx} and the full Shockley equation \eqref{eq:shockley} is required. Three distinct sub-thresholds appear within this regime:
 
 \begin{itemize}
-    \item $\vhd \approx \VQ - 4n\VT$: the exponential approximation begins to lose instantaneous accuracy at the trough of the swing. Conduction is still continuous and only mildly asymmetric.
+    \item $\vhd \approx \VQ - 4n\VT$: the exponential approximation begins to lose instantaneous accuracy at the trough of the swing. The current waveform may already be highly asymmetric, but conduction remains finite throughout the cycle; no reverse-biased interval has appeared yet.
     \item $\vhd \approx \VQ$: the trough first reaches $\VD = 0$. A reverse-biased interval appears for any larger swing, but the waveform only just touches zero; the diode is not yet a hard rectifier.
     \item $\vhd \approx \VQ + 4n\VT$: the trough first reaches $\VD \lesssim -4n\VT$, where the diode is essentially at its reverse-saturation floor $\ID \to -\IS$. For still larger swings, the reverse-biased interval expands and the waveform approaches half-wave rectification.
 \end{itemize}
 
-The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a useful description at the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
-\begin{equation}
-\ID(t) = \IS\,\eu^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
-\label{eq:bessel-full-shockley}
-\end{equation}
-so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network. Table~\ref{tab:diode-regimes} and Figure~\ref{fig:regimes} summarize the four operating regimes and their boundaries.
-
-\begin{table}[p]
+\begin{table}[!t]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \caption{Diode operating regimes expressed as algebraic functions of the diode parameters $n$, $\VT$, and $\VQ$. Boundaries are HD-based for the first two rows (HD2 = \SI{1}{\percent} and \SI{25}{\percent} respectively) and physical-validity-based for the last two. See Table~\ref{tab:diode-numbers} for numerical instantiations at three common diode technologies.}
@@ -161,7 +154,7 @@ $\id \approx \gd \vd$ &
 Amplifier biasing, dynamic resistance $\rd = 1/\gd$. \\
 
 Quadratic / square-law &
-$\vhd \lesssim n \VT$ \newline (HD2 $<$ \SI{25}{\percent}) &
+$0.04\, n \VT \lesssim \vhd \lesssim n \VT$ \newline (HD2 from \SI{1}{\percent} to \SI{25}{\percent}) &
 $\id \approx \gd \vd + \dfrac{\gd}{2 n \VT} \vd^{\,2}$ &
 RF mixers, microwave power detectors, frequency doublers, intermodulation analysis. \\
 
@@ -170,7 +163,7 @@ $n \VT < \vhd \lesssim \VQ - 4n\VT$ \newline (low-order truncation no longer ade
 Bessel expansion \eqref{eq:bessel-expansion}; rich harmonics without clipping; rectified DC $\langle \ID \rangle = \IQ\, I_0(x)$ &
 Unclipped large-signal envelope detection, harmonic generation, mixer LO drive, oscillator amplitude limiting. \\
 
-Full-Shockley /\newline rectifying &
+Full-Shockley\newline rectifying &
 $\vhd \gtrsim \VQ - 4n\VT$ \newline (reverse interval appears for $\vhd \gtrsim \VQ$; reverse floor first reached at the trough for $\vhd \gtrsim \VQ + 4n\VT$) &
 Full Shockley \eqref{eq:shockley} required; asymmetric conduction; reverse-bias floor reached only for sufficiently large negative swing &
 Peak AM envelope detection, power rectification, switching, clamping. \\
@@ -178,12 +171,19 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 \end{tabularx}
 \end{table}
 
-\begin{figure}[p]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=0.95\linewidth]{regimes_figure.pdf}
 \caption{Four operating regimes mapped onto a Si p--n signal diode (1N4148, $n=1.85$, $\IQ \approx \SI{100}{\micro\ampere}$). (a) Semilog $|\ID|$--$\VD$ plot from the full Shockley equation~\eqref{eq:shockley}; the unshaded region $\VD \gtrsim 4n\VT$ is where the exponential approximation~\eqref{eq:exp-approx} holds. (b) Regime boundaries $0.04\,n\VT$, $n\VT$, and $\VQ - 4n\VT$ on a logarithmic $\vhd$ axis, spanning more than two decades for a typical Si diode.}
 \label{fig:regimes}
 \end{figure}
+
+The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a useful description at the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
+\begin{equation}
+\ID(t) = \IS\,\eu^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
+\label{eq:bessel-full-shockley}
+\end{equation}
+so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network.
 
 \FloatBarrier
 
@@ -317,7 +317,7 @@ The same Q-point Taylor expansion underlies both halves of this note --- applied
 
 That bifurcation maps directly onto circuit topology. Resistive mixers exploit the forward-bias nonlinearity and accept a conversion-loss floor, typically several decibels, in exchange for broadband operation and simple embedding. Envelope detectors and rectifiers exploit the same resistive curvature or conduction asymmetry but are usually evaluated by sensitivity, detected-output error, or rectification efficiency rather than mixer conversion loss. Varactor multipliers, parametric amplifiers, and reactance-modulator upconverters exploit the reverse-bias nonlinearity and trade narrower bandwidth (set by the impedance match against $C_{jQ}$ and $r_s$), tighter swing tolerance, and the requirement for an external pump against the theoretical promise of \SI{100}{\percent} conversion --- or, in the three-frequency parametric case, conversion gain in excess of unity.
 
-A real diode always exhibits both nonlinearities simultaneously; the operating bias and embedding impedances determine which one dominates the circuit response. Forward bias makes the resistive mechanism the larger contributor and the reactive one a parasitic; reverse bias inverts that ranking. At zero bias, especially in low-level Schottky detectors, the intended detection mechanism is still the resistive curvature of the full Shockley law about $\VD = 0$; the junction capacitance remains part of the RF embedding problem and often acts as a shunt parasitic rather than as the desired nonlinear element. The same physical device --- particularly a Schottky barrier diode --- can therefore serve either role depending on how the load impedances at the harmonics are arranged, so distinguishing the two analyses is a question of which Taylor expansion the embedding circuit allows to dominate, not of which physical effect is ``really'' present inside the junction.
+A real diode always exhibits both nonlinearities simultaneously; the operating bias and embedding impedances determine which one dominates the circuit response. Forward bias makes the resistive mechanism the larger contributor and the reactive one a parasitic; reverse bias inverts that ranking. At zero bias, especially in low-level Schottky detectors, the intended detection mechanism is still the resistive curvature of the full Shockley law about $\VD = 0$ (the regime boundaries derived earlier assumed $\VQ > 5n\VT$ for a robust forward bias and do not extend to this operating point; a zero-bias analysis Taylor-expands the full Shockley law about $\VD = 0$ rather than the forward-exponential approximation about $\VQ$, yielding its own threshold structure). The junction capacitance remains part of the RF embedding problem and often acts as a shunt parasitic rather than as the desired nonlinear element. The same physical device --- particularly a Schottky barrier diode --- can therefore serve either role depending on how the load impedances at the harmonics are arranged, so distinguishing the two analyses is a question of which Taylor expansion the embedding circuit allows to dominate, not of which physical effect is ``really'' present inside the junction.
 
 \bigskip
 
