@@ -49,7 +49,7 @@ class Diode:
 
 diode = Diode(
     name="1N4148",
-    description="Si PN signal diode",
+    description="Si p--n signal diode",
     n=1.85,
     VQ=0.55,
     IS=1.0e-9,
@@ -81,12 +81,12 @@ ax1.semilogy(
     I_abs,
     color="#1f4e79",
     linewidth=1.6,
-    label=r"$I_D = I_S(\mathrm{e}^{V_D/nV_T} - 1)$",
+    label=r"$I_{\mathrm{D}} = I_{\mathrm{S}}(\mathrm{e}^{V_{\mathrm{D}}/nV_{\mathrm{T}}} - 1)$",
 )
 
 ax1.plot(diode.VQ, diode.IQ, "o", color="#c0392b", markersize=7, zorder=5)
 ax1.annotate(
-    rf"Q: $V_Q={diode.VQ}$ V, $I_Q\approx 100\ \mu$A",
+    rf"Q: $V_{{\mathrm{{Q}}}}={diode.VQ}$ V, $I_{{\mathrm{{Q}}}}\approx 100\ \mu$A",
     xy=(diode.VQ, diode.IQ),
     xytext=(diode.VQ - 0.35, diode.IQ * 50),
     arrowprops=dict(arrowstyle="->", color="#c0392b", lw=0.8),
@@ -99,7 +99,7 @@ ax1.axvline(diode.v_4nvt, color="gray", linestyle=":", linewidth=0.9)
 ax1.text(
     diode.v_4nvt + 0.008,
     1e-13,
-    rf"$4nV_T\approx {round(diode.v_4nvt * 1000)}$ mV",
+    rf"$4nV_{{\mathrm{{T}}}}\approx {round(diode.v_4nvt * 1000)}$ mV",
     fontsize=8,
     color="gray",
     ha="left",
@@ -124,8 +124,8 @@ ax1.text(
 
 ax1.set_xlim(-0.15, 0.85)
 ax1.set_ylim(1e-14, 5e-2)
-ax1.set_xlabel(r"$V_D$ (V)")
-ax1.set_ylabel(r"$|I_D|$ (A)")
+ax1.set_xlabel(r"$V_{\mathrm{D}}$ (V)")
+ax1.set_ylabel(r"$|I_{\mathrm{D}}|$ (A)")
 ax1.set_title(
     rf"(a) {diode.description} $I$-$V$ ({diode.name}: $n={diode.n}$, $T={diode.T}$ K)",
     fontsize=10,
@@ -157,9 +157,9 @@ for v_start, v_end, color, alpha, label in regions:
     )
 
 boundaries = [
-    (diode.v_lin, r"$0.04\,nV_T$", 1),
-    (diode.v_quad, r"$nV_T$", 0),
-    (diode.v_interm, r"$V_Q-4nV_T$", 0),
+    (diode.v_lin, r"$0.04\,nV_{\mathrm{T}}$", 1),
+    (diode.v_quad, r"$nV_{\mathrm{T}}$", 0),
+    (diode.v_interm, r"$V_{\mathrm{Q}}-4nV_{\mathrm{T}}$", 0),
 ]
 
 for v, formula, decimals in boundaries:
@@ -169,7 +169,7 @@ for v, formula, decimals in boundaries:
     label_text = rf"{formula}" + "\n" + rf"$\sim {val_str}$ mV"
     ax2.text(v, 0.12, label_text, ha="center", va="center", fontsize=8)
 
-ax2.set_xlabel(r"AC amplitude $\hat{v}_d$ (V, log scale)")
+ax2.set_xlabel(r"AC amplitude $\hat{v}_{\mathrm{d}}$ (V, log scale)")
 ax2.set_title("(b) Operating regimes vs. AC drive amplitude", fontsize=10, pad=8)
 ax2.grid(True, axis="x", which="major", alpha=0.25)
 ax2.tick_params(axis="x", which="minor", length=2)

@@ -53,7 +53,7 @@ For forward bias well above the thermal voltage --- specifically, when the expon
 \ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}
 \label{eq:exp-approx}
 \end{equation}
-where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.9}{\milli\volt}$ at $T = \SI{300}{\kelvin}$. The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
+where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$. The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
 
 Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbation $\vd(t)$:
 \begin{equation}
@@ -85,7 +85,7 @@ These quantitative criteria, rather than $\VT$ itself, set the boundaries betwee
 
 \subsection*{Linear regime}
 
-For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\sim$\SI{2}{\milli\volt} for $n \approx 1.85$), HD2 stays below \SI{1}{\percent} and only the leading term of \eqref{eq:power-series} survives:
+For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\sim$\SI{1.9}{\milli\volt} for $n \approx 1.85$), HD2 stays below \SI{1}{\percent} and only the leading term of \eqref{eq:power-series} survives:
 \begin{equation}
 \id \approx \gd \vd.
 \label{eq:linear}
@@ -151,7 +151,7 @@ so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic a
 \vspace{1\baselineskip}
 
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash\hsize=#1\hsize}X}
-\begin{tabularx}{\textwidth}{L{0.74} L{0.95} L{1.155} L{1.155}}
+\begin{tabularx}{\textwidth}{L{0.85} L{0.95} L{1.10} L{1.10}}
 \toprule
 \textbf{Regime} & \textbf{Amplitude criterion} & \textbf{Dominant behavior} & \textbf{Typical application} \\
 \midrule
@@ -204,7 +204,7 @@ The framework above instantiates differently for each diode technology. $\VT = k
 \toprule
 \textbf{Diode (example)} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4n\VT$ (interm.) \\
 \midrule
-Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{358}{\milli\volt} \\
+Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} \\
 Si Schottky (1N5711, BAT54)  & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
 Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt}  \\
 \bottomrule
@@ -213,7 +213,7 @@ Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & 
 
 \FloatBarrier
 
-Two observations follow. First, the Si p--n signal diode has roughly $1.7\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents; a 1N4148 can tolerate a junction-voltage amplitude up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. (In a real mixer the source amplitude that produces a given junction-voltage swing depends on embedding impedance, LO bias, matching network, and conduction angle, so these numbers are upper bounds on the junction excursion, not on the available source power.) Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{358}{\milli\volt} (about \SI{310}{\milli\volt} of unclipped exponential operation beyond the square-law boundary). (Without the factor of $n$ in the boundary, the Si p--n edge would be misstated by nearly \SI{100}{\milli\volt}; the correction is significant for high-$n$ devices.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection where low $\VQ$ and low $n$ matter most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
+Two observations follow. First, the Si p--n signal diode has roughly $1.7\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents; a 1N4148 can tolerate a junction-voltage amplitude up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. (In a real mixer the source amplitude that produces a given junction-voltage swing depends on embedding impedance, LO bias, matching network, and conduction angle, so these numbers are upper bounds on the junction excursion, not on the available source power.) Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation beyond the square-law boundary). (Without the factor of $n$ in the boundary, the Si p--n edge would be misstated by nearly \SI{90}{\milli\volt}; the correction is significant for high-$n$ devices.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection where low $\VQ$ and low $n$ matter most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
 
 \subsection*{Temperature dependence and detector stability}
 
