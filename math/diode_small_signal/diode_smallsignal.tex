@@ -50,7 +50,7 @@ The current--voltage characteristic of an ideal p--n junction diode is given by 
 \end{equation}
 For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{191}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
 \begin{equation}
-\ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}
+\ID \approx \IS\, \eu^{\frac{\VD}{n \VT}},
 \label{eq:exp-approx}
 \end{equation}
 where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$. The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
@@ -183,7 +183,7 @@ The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a u
 \ID(t) = \IS\,\eu^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
 \label{eq:bessel-full-shockley}
 \end{equation}
-so the $-1$ term simply subtracts an $\IS$ DC offset and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network.
+so the $-1$ term in \eqref{eq:shockley} reappears as the $-\IS$ DC offset of \eqref{eq:bessel-full-shockley} and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network.
 
 \FloatBarrier
 
@@ -232,7 +232,7 @@ The same Q-point series-expansion framework applies to the diode's depletion cap
 
 The depletion (junction) capacitance of a p--n junction is
 \begin{equation}
-C_j(\VD) = \frac{C_{j0}}{\left(1 - \VD/V_0\right)^m}
+C_j(\VD) = \frac{C_{j0}}{\left(1 - \VD/V_0\right)^m},
 \label{eq:cj-raw}
 \end{equation}
 where $C_{j0}$ is the zero-bias capacitance, $V_0$ is the built-in potential ($\sim$\SI{0.7}{\volt} for Si p--n, $\sim$\SI{0.4}{\volt} for Si Schottky, $\sim$\SI{0.3}{\volt} for Ge), and the grading coefficient $m$ encodes the doping profile: $m = 1/2$ for an abrupt junction, $m \approx 1/3$ for a linearly graded one, and $m \approx 1$ to $2$ for hyperabrupt tuning varactors. Equation~\eqref{eq:cj-raw} captures only the depletion component. For p--n junctions under forward bias above roughly $V_0/2$, diffusion capacitance from stored minority carriers dominates and the algebraic form breaks down; for Schottky diodes (majority-carrier devices without minority-carrier storage in the same sense) the depletion-capacitance law also ceases to be the relevant large-signal model under appreciable forward conduction, though the underlying mechanism differs. The reactive analysis below therefore applies to reverse-biased operation ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}), which is the natural regime for varactor, parametric, and multiplier applications.
@@ -243,7 +243,7 @@ C_j(\VD) = \underbrace{\frac{C_{j0}}{(1 - \VQ/V_0)^m}}_{\displaystyle C_{jQ}} \c
 \end{equation}
 For a reverse-biased varactor $\VQ < 0$, so $\phi_Q = V_0 + |\VQ|$ exceeds $V_0$ and the AC swing has correspondingly more headroom. The binomial expansion $(1-x)^{-m} = 1 + mx + \tfrac{m(m+1)}{2}x^2 + \tfrac{m(m+1)(m+2)}{6}x^3 + \cdots$ applied with $x = \vd/\phi_Q$ yields
 \begin{equation}
-C_j(\vd) = C_{jQ}\left[ 1 + m\frac{\vd}{\phi_Q} + \frac{m(m+1)}{2}\left(\frac{\vd}{\phi_Q}\right)^{\!2} + \frac{m(m+1)(m+2)}{6}\left(\frac{\vd}{\phi_Q}\right)^{\!3} + \cdots\right]
+C_j(\vd) = C_{jQ}\left[ 1 + m\frac{\vd}{\phi_Q} + \frac{m(m+1)}{2}\left(\frac{\vd}{\phi_Q}\right)^{\!2} + \frac{m(m+1)(m+2)}{6}\left(\frac{\vd}{\phi_Q}\right)^{\!3} + \cdots\right],
 \label{eq:cj-series}
 \end{equation}
 which converges mathematically for \mbox{$|\vhd| < \phi_Q$}. The physically meaningful limit is tighter: to keep the diode reverse-biased throughout the AC cycle and prevent diffusion capacitance from taking over on the positive half-swing, the amplitude must satisfy
