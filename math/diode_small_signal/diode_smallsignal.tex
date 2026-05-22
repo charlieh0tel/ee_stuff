@@ -67,7 +67,6 @@ For forward bias well above the thermal voltage --- specifically, when the expon
 \ID \approx \IS\, \eu^{\frac{\VD}{n \VT}},
 \label{eq:exp-approx}
 \end{equation}
-The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
 
 Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbation $\vd(t)$:
 \begin{equation}
@@ -95,7 +94,7 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each term in \eqref{eq:power-s
 \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
 \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
 \end{equation}
-These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
+These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below. The factor of $n$ matters throughout: for a Si signal diode with $n \approx 1.85$, all boundaries shift upward by roughly \SI{90}{\milli\volt} relative to the $n = 1$ assumption.
 
 \subsection*{Linear regime}
 
