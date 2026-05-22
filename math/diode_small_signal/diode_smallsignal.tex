@@ -60,12 +60,14 @@ The current--voltage characteristic of an ideal p--n junction diode is given by 
 \ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right).
 \label{eq:shockley}
 \end{equation}
+where $\IS$ is the reverse saturation current, $n$ is the ideality factor (emission coefficient), $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$ is the thermal voltage, and $\VD$ is the junction voltage.
+
 For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{191}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
 \begin{equation}
 \ID \approx \IS\, \eu^{\frac{\VD}{n \VT}},
 \label{eq:exp-approx}
 \end{equation}
-where $\IS$ is the reverse saturation current, $n$ is the ideality factor, and $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$. The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
+The factor of $n$ in the validity bound matters: for a Si signal diode with $n \approx 1.85$, this is a $\sim$\SI{90}{\milli\volt} correction relative to assuming $n=1$, and it propagates into every regime boundary below.
 
 Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbation $\vd(t)$:
 \begin{equation}
