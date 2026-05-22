@@ -72,11 +72,11 @@ Decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbati
 \begin{equation}
 \VD = \VQ + \vd.
 \end{equation}
-Substituting and factoring,
+Substituting into \eqref{eq:exp-approx} and factoring,
 \begin{equation}
 \ID = \underbrace{\IS\, \eu^{\frac{\VQ}{n \VT}}}_{\displaystyle \IQ}\, \eu^{\frac{\vd}{n \VT}} = \IQ\, \eu^{\frac{\vd}{n \VT}}.
 \end{equation}
-We define the Q-point current under the forward-exponential approximation as $\IQ \equiv \IS\, \eu^{\VQ/n\VT}$; the exact Shockley value differs by $\IS$ (the $-1$ term in \eqref{eq:shockley}), negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
+The exact Shockley Q-point current $\IS(\eu^{\VQ/n\VT}-1)$ differs from $\IQ$ by $\IS$ (the $-1$ term in \eqref{eq:shockley}), negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
 \begin{equation}
 \ID = \IQ \left[ 1 + \frac{\vd}{n \VT} + \frac{1}{2!}\left(\frac{\vd}{n \VT}\right)^{\!2} + \frac{1}{3!}\left(\frac{\vd}{n \VT}\right)^{\!3} + \cdots \right].
 \end{equation}
@@ -89,12 +89,12 @@ The AC component is $\id \equiv \ID - \IQ$. Defining the small-signal conductanc
 \pdfbookmark[1]{Distortion and regime boundaries}{distortion}
 \subsection*{Distortion and regime boundaries}
 
-For a sinusoidal drive $\vd = \vhd \cos\omega t$, each term in \eqref{eq:power-series} generates harmonics of $\omega$. The fractional second- and third-harmonic distortions relative to the fundamental are
+For a sinusoidal drive $\vd = \vhd \cos\omega t$, each nonlinear term in \eqref{eq:power-series} generates harmonics of $\omega$. The fractional second- and third-harmonic distortions relative to the fundamental are
 \begin{equation}
 \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
 \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
 \end{equation}
-These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
+These quantitative criteria set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
 
 \subsection*{Linear regime}
 
@@ -103,7 +103,7 @@ For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\
 \id \approx \gd \vd.
 \label{eq:linear}
 \end{equation}
-This is the small-signal model used for biasing analysis and dynamic-resistance ($\rd = 1/\gd$) calculations; no appreciable mixing or rectification occurs.
+This is the small-signal model used for biasing analysis and dynamic-resistance calculations; no appreciable mixing or rectification occurs.
 
 \subsection*{Quadratic / square-law regime}
 
@@ -118,9 +118,7 @@ The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications
 
 \subsection*{Intermediate exponential regime}
 
-For drive amplitudes that exceed the quadratic regime but do not yet swing the diode below the validity of the forward-bias approximation ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise the forward-exponential approximation has already failed before a distinct intermediate regime can appear. The natural representation is the closed-form expansion of the full exponential.
-
-Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
+For drive amplitudes that exceed the quadratic regime but do not yet violate the forward-bias approximation at the trough of the swing ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise the forward-exponential approximation has already failed before a distinct intermediate regime can appear. Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
 \begin{equation}
 \ID(t) \approx \IQ\, \eu^{\,x \cos\omega t}.
 \end{equation}
@@ -132,7 +130,7 @@ The modified Jacobi--Anger identity expands this as a Fourier series in $\omega 
 Two features of this regime are worth noting:
 
 \begin{enumerate}
-    \item The diode generates a rich spectrum of harmonics from a single tone purely through exponential nonlinearity, with \emph{no clipping involved}. The DC component is $\IQ\, I_0(x)$ and the peak amplitude of the $k$-th harmonic is $2\IQ\, I_k(x)$ for $k \geq 1$. For fixed $k$ and large $x$, $I_k(x)/I_0(x) \to 1$, so many low-order harmonics acquire comparable Bessel coefficients --- but the asymptotic is not uniform over arbitrarily high $k$ (for $k \gtrsim x$, $I_k(x)$ rolls off rapidly, so the spectrum is not literally flat).
+    \item The diode generates a rich spectrum of harmonics from a single tone purely through exponential nonlinearity, with \emph{no clipping involved}. The DC component is $\IQ\, I_0(x)$ and the peak amplitude of the $k$-th harmonic is $2\IQ\, I_k(x)$ for $k \geq 1$. For fixed $k$ and large $x$, $I_k(x)/I_0(x) \to 1$, so many low-order harmonics acquire comparable Bessel coefficients --- but for $k \gtrsim x$, $I_k(x)$ rolls off rapidly and the spectrum is not literally flat.
     \item The average current rises with drive amplitude: $\langle \ID \rangle = \IQ\, I_0(x)$, and $I_0(x) > 1$ for $x > 0$. This rectified DC component (and the self-bias shift it produces when the diode feeds a resistive load through a coupling capacitor) is the operating principle of large-signal envelope detectors and grid-leak / cathode-bias detectors.
 \end{enumerate}
 
@@ -148,14 +146,14 @@ When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the 
     \item $\vhd \approx \VQ + 4n\VT$: the trough first reaches $\VD \lesssim -4n\VT$, where the diode is essentially at its reverse-saturation floor $\ID \to -\IS$. For still larger swings, the reverse-biased interval expands and the waveform approaches half-wave rectification.
 \end{itemize}
 
-The Bessel expansion \eqref{eq:bessel-expansion} does \emph{not} cease to be a useful description at the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
+The Bessel expansion \eqref{eq:bessel-expansion} remains useful beyond the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
 \begin{equation}
-\ID(t) = \IS\,\eu^{\VQ/n\VT}\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
+\ID(t) = \IQ\left[I_0(x) + 2\sum_{k=1}^\infty I_k(x)\cos(k\omega t)\right] - \IS,
 \label{eq:bessel-full-shockley}
 \end{equation}
-so the $-1$ term in \eqref{eq:shockley} reappears as the $-\IS$ DC offset of \eqref{eq:bessel-full-shockley} and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, the large-signal rectifying regime is rarely well-described by a prescribed sinusoidal $\vd$: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network. Table~\ref{tab:diode-regimes} and Figure~\ref{fig:regimes} summarize the four operating regimes and their boundaries.
+so the $-1$ term in \eqref{eq:shockley} reappears as the $-\IS$ DC offset of \eqref{eq:bessel-full-shockley} and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. In practice, however, real rectifier circuits rarely present a pure sinusoidal voltage across the diode junction: as $\vhd$ approaches and exceeds $\VQ$, the diode voltage is shaped by circuit effects (load impedance, charge-storage time constants, series resistance, breakdown), and these typically dominate over the closed-form Bessel result. The Bessel expansion remains a useful ideal reference case for a prescribed sinusoidal diode voltage, but the actual waveform in a real rectifier circuit must be solved with full Shockley device physics plus the embedding network. Table~\ref{tab:diode-regimes} and Figure~\ref{fig:regimes} summarize the four operating regimes and their boundaries.
 
-The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of low-level Schottky detectors --- that approximation fails and the $-1$ becomes the dominant source of curvature; a zero-bias analysis Taylor-expands the full Shockley law about $\VD = 0$ rather than the forward-exponential approximation about $\VQ$, yielding its own threshold structure not captured by the regime boundaries derived here.
+The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of low-level Schottky detectors --- that approximation fails and the $-1$ term in \eqref{eq:shockley} becomes the dominant source of curvature; a zero-bias analysis Taylor-expands the full Shockley law about $\VD = 0$ rather than the forward-exponential approximation about $\VQ$, yielding its own threshold structure not captured by the regime boundaries derived here.
 
 \begin{table}[H]
 \centering
@@ -204,7 +202,7 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 
 \subsection*{Numerical values for common small-signal diodes}
 
-The framework above instantiates differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$:
+The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$:
 
 \begin{table}[htbp]
 \centering
