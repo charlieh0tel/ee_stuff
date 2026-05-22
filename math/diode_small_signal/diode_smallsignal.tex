@@ -57,14 +57,14 @@
 
 The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation:
 \begin{equation}
-\ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right).
+\ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right),
 \label{eq:shockley}
 \end{equation}
 where $\IS$ is the reverse saturation current, $n$ is the ideality factor (emission coefficient), $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$ is the thermal voltage, and $\VD$ is the junction voltage.
 
-For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$, rising to $\sim$\SI{191}{\milli\volt} for Si signal diodes with $n \approx 1.85$) ---
+For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$) ---
 \begin{equation}
-\ID \approx \IS\, \eu^{\frac{\VD}{n \VT}},
+\ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}.
 \label{eq:exp-approx}
 \end{equation}
 
@@ -94,7 +94,7 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each term in \eqref{eq:power-s
 \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
 \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
 \end{equation}
-These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below. The factor of $n$ matters throughout: for a Si signal diode with $n \approx 1.85$, all boundaries shift upward by roughly \SI{90}{\milli\volt} relative to the $n = 1$ assumption.
+These quantitative criteria, rather than $\VT$ itself, set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
 
 \subsection*{Linear regime}
 
@@ -103,7 +103,7 @@ For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\
 \id \approx \gd \vd.
 \label{eq:linear}
 \end{equation}
-This is the small-signal model used for biasing analysis and dynamic-resistance ($\rd = 1/\gd$) calculations; no appreciable mixing or rectification occurs to first order.
+This is the small-signal model used for biasing analysis and dynamic-resistance ($\rd = 1/\gd$) calculations; no appreciable mixing or rectification occurs.
 
 \subsection*{Quadratic / square-law regime}
 
@@ -112,7 +112,7 @@ For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} t
 \id \approx \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2}.
 \label{eq:quadratic}
 \end{equation}
-The $\vd^{\,2}$ term is the workhorse nonlinearity for resistive mixing: in a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the operating principle of RF mixers, microwave power detectors, and intermodulation tests.
+The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis.
 
 \emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products in a two-tone drive, not to the I--V being purely quadratic.
 
