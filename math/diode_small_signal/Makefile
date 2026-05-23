@@ -9,6 +9,9 @@ all: $(PDFS)
 regimes_figure.pdf: make_regimes_figure.py
 	python3 make_regimes_figure.py
 
+regimes_figure_newsletter.pdf: make_regimes_figure.py
+	python3 make_regimes_figure.py --newsletter
+
 diode_smallsignal.pdf: diode_smallsignal.tex regimes_figure.pdf
 	$(COMPILER) $(FLAGS) diode_smallsignal.tex
 	$(COMPILER) $(FLAGS) diode_smallsignal.tex
@@ -17,7 +20,7 @@ diode_reactive.pdf: diode_reactive.tex
 	$(COMPILER) $(FLAGS) diode_reactive.tex
 	$(COMPILER) $(FLAGS) diode_reactive.tex
 
-diode_not_squarelaw_newsletter.pdf: diode_not_squarelaw_newsletter.tex
+diode_not_squarelaw_newsletter.pdf: diode_not_squarelaw_newsletter.tex regimes_figure_newsletter.pdf
 	$(COMPILER) $(FLAGS) diode_not_squarelaw_newsletter.tex
 	$(COMPILER) $(FLAGS) diode_not_squarelaw_newsletter.tex
 
@@ -29,6 +32,6 @@ clean:
 	rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz
 
 cleanall: clean
-	rm -f $(PDFS) regimes_figure.pdf
+	rm -f $(PDFS) regimes_figure.pdf regimes_figure_newsletter.pdf
 
 .PHONY: all lint clean cleanall
