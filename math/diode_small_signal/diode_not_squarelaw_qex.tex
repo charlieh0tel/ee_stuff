@@ -1,0 +1,313 @@
+% Copyright (C) 2026 Christopher Hoover (ch@murgatroid.com)
+% SPDX-License-Identifier: CC-BY-NC-SA-4.0
+% Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage[section]{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+\geometry{margin=1in}
+
+\hypersetup{
+    pdftitle={A Diode Is Not a Square-Law Device},
+    pdfauthor={Christopher Hoover (AI6KG, ch@murgatroid.com)},
+    pdfsubject={Diode square-law approximation, detection, mixing}
+}
+
+% Upright roman subscripts (IEEE / IUPAP convention)
+\newcommand{\ID}{I_{\mathrm{D}}}
+\newcommand{\VD}{V_{\mathrm{D}}}
+\newcommand{\IS}{I_{\mathrm{S}}}
+\newcommand{\VT}{V_{\mathrm{T}}}
+\newcommand{\VQ}{V_{\mathrm{Q}}}
+\newcommand{\IQ}{I_{\mathrm{Q}}}
+\newcommand{\vd}{v_{\mathrm{d}}}
+\newcommand{\id}{i_{\mathrm{d}}}
+\newcommand{\gd}{g_{\mathrm{d}}}
+\newcommand{\rd}{r_{\mathrm{d}}}
+\newcommand{\vhd}{\hat{v}_{\mathrm{d}}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\eu}{\mathrm{e}}
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.7}
+
+\title{A Diode Is Not a Square-Law Device}
+\author{Christopher Hoover, AI6KG \\ \texttt{ch@murgatroid.com}\thanks{\copyright{} 2026 Christopher Hoover. Licensed under CC BY-NC-SA 4.0: \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The diode is routinely described as a ``square-law device''---a useful shorthand for explaining RF detection and frequency mixing. Its I--V characteristic is exponential, not quadratic, and the square-law approximation holds only over roughly one decade of signal amplitude. This article derives the four operating regimes that emerge from a Taylor expansion of the Shockley equation, establishes quantitative amplitude boundaries between them using second- and third-harmonic distortion criteria, and traces the practical consequences for detector sensitivity, mixer design, and LO drive level.
+\end{abstract}
+
+Pick up almost any RF textbook and you will find the diode described as a ``square-law device''---invoked to explain crystal radio detection, mixer frequency conversion, and intermodulation analysis alike.
+
+There is just one problem: it is not true.
+
+A diode's current--voltage characteristic is exponential, not quadratic.
+
+\section*{The Shockley equation}
+
+The current through an ideal p--n junction diode is given by
+\begin{equation}
+\ID = \IS \left( \eu^{\VD / n \VT} - 1 \right),
+\label{eq:shockley}
+\end{equation}
+where $\IS$ is the reverse saturation current, $n$ is the ideality factor (a device-dependent parameter, typically 1--2), $\VD$ is the junction voltage, and $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$ is the thermal voltage.
+
+For forward bias well above the thermal voltage---specifically, $\VD \gtrsim 4n\VT$, where the $-1$ term contributes less than \SI{2}{\percent} to $\ID$---the exponential approximation holds:
+\begin{equation}
+\ID \approx \IS\, \eu^{\VD / n \VT}.
+\label{eq:exp-approx}
+\end{equation}
+On a linear scale the I--V curve shoots nearly straight up once conduction begins; on a semilog plot it is a straight line spanning many decades of current. It is not a parabola.
+
+\section*{The power-series expansion}
+
+To understand small-signal behavior, decompose the applied voltage into a DC bias $\VQ$ and a time-varying perturbation $\vd(t)$:
+\[
+  \VD = \VQ + \vd.
+\]
+Substituting into \eqref{eq:exp-approx} and defining the Q-point current $\IQ \equiv \IS\, \eu^{\VQ / n \VT}$,
+\[
+  \ID = \IQ\, \eu^{\vd / n \VT}.
+\]
+Expanding in a Maclaurin series and collecting the AC component $\id \equiv \ID - \IQ$, with small-signal conductance $\gd \equiv \IQ / (n\VT) = 1/\rd$:
+\begin{equation}
+  \id = \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2} + \frac{\gd}{6\,(n \VT)^2}\, \vd^{\,3} + \cdots.
+  \label{eq:power-series}
+\end{equation}
+The first term is linear (resistive), the second quadratic, the third cubic. The series converges for all $\vd$; how many terms are needed depends on the signal amplitude relative to $n\VT$.
+
+\subsection*{Harmonic distortion as a yardstick}
+
+For a sinusoidal drive $\vd = \vhd \cos\omega t$, each nonlinear term in \eqref{eq:power-series} generates harmonics of $\omega$. The second- and third-harmonic distortions relative to the fundamental are
+\begin{equation}
+  \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
+  \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
+  \label{eq:hd}
+\end{equation}
+These ratios define quantitative boundaries between operating regimes. HD2 reaches \SI{1}{\percent} at $\vhd \approx 0.04\,n\VT$ and \SI{25}{\percent} at $\vhd \approx n\VT$; HD3 reaches \SI{4}{\percent} at $\vhd = n\VT$. The \SI{1}{\percent} and \SI{25}{\percent} thresholds are useful engineering markers---not physical phase transitions---but they define a well-motivated one-decade window within which the two-term approximation is a fair description.
+
+\section*{Why ``square law'' seems right}
+
+Within the regime $0.04\,n\VT \lesssim \vhd \lesssim n\VT$, only the first two terms of \eqref{eq:power-series} matter:
+\begin{equation}
+  \id \approx \gd \vd + \frac{\gd}{2 n \VT} \vd^{\,2}.
+  \label{eq:quadratic}
+\end{equation}
+The quadratic term is genuinely useful---but for different reasons depending on whether one or two tones are present.
+
+\textbf{Detection (single tone).}
+When an RF signal $\vd = \vhd \cos\omega t$ drives the diode, the quadratic term produces a DC component proportional to $\vhd^{\,2}$ and hence to signal power.
+This is the operating principle of small-signal envelope detectors, crystal radio receivers, and microwave power detectors: the diode converts RF power directly to a DC current, and the output tracks power linearly---the defining property of a square-law detector.
+
+\textbf{Mixing (two tones).}
+When two signals at $\omega_1$ and $\omega_2$ are simultaneously present, the quadratic term cross-multiplies them via $\cos\omega_1 t\cdot\cos\omega_2 t = \tfrac{1}{2}[\cos(\omega_1+\omega_2)t + \cos(\omega_1-\omega_2)t]$, producing outputs at the sum and difference frequencies $\omega_1 \pm \omega_2$.
+The linear term passes both signals through unchanged and produces no conversion.
+This is the basis of resistive RF mixers: the $v^2$ nonlinearity provides frequency translation.
+
+\section*{The catch: the linear piece always wins}
+
+The quadratic term is not the whole story. The linear term $\gd \vd$ is always present, and for small signals it always dominates.
+
+The ratio of the quadratic term to the linear term is $\vd/(2n\VT)$. For signals well below $2n\VT \approx \SI{50}{\milli\volt}$ (for $n \approx 1$), the linear piece is larger. The diode is always more linear than it is square-law. Equivalently: the I--V curve near any DC bias point approximates a straight line---a slope, or conductance---and the quadratic term is the \emph{curvature} of that line. Curvature is always a small correction to slope for small perturbations.
+
+Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$), the diode is effectively a pure resistor $\rd = 1/\gd$: no rectification, no frequency conversion, no mixing. Detection sensitivity collapses and a mixer produces no IF output.
+
+\section*{The four operating regimes}
+
+As drive amplitude increases, the diode traverses four regimes in turn. Table~\ref{tab:diode-regimes} summarizes them; Figure~\ref{fig:regimes} maps them onto a 1N4148 at room temperature.
+
+\subsection*{Linear ($\vhd \lesssim 0.04\,n\VT$)}
+
+Only the first term of \eqref{eq:power-series} is significant: $\id \approx \gd \vd$.
+The diode is a small-signal resistor of dynamic resistance $\rd = n\VT/\IQ$.
+No mixing, no rectification, no harmonic generation occurs.
+This is the regime of biasing calculations and Q-point dynamic-resistance measurements.
+
+\subsection*{Quadratic / square-law ($0.04\,n\VT \lesssim \vhd \lesssim n\VT$)}
+
+HD2 grows from \SI{1}{\percent} to \SI{25}{\percent}; HD3 reaches \SI{4}{\percent} at the upper edge but is still small enough to ignore.
+The two-term approximation \eqref{eq:quadratic} is valid.
+Single-tone detection gives DC output proportional to power; two-tone mixing produces $\omega_1 \pm \omega_2$ products with intermodulation dominated by third-order terms.
+
+For a Ge or Schottky diode ($n \approx 1$) biased at $\IQ \approx \SI{100}{\micro\ampere}$, this range spans roughly \SI{1}{\milli\volt} to \SI{26}{\milli\volt} of junction amplitude---about one decade.
+
+\subsection*{Intermediate exponential ($n\VT < \vhd \lesssim \VQ - 4n\VT$)}
+
+Once $\vhd$ exceeds $n\VT$, the two-term series is no longer adequate, but the forward-exponential approximation \eqref{eq:exp-approx} still holds throughout the voltage cycle---the negative peak has not yet driven the junction below the $4n\VT$ validity threshold. Setting $x \equiv \vhd/(n\VT)$ and substituting $\vd = \vhd\cos\omega t$ into \eqref{eq:exp-approx}, the modified Jacobi--Anger identity gives an exact Fourier expansion:
+\begin{equation}
+  \ID(t) \approx \IQ \left[\, I_0(x) + 2 \sum_{k=1}^{\infty} I_k(x)\, \cos(k \omega t) \,\right],
+  \label{eq:bessel}
+\end{equation}
+where $I_k$ are modified Bessel functions of the first kind \cite{companion}.
+
+Two features distinguish this regime.
+First, a single tone generates a rich harmonic spectrum \emph{without any clipping}---exponential asymmetry alone is sufficient.
+Second, the average (DC) current increases with drive amplitude: $\langle\ID\rangle = \IQ\, I_0(x) > \IQ$ for $x > 0$.
+This rectified DC component---and the bias shift it produces in a self-biased circuit---is the operating principle of large-signal envelope detectors and grid-leak / cathode-bias stages.
+
+The intermediate regime exists only when $\VQ > 5n\VT$, so a Si p--n diode has a wide unclipped exponential range while a Ge point-contact diode with lower $\VQ$ has a narrow one (see Table~\ref{tab:diode-numbers}).
+
+\subsection*{Full-Shockley / rectifying ($\vhd \gtrsim \VQ - 4n\VT$)}
+
+When the negative half-cycle drives $\VD$ below $4n\VT$, the $-1$ in \eqref{eq:shockley} is no longer negligible and the full Shockley equation is required.
+A reverse-biased interval appears when $\vhd \gtrsim \VQ$; the waveform approaches half-wave rectification when $\vhd \gtrsim \VQ + 4n\VT$.
+This is the regime of large-signal AM envelope detection, power rectification, switching, and clamping.
+Circuit effects---load impedance, charge-storage time constants, series resistance---typically dominate the waveform shape in real rectifier circuits.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{regimes_figure.pdf}
+\caption{Four operating regimes for a Si p--n signal diode (1N4148, $n=1.85$, bias current $\IQ \approx \SI{100}{\micro\ampere}$). (a)~Semilog $|\ID|$--$\VD$ curve from the full Shockley equation~\eqref{eq:shockley}; the unshaded region ($\VD \gtrsim 4n\VT$) is where the exponential approximation~\eqref{eq:exp-approx} holds. (b)~Regime boundaries $0.04\,n\VT$, $n\VT$, and $\VQ-4n\VT$ on a logarithmic signal-amplitude axis, spanning more than two decades.}
+\label{fig:regimes}
+\end{figure}
+
+\FloatBarrier
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\caption{Diode operating regimes expressed as algebraic functions of $n$, $\VT$, and $\VQ$. Boundaries for the first two rows are based on HD2 $=$ \SI{1}{\percent} and \SI{25}{\percent}; the last two are based on validity of the exponential approximation~\eqref{eq:exp-approx}.}
+\label{tab:diode-regimes}
+
+\vspace{0.5\baselineskip}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hsize=#1\hsize}X}
+\begin{tabularx}{\textwidth}{L{0.85} L{0.95} L{1.10} L{1.10}}
+\toprule
+\textbf{Regime} & \textbf{Amplitude criterion} & \textbf{Dominant behavior} & \textbf{Typical application} \\
+\midrule
+Linear &
+$\vhd \lesssim 0.04\, n \VT$ \newline (HD2 $<$ \SI{1}{\percent}) &
+$\id \approx \gd \vd$ &
+Biasing analysis, dynamic-resistance calculations. \\
+
+Quadratic / square-law &
+$0.04\, n \VT \lesssim \vhd \lesssim n \VT$ \newline (HD2 from \SI{1}{\percent} to \SI{25}{\percent}) &
+$\id \approx \gd \vd + \dfrac{\gd}{2 n \VT} \vd^{\,2}$ &
+RF mixers, microwave power detectors, intermodulation analysis. \\
+
+Intermediate exponential &
+$n \VT < \vhd \lesssim \VQ - 4n\VT$ \newline (exp.\ approx.\ holds; truncation inadequate) &
+Bessel expansion \eqref{eq:bessel}; rich harmonics without clipping; $\langle\ID\rangle = \IQ I_0(x)$ &
+Large-signal envelope detectors, harmonic generators, mixer LO drive. \\
+
+Full-Shockley / rectifying &
+$\vhd \gtrsim \VQ - 4n\VT$ \newline (reverse interval for $\vhd \gtrsim \VQ$) &
+Full Shockley \eqref{eq:shockley} required; asymmetric conduction &
+AM detection, power rectification, switching, clamping. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\FloatBarrier
+
+\section*{Numerical values for common small-signal diodes}
+
+The boundaries in Table~\ref{tab:diode-regimes} are algebraic. Table~\ref{tab:diode-numbers} instantiates them for three common technologies at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{5pt}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. The linear-regime upper edge ($0.04\,n\VT$) ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Values are approximate, extracted from datasheet typical-curve plots and SPICE model parameters.}
+\label{tab:diode-numbers}
+
+\vspace{0.5\baselineskip}
+
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Diode} & $n$ & $\VQ$ & $n\VT$ (sq-law upper) & $\VQ - 4n\VT$ (interm.\ upper) \\
+\midrule
+Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} \\
+Si Schottky (1N5711, BAT54)    & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
+Ge point-contact (1N34A)       & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt}  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two observations stand out. First, the Si p--n device has roughly $1.7\times$ the square-law amplitude headroom of Ge or Schottky, because its higher ideality factor raises $n\VT$; a 1N4148 can tolerate a junction swing up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential range is narrow: the upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the square-law boundary), versus \SI{359}{\milli\volt} for a Si p--n diode (about \SI{311}{\milli\volt} of unclipped exponential operation). This explains the historical division of labor: Ge and zero-bias Schottky for sensitive weak-signal detection where low $\VQ$ matters most, and Si p--n for switching and mixer service where the wider amplitude range is useful.
+
+\section*{Practical consequences}
+
+\textbf{Why Ge and Schottky beat Si for weak-signal detection.}
+The square-law regime begins at $\vhd \approx 0.04\,n\VT$---a lower threshold in absolute terms for Ge and Schottky because their forward voltage is lower.
+Less input power is needed to reach the regime where rectification is efficient.
+This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes.
+
+\textbf{Why bias helps.}
+Biasing the diode at a small forward current $\IQ$ raises the conductance $\gd = \IQ/(n\VT)$ and hence the responsivity $\gd/(2n\VT)$ of the quadratic term.
+The square-law range shifts to lower signal amplitudes, improving sensitivity at the cost of a bias circuit and quiescent current drain.
+
+\textbf{LO drive level in mixers.}
+A mixer driven within the square-law range converts signal power to IF power with predictable gain and third-order intermodulation products that follow the familiar two-tone IP3 model.
+Driving too hard moves the LO junction into the intermediate exponential regime: conversion gain compresses and additional higher-order products appear.
+``Square-law mixer'' behavior is valid only over a moderate range of LO junction amplitude.
+
+\textbf{High-level switching mixers.}
+A different class of mixers takes the opposite approach: the LO drives the diodes deep into the rectifying regime, reversing the signal path at the LO rate rather than exploiting a $v^2$ nonlinearity.
+Diode ring and double-balanced mixers work this way.
+They are \textbf{not square-law devices at all}; their conversion performance derives from the switching action and the symmetry of the topology.
+They offer better dynamic range and conversion efficiency than square-law designs at the cost of higher LO drive power.
+
+\textbf{Zero-bias detectors.}
+Near $\VQ = 0$---the operating point of zero-bias Schottky detectors---the $-1$ term in \eqref{eq:shockley} is not negligible at the bias point and the regime boundaries above do not apply; a separate analysis expanding the full Shockley equation about $\VD = 0$ is required \cite{maas}.
+
+\section*{Temperature effects}
+
+Both $\VT$ and $\VQ$ shift with temperature, moving the regime boundaries.
+$\VT$ scales linearly with absolute temperature ($\sim$\SI{20}{\milli\volt} at \SI{-40}{\degreeCelsius} to \SI{31}{\milli\volt} at \SI{85}{\degreeCelsius}), stretching the linear and square-law cutoffs by roughly $\pm\SI{20}{\percent}$; meanwhile $\VQ$ at constant bias falls at about \SI{-2}{\milli\volt\per\kelvin} for Si, compressing the intermediate-regime upper edge $\VQ - 4n\VT$ faster still since $4n\VT$ rises simultaneously.
+A fixed-bias detector reads this drift directly as a DC baseline shift at its output.
+
+\section*{The bottom line}
+
+A diode is a square-law device in the same way a stretch of road is flat: it is a useful approximation over a limited range, and knowing the limits prevents you from driving off the edge.
+The exponential is the truth; the square law is a convenience that holds over roughly one decade of junction amplitude---between \SI{1}{\percent} and \SI{25}{\percent} second-harmonic distortion.
+Understanding that range, and what sits on either side of it, is what separates a detector that works from one that merely seems to.
+
+\begin{thebibliography}{9}
+\setlength{\itemsep}{2pt}
+\setlength{\parsep}{0pt}
+
+\bibitem{sze}
+S.\ M.\ Sze and K.\ K.\ Ng, \textit{Physics of Semiconductor Devices}, 3rd ed.\ Hoboken, NJ: Wiley-Interscience, 2007.
+
+\bibitem{maas}
+S.\ A.\ Maas, \textit{Microwave Mixers}, 2nd ed.\ Norwood, MA: Artech House, 1993.
+
+\bibitem{nxp1n4148}
+Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet (Si p--n; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$).
+
+\bibitem{skyworks1n5711}
+Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, and Nexperia, \textit{BAT54 series}, data sheets (Si Schottky; $n \approx 1.08$, $\VQ \approx \SI{0.30}{\volt}$; BAT54 is the SMT equivalent of 1N5711).
+
+\bibitem{1n34a}
+NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet (Ge point-contact; $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$).
+
+\bibitem{companion}
+C.\ Hoover, \textit{Derivation of Diode Small-Signal and Square-Law Behavior}, technical note, 2026. [Online]. Available: \url{https://charlieh0tel.github.io/ee_stuff/math/diode_small_signal/diode_smallsignal.pdf}
+
+\end{thebibliography}
+
+\end{document}
