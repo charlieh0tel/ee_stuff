@@ -1,4 +1,4 @@
-DOCS = diode_smallsignal diode_reactive
+DOCS = diode_smallsignal diode_reactive diode_not_squarelaw_newsletter
 PDFS = $(DOCS:=.pdf)
 
 COMPILER = pdflatex
@@ -16,6 +16,10 @@ diode_smallsignal.pdf: diode_smallsignal.tex regimes_figure.pdf
 diode_reactive.pdf: diode_reactive.tex
 	$(COMPILER) $(FLAGS) diode_reactive.tex
 	$(COMPILER) $(FLAGS) diode_reactive.tex
+
+diode_not_squarelaw_newsletter.pdf: diode_not_squarelaw_newsletter.tex
+	$(COMPILER) $(FLAGS) diode_not_squarelaw_newsletter.tex
+	$(COMPILER) $(FLAGS) diode_not_squarelaw_newsletter.tex
 
 lint: make_regimes_figure.py
 	ruff check make_regimes_figure.py

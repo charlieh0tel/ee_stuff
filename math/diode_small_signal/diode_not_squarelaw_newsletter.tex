@@ -1,0 +1,127 @@
+% Copyright (C) 2026 Christopher Hoover (ch@murgatroid.com)
+% SPDX-License-Identifier: CC-BY-NC-SA-4.0
+% Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+\geometry{margin=1in}
+
+\hypersetup{
+    pdftitle={A Diode Is Not a Square-Law Device},
+    pdfauthor={Christopher Hoover (AI6KG, ch@murgatroid.com)},
+    pdfsubject={Diode square-law approximation, detection, mixing}
+}
+
+\title{A Diode Is Not a Square-Law Device}
+\author{Christopher Hoover, AI6KG \\ \texttt{ch@murgatroid.com}\thanks{\copyright{} 2026 Christopher Hoover. Licensed under CC BY-NC-SA 4.0: \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Pick up almost any RF textbook and you will find the diode described as a ``square-law device.''
+Crystal radio enthusiasts use it to explain why a detector converts RF to audio.
+Mixer designers use it to explain frequency conversion.
+It appears in receiver noise analysis, intermodulation calculations, and detector sensitivity specifications.
+
+There is just one problem: it is not true.
+
+A diode's current--voltage characteristic is exponential, not quadratic.
+Understanding why we use the square-law approximation anyway---and when it breaks down---matters in practice.
+
+\section*{What the diode actually does}
+
+The current through a diode rises exponentially with forward voltage:
+\begin{equation*}
+  I \approx I_S \, e^{V / n V_T},
+\end{equation*}
+where $I_S$ is a small leakage current, $n$ is a device-dependent ideality factor near 1--2,
+and $V_T \approx \SI{26}{\milli\volt}$ at room temperature is the thermal voltage.
+On a linear scale the I--V curve shoots nearly straight up once conduction begins;
+on a logarithmic current scale it is a straight line spanning many decades.
+It is not a parabola.
+
+\section*{Why ``square law'' seems right}
+
+Apply a small AC signal $v$ on top of a DC bias and the diode's AC response can be written as
+\begin{equation*}
+  i \approx g_d v + \frac{g_d}{2 n V_T} v^2 + \cdots,
+\end{equation*}
+where $g_d$ is the small-signal conductance (the slope of the I--V curve at the bias point).
+The first term is linear; the second is quadratic; for small signals, higher-order terms are smaller still.
+
+The quadratic term is the one that matters for both detection and mixing---but for different reasons in each case.
+
+\textbf{Detection (single tone).}
+When an RF signal rides on the diode, the quadratic term produces a DC component proportional to the signal amplitude squared---that is, proportional to the RF power.
+This is exactly what ``square-law detector'' means: DC output is proportional to RF power input.
+It is why a crystal radio converts an AM signal's envelope into audio current.
+
+\textbf{Mixing (two tones).}
+When two signals at frequencies $f_1$ and $f_2$ are both present, the quadratic term cross-multiplies them and produces outputs at $f_1 + f_2$ and $f_1 - f_2$.
+The linear piece contributes nothing at the sum or difference frequency---it passes both signals through unchanged.
+
+\section*{The catch: the linear piece always wins}
+
+Here is what the textbooks gloss over.
+The linear piece---the one that contributes nothing useful for detection or mixing---is always present, and for small signals it is always \emph{larger} than the quadratic piece.
+
+Think of it this way.
+Near any operating point, the diode curve is smooth and can be approximated locally as a straight line---a slope, or conductance.
+The quadratic term is the \emph{curvature} of that line.
+Curvature is always smaller than slope for small signals; it only becomes significant when the signal is large enough that the curve bends noticeably over the full voltage swing.
+Looking back at the equation, the quadratic term carries an extra factor of $v / 2nV_T$ relative to the linear term, so any signal much smaller than $2nV_T \approx \SI{50}{\milli\volt}$ is dominated by the linear piece.
+
+So for very small signals the diode is effectively linear.
+For detection this means no DC output: the signal passes through the linear conductance and nothing gets rectified.
+For mixing it means no frequency conversion: the two tones pass through without producing sum or difference products.
+
+The diode is always more linear than it is square-law.
+
+\section*{The sweet spot}
+
+There is a range of signal amplitudes where the quadratic term is the dominant nonlinearity, even though the linear term is still larger overall.
+For a germanium or Schottky diode at room temperature this range spans roughly 1\,mV to 25\,mV across the junction.
+For a silicon signal diode it is somewhat wider, but reached at higher absolute signal levels.
+
+Within this range the square-law approximation is genuinely useful:
+\begin{itemize}
+  \item Detector DC output is proportional to power---clean and predictable.
+  \item Mixer conversion is dominated by $f_1 \pm f_2$, with higher-order products small enough to manage.
+\end{itemize}
+
+Below this range the diode is effectively linear: detection sensitivity collapses and mixers produce no conversion.
+Above it, higher-order terms take over: detector output no longer tracks power cleanly, and mixers generate intermodulation products beyond $f_1 \pm f_2$.
+
+\section*{Practical consequences}
+
+\textbf{Why Ge and Schottky beat Si for weak-signal detection.}
+A germanium or zero-bias Schottky diode reaches its square-law range at lower absolute signal levels than a silicon p--n diode, because its forward voltage is lower.
+The physics is the same in each case; the threshold is simply reached with less signal power.
+This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and Schottky diodes.
+
+\textbf{Why bias helps.}
+A small forward bias current moves the operating point up onto the exponential curve, where both the conductance and the curvature are higher.
+This shifts the square-law range to lower signal levels, making a biased detector more sensitive than an unbiased one---at the cost of a bias circuit and quiescent current drain.
+
+\textbf{LO drive level in mixers.}
+A mixer driven too hard is no longer operating in the square-law regime.
+Higher-order terms produce additional intermodulation products and compress the IF output---the converted signal level stops rising in proportion to the input.
+``Square-law mixer'' behavior is only valid over a moderate range of LO drive levels.
+
+\section*{The bottom line}
+
+A diode is a square-law device in the same way a stretch of road is flat: it is a useful approximation over a limited range, and knowing the limits prevents you from driving off the edge.
+The exponential is the truth; the square law is a convenience that holds over roughly one decade of signal amplitude.
+Understanding that range---and what sits on either side of it---is what separates a detector that works from one that merely seems to.
+
+\end{document}

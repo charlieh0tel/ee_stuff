@@ -38,6 +38,7 @@ jobs:
           mkdir -p _site/math/diode_small_signal
           cp math/diode_small_signal/diode_smallsignal.pdf _site/math/diode_small_signal/
           cp math/diode_small_signal/diode_reactive.pdf _site/math/diode_small_signal/
+          cp math/diode_small_signal/diode_not_squarelaw_newsletter.pdf _site/math/diode_small_signal/
           cat > _site/index.html <<'EOF'
           <!DOCTYPE html>
           <html lang="en">
@@ -49,6 +50,7 @@ jobs:
           <ul>
             <li><a href="math/diode_small_signal/diode_smallsignal.pdf">Diode Small Signal Model Derivation</a></li>
             <li><a href="math/diode_small_signal/diode_reactive.pdf">Reactive Small-Signal: Nonlinear Junction Capacitance</a></li>
+            <li><a href="math/diode_small_signal/diode_not_squarelaw_newsletter.pdf">A Diode Is Not a Square-Law Device</a></li>
           </ul>
           </body>
           </html>
