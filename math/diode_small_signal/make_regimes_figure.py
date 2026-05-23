@@ -98,7 +98,9 @@ def make_figure(newsletter=False):
             arrowprops=dict(arrowstyle="->", color="#c0392b", lw=0.8),
             fontsize=9,
             color="#c0392b",
-            bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#c0392b", alpha=0.95, lw=0.6),
+            bbox=dict(
+                boxstyle="round,pad=0.3", fc="white", ec="#c0392b", alpha=0.95, lw=0.6
+            ),
         )
         ax1.axvline(diode.v_4nvt, color="gray", linestyle=":", linewidth=0.9)
         ax1.text(
@@ -122,7 +124,11 @@ def make_figure(newsletter=False):
             ha="center",
             va="center",
             bbox=dict(
-                boxstyle="round,pad=0.25", fc="white", ec="lightgray", alpha=0.95, lw=0.5
+                boxstyle="round,pad=0.25",
+                fc="white",
+                ec="lightgray",
+                alpha=0.95,
+                lw=0.5,
             ),
         )
         ax1.set_xlim(-0.15, 0.85)
@@ -150,21 +156,38 @@ def make_figure(newsletter=False):
         regions = [
             (1e-4, diode.v_lin, "#27ae60", 0.45, "Linear"),
             (diode.v_lin, diode.v_quad, "#2980b9", 0.40, "Square-law"),
-            (diode.v_quad, diode.v_interm, "#e67e22", 0.40, "Harmonic-rich /\nno clipping"),
+            (
+                diode.v_quad,
+                diode.v_interm,
+                "#e67e22",
+                0.40,
+                "Harmonic-rich /\nno clipping",
+            ),
             (diode.v_interm, 2.0, "#c0392b", 0.40, "Rectifying"),
         ]
     else:
         regions = [
             (1e-4, diode.v_lin, "#27ae60", 0.45, "Linear"),
             (diode.v_lin, diode.v_quad, "#2980b9", 0.40, "Quadratic /\nsquare-law"),
-            (diode.v_quad, diode.v_interm, "#e67e22", 0.40, "Intermediate\nexponential"),
+            (
+                diode.v_quad,
+                diode.v_interm,
+                "#e67e22",
+                0.40,
+                "Intermediate\nexponential",
+            ),
             (diode.v_interm, 2.0, "#c0392b", 0.40, "Full-Shockley /\nrectifying"),
         ]
 
     for v_start, v_end, color, alpha, label in regions:
         ax2.axvspan(v_start, v_end, ymin=y_lo, ymax=y_hi, color=color, alpha=alpha)
         ax2.text(
-            np.sqrt(v_start * v_end), 0.82, label, ha="center", va="center", fontsize=8.5
+            np.sqrt(v_start * v_end),
+            0.82,
+            label,
+            ha="center",
+            va="center",
+            fontsize=8.5,
         )
 
     boundaries = [
@@ -207,7 +230,10 @@ def make_figure(newsletter=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--newsletter", action="store_true",
-                        help="Generate simplified newsletter version")
+    parser.add_argument(
+        "--newsletter",
+        action="store_true",
+        help="Generate simplified newsletter version",
+    )
     args = parser.parse_args()
     make_figure(newsletter=args.newsletter)

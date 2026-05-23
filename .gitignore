@@ -2,3 +2,14 @@ __pycache__
 *.kicad_prl
 *.kicad_sch-bak
 *.bak
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Generated PDFs and figures
+*.pdf
