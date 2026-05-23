@@ -71,11 +71,25 @@ Guidelines: http://www.arrl.org/qex-author-guide — contact qex@arrl.org
 - Our CC BY-NC-SA license on the source creates a conflict — check with ARRL editorial before submitting
 - Publishing the newsletter version first establishes prior copyright, which may help
 
-**QEX version would expand over newsletter version:**
-- Add I-V curve panel back to figure
-- Add Table 1 (algebraic regime boundaries) and Table 2 (numerical diode values)
-- More quantitative discussion of regime boundaries and distortion coefficients
-- Can draw directly from `diode_smallsignal.tex` for the math
+**QEX version plan:**
+
+Target length: ~6–7 magazine pages. No explicit ARRL limit; length varies by content and issue space.
+
+Outline:
+1. Abstract (3–4 sentences) — draft when full article is written
+2. Introduction / the claim
+3. What the diode actually does (exponential I-V)
+4. Why square law seems right — two-term expansion with HD2/HD3 stated as results and used to define regime boundaries; single-tone detection and two-tone mixing treated separately
+5. The catch: linear piece always wins
+6. The four regimes — full treatment: linear, square-law, intermediate exponential (include Bessel expansion briefly), rectifying
+7. Practical consequences — Ge/Schottky vs. Si; why bias helps; LO drive level; high-level switching mixers; zero-bias detectors (one paragraph flagging that the framework changes near VQ=0)
+8. Temperature (brief — boundaries shift; intermediate upper edge most sensitive)
+9. Tables: Table 1 (algebraic regime boundaries) + Table 2 (numerical values for 1N4148, 1N5711, 1N34A)
+10. Figure: both panels restored (I-V curve + regime ruler)
+11. References: Sze & Ng (device physics), Maas (mixers), datasheets — Pozar omitted as less directly relevant
+
+Draws on `diode_smallsignal.tex` for math; `diode_not_squarelaw_newsletter.tex` as prose starting point.
+Source file: `diode_not_squarelaw_qex.tex` (to be created).
 
 ## Relation to diode_smallsignal.tex
 
