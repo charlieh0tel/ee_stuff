@@ -69,10 +69,11 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - **+8 V accessory pin (Foster):** current-limited (~10 mA), routable via
   the pin-map DIP for Icom-style mics (SM/HM series) that power their
   electrets from a separate pin.
-- **Gain range switch** (rear panel, beside the bias switch): LO ~+20 dB
-  (hot electrets, incl. Icom powered mics) / HI ~+40 dB (dynamics). Both
-  ranges land nominal mic level at the same point at the channel level
-  pot, which handles fine adjustment. Exact gains set by the level plan.
+- **Gain range switch** (rear panel, beside the bias switch): LO ~+25 dB
+  (electrets, ~-45 dBV; Icom powered mics ride the level pot down) /
+  HI ~+45 dB (dynamics, ~-57 dBV Heil class). Both ranges land nominal
+  mic level at the same point at the channel level pot, which handles
+  fine adjustment. Exact gains per [LEVELS.md](LEVELS.md).
   The switch throws a DC control line; gain switching happens at the
   preamp via signal relay or DG-class analog switch (mic-level signals
   don't cross boards).
@@ -134,8 +135,9 @@ Two identical, physically grouped channel sections (A and B). Each has:
 ## Keying
 
 - Per channel: 3.5mm + 1/4" PTT jacks (paralleled) plus the Foster PTT
-  pin. Contact closure to ground; inputs pulled up, clamped, and filtered
-  (keyers and computer interfaces may drive them).
+  pin and a front-panel momentary PTT button, all in parallel. Contact
+  closure to ground; inputs pulled up, clamped, and filtered (keyers and
+  computer interfaces may drive them).
 - **Override selector, 3-position: OFF / A→B / B→A.** A→B: channel A's
   PTT keys the rig and fully mutes channel B while closed; B→A mirror.
   OFF: both PTTs just key the rig.
@@ -268,7 +270,7 @@ Sheet-metal design (mixer form factor rules out die-cast):
 - Enclosure: folded U-chassis + wrap lid vs. extruded frame.
 - Latching mute button sourcing: confirm availability (with or without
   integral LED) before committing the panel design.
-- Level plan measurements (see LEVELS.md): real Icom mic output
-  (HM-36/SM-30), TRRS headset levels and bias draw, K3S LINE OUT level.
+- Bench measurements (see LEVELS.md): K3S LINE OUT actual level; HM-36
+  output if available.
 - At layout: review every adjustment for accessibility once panel
   positions are known.

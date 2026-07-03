@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -15 330 185" width="990" height="555">
+  <title>TBox top panel — 300 x 150 mm slant surface (~12-15 deg), to scale</title>
+  <style>
+    .panel { fill: #e8e8e8; stroke: #333; stroke-width: 0.8; }
+    .knob  { fill: #bbb; stroke: #333; stroke-width: 0.6; }
+    .cap   { fill: #888; stroke: #333; stroke-width: 0.4; }
+    .skirt { fill: #d0d0d0; stroke: #333; stroke-width: 0.4; }
+    .led   { stroke: #333; stroke-width: 0.4; }
+    .btn   { fill: #ccc; stroke: #333; stroke-width: 0.6; }
+    .ptt   { fill: #e6b8b8; stroke: #333; stroke-width: 0.8; }
+    .lamp  { fill: #f6c0c0; stroke: #a33; stroke-width: 0.8; }
+    .axis  { stroke: #ccc; stroke-width: 0.3; stroke-dasharray: 2 2; }
+    text   { font-family: sans-serif; fill: #222; }
+    .lbl   { font-size: 4px; text-anchor: middle; }
+    .sm    { font-size: 3px; text-anchor: middle; }
+    .dim   { font-size: 4px; fill: #777; }
+    .dimln { stroke: #999; stroke-width: 0.3; }
+  </style>
+
+  <!-- panel outline -->
+  <rect class="panel" x="0" y="0" width="300" height="150" rx="2"/>
+
+  <!-- dimensions -->
+  <line class="dimln" x1="0" y1="-8" x2="300" y2="-8"/>
+  <text class="dim" x="145" y="-10">300 mm</text>
+  <line class="dimln" x1="-8" y1="0" x2="-8" y2="150"/>
+  <text class="dim" x="-13" y="78" transform="rotate(-90 -13 78)">150 mm</text>
+
+  <!-- zone hints -->
+  <text class="dim" x="14" y="8">OP A (left seat)</text>
+  <text class="dim" x="252" y="8">OP B (right seat)</text>
+
+  <!-- channel axes -->
+  <line class="axis" x1="70" y1="14" x2="70" y2="136"/>
+  <line class="axis" x1="230" y1="14" x2="230" y2="136"/>
+
+  <!-- TX lamp, top center -->
+  <circle class="lamp" cx="150" cy="24" r="8"/>
+  <text class="lbl" x="150" y="40">TX</text>
+
+  <!-- PWR LED, top right corner -->
+  <circle class="led" cx="288" cy="10" r="2.5" fill="#bfe6bf"/>
+  <text class="sm" x="288" y="18">PWR</text>
+
+  <!-- Channel A strip, x = 70 -->
+  <text class="lbl" x="70" y="20">LEVEL</text>
+  <circle class="skirt" cx="70" cy="32" r="8"/>
+  <circle class="knob"  cx="70" cy="32" r="5"/>
+
+  <text class="lbl" x="70" y="52">MON</text>
+  <circle class="knob" cx="70" cy="65" r="9"/>
+  <circle class="cap"  cx="70" cy="65" r="5.5"/>
+
+  <text class="lbl" x="70" y="85">VOL</text>
+  <circle class="knob" cx="70" cy="100" r="13"/>
+  <circle class="cap"  cx="70" cy="100" r="8"/>
+
+  <text class="lbl" x="70" y="120">MUTE</text>
+  <circle class="led" cx="86" cy="131" r="2.5" fill="#f0b0b0"/>
+  <rect class="btn" x="60" y="125" width="20" height="13" rx="2"/>
+
+  <!-- Channel B strip, x = 230 -->
+  <text class="lbl" x="230" y="20">LEVEL</text>
+  <circle class="skirt" cx="230" cy="32" r="8"/>
+  <circle class="knob"  cx="230" cy="32" r="5"/>
+
+  <text class="lbl" x="230" y="52">MON</text>
+  <circle class="knob" cx="230" cy="65" r="9"/>
+  <circle class="cap"  cx="230" cy="65" r="5.5"/>
+
+  <text class="lbl" x="230" y="85">VOL</text>
+  <circle class="knob" cx="230" cy="100" r="13"/>
+  <circle class="cap"  cx="230" cy="100" r="8"/>
+
+  <text class="lbl" x="230" y="120">MUTE</text>
+  <circle class="led" cx="214" cy="131" r="2.5" fill="#f0b0b0"/>
+  <rect class="btn" x="220" y="125" width="20" height="13" rx="2"/>
+
+  <!-- bottom row: PTT corners + intercom center, 11 mm from front edge -->
+  <text class="lbl" x="30" y="120">PTT</text>
+  <circle class="led" cx="46" cy="131" r="2.5" fill="#f3d9a0"/>
+  <rect class="ptt" x="18" y="124" width="24" height="15" rx="3"/>
+
+  <text class="lbl" x="150" y="120">INTERCOM</text>
+  <circle class="led" cx="169" cy="131" r="2.5" fill="#bcd6f0"/>
+  <rect class="btn" x="135" y="124" width="30" height="15" rx="3"/>
+
+  <text class="lbl" x="270" y="120">PTT</text>
+  <circle class="led" cx="254" cy="131" r="2.5" fill="#f3d9a0"/>
+  <rect class="ptt" x="258" y="124" width="24" height="15" rx="3"/>
+</svg>
