@@ -14,7 +14,8 @@ and a generic rig connector with rig-specific cables.
 | Rig connection | Generic DE-9 on box + rig-specific cables |
 | Channel layout | Two fixed, identical channel groups (A and B) — no cross-assignment |
 | Headset usage | Both channels mixable; override selector: OFF / A→B / B→A |
-| Muting | Full mute only (no ducking), JFET shunt, pop-free, LED indicated |
+| Muting | Full mute only (no ducking), JFET series+shunt, pop-free, LED indicated |
+| Intercom | Global momentary button: mutes TX mix to rig, monitor stays live |
 | RX path | Stereo throughout (main/sub for dual-receive rigs; mono rigs feed both) |
 | Line out | Stereo, per-side source jumpers, levels via rear trims |
 | VOX | Assumed OFF at the rig — TX mix is always present at mic out |
@@ -27,13 +28,19 @@ and a generic rig connector with rig-specific cables.
 ```
  CH A jacks ─┬─ bias sw ─ preamp A ─ mute A ─ level A ─┐
  (3.5mm, TRRS,│                        ▲ (LED)         │
-  1/4", Foster)                 button or OVR B→A      ├─ TX MIX ─┬─ MIC OUT
-                                                       │   BUS    │  to rig
- CH B jacks ─┬─ bias sw ─ preamp B ─ mute B ─ level B ─┘     │    │ (padded to
- (3.5mm, TRRS,│                        ▲ (LED)               │    │  mic level)
-  1/4", Foster)                 button or OVR A→B            │    │
-                                                             ▼    ▼
- RX L ── pad ── trim ──┬──────────────────────────► LINE OUT L/R (isolated,
+  1/4", Foster)                 button or OVR B→A      │
+                                                       ├─ TX MIX BUS
+ CH B jacks ─┬─ bias sw ─ preamp B ─ mute B ─ level B ─┘     │
+ (3.5mm, TRRS,│                        ▲ (LED)               ├──► monitor tap
+  1/4", Foster)                 button or OVR A→B            │    (to phones)
+                                                             │
+                                              INTERCOM mute ─┤
+                                     (momentary; locked out  │
+                                      while PTT is down)     ├──► MIC OUT to rig
+                                                             │    (padded, trim)
+                                                             └──► LINE OUT
+                                                                  TX-side jumper
+ RX L ── pad ── trim ──┬─────────────────────────► LINE OUT L/R (isolated,
  RX R ── pad ── trim ──┤                            per-side source jumpers,
  from rig              │                            rear level trims)
  (mono cables tie L+R) │
@@ -71,9 +78,10 @@ Two identical, physically grouped channel sections (A and B). Each has:
   don't cross boards).
 - **Mute button:** front panel, latching/alternate-action (NKK/Schadow
   style; fallback: toggle, or momentary + flip-flop). Full mute: JFET
-  shunt after the preamp, RC-ramped gate (~10 ms), muting node AC-coupled
-  with no DC across the JFET (DC across the mute element pops). Override
-  mute uses the same circuit, triggered electrically.
+  series + shunt pair after the preamp (a single shunt only reaches
+  ~-33 dB; the pair gives ≥60 dB), RC-ramped gates (~10 ms), muting node
+  AC-coupled with no DC across the JFETs (DC across the mute element
+  pops). Override mute uses the same circuit, triggered electrically.
 - **Channel level pot** into the TX mix bus.
 - **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure, plus the
   Foster PTT pin.
@@ -83,7 +91,15 @@ Two identical, physically grouped channel sections (A and B). Each has:
 
 ## Buses and outputs
 
-- **TX mix bus:** channel A + B, post-mute, post-level-pot.
+- **TX mix bus:** channel A + B, post-mute, post-level-pot. Order on the
+  bus: summing amp → monitor tap → intercom mute → mic out pad / line out
+  TX tap.
+- **Intercom:** global momentary button (front panel, reachable from both
+  positions). While held, a JFET pair mutes the TX mix downstream of the
+  monitor tap: operators hear each other, nothing reaches the rig or the
+  line out. **PTT wins:** while the rig is keyed, the intercom is locked
+  out (its DC control line is gated by the PTT output state) and its LED
+  stays dark.
 - **Mic out to rig:** TX mix padded to ~5 mV mic level, ~600 Ω source
   impedance, DC-blocking cap (rigs may put electret bias on their mic
   pin). Level trim rear-accessible — must not require opening the box.
@@ -99,16 +115,18 @@ Two identical, physically grouped channel sections (A and B). Each has:
   (two 600 Ω 1:1) to break the inevitable sound-card ground loop.
   Per-side source jumpers: RX L, RX R, RX blend, or TX mix. Levels via
   rear trims. TX tap is post-mute (recordings reflect what went out).
-- **Monitor bus:** TX mix feeds each headphone position (both ears
-  equally) through its monitor-mix pot; pot at zero = off. Tap is
-  post-fader: the channel level pot affects the monitor too.
+- **Monitor bus:** TX mix (tapped ahead of the intercom mute) feeds each
+  headphone position (both ears equally) through its monitor-mix pot; pot
+  at zero = off. Tap is post-fader: the channel level pot affects the
+  monitor too.
 
 ## Headphone outputs (2 positions, stereo)
 
 - Per position: 3.5mm phones, 1/4" phones, and the phones side of the
   TRRS combo, all paralleled off one stereo headphone amp.
-- Headphone amp: LM4880/TPA6112 class or buffered op-amp. ≥20 mW per
-  channel into 16 Ω; stable with multiple headphones in parallel.
+- Headphone amp: NJM4556A-class dual op-amp or op-amp + buffer, powered
+  from the 9 V rail. ≥20 mW per channel into 16 Ω; stable with multiple
+  headphones in parallel.
 - Two pots per position: volume (dual-gang) and monitor-mix level. Each
   ear: volume × (RX that side + monitor-pot × TX mix).
 - TRRS wiring is CTIA.
@@ -131,6 +149,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - TX lamp (PTT output asserted) — prominent, visible from across the desk.
 - Per-channel PTT LED (that channel's PTT input closed).
 - Per-channel mute LED (true JFET state — button or override).
+- Intercom LED (lit while the intercom mute is engaged).
 - All DC-driven.
 
 ## Rig interface
@@ -169,7 +188,8 @@ panel; front mic and phones jacks stay free.
   protected, PTC resettable fuse on the board.
 - **All-linear, single rail** (bipolar rails would require a charge pump
   or switcher):
-  - Input π filter → LDO → **9–10 V analog rail**.
+  - Input π filter → LDO → **9 V analog rail** (Vref 4.5 V; internal
+    nominal -15 dBV, clip +6 dBV — see [LEVELS.md](LEVELS.md)).
   - Buffered mid-rail virtual ground (Vref); all signal paths AC-coupled.
   - ~5 V **electret bias rail**, LDO + heavy RC (bias noise appears
     directly in the mic signal).
@@ -248,9 +268,7 @@ Sheet-metal design (mixer form factor rules out die-cast):
 - Enclosure: folded U-chassis + wrap lid vs. extruded frame.
 - Latching mute button sourcing: confirm availability (with or without
   integral LED) before committing the panel design.
-- Level plan: nominal level, noise, and headroom at every node (mic jack →
-  mic out; RX in → phones). Finalizes gain ranges, pads, and trim spans.
-  Verify real Icom mic output levels (HM-36/SM-30) rather than assuming.
-  Prerequisite for the schematic.
+- Level plan measurements (see LEVELS.md): real Icom mic output
+  (HM-36/SM-30), TRRS headset levels and bias draw, K3S LINE OUT level.
 - At layout: review every adjustment for accessibility once panel
   positions are known.
