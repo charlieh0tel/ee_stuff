@@ -2,7 +2,7 @@
   (version 20250114)
   (generator "eeschema")
   (generator_version "9.0")
-  (uuid "c744c61b-ced8-4576-92ab-2505385506fa")
+  (uuid "cb5d37b3-3873-4d30-a828-30b99e093e61")
   (paper "A4")
   (title_block (title "TBox — TX Bus / Intercom / Mic Out / Line Out") (date "2026-07-03") (rev "0.1") (company "TBox"))
   (lib_symbols
@@ -2089,5 +2089,5 @@
 		(embedded_fonts no)
 	)
   )
-  (text "TX Bus / Intercom / Mic Out / Line Out — TBD" (exclude_from_sim no) (at 25.4 25.4 0) (effects (font (size 1.524 1.524)) (justify left bottom)) (uuid "eded8a0b-7bb2-418f-946e-f506553c410c"))
+  (text "TX Bus / Intercom / Mic Out / Line Out — TBD" (exclude_from_sim no) (at 25.4 25.4 0) (effects (font (size 1.524 1.524)) (justify left bottom)) (uuid "fbf91dc7-54b9-49e9-bf3c-9209d395fab9"))
 )
