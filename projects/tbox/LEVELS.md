@@ -21,7 +21,7 @@ filter buys ~8 dB beyond these figures.
 |---|---|---|---|
 | Mic jack, dynamic | -57 dBV | -42 | HI range; Heil HC-6/HC-7 spec |
 | Mic jack, electret | -45 dBV | -30 | LO range; OHIS/CMC-9745/Heil iC class |
-| Mic jack, powered desk mic | -28 dBV | -13 | LO range, level pot low; Icom SM-30 |
+| Mic jack, powered desk mic | -28 dBV | -13 | LO range, level pot low; SM-30 class (reference only — Icom powered mics unsupported) |
 | Preamp out | ~-15 dBV | ~0 | HI +45 dB / LO +25 dB |
 | Mute node | -15 dBV | | ≤0.5 dB insertion; mute depth ≥60 dB (see below) |
 | Level pot (design center) | -21 dBV | | 10k audio taper, ~-6 dB nominal |
@@ -36,8 +36,7 @@ device clamps — ≥60 dB at 1 kHz. Both gates share the RC ramp.
 
 **Gain range coverage:** with the level pot's reach (±10 dB around design
 center), LO covers roughly -55…-30 dBV sources, HI covers -70…-50 dBV.
-Overlap at -55…-50, no gap. Hot desk mics (SM-30, -28 dBV) land in LO
-with the pot low.
+Overlap at -55…-50, no gap.
 
 ## RX path (RX in → phones)
 
@@ -131,7 +130,9 @@ descriptions, no mV figures published):
 Heil "All Things iCOM" tech note (8 V on pin 1, DC-block adapters):
 <https://static.dxengineering.com/global/images/technicalarticles/ico-ic-7300_bk.pdf>
 
-## Measurements still needed
+## Measurements
 
-- K3S LINE OUT actual level at CONFIG:LIN OUT = 10 (bench, one-time).
-- HM-36 output if one is on hand (expected between Heil iC and SM-30).
+None required for design. The one unpublished figure — K3S LINE OUT
+level (anecdotally 0.1–0.8 Vrms depending on CONFIG:LIN OUT) — falls
+entirely within the RX input pad + trim range, and gets absorbed when
+the trims are set at first hookup.

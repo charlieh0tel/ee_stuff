@@ -9,8 +9,8 @@ and a generic rig connector with rig-specific cables.
 
 | Decision | Choice |
 |---|---|
-| Mic connectors | 3.5mm TRS/TRRS, 8-pin Foster round, 1/4" TRS (no XLR) |
-| Condenser support | Electret bias only (~5 V); +8 V accessory pin for Icom-style mics |
+| Mic connectors | 3.5mm TRS/TRRS, 1/4" TRS; round-plug ham mics via adapter pigtails |
+| Condenser support | Electret bias only (~5 V); Icom powered mics unsupported |
 | Rig connection | Generic DE-9 on box + rig-specific cables |
 | Channel layout | Two fixed, identical channel groups (A and B) — no cross-assignment |
 | Headset usage | Both channels mixable; override selector: OFF / A→B / B→A |
@@ -28,11 +28,11 @@ and a generic rig connector with rig-specific cables.
 ```
  CH A jacks ─┬─ bias sw ─ preamp A ─ mute A ─ level A ─┐
  (3.5mm, TRRS,│                        ▲ (LED)         │
-  1/4", Foster)                 button or OVR B→A      │
+  1/4")                         button or OVR B→A      │
                                                        ├─ TX MIX BUS
  CH B jacks ─┬─ bias sw ─ preamp B ─ mute B ─ level B ─┘     │
  (3.5mm, TRRS,│                        ▲ (LED)               ├──► monitor tap
-  1/4", Foster)                 button or OVR A→B            │    (to phones)
+  1/4")                         button or OVR A→B            │    (to phones)
                                                              │
                                               INTERCOM mute ─┤
                                      (momentary; locked out  │
@@ -48,8 +48,8 @@ and a generic rig connector with rig-specific cables.
      PHONES A (stereo) ◄── vol A × (RX L/R + mon A × TX MIX both ears)
      PHONES B (stereo) ◄── vol B × (RX L/R + mon B × TX MIX both ears)
 
- PTT A (3.5mm ∥ 1/4" ∥ Foster pin) ──┬── PTT logic ── PTT to rig
- PTT B (3.5mm ∥ 1/4" ∥ Foster pin) ──┘   │            (open-drain MOSFET,
+ PTT A (3.5mm ∥ 1/4" ∥ panel btn) ──┬── PTT logic ── PTT to rig
+ PTT B (3.5mm ∥ 1/4" ∥ panel btn) ──┘   │            (open-drain MOSFET,
                                          │             TX LED)
               OVERRIDE selector: OFF / A→B / B→A
               (A→B: PTT A keys rig AND mutes channel B; B→A mirror)
@@ -61,22 +61,18 @@ and a generic rig connector with rig-specific cables.
 
 Two identical, physically grouped channel sections (A and B). Each has:
 
-- **Mic jacks:** 3.5mm TRS, mic side of the TRRS combo, 1/4" TRS, and an
-  8-pin Foster. All paralleled into one preamp; plug a mic into exactly
-  one (not enforced by switching contacts).
+- **Mic jacks:** 3.5mm TRS, mic side of the TRRS combo, and 1/4" TRS.
+  All paralleled into one preamp; plug a mic into exactly one (not
+  enforced by switching contacts).
 - **Electret bias switch** (rear panel): ~5 V through 2.2 kΩ from the
   bias rail; applies to all jacks in the group.
-- **+8 V accessory pin (Foster):** current-limited (~10 mA), routable via
-  the pin-map DIP for Icom-style mics (SM/HM series) that power their
-  electrets from a separate pin.
 - **Gain range switch** (rear panel, beside the bias switch): LO ~+25 dB
-  (electrets, ~-45 dBV; Icom powered mics ride the level pot down) /
-  HI ~+45 dB (dynamics, ~-57 dBV Heil class). Both ranges land nominal
-  mic level at the same point at the channel level pot, which handles
-  fine adjustment. Exact gains per [LEVELS.md](LEVELS.md).
-  The switch throws a DC control line; gain switching happens at the
-  preamp via signal relay or DG-class analog switch (mic-level signals
-  don't cross boards).
+  (electrets, ~-45 dBV) / HI ~+45 dB (dynamics, ~-57 dBV Heil class).
+  Both ranges land nominal mic level at the same point at the channel
+  level pot, which handles fine adjustment. Exact gains per
+  [LEVELS.md](LEVELS.md). The switch throws a DC control line; gain
+  switching happens at the preamp via signal relay or DG-class analog
+  switch (mic-level signals don't cross boards).
 - **Mute button:** front panel, latching/alternate-action (NKK/Schadow
   style; fallback: toggle, or momentary + flip-flop). Full mute: JFET
   series + shunt pair after the preamp (a single shunt only reaches
@@ -84,15 +80,14 @@ Two identical, physically grouped channel sections (A and B). Each has:
   AC-coupled with no DC across the JFETs (DC across the mute element
   pops). Override mute uses the same circuit, triggered electrically.
 - **Channel level pot** into the TX mix bus.
-- **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure, plus the
-  Foster PTT pin.
-- **Foster pin mapping:** 4-pole 3-position sealed rotary (Lorlin
-  CK-class) on the side wall beside each Foster, labeled
-  YAESU / KEN·ELE / ICOM. Poles route mic (pin 8 / 1 / 1), PTT
-  (pin 6 / 2 / 5), and the +8 V feed (Icom pin 2 only); one spare pole.
-  Elecraft mics (MH2 etc.: mic 1, PTT 2, mic-line bias) use the KEN·ELE
-  position with BIAS ON — no separate position needed. UP/DWN/FUNCTION
-  buttons unsupported (no data path to the rig).
+- **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure.
+- **Round-plug ham mics** (Yaesu/Kenwood/Icom/Elecraft 8-pin Foster)
+  connect via per-brand adapter pigtails: Foster-female → 3.5mm mic plug
+  + 3.5mm PTT plug (rear PTT jack). Covers dynamics and mic-line-bias
+  electrets (Elecraft MH2 with BIAS ON). Known exception: Icom powered
+  mics (SM/HM series, separate +8 V pin) are unsupported. Each preamp
+  keeps a polarized spare header so a Foster side-board option can be
+  retrofitted.
 
 ## Buses and outputs
 
@@ -138,10 +133,10 @@ Two identical, physically grouped channel sections (A and B). Each has:
 
 ## Keying
 
-- Per channel: 3.5mm + 1/4" PTT jacks (paralleled) plus the Foster PTT
-  pin and a front-panel momentary PTT button, all in parallel. Contact
-  closure to ground; inputs pulled up, clamped, and filtered (keyers and
-  computer interfaces may drive them).
+- Per channel: 3.5mm + 1/4" PTT jacks (paralleled) and a front-panel
+  momentary PTT button, all in parallel. Contact closure to ground;
+  inputs pulled up, clamped, and filtered (keyers and computer
+  interfaces may drive them).
 - **Override selector, 3-position: OFF / A→B / B→A** (top panel, center,
   below the TX lamp; thrown toward the channel that wins). A→B: channel
   A's PTT keys the rig and fully mutes channel B while closed; B→A
@@ -200,8 +195,6 @@ panel; front mic and phones jacks stay free.
   - Buffered mid-rail virtual ground (Vref); all signal paths AC-coupled.
   - ~5 V **electret bias rail**, LDO + heavy RC (bias noise appears
     directly in the mic signal).
-  - **+8 V accessory feed**, current-limited ~10 mA, small LDO or
-    filtered dropper.
 - JFET mutes single-supply: signal node at Vref; gate well below Vref =
   pinched off (unmuted), gate at Vref = shunting (muted). Pinch-off must
   sit inside the Vref window — J113-class, not J111.
@@ -229,11 +222,6 @@ Mixer-style, two boards:
 - **Front apron jacks** (per side: 1/4" + 3.5mm mic, TRRS, 3.5mm + 1/4"
   phones): control-board front edge or a narrow third board — decide
   during layout.
-- **Side daughterboard** per channel, mounted by the pin-map rotary's
-  bushing (PC-pin Lorlin CK1028-class): carries the rotary and its
-  routing traces; the Foster's solder cups jumper to adjacent pads
-  (~15 mm, the only hand wiring); one connector to the channel preamp.
-  Symmetric layout so one design serves both sides flipped.
 - Board interconnect carries only line-level buses, DC, and PTT logic.
   Mic-level signals never cross a connector; each preamp lives on the
   board with its jacks.
@@ -245,9 +233,6 @@ service), wedge console profile:
 
 - Geometry (provisional): 300 mm wide, ~13° slant, 45 mm front apron,
   150 mm slant surface → ~146 mm base depth, ~79 mm rear height.
-- Foster mic connectors mount on the side walls, one per side, facing
-  their operator — keeps plugs/cords out of the hand zone and the front
-  interior clear.
 - Two-piece shell: U-pan (base + wedge-profile sides) + wrap top (apron,
   slant surface, rear skirt in one bent piece). Overlapping flanged seams
   everywhere, screws into PEM nuts/tapped flanges every 25–40 mm.
@@ -288,7 +273,5 @@ service), wedge console profile:
   layouts freeze; panel labeling method (engraving vs. etch vs. overlay).
 - Latching mute button sourcing: confirm availability (with or without
   integral LED) before committing the panel design.
-- Bench measurements (see LEVELS.md): K3S LINE OUT actual level; HM-36
-  output if available.
 - At layout: review every adjustment for accessibility once panel
   positions are known.

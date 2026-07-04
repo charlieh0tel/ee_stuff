@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -18 330 85" width="990" height="255">
-  <title>TBox front apron — 300 x 45 mm, to scale (Foster mic connectors on side walls)</title>
+  <title>TBox front apron — 300 x 45 mm, to scale</title>
   <style>
     .panel  { fill: #e8e8e8; stroke: #333; stroke-width: 0.8; }
     .qjack  { fill: #c0c0c0; stroke: #333; stroke-width: 0.5; }
@@ -77,6 +77,4 @@
   <circle class="qjack" cx="270" cy="24" r="7.5"/>
   <circle class="hole"  cx="270" cy="24" r="3.2"/>
 
-  <!-- side-wall note -->
-  <text class="dim" x="60" y="58">8-pin Foster mic connectors: one per side wall, facing its operator</text>
 </svg>
