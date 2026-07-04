@@ -76,6 +76,16 @@
   <circle class="led" cx="214" cy="131" r="2.5" fill="#f0b0b0"/>
   <rect class="btn" x="220" y="125" width="20" height="13" rx="2"/>
 
+  <!-- override selector, center: 3-pos toggle thrown left/right -->
+  <text class="lbl" x="150" y="66">OVERRIDE</text>
+  <text class="sm" x="132" y="78">A&#8594;B</text>
+  <text class="sm" x="168" y="78">B&#8594;A</text>
+  <text class="sm" x="150" y="90">OFF</text>
+  <polygon fill="#d0d0d0" stroke="#333" stroke-width="0.4"
+           points="155,72.67 152.5,77 147.5,77 145,72.67 147.5,68.33 152.5,68.33"/>
+  <circle fill="#e5e5e5" stroke="#333" stroke-width="0.4" cx="150" cy="72.67" r="3.2"/>
+  <circle fill="#777" stroke="#333" stroke-width="0.4" cx="150" cy="72.67" r="1.5"/>
+
   <!-- bottom row: PTT corners + intercom center, 11 mm from front edge -->
   <text class="lbl" x="30" y="120">PTT</text>
   <circle class="led" cx="46" cy="131" r="2.5" fill="#f3d9a0"/>

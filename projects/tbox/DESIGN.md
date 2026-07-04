@@ -86,9 +86,13 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - **Channel level pot** into the TX mix bus.
 - **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure, plus the
   Foster PTT pin.
-- **Foster pin mapping:** DIP switch or jumper block (Yaesu/Kenwood/Icom
-  pinouts differ); sealed switches — mic audio routes through the
-  contacts. UP/DWN buttons unsupported (no data path to the rig).
+- **Foster pin mapping:** 4-pole 3-position sealed rotary (Lorlin
+  CK-class) on the side wall beside each Foster, labeled
+  YAESU / KEN·ELE / ICOM. Poles route mic (pin 8 / 1 / 1), PTT
+  (pin 6 / 2 / 5), and the +8 V feed (Icom pin 2 only); one spare pole.
+  Elecraft mics (MH2 etc.: mic 1, PTT 2, mic-line bias) use the KEN·ELE
+  position with BIAS ON — no separate position needed. UP/DWN/FUNCTION
+  buttons unsupported (no data path to the rig).
 
 ## Buses and outputs
 
@@ -138,9 +142,10 @@ Two identical, physically grouped channel sections (A and B). Each has:
   pin and a front-panel momentary PTT button, all in parallel. Contact
   closure to ground; inputs pulled up, clamped, and filtered (keyers and
   computer interfaces may drive them).
-- **Override selector, 3-position: OFF / A→B / B→A.** A→B: channel A's
-  PTT keys the rig and fully mutes channel B while closed; B→A mirror.
-  OFF: both PTTs just key the rig.
+- **Override selector, 3-position: OFF / A→B / B→A** (top panel, center,
+  below the TX lamp; thrown toward the channel that wins). A→B: channel
+  A's PTT keys the rig and fully mutes channel B while closed; B→A
+  mirror. OFF (center): both PTTs just key the rig.
 - Rig PTT output: open-drain MOSFET (tolerates 12 V+ pull-ups).
 - Jumper option per channel: PTT gates the channel's own audio (mic live
   only while keyed) — also the mitigation if rig VOX must be on.
@@ -223,8 +228,12 @@ Mixer-style, two boards:
   bias and gain range switches. Jack bushings nutted through the panel.
 - **Front apron jacks** (per side: 1/4" + 3.5mm mic, TRRS, 3.5mm + 1/4"
   phones): control-board front edge or a narrow third board — decide
-  during layout. Fosters are chassis-mount on the side walls, short
-  flying leads to their channel's preamp.
+  during layout.
+- **Side daughterboard** per channel, mounted by the pin-map rotary's
+  bushing (PC-pin Lorlin CK1028-class): carries the rotary and its
+  routing traces; the Foster's solder cups jumper to adjacent pads
+  (~15 mm, the only hand wiring); one connector to the channel preamp.
+  Symmetric layout so one design serves both sides flipped.
 - Board interconnect carries only line-level buses, DC, and PTT logic.
   Mic-level signals never cross a connector; each preamp lives on the
   board with its jacks.
