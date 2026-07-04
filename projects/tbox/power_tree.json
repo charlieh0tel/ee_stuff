@@ -1,0 +1,52 @@
+{
+  "_comment": "Single source of truth for the TBox power tree. tools/gen_power_tree.py regenerates the schematic tree graphic and per-stage load annotations in kicad/supply.kicad_sch from this file. Do not hand-edit the generated block in the schematic.",
+  "input": {
+    "name": "13V8_IN",
+    "desc": "13.8V nom (10.5-15V)",
+    "protection": "PTC 0.5A > SS34 > pi filter",
+    "note": "PTC 0.5A hold vs ~210 mA total draw"
+  },
+  "nodes": [
+    {
+      "name": "RAW_13V8",
+      "from": "13V8_IN",
+      "desc": "post-filter",
+      "loads": [{"name": "LED rail (droppers)", "ma": "~30"}]
+    },
+    {
+      "name": "+9V",
+      "from": "RAW_13V8",
+      "converter": "LM2940S-9.0 LDO",
+      "budget": "130 mA typ / 180 mA max",
+      "note": "Pd 0.8W @13V8, 1.0W @15V; dropout OK to 10V5 in",
+      "sch_note_at": [66, 57],
+      "sch_note": "load 130 mA typ / 180 mA max\nPd <=1W @15V; dropout OK to 10V5",
+      "loads": [
+        {"name": "preamps", "ma": "16"},
+        {"name": "Vref buffer", "ma": "8"},
+        {"name": "TX bus", "ma": "24"},
+        {"name": "RX buffers", "ma": "8"},
+        {"name": "phones amps", "ma": "20 q + ~50 pgm"},
+        {"name": "mute/discretes", "ma": "2"}
+      ]
+    },
+    {
+      "name": "BIAS_5V",
+      "from": "+9V",
+      "converter": "LP2950-50 LDO",
+      "budget": "1-2 mA",
+      "sch_note_at": [42, 71],
+      "sch_note": "load 1-2 mA (electret bias)",
+      "loads": [{"name": "electret bias, 2 ch", "ma": "1-2"}]
+    },
+    {
+      "name": "VREF",
+      "from": "+9V",
+      "converter": "NE5532 buffer, 4.5V",
+      "budget": "<1 mA",
+      "sch_note_at": [58, 99],
+      "sch_note": "load <1 mA (AC ground ref)",
+      "loads": [{"name": "AC ground reference", "ma": "<1"}]
+    }
+  ]
+}

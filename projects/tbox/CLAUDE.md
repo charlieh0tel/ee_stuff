@@ -4,8 +4,12 @@
   https://github.com/charlieh0tel/ee-dev-process (read `pcba/` — schematic,
   PCB, library, release, and MCO checklists) for all schematic and layout
   work.
-- The power tree lives **in the schematic**, with load annotations
-  (current budgets) placed near each power conversion stage.
+- The power tree lives **in the schematic, generally on its own sheet**,
+  drawn as boxes and arrows flowing **left to right** (wrapping to a new
+  band when it outgrows the sheet), with load annotations (current
+  budgets) placed near each power conversion stage. In tbox it is
+  generated from `power_tree.json` by `tools/gen_power_tree.py` — edit
+  the json, never the generated block.
 - **DRY — one source of truth.** Don't maintain the same artifact in two
   places (e.g., power tree in both DESIGN.md and the schematic) unless one
   is generated from the other or from a common source. Docs point to the
