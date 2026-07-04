@@ -4,17 +4,13 @@
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 25n 10m 0 25n uic",
+        ".tran 100n 10m 0 1u uic",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
         ".probe allp"
       ],
-      "dottedSecondary": false,
-      "legend": {
-        "x": 122,
-        "y": 40
-      },
+      "dottedSecondary": true,
       "margins": {
         "bottom": 45,
         "left": 70,
@@ -25,23 +21,28 @@
       "showGrid": true,
       "traces": [
         {
-          "color": "rgb(0, 255, 0)",
-          "signal": "V(/LED_DRIVE)",
-          "trace_type": 257
+          "color": "rgb(166, 86, 40)",
+          "signal": "I(R3)",
+          "trace_type": 258
         },
         {
-          "color": "rgb(0, 255, 255)",
-          "signal": "V(/LED_K1)",
-          "trace_type": 257
+          "color": "rgb(247, 129, 191)",
+          "signal": "I(R7)",
+          "trace_type": 258
         },
         {
-          "color": "rgb(255, 255, 255)",
-          "signal": "V(/LED_K2)",
-          "trace_type": 257
-        },
-        {
-          "color": "rgb(255, 0, 0)",
+          "color": "rgb(228, 26, 28)",
           "signal": "V(/Vduty)",
+          "trace_type": 257
+        },
+        {
+          "color": "rgb(102, 194, 165)",
+          "signal": "V(Net-_Q4-D_)",
+          "trace_type": 257
+        },
+        {
+          "color": "rgb(252, 141, 98)",
+          "signal": "V(Net-_Q7-C_)",
           "trace_type": 257
         }
       ]
