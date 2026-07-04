@@ -152,7 +152,8 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - Per-channel PTT LED (that channel's PTT input closed).
 - Per-channel mute LED (true JFET state — button or override).
 - Intercom LED (lit while the intercom mute is engaged).
-- All DC-driven.
+- All DC-driven, powered from the raw filtered rail (not the 9 V analog
+  rail) so LED step loads never touch audio.
 
 ## Rig interface
 
@@ -198,6 +199,14 @@ panel; front mic and phones jacks stay free.
 - JFET mutes single-supply: signal node at Vref; gate well below Vref =
   pinched off (unmuted), gate at Vref = shunting (muted). Pinch-off must
   sit inside the Vref window — J113-class, not J111.
+
+### Power tree
+
+Authoritative version lives on the schematic supply sheet
+(`kicad/supply.kicad_sch`), including per-rail load budgets, LDO
+dissipation, dropout margin, and PTC sizing. LED indicators run from the
+raw filtered rail (`RAW_13V8`) via droppers — never from the 9 V analog
+rail. Op-amp load counts are estimates until all sheets exist.
 - PTT logic is diode-OR and discretes; mute ramps are RC networks.
 
 ## RF immunity
