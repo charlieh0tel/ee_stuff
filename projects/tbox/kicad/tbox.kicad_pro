@@ -1,0 +1,9 @@
+{
+  "meta": { "filename": "tbox.kicad_pro", "version": 3 },
+  "schematic": {
+    "drawing": { "default_text_size": 1.27 },
+    "legacy_lib_list": []
+  },
+  "sheets": [],
+  "text_variables": {}
+}
