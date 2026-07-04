@@ -221,22 +221,30 @@ Mixer-style, two boards:
 - **Rear I/O board** vertical behind the rear panel: DE-9, Powerpole,
   line out, PTT jacks, rear trims (mic out, line out RX/TX, RX input),
   bias and gain range switches. Jack bushings nutted through the panel.
-- **Front jacks** (mic jacks incl. Foster, phones, TRRS): control-board
-  front edge through an apron, or a third small board — decide during
-  layout.
+- **Front apron jacks** (per side: 1/4" + 3.5mm mic, TRRS, 3.5mm + 1/4"
+  phones): control-board front edge or a narrow third board — decide
+  during layout. Fosters are chassis-mount on the side walls, short
+  flying leads to their channel's preamp.
 - Board interconnect carries only line-level buses, DC, and PTT logic.
   Mic-level signals never cross a connector; each preamp lives on the
   board with its jacks.
 
 ## Enclosure (RF-tight)
 
-Sheet-metal design (mixer form factor rules out die-cast):
+Custom folded sheet aluminum (SendCutSend-class laser cut + CNC bend
+service), wedge console profile:
 
-- Chromate-conversion (alodine/iridite) finished aluminum, or bare mating
-  surfaces with masked paint. Anodize is an insulator — not on any mating
+- Geometry (provisional): 300 mm wide, ~13° slant, 45 mm front apron,
+  150 mm slant surface → ~146 mm base depth, ~79 mm rear height.
+- Foster mic connectors mount on the side walls, one per side, facing
+  their operator — keeps plugs/cords out of the hand zone and the front
+  interior clear.
+- Two-piece shell: U-pan (base + wedge-profile sides) + wrap top (apron,
+  slant surface, rear skirt in one bent piece). Overlapping flanged seams
+  everywhere, screws into PEM nuts/tapped flanges every 25–40 mm.
+- Chem-film (chromate/alodine) finish from the vendor — conductive on
+  all mating surfaces. Anodize is an insulator — not on any mating
   surface.
-- Overlapping flanged seams (not butt joints), screws every 25–40 mm;
-  folded U-chassis + wrap lid with flange overlap.
 - Top panel bonds to chassis along its perimeter — flange contact or
   finger stock/gasket, not just corner screws.
 - Metal-body jacks wherever sourceable, bushings nutted to the panel so
@@ -267,7 +275,8 @@ Sheet-metal design (mixer form factor rules out die-cast):
   vs. no gasket and filter corner frequencies.
 - Front jack placement: control-board front edge vs. third board. Decide
   with enclosure dimensions.
-- Enclosure: folded U-chassis + wrap lid vs. extruded frame.
+- Enclosure: confirm final dimensions and seam/flange details once panel
+  layouts freeze; panel labeling method (engraving vs. etch vs. overlay).
 - Latching mute button sourcing: confirm availability (with or without
   integral LED) before committing the panel design.
 - Bench measurements (see LEVELS.md): K3S LINE OUT actual level; HM-36
