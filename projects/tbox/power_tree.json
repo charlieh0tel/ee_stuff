@@ -1,5 +1,6 @@
 {
-  "_comment": "Single source of truth for the TBox power tree. tools/gen_power_tree.py regenerates the schematic tree graphic and per-stage load annotations in kicad/supply.kicad_sch from this file. Do not hand-edit the generated block in the schematic.",
+  "_comment": "Single source of truth for the TBox power tree. tools/gen_power_tree.py regenerates the schematic tree graphic and per-stage load annotations in kicad/supply.kicad_sch from this file. Do not hand-edit the generated block in the schematic. Per-node max_ma/max_basis is the supply's deliverable maximum (rated current, or the thermal limit where that binds first); _max_analysis records the derivation and is not drawn. alert_utilization is the fraction of max_ma at which tools/check_power.py (TODO) should alert.",
+  "alert_utilization": 0.75,
   "input": {
     "name": "13V8_IN",
     "desc": "13.8V nom (10.5-15V)",
@@ -11,6 +12,9 @@
       "name": "RAW_13V8",
       "from": "13V8_IN",
       "desc": "post-filter",
+      "max_ma": 500,
+      "max_basis": "upstream PTC 0.5A hold",
+      "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (incl. LM2940 input current).",
       "loads": [{"name": "LED rail (droppers)", "ma": "~30"}]
     },
     {
@@ -18,6 +22,9 @@
       "from": "RAW_13V8",
       "converter": "LM2940S-9.0 LDO",
       "budget": "130 mA typ / 180 mA max",
+      "max_ma": 250,
+      "max_basis": "thermal, TO-263 @15V in",
+      "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA ~50C/W (TO-263 on copper pour, VERIFY against layout) -> Pd 1.5W; at 15V in (6V drop) I <= 250 mA. At 13.8V in (4.8V drop) ~310 mA.",
       "note": "Pd 0.8W @13V8, 1.0W @15V; dropout OK to 10V5 in",
       "sch_note_at": [66, 57],
       "sch_note": "load 130 mA typ / 180 mA max\nPd <=1W @15V; dropout OK to 10V5",
@@ -35,6 +42,9 @@
       "from": "+9V",
       "converter": "LP2950-50 LDO",
       "budget": "1-2 mA",
+      "max_ma": 100,
+      "max_basis": "rated",
+      "_max_analysis": "Rated 100 mA; thermal is comparable at 9V in (4V drop, TO-92 thetaJA ~180C/W, Ta 50C -> ~100 mA), so the rating binds.",
       "sch_note_at": [42, 71],
       "sch_note": "load 1-2 mA (electret bias)",
       "loads": [{"name": "electret bias, 2 ch", "ma": "1-2"}]
@@ -44,6 +54,9 @@
       "from": "+9V",
       "converter": "NE5532 buffer, 4.5V",
       "budget": "<1 mA",
+      "max_ma": 10,
+      "max_basis": "op-amp output drive",
+      "_max_analysis": "NE5532 output: ~38 mA short-circuit typ; ~10 mA is a sane continuous drive limit for an AC ground reference.",
       "sch_note_at": [58, 99],
       "sch_note": "load <1 mA (AC ground ref)",
       "loads": [{"name": "AC ground reference", "ma": "<1"}]
