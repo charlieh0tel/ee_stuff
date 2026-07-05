@@ -16,5 +16,15 @@
   authoritative location instead of duplicating it.
 - Prefer **SMT construction** — choose SMT packages unless a part is
   panel-mount or SMT is unavailable.
+- **Consider capacitive loading on the output of every device with a
+  feedback loop** — op-amps, LDOs, switch-mode regulators, etc. Op-amps
+  driving capacitance need compensation (e.g., series isolation R; see TI
+  "Do-it-yourself: Three Ways to Stabilize Op Amp Capacitive Loads",
+  https://www.ti.com/lit/ta/sszt999/sszt999.pdf). Alternatively, some
+  op-amps are designed to drive high capacitive loads directly (e.g.
+  LM8261, OPA994, ADA4870; see TI "Unlimited Capacitive Load Drive Op
+  Amp Takes Guesswork Out Of Design",
+  https://www.ti.com/lit/an/snoa808/snoa808.pdf). Regulators need output
+  caps inside their datasheet capacitance/ESR stability window.
 - Design docs: DESIGN.md (architecture/decisions), LEVELS.md (level plan,
   sourced data). Keep them current as the schematic evolves.

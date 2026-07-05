@@ -189,6 +189,9 @@ panel; front mic and phones jacks stay free.
 - Input: 11–15 V DC (13.8 V nominal; operates down to ~10.5 V on a
   sagging battery). Anderson Powerpole, rear panel; reverse-polarity
   protected, PTC resettable fuse on the board.
+- **No input TVS** (decided): the PTC + series Schottky + π filter sit
+  upstream, and the LM2940 is automotive-rated (survives 60 V load-dump
+  transients), so a clamp adds little for a shack/battery supply.
 - **All-linear, single rail** (bipolar rails would require a charge pump
   or switcher):
   - Input π filter → LDO → **9 V analog rail** (Vref 4.5 V; internal
