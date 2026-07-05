@@ -1,5 +1,13 @@
 # TODO
 
+- Verify the +9V thermal max (250 mA in `power_tree.json`) against the
+  actual layout: it assumes the LM2940 TO-263 sits on a copper pour giving
+  θJA ≈ 50 °C/W (Tj 125 °C, Ta 50 °C, 15 V in). Recompute once the pour is
+  drawn.
+- LP2950-50 (BIAS_5V) is on a TO-92 THT footprint — conflicts with the
+  project SMT convention. Move to an SMT package (e.g. SOT-23-3 or SO-8
+  variant) and update the footprint.
+
 - Make `tools/gen_power_tree.py` idempotent: derive element UUIDs
   deterministically from content (e.g. `uuid.uuid5(namespace, element_text)`)
   instead of `uuid.uuid4()`, so regenerating an unchanged power tree produces
