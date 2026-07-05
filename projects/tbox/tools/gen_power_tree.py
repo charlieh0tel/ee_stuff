@@ -124,6 +124,9 @@ def node_lines(name, src, nodes):
     lines = [hdr]
     if n.get("budget"):
         lines.append("budget: " + n["budget"])
+    if n.get("max_ma"):
+        basis = f" ({n['max_basis']})" if n.get("max_basis") else ""
+        lines.append(f"max: {n['max_ma']} mA{basis}")
     if n.get("note"):
         lines.append(n["note"])
     for ld in n.get("loads", []):
