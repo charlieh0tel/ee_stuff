@@ -30,8 +30,10 @@ def pt(n):
     return round(n * G, 4)
 
 
-def U():
-    return str(uuid.uuid4())
+# Deterministic element UUIDs derived from (scope, sequence index): an
+# unchanged power_tree.json regenerates byte-identical output (zero diff),
+# and a small content edit only churns the lines that actually changed.
+NS = uuid.UUID("b7e5d1a2-0c3f-4e6a-9b8c-1d2e3f4a5b6c")
 
 
 # layout (grid units); A4 landscape drawable ~ x 12..220, y 12..150
@@ -78,11 +80,15 @@ def strip_managed(sch, old):
 
 
 class Emit:
-    def __init__(self):
+    def __init__(self, scope):
+        self.scope = scope
         self.items, self.uuids = [], []
 
+    def _uid(self):
+        return str(uuid.uuid5(NS, f"{self.scope}:{len(self.uuids)}"))
+
     def rect(self, x1, y1, x2, y2):
-        u = U()
+        u = self._uid()
         self.uuids.append(u)
         self.items.append(
             f"  (rectangle (start {pt(x1)} {pt(y1)}) (end {pt(x2)} {pt(y2)})"
@@ -90,7 +96,7 @@ class Emit:
         )
 
     def line(self, pts_):
-        u = U()
+        u = self._uid()
         self.uuids.append(u)
         coords = " ".join(f"(xy {pt(x)} {pt(y)})" for x, y in pts_)
         self.items.append(
@@ -99,7 +105,7 @@ class Emit:
         )
 
     def text(self, t, x, y, size=1.27, bold=False):
-        u = U()
+        u = self._uid()
         self.uuids.append(u)
         b = " (bold yes)" if bold else ""
         t = t.replace('"', "'")
@@ -142,7 +148,7 @@ def main():
         children.setdefault(n["from"], []).append(n["name"])
     inp_name = src["input"]["name"]
 
-    e = Emit()
+    e = Emit("powertree")
     e.text(
         "POWER TREE  (generated from power_tree.json -- do not hand-edit)",
         X0,
@@ -211,7 +217,7 @@ def main():
     place(inp_name, X0, Y0)
 
     # per-stage annotations on the supply sheet
-    s_notes = Emit()
+    s_notes = Emit("supply")
     for n in src["nodes"]:
         if n.get("sch_note") and n.get("sch_note_at"):
             x, yy = n["sch_note_at"]

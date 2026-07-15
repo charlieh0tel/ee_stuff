@@ -197,8 +197,8 @@ panel; front mic and phones jacks stay free.
   - Input π filter → LDO → **9 V analog rail** (Vref 4.5 V; internal
     nominal -15 dBV, clip +6 dBV — see [LEVELS.md](LEVELS.md)).
   - Buffered mid-rail virtual ground (Vref); all signal paths AC-coupled.
-  - ~5 V **electret bias rail**, LDO + heavy RC (bias noise appears
-    directly in the mic signal).
+  - ~5 V **electret bias rail**, low-noise LDO (ADP7142, ~11 µVrms) + a
+    light RC (bias noise appears directly in the mic signal).
 - JFET mutes single-supply: signal node at Vref; gate well below Vref =
   pinched off (unmuted), gate at Vref = shunting (muted). Pinch-off must
   sit inside the Vref window — J113-class, not J111.
