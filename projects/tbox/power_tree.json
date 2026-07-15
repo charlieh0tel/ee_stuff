@@ -40,11 +40,11 @@
     {
       "name": "BIAS_5V",
       "from": "+9V",
-      "converter": "LP2950-50 LDO",
+      "converter": "ADP7142 LDO (fixed 5.0V, low-noise)",
       "budget": "1-2 mA",
-      "max_ma": 100,
+      "max_ma": 200,
       "max_basis": "rated",
-      "_max_analysis": "Rated 100 mA; thermal is comparable at 9V in (4V drop, TO-92 thetaJA ~180C/W, Ta 50C -> ~100 mA), so the rating binds.",
+      "_max_analysis": "ADP7142AUJZ-5.0 rated 200 mA. Thermal is non-binding at this load: 9V in, 4V drop, load 1-2 mA -> Pd ~8 mW, negligible in TSOT-23-5 (thetaJA ~170C/W). Rating binds far above the ~2 mA budget.",
       "sch_note_at": [42, 71],
       "sch_note": "load 1-2 mA (electret bias)",
       "loads": [{"name": "electret bias, 2 ch", "ma": "1-2"}]

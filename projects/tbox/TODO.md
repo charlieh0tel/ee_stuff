@@ -4,15 +4,7 @@
   actual layout: it assumes the LM2940 TO-263 sits on a copper pour giving
   θJA ≈ 50 °C/W (Tj 125 °C, Ta 50 °C, 15 V in). Recompute once the pour is
   drawn.
-- LP2950-50 (BIAS_5V) is on a TO-92 THT footprint — conflicts with the
-  project SMT convention. Move to an SMT package (e.g. SOT-23-3 or SO-8
-  variant) and update the footprint.
 
-- Make `tools/gen_power_tree.py` idempotent: derive element UUIDs
-  deterministically from content (e.g. `uuid.uuid5(namespace, element_text)`)
-  instead of `uuid.uuid4()`, so regenerating an unchanged power tree produces
-  a zero diff in `powertree.kicad_sch`, `supply.kicad_sch`, and
-  `power_tree_gen.json`.
 - Power budget checking (`tools/check_power.py`). Split the data by where
   the truth is:
   - **Supply capability** is design analysis and lives in `power_tree.json`:
