@@ -18,17 +18,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get install -y texlive-full
-          pip install matplotlib numpy
+      # The figure scripts run via `#!/usr/bin/env -S uv run --script` and
+      # declare their own deps in a PEP 723 header, so uv is all that is
+      # needed -- no pip install of matplotlib/numpy here.
+      - uses: astral-sh/setup-uv@v9
 
-      - name: Generate figures
-        run: python3 make_regimes_figure.py
-        working-directory: math/diode_small_signal
+      - name: Install TeX Live
+        run: sudo apt-get install -y texlive-full
 
+      # `make` builds regimes_figure.pdf and regimes_figure_newsletter.pdf
+      # itself, as prerequisites of the documents that embed them.
       - name: Build PDFs
         run: make
         working-directory: math/diode_small_signal
@@ -56,8 +57,8 @@ jobs:
           </html>
           EOF
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -69,4 +70,4 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
