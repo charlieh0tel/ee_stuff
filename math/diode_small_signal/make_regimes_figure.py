@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.13"
+# dependencies = ["matplotlib", "numpy"]
+# ///
 
 """
 Generate regime-boundary figure for diode small-signal notes.

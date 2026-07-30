@@ -1,0 +1,16 @@
+# Tooling only. This repo is a collection of standalone scripts, not a package:
+# each script carries its own PEP 723 dependency header and runs via
+# `#!/usr/bin/env -S uv run --script`. This file exists to pin the dev tooling.
+#
+# Lint config lives in ruff.toml, which ruff prefers over [tool.ruff] here.
+
+[project]
+name = "ee-stuff"
+version = "0"
+requires-python = ">=3.13"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = ["ruff>=0.14"]

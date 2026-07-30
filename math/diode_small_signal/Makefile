@@ -7,10 +7,10 @@ FLAGS = -interaction=nonstopmode -halt-on-error
 all: $(PDFS)
 
 regimes_figure.pdf: make_regimes_figure.py
-	python3 make_regimes_figure.py
+	./make_regimes_figure.py
 
 regimes_figure_newsletter.pdf: make_regimes_figure.py
-	python3 make_regimes_figure.py --newsletter
+	./make_regimes_figure.py --newsletter
 
 diode_smallsignal.pdf: diode_smallsignal.tex regimes_figure.pdf
 	$(COMPILER) $(FLAGS) diode_smallsignal.tex
@@ -29,8 +29,8 @@ diode_not_squarelaw_qex.pdf: diode_not_squarelaw_qex.tex regimes_figure.pdf
 	$(COMPILER) $(FLAGS) diode_not_squarelaw_qex.tex
 
 lint: make_regimes_figure.py
-	ruff check make_regimes_figure.py
-	ruff format make_regimes_figure.py
+	uv run ruff check make_regimes_figure.py
+	uv run ruff format make_regimes_figure.py
 
 clean:
 	rm -f *.aux *.log *.out *.fls *.fdb_latexmk *.synctex.gz
