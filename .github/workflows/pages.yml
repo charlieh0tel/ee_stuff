@@ -23,7 +23,7 @@ jobs:
       # The figure scripts run via `#!/usr/bin/env -S uv run --script` and
       # declare their own deps in a PEP 723 header, so uv is all that is
       # needed -- no pip install of matplotlib/numpy here.
-      - uses: astral-sh/setup-uv@v9
+      - uses: astral-sh/setup-uv@v9.0.0  # no floating vN tag published after v7
 
       - name: Install TeX Live
         run: sudo apt-get install -y texlive-full
