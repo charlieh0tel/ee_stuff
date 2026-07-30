@@ -22,6 +22,12 @@
   budgets) placed near each power conversion stage. In tbox it is
   generated from `power_tree.json` by `tools/gen_power_tree.py` — edit
   the json, never the generated block.
+- **Load annotation.** Give every current-drawing symbol a `Load_mA`
+  field (`"typ"` or `"typ/max"`, in mA) as part of normal schematic
+  construction. `tools/check_power.py` attributes each part's draw to the
+  rail on its `power_in` pin and sums per rail; set an explicit `Load_rail`
+  field only when attribution is ambiguous. Rail capabilities (`max_ma`)
+  stay in `power_tree.json`.
 - Prefer **SMT construction** — choose SMT packages unless a part is
   panel-mount or SMT is unavailable.
 - **Consider capacitive loading on the output of every device with a

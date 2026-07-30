@@ -5,19 +5,14 @@
   θJA ≈ 50 °C/W (Tj 125 °C, Ta 50 °C, 15 V in). Recompute once the pour is
   drawn.
 
-- Power budget checking (`tools/check_power.py`). Split the data by where
-  the truth is:
-  - **Supply capability** is design analysis and lives in `power_tree.json`:
-    each converter node gets `max_ma` + `max_basis` (rated current, or the
-    thermal limit where that binds first — e.g. LM2940 at 15V in / 9V out is
-    package-Pd-limited well below its 1A rating). Computed when the stage is
-    designed; the generator prints it on the tree sheet next to the budget.
-  - **Actual loads** live in the schematic: each load-drawing symbol gets a
-    `Load_mA` custom field (typ/max) as part of normal schematic
-    construction; the checker walks each rail net and sums per rail.
-  - The checker reconciles the two: reports drift between extracted loads
-    and the `loads` list in `power_tree.json` (missing/extra/changed), with
-    `--update` to sync the json from the schematic and regenerate the tree
-    sheet; and alerts when a rail's extracted total reaches 75% of `max_ma`
-    (threshold configurable in the json). Run it in CI so a schematic edit
-    that blows a budget fails the build.
+- Power budget checking — `tools/check_power.py` exists (extracts `Load_mA`
+  per rail via the netlist, alerts at `alert_utilization`, exits nonzero on
+  OVER). Remaining:
+  - Annotate `Load_mA` on the rest of the loads as the preamp / TX / RX /
+    keying sheets get drawn (only U2, U3 on the supply sheet are done).
+  - `--update`: sync `power_tree.json` from the extracted loads and
+    regenerate the tree sheet (needs a per-load ref linkage first; the json
+    `loads` list is still freeform functional groupings, so the current
+    reconciliation is advisory-only).
+  - Wire `check_power.py` into CI so a schematic edit that blows a budget
+    fails the build.
