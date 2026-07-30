@@ -8,6 +8,6 @@ on:
 
 jobs:
   ci:
-    uses: charlieh0tel/deb-workflows/.github/workflows/python-ci.yml@main
+    uses: charlieh0tel/deb-workflows/.github/workflows/python-ci.yml@v1
     with:
       test-command: ""
