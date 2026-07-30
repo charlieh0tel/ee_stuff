@@ -50,14 +50,15 @@ ROOT_SCH = os.path.join(KI, "tbox.kicad_sch")
 
 # tolerant s-expression atom scanners over the flat kicad netlist text
 _NET_RE = re.compile(
-    r'\(net\s+\(code\s+"[^"]*"\)\s+\(name\s+"([^"]*)"\)(.*?)(?=\(net\s+\(code|\Z)', re.S
+    r'\(net\s+\(code\s+"[^"]*"\)\s+\(name\s+"([^"]*)"\)(.*?)(?=\(net\s+\(code|\Z)',
+    re.DOTALL,
 )
 _NODE_RE = re.compile(
     r'\(node\s+\(ref\s+"([^"]+)"\)\s+\(pin\s+"([^"]+)"\)'
     r'(?:\s+\(pinfunction\s+"[^"]*"\))?\s+\(pintype\s+"([^"]*)"\)'
 )
 _COMP_RE = re.compile(
-    r'\(comp\s+\(ref\s+"([^"]+)"\)(.*?)(?=\(comp\s+\(ref|\(libparts)', re.S
+    r'\(comp\s+\(ref\s+"([^"]+)"\)(.*?)(?=\(comp\s+\(ref|\(libparts)', re.DOTALL
 )
 _FIELD_RE = re.compile(r'\(field\s+\(name\s+"([^"]+)"\)\s+"([^"]*)"\)')
 _VALUE_RE = re.compile(r'\(value\s+"([^"]*)"\)')
@@ -142,12 +143,14 @@ def main():
     )
     args = ap.parse_args()
 
-    src = json.load(open(args.json))
+    with open(args.json) as f:
+        src = json.load(f)
     default_util = src.get("alert_utilization", 0.75)
     nodes = {n["name"]: n for n in src["nodes"]}
     rails = set(nodes)
 
-    text = open(args.netlist).read() if args.netlist else open(export_netlist()).read()
+    with open(args.netlist or export_netlist()) as f:
+        text = f.read()
     comps, touches = parse_netlist(text)
 
     # attribute each Load_mA-bearing part to a rail

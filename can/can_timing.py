@@ -6,8 +6,9 @@
 
 import argparse
 import contextlib
-import can
 import sys
+
+import can
 
 
 def main():

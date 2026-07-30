@@ -16,8 +16,8 @@ The Power Tree sheet must already exist in the root hierarchy.
 """
 
 import json
-import uuid
 import os
+import uuid
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -145,7 +145,8 @@ def node_lines(name, src, nodes):
 
 
 def main():
-    src = json.load(open(SRC))
+    with open(SRC) as f:
+        src = json.load(f)
     nodes = {n["name"]: n for n in src["nodes"]}
     children = {}
     for n in src["nodes"]:
@@ -231,19 +232,21 @@ def main():
     # ---- apply to files, replacing previously managed elements ----
     old = set()
     if os.path.exists(STATE):
-        st = json.load(open(STATE))
+        with open(STATE) as f:
+            st = json.load(f)
         old = set(st.get("uuids", []) + st.get("supply", []) + st.get("powertree", []))
 
     for path, emit in ((TREE_SCH, e), (SUPPLY_SCH, s_notes)):
-        sch = strip_managed(open(path).read(), old)
+        with open(path) as f:
+            sch = strip_managed(f.read(), old)
         tail = sch.rstrip()
         assert tail.endswith(")")
         sch = tail[:-1] + "\n".join(emit.items) + "\n)\n"
-        open(path, "w").write(sch)
+        with open(path, "w") as f:
+            f.write(sch)
 
-    json.dump(
-        {"powertree": e.uuids, "supply": s_notes.uuids}, open(STATE, "w"), indent=0
-    )
+    with open(STATE, "w") as f:
+        json.dump({"powertree": e.uuids, "supply": s_notes.uuids}, f, indent=0)
     print(
         f"power tree: {len(e.items)} elements -> powertree.kicad_sch; "
         f"{len(s_notes.items)} notes -> supply.kicad_sch"

@@ -4,8 +4,8 @@
 # dependencies = []
 # ///
 
-import sys
 import csv
+import sys
 
 
 def main(argv):

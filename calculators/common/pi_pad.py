@@ -19,7 +19,7 @@ def Z(resistors):
     r_shunt = resistors["r_shunt"]
     r_series = resistors["r_series"]
     return np.reciprocal(
-        np.sqrt((np.reciprocal(np.square(r_shunt)) + 2.0 / (r_shunt * r_series)))
+        np.sqrt(np.reciprocal(np.square(r_shunt)) + 2.0 / (r_shunt * r_series))
     )
 
 

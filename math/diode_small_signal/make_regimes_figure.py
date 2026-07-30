@@ -10,9 +10,10 @@ Produces a technical version (default) and a simplified newsletter version (--ne
 """
 
 import argparse
+from dataclasses import dataclass
+
 import matplotlib.pyplot as plt
 import numpy as np
-from dataclasses import dataclass
 
 # Physical constants (CODATA 2019)
 K_OVER_Q = 8.617333262e-5  # Boltzmann/elementary charge, V/K
@@ -63,7 +64,7 @@ def make_figure(newsletter=False):
     )
 
     V = np.linspace(-0.15, 0.85, 1500)
-    I = diode.IS * (np.exp(V / (diode.n * diode.VT)) - 1)  # noqa: E741
+    I = diode.IS * (np.exp(V / (diode.n * diode.VT)) - 1)
     I_abs = np.maximum(np.abs(I), 1e-15)
 
     plt.rcParams.update(
@@ -99,12 +100,16 @@ def make_figure(newsletter=False):
             rf"Q: $V_{{\mathrm{{Q}}}}={diode.VQ}$ V, $I_{{\mathrm{{Q}}}}\approx 100\ \mu$A",
             xy=(diode.VQ, diode.IQ),
             xytext=(diode.VQ - 0.35, diode.IQ * 50),
-            arrowprops=dict(arrowstyle="->", color="#c0392b", lw=0.8),
+            arrowprops={"arrowstyle": "->", "color": "#c0392b", "lw": 0.8},
             fontsize=9,
             color="#c0392b",
-            bbox=dict(
-                boxstyle="round,pad=0.3", fc="white", ec="#c0392b", alpha=0.95, lw=0.6
-            ),
+            bbox={
+                "boxstyle": "round,pad=0.3",
+                "fc": "white",
+                "ec": "#c0392b",
+                "alpha": 0.95,
+                "lw": 0.6,
+            },
         )
         ax1.axvline(diode.v_4nvt, color="gray", linestyle=":", linewidth=0.9)
         ax1.text(
@@ -127,13 +132,13 @@ def make_figure(newsletter=False):
             style="italic",
             ha="center",
             va="center",
-            bbox=dict(
-                boxstyle="round,pad=0.25",
-                fc="white",
-                ec="lightgray",
-                alpha=0.95,
-                lw=0.5,
-            ),
+            bbox={
+                "boxstyle": "round,pad=0.25",
+                "fc": "white",
+                "ec": "lightgray",
+                "alpha": 0.95,
+                "lw": 0.5,
+            },
         )
         ax1.set_xlim(-0.15, 0.85)
         ax1.set_ylim(1e-14, 5e-2)

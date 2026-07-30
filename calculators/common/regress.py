@@ -1,6 +1,6 @@
 import numpy as np
-import scipy.stats as stats
 import statsmodels.api as sm
+from scipy import stats
 from statsmodels.robust import robust_linear_model as rlm
 from statsmodels.robust.norms import HuberT
 

@@ -4,10 +4,10 @@
 # dependencies = []
 # ///
 
-import sys
-from dataclasses import dataclass
 import itertools
+import sys
 import textwrap
+from dataclasses import dataclass
 
 
 @dataclass
@@ -61,7 +61,7 @@ def main(argv):
         print(
             f"  (2x={2 * k / 1e6} MHz, 3x={3 * k / 1e6} MHz, 4x={4 * k / 1e6} MHz, 5x={5 * k / 1e6} MHz)"
         )
-        names = ", ".join(map(lambda c: c.name, g))
+        names = ", ".join(c.name for c in g)
         print(textwrap.fill(names, initial_indent="  ", subsequent_indent="  "))
         print()
 

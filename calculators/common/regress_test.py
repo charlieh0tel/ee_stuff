@@ -6,9 +6,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-
 from regress import ols_linregress, robust_linregress
-
 
 if __name__ == "__main__":
     # Example usage:

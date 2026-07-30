@@ -4,9 +4,9 @@
 # dependencies = []
 # ///
 
-import sys
-import math
 import argparse
+import math
+import sys
 
 
 def generate_lines(n, radius, origin=(0.0, 0.0), angle_start_deg=0.0, kicad=False):

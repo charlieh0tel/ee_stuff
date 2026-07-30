@@ -5,7 +5,6 @@
 # ///
 
 import numpy as np
-
 from common import pi_pad
 
 
@@ -16,16 +15,16 @@ def _relative_error(target, value):
 # TODO(charliehotel): pick up defaults from command line.
 def Main(
     impedance=50,
-    pad_dbs=[1, 2, 3, 6, 9, 10, 20],
-    series=["", "E24", "E48", "E96", "E192"],
+    pad_dbs=(1, 2, 3, 6, 9, 10, 20),
+    series=("", "E24", "E48", "E96", "E192"),
 ):
     print("                                   ")
     print("          R_series                 ")
-    print("  --------/\/\/\/\---------        ")
+    print(r"  --------/\/\/\/\---------        ")
     print("      |              |             ")
-    print("      \              \             ")
+    print(r"      \              \             ")
     print("      / R_shunt      / R_shunt     ")
-    print("      \              \             ")
+    print(r"      \              \             ")
     print("      |              |             ")
     print("      _              _             ")
     print()
