@@ -132,7 +132,7 @@ The quadratic term is not the whole story. The linear term $\gd \vd$ is always p
 
 The ratio of the quadratic term to the linear term is $\vd/(2n\VT)$. For signals well below $2n\VT \approx \SI{50}{\milli\volt}$ (for $n \approx 1$), the linear piece is larger. The diode is always more linear than it is square-law. Equivalently: the I--V curve near any DC bias point approximates a straight line---a slope, or conductance---and the quadratic term is the \emph{curvature} of that line. Curvature is always a small correction to slope for small perturbations.
 
-Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$), the diode's terminal current is linear to better than \SI{1}{\percent} and it behaves as a resistor $\rd = 1/\gd$---but the rectified and mixing products do not switch off. They continue to scale as $\vhd^{\,2}$, shrinking quadratically until they sink below the noise and drift floor of any practical detector. The boundary marks where the nonlinearity becomes measurable, not where it begins.
+Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$) the diode behaves as a resistor $\rd = 1/\gd$, linear to better than \SI{1}{\percent}---but the rectified and mixing products do not switch off. They keep scaling as $\vhd^{\,2}$ until they sink below any practical noise floor. The boundary marks where the nonlinearity becomes measurable, not where it begins.
 
 \section*{The four operating regimes}
 
@@ -148,7 +148,7 @@ This is the regime of biasing calculations and Q-point dynamic-resistance measur
 \subsection*{Quadratic / square-law ($0.04\,n\VT \lesssim \vhd \lesssim n\VT$)}
 
 HD2 grows from \SI{1}{\percent} to \SI{25}{\percent}; HD3 reaches \SI{4}{\percent} at the upper edge but is still small enough to neglect.
-The two-term approximation \eqref{eq:quadratic} is valid, though least accurate at the upper edge, where the dropped cubic term adds about \SI{12}{\percent} to the fundamental and the predicted rectified DC runs about \SI{6}{\percent} low.
+The two-term approximation \eqref{eq:quadratic} is valid, though least accurate at the upper edge, where the dropped cubic term adds \SI{12}{\percent} to the fundamental and the predicted rectified DC runs \SI{6}{\percent} low.
 Single-tone detection gives DC output proportional to power; two-tone mixing produces $\omega_1 \pm \omega_2$ products with intermodulation dominated by third-order terms.
 
 For a Ge or Schottky diode biased at $\IQ \approx \SI{100}{\micro\ampere}$, this range spans roughly \SI{1}{\milli\volt} to \SI{27}{\milli\volt} of junction amplitude (Table~\ref{tab:diode-numbers})---about a decade and a half.
@@ -254,14 +254,14 @@ Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential ra
 \section*{Practical consequences}
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
-Everything in the framework scales with the conductance $\gd = \IQ/(n\VT)$, and a Ge or zero-bias Schottky diode has usable conductance at zero applied bias---Ge because of its large saturation current $\IS$, the Schottky because of its low barrier---so an unbiased detector already sits where rectification is efficient.
-An unbiased Si p--n junction, with $\IS$ in the nanoamp range or below, has almost no conductance and is essentially deaf without a few hundred millivolts of bias.
-The lower ideality factor of Ge and Schottky devices also nudges the square-law threshold $0.04\,n\VT$ down ($\sim$\SI{1.1}{\milli\volt} versus $\sim$\SI{1.9}{\milli\volt} for the Si p--n), but the zero-bias operating point is the decisive advantage.
-This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes; see the zero-bias caveat below.
+Everything in the framework scales with the conductance $\gd = \IQ/(n\VT)$, and a Ge or zero-bias Schottky diode has usable conductance at zero bias---Ge from its large saturation current, the Schottky from its low barrier---so an unbiased detector already rectifies efficiently.
+An unbiased Si p--n junction, with $\IS$ in the nanoamps or below, is essentially deaf without a few hundred millivolts of bias.
+The lower ideality factor also nudges the square-law threshold $0.04\,n\VT$ down ($\sim$\SI{1.1}{\milli\volt} versus $\sim$\SI{1.9}{\milli\volt} for the Si p--n), but zero-bias operation is the decisive advantage.
+That is why crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes; see the zero-bias caveat below.
 
 \textbf{Why bias helps.}
-Biasing the diode at a small forward current $\IQ$ raises the conductance $\gd = \IQ/(n\VT)$ and hence the responsivity $\gd/(2n\VT)$ of the quadratic term, so a given junction swing produces more rectified output.
-The square-law boundaries in junction voltage ($0.04\,n\VT$ and $n\VT$) do not move---they depend only on $n$ and $\VT$---but smaller signals now produce a measurable output, improving sensitivity at the cost of a bias circuit and quiescent current drain.
+Biasing at a small forward current $\IQ$ raises the conductance $\gd = \IQ/(n\VT)$ and the responsivity $\gd/(2n\VT)$, so a given junction swing produces more rectified output.
+The square-law boundaries ($0.04\,n\VT$ and $n\VT$) do not move---they depend only on $n$ and $\VT$---but smaller signals now produce measurable output, at the cost of a bias circuit and quiescent drain.
 
 \textbf{LO drive level in mixers.}
 A mixer driven within the square-law range converts signal power to IF power with predictable gain and third-order intermodulation products that follow the familiar two-tone IP3 model.
@@ -275,7 +275,7 @@ They are \textbf{not square-law devices at all}; their conversion performance de
 They offer better dynamic range and conversion efficiency than square-law designs at the cost of higher LO drive power.
 
 \textbf{Zero-bias detectors.}
-Near $\VQ = 0$---the operating point of zero-bias Schottky detectors---the normalized curvature is unchanged (the $-1$ in \eqref{eq:shockley} is a constant and contributes none of it), but the current scale collapses to $\IS$ and the zero-bias junction resistance $n\VT/\IS$ is enormous; detector behavior is set by $\IS$, the embedding impedance, and noise, and the $\VQ$-referenced boundaries above lose meaning \cite{maas}.
+Near $\VQ = 0$---the zero-bias Schottky operating point---the normalized curvature is unchanged (the $-1$ in \eqref{eq:shockley} is a constant and contributes none), but the current scale collapses to $\IS$ and the junction resistance $n\VT/\IS$ becomes enormous; $\IS$, embedding impedance, and noise---not the boundaries above---govern the detector \cite{maas}.
 
 \section*{Temperature effects}
 
