@@ -105,11 +105,11 @@ This is why varactor multipliers and parametric amplifiers form a circuit class 
 
 \section*{Practical limits}
 
-Two effects bound the lossless idealization. First, real varactors have a finite series resistance $r_s$ (bulk silicon, ohmic contact, and bondwire, typically \SIrange{0.5}{10}{\ohm} for microwave devices) that dissipates real power. The figure of merit is the cutoff frequency
+Two effects bound the lossless idealization. First, real varactors have a finite series resistance $r_s$ (bulk silicon, ohmic contact, and bondwire, typically \SIrange{0.5}{10}{\ohm} for microwave devices) that dissipates real power. The figure of merit is the dynamic cutoff frequency
 \begin{equation}
-f_c = \frac{1}{2\pi r_s C_{j,\min}},
+f_c = \frac{S_{\max} - S_{\min}}{2\pi r_s}, \qquad S \equiv \frac{1}{C_j},
 \end{equation}
-with $C_{j,\min}$ the capacitance at maximum reverse bias; modern Si and GaAs varactors reach $f_c$ of \SIrange{100}{1000}{\giga\hertz}, and conversion efficiency degrades steeply as the operating frequency approaches $f_c$ \cite{pozar}. Practical varactor doublers in the \SI{10}{\giga\hertz} range achieve \SIrange{40}{60}{\percent} efficiency despite the Manley--Rowe theoretical limit of \SI{100}{\percent}. Second, the diode breaks down in reverse at $V_\mathrm{BR}$, so for reverse-biased operation the combined practical swing constraint is
+the elastance swing between the usable bias extremes \cite{penfieldrafuse}; modern Si and GaAs varactors reach $f_c$ of \SIrange{100}{1000}{\giga\hertz}, and conversion efficiency degrades once the operating frequency exceeds roughly $f_c/100$ \cite{penfieldrafuse,pozar}. Practical varactor doublers in the \SI{10}{\giga\hertz} range achieve \SIrange{40}{60}{\percent} efficiency despite the Manley--Rowe theoretical limit of \SI{100}{\percent}. Second, the diode breaks down in reverse at $V_\mathrm{BR}$, so for reverse-biased operation the combined practical swing constraint is
 \begin{equation}
 |\vhd| < \min\!\left(|\VQ|,\; V_\mathrm{BR} - |\VQ|\right),
 \label{eq:swing-combined}
