@@ -121,7 +121,7 @@ When an RF signal $\vd = \vhd \cos\omega t$ drives the diode, the quadratic term
 
 \textbf{Mixing (two tones).}
 When two signals at $\omega_1$ and $\omega_2$ are simultaneously present, the quadratic term cross-multiplies them via $\cos\omega_1 t\cdot\cos\omega_2 t = \tfrac{1}{2}[\cos(\omega_1+\omega_2)t + \cos(\omega_1-\omega_2)t]$, producing outputs at the sum and difference frequencies $\omega_1 \pm \omega_2$.
-The linear term passes both signals through unchanged---the $\vd^{\,2}$ nonlinearity alone provides the frequency translation that resistive mixers exploit.
+The linear term passes both signals through unchanged---the $\vd^{\,2}$ nonlinearity is the lowest-order term that provides the frequency translation resistive mixers exploit.
 
 \section*{The catch: the linear piece always wins}
 
@@ -263,9 +263,10 @@ What bias buys is a junction resistance $\rd = n\VT/\IQ$ low enough to couple a 
 The square-law boundaries ($0.04\,n\VT$ and $n\VT$) do not move---they depend only on $n$ and $\VT$.
 
 \textbf{LO drive level in mixers.}
-A mixer driven within the square-law range converts signal power to IF power with predictable gain and third-order intermodulation products that follow the familiar two-tone IP3 model.
-Driving too hard moves the LO junction into the intermediate exponential regime: conversion gain compresses and additional higher-order products appear.
-``Square-law mixer'' behavior is valid only over a moderate range of LO junction amplitude.
+A passive diode mixer has conversion \emph{loss}, and the loss improves with LO drive up to a broad optimum---which is why practical mixers pump their diodes far into the switching regime and specify LO power in levels ($+7$ or $+17$~dBm).
+Square-law conversion is the weakly pumped special case: useful for analysis, rarely built, because a barely pumped diode is tens of decibels lossy.
+The signal, not the LO, is the small quantity; conversion is set by the Fourier coefficients of the LO-pumped conductance $g(t)$, to which every order of the series contributes \cite{maas}.
+In the weakly nonlinear regime the unpumped diode's junction-referred intercept does have a closed form, $\mathrm{IIP3} = 4n\VT\IQ$---about $-17$~dBm at $\IQ = \SI{100}{\micro\ampere}$, rising \SI{1}{\deci\bel} per decibel of bias current and sitting \SI{9}{\deci\bel} above the top of the square-law window; a pumped mixer's IP3 is a different calculation.
 
 \textbf{High-level switching mixers.}
 A different class of mixers takes the opposite approach: the LO drives the diodes deep into the rectifying regime, reversing the signal path at the LO rate rather than exploiting a $v^2$ nonlinearity.
