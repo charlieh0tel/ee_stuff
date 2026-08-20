@@ -55,7 +55,7 @@
 
 \maketitle
 
-The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation:
+The current--voltage characteristic of an ideal p--n junction diode is given by the Shockley equation \cite{sze}:
 \begin{equation}
 \ID = \IS \left( \eu^{\frac{\VD}{n \VT}} - 1 \right),
 \label{eq:shockley}
@@ -112,7 +112,7 @@ For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} t
 \id \approx \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2}.
 \label{eq:quadratic}
 \end{equation}
-The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis.
+The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis \cite{maas,pozar}.
 
 \emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products in a two-tone drive, not to the I--V being purely quadratic.
 
@@ -202,7 +202,7 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 
 \subsection*{Numerical values for common small-signal diodes}
 
-The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$:
+The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$, extracted from the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}:
 
 \begin{table}[htbp]
 \centering

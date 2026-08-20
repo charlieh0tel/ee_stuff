@@ -39,7 +39,7 @@ The depletion capacitance $C_j(\VD)$ of a p--n junction is a nonlinear function 
 
 \section*{Junction capacitance and its Q-point expansion}
 
-The depletion (junction) capacitance of a p--n junction is
+The depletion (junction) capacitance of a p--n junction is \cite{sze}
 \begin{equation}
 C_j(\VD) = \frac{C_{j0}}{\left(1 - \VD/V_0\right)^m},
 \label{eq:cj-raw}
@@ -83,7 +83,7 @@ because $Q(\VD)$ is a single-valued memoryless function and the trajectory close
 
 \section*{Manley--Rowe constraints and lossless conversion}
 
-As established in \eqref{eq:lossless-vdq}, the net time-averaged power into a memoryless nonlinear reactance vanishes; real power can therefore flow in at one frequency and out at another, subject to the Manley--Rowe constraints (Manley and Rowe, \textit{Proc.\ IRE}, 1956). With the convention that $P_k > 0$ denotes real power entering the nonlinear reactance at frequency $k\omega$ (so an output harmonic delivering power to a load has $P_k < 0$), the photon-counting form of the Manley--Rowe relation for a lossless nonlinear reactance driven by harmonics of a single fundamental $\omega$,
+As established in \eqref{eq:lossless-vdq}, the net time-averaged power into a memoryless nonlinear reactance vanishes; real power can therefore flow in at one frequency and out at another, subject to the Manley--Rowe constraints \cite{manleyrowe}. With the convention that $P_k > 0$ denotes real power entering the nonlinear reactance at frequency $k\omega$ (so an output harmonic delivering power to a load has $P_k < 0$), the photon-counting form of the Manley--Rowe relation for a lossless nonlinear reactance driven by harmonics of a single fundamental $\omega$,
 \begin{equation}
 \sum_{k=1}^{\infty} \frac{k\, P_k}{k\omega} \;=\; \frac{1}{\omega}\sum_{k=1}^{\infty} P_k \;=\; 0,
 \label{eq:mr-multiplier}
@@ -110,7 +110,7 @@ Two effects bound the lossless idealization. First, real varactors have a finite
 \begin{equation}
 f_c = \frac{1}{2\pi r_s C_{j,\min}},
 \end{equation}
-with $C_{j,\min}$ the capacitance at maximum reverse bias; modern Si and GaAs varactors reach $f_c$ of \SIrange{100}{1000}{\giga\hertz}, and conversion efficiency degrades steeply as the operating frequency approaches $f_c$. Practical varactor doublers in the \SI{10}{\giga\hertz} range achieve \SIrange{40}{60}{\percent} efficiency despite the Manley--Rowe theoretical limit of \SI{100}{\percent}. Second, the diode breaks down in reverse at $V_\mathrm{BR}$, so for reverse-biased operation the combined practical swing constraint is
+with $C_{j,\min}$ the capacitance at maximum reverse bias; modern Si and GaAs varactors reach $f_c$ of \SIrange{100}{1000}{\giga\hertz}, and conversion efficiency degrades steeply as the operating frequency approaches $f_c$ \cite{pozar}. Practical varactor doublers in the \SI{10}{\giga\hertz} range achieve \SIrange{40}{60}{\percent} efficiency despite the Manley--Rowe theoretical limit of \SI{100}{\percent}. Second, the diode breaks down in reverse at $V_\mathrm{BR}$, so for reverse-biased operation the combined practical swing constraint is
 \begin{equation}
 |\vhd| < \min\!\left(|\VQ|,\; V_\mathrm{BR} - |\VQ|\right),
 \label{eq:swing-combined}
