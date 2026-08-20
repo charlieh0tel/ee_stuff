@@ -247,7 +247,7 @@ Ge point-contact (1N34A)       & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} 
 \end{tabular}
 \end{table}
 
-Two observations stand out. First, the Si p--n device has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky, because its higher ideality factor raises $n\VT$; a 1N4148 can tolerate a junction swing up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A.
+Two observations stand out. First, the Si p--n device has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky, because its higher ideality factor raises $n\VT$ (ideality is a local, bias-dependent fit, not a technology constant); a 1N4148 can tolerate a junction swing up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A.
 
 Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential range is narrow: the upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the square-law boundary), versus \SI{359}{\milli\volt} for a Si p--n diode (about \SI{311}{\milli\volt} of unclipped exponential operation). This explains the historical division of labor: Ge and zero-bias Schottky for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n for switching and mixer service where the wider amplitude range is useful.
 
@@ -255,7 +255,7 @@ Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential ra
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
 Everything in the framework scales with the conductance $\gd = \IQ/(n\VT)$, and a Ge or zero-bias Schottky diode has usable conductance at zero applied bias---Ge because of its large saturation current $\IS$, the Schottky because of its low barrier---so an unbiased detector already sits where rectification is efficient.
-An unbiased Si p--n junction, with $\IS$ in the nanoamp range or below, has almost no conductance and is essentially deaf without roughly half a volt of bias.
+An unbiased Si p--n junction, with $\IS$ in the nanoamp range or below, has almost no conductance and is essentially deaf without a few hundred millivolts of bias.
 The lower ideality factor of Ge and Schottky devices also nudges the square-law threshold $0.04\,n\VT$ down ($\sim$\SI{1.1}{\milli\volt} versus $\sim$\SI{1.9}{\milli\volt} for the Si p--n), but the zero-bias operating point is the decisive advantage.
 This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes; see the zero-bias caveat below.
 
