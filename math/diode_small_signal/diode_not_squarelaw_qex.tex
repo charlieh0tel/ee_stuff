@@ -264,17 +264,11 @@ Biasing at a small forward current $\IQ$ raises the conductance $\gd = \IQ/(n\VT
 What bias buys is a junction resistance $\rd = n\VT/\IQ$ low enough to couple a practical RF source and video load, at the cost of a bias circuit, quiescent drain, and noise: bias current adds shot and, in the video band, flicker ($1/f$) noise, so the optimum detector bias is a compromise rather than more-is-better.
 The square-law boundaries ($0.04\,n\VT$ and $n\VT$) do not move---they depend only on $n$ and $\VT$.
 
-\textbf{LO drive level in mixers.}
-A passive diode mixer has conversion \emph{loss}, and the loss improves with LO drive up to a broad optimum---which is why practical mixers pump their diodes far into the switching regime and specify LO power in levels ($+7$ or $+17$~dBm).
+\textbf{Mixers and LO drive.}
+A passive diode mixer has conversion \emph{loss}, and the loss improves with LO drive up to a broad optimum---which is why practical mixers pump their diodes deep into the switching regime and specify LO power in levels ($+7$ or $+17$~dBm).
+Diode ring and double-balanced mixers are \textbf{not square-law devices at all}: the signal is the small quantity, the LO commutates it, and conversion is set by the Fourier coefficients of the pumped conductance $g(t)$ and the symmetry of the topology---dynamic range bought with LO power \cite{maas}.
 Square-law conversion is the weakly pumped special case: useful for analysis, rarely built, because a barely pumped diode is tens of decibels lossy.
-The signal, not the LO, is the small quantity; conversion is set by the Fourier coefficients of the LO-pumped conductance $g(t)$, to which every order of the series contributes \cite{maas}.
-In the weakly nonlinear regime the unpumped diode's junction-referred intercept does have a closed form, $\mathrm{IIP3} = 4n\VT\IQ$---about $-17$~dBm at $\IQ = \SI{100}{\micro\ampere}$, rising \SI{1}{\deci\bel} per decibel of bias current and sitting \SI{9}{\deci\bel} above the top of the square-law window; a pumped mixer's IP3 is a different calculation.
-
-\textbf{High-level switching mixers.}
-A different class of mixers takes the opposite approach: the LO drives the diodes deep into the rectifying regime, reversing the signal path at the LO rate rather than exploiting a $v^2$ nonlinearity.
-Diode ring and double-balanced mixers work this way.
-They are \textbf{not square-law devices at all}; their conversion performance derives from the switching action and the symmetry of the topology.
-They offer better dynamic range and conversion efficiency than square-law designs at the cost of higher LO drive power.
+In that regime the unpumped diode's junction-referred intercept has a closed form, $\mathrm{IIP3} = 4n\VT\IQ$---about $-17$~dBm at $\IQ = \SI{100}{\micro\ampere}$, rising \SI{1}{\deci\bel} per decibel of bias current and sitting \SI{9}{\deci\bel} above the top of the square-law window; a pumped mixer's IP3 is a different calculation.
 
 \textbf{Zero-bias detectors.}
 Near $\VQ = 0$---the operating point of true zero-bias Schottky detectors, meaning low-barrier parts such as the HSMS-285x and SMS7630 families (the medium-barrier 1N5711 wants \SIrange{20}{50}{\micro\ampere} of bias)---the normalized curvature is unchanged: the curvature coefficient is $\gamma = 1/(n\VT) \approx \SI{39}{\per\volt}$ for $n \approx 1$, and the $-1$ in \eqref{eq:shockley} contributes none of it.
