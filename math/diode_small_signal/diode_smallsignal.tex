@@ -112,7 +112,7 @@ For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} t
 \id \approx \gd \vd + \frac{\gd}{2\, n \VT}\, \vd^{\,2}.
 \label{eq:quadratic}
 \end{equation}
-The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis \cite{maas,pozar}.
+Truncation error is largest at the upper edge: at $\vhd = n\VT$ the dropped cubic term also adds $x^2/8 = 12.5\%$ to the fundamental and the quadratic estimate of the rectified DC runs about \SI{6}{\percent} low, so HD3 alone understates the total error. The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis \cite{maas,pozar}.
 
 \emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products in a two-tone drive, not to the I--V being purely quadratic.
 
