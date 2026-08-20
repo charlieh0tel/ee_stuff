@@ -90,7 +90,7 @@ Within this range the square-law approximation is genuinely useful:
   \item Mixer conversion is dominated by $f_1 \pm f_2$, with higher-order products small enough to manage.
 \end{itemize}
 
-Below this range the diode's current is linear to better than 1\,\%---but the rectified and mixing products do not switch off. They keep scaling as $v^2$, shrinking until they sink below the noise floor of any practical detector: the boundary marks where the nonlinearity becomes measurable, not where it begins.
+Below this range the diode's current is linear to better than 1\,\%---but the rectified and mixing products do not switch off. They keep scaling as $v^2$ until they sink below any practical noise floor: the boundary marks where the nonlinearity becomes measurable, not where it begins.
 Above it lie two further regimes---an intermediate exponential regime where harmonic generation dominates without clipping, and a rectifying regime where the signal swing exceeds the bias voltage---neither of which is a square law.
 Figure~\ref{fig:regimes} shows all four regimes for a 1N4148; its higher ideality factor stretches the boundaries to about 2--48\,mV, but the picture is the same.
 
@@ -105,17 +105,17 @@ The square-law range spans about a decade and a half; the two regimes above it a
 \section*{Practical consequences}
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
-A germanium or zero-bias Schottky diode already conducts a little with no bias at all---germanium because of its large leakage current, the Schottky because of its low barrier---so it rectifies weak signals without a battery.
-A silicon p--n junction, unbiased, conducts far too little to detect with---it takes a few hundred millivolts of bias to wake it up.
-This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes.
+A germanium or zero-bias Schottky diode conducts a little with no bias at all---germanium from its large leakage current, the Schottky from its low barrier---so it rectifies weak signals without a battery.
+A silicon p--n junction, unbiased, conducts far too little to detect with; it takes a few hundred millivolts of bias to wake it up.
+That is why crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes.
 
 \textbf{Why bias helps.}
-A small forward bias current moves the operating point further up the exponential curve, where both the conductance and the curvature are higher, so a given signal swing produces more rectified output.
-The square-law boundaries themselves do not move---they depend only on the ideality factor and temperature---but smaller signals now produce a usable output, making a biased detector more sensitive than an unbiased one, at the cost of a bias circuit and quiescent current drain.
+A small forward bias moves the operating point up the exponential curve, where conductance and curvature are both higher, so a given swing produces more rectified output.
+The square-law boundaries do not move---they depend only on ideality factor and temperature---but smaller signals now produce usable output. The price is a bias circuit and quiescent current drain.
 
 \textbf{LO drive level in mixers.}
-A mixer driven too hard is no longer operating in the square-law regime.
-Higher-order terms produce additional intermodulation products and compress the IF output---the converted signal level stops rising in proportion to the input.
+A mixer driven too hard leaves the square-law regime.
+Higher-order terms add intermodulation products and compress the IF output---the converted signal stops rising in proportion to the input.
 ``Square-law mixer'' behavior is only valid over a moderate range of LO drive levels.
 
 A different class of mixers takes the opposite approach: the LO drives the diodes hard into switching, reversing the signal path at the LO rate rather than exploiting a nonlinearity.
