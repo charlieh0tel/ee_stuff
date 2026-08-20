@@ -156,7 +156,7 @@ The Bessel expansion \eqref{eq:bessel-expansion} remains useful beyond the first
 \end{equation}
 so the $-1$ term in \eqref{eq:shockley} reappears as the $-\IS$ DC offset of \eqref{eq:bessel-full-shockley} and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. Real rectifier circuits, however, rarely present a pure sinusoid to the junction: as $\vhd$ approaches and exceeds $\VQ$, load impedance, charge-storage time constants, series resistance, and breakdown shape the diode voltage and dominate the closed-form result. The Bessel expansion remains the ideal reference for a prescribed sinusoidal diode voltage; a real rectifier must be solved with the full device physics plus the embedding network. Table~\ref{tab:diode-regimes} and Figure~\ref{fig:regimes} summarize the four operating regimes and their boundaries.
 
-The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of zero-bias Schottky detectors --- the forward-exponential approximation fails, but the normalized curvature is unchanged: the $-1$ in \eqref{eq:shockley} is a constant and contributes no curvature. What changes is the current scale: it collapses to $\IS$, the junction resistance $n\VT/\IS$ becomes enormous, and $\IS$, embedding impedance, and noise --- not the $\VQ$-referenced boundaries derived here --- govern the detector.
+The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of zero-bias Schottky detectors --- the forward-exponential approximation fails, but the normalized curvature is unchanged: the $-1$ in \eqref{eq:shockley} is a constant and contributes no curvature. What changes is the current scale: it collapses to $\IS$, the junction resistance $n\VT/\IS$ becomes enormous, and $\IS$, embedding impedance, and noise --- not the $\VQ$-referenced boundaries derived here --- govern the detector \cite{cowley}.
 
 \begin{table}[H]
 \centering
@@ -275,6 +275,9 @@ S.\ A.\ Maas, \textit{Microwave Mixers}, 2nd ed.\ Norwood, MA: Artech House, 199
 
 \bibitem{pozar}
 D.\ M.\ Pozar, \textit{Microwave Engineering}, 4th ed.\ Hoboken, NJ: Wiley, 2011.
+
+\bibitem{cowley}
+A.\ M.\ Cowley and H.\ O.\ Sorensen, ``Quantitative comparison of solid-state microwave detectors,'' \textit{IEEE Trans.\ Microwave Theory Tech.}, vol.\ MTT-14, no.\ 12, pp.\ 588--602, Dec.\ 1966.
 
 \bibitem{nxp1n4148}
 Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet (Si p--n; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$).

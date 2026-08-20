@@ -255,7 +255,7 @@ These boundaries are \emph{junction-voltage} ideals, and two real-device effects
 Every output magnitude in the framework scales with the conductance $\gd = \IQ/(n\VT)$, and a Ge or zero-bias Schottky diode has usable conductance at zero bias---Ge from its large saturation current, the Schottky from its low barrier---so an unbiased detector already rectifies efficiently.
 An unbiased Si p--n junction, with $\IS$ in the nanoamps or below, is essentially deaf without a few hundred millivolts of bias.
 The lower ideality factor also places the HD2 markers lower ($\sim$\SI{1.1}{\milli\volt} versus $\sim$\SI{1.9}{\milli\volt} for the Si p--n), though that is bookkeeping rather than sensitivity; zero-bias operation is the decisive advantage.
-That is why crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes; see the zero-bias caveat below.
+That is why crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes \cite{torrey}; see the zero-bias caveat below.
 
 \textbf{Why bias helps.}
 Biasing at a small forward current $\IQ$ raises the conductance $\gd = \IQ/(n\VT)$ and with it the rectified current for a given junction swing; the power-referred current responsivity, $1/(2n\VT) \approx \SI{19}{\ampere\per\watt}$ for $n \approx 1$, is bias-independent.
@@ -275,7 +275,9 @@ They are \textbf{not square-law devices at all}; their conversion performance de
 They offer better dynamic range and conversion efficiency than square-law designs at the cost of higher LO drive power.
 
 \textbf{Zero-bias detectors.}
-Near $\VQ = 0$---the zero-bias Schottky operating point---the normalized curvature is unchanged (the $-1$ in \eqref{eq:shockley} is a constant and contributes none), but the current scale collapses to $\IS$ and the junction resistance $n\VT/\IS$ becomes enormous; $\IS$, embedding impedance, and noise---not the boundaries above---govern the detector \cite{maas}.
+Near $\VQ = 0$---the operating point of true zero-bias Schottky detectors, meaning low-barrier parts such as the HSMS-285x and SMS7630 families (the medium-barrier 1N5711 wants \SIrange{20}{50}{\micro\ampere} of bias)---the normalized curvature is unchanged: the curvature coefficient is $\gamma = 1/(n\VT) \approx \SI{39}{\per\volt}$ for $n \approx 1$, and the $-1$ in \eqref{eq:shockley} contributes none of it.
+What collapses is the current scale, to $\IS$, and with it the video resistance $R_v = n\VT/\IS$: about \SI{9}{\kilo\ohm} for a low-barrier part with $\IS \approx \SI{3}{\micro\ampere}$, versus tens of megohms for a nanoamp-class Si p--n junction---which is why the 1N4148 is deaf.
+$R_v$, the embedding impedance, and noise set the sensitivity; tangential signal sensitivity is the usual figure of merit \cite{cowley,hpan923}.
 
 \section*{Temperature effects}
 
@@ -308,8 +310,17 @@ Skyworks Solutions, \textit{1N5711---Schottky Barrier Diode}, data sheet (Si Sch
 \bibitem{1n34a}
 NTE Electronics, \textit{NTE109 / 1N34A---Germanium Signal Detector Diode}, data sheet (Ge point-contact; representative fit $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$; the datasheet itself specifies only high-current limits).
 
+\bibitem{torrey}
+H.\ C.\ Torrey and C.\ A.\ Whitmer, \textit{Crystal Rectifiers}, MIT Radiation Laboratory Series, vol.\ 15. New York: McGraw-Hill, 1948.
+
 \bibitem{maas}
 S.\ A.\ Maas, \textit{Microwave Mixers}, 2nd ed.\ Norwood, MA: Artech House, 1993.
+
+\bibitem{cowley}
+A.\ M.\ Cowley and H.\ O.\ Sorensen, ``Quantitative comparison of solid-state microwave detectors,'' \textit{IEEE Trans.\ Microwave Theory Tech.}, vol.\ MTT-14, no.\ 12, pp.\ 588--602, Dec.\ 1966.
+
+\bibitem{hpan923}
+Hewlett-Packard, \textit{Schottky Barrier Diode Video Detectors}, Application Note 923, and \textit{Square Law and Linear Detection}, Application Note 986.
 
 \end{thebibliography}
 
