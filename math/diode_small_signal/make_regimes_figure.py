@@ -216,6 +216,11 @@ def make_figure(newsletter=False):
         val_str = f"{v_mv:.1f}" if decimals > 0 else f"{round(v_mv)}"
         if newsletter:
             label_text = rf"$\sim {val_str}$ mV"
+        elif linestyle == ":":
+            # Single line, floated above the band, clear of the 359 mV label.
+            label_text = rf"{formula} $\sim {val_str}$ mV"
+            ax2.text(v, 0.71, label_text, ha="center", va="center", fontsize=8)
+            continue
         else:
             label_text = rf"{formula}" + "\n" + rf"$\sim {val_str}$ mV"
         ax2.text(v, 0.12, label_text, ha="center", va="center", fontsize=8)
