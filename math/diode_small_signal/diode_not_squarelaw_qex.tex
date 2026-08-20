@@ -249,6 +249,8 @@ Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential ra
 
 These boundaries are \emph{junction-voltage} ideals, and two real-device effects bound them from above. Series resistance caps the exponential window: the peak current at the 1N5711's ideal \SI{188}{\milli\volt} edge would be about \SI{85}{\milli\ampere}---past the device's maximum rating---and an $I_{\mathrm{pk}} r_s \lesssim n\VT/10$ criterion holds the window to roughly \SI{210}{\milli\volt} for the 1N4148 and to about the square-law boundary for the Schottky and Ge parts. Capacitance bounds it in frequency: junction plus diffusion capacitance bypasses a 1N4148's junction above roughly \SI{30}{\mega\hertz} at this bias, and the absence of diffusion capacitance is the real reason Schottky diodes own microwave work. The companion note \cite{companion} works both limits out.
 
+The source amplitude that produces a given junction swing depends on $\rd = n\VT/\IQ$ (\SIrange{270}{480}{\ohm} at \SI{100}{\micro\ampere}, not \SI{50}{\ohm}), on $r_s$, and on the matching network, so two restatements travel better than millivolts. Driven from a current source, $\mathrm{HD2} = \hat{\imath}/(4\IQ)$ and the square-law window's upper edge is simply peak signal current $\lesssim$ bias current. In junction-referred available power, the window runs from roughly $-54$ to $-26$~dBm at $\IQ = \SI{100}{\micro\ampere}$---about \SI{28}{\deci\bel} of input power range.
+
 \section*{Practical consequences}
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
