@@ -76,7 +76,7 @@ Substituting into \eqref{eq:exp-approx} and factoring,
 \begin{equation}
 \ID = \underbrace{\IS\, \eu^{\frac{\VQ}{n \VT}}}_{\displaystyle \IQ}\, \eu^{\frac{\vd}{n \VT}} = \IQ\, \eu^{\frac{\vd}{n \VT}}.
 \end{equation}
-The exact Shockley Q-point current $\IS(\eu^{\VQ/n\VT}-1)$ differs from $\IQ$ by $\IS$ (the $-1$ term in \eqref{eq:shockley}), negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
+The exact Shockley Q-point current $\IS(\eu^{\VQ/n\VT}-1)$ differs from $\IQ$ by $\IS$ (the $-1$ term in \eqref{eq:shockley}), a difference negligible at the forward biases considered here. The Maclaurin series of the exponential converges for all $\vd$; the practical question is how many terms are needed for a given accuracy. Expanding,
 \begin{equation}
 \ID = \IQ \left[ 1 + \frac{\vd}{n \VT} + \frac{1}{2!}\left(\frac{\vd}{n \VT}\right)^{\!2} + \frac{1}{3!}\left(\frac{\vd}{n \VT}\right)^{\!3} + \cdots \right].
 \end{equation}
@@ -157,7 +157,7 @@ The Bessel expansion \eqref{eq:bessel-expansion} remains useful beyond the first
 \end{equation}
 so the $-1$ term in \eqref{eq:shockley} reappears as the $-\IS$ DC offset of \eqref{eq:bessel-full-shockley} and leaves every harmonic amplitude $2\IQ I_k(x)$ unchanged. Real rectifier circuits, however, rarely present a pure sinusoid to the junction: as $\vhd$ approaches and exceeds $\VQ$, load impedance, charge-storage time constants, series resistance, and breakdown shape the diode voltage and dominate the closed-form result. The Bessel expansion remains the ideal reference for a prescribed sinusoidal diode voltage; a real rectifier must be solved with the full device physics plus the embedding network. Table~\ref{tab:diode-regimes} and Figure~\ref{fig:regimes} summarize the four operating regimes and their boundaries.
 
-The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of zero-bias Schottky detectors --- the forward-exponential approximation fails, but the normalized curvature is unchanged: the $-1$ in \eqref{eq:shockley} is a constant and contributes none of it. What changes is the current scale: it collapses to $\IS$, the junction resistance $n\VT/\IS$ becomes enormous, and $\IS$, embedding impedance, and noise --- not the $\VQ$-referenced boundaries derived here --- govern the detector.
+The framework above assumes a robust forward bias ($\VQ > 5n\VT$), so the forward-exponential approximation \eqref{eq:exp-approx} defines a natural expansion point and the $-1$ in \eqref{eq:shockley} contributes only the DC offset noted above. Near $\VQ = 0$ --- the operating point of zero-bias Schottky detectors --- the forward-exponential approximation fails, but the normalized curvature is unchanged: the $-1$ in \eqref{eq:shockley} is a constant and contributes no curvature. What changes is the current scale: it collapses to $\IS$, the junction resistance $n\VT/\IS$ becomes enormous, and $\IS$, embedding impedance, and noise --- not the $\VQ$-referenced boundaries derived here --- govern the detector.
 
 \begin{table}[H]
 \centering
