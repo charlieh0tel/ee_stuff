@@ -247,6 +247,8 @@ Two observations stand out. First, the Si p--n device has roughly $1.7$--$1.8\ti
 
 Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential range is narrow: the upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), versus \SI{359}{\milli\volt} for a Si p--n diode (about \SI{311}{\milli\volt} of unclipped exponential operation). That wider range is what suited Si p--n diodes to switching, clamping, and mixer service.
 
+These boundaries are \emph{junction-voltage} ideals, and two real-device effects bound them from above. Series resistance caps the exponential window: the peak current at the 1N5711's ideal \SI{188}{\milli\volt} edge would be about \SI{85}{\milli\ampere}---past the device's maximum rating---and an $I_{\mathrm{pk}} r_s \lesssim n\VT/10$ criterion holds the window to roughly \SI{210}{\milli\volt} for the 1N4148 and to about the square-law boundary for the Schottky and Ge parts. Capacitance bounds it in frequency: junction plus diffusion capacitance bypasses a 1N4148's junction above roughly \SI{30}{\mega\hertz} at this bias, and the absence of diffusion capacitance is the real reason Schottky diodes own microwave work. The companion note \cite{companion} works both limits out.
+
 \section*{Practical consequences}
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
