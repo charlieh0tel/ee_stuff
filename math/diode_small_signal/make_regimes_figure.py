@@ -200,13 +200,18 @@ def make_figure(newsletter=False):
         )
 
     boundaries = [
-        (diode.v_lin, r"$0.04\,nV_{\mathrm{T}}$", 1),
-        (diode.v_quad, r"$nV_{\mathrm{T}}$", 0),
-        (diode.v_interm, r"$V_{\mathrm{Q}}-4nV_{\mathrm{T}}$", 0),
+        (diode.v_lin, r"$0.04\,nV_{\mathrm{T}}$", 1, "-"),
+        (diode.v_quad, r"$nV_{\mathrm{T}}$", 0, "-"),
+        (diode.v_interm, r"$V_{\mathrm{Q}}-4nV_{\mathrm{T}}$", 0, "-"),
     ]
+    if not newsletter:
+        # Dotted tick: where a reverse-biased interval first appears.
+        boundaries.append((diode.VQ, r"$V_{\mathrm{Q}}$", 0, ":"))
 
-    for v, formula, decimals in boundaries:
-        ax2.plot([v, v], [y_lo, y_hi], color="black", linewidth=0.6)
+    for v, formula, decimals, linestyle in boundaries:
+        ax2.plot(
+            [v, v], [y_lo, y_hi], color="black", linewidth=0.6, linestyle=linestyle
+        )
         v_mv = v * 1000
         val_str = f"{v_mv:.1f}" if decimals > 0 else f"{round(v_mv)}"
         if newsletter:
