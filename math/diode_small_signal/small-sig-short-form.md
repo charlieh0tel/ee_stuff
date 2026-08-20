@@ -26,7 +26,7 @@ Keep these separate throughout — same nonlinearity, different consequences:
 2. **What the diode actually does** — exponential I-V equation, stated not derived
 3. **Why square law seems right** — two-term expansion; detection (v² → DC ∝ power) and mixing (v² cross-multiplies two tones → f₁ ± f₂)
 4. **The catch: the linear piece always wins** — slope vs. curvature analogy; ~50 mV threshold
-5. **The sweet spot** — 1–25 mV range for Ge/Schottky; figure; brief acknowledgment of upper regimes (harmonic-rich exponential, rectifying)
+5. **The sweet spot** — 1–27 mV range for Ge/Schottky (matching Table 2); figure; brief acknowledgment of upper regimes (harmonic-rich exponential, rectifying)
 6. **Practical consequences** — Ge/Schottky vs. Si; why bias helps; LO drive level; high-level switching mixers (diode ring, double-balanced) are **not** square-law devices
 7. **Further reading** — link to companion technical note
 8. **The bottom line** — closing analogy
