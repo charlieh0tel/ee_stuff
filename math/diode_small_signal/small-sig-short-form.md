@@ -33,11 +33,14 @@ Keep these separate throughout — same nonlinearity, different consequences:
 
 ## Status
 
-Draft complete in `diode_not_squarelaw_newsletter.tex`. Currently 4 pages.
+Newsletter draft complete in `diode_not_squarelaw_newsletter.tex` (4 pages).
+QEX draft complete in `diode_not_squarelaw_qex.tex` (abstract, four regimes, both tables, temperature section per the plan below).
 
 Outstanding:
-- Table 2 from the technical note (numerical diode values) not yet added — consider for a final polish pass
+- Table 2 from the technical note (numerical diode values) not yet added to the newsletter version — consider for a final polish pass
 - Read-through before submission
+- QEX rights question (see below) unresolved
+- QEX format conversion (Word/RTF, 300 DPI raster figures) not started
 
 ## Length
 
@@ -89,7 +92,7 @@ Outline:
 11. References: Sze & Ng (device physics), Maas (mixers), datasheets — Pozar omitted as less directly relevant
 
 Draws on `diode_smallsignal.tex` for math; `diode_not_squarelaw_newsletter.tex` as prose starting point.
-Source file: `diode_not_squarelaw_qex.tex` (to be created).
+Source file: `diode_not_squarelaw_qex.tex` (drafted).
 
 ## Relation to diode_smallsignal.tex
 
