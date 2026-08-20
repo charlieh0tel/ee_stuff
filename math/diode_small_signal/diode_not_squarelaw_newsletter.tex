@@ -72,26 +72,16 @@ The linear piece contributes nothing at the sum or difference frequency---it pas
 Here is what the textbooks gloss over.
 The linear piece is always present and, for small signals, always \emph{larger} than the quadratic piece.
 
-Near the bias point, the curve approximates a straight line---a slope, or conductance.
-The quadratic term is the \emph{curvature} of that line.
-Curvature is always smaller than slope for small signals; from the equation, the quadratic term is smaller than the linear term by a factor of $v / (2nV_T)$, so signals well below $\SI{50}{\milli\volt}$ are dominated by the linear piece.
-
-Well below the square-law range---under a millivolt or so---the diode is effectively linear: no rectification for detection, no frequency conversion for mixing.
+Near the bias point the curve is nearly a straight line; the quadratic term is its \emph{curvature}.
+From the equation, the quadratic term is smaller than the linear one by a factor of $v / (2nV_T)$, so signals well below $\SI{50}{\milli\volt}$ are mostly linear feedthrough.
 
 The diode is always more linear than it is square-law.
 
 \section*{The sweet spot}
 
-Between these extremes is the square-law range---roughly 1\,mV to 27\,mV across the junction for a germanium or Schottky diode at room temperature.
-
-Within this range the square-law approximation is genuinely useful:
-\begin{itemize}
-  \item Detector DC output is proportional to power---clean and predictable.
-  \item Mixer conversion is dominated by $f_1 \pm f_2$, with higher-order products small enough to manage.
-\end{itemize}
-
-Below this range the diode's current is linear to better than 1\,\%---but the rectified and mixing products do not switch off. They keep scaling as $v^2$ until they sink below any practical noise floor: the boundary marks where the nonlinearity becomes measurable, not where it begins.
-Above it lie two further regimes---an intermediate exponential regime where harmonic generation dominates without clipping, and a rectifying regime where the signal swing exceeds the bias voltage---neither of which is a square law.
+The square-law approximation is genuinely useful between roughly 1\,mV and 27\,mV across the junction (germanium or Schottky, room temperature): detector output tracks power, and mixer output is dominated by $f_1 \pm f_2$.
+Below this range the nonlinear products keep scaling as $v^2$ until they sink below any practical noise floor---the boundary marks where the nonlinearity becomes measurable, not where it begins.
+Above it lie two further regimes---harmonic-rich exponential operation without clipping, and rectification once the swing exceeds the bias---neither of which is a square law.
 Figure~\ref{fig:regimes} shows all four regimes for a 1N4148; its higher ideality factor stretches the boundaries to about 2--48\,mV, but the picture is the same.
 
 \begin{figure}[H]
@@ -114,16 +104,15 @@ A small forward bias moves the operating point up the exponential curve, where c
 The square-law boundaries do not move---they depend only on ideality factor and temperature---but smaller signals now produce usable output. The price is a bias circuit and quiescent current drain.
 
 \textbf{LO drive level in mixers.}
-A mixer driven too hard leaves the square-law regime.
-Higher-order terms add intermodulation products and compress the IF output---the converted signal stops rising in proportion to the input.
-``Square-law mixer'' behavior is only valid over a moderate range of LO drive levels.
+A mixer driven too hard leaves the square-law regime: higher-order products appear and the IF output compresses.
+``Square-law mixer'' behavior holds only over a moderate range of LO drive.
 
 A different class of mixers takes the opposite approach: the LO drives the diodes hard into switching, reversing the signal path at the LO rate rather than exploiting a nonlinearity.
 Diode ring and double-balanced mixers work this way---they are \textbf{not square-law devices at all}, and they offer better dynamic range and conversion efficiency than square-law designs.
 
 \section*{Further reading}
 
-A complete derivation of the regime boundaries, harmonic distortion coefficients, and numerical values for common diode types is in the companion technical note \textit{Derivation of Diode Small-Signal and Square-Law Behavior}, available at \url{https://charlieh0tel.github.io/ee_stuff/math/diode_small_signal/diode_smallsignal.pdf}.
+The companion technical note \textit{Derivation of Diode Small-Signal and Square-Law Behavior} derives the regime boundaries and gives numerical values for common diodes: \url{https://charlieh0tel.github.io/ee_stuff/math/diode_small_signal/diode_smallsignal.pdf}.
 
 \section*{The bottom line}
 

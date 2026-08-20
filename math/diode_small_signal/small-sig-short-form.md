@@ -33,7 +33,7 @@ Keep these separate throughout — same nonlinearity, different consequences:
 
 ## Status
 
-Newsletter draft complete in `diode_not_squarelaw_newsletter.tex` (4 pages).
+Newsletter draft complete in `diode_not_squarelaw_newsletter.tex` (3 pages).
 QEX draft complete in `diode_not_squarelaw_qex.tex` (abstract, four regimes, both tables, temperature section per the plan below).
 
 Outstanding:
@@ -45,7 +45,7 @@ Outstanding:
 
 ## Length
 
-- Newsletter version: 4 pages with figure (two equations included)
+- Newsletter version: 3 pages with figure (two equations included)
 - QEX version: would expand with I-V curve panel, full Table 1 + Table 2, more quantitative discussion of regimes
 
 ## Figures
