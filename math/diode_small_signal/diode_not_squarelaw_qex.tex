@@ -133,7 +133,7 @@ Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt
 
 \section*{The four operating regimes}
 
-As drive amplitude increases, the diode traverses four regimes in turn. Table~\ref{tab:diode-regimes} summarizes them; Figure~\ref{fig:regimes} maps them onto a 1N4148 at room temperature, whose higher ideality factor stretches the boundaries to about \SIrange{2}{48}{\milli\volt}.
+As drive amplitude increases, a diode biased at $\VQ > 5n\VT$ traverses four regimes in turn; at lower bias the middle regimes shrink away (see the zero-bias caveat below). Table~\ref{tab:diode-regimes} summarizes them; Figure~\ref{fig:regimes} maps them onto a 1N4148 at room temperature, whose higher ideality factor stretches the boundaries to about \SIrange{2}{48}{\milli\volt}.
 
 \subsection*{Linear ($\vhd \lesssim 0.04\,n\VT$)}
 
@@ -184,7 +184,7 @@ Circuit effects---load impedance, charge-storage time constants, series resistan
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.15}
-\caption{Diode operating regimes expressed as algebraic functions of $n$, $\VT$, and $\VQ$. Boundaries for the first two rows are based on HD2 $=$ \SI{1}{\percent} and \SI{25}{\percent}; the last two are based on validity of the exponential approximation~\eqref{eq:exp-approx}.}
+\caption{Diode operating regimes expressed as algebraic functions of $n$, $\VT$, and $\VQ$. All four boundaries are bookkeeping thresholds on model accuracy: HD2 $=$ \SI{1}{\percent} and \SI{25}{\percent} for the first two rows, validity of the exponential approximation~\eqref{eq:exp-approx} for the last two. The lower boundary marks where nonlinearity becomes measurable, not where it begins.}
 \label{tab:diode-regimes}
 
 \vspace{0.5\baselineskip}
