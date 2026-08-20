@@ -105,8 +105,9 @@ The square-law range spans roughly one decade; the two regimes above it are not 
 \section*{Practical consequences}
 
 \textbf{Why Ge and Schottky beat Si for weak-signal detection.}
-A germanium or zero-bias Schottky diode reaches its square-law range at lower signal levels than a silicon p--n diode because its forward voltage is lower---the square-law threshold arrives with less power.
-This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and Schottky diodes.
+A germanium or zero-bias Schottky diode already conducts a little with no bias at all---germanium because of its large leakage current, the Schottky because of its low barrier---so it rectifies weak signals without a battery.
+A silicon p--n junction needs about half a volt of bias before it wakes up; unbiased, it is essentially deaf.
+This is the fundamental reason crystal radio builders and microwave detector designers reach for Ge and zero-bias Schottky diodes.
 
 \textbf{Why bias helps.}
 A small forward bias current moves the operating point further up the exponential curve, where both the conductance and the curvature are higher.
