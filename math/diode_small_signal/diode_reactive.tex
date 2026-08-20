@@ -101,7 +101,7 @@ yielding $|P_n| = |P_1|$: Manley--Rowe permits \SI{100}{\percent} conversion eff
 \end{equation}
 These no longer collapse to energy conservation. They produce the parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ with $\omega_o = \omega_p + \omega_s$, the excess power supplied by the pump --- conversion gain above unity in principle, limited in practice by loss, matching, stability, and pump power.
 
-This is why varactor multipliers and parametric amplifiers form a circuit class distinct from resistive mixers. Resistive mixing pays two penalties: a weakly driven diode dissipates real signal power in its small-signal conductance $\gd$, and even an ideal commutating switch --- which itself dissipates nothing --- still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ with broadband resistive image termination (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}.
+This is why varactor multipliers and parametric amplifiers form a circuit class distinct from resistive mixers. Resistive mixing pays two penalties: a weakly driven diode dissipates real signal power in its small-signal conductance $\gd$, and even an ideal commutating switch --- which itself dissipates nothing --- still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ for a 50\%-duty switch matched at signal and image with the other sidebands short-circuited (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}. (The resistive counterpart of Manley--Rowe is Pantell's set of power relations for nonlinear resistors \cite{pantell}.)
 
 \section*{Practical limits}
 
@@ -131,6 +131,9 @@ P.\ Penfield Jr.\ and R.\ P.\ Rafuse, \textit{Varactor Applications}.\ Cambridge
 
 \bibitem{maas}
 S.\ A.\ Maas, \textit{Microwave Mixers}, 2nd ed.\ Norwood, MA: Artech House, 1993.
+
+\bibitem{pantell}
+R.\ H.\ Pantell, ``General power relationships for positive and negative nonlinear resistive elements,'' \textit{Proceedings of the IRE}, vol.\ 46, no.\ 12, pp.\ 1910--1913, Dec.\ 1958.
 
 \bibitem{pozar}
 D.\ M.\ Pozar, \textit{Microwave Engineering}, 4th ed.\ Hoboken, NJ: Wiley, 2011.
