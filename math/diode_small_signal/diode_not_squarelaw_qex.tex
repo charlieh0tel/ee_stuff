@@ -284,7 +284,7 @@ $R_v$, the embedding impedance, and noise set the sensitivity; tangential signal
 \section*{Temperature effects}
 
 Both $\VT$ and $\VQ$ shift with temperature, moving the regime boundaries.
-$\VT$ scales linearly with absolute temperature ($\sim$\SI{20}{\milli\volt} at \SI{-40}{\degreeCelsius} to \SI{31}{\milli\volt} at \SI{85}{\degreeCelsius}), stretching the linear and square-law cutoffs by roughly $\pm\SI{20}{\percent}$; meanwhile $\VQ$ at constant bias falls at about \SI{-2}{\milli\volt\per\kelvin} for Si, compressing the intermediate-regime upper edge $\VQ - 4n\VT$ faster still since $4n\VT$ rises simultaneously.
+$\VT$ scales linearly with absolute temperature ($\sim$\SI{20}{\milli\volt} at \SI{-40}{\degreeCelsius} to \SI{31}{\milli\volt} at \SI{85}{\degreeCelsius}), stretching the linear and square-law cutoffs by roughly $\pm\SI{20}{\percent}$; meanwhile $\VQ$ at constant bias falls at \SIrange{-2}{-2.5}{\milli\volt\per\kelvin} for Si, compressing the intermediate-regime upper edge $\VQ - 4n\VT$ faster still since $4n\VT$ rises simultaneously.
 A fixed-bias detector reads this drift directly as a DC baseline shift at its output.
 For zero-bias Schottky detectors the dominant effect is neither of these: $\IS \propto T^2\, \eu^{-\phi_B/kT}$ roughly doubles every \SI{13}{\kelvin} for a \SI{0.35}{\electronvolt} barrier, swinging the video resistance $n\VT/\IS$ by more than two orders of magnitude across \SIrange{-40}{85}{\degreeCelsius}.
 
