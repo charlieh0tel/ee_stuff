@@ -132,7 +132,7 @@ The quadratic term is not the whole story. The linear term $\gd \vd$ is always p
 
 The ratio of the quadratic term to the linear term is $\vd/(2n\VT)$. For signals well below $2n\VT \approx \SI{50}{\milli\volt}$ (for $n \approx 1$), the linear piece is larger. The diode is always more linear than it is square-law. Equivalently: the I--V curve near any DC bias point approximates a straight line---a slope, or conductance---and the quadratic term is the \emph{curvature} of that line. Curvature is always a small correction to slope for small perturbations.
 
-Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$), the diode is effectively a pure resistor $\rd = 1/\gd$: no rectification, no frequency conversion, no mixing. Detection sensitivity collapses and a mixer produces no IF output.
+Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$), the diode's terminal current is linear to better than \SI{1}{\percent} and it behaves as a resistor $\rd = 1/\gd$---but the rectified and mixing products do not switch off. They continue to scale as $\vhd^{\,2}$, shrinking quadratically until they sink below the noise and drift floor of any practical detector. The boundary marks where the nonlinearity becomes measurable, not where it begins.
 
 \section*{The four operating regimes}
 
@@ -142,7 +142,7 @@ As drive amplitude increases, the diode traverses four regimes in turn. Table~\r
 
 Only the first term of \eqref{eq:power-series} is significant: $\id \approx \gd \vd$.
 The diode is a small-signal resistor of dynamic resistance $\rd = n\VT/\IQ$.
-No mixing, no rectification, no harmonic generation occurs.
+Mixing, rectification, and harmonic products are not zero, but they scale as $\vhd^{\,2}$ and sit far below practical noise floors.
 This is the regime of biasing calculations and Q-point dynamic-resistance measurements.
 
 \subsection*{Quadratic / square-law ($0.04\,n\VT \lesssim \vhd \lesssim n\VT$)}

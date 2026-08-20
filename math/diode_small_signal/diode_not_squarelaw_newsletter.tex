@@ -90,7 +90,7 @@ Within this range the square-law approximation is genuinely useful:
   \item Mixer conversion is dominated by $f_1 \pm f_2$, with higher-order products small enough to manage.
 \end{itemize}
 
-Below this range the diode is effectively linear: detection sensitivity collapses and mixers produce no conversion.
+Below this range the diode's current is linear to better than 1\,\%---but the rectified and mixing products do not switch off. They keep scaling as $v^2$, shrinking until they sink below the noise floor of any practical detector: the boundary marks where the nonlinearity becomes measurable, not where it begins.
 Above it lie two further regimes---an intermediate exponential regime where harmonic generation dominates without clipping, and a rectifying regime where the signal swing exceeds the bias voltage---neither of which is a square law.
 Figure~\ref{fig:regimes} shows all four regimes for a 1N4148; its higher ideality factor stretches the boundaries to about 2--48\,mV, but the picture is the same.
 
