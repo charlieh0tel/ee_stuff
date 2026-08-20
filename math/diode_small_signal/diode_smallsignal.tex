@@ -96,6 +96,7 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each nonlinear term in \eqref{
 \end{equation}
 (Leading-order expressions; exactly, $\mathrm{HD2} = I_2(x)/I_1(x)$ with $x = \vhd/n\VT$, reaching \SI{25}{\percent} at $x = 1.04$ rather than at $x = 1$.) These distortion criteria set the lower two regime boundaries; the upper two follow from the validity of the exponential approximation \eqref{eq:exp-approx}. As the drive amplitude grows, the diode traverses four regimes, each treated in its own subsection below.
 
+\pdfbookmark[1]{Linear regime}{linear}
 \subsection*{Linear regime}
 
 For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\sim$\SI{1.9}{\milli\volt} for $n \approx 1.85$), HD2 stays below \SI{1}{\percent} and only the leading term of \eqref{eq:power-series} survives:
@@ -105,6 +106,7 @@ For $\vhd \lesssim 0.04\, n\VT$ ($\sim$\SI{1}{\milli\volt} for $n \approx 1$, $\
 \end{equation}
 This is the small-signal model used for biasing and dynamic-resistance calculations. The quadratic products do not switch off below this boundary; they keep scaling as $\vhd^{\,2}$ until they sink below any practical noise floor. The boundary marks where the nonlinearity becomes measurable, not where it begins.
 
+\pdfbookmark[1]{Quadratic / square-law regime}{quadratic}
 \subsection*{Quadratic / square-law regime}
 
 For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} to \SI{25}{\percent} and HD3 reaches about \SI{4}{\percent} at the upper edge, but the cubic and higher terms in \eqref{eq:power-series} remain small enough to drop:
@@ -116,6 +118,7 @@ Truncation error peaks at the upper edge: at $\vhd = n\VT$ the dropped cubic ter
 
 \emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' means the $\vd^{\,2}$ coefficient dominates the sum- and difference-frequency products in a two-tone drive, not that the I--V is purely quadratic.
 
+\pdfbookmark[1]{Intermediate exponential regime}{intermediate}
 \subsection*{Intermediate exponential regime}
 
 For drive amplitudes that exceed the quadratic regime but do not yet violate the forward-bias approximation at the trough of the swing ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise no distinct intermediate regime exists. Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
@@ -136,6 +139,7 @@ Two features of this regime stand out:
 
 For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$, $I_1(x) \approx x/2$, and $I_2(x) \approx x^2/8$, recovering the DC shift, fundamental term, and second-harmonic amplitude of the quadratic-regime expansion. For fixed $k$ and $x \gg 1$, $I_k(x) \sim \eu^x/\sqrt{2\pi x}$ up to $k$-dependent corrections; no fixed low-order truncation remains adequate as $x$ grows, which is the large-signal behavior encountered as the rectifying regime is approached (rectification itself being set by $\vhd$ relative to $\VQ$, not by $x$ alone).
 
+\pdfbookmark[1]{Full-Shockley / rectifying regime}{rectifying}
 \subsection*{Full-Shockley / rectifying regime}
 
 When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the validity range of the forward-bias approximation \eqref{eq:exp-approx} and the full Shockley equation \eqref{eq:shockley} is required. Three distinct sub-thresholds appear within this regime:
@@ -200,6 +204,7 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 
 \FloatBarrier
 
+\pdfbookmark[1]{Numerical values for common small-signal diodes}{numerical}
 \subsection*{Numerical values for common small-signal diodes}
 
 The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$, informed by the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}:
@@ -230,6 +235,7 @@ Two observations follow. First, the Si p--n signal diode has roughly $1.7$--$1.8
 
 Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation). (Without the factor of $n$, the Si p--n edge would be off by nearly \SI{90}{\milli\volt}.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
 
+\pdfbookmark[1]{Temperature dependence and detector stability}{temperature}
 \subsection*{Temperature dependence and detector stability}
 
 The boundaries in Table~\ref{tab:diode-numbers} are room-temperature values. Two temperature effects shift them, acting on different boundaries. First, $\VT = kT/q$ scales linearly with absolute temperature; across the industrial range (\SI{-40}{\degreeCelsius} to \SI{85}{\degreeCelsius}) it varies from about \SI{20}{\milli\volt} to \SI{31}{\milli\volt}, stretching the linear and square-law cutoffs ($0.04\,n\VT$ and $n\VT$) by roughly $\pm\SI{20}{\percent}$. Second, the quiescent voltage $\VQ$ at constant $\IQ$ has a strongly negative temperature coefficient: about \SI{-2}{\milli\volt\per\kelvin} for a Si p--n junction, \SI{-1.7}{\milli\volt\per\kelvin} for Ge, and a device- and current-dependent value of comparable magnitude for Schottky devices. The two effects compound on the intermediate-regime upper edge $\VQ - 4n\VT$: $\VQ$ drops at $\sim$\SI{-2}{\milli\volt\per\kelvin} while $4n\VT$ rises at $4n\cdot k/q \approx \SI{+0.64}{\milli\volt\per\kelvin}$ for $n=1.85$ (or about \SI{+0.34}{\milli\volt\per\kelvin} for $n\approx 1$). The boundary therefore drifts at roughly \SI{-2.64}{\milli\volt\per\kelvin} for a Si p--n diode, about \SI{30}{\percent} faster than $\VQ$ alone; for Ge and Schottky devices the $\VT$ contribution is smaller and the excess is closer to \SI{20}{\percent}.
