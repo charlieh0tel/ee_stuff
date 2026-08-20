@@ -202,13 +202,13 @@ Peak AM envelope detection, power rectification, switching, clamping. \\
 
 \subsection*{Numerical values for common small-signal diodes}
 
-The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$, extracted from the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}:
+The framework above plays out differently for each diode technology. $\VT = kT/q$ depends only on temperature, so the device-specific variation enters through the ideality factor $n$ (which sets the square-law boundary $n\VT$) and the quiescent forward voltage $\VQ$ (which sets the intermediate-regime upper edge $\VQ - 4n\VT$). Representative values at $T = \SI{300}{\kelvin}$ and a bias current of $\IQ \approx \SI{100}{\micro\ampere}$, informed by the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}:
 
 \begin{table}[htbp]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{5pt}
-\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are approximate, extracted from typical-curve datasheet plots and SPICE-model parameters; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Consult vendor documentation for tolerance bands and lot-to-lot variation, particularly for Ge.}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are representative, fitted from typical forward curves and SPICE models rather than read from datasheet tables; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Consult vendor documentation for tolerance bands and lot-to-lot variation, particularly for Ge.}
 \label{tab:diode-numbers}
 
 \vspace{1\baselineskip}
@@ -218,7 +218,7 @@ The framework above plays out differently for each diode technology. $\VT = kT/q
 \textbf{Diode (example)} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4n\VT$ (interm.) \\
 \midrule
 Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} \\
-Si Schottky (1N5711, BAT54)  & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
+Si Schottky (1N5711)         & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
 Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt}  \\
 \bottomrule
 \end{tabular}
@@ -258,10 +258,10 @@ D.\ M.\ Pozar, \textit{Microwave Engineering}, 4th ed.\ Hoboken, NJ: Wiley, 2011
 Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet (Si p--n; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$).
 
 \bibitem{skyworks1n5711}
-Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, and Nexperia, \textit{BAT54 series}, data sheets (Si Schottky; $n \approx 1.08$, $\VQ \approx \SI{0.30}{\volt}$; BAT54 is the SOT-23 surface-mount equivalent of 1N5711).
+Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, data sheet (Si Schottky; representative fit $n \approx 1.08$, $\VQ \approx \SI{0.30}{\volt}$; the BAS70 is a common surface-mount alternative).
 
 \bibitem{1n34a}
-NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet (Ge point-contact; $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$).
+NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet (Ge point-contact; representative fit $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$; the datasheet itself specifies only high-current limits).
 
 \end{thebibliography}
 

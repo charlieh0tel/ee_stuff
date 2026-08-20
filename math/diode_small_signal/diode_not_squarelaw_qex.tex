@@ -225,13 +225,13 @@ AM detection, power rectification, switching, clamping. \\
 
 \section*{Numerical values for common small-signal diodes}
 
-The boundaries in Table~\ref{tab:diode-regimes} are algebraic. Table~\ref{tab:diode-numbers} instantiates them for three common technologies at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$, using parameters extracted from the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}.
+The boundaries in Table~\ref{tab:diode-regimes} are algebraic. Table~\ref{tab:diode-numbers} instantiates them for three common technologies at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$, using representative parameters informed by the vendor datasheets \cite{nxp1n4148,skyworks1n5711,1n34a}.
 
 \begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{5pt}
-\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. The linear-regime upper edge ($0.04\,n\VT$) ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Values are approximate, extracted from datasheet typical-curve plots and SPICE model parameters.}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. The linear-regime upper edge ($0.04\,n\VT$) ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Values are representative, fitted from typical forward curves and SPICE models rather than read from datasheet tables.}
 \label{tab:diode-numbers}
 
 \vspace{0.5\baselineskip}
@@ -241,7 +241,7 @@ The boundaries in Table~\ref{tab:diode-regimes} are algebraic. Table~\ref{tab:di
 \textbf{Diode} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4n\VT$ (interm.) \\
 \midrule
 Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} \\
-Si Schottky (1N5711, BAT54)    & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
+Si Schottky (1N5711)           & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
 Ge point-contact (1N34A)       & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt}  \\
 \bottomrule
 \end{tabular}
@@ -303,10 +303,10 @@ C.\ Hoover, \textit{Derivation of Diode Small-Signal and Square-Law Behavior}, t
 Nexperia, \textit{1N4148; 1N4148W; 1N4448 --- High-speed diodes}, data sheet (Si p--n; $n \approx 1.85$, $\VQ \approx \SI{0.55}{\volt}$).
 
 \bibitem{skyworks1n5711}
-Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, and Nexperia, \textit{BAT54 series}, data sheets (Si Schottky; $n \approx 1.08$, $\VQ \approx \SI{0.30}{\volt}$; BAT54 is the SMT equivalent of 1N5711).
+Skyworks Solutions, \textit{1N5711 --- Schottky Barrier Diode}, data sheet (Si Schottky; representative fit $n \approx 1.08$, $\VQ \approx \SI{0.30}{\volt}$; the BAS70 is a common surface-mount alternative).
 
 \bibitem{1n34a}
-NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet (Ge point-contact; $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$).
+NTE Electronics, \textit{NTE109 / 1N34A --- Germanium Signal Detector Diode}, data sheet (Ge point-contact; representative fit $n \approx 1.05$, $\VQ \approx \SI{0.20}{\volt}$; the datasheet itself specifies only high-current limits).
 
 \bibitem{maas}
 S.\ A.\ Maas, \textit{Microwave Mixers}, 2nd ed.\ Norwood, MA: Artech House, 1993.

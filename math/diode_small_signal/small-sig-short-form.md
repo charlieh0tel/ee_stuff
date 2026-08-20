@@ -41,6 +41,7 @@ Outstanding:
 - Read-through before submission
 - QEX rights question (see below) unresolved
 - QEX format conversion (Word/RTF, 300 DPI raster figures) not started
+- Verify the Schottky and Ge table rows against actual datasheets before QEX submission (review flagged BAT54 VF max ~240 mV at 100 µA vs the shared 0.30 V row — BAT54 dropped from the row; BAS70 noted as the usual 1N5711 SMT alternative; NTE 1N34A sheet has no low-current data)
 
 ## Length
 
