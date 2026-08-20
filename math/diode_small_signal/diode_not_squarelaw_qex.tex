@@ -118,19 +118,17 @@ Within the regime $0.04\,n\VT \lesssim \vhd \lesssim n\VT$, only the first two t
 The quadratic term is genuinely useful---but for different reasons depending on whether one or two tones are present.
 
 \textbf{Detection (single tone).}
-When an RF signal $\vd = \vhd \cos\omega t$ drives the diode, the quadratic term produces a DC component proportional to $\vhd^{\,2}$ and hence to signal power.
-This is the operating principle of small-signal envelope detectors, crystal radio receivers, and microwave power detectors: the diode converts RF power directly to a DC current, and the output tracks power linearly---the defining property of a square-law detector.
+When an RF signal $\vd = \vhd \cos\omega t$ drives the diode, the quadratic term produces a DC component proportional to $\vhd^{\,2}$ and hence to signal power---the operating principle of small-signal envelope detectors, crystal radios, and microwave power detectors, and the defining property of a square-law detector.
 
 \textbf{Mixing (two tones).}
 When two signals at $\omega_1$ and $\omega_2$ are simultaneously present, the quadratic term cross-multiplies them via $\cos\omega_1 t\cdot\cos\omega_2 t = \tfrac{1}{2}[\cos(\omega_1+\omega_2)t + \cos(\omega_1-\omega_2)t]$, producing outputs at the sum and difference frequencies $\omega_1 \pm \omega_2$.
-The linear term passes both signals through unchanged and produces no conversion.
-This is the basis of resistive RF mixers: the $\vd^2$ nonlinearity provides frequency translation.
+The linear term passes both signals through unchanged---the $\vd^2$ nonlinearity alone provides the frequency translation that resistive mixers exploit.
 
 \section*{The catch: the linear piece always wins}
 
 The quadratic term is not the whole story. The linear term $\gd \vd$ is always present, and for small signals it always dominates.
 
-The ratio of the quadratic term to the linear term is $\vd/(2n\VT)$. For signals well below $2n\VT \approx \SI{50}{\milli\volt}$ (for $n \approx 1$), the linear piece is larger. The diode is always more linear than it is square-law. Equivalently: the I--V curve near any DC bias point approximates a straight line---a slope, or conductance---and the quadratic term is the \emph{curvature} of that line. Curvature is always a small correction to slope for small perturbations.
+The ratio of the quadratic term to the linear term is $\vd/(2n\VT)$. For signals well below $2n\VT \approx \SI{50}{\milli\volt}$ (for $n \approx 1$), the linear piece is larger. The diode is always more linear than it is square-law. Equivalently, the quadratic term is the \emph{curvature} of the I--V curve at the bias point---always a small correction to the slope for small perturbations.
 
 Below the square-law range ($\vhd \lesssim 0.04\,n\VT \approx \SI{1}{\milli\volt}$ for $n \approx 1$) the diode behaves as a resistor $\rd = 1/\gd$, linear to better than \SI{1}{\percent}---but the rectified and mixing products do not switch off. They keep scaling as $\vhd^{\,2}$ until they sink below any practical noise floor. The boundary marks where the nonlinearity becomes measurable, not where it begins.
 
@@ -140,14 +138,13 @@ As drive amplitude increases, the diode traverses four regimes in turn. Table~\r
 
 \subsection*{Linear ($\vhd \lesssim 0.04\,n\VT$)}
 
-Only the first term of \eqref{eq:power-series} is significant: $\id \approx \gd \vd$.
-The diode is a small-signal resistor of dynamic resistance $\rd = n\VT/\IQ$.
-Mixing, rectification, and harmonic products are not zero, but they scale as $\vhd^{\,2}$ and sit far below practical noise floors.
-This is the regime of biasing calculations and Q-point dynamic-resistance measurements.
+Only the first term of \eqref{eq:power-series} is significant: $\id \approx \gd \vd$---a small-signal resistor of dynamic resistance $\rd = n\VT/\IQ$.
+The nonlinear products scale as $\vhd^{\,2}$ and sit below practical noise floors (see above).
+This is the regime of biasing and dynamic-resistance calculations.
 
 \subsection*{Quadratic / square-law ($0.04\,n\VT \lesssim \vhd \lesssim n\VT$)}
 
-HD2 grows from \SI{1}{\percent} to \SI{25}{\percent}; HD3 reaches \SI{4}{\percent} at the upper edge but is still small enough to neglect.
+HD2 grows from \SI{1}{\percent} to \SI{25}{\percent} across the range.
 The two-term approximation \eqref{eq:quadratic} is valid, though least accurate at the upper edge, where the dropped cubic term adds \SI{12}{\percent} to the fundamental and the predicted rectified DC runs \SI{6}{\percent} low.
 Single-tone detection gives DC output proportional to power; two-tone mixing produces $\omega_1 \pm \omega_2$ products with intermodulation dominated by third-order terms.
 
@@ -249,7 +246,7 @@ Ge point-contact (1N34A)       & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} 
 
 Two observations stand out. First, the Si p--n device has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky, because its higher ideality factor raises $n\VT$ (ideality is a local, bias-dependent fit, not a technology constant); a 1N4148 can tolerate a junction swing up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A.
 
-Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential range is narrow: the upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the square-law boundary), versus \SI{359}{\milli\volt} for a Si p--n diode (about \SI{311}{\milli\volt} of unclipped exponential operation). This explains the historical division of labor: Ge and zero-bias Schottky for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n for switching and mixer service where the wider amplitude range is useful.
+Second, the lower $\VQ$ of Ge and Schottky means the intermediate exponential range is narrow: the upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the square-law boundary), versus \SI{359}{\milli\volt} for a Si p--n diode (about \SI{311}{\milli\volt} of unclipped exponential operation).
 
 \section*{Practical consequences}
 
