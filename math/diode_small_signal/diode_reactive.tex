@@ -93,16 +93,16 @@ collapses to simple total-power conservation $\sum_k P_k = 0$ across all harmoni
 P_1 + P_n = 0,
 \label{eq:mr-100percent}
 \end{equation}
-yielding $|P_n| = |P_1|$: Manley--Rowe permits \SI{100}{\percent} conversion efficiency; attaining it additionally requires a suitable capacitance law and idler/harmonic embedding network \cite{penfieldrafuse}. The richer two-frequency form of Manley--Rowe applies when the device is driven by two \emph{incommensurate} tones $\omega_p$ and $\omega_s$ generating IM products at $\Omega_{m,n} \equiv m\omega_p + n\omega_s$. Letting the primed sums run over one representative of each positive physical frequency $\Omega_{m,n} > 0$ (excluding the DC term and counting each $\pm(m,n)$ pair only once), the two independent relations are
+yielding $|P_n| = |P_1|$: Manley--Rowe permits \SI{100}{\percent} conversion efficiency; attaining it additionally requires a suitable capacitance law and idler/harmonic embedding network \cite{penfieldrafuse}. The richer two-frequency form of Manley--Rowe applies when the device is driven by two \emph{incommensurate} tones $\omega_p$ and $\omega_s$ generating IM products at $\Omega_{k,l} \equiv k\omega_p + l\omega_s$. Letting the primed sums run over one representative of each positive physical frequency $\Omega_{k,l} > 0$ (excluding the DC term and counting each $\pm(k,l)$ pair only once), the two independent relations are
 \begin{equation}
-\sum_{\Omega_{m,n}>0}^{\prime} \frac{m\, P_{m,n}}{\Omega_{m,n}} \;=\; 0,
+\sum_{\Omega_{k,l}>0}^{\prime} \frac{k\, P_{k,l}}{\Omega_{k,l}} \;=\; 0,
 \qquad
-\sum_{\Omega_{m,n}>0}^{\prime} \frac{n\, P_{m,n}}{\Omega_{m,n}} \;=\; 0.
+\sum_{\Omega_{k,l}>0}^{\prime} \frac{l\, P_{k,l}}{\Omega_{k,l}} \;=\; 0.
 \label{eq:mr-two-tone}
 \end{equation}
 These no longer collapse to energy conservation. They produce the parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ with $\omega_o = \omega_p + \omega_s$, the excess power supplied by the pump --- conversion gain above unity in principle, limited in practice by loss, matching, stability, and pump power.
 
-This is why varactor multipliers and parametric amplifiers form a circuit class distinct from resistive mixers. Resistive mixing pays two penalties: a weakly driven diode dissipates real signal power in its conductance $\gd$, and even an ideal commutating switch --- which itself dissipates nothing --- still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ with broadband resistive image termination (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}.
+This is why varactor multipliers and parametric amplifiers form a circuit class distinct from resistive mixers. Resistive mixing pays two penalties: a weakly driven diode dissipates real signal power in its small-signal conductance $\gd$, and even an ideal commutating switch --- which itself dissipates nothing --- still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ with broadband resistive image termination (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}.
 
 \section*{Practical limits}
 
