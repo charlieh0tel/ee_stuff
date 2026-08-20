@@ -59,7 +59,7 @@ which converges mathematically for \mbox{$|\vhd| < \phi_Q$}. The physically mean
 |\vhd| < |\VQ|.
 \label{eq:varactor-swing-limit}
 \end{equation}
-Since $\phi_Q = V_0 + |\VQ|$ for $\VQ < 0$, the mathematical radius of convergence exceeds the physical swing limit by exactly $V_0$, so the series is valid throughout the usable range. Hyperabrupt junctions ($m \approx 2$) have series coefficients in \eqref{eq:cj-series} that grow much faster with $\vhd/\phi_Q$ than abrupt ones ($m = 1/2$), so the same ratio produces more harmonic content --- the reason hyperabrupt varactors are preferred for high-efficiency multipliers and wide-tuning VCOs. The swing tolerance $|\vhd| < |\VQ|$ is $m$-independent; the narrower practical range of hyperabrupt devices comes from lower breakdown voltages and truncation accuracy, not from \eqref{eq:cj-series} alone.
+Since $\phi_Q = V_0 + |\VQ|$ for $\VQ < 0$, the mathematical radius of convergence exceeds the physical swing limit by exactly $V_0$, so the series is valid throughout the usable range. Hyperabrupt junctions ($m \approx 2$) have series coefficients in \eqref{eq:cj-series} that grow much faster with $\vhd/\phi_Q$ than abrupt ones ($m = 1/2$), so the same ratio produces more harmonic content --- the reason hyperabrupt varactors are preferred for high-efficiency multipliers and wide-tuning VCOs. The swing tolerance $|\vhd| < |\VQ|$ is $m$-independent; the narrower practical range of hyperabrupt devices comes from lower breakdown voltages and truncation accuracy, not from \eqref{eq:cj-series} alone. (Hyperabrupt profiles sustain $m \approx 2$ only over a stated bias span, and $V_0$ in \eqref{eq:cj-raw} is best read as a fitting parameter --- SPICE's \texttt{VJ} --- rather than literally the built-in potential.)
 
 \section*{Reactive current and harmonic content}
 
@@ -71,7 +71,7 @@ The displacement current is $i_c = \dd Q/\dd t = C_j(\vd)\, \dd\vd/\dd t$. With 
         i_c^{(1)} = -\tfrac{1}{2}\,\omega C_{jQ}\,\frac{m \vhd^2}{\phi_Q}\,\sin 2\omega t
     \end{equation*}
     --- pure second-harmonic generation, with amplitude proportional to $\tfrac{1}{2}m\vhd^2/\phi_Q$.
-    \item \emph{Second order in $\vd$.} The $\cos^2\omega t = \tfrac{1}{2}(1 + \cos 2\omega t)$ identity reshuffles this into both a third-harmonic contribution $\propto \sin 3\omega t$ and an amplitude-dependent fundamental correction $\propto \sin\omega t$ that adds constructively to the linear reactive current (same sign), effectively renormalizing the small-signal capacitance upward at large drive.
+    \item \emph{Second order in $\vd$.} The $\cos^2\omega t = \tfrac{1}{2}(1 + \cos 2\omega t)$ identity reshuffles this into both a third-harmonic contribution $\propto \sin 3\omega t$ and an amplitude-dependent fundamental correction $\propto \sin\omega t$ that adds constructively to the linear reactive current (same sign), effectively renormalizing the small-signal capacitance upward at large drive --- in a VCO, the mechanism behind amplitude-to-frequency pulling (AM-to-FM conversion).
 \end{itemize}
 The general structure: the $k^{\text{th}}$-order capacitance coefficient excites the $(k+1)^{\text{th}}$ harmonic and contributes to all lower harmonics of matching parity. One consequence deserves its own sentence: for the abrupt junction ($m = 1/2$), $Q \propto \sqrt{\phi}$ makes the elastance $\dd V/\dd Q$ \emph{linear} in charge --- a purely second-order nonlinearity --- so direct generation beyond the second harmonic is impossible, and a tripler must recirculate power through an idler at $2\omega$ \cite{penfieldrafuse}. With the voltage prescribed as a single cosine, every term of the reactive current comes out a pure sine---no $\cos k\omega t$ components---which is losslessness showing up harmonic by harmonic; the cleanest proof works directly with the closed $Q$--$V$ trajectory. The instantaneous power into the reactance is $p(t) = \VD(t)\,\dd Q/\dd t$, and its time average over a period is
 \begin{equation}
@@ -105,7 +105,7 @@ This is why varactor multipliers and parametric amplifiers form a circuit class 
 
 \section*{Practical limits}
 
-Two effects bound the lossless idealization. First, real varactors have a finite series resistance $r_s$ (bulk silicon, ohmic contact, and bondwire, typically \SIrange{0.5}{10}{\ohm} for microwave devices) that dissipates real power. The figure of merit is the dynamic cutoff frequency
+Three effects bound the lossless idealization. First, real varactors have a finite series resistance $r_s$ (bulk silicon, ohmic contact, and bondwire, typically \SIrange{0.5}{10}{\ohm} for microwave devices) that dissipates real power. The figure of merit is the dynamic cutoff frequency
 \begin{equation}
 f_c = \frac{S_{\max} - S_{\min}}{2\pi r_s}, \qquad S \equiv \frac{1}{C_j},
 \end{equation}
@@ -114,7 +114,7 @@ the elastance swing between the usable bias extremes \cite{penfieldrafuse}; mode
 |\vhd| < \min\!\left(|\VQ|,\; V_\mathrm{BR} - |\VQ|\right),
 \label{eq:swing-combined}
 \end{equation}
-the lower of the forward-crossing limit \eqref{eq:varactor-swing-limit} and the breakdown limit; the window is widest at $|\VQ| = V_\mathrm{BR}/2$ --- the usual bias-at-half-breakdown rule. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage.
+the lower of the forward-crossing limit \eqref{eq:varactor-swing-limit} and the breakdown limit; the window is widest at $|\VQ| = V_\mathrm{BR}/2$ --- the usual bias-at-half-breakdown rule. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage. Third, reverse leakage and generation current dissipate directly; they, not $r_s$, limit varactor $Q$ at low frequency.
 
 \begin{thebibliography}{5}
 \setlength{\itemsep}{2pt}
