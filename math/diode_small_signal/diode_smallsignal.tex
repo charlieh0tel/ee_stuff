@@ -212,18 +212,18 @@ The framework above plays out differently for each diode technology. $\VT = kT/q
 \centering
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{5pt}
-\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are representative, fitted from typical forward curves and SPICE models rather than read from datasheet tables; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. Consult vendor documentation for tolerance bands and lot-to-lot variation, particularly for Ge.}
+\caption{Square-law and intermediate-regime boundaries for representative small-signal diodes at $T = \SI{300}{\kelvin}$ and $\IQ \approx \SI{100}{\micro\ampere}$. Values are representative, fitted from typical forward curves and SPICE models rather than read from datasheet tables; the linear-regime (HD2 $<$ \SI{1}{\percent}) cutoff $0.04\,n\VT$ ranges from \SI{1.1}{\milli\volt} to \SI{1.9}{\milli\volt} across all three. The $\VQ - 4n\VT$ column is a prescribed-junction-voltage ideal; the last column is the series-resistance ceiling of \eqref{eq:rs-limit}. Consult vendor documentation for tolerance bands and lot-to-lot variation, particularly for Ge.}
 \label{tab:diode-numbers}
 
 \vspace{1\baselineskip}
 
-\begin{tabular}{l c c c c}
+\begin{tabular}{l c c c c c c}
 \toprule
-\textbf{Diode (example)} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4n\VT$ (interm.) \\
+\textbf{Diode (example)} & $n$ & $\VQ$ & $n\VT$ (sq-law) & $\VQ - 4n\VT$ (interm.) & $r_s$ (repr.) & $r_s$ edge \eqref{eq:rs-limit} \\
 \midrule
-Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} \\
-Si Schottky (1N5711)         & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} \\
-Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt}  \\
+Si p--n signal (1N4148)        & 1.85 & \SI{0.55}{\volt} & \SI{48}{\milli\volt} & \SI{359}{\milli\volt} & \SI{0.6}{\ohm} & \SI{210}{\milli\volt} \\
+Si Schottky (1N5711)         & 1.08 & \SI{0.30}{\volt} & \SI{28}{\milli\volt} & \SI{188}{\milli\volt} & \SI{10}{\ohm} & \SI{29}{\milli\volt} \\
+Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & \SI{91}{\milli\volt} & \SI{10}{\ohm} & \SI{27}{\milli\volt} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -232,7 +232,21 @@ Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & 
 
 Two observations follow. First, the Si p--n signal diode has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents (ideality is a local, bias-dependent fit, not a technology constant); a 1N4148 can tolerate a junction-voltage amplitude up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. (In a real mixer the source amplitude that produces a given junction swing depends on embedding impedance, LO bias, matching, and conduction angle; these numbers bound the junction excursion, not the available source power.)
 
-Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation). (Without the factor of $n$, the Si p--n edge would be off by nearly \SI{90}{\milli\volt}.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
+Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation). (Without the factor of $n$, the Si p--n edge would be off by nearly \SI{90}{\milli\volt}.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful. These upper edges are prescribed-junction-voltage ideals; series resistance narrows them sharply (next subsection).
+
+\pdfbookmark[1]{Validity limits: series resistance, capacitance, and frequency}{validity}
+\subsection*{Validity limits: series resistance, capacitance, and frequency}
+
+Everything above treats a prescribed junction voltage acting on a memoryless exponential --- a quasi-static idealization. A real diode adds a series resistance $r_s$ (bulk, contact, and bondwire) and a shunt capacitance, giving the small-signal equivalent circuit $r_s$ in series with $\gd \parallel (C_j + C_d)$, where $C_j$ is the depletion capacitance and $C_d = \tau\,\gd$ the diffusion capacitance of stored minority carriers. Both bound the regime picture from above.
+
+First, $r_s$ caps the exponential window. The Bessel expansion assumes the junction sees the full sinusoid, but the peak current at drive $\vhd$ is $\IQ\, \eu^{\vhd/n\VT}$, and once the ohmic drop rivals the thermal voltage the terminal and junction voltages part company. Requiring $I_{\mathrm{pk}}\, r_s \lesssim n\VT/10$ gives
+\begin{equation}
+\vhd \lesssim n\VT \ln\!\frac{n\VT}{10\, r_s\, \IQ},
+\label{eq:rs-limit}
+\end{equation}
+far below $\VQ - 4n\VT$ for most devices: about \SI{210}{\milli\volt} for a 1N4148 ($r_s \approx \SI{0.6}{\ohm}$), and \SIrange{27}{29}{\milli\volt} --- essentially the square-law boundary --- for the 1N5711 and 1N34A ($r_s$ of order \SI{10}{\ohm}). At the 1N5711's ideal \SI{188}{\milli\volt} edge the implied peak current, $\sim$\SI{85}{\milli\ampere}, exceeds the device's maximum rating outright. High-level injection compounds the limit: as the injected carrier density approaches the background doping, the slope degrades toward $2\VT$ \cite{sze}. The intermediate-regime column of Table~\ref{tab:diode-numbers} therefore survives contact with a real device only for the Si p--n diode, and only in part.
+
+Second, capacitance bounds the picture in frequency. For a 1N4148 at $\IQ = \SI{100}{\micro\ampere}$: $\rd \approx \SI{480}{\ohm}$, $C_j \approx \SI{4}{\pico\farad}$, and $C_d \approx \SI{8}{\pico\farad}$ for $\tau \approx \SI{4}{\nano\second}$, so the junction is capacitively bypassed above roughly \SI{30}{\mega\hertz}: the terminal voltage stops tracking the junction voltage and detection efficiency falls. The absence of minority-carrier storage --- hence of $C_d$ and reverse recovery --- is the textbook reason Schottky diodes own microwave detection and mixing \cite{sze,maas}.
 
 \pdfbookmark[1]{Temperature dependence and detector stability}{temperature}
 \subsection*{Temperature dependence and detector stability}
