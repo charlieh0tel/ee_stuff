@@ -146,7 +146,7 @@ When $\vhd \gtrsim \VQ - 4n\VT$, the negative half-cycle drives $\VD$ below the 
 \begin{itemize}
     \item $\vhd \approx \VQ - 4n\VT$: the exponential approximation begins to lose instantaneous accuracy at the trough of the swing. The current waveform may already be highly asymmetric, but conduction remains finite throughout the cycle; no reverse-biased interval has appeared yet.
     \item $\vhd \approx \VQ$: the trough first reaches $\VD = 0$. A reverse-biased interval appears for any larger swing, but the waveform only just touches zero; the diode is not yet a hard rectifier.
-    \item $\vhd \approx \VQ + 4n\VT$: the trough first reaches $\VD \lesssim -4n\VT$, where the diode is essentially at its reverse-saturation floor $\ID \to -\IS$. For still larger swings, the reverse-biased interval expands and the waveform approaches half-wave rectification.
+    \item $\vhd \approx \VQ + 4n\VT$: the trough first reaches $\VD \lesssim -4n\VT$, where the diode is essentially at its reverse-saturation floor $\ID \to -\IS$. For still larger swings, the reverse-biased interval expands and the waveform approaches half-wave rectification. (The clean $-\IS$ floor is itself an idealization: real Si reverse current is generation-dominated and considerably larger --- a 1N4148 leaks tens of nanoamps at \SI{20}{\volt} against $\IS \sim \SI{1}{\nano\ampere}$.)
 \end{itemize}
 
 The Bessel expansion \eqref{eq:bessel-expansion} remains useful beyond the first threshold. For the ideal Shockley equation, the Jacobi--Anger expansion remains mathematically exact: substituting $\VD = \VQ + \vhd\cos\omega t$ into \eqref{eq:shockley} gives
