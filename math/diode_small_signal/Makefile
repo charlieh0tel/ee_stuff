@@ -30,6 +30,9 @@ diode_not_squarelaw_qex.pdf: diode_not_squarelaw_qex.tex regimes_figure.pdf
 
 lint: make_regimes_figure.py
 	uv run ruff check make_regimes_figure.py
+	uv run ruff format --check make_regimes_figure.py
+
+format: make_regimes_figure.py
 	uv run ruff format make_regimes_figure.py
 
 clean:
@@ -38,4 +41,4 @@ clean:
 cleanall: clean
 	rm -f $(PDFS) regimes_figure.pdf regimes_figure_newsletter.pdf
 
-.PHONY: all lint clean cleanall
+.PHONY: all lint format clean cleanall
