@@ -35,7 +35,7 @@
 
 \maketitle
 
-The depletion capacitance $C_j(\VD)$ of a p--n junction is a nonlinear function of bias voltage, and a memoryless charge-voltage relationship $Q(\VD)$ dissipates zero average real power. This makes the reactive nonlinearity the basis for an entire class of RF circuits --- varactor frequency multipliers, parametric amplifiers, reactance modulators --- whose conversion-efficiency physics is fundamentally distinct from resistive (forward-bias) mixing in the same device. This note develops the Q-point series expansion of $C_j(\VD)$, the harmonic content it generates, the Manley--Rowe constraints on lossless conversion, and the practical bounds set by series resistance and reverse breakdown.
+The depletion capacitance $C_j(\VD)$ of a p--n junction is a nonlinear function of bias voltage, and a memoryless charge-voltage relationship $Q(\VD)$ dissipates zero average real power. This makes the reactive nonlinearity the basis for a class of RF circuits --- varactor frequency multipliers, parametric amplifiers, reactance modulators --- whose conversion-efficiency physics is distinct from resistive (forward-bias) mixing in the same device. This note develops the Q-point series expansion of $C_j(\VD)$, the harmonic content it generates, the Manley--Rowe constraints on lossless conversion, and the practical bounds set by series resistance and reverse breakdown.
 
 \section*{Junction capacitance and its Q-point expansion}
 
@@ -44,7 +44,7 @@ The depletion (junction) capacitance of a p--n junction is \cite{sze}
 C_j(\VD) = \frac{C_{j0}}{\left(1 - \VD/V_0\right)^m},
 \label{eq:cj-raw}
 \end{equation}
-where $C_{j0}$ is the zero-bias capacitance, $V_0$ is the built-in potential ($\sim$\SI{0.7}{\volt} for Si p--n, $\sim$\SI{0.4}{\volt} for Si Schottky, $\sim$\SI{0.3}{\volt} for Ge), and the grading coefficient $m$ encodes the doping profile: $m = 1/2$ for an abrupt junction, $m \approx 1/3$ for a linearly graded one, and $m \approx 1$ to $2$ for hyperabrupt tuning varactors. Equation~\eqref{eq:cj-raw} captures only the depletion component. For p--n junctions under forward bias above roughly $V_0/2$, diffusion capacitance from stored minority carriers dominates and the algebraic form breaks down; for Schottky diodes (majority-carrier devices without minority-carrier storage in the same sense) the depletion-capacitance law also ceases to be the relevant large-signal model under appreciable forward conduction, though the underlying mechanism differs. The reactive analysis below therefore applies to reverse-biased operation ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}), which is the natural regime for varactor, parametric, and multiplier applications.
+where $C_{j0}$ is the zero-bias capacitance, $V_0$ is the built-in potential ($\sim$\SI{0.7}{\volt} for Si p--n, $\sim$\SI{0.4}{\volt} for Si Schottky, $\sim$\SI{0.3}{\volt} for Ge), and the grading coefficient $m$ encodes the doping profile: $m = 1/2$ for an abrupt junction, $m \approx 1/3$ for a linearly graded one, and $m \approx 1$ to $2$ for hyperabrupt tuning varactors. Equation~\eqref{eq:cj-raw} captures only the depletion component. For p--n junctions under forward bias above roughly $V_0/2$, diffusion capacitance from stored minority carriers dominates and the algebraic form breaks down; for Schottky diodes (majority-carrier devices) the depletion law likewise fails under appreciable forward conduction, though by a different mechanism. The reactive analysis below therefore applies to reverse-biased operation ($\VQ < 0$ in the sign convention of \eqref{eq:cj-raw}), which is the natural regime for varactor, parametric, and multiplier applications.
 
 Decomposing $\VD = \VQ + \vd$ and factoring out the Q-point value gives, with $\phi_Q \equiv V_0 - \VQ$ the effective barrier potential at the Q-point,
 \begin{equation}
@@ -60,7 +60,7 @@ which converges mathematically for \mbox{$|\vhd| < \phi_Q$}. The physically mean
 |\vhd| < |\VQ|.
 \label{eq:varactor-swing-limit}
 \end{equation}
-Since $\phi_Q = V_0 + |\VQ|$ for $\VQ < 0$, the mathematical radius of convergence exceeds the physical swing limit by exactly $V_0$ --- a comfortable margin that confirms the series description is valid throughout the usable operating range. Note that hyperabrupt junctions ($m \approx 2$) have series coefficients in \eqref{eq:cj-series} that grow much faster with $\vhd/\phi_Q$ than abrupt ones ($m = 1/2$), so the same $\vhd/\phi_Q$ ratio produces substantially more harmonic content --- the reason hyperabrupt varactors are preferred for high-efficiency multipliers and wide-tuning-range VCOs. The swing tolerance $|\vhd| < |\VQ|$ itself is $m$-independent; hyperabrupt devices' practical narrower operating range comes from their typically lower breakdown voltages and the need to keep series-truncation accuracy reasonable, not from \eqref{eq:cj-series} alone.
+Since $\phi_Q = V_0 + |\VQ|$ for $\VQ < 0$, the mathematical radius of convergence exceeds the physical swing limit by exactly $V_0$, so the series is valid throughout the usable range. Hyperabrupt junctions ($m \approx 2$) have series coefficients in \eqref{eq:cj-series} that grow much faster with $\vhd/\phi_Q$ than abrupt ones ($m = 1/2$), so the same ratio produces more harmonic content --- the reason hyperabrupt varactors are preferred for high-efficiency multipliers and wide-tuning VCOs. The swing tolerance $|\vhd| < |\VQ|$ is $m$-independent; the narrower practical range of hyperabrupt devices comes from lower breakdown voltages and truncation accuracy, not from \eqref{eq:cj-series} alone.
 
 \section*{Reactive current and harmonic content}
 
@@ -79,7 +79,7 @@ The general structure: the $k^{\text{th}}$-order capacitance coefficient excites
 \langle p \rangle = \frac{1}{T}\int_0^T \VD\,\frac{\dd Q}{\dd t}\,\dd t = \frac{1}{T}\oint \VD\,\dd Q = 0,
 \label{eq:lossless-vdq}
 \end{equation}
-because $Q(\VD)$ is a single-valued memoryless function and the trajectory closes on itself after one period. The net time-averaged power flowing into the nonlinear capacitance is therefore identically zero, independent of harmonic content. In a terminated multiplier circuit the load impedances at $\omega, 2\omega, \ldots$ allow real harmonic voltages to develop with phases set by the embedding network, and individual frequency ports can exchange real power --- but the \emph{net} balance summed over all frequencies remains zero. Manley--Rowe (below) lifts this conclusion into a frequency-domain constraint that survives even when multiple incommensurate tones are present at the device terminals.
+because $Q(\VD)$ is a single-valued memoryless function and the trajectory closes on itself after one period. The net time-averaged power flowing into the nonlinear capacitance is therefore identically zero, independent of harmonic content. In a terminated multiplier circuit the load impedances at $\omega, 2\omega, \ldots$ allow real harmonic voltages to develop with phases set by the embedding network, and individual frequency ports can exchange real power --- but the \emph{net} balance summed over all frequencies remains zero. Manley--Rowe (below) turns this into a frequency-domain constraint that survives multiple incommensurate tones at the device terminals.
 
 \section*{Manley--Rowe constraints and lossless conversion}
 
@@ -100,9 +100,9 @@ yielding $|P_n| = |P_1|$: Manley--Rowe permits 100\% conversion efficiency; atta
 \sum_{\Omega_{m,n}>0}^{\prime} \frac{n\, P_{m,n}}{\Omega_{m,n}} \;=\; 0.
 \label{eq:mr-two-tone}
 \end{equation}
-These no longer collapse to energy conservation. They produce the celebrated parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ where $\omega_o = \omega_p + \omega_s$, the excess output power being supplied by the pump --- so in principle the converter exhibits conversion gain in excess of unity, though practical gain is limited by loss, impedance matching, stability margins, and available pump power.
+These no longer collapse to energy conservation. They produce the parametric-upconversion result $|P_o|/|P_s| = \omega_o/\omega_s$ with $\omega_o = \omega_p + \omega_s$, the excess power supplied by the pump --- conversion gain above unity in principle, limited in practice by loss, matching, stability, and pump power.
 
-This is the structural reason that varactor frequency multipliers and parametric amplifiers exist as a distinct circuit class from resistive mixers. Resistive mixing pays two distinct penalties: a weakly driven diode dissipates real signal power in its conductance $\gd$, and even an ideal commutating switch---which itself dissipates nothing---still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ with broadband resistive image termination (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}.
+This is why varactor multipliers and parametric amplifiers form a circuit class distinct from resistive mixers. Resistive mixing pays two penalties: a weakly driven diode dissipates real signal power in its conductance $\gd$, and even an ideal commutating switch---which itself dissipates nothing---still splits the signal energy among sidebands, giving a minimum conversion loss of $10\log_{10}(\pi^2/4) \approx \SI{3.9}{\deci\bel}$ with broadband resistive image termination (reactive image termination can do somewhat better); \SIrange{5}{7}{\deci\bel} is typical in practice \cite{maas}. A purely reactive varactor doubler is subject to neither penalty \cite{penfieldrafuse}.
 
 \section*{Practical limits}
 
@@ -115,7 +115,7 @@ with $C_{j,\min}$ the capacitance at maximum reverse bias; modern Si and GaAs va
 |\vhd| < \min\!\left(|\VQ|,\; V_\mathrm{BR} - |\VQ|\right),
 \label{eq:swing-combined}
 \end{equation}
-the lower of the forward-crossing limit \eqref{eq:varactor-swing-limit} and the breakdown limit. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage entirely.
+the lower of the forward-crossing limit \eqref{eq:varactor-swing-limit} and the breakdown limit. Driving the junction into avalanche injects resistive dissipation that nullifies the Manley--Rowe advantage.
 
 \begin{thebibliography}{5}
 \setlength{\itemsep}{2pt}
