@@ -42,6 +42,8 @@ Outstanding:
 - QEX rights question (see below) unresolved
 - QEX format conversion (Word/RTF, 300 DPI raster figures) not started
 - Verify the Schottky and Ge table rows against actual datasheets before QEX submission (review flagged BAT54 VF max ~240 mV at 100 µA vs the shared 0.30 V row — BAT54 dropped from the row; BAS70 noted as the usual 1N5711 SMT alternative; NTE 1N34A sheet has no low-current data)
+- Verify the representative rs values now in Table 2 (0.6 Ω for 1N4148, ~10 Ω for 1N5711/1N34A) and fill in the datasheet document numbers/revisions marked as TODO comments in the bibliographies
+- Adversarial-review panel (4 Claude agents + Codex, 2026-08-19) fully dispositioned; declined items: softening the opening hook, bench-measurement figure (2 dB/dB sweep), taxonomy restructure beyond caption honesty
 
 ## Length
 
@@ -98,3 +100,5 @@ Source file: `diode_not_squarelaw_qex.tex` (drafted).
 ## Relation to diode_smallsignal.tex
 
 Companion "why it matters" piece. The full derivation has the math; this one has the physical intuition and practical consequences. Further reading section links directly to the companion PDF on GitHub Pages.
+
+A fourth document, `diode_reactive.tex` ("Reactive Nonlinearity: Junction Capacitance, Harmonics, and Manley–Rowe"), covers the reactive side — varactors, multipliers, parametric conversion — and is built by the same Makefile.
