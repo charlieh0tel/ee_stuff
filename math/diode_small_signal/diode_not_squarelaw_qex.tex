@@ -56,7 +56,7 @@
 \maketitle
 
 \begin{abstract}
-The diode is routinely described as a ``square-law device''---a useful shorthand for explaining RF detection and frequency mixing. Its I--V characteristic is exponential, not quadratic, and the square-law approximation holds across just over a decade of signal amplitude. This article derives the four operating regimes that emerge from a power-series expansion of the Shockley equation, establishes quantitative amplitude boundaries between them using second- and third-harmonic distortion criteria, and traces the practical consequences for detector sensitivity, mixer design, and LO drive level.
+The diode is routinely described as a ``square-law device''---a useful shorthand for explaining RF detection and frequency mixing. Its I--V characteristic is exponential, not quadratic, and the square-law approximation holds across about a decade and a half of signal amplitude. This article derives the four operating regimes that emerge from a power-series expansion of the Shockley equation, establishes quantitative amplitude boundaries between them using second- and third-harmonic distortion criteria, and traces the practical consequences for detector sensitivity, mixer design, and LO drive level.
 \end{abstract}
 
 Pick up almost any RF textbook and you will find the diode described as a ``square-law device''---invoked to explain crystal radio detection, mixer frequency conversion, and intermodulation analysis alike.
@@ -106,7 +106,7 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each nonlinear term in \eqref{
   \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
   \label{eq:hd}
 \end{equation}
-These ratios define quantitative boundaries between operating regimes. HD2 reaches \SI{1}{\percent} at $\vhd \approx 0.04\,n\VT$ and \SI{25}{\percent} at $\vhd \approx n\VT$; HD3 reaches \SI{4}{\percent} at $\vhd \approx n\VT$. The \SI{1}{\percent} and \SI{25}{\percent} thresholds are useful engineering markers---not physical phase transitions---but they define a well-motivated window of just over a decade within which the two-term approximation is a fair description.
+These ratios define quantitative boundaries between operating regimes. HD2 reaches \SI{1}{\percent} at $\vhd \approx 0.04\,n\VT$ and \SI{25}{\percent} at $\vhd \approx n\VT$; HD3 reaches \SI{4}{\percent} at $\vhd \approx n\VT$. The \SI{1}{\percent} and \SI{25}{\percent} thresholds are useful engineering markers---not physical phase transitions---but they define a well-motivated window of about a decade and a half within which the two-term approximation is a fair description.
 
 \section*{Why ``square law'' seems right}
 
@@ -151,7 +151,7 @@ HD2 grows from \SI{1}{\percent} to \SI{25}{\percent}; HD3 reaches \SI{4}{\percen
 The two-term approximation \eqref{eq:quadratic} is valid, though least accurate at the upper edge, where the dropped cubic term adds about \SI{12}{\percent} to the fundamental and the predicted rectified DC runs about \SI{6}{\percent} low.
 Single-tone detection gives DC output proportional to power; two-tone mixing produces $\omega_1 \pm \omega_2$ products with intermodulation dominated by third-order terms.
 
-For a Ge or Schottky diode biased at $\IQ \approx \SI{100}{\micro\ampere}$, this range spans roughly \SI{1}{\milli\volt} to \SI{27}{\milli\volt} of junction amplitude (Table~\ref{tab:diode-numbers})---just over a decade.
+For a Ge or Schottky diode biased at $\IQ \approx \SI{100}{\micro\ampere}$, this range spans roughly \SI{1}{\milli\volt} to \SI{27}{\milli\volt} of junction amplitude (Table~\ref{tab:diode-numbers})---about a decade and a half.
 
 \subsection*{Intermediate exponential ($n\VT < \vhd \lesssim \VQ - 4n\VT$)}
 
@@ -286,7 +286,7 @@ A fixed-bias detector reads this drift directly as a DC baseline shift at its ou
 \section*{The bottom line}
 
 A diode is a square-law device in the same way a stretch of road is flat: it is a useful approximation over a limited range, and knowing the limits prevents you from driving off the edge.
-The exponential is the truth; the square law is a convenience that holds across just over a decade of junction-voltage amplitude---between \SI{1}{\percent} and \SI{25}{\percent} second-harmonic distortion.
+The exponential is the truth; the square law is a convenience that holds across about a decade and a half of junction-voltage amplitude---between \SI{1}{\percent} and \SI{25}{\percent} second-harmonic distortion.
 Understanding that range, and what sits on either side of it, is what separates a detector that works from one that merely seems to.
 
 \begin{thebibliography}{9}
