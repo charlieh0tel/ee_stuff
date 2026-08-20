@@ -62,7 +62,7 @@ The current--voltage characteristic of an ideal p--n junction diode is given by 
 \end{equation}
 where $\IS$ is the reverse saturation current, $n$ is the ideality factor (emission coefficient), $\VT = kT/q \approx \SI{25.85}{\milli\volt}$ at $T = \SI{300}{\kelvin}$ is the thermal voltage, and $\VD$ is the junction voltage.
 
-For forward bias well above the thermal voltage --- specifically, when the exponent $\VD/n\VT$ is large enough that the unity term contributes negligibly to $\ID$ ($\VD \gtrsim 4n\VT$ gives an error of about \SI{2}{\percent}; for $n\approx 1$ this is roughly $\VD \gtrsim \SI{100}{\milli\volt}$) ---
+For forward bias well above the thermal voltage ($\VD \gtrsim 4n\VT$, where the $-1$ contributes under \SI{2}{\percent}; roughly \SI{100}{\milli\volt} for $n \approx 1$),
 \begin{equation}
 \ID \approx \IS\, \eu^{\frac{\VD}{n \VT}}.
 \label{eq:exp-approx}
@@ -94,7 +94,7 @@ For a sinusoidal drive $\vd = \vhd \cos\omega t$, each nonlinear term in \eqref{
 \mathrm{HD2} \approx \frac{\vhd}{4\, n \VT}, \qquad
 \mathrm{HD3} \approx \frac{\vhd^{\,2}}{24\,(n \VT)^2}.
 \end{equation}
-(Leading-order expressions; exactly, $\mathrm{HD2} = I_2(x)/I_1(x)$ with $x = \vhd/n\VT$, reaching \SI{25}{\percent} at $x = 1.04$ rather than at $x = 1$.) These quantitative criteria set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes in turn --- linear, quadratic / square-law, intermediate exponential, and full-Shockley / rectifying --- each treated in its own subsection below.
+(Leading-order expressions; exactly, $\mathrm{HD2} = I_2(x)/I_1(x)$ with $x = \vhd/n\VT$, reaching \SI{25}{\percent} at $x = 1.04$ rather than at $x = 1$.) These quantitative criteria set the boundaries between operating regimes. As the drive amplitude grows, the diode traverses four regimes, each treated in its own subsection below.
 
 \subsection*{Linear regime}
 
@@ -114,11 +114,11 @@ For $0.04\, n\VT \lesssim \vhd \lesssim n\VT$, HD2 grows from \SI{1}{\percent} t
 \end{equation}
 Truncation error peaks at the upper edge: at $\vhd = n\VT$ the dropped cubic term adds $x^2/8 = 12.5\%$ to the fundamental and the predicted rectified DC runs \SI{6}{\percent} low; HD3 alone understates the error. The $\vd^{\,2}$ term is the workhorse nonlinearity for two distinct applications. In a single-tone drive it produces a rectified DC component proportional to $\vhd^{\,2}$, the operating principle of small-signal envelope detectors and microwave power detectors. In a two-tone drive at $\omega_1$ and $\omega_2$ it generates sum- and difference-frequency products $\omega_1 \pm \omega_2$, the basis of resistive RF mixers and intermodulation analysis \cite{maas,pozar}.
 
-\emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' refers to the fact that the $\vd^{\,2}$ coefficient is the largest nonlinearity producing sum- and difference-frequency products in a two-tone drive, not to the I--V being purely quadratic.
+\emph{Terminology note.} The diode is not a true square-law device: the linear conductance $\gd$ is always present and dominates for $\vhd \ll n\VT$. ``Square-law mixing'' means the $\vd^{\,2}$ coefficient dominates the sum- and difference-frequency products in a two-tone drive, not that the I--V is purely quadratic.
 
 \subsection*{Intermediate exponential regime}
 
-For drive amplitudes that exceed the quadratic regime but do not yet violate the forward-bias approximation at the trough of the swing ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise the forward-exponential approximation has already failed before a distinct intermediate regime can appear. Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
+For drive amplitudes that exceed the quadratic regime but do not yet violate the forward-bias approximation at the trough of the swing ($n \VT < \vhd \lesssim \VQ - 4n\VT$), the power series in \eqref{eq:power-series} converges too slowly to be useful, yet the exponential approximation \eqref{eq:exp-approx} still holds throughout the cycle. This interval is nonempty only when $\VQ > 5n\VT$; otherwise no distinct intermediate regime exists. Substituting $\vd = \vhd \cos\omega t$ into \eqref{eq:exp-approx} and letting $x \equiv \vhd / (n \VT)$,
 \begin{equation}
 \ID(t) \approx \IQ\, \eu^{\,x \cos\omega t}.
 \end{equation}
@@ -134,7 +134,7 @@ Two features of this regime stand out:
     \item The average current rises with drive amplitude: $\langle \ID \rangle = \IQ\, I_0(x)$, and $I_0(x) > 1$ for $x > 0$. This rectified DC component (and the self-bias shift it produces when the diode feeds a resistive load through a coupling capacitor) is the operating principle of large-signal envelope detectors and grid-leak / cathode-bias detectors.
 \end{enumerate}
 
-For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$, $I_1(x) \approx x/2$, and $I_2(x) \approx x^2/8$, recovering the DC shift, fundamental term, and second-harmonic amplitude of the quadratic-regime expansion. For fixed $k$ and $x \gg 1$, $I_k(x) \sim \eu^x/\sqrt{2\pi x}$ up to $k$-dependent corrections, while orders $k \gtrsim x$ still roll off rapidly; no fixed low-order truncation remains adequate as $x$ grows, which is the large-signal behavior encountered as the rectifying regime is approached (rectification itself being set by $\vhd$ relative to $\VQ$, not by $x$ alone).
+For $x \ll 1$, $I_0(x) \approx 1 + x^2/4$, $I_1(x) \approx x/2$, and $I_2(x) \approx x^2/8$, recovering the DC shift, fundamental term, and second-harmonic amplitude of the quadratic-regime expansion. For fixed $k$ and $x \gg 1$, $I_k(x) \sim \eu^x/\sqrt{2\pi x}$ up to $k$-dependent corrections; no fixed low-order truncation remains adequate as $x$ grows, which is the large-signal behavior encountered as the rectifying regime is approached (rectification itself being set by $\vhd$ relative to $\VQ$, not by $x$ alone).
 
 \subsection*{Full-Shockley / rectifying regime}
 
@@ -226,7 +226,9 @@ Ge point-contact (1N34A)     & 1.05 & \SI{0.20}{\volt} & \SI{27}{\milli\volt} & 
 
 \FloatBarrier
 
-Two observations follow. First, the Si p--n signal diode has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents (ideality is a local, bias-dependent fit, not a technology constant); a 1N4148 can tolerate a junction-voltage amplitude up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. (In a real mixer the source amplitude that produces a given junction-voltage swing depends on embedding impedance, LO bias, matching network, and conduction angle, so these numbers are upper bounds on the junction excursion, not on the available source power.) Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation beyond the square-law boundary). (Without the factor of $n$, the Si p--n edge would be off by nearly \SI{90}{\milli\volt}.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
+Two observations follow. First, the Si p--n signal diode has roughly $1.7$--$1.8\times$ the square-law amplitude headroom of Ge or Schottky devices, simply because its ideality factor is higher at low bias currents (ideality is a local, bias-dependent fit, not a technology constant); a 1N4148 can tolerate a junction-voltage amplitude up to $\sim$\SI{48}{\milli\volt} before HD2 exceeds \SI{25}{\percent}, versus $\sim$\SI{27}{\milli\volt} for a 1N34A. (In a real mixer the source amplitude that produces a given junction swing depends on embedding impedance, LO bias, matching, and conduction angle; these numbers bound the junction excursion, not the available source power.)
+
+Second, the lower $\VQ$ of Ge and Schottky devices means the unclipped Bessel regime is correspondingly narrow: the intermediate-regime upper edge sits near \SI{91}{\milli\volt} for Ge (about \SI{64}{\milli\volt} beyond the $n\VT$ square-law boundary), whereas for a Si p--n diode the upper edge is near \SI{359}{\milli\volt} (about \SI{311}{\milli\volt} of unclipped exponential operation). (Without the factor of $n$, the Si p--n edge would be off by nearly \SI{90}{\milli\volt}.) This explains the historical division of labor: Ge (and later zero-bias Si Schottky) for sensitive weak-signal detection, where usable conductance at zero bias matters most, and Si p--n diodes for switching, clamping, and mixer service where the wider operating range is useful.
 
 \subsection*{Temperature dependence and detector stability}
 
