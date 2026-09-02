@@ -19,15 +19,25 @@
 - The power tree lives **in the schematic, generally on its own sheet**,
   drawn as boxes and arrows flowing **left to right** (wrapping to a new
   band when it outgrows the sheet), with load annotations (current
-  budgets) placed near each power conversion stage. In tbox it is
-  generated from `power_tree.json` by `tools/gen_power_tree.py` — edit
-  the json, never the generated block.
+  budgets) placed near each power conversion stage. In tbox
+  `tools/gen_power_tree.py` draws it from two sources that never overlap:
+  **topology and loads come from the schematic** (converters are parts
+  with a `power_in` pin on one rail and a `power_out` pin on another, or
+  a `Rail_out` field when the output reaches the rail through a passive
+  or a plain output pin; loads are `Load_mA` fields), **capability comes
+  from `power_tree.json`** (`max_ma`, its basis, thresholds). Never edit
+  the generated block; rerun the generator after touching either source.
 - **Load annotation.** Give every current-drawing symbol a `Load_mA`
   field (`"typ"` or `"typ/max"`, in mA) as part of normal schematic
-  construction. `tools/check_power.py` attributes each part's draw to the
-  rail on its `power_in` pin and sums per rail; set an explicit `Load_rail`
-  field only when attribution is ambiguous. Rail capabilities (`max_ma`)
-  stay in `power_tree.json`.
+  construction. *typ* is the normal receiving state (powered, nothing
+  keyed, no button held); *max* is every load that can be on at once,
+  each at its sustained maximum (amplifiers: full-scale sine at clip into
+  the rated load). A converter's own quiescent/ground current is just its
+  `Load_mA`. `tools/check_power.py` attributes each draw to the rail on
+  the part's `power_in` pin and flattens the tree — every load is an
+  occurrence on its own rail and on every rail upstream of it (1:1
+  through linear stages). Set `Load_rail` only when attribution is
+  ambiguous.
 - Prefer **SMT construction** — choose SMT packages unless a part is
   panel-mount or SMT is unavailable.
 - **Consider capacitive loading on the output of every device with a

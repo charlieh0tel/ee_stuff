@@ -1,9 +1,11 @@
 # TODO
 
-- Verify the +9V thermal max (385 mA in `power_tree.json`) against the
-  actual layout: it assumes the TPS7A4701's VQFN pad sits on a ground pour
-  with vias giving θJA ≈ 32.5 °C/W (Tj 125 °C, Ta 50 °C, 15 V in).
-  Recompute once the pour is drawn.
+- Layout constraint from the power budget: the +9V max (250 mA flattened)
+  is 64 % of the 385 mA thermal cap only if the TPS7A4701's VQFN pad gets
+  a via-stitched ground pour (θJA ≈ 32.5 °C/W; Tj 125 °C, Ta 50 °C, 15 V
+  in). A 2-layer board with a token pour (~50 °C/W) caps at ~250 mA — no
+  margin. Either go 4-layer / heavy pour with ≥16 thermal vias, or lower
+  `max_ma` and accept an ALERT. Recompute once the pour is drawn.
 
 - Footprint / MPN assignment pass: no instance has a footprint yet (the
   library defaults are overridden with ""). Includes: J401 insulated-bushing
@@ -23,15 +25,10 @@
   LM-NP-1001-B1L, SMT 600:600) and verify 150 Hz at -10 dBV without
   saturation, driven from ~100 Ω into ≥10 kΩ.
 
-- Power budget checking — `tools/check_power.py` exists (extracts `Load_mA`
-  per rail via the netlist, alerts at `alert_utilization`, exits nonzero on
-  OVER). Remaining:
-  - `Load_mA` is annotated on every op-amp, LED dropper and logic
-    pull-up. Still unannotated: the TS12A12511s (µA), electret bias and
-    VREF draws.
-  - `--update`: sync `power_tree.json` from the extracted loads and
-    regenerate the tree sheet (needs a per-load ref linkage first; the json
-    `loads` list is still freeform functional groupings, so the current
-    reconciliation is advisory-only).
-  - Wire `check_power.py` into CI so a schematic edit that blows a budget
-    fails the build.
+- CI: `tools/check_sch.py` is pure Python and can run in the shared
+  workflow today; `tools/check_power.py` and `gen_power_tree.py` need
+  `kicad-cli` (KiCad 9) in the runner — a KiCad container job. Until then
+  both run locally before commit. Not annotated on purpose: the
+  TS12A12511s (µA).
+- `Load_rail` split syntax for a part drawing from two rails — nothing
+  needs it yet.

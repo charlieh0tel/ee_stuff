@@ -3,7 +3,11 @@
 # requires-python = ">=3.13"
 # dependencies = []
 # ///
-"""Regenerate the power tree from power_tree.json (single source of truth).
+"""Regenerate the Power Tree sheet and the Supply-sheet load notes.
+
+Topology and loads are read from the schematic (netlist), capability from
+power_tree.json -- see power_model.py.  Run after any change to a Load_mA
+field, a converter, or the json.
 
 Outputs:
   - kicad/powertree.kicad_sch : boxes-and-arrows tree, left-to-right,
@@ -15,14 +19,13 @@ replaced wholesale on each run; hand-drawn content is left untouched.
 The Power Tree sheet must already exist in the root hierarchy.
 """
 
+import argparse
 import json
 import os
 import uuid
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(HERE)
-KI = os.path.join(ROOT, "kicad")
-SRC = os.path.join(ROOT, "power_tree.json")
+from power_model import KI, SRC, PowerTree, export_netlist, fmt_ma, parse_netlist
+
 STATE = os.path.join(KI, "power_tree_gen.json")
 TREE_SCH = os.path.join(KI, "powertree.kicad_sch")
 SUPPLY_SCH = os.path.join(KI, "supply.kicad_sch")
@@ -42,7 +45,8 @@ NS = uuid.UUID("b7e5d1a2-0c3f-4e6a-9b8c-1d2e3f4a5b6c")
 
 # layout (grid units); A4 landscape drawable ~ x 12..220, y 12..150
 X0, Y0 = 10, 16
-BOX_W = 46
+BOX_MIN, BOX_MAX = 30, 80  # box width follows the longest line
+CHAR_W = 0.9  # grid units per character at 1.27 mm
 COL_GAP = 8
 LINE = 2.2
 PAD = 1.2
@@ -120,42 +124,61 @@ class Emit:
         )
 
 
-def node_lines(name, src, nodes):
+def load_line(tree, name):
+    tt, tm = tree.total(name)
+    dt, dm = tree.direct_sum(name)
+    s = f"load: {fmt_ma(tt)} typ / {fmt_ma(tm)} max mA"
+    if tree.children.get(name):
+        s += f" (direct {fmt_ma(dt)}/{fmt_ma(dm)} + downstream)"
+    return s
+
+
+def node_lines(name, tree):
+    src = tree.src
     inp = src["input"]
     if name == inp["name"]:
         lines = [f"{inp['name']}  {inp['desc']}", inp["protection"]]
         if inp.get("note"):
             lines.append(inp["note"])
         return lines
-    n = nodes[name]
+    n = tree.nodes[name]
     hdr = n["name"]
-    if n.get("converter"):
-        hdr += "  <- " + n["converter"]
+    if tree.converter_label(name):
+        hdr += "  <- " + tree.converter_label(name)
     lines = [hdr]
-    if n.get("budget"):
-        lines.append("budget: " + n["budget"])
+    if n.get("desc"):
+        lines.append(n["desc"])
+    lines.append(load_line(tree, name))
     if n.get("max_ma"):
         basis = f" ({n['max_basis']})" if n.get("max_basis") else ""
         lines.append(f"max: {n['max_ma']} mA{basis}")
     if n.get("note"):
         lines.append(n["note"])
-    for ld in n.get("loads", []):
-        lines.append(f"  - {ld['name']}: {ld['ma']} mA")
+    if n.get("no_loads"):
+        lines.append(f"  {n['no_loads']}")
+    for sheet, refs, t, m in tree.by_sheet(name):
+        shown = " ".join(refs[:4]) + (f" +{len(refs) - 4}" if len(refs) > 4 else "")
+        lines.append(f"  - {sheet}: {shown} = {fmt_ma(t)}/{fmt_ma(m)}")
     return lines
 
 
 def main():
+    ap = argparse.ArgumentParser(description="Regenerate the TBox power tree.")
+    ap.add_argument("--netlist", help="use this netlist instead of exporting")
+    args = ap.parse_args()
     with open(SRC) as f:
         src = json.load(f)
-    nodes = {n["name"]: n for n in src["nodes"]}
-    children = {}
-    for n in src["nodes"]:
-        children.setdefault(n["from"], []).append(n["name"])
+    with open(args.netlist or export_netlist()) as f:
+        tree = PowerTree(src, *parse_netlist(f.read()))
+    for w in tree.warnings:
+        print(f"warning: {w}")
+    children = {src["input"]["name"]: [tree.root]}
+    children.update(tree.children)
     inp_name = src["input"]["name"]
 
     e = Emit("powertree")
     e.text(
-        "POWER TREE  (generated from power_tree.json -- do not hand-edit)",
+        "POWER TREE  (generated: topology + loads from the schematic, capability from power_tree.json -- do not hand-edit)",
         X0,
         Y0 - 2,
         size=1.778,
@@ -169,22 +192,23 @@ def main():
 
     def place(name, x, y):
         """Place node and subtree; returns (bottom_y_of_subtree, box_geom)."""
-        if x > X_MAX - BOX_W:
+        lines = node_lines(name, tree)
+        w = max(BOX_MIN, min(BOX_MAX, 2 * PAD + CHAR_W * max(map(len, lines))))
+        if x > X_MAX - w:
             # wrap: new band at left margin, below everything so far
             y = band_bottom[0] + BAND_GAP
             x = X0
-        lines = node_lines(name, src, nodes)
         h = 2 * PAD + LINE * len(lines)
-        e.rect(x, y, x + BOX_W, y + h)
+        e.rect(x, y, x + w, y + h)
         ty = y + PAD + LINE * 0.85
         for i, ln in enumerate(lines):
             e.text(ln, x + PAD, ty + LINE * i, bold=(i == 0))
         band_bottom[0] = max(band_bottom[0], y + h)
-        geom = (x, y, x + BOX_W, y + h)
+        geom = (x, y, x + w, y + h)
         cy = y
         sub_bottom = y + h
         for c in children.get(name, []):
-            cb, cgeom = place(c, x + BOX_W + COL_GAP, cy)
+            cb, cgeom = place(c, x + w + COL_GAP, cy)
             # arrow: parent right edge -> child left edge
             pcy = (geom[1] + geom[3]) / 2
             kcy = (cgeom[1] + cgeom[3]) / 2
@@ -203,8 +227,8 @@ def main():
                     [
                         ((geom[0] + geom[2]) / 2, geom[3]),
                         ((geom[0] + geom[2]) / 2, cgeom[1] - 2),
-                        (cgeom[0] - 3, cgeom[1] - 2),
-                        (cgeom[0] - 3, kcy),
+                        (cgeom[0] - 2, cgeom[1] - 2),
+                        (cgeom[0] - 2, kcy),
                         (cgeom[0], kcy),
                     ]
                 )
@@ -224,9 +248,15 @@ def main():
     # per-stage annotations on the supply sheet
     s_notes = Emit("supply")
     for n in src["nodes"]:
-        if n.get("sch_note") and n.get("sch_note_at"):
+        if n.get("sch_note_at"):
             x, yy = n["sch_note_at"]
-            for i, ln in enumerate(reversed(n["sch_note"].split("\n"))):
+            if n.get("no_loads"):
+                note = [n["sch_note"]] if n.get("sch_note") else []
+            else:
+                note = [load_line(tree, n["name"])] + (
+                    n["sch_note"].split("\n") if n.get("sch_note") else []
+                )
+            for i, ln in enumerate(reversed(note)):
                 s_notes.text(ln, x, yy - 2 * i)
 
     # ---- apply to files, replacing previously managed elements ----

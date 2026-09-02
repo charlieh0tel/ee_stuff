@@ -2588,6 +2588,8 @@
     (uuid "db967da6-04a8-4eb5-bccc-71afe3910cd4")
     (property "Reference" "R201" (at 59.69 43.18 0) (effects (font (size 1.27 1.27))))
     (property "Value" "2k2" (at 59.69 45.72 0) (effects (font (size 1.27 1.27))))
+    (property "Load_rail" "BIAS_5V" (at 59.69 43.18 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "0/1" (at 59.69 43.18 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 55.88 44.45 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 55.88 44.45 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 55.88 44.45 0) (effects (font (size 1.27 1.27)) (hide yes)))

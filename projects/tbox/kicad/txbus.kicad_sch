@@ -4165,7 +4165,7 @@
     (property "Footprint" "" (at 111.76 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 111.76 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 111.76 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "5" (at 111.76 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "0/5" (at 111.76 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "1" (uuid "de553488-bbef-5881-bc4a-afd27b6824cd"))
     (pin "2" (uuid "b4274686-62c9-5199-83bf-c7e9948fe7cb"))
     (instances (project "tbox"

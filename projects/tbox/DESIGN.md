@@ -245,11 +245,18 @@ panel; front mic and phones jacks stay free.
 
 ### Power tree
 
-Source of truth is `power_tree.json`, rendered on the Power Tree sheet
-by `tools/gen_power_tree.py`; `tools/check_power.py` reconciles it with
-the `Load_mA` annotations in the schematic. LED indicators run from the
-raw filtered rail (`RAW_13V8`) via droppers — never from the 9 V analog
-rail.
+Drawn on the Power Tree sheet by `tools/gen_power_tree.py` from two
+sources: topology and loads from the schematic (converter pins and
+`Load_mA` fields), capability from `power_tree.json` (`max_ma` and the
+analysis behind it). `tools/check_power.py` flattens the tree so each
+rail's total includes everything downstream and checks it against
+`max_ma`. Current figures: +9V 62 mA typ / 250 mA max (the max is two
+16 Ω headsets at sine clip plus every LED and pull-up on), which is 64 %
+of the regulator's 385 mA thermal limit at 15 V in — a limit that
+assumes a via-stitched pad on a ground pour (θJA ≈ 32.5 °C/W); a
+2-layer board with a token pour is closer to 50 °C/W and ~250 mA, so the
+layout has to earn the number. LED indicators run from the raw filtered
+rail (`RAW_13V8`) via droppers — never from the 9 V analog rail.
 - PTT logic is diode-OR and discretes. All logic transistors are
   2N7002 so no base current loads the pull-ups; logic highs stay above
   ~7 V.

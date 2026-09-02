@@ -3388,7 +3388,7 @@
     (property "Footprint" "" (at 241.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 241.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 241.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "10/53" (at 241.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "10/90" (at 241.3 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "4" (uuid "a8bc78ac-8163-59bd-879b-5c1ebdece880"))
     (pin "8" (uuid "ecbf1513-385f-5006-b6e2-d60e95522c80"))
     (instances (project "tbox"
@@ -3451,7 +3451,7 @@
     (property "Footprint" "" (at 266.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 266.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 266.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "10/53" (at 266.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "10/90" (at 266.7 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "4" (uuid "f15b7c98-c778-5c88-b3d2-d31fea1d7c3d"))
     (pin "8" (uuid "d63b9e5a-a9d6-5e43-aa41-6b23d1d1e2ed"))
     (instances (project "tbox"

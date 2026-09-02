@@ -1,65 +1,46 @@
 {
-  "_comment": "Single source of truth for the TBox power tree. tools/gen_power_tree.py regenerates the schematic tree graphic and per-stage load annotations in kicad/supply.kicad_sch from this file. Do not hand-edit the generated block in the schematic. Per-node max_ma/max_basis is the supply's deliverable maximum (rated current, or the thermal limit where that binds first); _max_analysis records the derivation and is not drawn. alert_utilization is the fraction of max_ma at which tools/check_power.py (TODO) should alert.",
+  "_comment": "Supply CAPABILITY for the TBox power tree -- nothing else. Topology (which converter feeds which rail) and loads (Load_mA fields) are read from the schematic by tools/power_model.py; tools/gen_power_tree.py draws the tree on the Power Tree sheet and writes the per-stage load notes on the Supply sheet; tools/check_power.py compares each rail's flattened load against max_ma. Per-node max_ma/max_basis is the supply's deliverable maximum (rated current, or the thermal limit where that binds first); _max_analysis records the derivation and is not drawn. alert_utilization is the fraction of max_ma at which check_power.py alerts. Optional per node: 'efficiency' + 'v' (switching stage: upstream current = I*Vout/(Vin*eff)), 'no_loads' (rail carries no DC load by design), 'sch_note_at'/'sch_note' (note placed on the Supply sheet; the generator prepends the measured load line).",
   "alert_utilization": 0.75,
   "input": {
     "name": "13V8_IN",
+    "rail": "RAW_13V8",
     "desc": "13.8V nom (10.5-15V)",
     "protection": "PTC 0.5A > SS34 > pi filter",
-    "note": "PTC 0.5A hold vs ~250 mA worst-case draw; SMBJ18A TVS after the filter (regulator max 35 V)"
+    "note": "SMBJ18A TVS after the filter (U1 max 35 V)"
   },
   "nodes": [
     {
       "name": "RAW_13V8",
-      "from": "13V8_IN",
-      "desc": "post-filter",
+      "desc": "post-filter; LED droppers + U1 input",
       "max_ma": 500,
       "max_basis": "upstream PTC 0.5A hold",
-      "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (incl. LM2940 input current).",
-      "loads": [{"name": "LED rail (7 LEDs incl. 17 mA TX lamp)", "ma": "~47"}, {"name": "U1 ground current", "ma": "1"}]
+      "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (the +9V regulator's input current is its output current plus ~1 mA ground current)."
     },
     {
       "name": "+9V",
-      "from": "RAW_13V8",
-      "converter": "TPS7A4701 LDO (ANY-OUT 9.0 V)",
-      "budget": "60 mA typ / 175 mA max",
       "max_ma": 385,
       "max_basis": "thermal, VQFN-20 pad @15V in",
-      "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA 32.5 C/W (RGW VQFN-20 with thermal pad on a ground pour, VERIFY against layout) -> Pd 2.3W; at 15V in (6V drop) I <= 385 mA. At 13.8V in ~480 mA (PTC 0.5A then binds).",
-      "note": "Pd 0.85W @13V8, 1.05W @15V worst case; dropout 0.22 V -> OK to 10V5 in",
-      "sch_note_at": [150, 68],
-      "sch_note": "load 60 mA typ / 175 mA max\nPd <=1.05W @15V; dropout OK to 10V5",
-      "loads": [
-        {"name": "preamps (U201/U301)", "ma": "8 typ / 10 max"},
-        {"name": "Vref buffer (U3)", "ma": "4 typ / 5 max"},
-        {"name": "TX bus (U401/U402/U403: sum, mic out, line L/R)", "ma": "12 typ / 15 max"},
-        {"name": "RX + monitor buffers (U601/U602)", "ma": "8 typ / 10 max"},
-        {"name": "phones amps (U603/U604, 70 mA clip)", "ma": "20 typ / 106 max"},
-        {"name": "logic pull-ups (PTT inverters 2x2k2 unkeyed, mute buttons, intercom NOR)", "ma": "10 typ / 28 max"}
-      ]
+      "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA 32.5 C/W (RGW VQFN-20 with thermal pad on a ground pour with a via array -- a 2-layer board with a token pour is nearer 50 C/W, i.e. ~250 mA; VERIFY against layout) -> Pd 2.3W; at 15V in (6V drop) I <= 385 mA. At 13.8V in ~480 mA (PTC 0.5A then binds).",
+      "note": "Pd <=1.5W @15V worst case; dropout 0.22 V, OK to 10V5 in",
+      "sch_note_at": [168, 58],
+      "sch_note": "Pd <=1.5W @15V; dropout OK to 10V5"
     },
     {
       "name": "BIAS_5V",
-      "from": "+9V",
-      "converter": "ADP7142 LDO (fixed 5.0V, low-noise)",
-      "budget": "1-2 mA",
       "max_ma": 200,
       "max_basis": "rated",
-      "_max_analysis": "ADP7142AUJZ-5.0 rated 200 mA. Thermal is non-binding at this load: 9V in, 4V drop, load 1-2 mA -> Pd ~8 mW, negligible in TSOT-23-5 (thetaJA ~170C/W). Rating binds far above the ~2 mA budget.",
-      "sch_note_at": [42, 71],
-      "sch_note": "load 1-2 mA (electret bias)",
-      "loads": [{"name": "electret bias, 2 ch", "ma": "1-2"}]
+      "_max_analysis": "ADP7142AUJZ-5.0 rated 200 mA. Thermal is non-binding at this load: 9V in, 4V drop, load ~1-2 mA -> Pd ~8 mW, negligible in TSOT-23-5 (thetaJA ~170C/W).",
+      "sch_note_at": [72, 63],
+      "sch_note": "electret bias"
     },
     {
       "name": "VREF",
-      "from": "+9V",
-      "converter": "OPA1678 buffer, 4.5V",
-      "budget": "<1 mA",
       "max_ma": 10,
       "max_basis": "op-amp output drive",
       "_max_analysis": "OPA1678 output: 50 mA short-circuit; ~10 mA is a sane continuous drive limit for a DC bias reference.",
+      "no_loads": "DC bias only: every gain-setting leg returns to GND",
       "sch_note_at": [58, 99],
-      "sch_note": "load <1 mA (AC ground ref)",
-      "loads": [{"name": "AC ground reference", "ma": "<1"}]
+      "sch_note": "DC bias only, no load by design"
     }
   ]
 }
