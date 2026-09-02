@@ -5,7 +5,7 @@
 # ///
 """Power-budget checker for the TBox power tree.
 
-Reconciles the two sources of truth:
+Reconciles supply capability with the loads drawn on the schematic:
 
   - Supply capability lives in ``power_tree.json``: each rail node carries
     ``max_ma`` (deliverable maximum) and the global ``alert_utilization``.

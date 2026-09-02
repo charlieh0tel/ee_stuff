@@ -5,7 +5,7 @@
     "name": "13V8_IN",
     "desc": "13.8V nom (10.5-15V)",
     "protection": "PTC 0.5A > SS34 > pi filter",
-    "note": "PTC 0.5A hold vs ~210 mA total draw"
+    "note": "PTC 0.5A hold vs ~250 mA worst-case draw; SMBJ18A TVS after the filter (regulator max 35 V)"
   },
   "nodes": [
     {
@@ -15,25 +15,25 @@
       "max_ma": 500,
       "max_basis": "upstream PTC 0.5A hold",
       "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (incl. LM2940 input current).",
-      "loads": [{"name": "LED rail (droppers)", "ma": "~30"}]
+      "loads": [{"name": "LED rail (7 LEDs incl. 17 mA TX lamp)", "ma": "~47"}, {"name": "U1 ground current", "ma": "1"}]
     },
     {
       "name": "+9V",
       "from": "RAW_13V8",
-      "converter": "LM2940S-9.0 LDO",
-      "budget": "130 mA typ / 180 mA max",
-      "max_ma": 250,
-      "max_basis": "thermal, TO-263 @15V in",
-      "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA ~50C/W (TO-263 on copper pour, VERIFY against layout) -> Pd 1.5W; at 15V in (6V drop) I <= 250 mA. At 13.8V in (4.8V drop) ~310 mA.",
-      "note": "Pd 0.8W @13V8, 1.0W @15V; dropout OK to 10V5 in",
-      "sch_note_at": [66, 57],
-      "sch_note": "load 130 mA typ / 180 mA max\nPd <=1W @15V; dropout OK to 10V5",
+      "converter": "TPS7A4701 LDO (ANY-OUT 9.0 V)",
+      "budget": "70 mA typ / 205 mA max",
+      "max_ma": 385,
+      "max_basis": "thermal, VQFN-20 pad @15V in",
+      "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA 32.5 C/W (RGW VQFN-20 with thermal pad on a ground pour, VERIFY against layout) -> Pd 2.3W; at 15V in (6V drop) I <= 385 mA. At 13.8V in ~480 mA (PTC 0.5A then binds).",
+      "note": "Pd 1.0W @13V8, 1.2W @15V worst case; dropout 0.22 V -> OK to 10V5 in",
+      "sch_note_at": [150, 68],
+      "sch_note": "load 70 mA typ / 205 mA max\nPd <=1.2W @15V; dropout OK to 10V5",
       "loads": [
         {"name": "preamps", "ma": "16"},
         {"name": "Vref buffer", "ma": "8"},
-        {"name": "TX bus", "ma": "24"},
-        {"name": "RX buffers", "ma": "8"},
-        {"name": "phones amps", "ma": "20 q + ~50 pgm"},
+        {"name": "TX bus (U401/U402/U403: sum, mic out, line L/R)", "ma": "24 typ / 48 max"},
+        {"name": "RX + monitor buffers (U601/U602)", "ma": "16 typ / 32 max"},
+        {"name": "phones amps (U603/U604, 70 mA clip)", "ma": "20 typ / 106 max"},
         {"name": "mute/discretes", "ma": "2"}
       ]
     },

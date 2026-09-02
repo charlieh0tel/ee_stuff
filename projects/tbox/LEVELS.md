@@ -9,9 +9,9 @@ filter buys ~8 dB beyond these figures.
 
 | Item | Value | Notes |
 |---|---|---|
-| Analog rail | 9.0 V | LDO from ≥10.5 V input, ≥1.5 V dropout margin |
+| Analog rail | 9.0 V | TPS7A4701 from ≥10.5 V input (~0.8 V margin after PTC + Schottky; dropout 0.22 V) |
 | Vref | 4.5 V | buffered mid-rail |
-| Op-amp swing | ~6 Vpp | NE5532-class, ~1.5 V from each rail |
+| Op-amp swing | ~6 Vpp | NE5532-class, ~1.5 V from each rail (9 V is below TI's recommended supply — measure) |
 | Clip point | +6 dBV | 2.1 Vrms, all internal nodes |
 | Internal nominal | -15 dBV | 21 dB headroom to clip; peaks reach ~0 dBV |
 
@@ -22,37 +22,42 @@ filter buys ~8 dB beyond these figures.
 | Mic jack, dynamic | -57 dBV | -42 | HI range; Heil HC-6/HC-7 spec |
 | Mic jack, electret | -45 dBV | -30 | LO range; OHIS/CMC-9745/Heil iC class |
 | Mic jack, powered desk mic | -28 dBV | -13 | LO range, level pot low; SM-30 class (reference only — Icom powered mics unsupported) |
-| Preamp out | ~-15 dBV | ~0 | HI +45 dB / LO +25 dB |
-| Mute node | -15 dBV | | ≤0.5 dB insertion; mute depth ≥60 dB (see below) |
-| Level pot (design center) | -21 dBV | | 10k audio taper, ~-6 dB nominal |
+| Preamp out | ~-17 dBV | ~-2 | HI +40 dB / LO +20 dB (two +20 dB stages; 8 dB peak margin to clip) |
+| Mute node | -15 dBV | | ≤0.1 dB insertion (Ron ~5 Ω into 10k); mute depth >70 dB (see below) |
+| Level pot (design center) | -21 dBV | | 10k audio taper, ~-4 dB nominal |
 | Summing amp / TX MIX bus | -15 dBV | ~0 | +6 dB makeup |
-| Mic out, MIC mode | -46 dBV (5 mV) | | -31 dB pad, trim ±10 dB, 600 Ω build-out |
-| Mic out, LINE mode | -10 dBV | | +5 dB stage, trim ±10 dB, drives 600 Ω |
+| Mic out, MIC mode | -46 dBV (5 mV) | | +5 dB driver then -26 dB pad (~690 Ω source incl. the DE-9 series R); rear trim used range -20…0 dB ahead of the driver, nominal at -10 dB |
+| Mic out, LINE mode | -10 dBV open, -12.5 dBV into 600 Ω | | +5 dB driver, trim at max; 200 Ω total build-out with the DE-9 series R |
 
-**Mute depth:** a single JFET shunt only reaches ~-33 dB
-(rON ~100 Ω against a ~4.7 kΩ series arm). Full mute requires a
-**series + shunt JFET pair** per channel: series device opens, shunt
-device clamps — ≥60 dB at 1 kHz. Both gates share the RC ramp.
+**Mute depth:** the TS12A12511 SPDT opens the signal path and clamps
+the node to Vref in one move (series + shunt): off isolation is -70 dB
+at 1 MHz and better at audio. The residual is the switching step, which
+is the driving op-amp's offset (≤4 mV, ~-48 dBV, 33 dB below nominal)
+applied once — not a tone.
 
 **Gain range coverage:** with the level pot's reach (±10 dB around design
-center), LO covers roughly -55…-30 dBV sources, HI covers -70…-50 dBV.
-Overlap at -55…-50, no gap.
+center), LO covers roughly -50…-25 dBV sources, HI covers -65…-45 dBV.
+Overlap at -50…-45, no gap. The unselected stage still runs; in LO mode
+with a hot electret it clips off-path (harmless but worth knowing on the
+bench).
 
 ## RX path (RX in → phones)
 
 | Node | Nominal | Notes |
 |---|---|---|
 | RX in, K3S LINE OUT | -10 dBV | 600 Ω source; fixed level |
-| RX in, phones-jack rigs | -30…+5 dBV | volume-dependent; pad tolerates +7 dBV (5 Vpp) |
-| Input pad + trim out | -15 dBV | trim range -20…+5 dB after fixed -12 dB pad; 470 Ω load |
+| RX in, phones-jack rigs | -30…+5 dBV | volume-dependent; the trim absorbs +5 dBV (5 Vpp) sources |
+| Trim + buffer out | -15 dBV | 10 kΩ bridging load, rear trim, +15 dB buffer: total gain +15…-∞ dB, no fixed pad |
 | RX bus (per side) | -15 dBV | |
-| Monitor injection | up to -15 dBV | monitor pot: off → equal to RX |
-| Headphone amp out, max | 0 dBV | +15 dB max gain after volume pot |
+| Monitor injection | up to -15 dBV | monitor pot (buffered): off → equal to RX |
+| Mix node (per ear) | -24.5 dBV per source | passive mix into the volume gang (-9.5 dB) |
+| Headphone amp out, max | -0.4 dBV open | +24 dB after the volume pot; 10 Ω build-out |
 
-**Headphone power:** 1 Vrms = 31 mW into 32 Ω, ~40 mW into 16 Ω
-(current-limited) — meets the ≥20 mW spec with margin. Requires a
-9 V-capable driver (NJM4556A-class dual op-amp or op-amp + buffer);
-LM4880/TPA6112-class parts are 5.5 V max and are out.
+**Headphone power:** 0.955 Vrms open through the 10 Ω build-out gives
+~17 mW into 32 Ω and ~22 mW into 16 Ω — meets the ≥20 mW/16 Ω spec for
+one headset per position; three paralleled 16 Ω headsets current-limit
+at ~4 mW each. Requires a 9 V-capable driver (NJM4556A); LM4880/TPA6112-
+class parts are 5.5 V max and are out.
 
 ## Line out
 
@@ -70,8 +75,8 @@ LM4880/TPA6112-class parts are 5.5 V max and are out.
 | TX SNR at bus, dynamic/HI | ≥ 60 dB | -123 + 45 = -78 dBV noise vs -15 dBV signal |
 | TX SNR at bus, electret/LO | ≥ 78 dB | 20 dB less gain, hotter source |
 | RX path SNR | ≥ 85 dB | line levels throughout |
-| Bias rail noise at mic node | ≤ 3 µVrms | ~71 dB below -35 dBV electret; LDO + 2-pole RC (≤10 Hz) |
-| Vref | buffered, ≤10 µV | common to all stages; rejected differentially where possible |
+| Bias rail noise at mic node | ≤ 3 µVrms | ~71 dB below -35 dBV electret; LDO + RC (~15 Hz) + 100n at the mic node |
+| Vref | buffered, stiff | DC bias only — every gain-setting leg of a ground-referenced stage returns to GND, so Vref noise is never amplified |
 
 ## Response targets
 

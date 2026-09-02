@@ -50,3 +50,7 @@
 
 - Python scripts: lint and format with **ruff** (`ruff check` and
   `ruff format`) before committing.
+- `tools/check_sch.py` flags pin ends sitting on the interior of a wire
+  or on another symbol's pin without a junction — KiCad silently
+  connects those and ERC does not object. Run it (and ERC) after any
+  schematic edit.

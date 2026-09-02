@@ -14,7 +14,7 @@ and a generic rig connector with rig-specific cables.
 | Rig connection | Generic DE-9 on box + rig-specific cables |
 | Channel layout | Two fixed, identical channel groups (A and B) — no cross-assignment |
 | Headset usage | Both channels mixable; override selector: OFF / A→B / B→A |
-| Muting | Full mute only (no ducking), JFET series+shunt, pop-free, LED indicated |
+| Muting | Full mute only (no ducking), analog-switch SPDT to Vref, pop-free, LED indicated |
 | Intercom | Global momentary button: mutes TX mix to rig, monitor stays live |
 | RX path | Stereo throughout (main/sub for dual-receive rigs; mono rigs feed both) |
 | Line out | Stereo, per-side source jumpers, levels via rear trims |
@@ -40,8 +40,8 @@ and a generic rig connector with rig-specific cables.
                                                              │    (padded, trim)
                                                              └──► LINE OUT
                                                                   TX-side jumper
- RX L ── pad ── trim ──┬─────────────────────────► LINE OUT L/R (isolated,
- RX R ── pad ── trim ──┤                            per-side source jumpers,
+ RX L ── trim ── buf ──┬─────────────────────────► LINE OUT L/R (isolated,
+ RX R ── trim ── buf ──┤                            per-side source jumpers,
  from rig              │                            rear level trims)
  (mono cables tie L+R) │
                        ▼
@@ -66,19 +66,29 @@ Two identical, physically grouped channel sections (A and B). Each has:
   enforced by switching contacts).
 - **Electret bias switch** (rear panel): ~5 V through 2.2 kΩ from the
   bias rail; applies to all jacks in the group.
-- **Gain range switch** (rear panel, beside the bias switch): LO ~+25 dB
-  (electrets, ~-45 dBV) / HI ~+45 dB (dynamics, ~-57 dBV Heil class).
+- **Gain range switch** (rear panel, beside the bias switch): LO ~+20 dB
+  (electrets, ~-45 dBV) / HI ~+40 dB (dynamics, ~-57 dBV Heil class).
   Both ranges land nominal mic level at the same point at the channel
   level pot, which handles fine adjustment. Exact gains per
   [LEVELS.md](LEVELS.md). The switch throws a DC control line; gain
-  switching happens at the preamp via signal relay or DG-class analog
-  switch (mic-level signals don't cross boards).
-- **Mute button:** front panel, latching/alternate-action (NKK/Schadow
-  style; fallback: toggle, or momentary + flip-flop). Full mute: JFET
-  series + shunt pair after the preamp (a single shunt only reaches
-  ~-33 dB; the pair gives ≥60 dB), RC-ramped gates (~10 ms), muting node
-  AC-coupled with no DC across the JFETs (DC across the mute element
-  pops). Override mute uses the same circuit, triggered electrically.
+  switching happens at the preamp with a 9 V-rated SPDT analog switch
+  (TS12A12511, U202/U302) selecting the stage-1 or stage-2 output
+  (mic-level signals don't cross boards).
+- **Mute button:** top panel, latching/alternate-action (NKK/Schadow
+  style; fallback: toggle, or momentary + flip-flop). Full mute: a
+  TS12A12511 SPDT analog switch after the preamp — COM is the output,
+  NC the signal, NO = Vref — so muting both opens the path and clamps
+  the node (series + shunt in one part, >70 dB, no pinch-off
+  dependence). No DC across the switch: the stage ahead has unity DC gain
+  at Vref and the load returns to Vref, so the switching step is only the
+  op-amp offset (a few mV) and there is no pop. A JFET series+shunt pair
+  was the first design; at 9 V single-supply a worst-case J113
+  (|Vgs(off)| = 3 V) is neither fully off at 0 dBV peaks when muted nor
+  fully off when unmuted, so it was dropped. Override mute uses the same
+  circuit, triggered electrically. The mute is one shared sub-sheet
+  (`kicad/mute.kicad_sch`, pins IN / OUT / MUTE) instantiated in each
+  preamp and once more for the intercom; a power-on hold keeps both
+  channels muted for ~1 s while the audio coupling caps settle.
 - **Channel level pot** into the TX mix bus.
 - **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure.
 - **Round-plug ham mics** (Yaesu/Kenwood/Icom/Elecraft 8-pin Foster)
@@ -95,26 +105,32 @@ Two identical, physically grouped channel sections (A and B). Each has:
   bus: summing amp → monitor tap → intercom mute → mic out pad / line out
   TX tap.
 - **Intercom:** global momentary button (front panel, reachable from both
-  positions). While held, a JFET pair mutes the TX mix downstream of the
+  positions). While held, the same switch mutes the TX mix downstream of the
   monitor tap: operators hear each other, nothing reaches the rig or the
   line out. **PTT wins:** while the rig is keyed, the intercom is locked
   out (its DC control line is gated by the PTT output state) and its LED
-  stays dark.
+  stays dark (a resistor-NOR on the TX Bus sheet).
 - **Mic out to rig:** TX mix padded to ~5 mV mic level, ~600 Ω source
   impedance, DC-blocking cap (rigs may put electret bias on their mic
-  pin). Level trim rear-accessible — must not require opening the box.
-  Trim range (or jumper) extends to line level (~300 mV) for rigs with a
-  line-level TX input. Must drive a 600 Ω load. Level setting uses the
-  rig's ALC/mic-gain meter — the box has no metering.
+  pin). Level trim rear-accessible — must not require opening the box
+  (used range -20…0 dB, ahead of the driver). A rear jumper (JP401)
+  selects MIC (padded to mic level) or LINE (~-10 dBV) for rigs with a
+  line-level TX input. Must drive a 600 Ω load; source impedance ~690 Ω
+  in MIC mode including the DE-9 series resistor. Level setting uses
+  the rig's ALC/mic-gain meter — the box has no metering.
 - **RX audio input (stereo):** RX L and RX R (main/sub on dual-receive
-  rigs; mono rig cables feed L, bridged to both). Each: input pad
-  tolerant of speaker level (~5 Vpp), ~470 Ω load resistor, wide-range
-  trim (covers rigs whose only output is the volume-dependent phones
-  jack).
+  rigs; mono rig cables feed L, bridged to both). Each: 10 kΩ bridging
+  load, rear trim straight into a +15 dB buffer — the trim is the pad,
+  so speaker-level sources (~5 Vpp) are simply turned down and weak
+  phones-jack sources get up to +15 dB. Buffers drive the
+  `RX_L_BUS`/`RX_R_BUS` at -15 dBV.
 - **Line out (stereo):** 3.5mm TRS, ~ -10 dBV, transformer isolated
   (two 600 Ω 1:1) to break the inevitable sound-card ground loop.
   Per-side source jumpers: RX L, RX R, RX blend, or TX mix. Levels via
   rear trims. TX tap is post-mute (recordings reflect what went out).
+  The isolated secondaries return to the jack sleeve (`LOUT_RET`), never
+  to signal ground, and carry a DC block against sound-card plug-in
+  power.
 - **Monitor bus:** TX mix (tapped ahead of the intercom mute) feeds each
   headphone position (both ears equally) through its monitor-mix pot; pot
   at zero = off. Tap is post-fader: the channel level pot affects the
@@ -124,11 +140,13 @@ Two identical, physically grouped channel sections (A and B). Each has:
 
 - Per position: 3.5mm phones, 1/4" phones, and the phones side of the
   TRRS combo, all paralleled off one stereo headphone amp.
-- Headphone amp: NJM4556A-class dual op-amp or op-amp + buffer, powered
-  from the 9 V rail. ≥20 mW per channel into 16 Ω; stable with multiple
-  headphones in parallel.
+- Headphone amp: NJM4556A dual op-amp, powered from the 9 V rail.
+  ≥20 mW per channel into 16 Ω for one headset per position.
 - Two pots per position: volume (dual-gang) and monitor-mix level. Each
-  ear: volume × (RX that side + monitor-pot × TX mix).
+  ear: volume × (RX that side + monitor-pot × TX mix). The monitor pot is
+  buffered so the passive mix into the volume gang doesn't interact; the
+  headphone amp makes up the mix loss. Rated for one headset per
+  position (three paralleled 16 Ω headsets current-limit).
 - TRRS wiring is CTIA.
 
 ## Keying
@@ -140,8 +158,12 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - **Override selector, 3-position: OFF / A→B / B→A** (top panel, center,
   below the TX lamp; thrown toward the channel that wins). A→B: channel
   A's PTT keys the rig and fully mutes channel B while closed; B→A
-  mirror. OFF (center): both PTTs just key the rig.
+  mirror. OFF (center): both PTTs just key the rig. Realized as a DPDT
+  on-off-on toggle (SW703); lever directions as marked on the top panel.
 - Rig PTT output: open-drain MOSFET (tolerates 12 V+ pull-ups).
+- Control lines (`MUTE_A/B`, `PTT_ACTIVE`, `IC_MUTE`) are DC logic,
+  0 V / +9 V, active high. `PTT_ACTIVE` is high while the rig PTT output
+  is asserted and gates the intercom.
 - Jumper option per channel: PTT gates the channel's own audio (mic live
   only while keyed) — also the mitigation if rig VOX must be on.
 
@@ -150,18 +172,22 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - Power LED.
 - TX lamp (PTT output asserted) — prominent, visible from across the desk.
 - Per-channel PTT LED (that channel's PTT input closed).
-- Per-channel mute LED (true JFET state — button or override).
+- Per-channel mute LED (mute control-line state — button, override or
+  power-on hold).
 - Intercom LED (lit while the intercom mute is engaged).
 - All DC-driven, powered from the raw filtered rail (not the 9 V analog
-  rail) so LED step loads never touch audio.
+  rail) so LED step loads never touch audio (TX lamp ~17 mA, others
+  ~5 mA; see the Keying sheet).
 
 ## Rig interface
 
 - DE-9 (female) on the box; rig cables carry: MIC, MIC GND, PTT, RX L,
   RX R, RX GND, +1 spare (reserved for a possible CW key line); shield to
   chassis. Mono rig cables tie RX L and RX R together at the DE-9.
+  Pinout and protection: see the Keying sheet (J705). The spare lands on
+  header J706 inside the box.
 - Protect every pin against ±12 V — DE-9 invites accidental RS-232
-  hookups.
+  hookups (bead, shunt cap, TVS and series R per line; see the sheet).
 - One cable per rig family (Icom 8-pin, Yaesu RJ45, Kenwood 8-pin, etc.).
 
 ### Reference rig: Elecraft K3S
@@ -189,32 +215,52 @@ panel; front mic and phones jacks stay free.
 - Input: 11–15 V DC (13.8 V nominal; operates down to ~10.5 V on a
   sagging battery). Anderson Powerpole, rear panel; reverse-polarity
   protected, PTC resettable fuse on the board.
-- **No input TVS** (decided): the PTC + series Schottky + π filter sit
-  upstream, and the LM2940 is automotive-rated (survives 60 V load-dump
-  transients), so a clamp adds little for a shack/battery supply.
+- **Input TVS** after the π filter: the regulator is a TPS7A4701
+  (36 V max, ceramic-stable, 4 µVrms) rather than the automotive LM2940
+  originally planned — the LM2940's 0.1–1 Ω output-ESR window is a BOM
+  trap with today's low-ESR parts. The TVS covers the load-dump case the
+  LM2940 would have survived on its own.
 - **All-linear, single rail** (bipolar rails would require a charge pump
   or switcher):
   - Input π filter → LDO → **9 V analog rail** (Vref 4.5 V; internal
-    nominal -15 dBV, clip +6 dBV — see [LEVELS.md](LEVELS.md)).
-  - Buffered mid-rail virtual ground (Vref); all signal paths AC-coupled.
+    nominal -15 dBV, clip +6 dBV — see [LEVELS.md](LEVELS.md)). The
+    NE5532s run below TI's recommended 10 V total supply (accepted;
+    the NJM4556A headphone amps are specified at 9 V). The +6 dBV clip
+    figure is to be measured, not assumed.
+  - Buffered mid-rail virtual ground (Vref) used as **DC bias only**: every
+  ground-referenced input or output (mic, RX in, mic out, line out,
+  phones) keeps its gain-setting leg on GND, not Vref, so Vref noise is
+  never amplified. Vref itself is stiff and its rail divider is
+  filtered well below the audio band. All signal paths AC-coupled.
   - ~5 V **electret bias rail**, low-noise LDO (ADP7142, ~11 µVrms) + a
-    light RC (bias noise appears directly in the mic signal).
-- JFET mutes single-supply: signal node at Vref; gate well below Vref =
-  pinched off (unmuted), gate at Vref = shunting (muted). Pinch-off must
-  sit inside the Vref window — J113-class, not J111.
+    light RC, decoupled again where it enters each mic node (bias noise
+    appears directly in the mic signal).
+- Analog switches single-supply (TS12A12511, gain select and mute): V-
+  to GND, signals stay inside 0…9 V, logic input needs a solid high —
+  the datasheet guarantees VIH 2.4 V at 10 V and 5 V at 12 V (typ ~1.5
+  V), so every control line is designed to sit ≥ 6 V loaded.
 
 ### Power tree
 
-Authoritative version lives on the schematic supply sheet
-(`kicad/supply.kicad_sch`), including per-rail load budgets, LDO
-dissipation, dropout margin, and PTC sizing. LED indicators run from the
+Source of truth is `power_tree.json`, rendered on the Power Tree sheet
+by `tools/gen_power_tree.py`; `tools/check_power.py` reconciles it with
+the `Load_mA` annotations in the schematic. LED indicators run from the
 raw filtered rail (`RAW_13V8`) via droppers — never from the 9 V analog
-rail. Op-amp load counts are estimates until all sheets exist.
-- PTT logic is diode-OR and discretes; mute ramps are RC networks.
+rail.
+- PTT logic is diode-OR and discretes. All logic transistors are
+  2N7002 so no base current loads the pull-ups; logic highs stay above
+  ~7 V.
+  Per channel: PTT inputs (pulled up, clamped, filtered) → `PTT_x_N`
+  (low = keyed) → inverter → `PTT_x`. `PTT_ACTIVE` = `PTT_A` OR `PTT_B`
+  drives the rig MOSFET, the TX lamp and the intercom lockout. `MUTE_x`
+  = latching button OR override (the other channel's `PTT`) OR
+  jumper-gated `PTT_x_N` OR the power-on hold.
 
 ## RF immunity
 
-- Every jack entry: ferrite bead + small shunt cap.
+- Every jack entry: ferrite bead + shunt cap sized for HF, not just VHF
+  (corner ~270 kHz on audio lines; larger on DC lines); every op-amp
+  input pin gets its own RC stop.
 - Feedthrough caps or C-L-C (cap–ferrite–cap) filters at every panel
   entry, including power and PTT lines.
 - The box operates next to a transmitter; RF immunity dominates the
@@ -229,8 +275,10 @@ Mixer-style, two boards:
   pot bushings nutted to the panel (mounting + bonding). Preamps, buses,
   mutes, headphone amps, and the supply live here.
 - **Rear I/O board** vertical behind the rear panel: DE-9, Powerpole,
-  line out, PTT jacks, rear trims (mic out, line out RX/TX, RX input),
-  bias and gain range switches. Jack bushings nutted through the panel.
+  line out, PTT jacks, rear trims (mic out, line out L/R, RX input),
+  bias and gain range switches, and the amplifiers those trims feed
+  (mic-out driver U403, line amps U402) so no pot wiper crosses the
+  interconnect. Jack bushings nutted through the panel.
 - **Front apron jacks** (per side: 1/4" + 3.5mm mic, TRRS, 3.5mm + 1/4"
   phones): control-board front edge or a narrow third board — decide
   during layout.
@@ -261,10 +309,15 @@ service), wedge console profile:
 ### Grounding and the pin 1 problem
 
 - No shield current flows through PCB ground. Shields bond to chassis at
-  the point of entry.
+  the point of entry: every jack sleeve, TRRS ring 2 and DE-9 return is
+  on the `CHASSIS` net, which ties to signal `GND` at exactly one place
+  (NT701, at the DE-9 on the Keying sheet).
 - Everything is unbalanced (sleeve = shield = signal return), so the
   pin 1 problem can only be minimized: chassis-bonded sleeves + signal
   ground referenced to chassis at one point.
+- Exception: the line-out jack J401 is **insulated-bushing** — its
+  sleeve is the transformer secondaries' return (`LOUT_RET`), and a
+  chassis bond there would defeat the isolation.
 - **TRRS exception:** on CTIA the sleeve is the mic line and ground is
   Ring 2. Bond Ring 2 to chassis at entry; treat the sleeve as a signal
   line (ferrite + shunt cap).
@@ -276,11 +329,19 @@ service), wedge console profile:
 
 ## Open items
 
+- Line-out jack J401 must be an insulated-bushing part (isolation), and
+  the rear GND post (J707) needs a chassis-stud part — both are footprint
+  decisions.
+- Layout: TPS7A4701 thermal pad pour/vias (the 385 mA thermal max in
+  `power_tree.json` assumes it); single CHASSIS–GND tie at NT701 only.
+- Footprint / MPN pass for every part (see TODO.md).
+
 - RF immunity target, quantitative (e.g. "no audible artifacts with
   100 W on any HF band + 6 m, feedline within 1 m") — decides gasket
   vs. no gasket and filter corner frequencies.
 - Front jack placement: control-board front edge vs. third board. Decide
-  with enclosure dimensions.
+  with enclosure dimensions (the mic-out/line-out amps now live on the
+  rear board so no pot wiper crosses the interconnect).
 - Enclosure: confirm final dimensions and seam/flange details once panel
   layouts freeze; panel labeling method (engraving vs. etch vs. overlay).
 - Latching mute button sourcing: confirm availability (with or without
