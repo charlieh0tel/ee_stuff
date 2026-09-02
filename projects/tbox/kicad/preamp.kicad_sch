@@ -2079,278 +2079,278 @@
     		)
     		(embedded_fonts no)
     	)
-    (symbol "tbox:NE5532"
-		(pin_names
-			(offset 0.127)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at 0 5.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NE5532"
-			(at 0 -5.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ne5532.pdf"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Dual low-noise audio op-amp, SOIC-8 (used below the recommended 10 V total supply -- see DESIGN.md)"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "dual opamp"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "NE5532_1_1"
-			(polyline
-				(pts
-					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(pin output line
-				(at 7.62 0 180)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 -2.54 0)
-				(length 2.54)
-				(name "-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 2.54 0)
-				(length 2.54)
-				(name "+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(symbol "NE5532_2_1"
-			(polyline
-				(pts
-					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(pin input line
-				(at -7.62 2.54 0)
-				(length 2.54)
-				(name "+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 -2.54 0)
-				(length 2.54)
-				(name "-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 7.62 0 180)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(symbol "NE5532_3_1"
-			(pin power_in line
-				(at -2.54 -7.62 90)
-				(length 3.81)
-				(name "V-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -2.54 7.62 270)
-				(length 3.81)
-				(name "V+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
+    (symbol "tbox:OPA1678"
+  		(pin_names
+  			(offset 0.127)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(in_pos_files yes)
+  		(duplicate_pin_numbers_are_jumpers no)
+  		(property "Reference" "U"
+  			(at 0 5.08 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Value" "OPA1678"
+  			(at 0 -5.08 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1678.pdf"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "Description" "Dual low-noise audio op-amp, 4.5-36 V, 4.5 nV/rtHz, 2 mA/ch, SOIC-8"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_locked" ""
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_keywords" "opamp audio dual"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_1_1"
+  			(polyline
+  				(pts
+  					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+  				)
+  				(stroke
+  					(width 0.254)
+  					(type default)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin output line
+  				(at 7.62 0 180)
+  				(length 2.54)
+  				(name ""
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -2.54 0)
+  				(length 2.54)
+  				(name "-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 2.54 0)
+  				(length 2.54)
+  				(name "+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_2_1"
+  			(polyline
+  				(pts
+  					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+  				)
+  				(stroke
+  					(width 0.254)
+  					(type default)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 2.54 0)
+  				(length 2.54)
+  				(name "+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -2.54 0)
+  				(length 2.54)
+  				(name "-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 7.62 0 180)
+  				(length 2.54)
+  				(name ""
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_3_1"
+  			(pin power_in line
+  				(at -2.54 -7.62 90)
+  				(length 3.81)
+  				(name "V-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -2.54 7.62 270)
+  				(length 3.81)
+  				(name "V+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
   )
   (wire (pts (xy 33.02 38.1) (xy 33.02 40.64)) (stroke (width 0) (type default)) (uuid "64368ad9-9e99-48d8-bccf-b0fef3c216e0"))
   (wire (pts (xy 33.02 38.1) (xy 38.1 38.1)) (stroke (width 0) (type default)) (uuid "f4afd0d1-6aa0-43f7-a8c6-8d9663b6338a"))
@@ -2625,11 +2625,12 @@
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/2849e2f3-9d81-476a-830a-7ac47d5f662b" (reference "R202") (unit 1))
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9" (reference "R302") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 88.9 53.34 0) (unit 1)
+  (symbol (lib_id "tbox:OPA1678") (at 88.9 53.34 0) (unit 1)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "86443f74-a048-43d7-844b-9a5ba1a76d76")
     (property "Reference" "U201" (at 88.9 45.72 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 88.9 60.96 0) (effects (font (size 1.27 1.27))))
+    (property "Value" "OPA1678" (at 88.9 60.96 0) (effects (font (size 1.27 1.27))))
+    (property "Load_mA" "4/5" (at 88.9 45.72 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 88.9 53.34 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 88.9 53.34 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 88.9 53.34 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -2682,11 +2683,11 @@
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/2849e2f3-9d81-476a-830a-7ac47d5f662b" (reference "C203") (unit 1))
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9" (reference "C303") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 125.73 60.96 0) (unit 2)
+  (symbol (lib_id "tbox:OPA1678") (at 125.73 60.96 0) (unit 2)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "d830e877-26c6-4cb5-90c4-b61003baaafa")
     (property "Reference" "U201" (at 125.73 53.34 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 125.73 68.58 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 125.73 68.58 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 125.73 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 125.73 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 125.73 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -2858,11 +2859,11 @@
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/2849e2f3-9d81-476a-830a-7ac47d5f662b" (reference "#PWR0212") (unit 1))
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9" (reference "#PWR0312") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 231.14 111.76 0) (unit 3)
+  (symbol (lib_id "tbox:OPA1678") (at 231.14 111.76 0) (unit 3)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "4545d0d7-65fb-4398-9ca0-fb5b60d026ee")
     (property "Reference" "U201" (at 233.68 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-    (property "Value" "NE5532" (at 233.68 113.03 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
+    (property "Value" "OPA1678" (at 233.68 113.03 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes)))
     (property "Footprint" "" (at 231.14 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 231.14 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 231.14 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))

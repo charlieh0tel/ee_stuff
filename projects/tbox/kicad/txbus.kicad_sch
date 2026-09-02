@@ -3265,278 +3265,278 @@
   		)
   		(embedded_fonts no)
   	)
-    (symbol "tbox:NE5532"
-		(pin_names
-			(offset 0.127)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "U"
-			(at 0 5.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NE5532"
-			(at 0 -5.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ne5532.pdf"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Dual low-noise audio op-amp, SOIC-8 (used below the recommended 10 V total supply -- see DESIGN.md)"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_locked" ""
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_keywords" "dual opamp"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
-			(at 0 0 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(symbol "NE5532_1_1"
-			(polyline
-				(pts
-					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(pin output line
-				(at 7.62 0 180)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 -2.54 0)
-				(length 2.54)
-				(name "-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 2.54 0)
-				(length 2.54)
-				(name "+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(symbol "NE5532_2_1"
-			(polyline
-				(pts
-					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(pin input line
-				(at -7.62 2.54 0)
-				(length 2.54)
-				(name "+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin input line
-				(at -7.62 -2.54 0)
-				(length 2.54)
-				(name "-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 7.62 0 180)
-				(length 2.54)
-				(name ""
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(symbol "NE5532_3_1"
-			(pin power_in line
-				(at -2.54 -7.62 90)
-				(length 3.81)
-				(name "V-"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -2.54 7.62 270)
-				(length 3.81)
-				(name "V+"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
+    (symbol "tbox:OPA1678"
+  		(pin_names
+  			(offset 0.127)
+  		)
+  		(exclude_from_sim no)
+  		(in_bom yes)
+  		(on_board yes)
+  		(in_pos_files yes)
+  		(duplicate_pin_numbers_are_jumpers no)
+  		(property "Reference" "U"
+  			(at 0 5.08 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Value" "OPA1678"
+  			(at 0 -5.08 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  				(justify left)
+  			)
+  		)
+  		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1678.pdf"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "Description" "Dual low-noise audio op-amp, 4.5-36 V, 4.5 nV/rtHz, 2 mA/ch, SOIC-8"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_locked" ""
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_keywords" "opamp audio dual"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
+  			(at 0 0 0)
+  			(show_name no)
+  			(do_not_autoplace no)
+  			(hide yes)
+  			(effects
+  				(font
+  					(size 1.27 1.27)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_1_1"
+  			(polyline
+  				(pts
+  					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+  				)
+  				(stroke
+  					(width 0.254)
+  					(type default)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin output line
+  				(at 7.62 0 180)
+  				(length 2.54)
+  				(name ""
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "1"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -2.54 0)
+  				(length 2.54)
+  				(name "-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "2"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 2.54 0)
+  				(length 2.54)
+  				(name "+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "3"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_2_1"
+  			(polyline
+  				(pts
+  					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+  				)
+  				(stroke
+  					(width 0.254)
+  					(type default)
+  				)
+  				(fill
+  					(type background)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 2.54 0)
+  				(length 2.54)
+  				(name "+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "5"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin input line
+  				(at -7.62 -2.54 0)
+  				(length 2.54)
+  				(name "-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "6"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin output line
+  				(at 7.62 0 180)
+  				(length 2.54)
+  				(name ""
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "7"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(symbol "OPA1678_3_1"
+  			(pin power_in line
+  				(at -2.54 -7.62 90)
+  				(length 3.81)
+  				(name "V-"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "4"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  			(pin power_in line
+  				(at -2.54 7.62 270)
+  				(length 3.81)
+  				(name "V+"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  				(number "8"
+  					(effects
+  						(font
+  							(size 1.27 1.27)
+  						)
+  					)
+  				)
+  			)
+  		)
+  		(embedded_fonts no)
+  	)
   )
   (junction (at 43.18 104.14) (diameter 0) (color 0 0 0 0) (uuid "e79582b8-603f-50be-9c8e-cff552d926cd"))
   (junction (at 43.18 137.16) (diameter 0) (color 0 0 0 0) (uuid "941acb78-8ff7-51a2-be5f-b8e4a1849f4a"))
@@ -3873,11 +3873,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "R402") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 66.04 50.8 0) (unit 1)
+  (symbol (lib_id "tbox:OPA1678") (at 66.04 50.8 0) (unit 1)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "f1dd8b4a-47fa-5e24-8934-6f59e73db990")
     (property "Reference" "U401" (at 66.04 43.18 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 66.04 58.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 66.04 58.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 66.04 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 66.04 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 66.04 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -3981,6 +3981,7 @@
     (uuid "921725b7-8200-598c-abcf-dcf8b7b66e2f")
     (property "Reference" "R413" (at 45.72 97.79 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "10k" (at 45.72 100.33 0) (effects (font (size 1.27 1.27)) (justify left)))
+    (property "Load_mA" "0/1" (at 45.72 97.79 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 43.18 99.06 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 43.18 99.06 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 43.18 99.06 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -4083,6 +4084,7 @@
     (uuid "800d22af-ebb3-5583-99e3-d802437b4c85")
     (property "Reference" "R417" (at 83.82 90.17 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "10k" (at 83.82 92.71 0) (effects (font (size 1.27 1.27)) (justify left)))
+    (property "Load_mA" "1" (at 83.82 90.17 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 81.28 91.44 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 81.28 91.44 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 81.28 91.44 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -4234,11 +4236,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "R435") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 190.5 57.15 0) (unit 1)
+  (symbol (lib_id "tbox:OPA1678") (at 190.5 57.15 0) (unit 1)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "b237145a-3255-5a6b-8ccf-e85bf84a9fa4")
     (property "Reference" "U403" (at 190.5 49.53 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 190.5 64.77 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 190.5 64.77 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 190.5 57.15 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 190.5 57.15 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 190.5 57.15 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -4526,11 +4528,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "R436") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 208.28 107.95 0) (unit 1)
+  (symbol (lib_id "tbox:OPA1678") (at 208.28 107.95 0) (unit 1)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "6a9436a0-f86e-5455-a3a5-ff950ae06014")
     (property "Reference" "U402" (at 208.28 100.33 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 208.28 115.57 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 208.28 115.57 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 208.28 107.95 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 208.28 107.95 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 208.28 107.95 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -4742,11 +4744,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "R437") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 208.28 138.43 0) (unit 2)
+  (symbol (lib_id "tbox:OPA1678") (at 208.28 138.43 0) (unit 2)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "e653159f-ec90-57b9-aae5-a11feafb1496")
     (property "Reference" "U402" (at 208.28 130.81 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 208.28 146.05 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 208.28 146.05 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 208.28 138.43 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 208.28 138.43 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 208.28 138.43 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -4898,15 +4900,15 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "#PWR0414") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 114.3 144.78 0) (unit 3)
+  (symbol (lib_id "tbox:OPA1678") (at 114.3 144.78 0) (unit 3)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "2c281fe6-dc56-5cdb-9c8e-19d649a97935")
     (property "Reference" "U401" (at 116.84 143.51 0) (effects (font (size 1.27 1.27)) (justify left)))
-    (property "Value" "NE5532" (at 116.84 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
+    (property "Value" "OPA1678" (at 116.84 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Footprint" "" (at 114.3 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 114.3 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 114.3 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "8/16" (at 114.3 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "4/5" (at 114.3 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "4" (uuid "db34a9a0-ca92-5105-b7c2-374edc1a77ef"))
     (pin "8" (uuid "97a3e258-d9ba-5700-ad05-67ca967cde5e"))
     (instances (project "tbox"
@@ -4961,15 +4963,15 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "#PWR0417") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 144.78 144.78 0) (unit 3)
+  (symbol (lib_id "tbox:OPA1678") (at 144.78 144.78 0) (unit 3)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "4b75f68a-f278-5960-8c47-bcde395706f9")
     (property "Reference" "U402" (at 147.32 143.51 0) (effects (font (size 1.27 1.27)) (justify left)))
-    (property "Value" "NE5532" (at 147.32 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
+    (property "Value" "OPA1678" (at 147.32 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Footprint" "" (at 144.78 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 144.78 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 144.78 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "8/16" (at 144.78 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "4/5" (at 144.78 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "4" (uuid "4d752240-00f0-5408-8393-32f3230e8232"))
     (pin "8" (uuid "26278de1-46c3-5766-85fc-49c8680e51b0"))
     (instances (project "tbox"
@@ -5024,15 +5026,15 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "#PWR0420") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 45.72 144.78 0) (unit 3)
+  (symbol (lib_id "tbox:OPA1678") (at 45.72 144.78 0) (unit 3)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "9d193985-0cbf-594b-82c5-66e3bc1c473c")
     (property "Reference" "U403" (at 48.26 143.51 0) (effects (font (size 1.27 1.27)) (justify left)))
-    (property "Value" "NE5532" (at 48.26 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
+    (property "Value" "OPA1678" (at 48.26 146.05 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Footprint" "" (at 45.72 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 45.72 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 45.72 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
-    (property "Load_mA" "8/16" (at 45.72 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Load_mA" "4/5" (at 45.72 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (pin "4" (uuid "de99bfb4-c4d5-59ce-b875-b73638c7ceaf"))
     (pin "8" (uuid "6ffa0a5e-9156-5365-8dc6-08e82a1924b2"))
     (instances (project "tbox"
@@ -5087,11 +5089,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "#PWR0423") (unit 1))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 83.82 144.78 0) (unit 2)
+  (symbol (lib_id "tbox:OPA1678") (at 83.82 144.78 0) (unit 2)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "408cd662-249c-5f05-b930-1460858cfb11")
     (property "Reference" "U401" (at 83.82 137.16 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 83.82 152.4 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 83.82 152.4 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 83.82 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 83.82 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 83.82 144.78 0) (effects (font (size 1.27 1.27)) (hide yes)))
@@ -5101,11 +5103,11 @@
     (instances (project "tbox"
       (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/85dbb29d-fca1-4388-8be4-707d3b9675e4" (reference "U401") (unit 2))))
   )
-  (symbol (lib_id "tbox:NE5532") (at 83.82 160.02 0) (unit 2)
+  (symbol (lib_id "tbox:OPA1678") (at 83.82 160.02 0) (unit 2)
     (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
     (uuid "3213a473-c1dc-55ff-af06-74d73087465f")
     (property "Reference" "U403" (at 83.82 152.4 0) (effects (font (size 1.27 1.27))))
-    (property "Value" "NE5532" (at 83.82 167.64 0) (effects (font (size 1.27 1.27)) (hide yes)))
+    (property "Value" "OPA1678" (at 83.82 167.64 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Footprint" "" (at 83.82 160.02 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Datasheet" "" (at 83.82 160.02 0) (effects (font (size 1.27 1.27)) (hide yes)))
     (property "Description" "" (at 83.82 160.02 0) (effects (font (size 1.27 1.27)) (hide yes)))

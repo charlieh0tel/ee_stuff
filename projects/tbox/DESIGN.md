@@ -223,10 +223,13 @@ panel; front mic and phones jacks stay free.
 - **All-linear, single rail** (bipolar rails would require a charge pump
   or switcher):
   - Input π filter → LDO → **9 V analog rail** (Vref 4.5 V; internal
-    nominal -15 dBV, clip +6 dBV — see [LEVELS.md](LEVELS.md)). The
-    NE5532s run below TI's recommended 10 V total supply (accepted;
-    the NJM4556A headphone amps are specified at 9 V). The +6 dBV clip
-    figure is to be measured, not assumed.
+    nominal -15 dBV, clip +6 dBV planning figure — see
+    [LEVELS.md](LEVELS.md)). Op-amps are OPA1678 (4.5–36 V, 4.5 nV/√Hz,
+    2 mA/ch): at 9 V the output is guaranteed within 0.8 V of each rail
+    and the input common-mode range is 0.5–7 V. The NE5532 it replaces
+    is only specified from 10 V total and its input range at 9 V would
+    have been 3–6 V — 0.1 V of margin at 0 dBV peaks. The NJM4556A
+    headphone amps are specified at 9 V.
   - Buffered mid-rail virtual ground (Vref) used as **DC bias only**: every
   ground-referenced input or output (mic, RX in, mic out, line out,
   phones) keeps its gain-setting leg on GND, not Vref, so Vref noise is

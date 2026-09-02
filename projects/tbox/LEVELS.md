@@ -11,9 +11,9 @@ filter buys ~8 dB beyond these figures.
 |---|---|---|
 | Analog rail | 9.0 V | TPS7A4701 from ≥10.5 V input (~0.8 V margin after PTC + Schottky; dropout 0.22 V) |
 | Vref | 4.5 V | buffered mid-rail |
-| Op-amp swing | ~6 Vpp | NE5532-class, ~1.5 V from each rail (9 V is below TI's recommended supply — measure) |
-| Clip point | +6 dBV | 2.1 Vrms, all internal nodes |
-| Internal nominal | -15 dBV | 21 dB headroom to clip; peaks reach ~0 dBV |
+| Op-amp swing | ≥7.4 Vpp | OPA1678: output guaranteed within 0.8 V of each rail at 2 kΩ; input CM range 0.5–7.0 V |
+| Clip point | +8 dBV guaranteed | 2.6 Vrms; the plan below still budgets against +6 dBV for 2 dB of slack |
+| Internal nominal | -15 dBV | 21 dB headroom to the +6 dBV planning figure; peaks reach ~0 dBV |
 
 ## TX path (mic jack → mic out)
 

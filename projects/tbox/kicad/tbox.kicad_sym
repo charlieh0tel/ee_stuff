@@ -192,7 +192,7 @@
 		)
 		(embedded_fonts no)
 	)
-  (symbol "NE5532"
+  (symbol "OPA1678"
 		(pin_names
 			(offset 0.127)
 		)
@@ -212,7 +212,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NE5532"
+		(property "Value" "OPA1678"
 			(at 0 -5.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -234,7 +234,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/ne5532.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1678.pdf"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -245,7 +245,7 @@
 				)
 			)
 		)
-		(property "Description" "Dual low-noise audio op-amp, SOIC-8 (used below the recommended 10 V total supply -- see DESIGN.md)"
+		(property "Description" "Dual low-noise audio op-amp, 4.5-36 V, 4.5 nV/rtHz, 2 mA/ch, SOIC-8"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -266,7 +266,7 @@
 				)
 			)
 		)
-		(property "ki_keywords" "dual opamp"
+		(property "ki_keywords" "opamp audio dual"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -288,7 +288,7 @@
 				)
 			)
 		)
-		(symbol "NE5532_1_1"
+		(symbol "OPA1678_1_1"
 			(polyline
 				(pts
 					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
@@ -356,7 +356,7 @@
 				)
 			)
 		)
-		(symbol "NE5532_2_1"
+		(symbol "OPA1678_2_1"
 			(polyline
 				(pts
 					(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
@@ -424,7 +424,7 @@
 				)
 			)
 		)
-		(symbol "NE5532_3_1"
+		(symbol "OPA1678_3_1"
 			(pin power_in line
 				(at -2.54 -7.62 90)
 				(length 3.81)

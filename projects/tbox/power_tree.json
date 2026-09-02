@@ -21,20 +21,20 @@
       "name": "+9V",
       "from": "RAW_13V8",
       "converter": "TPS7A4701 LDO (ANY-OUT 9.0 V)",
-      "budget": "70 mA typ / 205 mA max",
+      "budget": "60 mA typ / 175 mA max",
       "max_ma": 385,
       "max_basis": "thermal, VQFN-20 pad @15V in",
       "_max_analysis": "Rated 1A but package-Pd-limited: Tj 125C, Ta 50C, thetaJA 32.5 C/W (RGW VQFN-20 with thermal pad on a ground pour, VERIFY against layout) -> Pd 2.3W; at 15V in (6V drop) I <= 385 mA. At 13.8V in ~480 mA (PTC 0.5A then binds).",
-      "note": "Pd 1.0W @13V8, 1.2W @15V worst case; dropout 0.22 V -> OK to 10V5 in",
+      "note": "Pd 0.85W @13V8, 1.05W @15V worst case; dropout 0.22 V -> OK to 10V5 in",
       "sch_note_at": [150, 68],
-      "sch_note": "load 70 mA typ / 205 mA max\nPd <=1.2W @15V; dropout OK to 10V5",
+      "sch_note": "load 60 mA typ / 175 mA max\nPd <=1.05W @15V; dropout OK to 10V5",
       "loads": [
-        {"name": "preamps", "ma": "16"},
-        {"name": "Vref buffer", "ma": "8"},
-        {"name": "TX bus (U401/U402/U403: sum, mic out, line L/R)", "ma": "24 typ / 48 max"},
-        {"name": "RX + monitor buffers (U601/U602)", "ma": "16 typ / 32 max"},
+        {"name": "preamps (U201/U301)", "ma": "8 typ / 10 max"},
+        {"name": "Vref buffer (U3)", "ma": "4 typ / 5 max"},
+        {"name": "TX bus (U401/U402/U403: sum, mic out, line L/R)", "ma": "12 typ / 15 max"},
+        {"name": "RX + monitor buffers (U601/U602)", "ma": "8 typ / 10 max"},
         {"name": "phones amps (U603/U604, 70 mA clip)", "ma": "20 typ / 106 max"},
-        {"name": "mute/discretes", "ma": "2"}
+        {"name": "logic pull-ups (PTT inverters 2x2k2 unkeyed, mute buttons, intercom NOR)", "ma": "10 typ / 28 max"}
       ]
     },
     {
@@ -52,11 +52,11 @@
     {
       "name": "VREF",
       "from": "+9V",
-      "converter": "NE5532 buffer, 4.5V",
+      "converter": "OPA1678 buffer, 4.5V",
       "budget": "<1 mA",
       "max_ma": 10,
       "max_basis": "op-amp output drive",
-      "_max_analysis": "NE5532 output: ~38 mA short-circuit typ; ~10 mA is a sane continuous drive limit for an AC ground reference.",
+      "_max_analysis": "OPA1678 output: 50 mA short-circuit; ~10 mA is a sane continuous drive limit for a DC bias reference.",
       "sch_note_at": [58, 99],
       "sch_note": "load <1 mA (AC ground ref)",
       "loads": [{"name": "AC ground reference", "ma": "<1"}]
