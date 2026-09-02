@@ -20,6 +20,7 @@ and a generic rig connector with rig-specific cables.
 | Line out | Stereo, per-side source jumpers, levels via rear trims |
 | VOX | Assumed OFF at the rig — TX mix is always present at mic out |
 | Power | 12–14 V via Anderson Powerpole, runs down to ~10.5 V, all-linear, single rail |
+| PCB | 4-layer (solid ground plane under the audio, thermal path for the VQFN regulator), SMT |
 | Construction | Mixer-style: control PCB under sheet-metal top panel, rear I/O PCB |
 | Digital | None — all-analog, no MCU, no clocks |
 
@@ -252,10 +253,9 @@ analysis behind it). `tools/check_power.py` flattens the tree so each
 rail's total includes everything downstream and checks it against
 `max_ma`. Current figures: +9V 62 mA typ / 250 mA max (the max is two
 16 Ω headsets at sine clip plus every LED and pull-up on), which is 64 %
-of the regulator's 385 mA thermal limit at 15 V in — a limit that
-assumes a via-stitched pad on a ground pour (θJA ≈ 32.5 °C/W); a
-2-layer board with a token pour is closer to 50 °C/W and ~250 mA, so the
-layout has to earn the number. LED indicators run from the raw filtered
+of the regulator's 385 mA thermal limit at 15 V in (θJA ≈ 32.5 °C/W,
+which needs the VQFN pad stitched to a ground plane — one reason the
+board is 4-layer). LED indicators run from the raw filtered
 rail (`RAW_13V8`) via droppers — never from the 9 V analog rail.
 - PTT logic is diode-OR and discretes. All logic transistors are
   2N7002 so no base current loads the pull-ups; logic highs stay above

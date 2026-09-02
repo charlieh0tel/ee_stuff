@@ -1,11 +1,9 @@
 # TODO
 
-- Layout constraint from the power budget: the +9V max (250 mA flattened)
-  is 64 % of the 385 mA thermal cap only if the TPS7A4701's VQFN pad gets
-  a via-stitched ground pour (θJA ≈ 32.5 °C/W; Tj 125 °C, Ta 50 °C, 15 V
-  in). A 2-layer board with a token pour (~50 °C/W) caps at ~250 mA — no
-  margin. Either go 4-layer / heavy pour with ≥16 thermal vias, or lower
-  `max_ma` and accept an ALERT. Recompute once the pour is drawn.
+- Layout: 4-layer board (decided). The +9V thermal cap (385 mA, θJA ≈
+  32.5 °C/W) assumes the TPS7A4701's VQFN pad is stitched to the internal
+  ground plane with a via array (≥16 vias); confirm the via count and pour
+  once the pad is drawn.
 
 - Footprint / MPN assignment pass: no instance has a footprint yet (the
   library defaults are overridden with ""). Includes: J401 insulated-bushing
