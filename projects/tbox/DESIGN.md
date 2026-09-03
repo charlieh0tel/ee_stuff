@@ -313,7 +313,8 @@ pin.
   the four PH lines carry their own returns. GAIN_x_HI and BIAS_x ride
   both ribbons and pass straight through the control board. Rails on the
   ribbons: +9V, VREF, RAW_13V8 (LEDs), GND; each board decouples them
-  locally at the connector.
+  locally at the connector. The conductor-by-conductor pin map is the
+  Harness sheet, generated from the netlist (`tools/gen_harness.py`).
 - Board-to-board headers are out: the boards meet at 77° and 103°.
   Rigid-flex was priced out. FFC/FPC rejected for current and robustness.
 - Layout note: with all three boards in one `.kicad_pcb`, the ribbon

@@ -25,7 +25,8 @@
   Ribbon connectors carry an `Interconnect` field naming their cable
   (`FC`, `CR`); `tools/check_boards.py` enforces all of this and checks
   both ends of each ribbon pin for pin; run it with `check_sch.py`
-  after any edit.
+  after any edit. The Harness sheet is generated from the netlist by
+  `tools/gen_harness.py` — rerun it after any change to a ribbon pin.
 - **Reference designators encode the board**: sheets are numbered
   1x (front), 2x (control), 3x (rear) and annotation uses "first free
   after sheet number × 100", so `U1101` is board 1, sheet 11. Renumber
