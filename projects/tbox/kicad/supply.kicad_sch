@@ -5587,7 +5587,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 33.02 110.49 0)
+		(at 33.02 111.76 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5597,7 +5597,7 @@
 		(dnp no)
 		(uuid "56e656cd-ea69-4f67-a83c-68485cb7be3a")
 		(property "Reference" "R3102"
-			(at 36.83 109.22 0)
+			(at 36.83 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5607,7 +5607,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 36.83 111.76 0)
+			(at 36.83 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5617,7 +5617,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 33.02 110.49 0)
+			(at 33.02 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5628,7 +5628,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 33.02 110.49 0)
+			(at 33.02 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5639,7 +5639,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 33.02 110.49 0)
+			(at 33.02 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8925,5 +8925,25 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 33.02 106.68) (xy 33.02 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7001152c-1067-5091-88f9-3ece74a79582")
+	)
+	(wire
+		(pts
+			(xy 33.02 114.3) (xy 33.02 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "692e5f28-7e78-583a-bc6a-c7295d5a6833")
 	)
 )

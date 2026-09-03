@@ -11,11 +11,14 @@ Both are easy to do by accident when placing symbols and both produce a
 short that only shows up in the netlist.  This script reports:
 
   - a pin end lying on the *interior* of a wire segment (not at an endpoint)
-  - two pins of different symbols ending on the same point
+  - two pins of different symbols ending on the same point (KiCad joins
+    them and drops any junction dot on save, so this is never intentional;
+    join pins with a wire instead)
   - a wire endpoint on the interior of another wire (T without a junction)
   - two symbols on one sheet sharing a reference designator and unit
 
-Junction symbols and power symbols (#PWR/#FLG) are treated as intentional.
+Junction symbols make T's and pin-on-wire intentional; power symbols
+(#PWR/#FLG) and stacked pins of one symbol are ignored.
 
 Usage:
     tools/check_sch.py                 # every kicad/*.kicad_sch
@@ -53,21 +56,26 @@ def match_block(text, start):
     raise ValueError("unbalanced s-expression")
 
 
+# KiCad writes one tab per level; our generators wrote two spaces.  Accept both.
+_L1 = r"\n(?:\t|  )\("
+_L2 = r"\n(?:\t\t|    )\("
+
+
 def top_level(text):
-    for m in re.finditer(r"\n  \(", text):
-        yield match_block(text, m.start() + 1)
+    for m in re.finditer(_L1, text):
+        yield match_block(text, m.end() - 1)
 
 
 def lib_pins(text):
     """lib_id -> {unit: [(x, y)]} pin positions in symbol coordinates."""
-    m = re.search(r"\n  \(lib_symbols", text)
+    m = re.search(_L1 + "lib_symbols", text)
     if not m:
         return {}
-    block = match_block(text, m.start() + 1)
+    block = match_block(text, m.end() - len("(lib_symbols"))
     out = {}
-    for sm in re.finditer(r'\n    \(symbol "([^"]+)"', block):
+    for sm in re.finditer(_L2 + 'symbol "([^"]+)"', block):
         lib_id = sm.group(1)
-        sblock = match_block(block, sm.start() + 1)
+        sblock = match_block(block, sm.end() - len(f'(symbol "{lib_id}"'))
         units = {}
         for um in re.finditer(r'\(symbol "([^"]+)_(\d+)_\d+"', sblock):
             ublock = match_block(sblock, um.start())
@@ -160,9 +168,9 @@ def check(path):
     for pt, ref in pins:
         by_pt.setdefault(pt, []).append(ref)
     for pt, refs in by_pt.items():
-        real = [x for x in refs if not x.startswith("#")]
-        if len(real) > 1 and pt not in junctions:
-            problems.append(f"{pt}: pins touch without a junction: {'+'.join(refs)}")
+        real = {x for x in refs if not x.startswith("#")}
+        if len(real) > 1:
+            problems.append(f"{pt}: pins touch: {'+'.join(sorted(real))}")
     for pt, ref in pins:
         if pt in junctions:
             continue

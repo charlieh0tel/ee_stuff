@@ -2971,7 +2971,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 113.03) (xy 193.04 115.57)
+			(xy 193.04 114.3) (xy 193.04 115.57)
 		)
 		(stroke
 			(width 0)
@@ -3291,7 +3291,7 @@
 	)
 	(wire
 		(pts
-			(xy 274.32 138.43) (xy 276.86 138.43)
+			(xy 275.59 138.43) (xy 276.86 138.43)
 		)
 		(stroke
 			(width 0)
@@ -3701,7 +3701,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 107.95) (xy 218.44 107.95)
+			(xy 217.17 107.95) (xy 218.44 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3861,7 +3861,7 @@
 	)
 	(wire
 		(pts
-			(xy 274.32 107.95) (xy 279.4 107.95)
+			(xy 275.59 107.95) (xy 279.4 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3969,16 +3969,7 @@
 		)
 		(uuid "d8dff603-a101-5bc9-a96e-8782839a39ed")
 	)
-	(wire
-		(pts
-			(xy 200.66 57.15) (xy 201.93 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d94fe2a9-539a-59db-b98f-c0575979d70a")
-	)
+	
 	(wire
 		(pts
 			(xy 177.8 76.2) (xy 177.8 78.74)
@@ -4695,7 +4686,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 270.51 138.43 90)
+		(at 271.78 138.43 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4705,7 +4696,7 @@
 		(dnp no)
 		(uuid "06255c9a-366c-58b5-84aa-a98d5aa78fe8")
 		(property "Reference" "C3316"
-			(at 270.51 132.93 90)
+			(at 271.78 132.93 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4715,7 +4706,7 @@
 			)
 		)
 		(property "Value" "10u NP"
-			(at 270.51 135.43 90)
+			(at 271.78 135.43 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4725,7 +4716,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 270.51 138.43 0)
+			(at 271.78 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4736,7 +4727,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 270.51 138.43 0)
+			(at 271.78 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4747,7 +4738,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 270.51 138.43 0)
+			(at 271.78 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4928,7 +4919,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 196.85 135.89 90)
+		(at 198.12 135.89 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4938,7 +4929,7 @@
 		(dnp no)
 		(uuid "1110967e-5c7f-5723-a4d3-c56949801356")
 		(property "Reference" "R3309"
-			(at 196.85 132.08 90)
+			(at 198.12 132.08 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4948,7 +4939,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 196.85 133.35 90)
+			(at 198.12 133.35 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4958,7 +4949,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 196.85 135.89 0)
+			(at 198.12 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4969,7 +4960,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 196.85 135.89 0)
+			(at 198.12 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4980,7 +4971,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 196.85 135.89 0)
+			(at 198.12 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5086,7 +5077,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 193.04 109.22 0)
+		(at 193.04 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5096,7 +5087,7 @@
 		(dnp no)
 		(uuid "19c30408-24eb-5bd2-a3ee-debda86a73f2")
 		(property "Reference" "C3307"
-			(at 190.5 107.95 0)
+			(at 190.5 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5107,7 +5098,7 @@
 			)
 		)
 		(property "Value" "100p"
-			(at 190.5 110.49 0)
+			(at 190.5 111.76 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5118,7 +5109,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 109.22 0)
+			(at 193.04 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5129,7 +5120,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 109.22 0)
+			(at 193.04 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5140,7 +5131,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 109.22 0)
+			(at 193.04 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5486,7 +5477,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 205.74 57.15 90)
+		(at 204.47 57.15 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5496,7 +5487,7 @@
 		(dnp no)
 		(uuid "2d7bd07b-01cb-5f23-a30d-b7b088478a74")
 		(property "Reference" "R3310"
-			(at 205.74 53.34 90)
+			(at 204.47 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5506,7 +5497,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 205.74 60.96 90)
+			(at 204.47 60.96 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5516,7 +5507,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 205.74 57.15 0)
+			(at 204.47 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5527,7 +5518,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 205.74 57.15 0)
+			(at 204.47 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5538,7 +5529,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 205.74 57.15 0)
+			(at 204.47 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6997,7 +6988,7 @@
 	)
 	(symbol
 		(lib_id "tbox:OPA1678")
-		(at 208.28 107.95 0)
+		(at 209.55 107.95 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7007,7 +6998,7 @@
 		(dnp no)
 		(uuid "6a9436a0-f86e-5455-a3a5-ff950ae06014")
 		(property "Reference" "U3302"
-			(at 208.28 100.33 0)
+			(at 209.55 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7017,7 +7008,7 @@
 			)
 		)
 		(property "Value" "OPA1678"
-			(at 208.28 115.57 0)
+			(at 209.55 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7028,7 +7019,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 208.28 107.95 0)
+			(at 209.55 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7039,7 +7030,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 208.28 107.95 0)
+			(at 209.55 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7050,7 +7041,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 208.28 107.95 0)
+			(at 209.55 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9794,7 +9785,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 270.51 107.95 90)
+		(at 271.78 107.95 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9804,7 +9795,7 @@
 		(dnp no)
 		(uuid "ff0045e9-ef5e-5747-9135-a05d36402c8b")
 		(property "Reference" "C3315"
-			(at 270.51 102.45 90)
+			(at 271.78 102.45 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9814,7 +9805,7 @@
 			)
 		)
 		(property "Value" "10u NP"
-			(at 270.51 104.95 90)
+			(at 271.78 104.95 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9824,7 +9815,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 270.51 107.95 0)
+			(at 271.78 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9835,7 +9826,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 270.51 107.95 0)
+			(at 271.78 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9846,7 +9837,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 270.51 107.95 0)
+			(at 271.78 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9870,5 +9861,85 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 266.7 107.95) (xy 267.97 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "babeb9d9-16f3-5d8e-a7b7-595797643dea")
+	)
+	(wire
+		(pts
+			(xy 266.7 138.43) (xy 267.97 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffe25e46-2e04-5ef0-83f3-83fedc1fcaa5")
+	)
+	(wire
+		(pts
+			(xy 193.04 135.89) (xy 194.31 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92060116-2a2f-5968-8511-e7dca5f6aaab")
+	)
+	(wire
+		(pts
+			(xy 200.66 135.89) (xy 201.93 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "890d1cf1-00ab-58f9-bb4a-167b242648dd")
+	)
+	(wire
+		(pts
+			(xy 193.04 105.41) (xy 193.04 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d05a40de-f9f5-5bbf-bef6-c67f84d39f98")
+	)
+	(wire
+		(pts
+			(xy 209.55 57.15) (xy 208.28 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b15f4f0-9bc7-5fe0-9f56-56520be4e7ff")
+	)
+	(wire
+		(pts
+			(xy 200.66 110.49) (xy 201.93 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51e98591-5d06-5b43-8371-af6a6b8dd30d")
+	)
+	(wire
+		(pts
+			(xy 200.66 105.41) (xy 201.93 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bbc312f-583f-58b5-ba02-a587da48025d")
 	)
 )

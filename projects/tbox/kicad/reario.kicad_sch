@@ -2860,16 +2860,7 @@
 		)
 		(uuid "089c09ab-73a4-5c06-94c9-016b8f20b08a")
 	)
-	(wire
-		(pts
-			(xy 185.42 128.27) (xy 186.69 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b73b2fd-87cc-5eae-b343-131785c5d04f")
-	)
+	
 	(wire
 		(pts
 			(xy 187.96 45.72) (xy 190.5 45.72)
@@ -3580,16 +3571,7 @@
 		)
 		(uuid "be46d7f7-dc4b-5611-a3fc-f34e84830a81")
 	)
-	(wire
-		(pts
-			(xy 185.42 138.43) (xy 186.69 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bebe29cb-9e51-57c7-a735-278a308281e7")
-	)
+	
 	(wire
 		(pts
 			(xy 33.02 76.2) (xy 35.56 76.2)
@@ -4521,7 +4503,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 190.5 128.27 90)
+		(at 189.23 128.27 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4531,7 +4513,7 @@
 		(dnp no)
 		(uuid "11f38eb2-68f4-5efc-a0fb-290c688d9935")
 		(property "Reference" "R3209"
-			(at 190.5 124.46 90)
+			(at 189.23 124.46 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4541,7 +4523,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 190.5 132.08 90)
+			(at 189.23 132.08 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4551,7 +4533,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 128.27 0)
+			(at 189.23 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4562,7 +4544,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 128.27 0)
+			(at 189.23 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4573,7 +4555,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 190.5 128.27 0)
+			(at 189.23 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6887,7 +6869,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 190.5 138.43 90)
+		(at 189.23 138.43 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6897,7 +6879,7 @@
 		(dnp no)
 		(uuid "872b3a85-db7b-599f-b474-4c722730054b")
 		(property "Reference" "R3210"
-			(at 190.5 134.62 90)
+			(at 189.23 134.62 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6907,7 +6889,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 190.5 142.24 90)
+			(at 189.23 142.24 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6917,7 +6899,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 138.43 0)
+			(at 189.23 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6928,7 +6910,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 138.43 0)
+			(at 189.23 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6939,7 +6921,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 190.5 138.43 0)
+			(at 189.23 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9116,5 +9098,25 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 194.31 128.27) (xy 193.04 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac0a1895-7a01-5979-a670-397120479a3a")
+	)
+	(wire
+		(pts
+			(xy 194.31 138.43) (xy 193.04 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6e51b04-df02-535c-a95d-ffb9ccbb3679")
 	)
 )

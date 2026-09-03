@@ -62,7 +62,7 @@ def strip_managed(sch, old):
         if j == -1:
             out.append(sch[i:])
             break
-        k = sch.rfind("\n  (", i, j)
+        k = max(sch.rfind("\n  (", i, j), sch.rfind("\n\t(", i, j))
         if k == -1:
             out.append(sch[i : j + 7])
             i = j + 7

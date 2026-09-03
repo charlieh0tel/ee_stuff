@@ -2790,16 +2790,7 @@
 		)
 		(uuid "40cf4402-7d88-4702-aa34-dc5b2cc5ad62")
 	)
-	(wire
-		(pts
-			(xy 78.74 60.96) (xy 78.74 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "470d621f-c0b4-5257-9d62-26a65aff6de0")
-	)
+	
 	(wire
 		(pts
 			(xy 115.57 53.34) (xy 115.57 58.42)
@@ -4319,7 +4310,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 124.46 78.74 0)
+		(at 124.46 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4329,7 +4320,7 @@
 		(dnp no)
 		(uuid "25c1e7e6-1752-4d0d-8e76-6baedbb369b8")
 		(property "Reference" "C1106"
-			(at 128.27 77.47 0)
+			(at 128.27 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4339,7 +4330,7 @@
 			)
 		)
 		(property "Value" "47u"
-			(at 128.27 80.01 0)
+			(at 128.27 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4349,7 +4340,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 124.46 78.74 0)
+			(at 124.46 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4360,7 +4351,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 78.74 0)
+			(at 124.46 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4371,7 +4362,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 124.46 78.74 0)
+			(at 124.46 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4574,7 +4565,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
-		(at 86.36 72.39 0)
+		(at 86.36 73.66 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4584,7 +4575,7 @@
 		(dnp no)
 		(uuid "441d49f9-bbda-4300-8040-6ee0e1993aa1")
 		(property "Reference" "C1105"
-			(at 90.17 71.12 0)
+			(at 90.17 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4594,7 +4585,7 @@
 			)
 		)
 		(property "Value" "47u"
-			(at 90.17 73.66 0)
+			(at 90.17 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4604,7 +4595,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 72.39 0)
+			(at 86.36 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4615,7 +4606,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 72.39 0)
+			(at 86.36 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4626,7 +4617,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 86.36 72.39 0)
+			(at 86.36 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4761,7 +4752,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 78.74 57.15 0)
+		(at 78.74 58.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4771,7 +4762,7 @@
 		(dnp no)
 		(uuid "46aa60ca-9737-5122-87d2-5930ea707015")
 		(property "Reference" "C1104"
-			(at 81.28 55.88 0)
+			(at 81.28 57.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4782,7 +4773,7 @@
 			)
 		)
 		(property "Value" "100p"
-			(at 81.28 58.42 0)
+			(at 81.28 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4793,7 +4784,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 57.15 0)
+			(at 78.74 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4804,7 +4795,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 57.15 0)
+			(at 78.74 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4815,7 +4806,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 57.15 0)
+			(at 78.74 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7262,5 +7253,55 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 78.74 53.34) (xy 78.74 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acbdeac1-0762-55cc-985f-e554fe669cc1")
+	)
+	(wire
+		(pts
+			(xy 124.46 74.93) (xy 124.46 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e621a0d-859a-5a87-916a-8fb15c4dc1a1")
+	)
+	(wire
+		(pts
+			(xy 124.46 82.55) (xy 124.46 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a212920a-0aa0-5d87-86c5-42a92d228a10")
+	)
+	(wire
+		(pts
+			(xy 86.36 68.58) (xy 86.36 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c788720-418a-5ab5-a28f-5fa406cf3fde")
+	)
+	(wire
+		(pts
+			(xy 86.36 76.2) (xy 86.36 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c0c8cca-72b1-50af-a2d0-13fe79cd3cf5")
 	)
 )
