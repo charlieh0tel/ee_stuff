@@ -1,47 +1,459 @@
 (kicad_sch
-  (version 20250114)
-  (generator "eeschema")
-  (generator_version "9.0")
-  (uuid "8852bc96-5093-47e8-8b87-aad2cec4fade")
-  (paper "A4")
-  (title_block (title "TBox — Power Tree") (date "2026-09-01") (rev "0.2") (company "TBox"))
-  (lib_symbols)
-  (text "POWER TREE  (generated: topology + loads from the schematic, capability from power_tree.json -- do not hand-edit)" (exclude_from_sim no) (at 12.7 17.78 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left bottom)) (uuid "2369b78d-1260-54fb-9d8a-03616ce326b5"))
-  (rectangle (start 12.7 20.32) (end 63.754 31.75) (stroke (width 0.1524) (type solid)) (fill (type none)) (uuid "027d6a40-e08a-52c5-874e-63432fef2b15"))
-  (text "13V8_IN  13.8V nom (10.5-15V)" (exclude_from_sim no) (at 14.224 24.2189 0) (effects (font (size 1.27 1.27) (bold yes)) (justify left bottom)) (uuid "21613c10-676c-5926-a437-b2ceb8ef6850"))
-  (text "PTC 0.5A > SS34 > pi filter" (exclude_from_sim no) (at 14.224 27.0129 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "3f9da190-8fff-541f-a12e-2c06c81424af"))
-  (text "SMBJ18A TVS after the filter (U1 max 35 V)" (exclude_from_sim no) (at 14.224 29.8069 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1c435e1c-1bae-5113-b111-4f0f82ac230c"))
-  (rectangle (start 73.914 20.32) (end 136.398 40.132) (stroke (width 0.1524) (type solid)) (fill (type none)) (uuid "d7c33fb2-222a-54f6-afd0-2f398770efe4"))
-  (text "RAW_13V8" (exclude_from_sim no) (at 75.438 24.2189 0) (effects (font (size 1.27 1.27) (bold yes)) (justify left bottom)) (uuid "e5bc71dc-77b5-5390-b80e-e41dd165f133"))
-  (text "post-filter; LED droppers + U1 input" (exclude_from_sim no) (at 75.438 27.0129 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c31b3abf-02e3-5fbe-a9fd-bde06954f04d"))
-  (text "load: 68 typ / 298 max mA (direct 6/48 + downstream)" (exclude_from_sim no) (at 75.438 29.8069 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "d12f7cc4-c2bc-5806-be1f-b6ad608e90b2"))
-  (text "max: 500 mA (upstream PTC 0.5A hold)" (exclude_from_sim no) (at 75.438 32.6009 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "d6257b4a-0ace-5929-9925-490583c0829a"))
-  (text "  - Control Board: R419 R718 R720 R722 +3 = 5/47" (exclude_from_sim no) (at 75.438 35.3949 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "555a855f-5392-5e34-8fd9-a17cd9e79d05"))
-  (text "  - Rear Board: U1 = 1/1" (exclude_from_sim no) (at 75.438 38.1889 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1d0f0614-59b4-5eaa-9b40-484763dadbac"))
-  (rectangle (start 146.558 20.32) (end 213.614 42.926) (stroke (width 0.1524) (type solid)) (fill (type none)) (uuid "800c7a7a-c2f2-52eb-9e40-9198c970e009"))
-  (text "+9V  <- U1 TPS7A4701" (exclude_from_sim no) (at 148.082 24.2189 0) (effects (font (size 1.27 1.27) (bold yes)) (justify left bottom)) (uuid "c9daf0d6-4721-5ebc-9e34-067111584484"))
-  (text "load: 62 typ / 250 max mA (direct 62/248 + downstream)" (exclude_from_sim no) (at 148.082 27.0129 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "30e79692-97a5-5b10-b2b4-02cb7534ba4e"))
-  (text "max: 385 mA (thermal, VQFN-20 pad @15V in)" (exclude_from_sim no) (at 148.082 29.8069 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "ec66c57f-9943-5007-8c9e-408c6dd8760d"))
-  (text "Pd <=1.5W @15V worst case; dropout 0.22 V, OK to 10V5 in" (exclude_from_sim no) (at 148.082 32.6009 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f63837c1-c71a-589f-98a7-677d2af8104b"))
-  (text "  - Control Board: R413 R417 R704 R708 +6 = 37/216" (exclude_from_sim no) (at 148.082 35.3949 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "38fc6ce7-ed11-5854-ac0c-a159b2716aa7"))
-  (text "  - Front Board: U201 U301 = 8/10" (exclude_from_sim no) (at 148.082 38.1889 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "01d4e582-1ca2-5b93-bc94-049d19b334f2"))
-  (text "  - Rear Board: U2 U3 U402 U403 +1 = 17/22" (exclude_from_sim no) (at 148.082 40.9829 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "5caa355d-df4d-5818-b8f2-07ae0861c52e"))
-  (rectangle (start 223.774 20.32) (end 263.398 34.544) (stroke (width 0.1524) (type solid)) (fill (type none)) (uuid "7cdb7a71-f484-5a5a-9e69-bba9e04aa158"))
-  (text "BIAS_5V  <- U2 ADP7142AUJZ-5.0" (exclude_from_sim no) (at 225.298 24.2189 0) (effects (font (size 1.27 1.27) (bold yes)) (justify left bottom)) (uuid "5e7c382a-24d1-5981-acbf-6085e55d4a84"))
-  (text "load: 0 typ / 2 max mA" (exclude_from_sim no) (at 225.298 27.0129 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "525bd278-39b9-532f-8d15-bb8d73887ccd"))
-  (text "max: 200 mA (rated)" (exclude_from_sim no) (at 225.298 29.8069 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "64965b86-3aed-59d3-923b-4863e0332fd5"))
-  (text "  - Front Board: R201 R301 = 0/2" (exclude_from_sim no) (at 225.298 32.6009 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "6cda26c4-b427-5a0c-9f83-3b05927aeda3"))
-  (polyline (pts (xy 213.614 31.623) (xy 218.694 31.623) (xy 218.694 27.432) (xy 223.774 27.432)) (stroke (width 0.1524) (type solid)) (uuid "71671daf-b7f3-5a36-a446-1919cc1d6d94"))
-  (polyline (pts (xy 221.742 26.416) (xy 223.774 27.432) (xy 221.742 28.448)) (stroke (width 0.1524) (type solid)) (uuid "0cd69e4c-8615-5daf-aed3-bd985d94b476"))
-  (rectangle (start 12.7 50.546) (end 76.327 64.77) (stroke (width 0.1524) (type solid)) (fill (type none)) (uuid "806bb26d-503b-5a56-a8dc-c1ab4a410a33"))
-  (text "VREF  <- U3 OPA1678" (exclude_from_sim no) (at 14.224 54.4449 0) (effects (font (size 1.27 1.27) (bold yes)) (justify left bottom)) (uuid "71d36ec6-0b20-5886-ad02-20d3600b7786"))
-  (text "load: 0 typ / 0 max mA" (exclude_from_sim no) (at 14.224 57.2389 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f83b27f2-86ef-5bf5-82a2-208e3e20ac3c"))
-  (text "max: 10 mA (op-amp output drive)" (exclude_from_sim no) (at 14.224 60.0329 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "d2ba23f5-6d04-592c-b2ab-44191e9daa40"))
-  (text "  DC bias only: every gain-setting leg returns to GND" (exclude_from_sim no) (at 14.224 62.8269 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "7a840738-cfe1-5fdc-8339-cacad8b91691"))
-  (polyline (pts (xy 180.086 42.926) (xy 180.086 48.006) (xy 10.16 48.006) (xy 10.16 57.658) (xy 12.7 57.658)) (stroke (width 0.1524) (type solid)) (uuid "c2135ff4-3550-5ddc-8078-9ec21a66c89e"))
-  (polyline (pts (xy 10.668 56.642) (xy 12.7 57.658) (xy 10.668 58.674)) (stroke (width 0.1524) (type solid)) (uuid "f16d7eb8-82e1-5195-8d41-7032d7a0938c"))
-  (polyline (pts (xy 136.398 30.226) (xy 141.478 30.226) (xy 141.478 31.623) (xy 146.558 31.623)) (stroke (width 0.1524) (type solid)) (uuid "2d08c4f9-1b6f-5d15-8230-b0022560135a"))
-  (polyline (pts (xy 144.526 30.607) (xy 146.558 31.623) (xy 144.526 32.639)) (stroke (width 0.1524) (type solid)) (uuid "2b0dcb8e-f61d-571d-b527-ef922561a369"))
-  (polyline (pts (xy 63.754 26.035) (xy 68.834 26.035) (xy 68.834 30.226) (xy 73.914 30.226)) (stroke (width 0.1524) (type solid)) (uuid "4bc5ad04-4969-50fa-9712-cc7a5250945d"))
-  (polyline (pts (xy 71.882 29.21) (xy 73.914 30.226) (xy 71.882 31.242)) (stroke (width 0.1524) (type solid)) (uuid "267d658d-0c24-591e-b812-7ea6c5578316"))
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "8852bc96-5093-47e8-8b87-aad2cec4fade")
+	(paper "A4")
+	(title_block
+		(title "TBox — Power Tree")
+		(date "2026-09-01")
+		(rev "0.2")
+		(company "TBox")
+	)
+	(lib_symbols)
+	(rectangle
+		(start 12.7 20.32)
+		(end 63.754 31.75)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "027d6a40-e08a-52c5-874e-63432fef2b15")
+	)
+	(polyline
+		(pts
+			(xy 221.742 26.416) (xy 223.774 27.432) (xy 221.742 28.448)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "0cd69e4c-8615-5daf-aed3-bd985d94b476")
+	)
+	(polyline
+		(pts
+			(xy 71.882 29.21) (xy 73.914 30.226) (xy 71.882 31.242)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "267d658d-0c24-591e-b812-7ea6c5578316")
+	)
+	(polyline
+		(pts
+			(xy 144.526 30.607) (xy 146.558 31.623) (xy 144.526 32.639)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "2b0dcb8e-f61d-571d-b527-ef922561a369")
+	)
+	(polyline
+		(pts
+			(xy 136.398 30.226) (xy 141.478 30.226) (xy 141.478 31.623) (xy 146.558 31.623)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "2d08c4f9-1b6f-5d15-8230-b0022560135a")
+	)
+	(polyline
+		(pts
+			(xy 63.754 26.035) (xy 68.834 26.035) (xy 68.834 30.226) (xy 73.914 30.226)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "4bc5ad04-4969-50fa-9712-cc7a5250945d")
+	)
+	(polyline
+		(pts
+			(xy 213.614 31.623) (xy 218.694 31.623) (xy 218.694 27.432) (xy 223.774 27.432)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "71671daf-b7f3-5a36-a446-1919cc1d6d94")
+	)
+	(rectangle
+		(start 223.774 20.32)
+		(end 263.398 34.544)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "7cdb7a71-f484-5a5a-9e69-bba9e04aa158")
+	)
+	(rectangle
+		(start 146.558 20.32)
+		(end 213.614 42.926)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "800c7a7a-c2f2-52eb-9e40-9198c970e009")
+	)
+	(rectangle
+		(start 12.7 50.546)
+		(end 76.327 64.77)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "806bb26d-503b-5a56-a8dc-c1ab4a410a33")
+	)
+	(polyline
+		(pts
+			(xy 180.086 42.926) (xy 180.086 48.006) (xy 10.16 48.006) (xy 10.16 57.658) (xy 12.7 57.658)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "c2135ff4-3550-5ddc-8078-9ec21a66c89e")
+	)
+	(rectangle
+		(start 73.914 20.32)
+		(end 136.398 40.132)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "d7c33fb2-222a-54f6-afd0-2f398770efe4")
+	)
+	(polyline
+		(pts
+			(xy 10.668 56.642) (xy 12.7 57.658) (xy 10.668 58.674)
+		)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "f16d7eb8-82e1-5195-8d41-7032d7a0938c")
+	)
+	(text "  - Front Board: U201 U301 = 8/10"
+		(exclude_from_sim no)
+		(at 148.082 38.1889 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "01d4e582-1ca2-5b93-bc94-049d19b334f2")
+	)
+	(text "SMBJ18A TVS after the filter (U1 max 35 V)"
+		(exclude_from_sim no)
+		(at 14.224 29.8069 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c435e1c-1bae-5113-b111-4f0f82ac230c")
+	)
+	(text "  - Rear Board: U1 = 1/1"
+		(exclude_from_sim no)
+		(at 75.438 38.1889 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d0f0614-59b4-5eaa-9b40-484763dadbac")
+	)
+	(text "13V8_IN  13.8V nom (10.5-15V)"
+		(exclude_from_sim no)
+		(at 14.224 24.2189 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "21613c10-676c-5926-a437-b2ceb8ef6850")
+	)
+	(text "POWER TREE  (generated: topology + loads from the schematic, capability from power_tree.json -- do not hand-edit)"
+		(exclude_from_sim no)
+		(at 12.7 17.78 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "2369b78d-1260-54fb-9d8a-03616ce326b5")
+	)
+	(text "load: 62 typ / 250 max mA (direct 62/248 + downstream)"
+		(exclude_from_sim no)
+		(at 148.082 27.0129 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "30e79692-97a5-5b10-b2b4-02cb7534ba4e")
+	)
+	(text "  - Control Board: R413 R417 R704 R708 +6 = 37/216"
+		(exclude_from_sim no)
+		(at 148.082 35.3949 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "38fc6ce7-ed11-5854-ac0c-a159b2716aa7")
+	)
+	(text "PTC 0.5A > SS34 > pi filter"
+		(exclude_from_sim no)
+		(at 14.224 27.0129 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f9da190-8fff-541f-a12e-2c06c81424af")
+	)
+	(text "load: 0 typ / 2 max mA"
+		(exclude_from_sim no)
+		(at 225.298 27.0129 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "525bd278-39b9-532f-8d15-bb8d73887ccd")
+	)
+	(text "  - Control Board: R419 R718 R720 R722 +3 = 5/47"
+		(exclude_from_sim no)
+		(at 75.438 35.3949 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "555a855f-5392-5e34-8fd9-a17cd9e79d05")
+	)
+	(text "  - Rear Board: U2 U3 U402 U403 +1 = 17/22"
+		(exclude_from_sim no)
+		(at 148.082 40.9829 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5caa355d-df4d-5818-b8f2-07ae0861c52e")
+	)
+	(text "BIAS_5V  <- U2 ADP7142AUJZ-5.0"
+		(exclude_from_sim no)
+		(at 225.298 24.2189 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "5e7c382a-24d1-5981-acbf-6085e55d4a84")
+	)
+	(text "max: 200 mA (rated)"
+		(exclude_from_sim no)
+		(at 225.298 29.8069 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "64965b86-3aed-59d3-923b-4863e0332fd5")
+	)
+	(text "  - Front Board: R201 R301 = 0/2"
+		(exclude_from_sim no)
+		(at 225.298 32.6009 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6cda26c4-b427-5a0c-9f83-3b05927aeda3")
+	)
+	(text "VREF  <- U3 OPA1678"
+		(exclude_from_sim no)
+		(at 14.224 54.4449 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "71d36ec6-0b20-5886-ad02-20d3600b7786")
+	)
+	(text "  DC bias only: every gain-setting leg returns to GND"
+		(exclude_from_sim no)
+		(at 14.224 62.8269 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7a840738-cfe1-5fdc-8339-cacad8b91691")
+	)
+	(text "post-filter; LED droppers + U1 input"
+		(exclude_from_sim no)
+		(at 75.438 27.0129 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c31b3abf-02e3-5fbe-a9fd-bde06954f04d")
+	)
+	(text "+9V  <- U1 TPS7A4701"
+		(exclude_from_sim no)
+		(at 148.082 24.2189 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "c9daf0d6-4721-5ebc-9e34-067111584484")
+	)
+	(text "load: 68 typ / 298 max mA (direct 6/48 + downstream)"
+		(exclude_from_sim no)
+		(at 75.438 29.8069 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d12f7cc4-c2bc-5806-be1f-b6ad608e90b2")
+	)
+	(text "max: 10 mA (op-amp output drive)"
+		(exclude_from_sim no)
+		(at 14.224 60.0329 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d2ba23f5-6d04-592c-b2ab-44191e9daa40")
+	)
+	(text "max: 500 mA (upstream PTC 0.5A hold)"
+		(exclude_from_sim no)
+		(at 75.438 32.6009 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6257b4a-0ace-5929-9925-490583c0829a")
+	)
+	(text "RAW_13V8"
+		(exclude_from_sim no)
+		(at 75.438 24.2189 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5bc71dc-77b5-5390-b80e-e41dd165f133")
+	)
+	(text "max: 385 mA (thermal, VQFN-20 pad @15V in)"
+		(exclude_from_sim no)
+		(at 148.082 29.8069 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ec66c57f-9943-5007-8c9e-408c6dd8760d")
+	)
+	(text "Pd <=1.5W @15V worst case; dropout 0.22 V, OK to 10V5 in"
+		(exclude_from_sim no)
+		(at 148.082 32.6009 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f63837c1-c71a-589f-98a7-677d2af8104b")
+	)
+	(text "load: 0 typ / 0 max mA"
+		(exclude_from_sim no)
+		(at 14.224 57.2389 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f83b27f2-86ef-5bf5-82a2-208e3e20ac3c")
+	)
 )

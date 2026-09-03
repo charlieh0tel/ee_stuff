@@ -2,17 +2,28 @@
   "board": {
     "3dviewports": [],
     "ipc2581": {
+      "bom_rev": "",
       "dist": "",
       "distpn": "",
       "internal_id": "",
       "mfg": "",
-      "mpn": ""
+      "mpn": "",
+      "sch_revision": "0.2"
     },
     "layer_pairs": [],
     "layer_presets": [],
     "viewports": []
   },
   "boards": [],
+  "component_class_settings": {
+    "assignments": [],
+    "meta": {
+      "version": 0
+    },
+    "sheet_component_classes": {
+      "enabled": false
+    }
+  },
   "cvpcb": {
     "equivalence_files": []
   },
@@ -202,11 +213,14 @@
       "duplicate_sheet_names": "error",
       "endpoint_off_grid": "warning",
       "extra_units": "error",
+      "field_name_whitespace": "warning",
       "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
       "four_way_junction": "ignore",
       "global_label_dangling": "warning",
+      "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
+      "isolated_pin_label": "warning",
       "label_dangling": "error",
       "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
@@ -229,6 +243,7 @@
       "similar_power": "warning",
       "simulation_model_issue": "ignore",
       "single_global_label": "ignore",
+      "stacked_pin_name": "warning",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
       "undefined_netclass": "error",
@@ -261,13 +276,14 @@
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
+        "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
       }
     ],
     "meta": {
-      "version": 4
+      "version": 5
     },
     "net_colors": null,
     "netclass_assignments": null,
@@ -289,6 +305,10 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "annotation": {
+      "method": 1,
+      "sort_order": 0
+    },
     "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
@@ -360,6 +380,7 @@
       "sort_asc": true,
       "sort_field": "Reference"
     },
+    "bus_aliases": {},
     "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
@@ -367,6 +388,7 @@
       "default_line_thickness": 6.0,
       "default_text_size": 50.0,
       "field_names": [],
+      "hop_over_size_choice": 0,
       "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "",
       "intersheets_ref_short": false,
@@ -390,6 +412,7 @@
     "net_format_name": "",
     "page_layout_descr_file": "",
     "plot_directory": "",
+    "reuse_designators": true,
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -398,8 +421,92 @@
     "spice_save_all_dissipations": false,
     "spice_save_all_voltages": false,
     "subpart_first_id": 65,
-    "subpart_id_separator": 0
+    "subpart_id_separator": 0,
+    "top_level_sheets": [
+      {
+        "filename": "tbox.kicad_sch",
+        "name": "tbox",
+        "uuid": "6a29b3f1-3e67-482d-942d-4557fa8bc2d6"
+      }
+    ],
+    "used_designators": "TP1101,TP1301,TP2101-2104,TP2201-2203,TP2401,TP3101-3105,TP3301-3302,TP3401-3402,#FLG3101-3103,T3301-3302,#PWR1001-1020,#PWR1101-1115,#PWR1201-1204,#PWR1301-1315,#PWR1401-1404,#PWR2001-2029,#PWR2101-2125,#PWR2201-2209,#PWR2301-2304,#PWR2401-2422,#PWR3001-3012,#PWR3101-3127,#PWR3201-3219,#PWR3301-3314,#PWR3401-3411,C1001-1002,C1101-1108,C1201,C1301-1308,C1401,C2001-2003,C2101-2103,C2201-2205,C2301,C2401-2413,C3101-3115,C3201-3207,C3301-3316,C3401-3407,U1101-1102,U1201,U1301-1302,U1401,U2201,U2301,U2401-2403,U3101-3103,U3301-3302,U3401,D2101-2121,D2201,D3101-3102,D3201-3205,F3101,Q2101-2107,Q2201-2202,Q3201,J1001-1005,J1101-1104,J1301-1304,J2001-2002,J3001,J3101,J3201-3207,J3301-3303,JP2101-2102,JP3301,R1101-1108,R1201,R1301-1308,R1401,R2101-2121,R2201-2211,R2301,R2401-2424,R3101-3104,R3201-3210,R3301-3317,R3401-3412,NT3201,SW2101-2105,SW2201,SW3201-3204,FB1101-1103,FB1301-1303,FB2401-2404,FB3101,FB3201-3207,FB3301-3302,RV2201-2202,RV2401-2404,RV3301-3303,RV3401-3402",
+    "variants": []
   },
-  "sheets": [],
-  "text_variables": {}
+  "sheets": [
+    [
+      "6a29b3f1-3e67-482d-942d-4557fa8bc2d6",
+      "tbox"
+    ],
+    [
+      "8f0ae7a6-5716-5282-9510-93d52fd32dca",
+      "Front Board"
+    ],
+    [
+      "2849e2f3-9d81-476a-830a-7ac47d5f662b",
+      "Preamp A"
+    ],
+    [
+      "4ed1d2d3-9521-5616-8de5-5e4f86cf7fbc",
+      "Mute"
+    ],
+    [
+      "6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9",
+      "Preamp B"
+    ],
+    [
+      "4ed1d2d3-9521-5616-8de5-5e4f86cf7fbc",
+      "Mute"
+    ],
+    [
+      "7885f5d1-bf3d-5361-a0a2-98a329efbaa8",
+      "Control Board"
+    ],
+    [
+      "90840279-7080-5822-be31-be6acccb6269",
+      "Keying Logic"
+    ],
+    [
+      "7085ed52-cf43-5607-ad01-4c551eed1164",
+      "TX Sum / Intercom"
+    ],
+    [
+      "4de75cb1-3179-5e98-8092-b9e92740db49",
+      "Intercom Mute"
+    ],
+    [
+      "fbabc91c-7987-5a3f-8311-b090f39b0b2a",
+      "Monitor / Phones"
+    ],
+    [
+      "6aedcaa5-d555-5688-b8e3-a5d8be255c1c",
+      "Rear Board"
+    ],
+    [
+      "ec376872-0fd3-415b-977e-2d7984375c54",
+      "Supply"
+    ],
+    [
+      "c3cb403c-327b-5002-84bd-6f3dda072e1b",
+      "Rear I/O"
+    ],
+    [
+      "4974373e-f1fc-57b5-bc5c-7a025f4d2dc7",
+      "Rig Out"
+    ],
+    [
+      "968a9734-8172-5b80-b889-97ec507a1fa0",
+      "RX In"
+    ],
+    [
+      "45aeb937-76c7-422b-9e0d-f7faaeed1b2b",
+      "Power Tree"
+    ]
+  ],
+  "text_variables": {},
+  "tuning_profiles": {
+    "meta": {
+      "version": 0
+    },
+    "tuning_profiles_impedance_geometric": []
+  }
 }
