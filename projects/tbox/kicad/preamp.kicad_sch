@@ -2752,7 +2752,7 @@
     (pin "IN" input (at 172.72 55.88 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "2d16c48e-d68d-57b9-81a0-567938f15fd7"))
     (pin "OUT" output (at 195.58 55.88 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "fdae5941-f87d-5768-84d5-f9f3e82cc7bc"))
     (pin "MUTE" input (at 182.88 63.5 270) (effects (font (size 1.27 1.27)) (justify right)) (uuid "d5eef409-51d7-54df-ace1-588b2c3ef223"))
-    (instances (project "tbox" (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/8f0ae7a6-5716-5282-9510-93d52fd32dca/2849e2f3-9d81-476a-830a-7ac47d5f662b" (page "9")) (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/8f0ae7a6-5716-5282-9510-93d52fd32dca/6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9" (page "10"))))
+    (instances (project "tbox" (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/8f0ae7a6-5716-5282-9510-93d52fd32dca/2849e2f3-9d81-476a-830a-7ac47d5f662b" (page "12")) (path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/8f0ae7a6-5716-5282-9510-93d52fd32dca/6b4fbd9b-81c7-4190-b266-9ec1ecbd07e9" (page "14"))))
   )
   (junction (at 78.74 53.34) (diameter 0) (color 0 0 0 0) (uuid "a3f04425-360b-5999-8120-e8d18e1918c5"))
   (wire (pts (xy 69.85 53.34) (xy 71.12 53.34)) (stroke (width 0) (type default)) (uuid "853cd00c-fe52-5ed7-a3fa-56388a17439e"))

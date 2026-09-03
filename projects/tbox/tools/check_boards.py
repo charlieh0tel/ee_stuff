@@ -7,10 +7,12 @@
 
 The root sheet holds one sheet per PCB (Front Board, Control Board, Rear
 Board).  A net that touches parts on more than one board is a ribbon net
-and must pass through the interconnect connectors (J9xx) on every board it
-spans; CHASSIS is the enclosure and is exempt.  The two ribbons are
-straight-through, so J901.n must carry the same net as J902.n, and J903.n
-the same as J904.n.  Everything is read from the exported netlist.
+and must pass through a ribbon connector on every board it spans; CHASSIS
+is the enclosure and is exempt.  Ribbon connectors carry an
+``Interconnect`` field naming their cable (e.g. "FC", "CR"); each cable
+must have exactly two connectors on different boards, and since the
+ribbons are straight-through, pin n must carry the same net at both ends.
+Everything is read from the exported netlist.
 
 Usage:
     tools/check_boards.py                 # exports the netlist via kicad-cli
@@ -25,7 +27,6 @@ import sys
 
 from power_model import export_netlist, parse_netlist
 
-RIBBONS = [("J901", "J902"), ("J903", "J904")]
 EXEMPT = {"CHASSIS"}
 
 
@@ -42,6 +43,16 @@ def main():
     with open(args.netlist or export_netlist()) as f:
         text = f.read()
     comps, touches = parse_netlist(text)
+
+    # ribbons from the Interconnect field
+    cables = {}
+    for ref, c in comps.items():
+        tag = c["fields"].get("Interconnect")
+        if tag:
+            cables.setdefault(tag, []).append(ref)
+    ribbons = [tuple(sorted(v)) for _k, v in sorted(cables.items())]
+    connectors = {r for pair in ribbons for r in pair}
+    pin_count = {}
 
     # net -> {board: [refs]}, and connector pin -> net
     nets = {}
@@ -60,11 +71,17 @@ def main():
         for ref, pin in re.findall(
             r'\(node\s+\(ref\s+"([^"]+)"\)\s+\(pin\s+"([^"]+)"\)', body
         ):
-            if ref.startswith("J9"):
+            if ref in connectors:
                 pin_net[(ref, pin)] = None if net.startswith("unconnected-") else net
+                pin_count[ref] = max(pin_count.get(ref, 0), int(pin))
 
     problems = []
-    connectors = {a for pair in RIBBONS for a in pair}
+    for tag, refs in sorted(cables.items()):
+        if len(refs) != 2:
+            problems.append(
+                f"cable {tag!r} has {len(refs)} connector(s): {' '.join(sorted(refs))}"
+            )
+    ribbons = [pair for pair in ribbons if len(pair) == 2]
     for net, boards in sorted(nets.items()):
         if len(boards) < 2 or net in EXEMPT:
             continue
@@ -74,8 +91,8 @@ def main():
                     f"{net}: spans {sorted(boards)} but has no ribbon connector on {b} "
                     f"({' '.join(sorted(refs))})"
                 )
-    for a, b in RIBBONS:
-        for k in range(1, 27):
+    for a, b in ribbons:
+        for k in range(1, max(pin_count.get(a, 0), pin_count.get(b, 0)) + 1):
             na, nb = pin_net.get((a, str(k))), pin_net.get((b, str(k)))
             if na != nb:
                 problems.append(f"{a}.{k} = {na!r} but {b}.{k} = {nb!r}")
@@ -83,9 +100,9 @@ def main():
             problems.append(f"{a} and {b} are on the same board")
 
     if args.pinmap:
-        for a, b in RIBBONS:
+        for a, b in ribbons:
             print(f"\n{a} ({board_of(comps[a])}) <-> {b} ({board_of(comps[b])})")
-            for k in range(1, 27, 2):
+            for k in range(1, pin_count.get(a, 0) + 1, 2):
                 left = pin_net.get((a, str(k)), "n/c")
                 right = pin_net.get((a, str(k + 1)), "n/c")
                 print(f"  {k:2}  {left:14}  {k + 1:2}  {right}")

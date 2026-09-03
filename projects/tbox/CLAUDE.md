@@ -22,8 +22,14 @@
   cables. A net that crosses boards is a hierarchical label threaded
   through sheet pins and a ribbon-connector pin on each board — never a
   global label (rails on power symbols and `CHASSIS` excepted).
-  `tools/check_boards.py` enforces this and checks both ends of each
-  ribbon pin for pin; run it with `check_sch.py` after any edit.
+  Ribbon connectors carry an `Interconnect` field naming their cable
+  (`FC`, `CR`); `tools/check_boards.py` enforces all of this and checks
+  both ends of each ribbon pin for pin; run it with `check_sch.py`
+  after any edit.
+- **Reference designators encode the board**: sheets are numbered
+  1x (front), 2x (control), 3x (rear) and annotation uses "first free
+  after sheet number × 100", so `U1101` is board 1, sheet 11. Renumber
+  with KiCad's annotator, never by hand.
 
 - The power tree lives **in the schematic, generally on its own sheet**,
   drawn as boxes and arrows flowing **left to right** (wrapping to a new
