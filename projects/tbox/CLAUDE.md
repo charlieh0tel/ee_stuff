@@ -53,6 +53,10 @@
   occurrence on its own rail and on every rail upstream of it (1:1
   through linear stages). Set `Load_rail` only when attribution is
   ambiguous.
+- **Power symbols point the way current flows**: every GND symbol points
+  down, every rail symbol (+9V, etc.) points up — never rotated to fit a
+  wire. Where a connector has many GND or rail pins, collect them on a
+  short rail and end it in a single, correctly oriented symbol.
 - Prefer **SMT construction** — choose SMT packages unless a part is
   panel-mount or SMT is unavailable.
 - **Consider capacitive loading on the output of every device with a
