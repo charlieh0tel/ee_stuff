@@ -16,6 +16,15 @@
 
 ## Schematic and layout
 
+- **The hierarchy mirrors the boards.** The root sheet holds one sheet
+  per PCB (Front, Control, Rear) plus the Power Tree; functional
+  sub-sheets live under their board. Wires on the root are the ribbon
+  cables. A net that crosses boards is a hierarchical label threaded
+  through sheet pins and a ribbon-connector pin on each board — never a
+  global label (rails on power symbols and `CHASSIS` excepted).
+  `tools/check_boards.py` enforces this and checks both ends of each
+  ribbon pin for pin; run it with `check_sch.py` after any edit.
+
 - The power tree lives **in the schematic, generally on its own sheet**,
   drawn as boxes and arrows flowing **left to right** (wrapping to a new
   band when it outgrows the sheet), with load annotations (current

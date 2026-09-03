@@ -21,7 +21,7 @@ and a generic rig connector with rig-specific cables.
 | VOX | Assumed OFF at the rig — TX mix is always present at mic out |
 | Power | 12–14 V via Anderson Powerpole, runs down to ~10.5 V, all-linear, single rail |
 | PCB | 4-layer (solid ground plane under the audio, thermal path for the VQFN regulator), SMT |
-| Construction | Mixer-style: control PCB under sheet-metal top panel, rear I/O PCB |
+| Construction | Mixer-style, three PCBs on one snap-apart 4-layer panel: front (jacks + preamps), control (top panel), rear (I/O + supply); two 2×13 IDC ribbons |
 | Digital | None — all-analog, no MCU, no clocks |
 
 ## Block diagram
@@ -110,7 +110,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
   monitor tap: operators hear each other, nothing reaches the rig or the
   line out. **PTT wins:** while the rig is keyed, the intercom is locked
   out (its DC control line is gated by the PTT output state) and its LED
-  stays dark (a resistor-NOR on the TX Bus sheet).
+  stays dark (a resistor-NOR on the TX Sum sheet).
 - **Mic out to rig:** TX mix padded to ~5 mV mic level, ~600 Ω source
   impedance, DC-blocking cap (rigs may put electret bias on their mic
   pin). Level trim rear-accessible — must not require opening the box
@@ -178,14 +178,14 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - Intercom LED (lit while the intercom mute is engaged).
 - All DC-driven, powered from the raw filtered rail (not the 9 V analog
   rail) so LED step loads never touch audio (TX lamp ~17 mA, others
-  ~5 mA; see the Keying sheet).
+  ~5 mA; see the Keying Logic sheet).
 
 ## Rig interface
 
 - DE-9 (female) on the box; rig cables carry: MIC, MIC GND, PTT, RX L,
   RX R, RX GND, +1 spare (reserved for a possible CW key line); shield to
   chassis. Mono rig cables tie RX L and RX R together at the DE-9.
-  Pinout and protection: see the Keying sheet (J705). The spare lands on
+  Pinout and protection: see the Rear I/O sheet (J705). The spare lands on
   header J706 inside the box.
 - Protect every pin against ±12 V — DE-9 invites accidental RS-232
   hookups (bead, shunt cap, TVS and series R per line; see the sheet).
@@ -278,23 +278,48 @@ rail (`RAW_13V8`) via droppers — never from the 9 V analog rail.
 
 ## Mechanical construction
 
-Mixer-style, two boards:
+Mixer-style, three boards, fabricated as one snap-apart 4-layer panel
+(mouse-bites or V-score; all edges straight). The schematic hierarchy
+mirrors the boards: the root sheet holds one sheet per board, and the
+wires on the root *are* the two ribbon cables. `tools/check_boards.py`
+verifies that every net touching two boards passes through the ribbon
+connectors and that both ends of each ribbon carry the same net on every
+pin.
 
-- **Control board** horizontal under the sheet-metal top panel. PCB-mount
-  pots, mute buttons, override selector, and LEDs through panel cutouts;
-  pot bushings nutted to the panel (mounting + bonding). Preamps, buses,
-  mutes, headphone amps, and the supply live here.
-- **Rear I/O board** vertical behind the rear panel: DE-9, Powerpole,
-  line out, PTT jacks, rear trims (mic out, line out L/R, RX input),
-  bias and gain range switches, and the amplifiers those trims feed
-  (mic-out driver U403, line amps U402) so no pot wiper crosses the
-  interconnect. Jack bushings nutted through the panel.
-- **Front apron jacks** (per side: 1/4" + 3.5mm mic, TRRS, 3.5mm + 1/4"
-  phones): control-board front edge or a narrow third board — decide
-  during layout.
-- Board interconnect carries only line-level buses, DC, and PTT logic.
-  Mic-level signals never cross a connector; each preamp lives on the
-  board with its jacks.
+- **Front board** vertical behind the front panel (the control board is
+  parallel to the 13° top slope, so its front edge cannot carry panel
+  jacks). All ten front jacks, both preamps, gain switches and mutes.
+  Mic level never leaves the board. Phones jack sleeves and the TRRS
+  common return to *board GND*, not chassis: a headset is a floating
+  load, and a chassis return would put headphone current through the
+  single chassis tie and the rear ribbon ground — in series with the mic
+  inputs' reference (≈1.5 mV at +40 dB). Mic jack sleeves stay on
+  CHASSIS.
+- **Control board** sloped under the top panel: level/MON/VOL pots, mute
+  and PTT buttons, override, intercom, LEDs, PTT logic and power-on
+  hold, summing amp, intercom mute, monitor buffers, headphone amps.
+  Pot bushings nutted to the panel (mounting + bonding).
+- **Rear board** vertical behind the rear panel: power entry filter and
+  regulators, DE-9 with its protection, PTT jacks, GND post and the
+  single CHASSIS–GND tie, rear trims with the amplifiers they feed
+  (mic-out driver U403, line amps U402, RX buffers U601) so no pot wiper
+  crosses a ribbon, line-out transformers and jack, gain/bias switches.
+  The Powerpole is a panel-mount clip wired to a 2-pin header (J1): a
+  PCB-mount Powerpole would stand ~10 mm proud of the panel at the jacks'
+  board-to-panel distance.
+- **Ribbons**: two 2×13 0.1" IDC (J901/J902 front↔control, J903/J904
+  control↔rear), same connector on all four ends, straight-through.
+  Every audio line is flanked by GND (11 and 10 grounds respectively);
+  the four PH lines carry their own returns. GAIN_x_HI and BIAS_x ride
+  both ribbons and pass straight through the control board. Rails on the
+  ribbons: +9V, VREF, RAW_13V8 (LEDs), GND; each board decouples them
+  locally at the connector.
+- Board-to-board headers are out: the boards meet at 77° and 103°.
+  Rigid-flex was priced out. FFC/FPC rejected for current and robustness.
+- Layout note: with all three boards in one `.kicad_pcb`, the ribbon
+  nets show as unrouted between the connector pairs; record them as DRC
+  exclusions once, or route the panel as three PCB files fed by per-board
+  netlists.
 
 ## Enclosure (RF-tight)
 
@@ -321,7 +346,7 @@ service), wedge console profile:
 - No shield current flows through PCB ground. Shields bond to chassis at
   the point of entry: every jack sleeve, TRRS ring 2 and DE-9 return is
   on the `CHASSIS` net, which ties to signal `GND` at exactly one place
-  (NT701, at the DE-9 on the Keying sheet).
+  (NT701, at the DE-9 on the Rear I/O sheet).
 - Everything is unbalanced (sleeve = shield = signal return), so the
   pin 1 problem can only be minimized: chassis-bonded sleeves + signal
   ground referenced to chassis at one point.

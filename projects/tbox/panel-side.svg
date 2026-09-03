@@ -48,4 +48,8 @@
   <line class="board" x1="136" y1="16" x2="136" y2="86"/>
   <text class="brdm" x="131" y="66" transform="rotate(-90 131 66)">REAR I/O</text>
 
+  <!-- front board: vertical, just inside the front wall (jacks + preamps) -->
+  <line class="board" x1="12" y1="52" x2="12" y2="86"/>
+  <text class="brdm" x="17" y="84" transform="rotate(-90 17 84)">FRONT</text>
+
 </svg>

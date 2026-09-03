@@ -240,17 +240,15 @@ class PowerTree:
         return typ, mx
 
     def by_sheet(self, rail):
-        """Direct loads grouped by sheet: [(sheet, [refs], typ, max)]."""
+        """Direct loads grouped by board (top-level sheet): [(board, [refs], typ, max)]."""
         groups = {}
         for ref, t, m in self.direct[rail]:
-            g = groups.setdefault(self.comps[ref]["sheet"], [[], 0.0, 0.0])
+            board = self.comps[ref]["sheet"].strip("/").split("/")[0] or "Root"
+            g = groups.setdefault(board, [[], 0.0, 0.0])
             g[0].append(ref)
             g[1] += t
             g[2] += m
-        return [
-            (s.strip("/") or "Root", refs, t, m)
-            for s, (refs, t, m) in sorted(groups.items())
-        ]
+        return [(s, refs, t, m) for s, (refs, t, m) in sorted(groups.items())]
 
     def status(self, rail):
         """(status, utilization) from the flattened max against max_ma."""

@@ -5,6 +5,13 @@
   ground plane with a via array (≥16 vias); confirm the via count and pour
   once the pad is drawn.
 
+- Layout: three boards on one snap-apart 4-layer panel (mouse-bites or
+  V-score, rails for the fab). Decide one `.kicad_pcb` with DRC
+  exclusions for the 22 ribbon nets vs three PCB files from per-board
+  netlists. Panel-mount Powerpole clip + 2 wires to J1. IDC box-header
+  footprints for J901–J904 (keyed, 2×13); the two ribbons are
+  straight-through so a single cable part number.
+
 - Footprint / MPN assignment pass: no instance has a footprint yet (the
   library defaults are overridden with ""). Includes: J401 insulated-bushing
   line-out jack, C408 non-polar 10 µF, HF-effective beads (≥50 Ω at 3 MHz),
