@@ -2648,7 +2648,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "J403/J404: shunt 1-2 RX L, 3-4 RX R, 5-6 blend, 7-8 TX mix. T401/T402 600R:600R 1:1 (e.g. Bourns LM-NP-1001-B1L; verify 150 Hz"
+	(text "J3301/J3302: shunt 1-2 RX L, 3-4 RX R, 5-6 blend, 7-8 TX mix. T3301/T3302 600R:600R 1:1 (e.g. Bourns LM-NP-1001-B1L; verify 150 Hz"
 		(exclude_from_sim no)
 		(at 20.32 174 0)
 		(effects
@@ -2659,7 +2659,7 @@
 		)
 		(uuid "0a698e44-5357-5a88-9466-524b5500e805")
 	)
-	(text "at -10 dBV without saturation -- TODO). LOUT_RET is the isolated sleeve, not GND: J401 must be an insulated-bushing jack."
+	(text "at -10 dBV without saturation -- TODO). LOUT_RET is the isolated sleeve, not GND: J3303 must be an insulated-bushing jack."
 		(exclude_from_sim no)
 		(at 20.32 176.53 0)
 		(effects
@@ -2670,7 +2670,7 @@
 		)
 		(uuid "2346b759-5afc-5ffa-ab5e-9b3a97605235")
 	)
-	(text "        B-C = LINE (-10 dBV, drives 600R via R422)"
+	(text "        B-C = LINE (-10 dBV, drives 600R via R3310)"
 		(exclude_from_sim no)
 		(at 205.74 91.44 0)
 		(effects
@@ -2681,7 +2681,7 @@
 		)
 		(uuid "23ebdbc7-ecf4-5766-9319-ed849be292b6")
 	)
-	(text "C408 non-polar: rigs may bias the mic pin. DE-9 filter/clamp on Rear I/O."
+	(text "C3312 non-polar: rigs may bias the mic pin. DE-9 filter/clamp on Rear I/O."
 		(exclude_from_sim no)
 		(at 205.74 96.52 0)
 		(effects
@@ -2703,7 +2703,7 @@
 		)
 		(uuid "60b456c3-f895-5b55-af1e-c23486223498")
 	)
-	(text "U401B / U403B: spare halves, terminated"
+	(text "U2201B / U3301B: spare halves, terminated"
 		(exclude_from_sim no)
 		(at 60.96 139.7 0)
 		(effects
@@ -2714,7 +2714,7 @@
 		)
 		(uuid "8b05500f-eeb3-5ad3-8f9d-ffecb75209b2")
 	)
-	(text "+5 dB line amps, rear trims RV402/RV403"
+	(text "+5 dB line amps, rear trims RV3302/RV3303"
 		(exclude_from_sim no)
 		(at 137.16 76.2 0)
 		(effects
@@ -2748,7 +2748,7 @@
 		)
 		(uuid "b2ad38c6-45f1-58b5-985e-6d2c5fac1329")
 	)
-	(text "mic out driver U403A +5 dB (rear board); RV401 rear trim; C418/R435 RF stop at the input pin"
+	(text "mic out driver U3301A +5 dB (rear board); RV3301 rear trim; C3304/R3303 RF stop at the input pin"
 		(exclude_from_sim no)
 		(at 165.1 43.18 0)
 		(effects
@@ -2770,7 +2770,7 @@
 		)
 		(uuid "bd7f381e-28ed-5ccd-9443-c44ac9f66d45")
 	)
-	(text "C417 blocks the driver DC; the pad returns to GND (VREF noise is padded too)"
+	(text "C3309 blocks the driver DC; the pad returns to GND (VREF noise is padded too)"
 		(exclude_from_sim no)
 		(at 205.74 93.98 0)
 		(effects
@@ -2781,7 +2781,7 @@
 		)
 		(uuid "c423a994-b7b5-502b-9f4f-0d22c975e887")
 	)
-	(text "C412/C414 1n: RF corner ~270 kHz against 600R. C422/C423: block sound-card plug-in power."
+	(text "C3313/C3314 1n: RF corner ~270 kHz against 600R. C3315/C3316: block sound-card plug-in power."
 		(exclude_from_sim no)
 		(at 205.74 99.06 0)
 		(effects
@@ -2792,7 +2792,7 @@
 		)
 		(uuid "d1aacbf9-4f84-5c98-b9aa-4352bba515d4")
 	)
-	(text "JP401: A-C = MIC (12k/620R pad, -26 dB, ~590R source)"
+	(text "JP3301: A-C = MIC (12k/620R pad, -26 dB, ~590R source)"
 		(exclude_from_sim no)
 		(at 205.74 88.9 0)
 		(effects

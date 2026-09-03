@@ -2448,7 +2448,7 @@
 		)
 		(uuid "0d4a00cd-f480-5f05-ae99-ee22d1a40257")
 	)
-	(text "C203/C204 return to GND, not VREF: the mic is ground-referenced, so a VREF-referenced feedback leg would amplify VREF noise by the full stage gain."
+	(text "C1105/C1106 return to GND, not VREF: the mic is ground-referenced, so a VREF-referenced feedback leg would amplify VREF noise by the full stage gain."
 		(exclude_from_sim no)
 		(at 20.32 133.35 0)
 		(effects
@@ -2492,7 +2492,7 @@
 		)
 		(uuid "87ef944e-3b50-4298-9825-b541142cd779")
 	)
-	(text "R215/C209: RF stop at the +40 dB input pin. C211 decouples the bias line where it enters the mic node. Mic jack sleeves bond to CHASSIS at entry (single CHASSIS-GND tie on Rear I/O); the TRRS common (ring 2) is GND so the headset's phones current returns on the board."
+	(text "R1103/C1104: RF stop at the +40 dB input pin. C1102 decouples the bias line where it enters the mic node. Mic jack sleeves bond to CHASSIS at entry (single CHASSIS-GND tie on Rear I/O); the TRRS common (ring 2) is GND so the headset's phones current returns on the board."
 		(exclude_from_sim no)
 		(at 20.32 135.89 0)
 		(effects

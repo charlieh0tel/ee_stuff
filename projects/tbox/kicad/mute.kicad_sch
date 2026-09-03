@@ -899,7 +899,7 @@
 		)
 		(uuid "0af3f2d0-f99d-5f41-b4f2-6d7c67aca659")
 	)
-	(text "Control input: VIH guaranteed 2.4 V (10 V supply) / 5 V (12 V supply), ~1.5 V typ; every MUTE source in this design sits >= 6 V loaded. IIN 0.1 uA max: R214 1M holds MUTE low with no source active and keeps the power-on hold light."
+	(text "Control input: VIH guaranteed 2.4 V (10 V supply) / 5 V (12 V supply), ~1.5 V typ; every MUTE source in this design sits >= 6 V loaded. IIN 0.1 uA max: the 1M pulldown holds MUTE low with no source active and keeps the power-on hold light."
 		(exclude_from_sim no)
 		(at 20.32 29.21 0)
 		(effects

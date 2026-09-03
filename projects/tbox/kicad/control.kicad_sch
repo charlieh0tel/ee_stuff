@@ -1298,7 +1298,7 @@
 		)
 		(uuid "46ef1999-4205-5b60-868e-26a742488b9f")
 	)
-	(text "J902: ribbon to the front board (J901). J903: ribbon to the rear board (J904). GAIN_x_HI / BIAS_x pass straight through from J903 to J902."
+	(text "J2001: ribbon to the front board (J1005). J2002: ribbon to the rear board (J3001). GAIN_x_HI / BIAS_x pass straight through from J2002 to J2001."
 		(exclude_from_sim no)
 		(at 20.32 24.13 0)
 		(effects
@@ -3570,7 +3570,7 @@
 				)
 			)
 		)
-		(property "Value" "TO FRONT J901"
+		(property "Value" "TO FRONT J1005"
 			(at 66.04 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4737,7 +4737,7 @@
 				)
 			)
 		)
-		(property "Value" "TO REAR J904"
+		(property "Value" "TO REAR J3001"
 			(at 200.66 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -1346,7 +1346,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Max ~-0.4 dBV open (17 mW/32R, 22 mW/16R through the 10R build-out; one headset per position). 3.5 mm, 1/4\" and the TRRS phones side (J203/J303 on the preamp sheets, via PH_x_L/R) are paralleled."
+	(text "Max ~-0.4 dBV open (17 mW/32R, 22 mW/16R through the 10R build-out; one headset per position). 3.5 mm, 1/4\" and the TRRS phones side (J1103/J1303 on the preamp sheets, via PH_x_L/R) are paralleled."
 		(exclude_from_sim no)
 		(at 20.32 34.29 0)
 		(effects
@@ -1369,7 +1369,7 @@
 		)
 		(uuid "9b24ee24-12f5-5621-8d03-3028cecd928b")
 	)
-	(text "+15 dB (1 + 47k/10k), unity at DC (C618/C619); trims to GND, +in biased to VREF via 100k (VREF noise gain ~1); R635/C622 RF stop at the pin"
+	(text "+15 dB (1 + 47k/10k), unity at DC (C3403/C3404); trims to GND, +in biased to VREF via 100k (VREF noise gain ~1); R3403/C3405 RF stop at the pin"
 		(exclude_from_sim no)
 		(at 20.32 187.96 0)
 		(effects

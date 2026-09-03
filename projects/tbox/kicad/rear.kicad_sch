@@ -1120,7 +1120,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "J904: ribbon to the control board (J903). The Powerpole is panel-mount, wired to J1 on the Supply sheet."
+	(text "J3001: ribbon to the control board (J2002). The Powerpole is panel-mount, wired to J3101 on the Supply sheet."
 		(exclude_from_sim no)
 		(at 20.32 24.13 0)
 		(effects
@@ -1818,7 +1818,7 @@
 				)
 			)
 		)
-		(property "Value" "TO CTRL J903"
+		(property "Value" "TO CTRL J2002"
 			(at 66.04 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)

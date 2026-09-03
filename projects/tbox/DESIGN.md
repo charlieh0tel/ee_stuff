@@ -73,7 +73,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
   level pot, which handles fine adjustment. Exact gains per
   [LEVELS.md](LEVELS.md). The switch throws a DC control line; gain
   switching happens at the preamp with a 9 V-rated SPDT analog switch
-  (TS12A12511, U202/U302) selecting the stage-1 or stage-2 output
+  (TS12A12511, U1102/U1302) selecting the stage-1 or stage-2 output
   (mic-level signals don't cross boards).
 - **Mute button:** top panel, latching/alternate-action (NKK/Schadow
   style; fallback: toggle, or momentary + flip-flop). Full mute: a
@@ -114,7 +114,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - **Mic out to rig:** TX mix padded to ~5 mV mic level, ~600 Ω source
   impedance, DC-blocking cap (rigs may put electret bias on their mic
   pin). Level trim rear-accessible — must not require opening the box
-  (used range -20…0 dB, ahead of the driver). A rear jumper (JP401)
+  (used range -20…0 dB, ahead of the driver). A rear jumper (JP3301)
   selects MIC (padded to mic level) or LINE (~-10 dBV) for rigs with a
   line-level TX input. Must drive a 600 Ω load; source impedance ~690 Ω
   in MIC mode including the DE-9 series resistor. Level setting uses
@@ -160,7 +160,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
   below the TX lamp; thrown toward the channel that wins). A→B: channel
   A's PTT keys the rig and fully mutes channel B while closed; B→A
   mirror. OFF (center): both PTTs just key the rig. Realized as a DPDT
-  on-off-on toggle (SW703); lever directions as marked on the top panel.
+  on-off-on toggle (SW2103); lever directions as marked on the top panel.
 - Rig PTT output: open-drain MOSFET (tolerates 12 V+ pull-ups).
 - Control lines (`MUTE_A/B`, `PTT_ACTIVE`, `IC_MUTE`) are DC logic,
   0 V / +9 V, active high. `PTT_ACTIVE` is high while the rig PTT output
@@ -185,8 +185,8 @@ Two identical, physically grouped channel sections (A and B). Each has:
 - DE-9 (female) on the box; rig cables carry: MIC, MIC GND, PTT, RX L,
   RX R, RX GND, +1 spare (reserved for a possible CW key line); shield to
   chassis. Mono rig cables tie RX L and RX R together at the DE-9.
-  Pinout and protection: see the Rear I/O sheet (J705). The spare lands on
-  header J706 inside the box.
+  Pinout and protection: see the Rear I/O sheet (J3206). The spare lands on
+  header J3205 inside the box.
 - Protect every pin against ±12 V — DE-9 invites accidental RS-232
   hookups (bead, shunt cap, TVS and series R per line; see the sheet).
 - One cable per rig family (Icom 8-pin, Yaesu RJ45, Kenwood 8-pin, etc.).
@@ -302,12 +302,12 @@ pin.
 - **Rear board** vertical behind the rear panel: power entry filter and
   regulators, DE-9 with its protection, PTT jacks, GND post and the
   single CHASSIS–GND tie, rear trims with the amplifiers they feed
-  (mic-out driver U403, line amps U402, RX buffers U601) so no pot wiper
+  (mic-out driver U3301, line amps U3302, RX buffers U3401) so no pot wiper
   crosses a ribbon, line-out transformers and jack, gain/bias switches.
-  The Powerpole is a panel-mount clip wired to a 2-pin header (J1): a
+  The Powerpole is a panel-mount clip wired to a 2-pin header (J3101): a
   PCB-mount Powerpole would stand ~10 mm proud of the panel at the jacks'
   board-to-panel distance.
-- **Ribbons**: two 2×13 0.1" IDC (J901/J902 front↔control, J903/J904
+- **Ribbons**: two 2×13 0.1" IDC (J1005/J2001 front↔control, J2002/J3001
   control↔rear), same connector on all four ends, straight-through.
   Every audio line is flanked by GND (11 and 10 grounds respectively);
   the four PH lines carry their own returns. GAIN_x_HI and BIAS_x ride
@@ -346,11 +346,11 @@ service), wedge console profile:
 - No shield current flows through PCB ground. Shields bond to chassis at
   the point of entry: every jack sleeve, TRRS ring 2 and DE-9 return is
   on the `CHASSIS` net, which ties to signal `GND` at exactly one place
-  (NT701, at the DE-9 on the Rear I/O sheet).
+  (NT3201, at the DE-9 on the Rear I/O sheet).
 - Everything is unbalanced (sleeve = shield = signal return), so the
   pin 1 problem can only be minimized: chassis-bonded sleeves + signal
   ground referenced to chassis at one point.
-- Exception: the line-out jack J401 is **insulated-bushing** — its
+- Exception: the line-out jack J3303 is **insulated-bushing** — its
   sleeve is the transformer secondaries' return (`LOUT_RET`), and a
   chassis bond there would defeat the isolation.
 - **TRRS exception:** on CTIA the sleeve is the mic line and ground is
@@ -364,11 +364,11 @@ service), wedge console profile:
 
 ## Open items
 
-- Line-out jack J401 must be an insulated-bushing part (isolation), and
-  the rear GND post (J707) needs a chassis-stud part — both are footprint
+- Line-out jack J3303 must be an insulated-bushing part (isolation), and
+  the rear GND post (J3207) needs a chassis-stud part — both are footprint
   decisions.
 - Layout: TPS7A4701 thermal pad pour/vias (the 385 mA thermal max in
-  `power_tree.json` assumes it); single CHASSIS–GND tie at NT701 only.
+  `power_tree.json` assumes it); single CHASSIS–GND tie at NT3201 only.
 - Footprint / MPN pass for every part (see TODO.md).
 
 - RF immunity target, quantitative (e.g. "no audible artifacts with

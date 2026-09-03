@@ -2119,7 +2119,7 @@
 		)
 		(uuid "57f97efb-41ab-51db-b3b7-fd5509380bff")
 	)
-	(text "RV604/RV606: dual-gang volume; all pots return to VREF (no DC on wipers)."
+	(text "RV2401/RV2404: dual-gang volume; all pots return to VREF (no DC on wipers)."
 		(exclude_from_sim no)
 		(at 20.32 171.45 0)
 		(effects
@@ -2141,7 +2141,7 @@
 		)
 		(uuid "70b07976-79f7-5107-9356-546af19be9b4")
 	)
-	(text "C620/C621: +9V bulk next to U603/U604 (class-B return current)"
+	(text "C2405/C2407: +9V bulk next to U2401/U2403 (class-B return current)"
 		(exclude_from_sim no)
 		(at 177.8 101.6 0)
 		(effects

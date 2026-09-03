@@ -2619,7 +2619,7 @@
 		)
 		(uuid "2287d278-987b-5ff0-b33e-d2dcfd30a64f")
 	)
-	(text "NT701 = the single CHASSIS-GND tie; every mic/PTT sleeve"
+	(text "NT3201 = the single CHASSIS-GND tie; every mic/PTT sleeve"
 		(exclude_from_sim no)
 		(at 205.74 101.6 0)
 		(effects

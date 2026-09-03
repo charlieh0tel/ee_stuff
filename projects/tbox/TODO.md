@@ -8,25 +8,25 @@
 - Layout: three boards on one snap-apart 4-layer panel (mouse-bites or
   V-score, rails for the fab). Decide one `.kicad_pcb` with DRC
   exclusions for the 22 ribbon nets vs three PCB files from per-board
-  netlists. Panel-mount Powerpole clip + 2 wires to J1. IDC box-header
-  footprints for J901–J904 (keyed, 2×13); the two ribbons are
+  netlists. Panel-mount Powerpole clip + 2 wires to J3101. IDC box-header
+  footprints for the four ribbon connectors (`Interconnect` FC/CR; keyed, 2×13); the two ribbons are
   straight-through so a single cable part number.
 
 - Footprint / MPN assignment pass: no instance has a footprint yet (the
-  library defaults are overridden with ""). Includes: J401 insulated-bushing
-  line-out jack, C408 non-polar 10 µF, HF-effective beads (≥50 Ω at 3 MHz),
-  SW703 on-off-on DPDT, latching mute buttons, dual-gang volume pots.
+  library defaults are overridden with ""). Includes: J3303 insulated-bushing
+  line-out jack, C3312 non-polar 10 µF, HF-effective beads (≥50 Ω at 3 MHz),
+  SW2103 on-off-on DPDT, latching mute buttons, dual-gang volume pots.
 
 - Bench: check TRRS mic↔phones crosstalk with a real headset before panel freeze;
   confirm the mute switching step is inaudible at full monitor level;
   measure the power-on hold (~1 s) and the logic highs (≥ 6 V at every
   TS12A12511 IN pin).
 
-- Supply-sheet reference designators are 1-digit (U1, C1 …) while the
+- Supply-sheet reference designators are 1-digit (U3103, C3103 …) while the
   other sheets use per-sheet hundreds; renumber with the refdes tooling
   when convenient.
 
-- Line-out transformers T401/T402: pick the part (candidate Bourns
+- Line-out transformers T3301/T3302: pick the part (candidate Bourns
   LM-NP-1001-B1L, SMT 600:600) and verify 150 Hz at -10 dBV without
   saturation, driven from ~100 Ω into ≥10 kΩ.
 

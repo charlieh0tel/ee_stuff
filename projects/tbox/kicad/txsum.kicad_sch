@@ -2064,7 +2064,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "R404 isolates the cap load"
+	(text "R2207 isolates the cap load"
 		(exclude_from_sim no)
 		(at 20.32 83.82 0)
 		(effects
@@ -2119,7 +2119,7 @@
 		)
 		(uuid "45400f22-c05d-520e-ad82-6a8ef3079d26")
 	)
-	(text "Level pots RV201/RV301 (top panel) live here: PRE_x_OUT arrives at line level over the ribbon; the wiper feeds the sum locally."
+	(text "Level pots RV2201/RV2202 (top panel) live here: PRE_x_OUT arrives at line level over the ribbon; the wiper feeds the sum locally."
 		(exclude_from_sim no)
 		(at 20.32 186.69 0)
 		(effects

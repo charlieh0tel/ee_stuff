@@ -11,7 +11,7 @@
 		(company "TBox")
 	)
 	(lib_symbols)
-	(text "Front <-> Control: J901/J902.   Control <-> Rear: J903/J904.   CHASSIS is the enclosure itself (single tie NT701 on the rear board)."
+	(text "Front <-> Control: J1005/J2001.   Control <-> Rear: J2002/J3001.   CHASSIS is the enclosure itself (single tie NT3201 on the rear board)."
 		(exclude_from_sim no)
 		(at 20.32 24.13 0)
 		(effects
@@ -22,7 +22,7 @@
 		)
 		(uuid "7f87d321-02c0-5fbc-9ba3-dadf1ce12ae6")
 	)
-	(text "GAIN/BIAS: rear switches -> front preamps; they ride both ribbons and pass straight through the control board (J903 -> J902)."
+	(text "GAIN/BIAS: rear switches -> front preamps; they ride both ribbons and pass straight through the control board (J2002 -> J2001)."
 		(exclude_from_sim no)
 		(at 101.92 144.78 0)
 		(effects

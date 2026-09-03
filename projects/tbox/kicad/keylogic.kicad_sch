@@ -2123,7 +2123,7 @@
 		)
 		(uuid "0dbde41a-c13b-5685-b025-e48f57f0bc21")
 	)
-	(text "D726 discharges C710 at power-off (quick re-arm)."
+	(text "D2119 discharges C2103 at power-off (quick re-arm)."
 		(exclude_from_sim no)
 		(at 222.25 161.29 0)
 		(effects
@@ -2168,7 +2168,7 @@
 		)
 		(uuid "32a5ec99-301d-59bf-81e3-39237f71bd12")
 	)
-	(text "Power-on hold: MUTE_A/B > 5 V for ~1 s (C710/R731, 1M loads);"
+	(text "Power-on hold: MUTE_A/B > 5 V for ~1 s (C2103/R2121, 1M loads);"
 		(exclude_from_sim no)
 		(at 222.25 158.75 0)
 		(effects
@@ -2179,7 +2179,7 @@
 		)
 		(uuid "83f724d2-30bc-51be-adf9-8410fdec04a8")
 	)
-	(text "OVERRIDE (SW703, on-off-on): A->B / centre OFF / B->A as marked on the top panel"
+	(text "OVERRIDE (SW2103, on-off-on): A->B / centre OFF / B->A as marked on the top panel"
 		(exclude_from_sim no)
 		(at 109.22 43.18 0)
 		(effects
@@ -2190,7 +2190,7 @@
 		)
 		(uuid "8f29d48a-e850-5c78-ad0b-9de32e191970")
 	)
-	(text "JP701/JP702 (PTT GATE): mic live only while keyed"
+	(text "JP2101/JP2102 (PTT GATE): mic live only while keyed"
 		(exclude_from_sim no)
 		(at 152.4 118.11 0)
 		(effects
