@@ -157,7 +157,7 @@ def stackup(board, pcbnew):
     ds.m_MinClearance = mm(0.15)
     ds.m_TrackMinWidth = mm(0.15)
     ds.m_ViasMinSize = mm(0.5)
-    ds.m_MinThroughDrill = mm(0.3)
+    ds.m_MinThroughDrill = mm(0.2)  # the TPS7A4701 thermal-via footprint uses 0.2 mm
     ds.m_CopperEdgeClearance = mm(0.3)
     ds.m_SolderMaskExpansion = mm(0.05)
 

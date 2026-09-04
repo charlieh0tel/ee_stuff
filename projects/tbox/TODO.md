@@ -12,8 +12,13 @@
   (F8) and save, then `tools/place_panel.py` puts every part on its own
   board and the panel parts at the drawings' positions; hand layout from
   there. The 22 ribbon nets will show as unrouted between the connector
-  pairs — record them as DRC exclusions once. Board-edge notches per jack
-  family (different nose-to-board-edge distances) are a layout detail.
+  pairs — record them as DRC exclusions once. Placement tool run: panel
+  parts sit with their pads 2 mm inside the panel edge; each family's
+  true panel-face offset (Switchcraft: panel surface at the footprint's
+  y = 0; Neutrik/CUI/DSUB: per datasheet) sets where the board edge or
+  its notch goes — settle per family in hand layout. The rear board's
+  starting spread overflows its region by ~15 mm (transformers, supply
+  electrolytics); the remaining DRC overlaps are that.
 
 - Footprints are assigned (`tools/check_footprints.py` keeps it that way)
   and the chosen parts carry `MPN` fields. Before ordering boards:

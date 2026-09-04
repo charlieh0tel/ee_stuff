@@ -169,8 +169,73 @@ def main():
             "no footprints on the board yet: run Update PCB from Schematic (F8) in KiCad and save first"
         )
     fx, rx = front_positions(), rear_positions()
+    # ribbon headers along the inner (V-cut) edges: front/control pair at the left, control/rear pair at the right
+    INNER = {
+        "J1005": (50.0, "bottom", 40.0),
+        "J2001": (50.0, "top", 40.0),
+        "J2002": (180.0, "bottom", 260.0),
+        "J3001": (180.0, "top", 260.0),
+    }
+    EDGE_KEEP = 26.0  # panel parts reach this far in from the panel edge
+    INSET = 2.0  # pads this far inside the panel edge; the nose overhangs
+
+    def bboxes(fp):
+        """((l, t, r, b) of the footprint incl. courtyard, (l, t, r, b) of its pads), in mm."""
+        c = fp.GetBoundingBox(False, False)
+        cb = (
+            c.GetLeft() / 1e6,
+            c.GetTop() / 1e6,
+            c.GetRight() / 1e6,
+            c.GetBottom() / 1e6,
+        )
+        pb = None
+        for pad in fp.Pads():
+            b = pad.GetBoundingBox()
+            q = (
+                b.GetLeft() / 1e6,
+                b.GetTop() / 1e6,
+                b.GetRight() / 1e6,
+                b.GetBottom() / 1e6,
+            )
+            pb = (
+                q
+                if pb is None
+                else (
+                    min(pb[0], q[0]),
+                    min(pb[1], q[1]),
+                    max(pb[2], q[2]),
+                    max(pb[3], q[3]),
+                )
+            )
+        return cb, pb
+
+    def orient_nose(fp, want):
+        """Rotate so the side where the courtyard overhangs the pads most faces `want` ('top'/'bottom')."""
+        best = None
+        for ang in (0, 90, 180, 270):
+            fp.SetOrientationDegrees(ang)
+            c, pd = bboxes(fp)
+            over = {
+                "left": pd[0] - c[0],
+                "right": c[2] - pd[2],
+                "top": pd[1] - c[1],
+                "bottom": c[3] - pd[3],
+            }
+            if best is None or over[want] > best[0]:
+                best = (over[want], ang)
+        fp.SetOrientationDegrees(best[1])
+
+    def place_edge(fp, x, edge_y, side):
+        orient_nose(fp, side)
+        c, pd = bboxes(fp)
+        cx = (c[0] + c[2]) / 2
+        pos = fp.GetPosition()
+        dx = x - cx
+        dy = (edge_y + INSET) - pd[1] if side == "top" else (edge_y - INSET) - pd[3]
+        fp.SetPosition(pcbnew.VECTOR2I(pos.x + mm(dx), pos.y + mm(dy)))
+
     placed, gridded, unknown = 0, 0, []
-    grid = {}  # (board, sheet) -> [refs]
+    grid = {}  # (board, sheet) -> [fp]
     for fp in fps:
         ref = fp.GetReference()
         sheet = fp.GetSheetname()
@@ -180,28 +245,50 @@ def main():
             continue
         y0, y1 = BOARDS[top]
         if ref in fx:
-            fp.SetPosition(pcbnew.VECTOR2I(mm(fx[ref]), mm(y0 + 0.0)))
-            fp.SetOrientationDegrees(180)  # jack opening toward the panel edge (top)
+            place_edge(fp, fx[ref], y0, "top")
             placed += 1
         elif ref in rx:
-            fp.SetPosition(pcbnew.VECTOR2I(mm(rx[ref]), mm(y1 - 0.0)))
-            fp.SetOrientationDegrees(0)  # opening toward the bottom edge
+            place_edge(fp, rx[ref], y1, "bottom")
+            placed += 1
+        elif ref in INNER:
+            ey, side, x = INNER[ref]
+            fp.SetOrientationDegrees(90)  # long axis along the edge
+            c, _pd = bboxes(fp)
+            cx = (c[0] + c[2]) / 2
+            pos = fp.GetPosition()
+            dy = (ey + 1.5) - c[1] if side == "top" else (ey - 1.5) - c[3]
+            fp.SetPosition(pcbnew.VECTOR2I(pos.x + mm(x - cx), pos.y + mm(dy)))
             placed += 1
         else:
             if fp.GetPosition() == pcbnew.VECTOR2I(0, 0) or args.all:
                 grid.setdefault((top, sheet), []).append(fp)
-    # spread the rest: one column band per sub-sheet, 6 mm pitch, inside the board
-    for (top, sheet), items in sorted(grid.items()):
-        y0, y1 = BOARDS[top]
-        bands = sorted({s for (t, s) in grid if t == top})
-        k = bands.index(sheet)
-        x0 = 15 + k * (W - 30) / max(1, len(bands))
-        cols = max(1, int(((W - 30) / max(1, len(bands))) // 6))
-        for i, fp in enumerate(sorted(items, key=lambda f: f.GetReference())):
-            fp.SetPosition(
-                pcbnew.VECTOR2I(mm(x0 + (i % cols) * 6), mm(y0 + 15 + (i // cols) * 6))
-            )
+    # pack the rest row-major across the whole board, sub-sheet by sub-sheet, clear of the edge parts
+    region = {
+        "Front Board": (EDGE_KEEP, 50.0 - 14.0),
+        "Control Board": (50.0 + 16.0, 180.0 - 16.0),
+        "Rear Board": (180.0 + 14.0, 250.0 - EDGE_KEEP),
+    }
+    by_board = {}
+    for (top, sheet), items in grid.items():
+        by_board.setdefault(top, []).extend((sheet, fp) for fp in items)
+    for top, items in by_board.items():
+        ya, yb = region[top]
+        x, y, rowh = 12.0, ya, 0.0
+        for _sheet, fp in sorted(items, key=lambda s: (s[0], s[1].GetReference())):
+            fp.SetOrientationDegrees(0)
+            c, _pd = bboxes(fp)
+            w, h = c[2] - c[0] + 1.0, c[3] - c[1] + 1.0
+            if x + w > W - 12.0:
+                x, y, rowh = 12.0, y + rowh, 0.0
+            pos = fp.GetPosition()
+            fp.SetPosition(pcbnew.VECTOR2I(pos.x + mm(x - c[0]), pos.y + mm(y - c[1])))
+            x += w
+            rowh = max(rowh, h)
             gridded += 1
+        if y + rowh > yb:
+            print(
+                f"warning: {top} starting spread runs {y + rowh - yb:.0f} mm past its region"
+            )
     pcbnew.SaveBoard(PCB, board)
     print(f"panel parts placed: {placed}; gridded: {gridded}; footprints: {len(fps)}")
     if unknown:
