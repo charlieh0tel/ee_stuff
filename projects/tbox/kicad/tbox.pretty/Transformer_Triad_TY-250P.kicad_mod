@@ -3,7 +3,7 @@
 	(generator "tbox")
 	(generator_version "1.0")
 	(layer "F.Cu")
-	(descr "Triad TY-250P audio transformer, PC mount, 0.700 x 0.900 in body, 0.025 in square pins: two rows 0.520 in apart, 0.200 in pitch (pin 1 0.150 in above pin 2). Pads follow the Transformer_1P_1S symbol: 1=TY2, 2=TY4, 3=TY5, 4=TY8; TY6/TY7 share pad 5 and are tied on F.Cu for the 1:1 connection; CT (TY3) and NC (TY1) unused. Per Triad drawing dated 2019-05-31.")
+	(descr "Triad TY-250P audio transformer, PC mount, 0.700 x 0.900 in body, 0.025 in square pins: two rows 0.520 in apart, 0.200 in pitch (pin 1 0.150 in above pin 2). Pads carry Triad's numbering 1-8 (1 is a mechanical/no-connect pin); the 6-7 tie for 1:1 use is a schematic wire (symbol tbox:TY-250P). Per Triad drawing dated 2019-05-31.")
 	(tags "transformer audio 600 triad TY-250P")
 	(attr through_hole)
 	(fp_text reference "REF**"
@@ -26,69 +26,62 @@
 			)
 		)
 	)
-	(pad "NC" thru_hole circle
+	(pad "1" thru_hole circle
 		(at -6.604 -6.35)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "1" thru_hole circle
+	(pad "2" thru_hole circle
 		(at -6.604 -2.54)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "CT" thru_hole circle
+	(pad "3" thru_hole circle
 		(at -6.604 2.54)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "2" thru_hole circle
+	(pad "4" thru_hole circle
 		(at -6.604 7.62)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "4" thru_hole circle
+	(pad "8" thru_hole circle
 		(at 6.604 -7.62)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "5" thru_hole circle
+	(pad "7" thru_hole circle
 		(at 6.604 -2.54)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "5" thru_hole circle
+	(pad "6" thru_hole circle
 		(at 6.604 2.54)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "3" thru_hole circle
+	(pad "5" thru_hole circle
 		(at 6.604 7.62)
 		(size 1.8 1.8)
 		(drill 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(fp_line
-		(start 6.604 -2.54)
-		(end 6.604 2.54)
-		(stroke
-			(width 0.8)
-			(type solid)
-		)
 		(layer "F.Cu")
 	)
 	(fp_rect

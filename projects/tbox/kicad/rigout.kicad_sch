@@ -11,6 +11,243 @@
 		(company "TBox")
 	)
 	(lib_symbols
+		(symbol "tbox:TY-250P"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "T"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TY-250P"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "tbox:Transformer_Triad_TY-250P"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://catalog.triadmagnetics.com/asset/ty-250p.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Triad TY-250P audio transformer 1k CT : 1k CT, 20 Hz-20 kHz; used 1:1 with 6-7 tied, CT unused"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TY-250P_0_1"
+				(polyline
+					(pts
+						(xy -7.62 -5.08) (xy -7.62 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 -5.08) (xy -0.635 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -5.08) (xy 0.635 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "1k CT : 1k CT"
+					(at 0 -7.62 0)
+					(effects
+						(font
+							(size 1 1)
+						)
+					)
+				)
+			)
+			(symbol "TY-250P_1_1"
+				(pin passive line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "P1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "CT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "P2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "S2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -1.27 180)
+					(length 2.54)
+					(name "S2b"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 1.27 180)
+					(length 2.54)
+					(name "S1b"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "S1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -2648,7 +2885,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "J3301/J3302: shunt 1-2 RX L, 3-4 RX R, 5-6 blend, 7-8 TX mix. T3301/T3302 600R:600R 1:1 (e.g. Bourns LM-NP-1001-B1L; verify 150 Hz"
+	(text "J3301/J3302: shunt 1-2 RX L, 3-4 RX R, 5-6 blend, 7-8 TX mix. T3301/T3302 Triad TY-250P used 1:1 (6-7 tied, CT open; verify 200 Hz"
 		(exclude_from_sim no)
 		(at 20.32 174 0)
 		(effects
@@ -3969,7 +4206,6 @@
 		)
 		(uuid "d8dff603-a101-5bc9-a96e-8782839a39ed")
 	)
-	
 	(wire
 		(pts
 			(xy 177.8 76.2) (xy 177.8 78.74)
@@ -8485,7 +8721,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Transformer_1P_1S")
+		(lib_id "tbox:TY-250P")
 		(at 247.65 143.51 0)
 		(unit 1)
 		(body_style 1)
@@ -8505,7 +8741,7 @@
 				)
 			)
 		)
-		(property "Value" "600R:600R"
+		(property "Value" "TY-250P"
 			(at 247.65 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8579,7 +8815,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Transformer_1P_1S")
+		(lib_id "tbox:TY-250P")
 		(at 247.65 113.03 0)
 		(unit 1)
 		(body_style 1)
@@ -8599,7 +8835,7 @@
 				)
 			)
 		)
-		(property "Value" "600R:600R"
+		(property "Value" "TY-250P"
 			(at 247.65 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10067,5 +10303,33 @@
 			(type default)
 		)
 		(uuid "7bbc312f-583f-58b5-ba02-a587da48025d")
+	)
+	(wire
+		(pts
+			(xy 257.81 142.24) (xy 257.81 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28591d3f-514c-58bf-a1a2-1b47e119b06a")
+	)
+	(no_connect
+		(at 237.49 143.51)
+		(uuid "cb153f1f-cc94-5771-8720-1848f2b943ab")
+	)
+	(wire
+		(pts
+			(xy 257.81 111.76) (xy 257.81 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bc52c35-442c-5e3f-800f-52dc2cffa7b4")
+	)
+	(no_connect
+		(at 237.49 113.03)
+		(uuid "1a2bbe96-8c38-5df7-98a2-fd32eda709a4")
 	)
 )
