@@ -1380,7 +1380,7 @@
 		)
 		(uuid "bc0c08fc-0712-5d6d-9d73-d546f40e7e93")
 	)
-	(text "RX in: 10k bridging load, rear 10k trim to GND (hot phones-jack sources are simply trimmed down), AC-coupled into a +15 dB buffer -> RX_L_BUS / RX_R_BUS at -15 dBV."
+	(text "RX in: the rear 10k trim to GND is the bridging load (hot phones-jack sources are simply trimmed down), AC-coupled into a +15 dB buffer -> RX_L_BUS / RX_R_BUS at -15 dBV."
 		(exclude_from_sim no)
 		(at 20.32 24.13 0)
 		(effects
@@ -1445,22 +1445,10 @@
 		(uuid "b3a5242c-07ff-5771-a8c5-7796b25781f6")
 	)
 	(junction
-		(at 33.02 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c3085c58-7213-55b1-961a-a3691cf6a4cb")
-	)
-	(junction
 		(at 96.52 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c634b30d-c38e-5f20-8d18-60701aa1cdac")
-	)
-	(junction
-		(at 33.02 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d90f3899-ad1a-558a-9b30-105244ca1c59")
 	)
 	(junction
 		(at 83.82 57.15)
@@ -1567,16 +1555,6 @@
 			(type default)
 		)
 		(uuid "1c7c7c4f-d7e6-5da6-89fd-7a4b7583e0f0")
-	)
-	(wire
-		(pts
-			(xy 33.02 86.36) (xy 33.02 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1e21766c-6378-5db2-badf-2db8fab11a29")
 	)
 	(wire
 		(pts
@@ -1727,16 +1705,6 @@
 			(type default)
 		)
 		(uuid "5fc7739d-977a-596f-94d8-5c13ef3a9a6d")
-	)
-	(wire
-		(pts
-			(xy 33.02 59.69) (xy 33.02 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6080ed57-11fb-5bb3-a207-fd84b4488e74")
 	)
 	(wire
 		(pts
@@ -1910,16 +1878,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 50.8) (xy 33.02 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0965a0e-b737-5893-838f-644f7e228e66")
-	)
-	(wire
-		(pts
 			(xy 64.77 106.68) (xy 69.85 106.68)
 		)
 		(stroke
@@ -1987,16 +1945,6 @@
 			(type default)
 		)
 		(uuid "edd3ff29-fe9c-5bdb-83b3-4ebb386bce24")
-	)
-	(wire
-		(pts
-			(xy 33.02 95.25) (xy 33.02 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee0b05c6-ae2f-536b-b056-8e3e63b93d44")
 	)
 	(wire
 		(pts
@@ -2431,87 +2379,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
 					(reference "R3412")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 33.02 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1ec4ca68-9493-5149-8015-cb36eb11d04b")
-		(property "Reference" "R3402"
-			(at 29.21 90.17 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 29.21 92.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 33.02 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b958ee6e-5edd-5eeb-aeeb-a283e01be4ed")
-		)
-		(pin "2"
-			(uuid "bf891873-1f79-5afc-8ee8-e609f8b49161")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
-					(reference "R3402")
 					(unit 1)
 				)
 			)
@@ -2987,87 +2854,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
 					(reference "TP3401")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 33.02 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5e40f9dd-3c27-5e03-8aa0-bbac99c7bb5b")
-		(property "Reference" "R3401"
-			(at 29.21 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 29.21 57.15 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 33.02 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "224c8fcb-9295-568a-b03d-8669d28e6708")
-		)
-		(pin "2"
-			(uuid "ba2f39da-4dc8-502b-a820-04868e75de93")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
-					(reference "R3401")
 					(unit 1)
 				)
 			)
@@ -3690,83 +3476,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
 					(reference "R3404")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 33.02 97.79 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a8803f3e-df01-5c4c-b31e-f42031a413e7")
-		(property "Reference" "#PWR03402"
-			(at 33.02 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 33.02 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 33.02 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e8dac608-5b5f-5197-a378-ba84c2b018aa")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
-					(reference "#PWR03402")
 					(unit 1)
 				)
 			)
@@ -4712,83 +4421,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
 					(reference "TP3402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 33.02 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "efd86059-fd78-5c71-8974-cc5da51c9459")
-		(property "Reference" "#PWR03401"
-			(at 33.02 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 33.02 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 33.02 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ef11dad1-0115-50f0-94a1-fc616da8f9d1")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
-					(reference "#PWR03401")
 					(unit 1)
 				)
 			)

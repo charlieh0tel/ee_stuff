@@ -121,7 +121,7 @@ Two identical, physically grouped channel sections (A and B). Each has:
   the rig's ALC/mic-gain meter — the box has no metering.
 - **RX audio input (stereo):** RX L and RX R (main/sub on dual-receive
   rigs; mono rig cables feed L, bridged to both). Each: 10 kΩ bridging
-  load, rear trim straight into a +15 dB buffer — the trim is the pad,
+  load (the trim itself), straight into a +15 dB buffer — the trim is the pad,
   so speaker-level sources (~5 Vpp) are simply turned down and weak
   phones-jack sources get up to +15 dB. Buffers drive the
   `RX_L_BUS`/`RX_R_BUS` at -15 dBV.
