@@ -9,9 +9,12 @@
   CONTROL 130 / REAR 90, two V-scores on the V-CUT layer), 4-layer
   signal/GND/GND/signal, net classes Default/Power/Phones
   (`tools/setup_pcb.py`). Next: in KiCad, Update PCB from Schematic
-  (F8) and save, then `tools/place_panel.py` puts every part on its own
-  board and the panel parts at the drawings' positions; hand layout from
-  there. The 22 ribbon nets will show as unrouted between the connector
+  (F8) and save, then `tools/place_panel.py` (re)places: panel parts at
+  the drawings' positions (front, rear and top panels), ribbon headers in
+  gaps between them, everything else clustered by sub-sheet and then
+  pulled toward its connections for a few passes (ratsnest star length
+  ~14 m → ~9.4 m). It does not orient ICs, put decoupling caps on power
+  pins, or reserve the regulator's thermal pour; hand layout from there. The 22 ribbon nets will show as unrouted between the connector
   pairs — record them as DRC exclusions once. Placement tool run: panel
   parts sit with their pads 2 mm inside the panel edge; each family's
   true panel-face offset (Switchcraft: panel surface at the footprint's

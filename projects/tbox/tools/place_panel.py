@@ -115,6 +115,7 @@ ANCHOR = {
     "Rear Board/RX In": (140, 234),
     "Rear Board": (260, 190),
 }
+COHESION = 0.15  # weight of the cluster anchor vs. the connection centroid in refinement
 POWER_NETS = ("GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS")
 
 
@@ -197,6 +198,12 @@ def main():
     ap = argparse.ArgumentParser(description="Place TBox footprints on the panel.")
     ap.add_argument(
         "--all", action="store_true", help="re-place parts that were already moved"
+    )
+    ap.add_argument(
+        "--refine",
+        type=int,
+        default=4,
+        help="connectivity refinement passes (0 = none)",
     )
     args = ap.parse_args()
     try:
@@ -326,6 +333,17 @@ def main():
     RES = 0.5  # mm per cell
     occ = np.zeros((int(H / RES) + 2, int(W / RES) + 2), dtype=bool)
 
+    def unmark(lf, tp, r, b, margin=0.6):
+        x1, y1_, x2, y2 = (
+            max(0, lf - margin),
+            max(0, tp - margin),
+            min(W, r + margin),
+            min(H, b + margin),
+        )
+        occ[int(y1_ / RES) : int(y2 / RES) + 1, int(x1 / RES) : int(x2 / RES) + 1] = (
+            False
+        )
+
     def mark(lf, tp, r, b, margin=0.6):
         x1, y1_, x2, y2 = (
             max(0, lf - margin),
@@ -339,9 +357,9 @@ def main():
 
     # forbidden zones: outside each board's free region (edge strips), and the V-cut lines
     keep = {
-        "Front Board": (EDGE_KEEP, 50.0 - 12.0),
-        "Control Board": (50.0 + 12.0, 180.0 - 4.0),
-        "Rear Board": (180.0 + 12.0, 270.0 - EDGE_KEEP),
+        "Front Board": (EDGE_KEEP, 50.0 - 2.0),
+        "Control Board": (50.0 + 2.0, 180.0 - 2.0),
+        "Rear Board": (180.0 + 2.0, 270.0 - EDGE_KEEP),
     }
     occ[:, : int(6 / RES)] = True
     occ[:, int((W - 6) / RES) :] = True
@@ -436,6 +454,115 @@ def main():
                     break
             else:
                 print("could not place", fp.GetReference())
+
+    # ---- refinement: pull each free part toward what it connects to -------------------------
+    def signal_pads():
+        """net -> [(ref, x, y)] for signal nets (power and unconnected nets excluded)."""
+        out = {}
+        for fp in fps:
+            for pad in fp.Pads():
+                n = pad.GetNetname()
+                if (
+                    not n
+                    or n.startswith("unconnected")
+                    or n.split("/")[-1] in POWER_NETS
+                ):
+                    continue
+                q = pad.GetPosition()
+                out.setdefault(n, []).append((fp.GetReference(), q.x / 1e6, q.y / 1e6))
+        return out
+
+    def ratsnest_length():
+        total = 0.0
+        for n, pads in signal_pads().items():
+            cx = sum(x for _r, x, _y in pads) / len(pads)
+            cy = sum(y for _r, _x, y in pads) / len(pads)
+            total += sum(math.hypot(x - cx, y - cy) for _r, x, y in pads)
+        return total
+
+    free_fps = [fp for items in free.values() for fp in items]
+    fp_by_ref = {fp.GetReference(): fp for fp in fps}
+    boxes = {fp.GetReference(): bboxes(fp)[0] for fp in fps}
+    before = ratsnest_length()
+    for _pass in range(args.refine):
+        sp = signal_pads()
+        # connections per part: other parts sharing a signal net
+        conn = {}
+        for n, pads in sp.items():
+            refs = {r for r, _x, _y in pads}
+            for r in refs:
+                conn.setdefault(r, {}).update(
+                    {o: conn.get(r, {}).get(o, 0) + 1 for o in refs if o != r}
+                )
+        for fp in sorted(free_fps, key=lambda f: -len(conn.get(f.GetReference(), {}))):
+            ref = fp.GetReference()
+            if not conn.get(ref):
+                continue
+            # target: centroid of connected parts, weighted by shared nets
+            tx = ty = wsum = 0.0
+            for o, w in conn[ref].items():
+                q = fp_by_ref[o].GetPosition()
+                tx += w * q.x / 1e6
+                ty += w * q.y / 1e6
+                wsum += w
+            tx, ty = tx / wsum, ty / wsum
+            # keep sub-circuits together: blend with the part's own cluster anchor
+            ax_, ay_ = ANCHOR.get(
+                fp.GetSheetname().strip("/"),
+                ANCHOR[fp.GetSheetname().strip("/").split("/")[0]],
+            )
+            tx, ty = (
+                (1 - COHESION) * tx + COHESION * ax_,
+                (1 - COHESION) * ty + COHESION * ay_,
+            )
+            # lift the part off the grid, then try its orientations nearest the target
+            c, _pd = bboxes(fp)
+            unmark(*c)
+            for o in fps:  # neighbours whose margin the unmark cleared
+                if o is fp:
+                    continue
+                oc = boxes.get(o.GetReference())
+                if (
+                    oc
+                    and oc[0] < c[2] + 1.5
+                    and oc[2] > c[0] - 1.5
+                    and oc[1] < c[3] + 1.5
+                    and oc[3] > c[1] - 1.5
+                ):
+                    mark(*oc)
+            best = None
+            for ang in (
+                (0, 90) if len(list(fp.Pads())) == 2 else (fp.GetOrientationDegrees(),)
+            ):
+                fp.SetOrientationDegrees(ang)
+                c, _pd = bboxes(fp)
+                w, h = c[2] - c[0], c[3] - c[1]
+                for cx, cy in spiral(tx, ty, w, h, step=0.5, rmax=60):
+                    cx, cy = round(cx * 2) / 2, round(cy * 2) / 2
+                    if fits(cx, cy, cx + w, cy + h):
+                        d = math.hypot(cx + w / 2 - tx, cy + h / 2 - ty)
+                        if best is None or d < best[0]:
+                            best = (d, ang, cx, cy, w, h)
+                        break
+            if best is None:
+                c, _pd = bboxes(fp)
+                mark(*c)
+                continue
+            _d, ang, cx, cy, w, h = best
+            fp.SetOrientationDegrees(ang)
+            c, _pd = bboxes(fp)
+            pos = fp.GetPosition()
+            fp.SetPosition(
+                pcbnew.VECTOR2I(pos.x + mm(cx - c[0]), pos.y + mm(cy - c[1]))
+            )
+            mark(cx, cy, cx + w, cy + h)
+            boxes[ref] = bboxes(fp)[0]
+    after = ratsnest_length()
+    if args.refine:
+        print(
+            f"ratsnest star length: {before:.0f} mm -> {after:.0f} mm after {args.refine} pass(es)"
+        )
+
     pcbnew.SaveBoard(PCB, board)
     print(f"panel parts placed: {placed}; gridded: {gridded}; footprints: {len(fps)}")
     if unknown:
