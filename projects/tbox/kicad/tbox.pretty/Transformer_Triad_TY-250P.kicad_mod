@@ -1,0 +1,160 @@
+(footprint "Transformer_Triad_TY-250P"
+	(version 20240108)
+	(generator "tbox")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Triad TY-250P audio transformer, PC mount, 0.700 x 0.900 in body, 0.025 in square pins: two rows 0.520 in apart, 0.200 in pitch (pin 1 0.150 in above pin 2). Pads follow the Transformer_1P_1S symbol: 1=TY2, 2=TY4, 3=TY5, 4=TY8; TY6/TY7 share pad 5 and are tied on F.Cu for the 1:1 connection; CT (TY3) and NC (TY1) unused. Per Triad drawing dated 2019-05-31.")
+	(tags "transformer audio 600 triad TY-250P")
+	(attr through_hole)
+	(fp_text reference "REF**"
+		(at 0 -13.5)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text value "Transformer_Triad_TY-250P"
+		(at 0 13.5)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "NC" thru_hole circle
+		(at -6.604 -6.35)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "1" thru_hole circle
+		(at -6.604 -2.54)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "CT" thru_hole circle
+		(at -6.604 2.54)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "2" thru_hole circle
+		(at -6.604 7.62)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "4" thru_hole circle
+		(at 6.604 -7.62)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "5" thru_hole circle
+		(at 6.604 -2.54)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "5" thru_hole circle
+		(at 6.604 2.54)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "3" thru_hole circle
+		(at 6.604 7.62)
+		(size 1.8 1.8)
+		(drill 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(fp_line
+		(start 6.604 -2.54)
+		(end 6.604 2.54)
+		(stroke
+			(width 0.8)
+			(type solid)
+		)
+		(layer "F.Cu")
+	)
+	(fp_rect
+		(start -8.9 -11.4)
+		(end 8.9 11.4)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -9.4 -11.9)
+		(end 9.4 11.9)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start -8.9 -11.4)
+		(end 8.9 -11.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -8.9 11.4)
+		(end 8.9 11.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -8.9 -11.4)
+		(end -8.9 11.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 8.9 -11.4)
+		(end 8.9 11.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_text user "1"
+		(at -8.804 -2.54)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+)

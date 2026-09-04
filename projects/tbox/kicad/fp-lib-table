@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "tbox")(type "KiCad")(uri "${KIPRJMOD}/tbox.pretty")(options "")(descr "TBox project footprints"))
+)

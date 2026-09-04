@@ -3761,7 +3761,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 80.01 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -3917,7 +3917,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -3948,6 +3948,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4073,7 +4082,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4104,6 +4113,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4385,7 +4403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 40.64 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -4416,6 +4434,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 40.64 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4467,7 +4494,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 105.41 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -4546,7 +4573,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 43.18 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -4625,7 +4652,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Push_2P1T_Toggle_CK_PVA1xxH2xxxxxxV2"
 			(at 133.35 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -4656,6 +4683,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "PVA1OAH2xxxxxxV2 (latching; height at layout)"
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4706,7 +4742,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 222.25 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -4737,6 +4773,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 222.25 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5018,7 +5063,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 119.38 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -5262,7 +5307,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Push_2P1T_Toggle_CK_PVA1xxH2xxxxxxV2"
 			(at 133.35 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -5293,6 +5338,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "PVA1OAH2xxxxxxV2 (latching; height at layout)"
+			(at 133.35 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5418,7 +5472,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 68.58 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -5574,7 +5628,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -5605,6 +5659,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5653,7 +5716,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -5684,6 +5747,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5734,7 +5806,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 132.08 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -5813,7 +5885,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "tbox:SW_Toggle_CK_7201_V-Bracket_Vertical"
 			(at 128.27 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -5844,6 +5916,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "7201MD9V6BE"
+			(at 128.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5905,7 +5986,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 236.22 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -5936,6 +6017,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 236.22 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5981,7 +6071,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -6012,6 +6102,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6060,7 +6159,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 133.35 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -6293,7 +6392,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 144.78 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -6374,7 +6473,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 95.25 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6405,6 +6504,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 95.25 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6457,7 +6565,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 220.98 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -6488,6 +6596,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 220.98 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6533,7 +6650,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 121.92 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -6702,7 +6819,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 144.78 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6793,7 +6910,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 237.49 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -6824,6 +6941,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 237.49 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6872,7 +6998,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 123.19 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -7041,7 +7167,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 228.6 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -7122,7 +7248,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 142.24 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -7153,6 +7279,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 142.24 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7358,7 +7493,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 72.39 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -7389,6 +7524,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 72.39 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7516,7 +7660,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 67.31 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -7597,7 +7741,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 97.79 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -7689,7 +7833,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -7720,6 +7864,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 91.44 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7773,7 +7926,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 95.25 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -7804,6 +7957,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 95.25 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7857,7 +8019,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 43.18 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -7949,7 +8111,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 97.79 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -8041,7 +8203,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 66.04 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -8072,6 +8234,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 66.04 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8277,7 +8448,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 55.88 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -8358,7 +8529,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Push_2P1T_Toggle_CK_PVA1xxH2xxxxxxV2"
 			(at 35.56 127 0)
 			(hide yes)
 			(show_name no)
@@ -8389,6 +8560,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "PVA1EEH2xxxxxxV2 (momentary; height at layout)"
+			(at 35.56 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8437,7 +8617,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 58.42 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -8516,7 +8696,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 93.98 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -8595,7 +8775,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 128.27 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -8626,6 +8806,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 128.27 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8675,7 +8864,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "tbox:SW_Toggle_CK_7201_V-Bracket_Vertical"
 			(at 128.27 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -8706,6 +8895,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "7201MD9V6BE"
+			(at 128.27 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "4"
@@ -8766,7 +8964,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 143.51 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -8797,6 +8995,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 143.51 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8845,7 +9052,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 72.39 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -8876,6 +9083,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 72.39 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9001,7 +9217,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 133.35 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -9080,7 +9296,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 119.38 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -9161,7 +9377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 116.84 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -9192,6 +9408,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "2N7002"
+			(at 116.84 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9322,7 +9547,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 67.31 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -9401,7 +9626,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 132.08 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -9480,7 +9705,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 72.39 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9511,6 +9736,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 72.39 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9560,7 +9794,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 213.36 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9591,6 +9825,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 213.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9638,7 +9881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 68.58 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -9730,7 +9973,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 93.98 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -9820,7 +10063,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 85.09 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -9901,7 +10144,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_Push_2P1T_Toggle_CK_PVA1xxH2xxxxxxV2"
 			(at 35.56 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -9932,6 +10175,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "PVA1EEH2xxxxxxV2 (momentary; height at layout)"
+			(at 35.56 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9981,7 +10233,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 228.6 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10012,6 +10264,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 228.6 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10057,7 +10318,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 128.27 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10088,6 +10349,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 128.27 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10136,7 +10406,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 29.21 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -10215,7 +10485,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 72.39 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -10246,6 +10516,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 72.39 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10294,7 +10573,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 167.64 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -10450,7 +10729,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 237.49 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -10481,6 +10760,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 237.49 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -10529,7 +10817,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 85.09 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -10608,7 +10896,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 58.42 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -10689,7 +10977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 167.64 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -10781,7 +11069,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 228.6 144.78 0)
 			(hide yes)
 			(show_name no)

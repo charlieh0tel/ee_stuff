@@ -80,6 +80,10 @@
 
 - Python scripts: lint and format with **ruff** (`ruff check` and
   `ruff format`) before committing.
+- `tools/check_footprints.py` fails on any board part without a footprint
+  that exists (stock library or `kicad/tbox.pretty`); panel-only parts are
+  `on_board no`. Every part with a specific vendor choice carries an
+  `MPN` field — the BOM comes from the schematic, not a spreadsheet.
 - `tools/check_sch.py` flags pin ends sitting on the interior of a wire
   or on another symbol's pin without a junction — KiCad silently
   connects those and ERC does not object. Run it (and ERC) after any

@@ -1,0 +1,157 @@
+(footprint "Jack_3.5mm_Switchcraft_35RAPCxxH3_Horizontal"
+	(version 20240108)
+	(generator "tbox")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Switchcraft 35RAPC2AH3 (mono) / 35RAPC2BH3 (stereo) / 35RAPC4BH3, 3.5 mm right-angle PCB jack, threaded metal bushing, panel-nut. Pads: S=pin1, R=pin2, RN=pin3, TN=pin4, T=pin5 per Switchcraft drawing 35RAPC__H3 rev J. Panel mounting surface at y=0; bushing protrudes 3.5 mm.")
+	(tags "jack 3.5mm switchcraft threaded")
+	(attr through_hole)
+	(fp_text reference "REF**"
+		(at 0 16.5)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text value "Jack_3.5mm_Switchcraft_35RAPCxxH3_Horizontal"
+		(at 0 7.0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "S" thru_hole oval
+		(at 0.0 2.0)
+		(size 1.7 2.6)
+		(drill oval 1.0 1.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "R" thru_hole oval
+		(at -5.2 9.8)
+		(size 2.6 1.7)
+		(drill oval 1.9 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "RN" thru_hole oval
+		(at -2.5 8.4)
+		(size 2.6 1.7)
+		(drill oval 1.9 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "TN" thru_hole oval
+		(at 4.5 13.0)
+		(size 1.7 2.6)
+		(drill oval 1.0 1.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "T" thru_hole oval
+		(at 4.0 5.4)
+		(size 2.6 1.7)
+		(drill oval 1.9 1.0)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(fp_rect
+		(start -6.0 0)
+		(end 5.5 14.0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -6.5 -4.0)
+		(end 6.0 14.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start -6.0 0)
+		(end 5.5 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -6.0 14.0)
+		(end 5.5 14.0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -6.0 0)
+		(end -6.0 14.0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 5.5 0)
+		(end 5.5 14.0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -1.8 -3.5)
+		(end 1.8 -3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -1.8 -3.5)
+		(end -1.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start 1.8 -3.5)
+		(end 1.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+	)
+	(fp_text user "PANEL"
+		(at 0 -1.2)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+)

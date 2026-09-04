@@ -4212,7 +4212,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_8x10.5"
 			(at 205.74 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -4292,7 +4292,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 142.24 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -4323,6 +4323,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 142.24 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4389,7 +4398,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 191.77 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -4468,7 +4477,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 168.91 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4547,7 +4556,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 233.68 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -4628,7 +4637,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 86.36 127 0)
 			(hide yes)
 			(show_name no)
@@ -4709,7 +4718,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 207.01 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -4788,7 +4797,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical"
 			(at 181.61 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -4819,6 +4828,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD902F-40-15R1-A10K"
+			(at 181.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4879,7 +4897,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 49.53 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -4958,7 +4976,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 213.36 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -5039,7 +5057,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 257.81 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -5119,7 +5137,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 196.85 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -5150,6 +5168,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 196.85 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5218,7 +5245,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 97.79 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5297,7 +5324,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 193.04 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -5376,7 +5403,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 26.67 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -5455,7 +5482,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 50.8 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -5536,7 +5563,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 215.9 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -5567,6 +5594,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 215.9 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "Load_mA" "4/5"
@@ -5645,7 +5681,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical"
 			(at 181.61 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -5676,6 +5712,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD902F-40-15R1-A10K"
+			(at 181.61 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "4"
@@ -5736,7 +5781,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 91.44 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -5817,7 +5862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 97.79 127 0)
 			(hide yes)
 			(show_name no)
@@ -5897,7 +5942,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical"
 			(at 39.37 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -5928,6 +5973,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD902F-40-15R1-A10K"
+			(at 39.37 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "4"
@@ -5988,7 +6042,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 26.67 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -6144,7 +6198,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 222.25 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -6223,7 +6277,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 168.91 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6379,7 +6433,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 49.53 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -6535,7 +6589,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 71.12 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -6614,7 +6668,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 71.12 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -6770,7 +6824,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 233.68 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -7159,7 +7213,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 266.7 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -7190,6 +7244,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 266.7 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "Load_mA" "10/90"
@@ -7267,7 +7330,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 91.44 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -7424,7 +7487,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 165.1 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -7455,6 +7518,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 165.1 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7500,7 +7572,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 168.91 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7580,7 +7652,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 54.61 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -7611,6 +7683,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 54.61 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -7677,7 +7758,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 26.67 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7758,7 +7839,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 240.03 127 0)
 			(hide yes)
 			(show_name no)
@@ -7839,7 +7920,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 228.6 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -7997,7 +8078,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_8x10.5"
 			(at 218.44 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -8076,7 +8157,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 80.01 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8157,7 +8238,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 240.03 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -8237,7 +8318,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 54.61 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -8268,6 +8349,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 54.61 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8336,7 +8426,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 232.41 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -8415,7 +8505,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 213.36 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8496,7 +8586,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 241.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -8527,6 +8617,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 241.3 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "Load_mA" "10/90"
@@ -8604,7 +8703,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 191.77 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -8684,7 +8783,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 196.85 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8715,6 +8814,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "NJM4556AM"
+			(at 196.85 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -8781,7 +8889,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 50.8 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -8860,7 +8968,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 80.01 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -8939,7 +9047,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 26.67 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9328,7 +9436,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
 			(at 127 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -9359,6 +9467,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD901F-40-15R1-A10K"
+			(at 127 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9412,7 +9529,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD901F-40-00D_Single_Vertical"
 			(at 127 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -9443,6 +9560,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD901F-40-15R1-A10K"
+			(at 127 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9571,7 +9697,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 168.91 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -9650,7 +9776,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 193.04 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -9731,7 +9857,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 86.36 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -9812,7 +9938,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 228.6 127 0)
 			(hide yes)
 			(show_name no)
@@ -9892,7 +10018,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 142.24 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -9923,6 +10049,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 142.24 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -10143,7 +10278,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
 			(at 222.25 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -10222,7 +10357,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical"
 			(at 39.37 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -10253,6 +10388,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "RD902F-40-15R1-A10K"
+			(at 39.37 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"

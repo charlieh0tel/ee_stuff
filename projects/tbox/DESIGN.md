@@ -382,11 +382,11 @@ service), wedge console profile:
 ## Open items
 
 - Line-out jack J3303 must be an insulated-bushing part (isolation), and
-  the rear GND post (J3207) needs a chassis-stud part — both are footprint
-  decisions.
+  the rear GND post (J3207) is a panel binding post, not a board part
+  (`on_board no`), bonded through the panel with a star washer.
 - Layout: TPS7A4701 thermal pad pour/vias (the 385 mA thermal max in
   `power_tree.json` assumes it); single CHASSIS–GND tie at NT3201 only.
-- Footprint / MPN pass for every part (see TODO.md).
+- Footprints assigned; vendor-drawing verification of the four project footprints before fab (see TODO.md).
 
 - RF immunity target, quantitative (e.g. "no audible artifacts with
   100 W on any HF band + 6 m, feedline within 1 m") — decides gasket

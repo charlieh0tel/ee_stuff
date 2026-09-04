@@ -4483,7 +4483,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 30.48 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -4514,6 +4514,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 30.48 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4636,7 +4645,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 262.89 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -4715,7 +4724,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 271.78 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4948,7 +4957,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -5027,7 +5036,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 223.52 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -5108,7 +5117,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 193.04 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5189,7 +5198,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 266.7 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -5268,7 +5277,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 231.14 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -5350,7 +5359,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 187.96 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -5506,7 +5515,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 204.47 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -5663,7 +5672,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 83.82 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -5694,6 +5703,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 83.82 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -5760,7 +5778,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 224.79 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -5839,7 +5857,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 180.34 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -5920,7 +5938,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3386W_Horizontal"
 			(at 187.96 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -5951,6 +5969,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "3386W-1-103LF"
+			(at 187.96 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6079,7 +6106,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
 			(at 165.1 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -6176,7 +6203,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
 			(at 232.41 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -6257,7 +6284,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 144.78 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -6288,6 +6315,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 144.78 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "Load_mA" "4/5"
@@ -6367,7 +6403,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 266.7 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -6523,7 +6559,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical"
 			(at 165.1 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -6620,7 +6656,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 177.8 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -6700,7 +6736,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Keystone_5015_Micro_Mini"
 			(at 260.35 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -6731,6 +6767,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "5015"
+			(at 260.35 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6778,7 +6823,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 36.83 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -6859,7 +6904,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 135.89 140.97 0)
 			(hide yes)
 			(show_name no)
@@ -6938,7 +6983,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 262.89 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -7018,7 +7063,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 209.55 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -7049,6 +7094,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 209.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7115,7 +7169,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
 			(at 213.36 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -7271,7 +7325,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
 			(at 232.41 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -7350,7 +7404,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 143.51 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -7429,7 +7483,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 223.52 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -7510,7 +7564,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3386W_Horizontal"
 			(at 187.96 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7541,6 +7595,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "3386W-1-103LF"
+			(at 187.96 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7594,7 +7657,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 193.04 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7675,7 +7738,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 256.54 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -7754,7 +7817,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 208.28 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -7835,7 +7898,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 45.72 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -7866,6 +7929,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 45.72 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(property "Load_mA" "4/5"
@@ -8020,7 +8092,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 247.65 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -8101,7 +8173,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 231.14 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -8258,7 +8330,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 190.5 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -8289,6 +8361,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 190.5 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8355,7 +8436,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 208.28 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -8434,7 +8515,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "tbox:Transformer_Triad_TY-250P"
 			(at 247.65 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -8465,6 +8546,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "TY-250P"
+			(at 247.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8519,7 +8609,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "tbox:Transformer_Triad_TY-250P"
 			(at 247.65 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -8550,6 +8640,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "TY-250P"
+			(at 247.65 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8606,7 +8705,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal"
 			(at 276.86 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -8637,6 +8736,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SJ1-3533NG"
+			(at 276.86 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "R"
@@ -8688,7 +8796,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 196.85 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -8769,7 +8877,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3386W_Horizontal"
 			(at 167.64 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -8800,6 +8908,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "3386W-1-103LF"
+			(at 167.64 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -9007,7 +9124,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 172.72 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -9088,7 +9205,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 177.8 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -9244,7 +9361,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 180.34 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -9323,7 +9440,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 190.5 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -9403,7 +9520,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 208.28 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -9434,6 +9551,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "OPA1678IDR"
+			(at 208.28 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -9500,7 +9626,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 160.02 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -9579,7 +9705,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 143.51 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9735,7 +9861,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 187.96 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -9814,7 +9940,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 271.78 107.95 0)
 			(hide yes)
 			(show_name no)

@@ -81,8 +81,11 @@ class parts are 5.5 V max and are out.
 ## Response targets
 
 - Box-wide: 150 Hz – 8 kHz ±1 dB (rig TX filter is the real limit).
-- Line out through transformer: verify 150 Hz at full level without
-  saturation (600 Ω 1:1 driven from low-Z, loaded ≥10 kΩ).
+- Line out through transformer: 200 Hz – 8 kHz is the target here, not
+  150 Hz — the rig's SSB passband sets the floor, and transformer flux
+  scales with V/f so the low end is a level question. The Triad TY-250P
+  is rated +13 dBm across 20 Hz–20 kHz against our -8 dBm nominal /
+  +4 dBm peaks; verify 200 Hz at -10 dBV on the bench.
 
 ## Published source data
 

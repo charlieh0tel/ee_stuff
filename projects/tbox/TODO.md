@@ -12,23 +12,28 @@
   footprints for the four ribbon connectors (`Interconnect` FC/CR; keyed, 2×13); the two ribbons are
   straight-through so a single cable part number.
 
-- Footprint / MPN assignment pass: no instance has a footprint yet (the
-  library defaults are overridden with ""). Includes: J3303 insulated-bushing
-  line-out jack, C3312 non-polar 10 µF, HF-effective beads (≥50 Ω at 3 MHz),
-  SW2103 on-off-on DPDT, latching mute buttons, dual-gang volume pots.
+- Footprints are assigned (`tools/check_footprints.py` keeps it that way)
+  and the chosen parts carry `MPN` fields. Before ordering boards:
+  - verify the four project footprints in `kicad/tbox.pretty` against the
+    current vendor drawings (Switchcraft 35RAPC__H3 rev J, C&K 7000-series
+    AV2 and V-bracket patterns, Triad TY-250P 2019-05-31);
+  - C&K PVA button height code (H1–H4) and the light-pipe length for the
+    0805 LEDs, both set by the panel-to-board gap found in layout;
+  - Bourns 3386 side-adjust style (W chosen; C/H/X share the function) —
+    pick whichever puts the screw at the board edge cleanly;
+  - NJM4556AM: confirm the DMP8 land pattern against the SOIC-8 assigned;
+  - bead MPN: any 0805 bead with ≥50 Ω at 3 MHz (the footprint is fixed);
+  - confirm NRJ6HM-1-PRE's "-1" (threaded nose + nut) suffix on ordering.
 
 - Bench: check TRRS mic↔phones crosstalk with a real headset before panel freeze;
   confirm the mute switching step is inaudible at full monitor level;
   measure the power-on hold (~1 s) and the logic highs (≥ 6 V at every
   TS12A12511 IN pin).
 
-- Supply-sheet reference designators are 1-digit (U3103, C3103 …) while the
-  other sheets use per-sheet hundreds; renumber with the refdes tooling
-  when convenient.
-
-- Line-out transformers T3301/T3302: pick the part (candidate Bourns
-  LM-NP-1001-B1L, SMT 600:600) and verify 150 Hz at -10 dBV without
-  saturation, driven from ~100 Ω into ≥10 kΩ.
+- Line-out transformers T3301/T3302 are Triad TY-250P (20 Hz–20 kHz,
+  +13 dBm); bench: confirm 200 Hz at -10 dBV without visible distortion,
+  driven from ~166 Ω into ≥10 kΩ, and that the ~2.8 dB insertion loss is
+  absorbed by the line trims.
 
 - CI: `tools/check_sch.py` is pure Python and can run in the shared
   workflow today; `tools/check_power.py` and `gen_power_tree.py` need
