@@ -17,7 +17,7 @@
   (text " 1" (exclude_from_sim no) (at 20.32 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "60a21c4a-8a5b-516d-b5f9-59c49fed9f62"))
   (text "GND" (exclude_from_sim no) (at 29.21 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "b1b13f45-63e1-59a1-bfb4-050a1b745f64"))
   (text " 2" (exclude_from_sim no) (at 66.04 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "3082d3e7-a518-5705-8c7c-3c9adc5bcf24"))
-  (text "RAW_13V8" (exclude_from_sim no) (at 74.93 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "03e25918-d7b3-5ac4-96f7-14eabe8ec42b"))
+  (text "BIAS_5V" (exclude_from_sim no) (at 74.93 44.45 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "0ed283ce-ea92-5a27-abd5-d1bf9d947e53"))
   (text " 3" (exclude_from_sim no) (at 20.32 46.99 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "d3f0267b-94b5-52d1-9cc9-903264673d26"))
   (text "GND" (exclude_from_sim no) (at 29.21 46.99 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "a6f88423-3d6a-55fd-8cb1-db9cc42c3890"))
   (text " 4" (exclude_from_sim no) (at 66.04 46.99 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "bb793960-0137-5099-8fba-1c42de2f7331"))

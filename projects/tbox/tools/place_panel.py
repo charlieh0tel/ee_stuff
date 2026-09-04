@@ -266,7 +266,7 @@ def main():
     region = {
         "Front Board": (EDGE_KEEP, 50.0 - 14.0),
         "Control Board": (50.0 + 16.0, 180.0 - 16.0),
-        "Rear Board": (180.0 + 14.0, 250.0 - EDGE_KEEP),
+        "Rear Board": (180.0 + 14.0, 270.0 - EDGE_KEEP),
     }
     by_board = {}
     for (top, sheet), items in grid.items():

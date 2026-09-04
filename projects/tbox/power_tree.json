@@ -6,12 +6,12 @@
     "rail": "RAW_13V8",
     "desc": "13.8V nom (10.5-15V)",
     "protection": "PTC 0.5A > SS34 > pi filter",
-    "note": "SMBJ18A TVS after the filter (U3103 max 35 V)"
+    "note": "SMBJ18A TVS after the filter (U2503 max 35 V)"
   },
   "nodes": [
     {
       "name": "RAW_13V8",
-      "desc": "post-filter; LED droppers + U3103 input",
+      "desc": "post-filter; LED droppers + U2503 input",
       "max_ma": 500,
       "max_basis": "upstream PTC 0.5A hold",
       "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (the +9V regulator's input current is its output current plus ~1 mA ground current)."

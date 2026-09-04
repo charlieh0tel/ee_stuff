@@ -5,14 +5,14 @@
 # ///
 """Create (or refresh the frame of) kicad/tbox.kicad_pcb: the snap-apart panel.
 
-One 300 x 250 mm outline holding the three boards edge to edge, split by
+One 300 x 270 mm outline holding the three boards edge to edge, split by
 two V-score lines on the "V-CUT" user layer (fabs want them off
 Edge.Cuts so the outline stays one closed shape) -- every board is a
 rectangle, so no tabs or rails:
 
     y   0 .. 50    FRONT board   (jack edge = panel top edge)
     y  50 .. 180   CONTROL board (sloped under the top panel)
-    y 180 .. 250   REAR board    (jack edge = panel bottom edge)
+    y 180 .. 270   REAR board    (jack edge = panel bottom edge)
 
 Also sets the 4-layer stack-up (signal / GND / GND / signal, 1.6 mm), the
 default design rules, and labels each board.  Everything the script draws
@@ -39,7 +39,7 @@ PCB = os.path.join(KI, "tbox.kicad_pcb")
 PRO = os.path.join(KI, "tbox.kicad_pro")
 
 W = 300.0
-BOARDS = [("FRONT", 0.0, 50.0), ("CONTROL", 50.0, 180.0), ("REAR", 180.0, 250.0)]
+BOARDS = [("FRONT", 0.0, 50.0), ("CONTROL", 50.0, 180.0), ("REAR", 180.0, 270.0)]
 GROUP = "panel-frame"
 
 NETCLASSES = [
@@ -139,7 +139,7 @@ def frame(board, pcbnew):
             0.3,
         )
     text(
-        "TBox panel: 300 x 250, 4-layer 1.6 mm, two V-scores; snap apart into FRONT / CONTROL / REAR",
+        "TBox panel: 300 x 270, 4-layer 1.6 mm, two V-scores; snap apart into FRONT / CONTROL / REAR",
         6,
         -4,
         pcbnew.Cmts_User,

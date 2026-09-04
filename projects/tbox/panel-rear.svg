@@ -56,7 +56,7 @@
   <line class="dimln" x1="-8" y1="0" x2="-8" y2="79"/>
   <text class="dim" x="-11" y="48" transform="rotate(-90 -11 48)">79 mm</text>
   <text class="dim" x="40" y="92">VIEWED FROM REAR — CH A on right, CH B on left.  Rear board horizontal, top surface 26 mm above the floor (dashed);</text>
-  <text class="dim" x="40" y="98">every part is right-angle at the board edge, at its own centre height. Powerpole and GND post are panel-mount.</text>
+  <text class="dim" x="40" y="98">every part is right-angle at the board edge, at its own centre height. Powerpole (pigtail to the control board) and GND post are panel-mount.</text>
   <line class="dimln" x1="0" y1="53" x2="300" y2="53" stroke-dasharray="3 2"/>
   <text class="dim" x="2" y="57.5">board</text>
   <rect class="grp" x="4" y="10" width="66" height="62" rx="2"/>

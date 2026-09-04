@@ -305,31 +305,36 @@ board, so panel holes sit at per-part heights along one row.
   mic jacks are metal, nutted, and bonded to CHASSIS at the panel
   (Switchcraft 35RAPC, Neutrik NRJ6HM-1-PRE — the one Neutrik PCB jack
   whose sleeve is tied to the panel).
-- **Control board** sloped under the top panel: level/MON/VOL pots
-  (Alpha 9 mm, vertical), mute and PTT buttons and intercom (C&K PVA,
-  latching for mute), override toggle (C&K 7201, V-bracket), LEDs (SMD
-  + light pipes to the panel), PTT logic and power-on hold, summing amp,
+- **Control board** sloped under the top panel: the **supply** (power
+  entry filter, TPS7A4701, ADP7142, VREF buffer — moved here from the
+  rear board because nothing ties it to the rear panel once the
+  Powerpole is a pigtail, the regulator's thermal pad gets the largest
+  board, and VREF is generated in the middle), level/MON/VOL pots (Alpha
+  9 mm, vertical), mute and PTT buttons and intercom (C&K PVA, latching
+  for mute), override toggle (C&K 7201, V-bracket), LEDs (SMD + light
+  pipes to the panel), PTT logic and power-on hold, summing amp,
   intercom mute, monitor buffers, headphone amps. Pot bushings nutted to
-  the panel (mounting + bonding).
+  the panel (mounting + bonding). The Powerpole is a panel-mount clip on
+  the rear panel with a pigtail to a JST XH header on this board (J2501,
+  through-hole on purpose — a pigtail pulls on it).
 - **Rear board** horizontal, ~26 mm above the floor, rear edge at the
-  rear panel: power entry filter and regulators, right-angle DE-9 with
-  its protection, PTT jacks, the single CHASSIS–GND tie, rear trims
-  (Bourns 3386P side-adjust, screwdriver through the panel) with the
-  amplifiers they feed (mic-out driver U3301, line amps U3302, RX
-  buffers U3401) so no pot wiper crosses a ribbon, line-out
-  transformers (Triad TY-250P) and jack, gain/bias toggles (C&K 7101,
-  right-angle). The rear panel is a single row. The Powerpole is a
-  panel-mount clip wired to a JST XH header (J3101, through-hole on
-  purpose — a pigtail pulls on it); the GND post is a panel binding post
-  bonded through the panel (star washer, bare metal), not a board part.
+  rear panel, 90 mm deep: right-angle DE-9 with its protection, PTT
+  jacks, the single CHASSIS–GND tie, rear trims (Bourns 3386 side-adjust,
+  screwdriver through the panel) with the amplifiers they feed (mic-out
+  driver U3301, line amps U3302, RX buffers U3401) so no pot wiper
+  crosses a ribbon, line-out transformers (Triad TY-250P) and jack,
+  gain/bias toggles (C&K 7101, right-angle). The rear panel is a single
+  row. The GND post is a panel binding post bonded through the panel
+  (star washer, bare metal), not a board part.
 - **Ribbons**: two 2×13 0.1" IDC (J1005/J2001 front↔control,
   J2002/J3001 control↔rear), keyed box headers — vertical on the front
   and rear boards, right-angle on the control board (it sits ~18 mm
   under the top panel) — straight-through cables. Every audio line is
   flanked by GND; the four PH lines carry their own returns. GAIN_x_HI
   and BIAS_x ride both ribbons and pass straight through the control
-  board. Rails on the ribbons: +9V, VREF, RAW_13V8 (LEDs), GND; each
-  board decouples them locally at the connector.
+  board. Rails on the ribbons: +9V, VREF, GND to both boards and BIAS_5V
+  to the rear (for its bias switches); each board decouples them locally
+  at the connector.
 - Board-to-board headers are out (the control board meets the others at
   an angle); rigid-flex was priced out; FFC/FPC rejected for current and
   robustness.

@@ -5,8 +5,8 @@
   ground plane with a via array (≥16 vias); confirm the via count and pour
   once the pad is drawn.
 
-- Layout: `kicad/tbox.kicad_pcb` is the 300 × 250 panel (FRONT 50 /
-  CONTROL 130 / REAR 70, two V-scores on the V-CUT layer), 4-layer
+- Layout: `kicad/tbox.kicad_pcb` is the 300 × 270 panel (FRONT 50 /
+  CONTROL 130 / REAR 90, two V-scores on the V-CUT layer), 4-layer
   signal/GND/GND/signal, net classes Default/Power/Phones
   (`tools/setup_pcb.py`). Next: in KiCad, Update PCB from Schematic
   (F8) and save, then `tools/place_panel.py` puts every part on its own
