@@ -80,6 +80,12 @@
 
 - Python scripts: lint and format with **ruff** (`ruff check` and
   `ruff format`) before committing.
+- Layout lives in `kicad/tbox.kicad_pcb`, one panel with all three boards.
+  `tools/setup_pcb.py` owns the outline, V-cuts, stack-up and labels (the
+  "panel-frame" group — never hand-edit those, rerun the script);
+  `tools/place_panel.py` places parts onto their board from the schematic
+  sheet path and panel parts from `panel-*.svg`. Footprints enter the
+  board only through KiCad's Update PCB from Schematic.
 - `tools/check_footprints.py` fails on any board part without a footprint
   that exists (stock library or `kicad/tbox.pretty`); panel-only parts are
   `on_board no`. Every part with a specific vendor choice carries an

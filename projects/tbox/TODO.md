@@ -5,12 +5,15 @@
   ground plane with a via array (≥16 vias); confirm the via count and pour
   once the pad is drawn.
 
-- Layout: three boards on one snap-apart 4-layer panel (mouse-bites or
-  V-score, rails for the fab). Decide one `.kicad_pcb` with DRC
-  exclusions for the 22 ribbon nets vs three PCB files from per-board
-  netlists. Panel-mount Powerpole clip + 2 wires to J3101. IDC box-header
-  footprints for the four ribbon connectors (`Interconnect` FC/CR; keyed, 2×13); the two ribbons are
-  straight-through so a single cable part number.
+- Layout: `kicad/tbox.kicad_pcb` is the 300 × 250 panel (FRONT 50 /
+  CONTROL 130 / REAR 70, two V-scores on the V-CUT layer), 4-layer
+  signal/GND/GND/signal, net classes Default/Power/Phones
+  (`tools/setup_pcb.py`). Next: in KiCad, Update PCB from Schematic
+  (F8) and save, then `tools/place_panel.py` puts every part on its own
+  board and the panel parts at the drawings' positions; hand layout from
+  there. The 22 ribbon nets will show as unrouted between the connector
+  pairs — record them as DRC exclusions once. Board-edge notches per jack
+  family (different nose-to-board-edge distances) are a layout detail.
 
 - Footprints are assigned (`tools/check_footprints.py` keeps it that way)
   and the chosen parts carry `MPN` fields. Before ordering boards:

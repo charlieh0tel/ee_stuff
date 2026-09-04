@@ -1,0 +1,269 @@
+(kicad_pcb
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(general
+		(thickness 1.6)
+		(legacy_teardrops no)
+	)
+	(paper "A3")
+	(title_block
+		(title "TBox — panel: FRONT / CONTROL / REAR")
+		(rev "0.2")
+		(company "TBox")
+	)
+	(layers
+		(0 "F.Cu" signal)
+		(4 "In1.Cu" signal "GND1")
+		(6 "In2.Cu" signal "GND2")
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user "V-CUT")
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+	)
+	(setup
+		(pad_to_mask_clearance 0.05)
+		(allow_soldermask_bridges_in_footprints no)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
+		(pcbplotparams
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
+			(disableapertmacros no)
+			(usegerberextensions no)
+			(usegerberattributes yes)
+			(usegerberadvancedattributes yes)
+			(creategerberjobfile yes)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
+			(svgprecision 4)
+			(plotframeref no)
+			(mode 1)
+			(useauxorigin no)
+			(pdf_front_fp_property_popups yes)
+			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
+			(dxfpolygonmode yes)
+			(dxfimperialunits yes)
+			(dxfusepcbnewfont yes)
+			(psnegative no)
+			(psa4output no)
+			(plot_black_and_white yes)
+			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
+			(subtractmaskfromsilk no)
+			(outputformat 1)
+			(mirror no)
+			(drillshape 1)
+			(scaleselection 1)
+			(outputdirectory "")
+		)
+	)
+	(gr_line
+		(start 0 0)
+		(end 300 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "88da0199-f2e2-4aec-9b23-8ab93bf74a38")
+	)
+	(gr_line
+		(start 0 250)
+		(end 0 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "cc7b9ad6-e52d-48d2-9056-3f82d0606a70")
+	)
+	(gr_line
+		(start 300 0)
+		(end 300 250)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "432dd029-9831-4621-9779-312fc12c8d9e")
+	)
+	(gr_line
+		(start 300 250)
+		(end 0 250)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "0379a944-991b-440b-82b4-8f99d83c1230")
+	)
+	(gr_line
+		(start -5 50)
+		(end 305 50)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "User.1")
+		(uuid "5d6ecb26-4e9a-4950-9659-47143b2223c2")
+	)
+	(gr_line
+		(start -5 180)
+		(end 305 180)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "User.1")
+		(uuid "f3555973-57d3-45b1-8ba1-09f18766e647")
+	)
+	(gr_text "panel edge / jacks"
+		(at 150 6 0)
+		(layer "Cmts.User")
+		(uuid "fa4ed579-7548-48ff-b79a-6b4542e582aa")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "top panel above"
+		(at 150 174 0)
+		(layer "Cmts.User")
+		(uuid "8f3b46ba-3758-4a11-a47f-96ea9153fc48")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "panel edge / jacks"
+		(at 150 244 0)
+		(layer "Cmts.User")
+		(uuid "c7edd4f1-45ef-4b9e-8982-0706dfe97292")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "TBox panel: 300 x 250, 4-layer 1.6 mm, two V-scores; snap apart into FRONT / CONTROL / REAR"
+		(at 6 -4 0)
+		(layer "Cmts.User")
+		(uuid "2f9af453-c498-427b-82eb-e47270b3a903")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.35)
+			)
+		)
+	)
+	(gr_text "TBOX FRONT BOARD  rev 0.2  (300 x 50)"
+		(at 150 25 0)
+		(layer "Cmts.User")
+		(uuid "58957174-4c42-4474-b6a2-9f9d49c230b2")
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(gr_text "TBOX CONTROL BOARD  rev 0.2  (300 x 130)"
+		(at 150 115 0)
+		(layer "Cmts.User")
+		(uuid "8ea22e38-9f1e-4e14-aaef-c14ad7b88d60")
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(gr_text "TBOX REAR BOARD  rev 0.2  (300 x 70)"
+		(at 150 215 0)
+		(layer "Cmts.User")
+		(uuid "921890ca-65ef-4017-bb9d-a25ba58efc76")
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.6)
+			)
+		)
+	)
+	(gr_text "V-CUT y=50"
+		(at 150 47.5 0)
+		(layer "User.1")
+		(uuid "a6a09e55-ddb1-497f-8fb3-cdb6bbc7964c")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "V-CUT y=180"
+		(at 150 177.5 0)
+		(layer "User.1")
+		(uuid "b1d6831a-8a20-488b-96b6-7445342cd9a9")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+		)
+	)
+	(group "panel-frame"
+		(uuid "efecd23d-5c7b-47bf-b3b3-c026dfd7270e")
+		(members "0379a944-991b-440b-82b4-8f99d83c1230" "2f9af453-c498-427b-82eb-e47270b3a903"
+			"432dd029-9831-4621-9779-312fc12c8d9e" "58957174-4c42-4474-b6a2-9f9d49c230b2"
+			"5d6ecb26-4e9a-4950-9659-47143b2223c2" "88da0199-f2e2-4aec-9b23-8ab93bf74a38"
+			"8ea22e38-9f1e-4e14-aaef-c14ad7b88d60" "8f3b46ba-3758-4a11-a47f-96ea9153fc48"
+			"921890ca-65ef-4017-bb9d-a25ba58efc76" "a6a09e55-ddb1-497f-8fb3-cdb6bbc7964c"
+			"b1d6831a-8a20-488b-96b6-7445342cd9a9" "c7edd4f1-45ef-4b9e-8982-0706dfe97292"
+			"cc7b9ad6-e52d-48d2-9056-3f82d0606a70" "f3555973-57d3-45b1-8ba1-09f18766e647"
+			"fa4ed579-7548-48ff-b79a-6b4542e582aa"
+		)
+	)
+	(embedded_fonts no)
+)
