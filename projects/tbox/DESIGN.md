@@ -281,42 +281,58 @@ rail (`RAW_13V8`) via droppers — never from the 9 V analog rail.
 Mixer-style, three boards, fabricated as one snap-apart 4-layer panel
 (mouse-bites or V-score; all edges straight). The schematic hierarchy
 mirrors the boards: the root sheet holds one sheet per board, and the
-wires on the root *are* the two ribbon cables. `tools/check_boards.py`
-verifies that every net touching two boards passes through the ribbon
-connectors and that both ends of each ribbon carry the same net on every
-pin.
+wires on the root *are* the two ribbon cables; the Harness sheet lists
+every conductor. `tools/check_boards.py` verifies that every net
+touching two boards passes through the ribbon connectors and that both
+ends of each ribbon carry the same net on every pin.
 
-- **Front board** vertical behind the front panel (the control board is
-  parallel to the 13° top slope, so its front edge cannot carry panel
-  jacks). All ten front jacks, both preamps, gain switches and mutes.
-  Mic level never leaves the board. Phones jack sleeves and the TRRS
-  common return to *board GND*, not chassis: a headset is a floating
-  load, and a chassis return would put headphone current through the
-  single chassis tie and the rear ribbon ground — in series with the mic
-  inputs' reference (≈1.5 mV at +40 dB). Mic jack sleeves stay on
-  CHASSIS.
-- **Control board** sloped under the top panel: level/MON/VOL pots, mute
-  and PTT buttons, override, intercom, LEDs, PTT logic and power-on
-  hold, summing amp, intercom mute, monitor buffers, headphone amps.
-  Pot bushings nutted to the panel (mounting + bonding).
-- **Rear board** vertical behind the rear panel: power entry filter and
-  regulators, DE-9 with its protection, PTT jacks, GND post and the
-  single CHASSIS–GND tie, rear trims with the amplifiers they feed
-  (mic-out driver U3301, line amps U3302, RX buffers U3401) so no pot wiper
-  crosses a ribbon, line-out transformers and jack, gain/bias switches.
-  The Powerpole is a panel-mount clip wired to a 2-pin header (J3101): a
-  PCB-mount Powerpole would stand ~10 mm proud of the panel at the jacks'
-  board-to-panel distance.
-- **Ribbons**: two 2×13 0.1" IDC (J1005/J2001 front↔control, J2002/J3001
-  control↔rear), same connector on all four ends, straight-through.
-  Every audio line is flanked by GND (11 and 10 grounds respectively);
-  the four PH lines carry their own returns. GAIN_x_HI and BIAS_x ride
-  both ribbons and pass straight through the control board. Rails on the
-  ribbons: +9V, VREF, RAW_13V8 (LEDs), GND; each board decouples them
-  locally at the connector. The conductor-by-conductor pin map is the
-  Harness sheet, generated from the netlist (`tools/gen_harness.py`).
-- Board-to-board headers are out: the boards meet at 77° and 103°.
-  Rigid-flex was priced out. FFC/FPC rejected for current and robustness.
+Front and rear boards lie **flat near the floor with one edge against
+their panel**, so every panel part is a right-angle (board-edge) part
+from the mainstream families; the sloped control board sits above them.
+(Boards parallel to their panels were considered and rejected: they need
+top-entry panel-nut jacks, which are rare for TRRS and for panel-bonded
+1/4".) Each family puts its centre at a different height above the
+board, so panel holes sit at per-part heights along one row.
+
+- **Front board** horizontal, ~10–15 mm above the floor, front edge at
+  the front panel. All ten front jacks, both preamps, gain switches and
+  mutes. Mic level never leaves the board. Phones jack sleeves and the
+  TRRS common return to *board GND*, not chassis: a headset is a
+  floating load, and a chassis return would put headphone current
+  through the single chassis tie and the rear ribbon ground — in series
+  with the mic inputs' reference (≈1.5 mV at +40 dB). Those jacks are
+  therefore plastic-bodied (CUI / Rean), isolated from the panel; the
+  mic jacks are metal, nutted, and bonded to CHASSIS at the panel
+  (Switchcraft 35RAPC, Neutrik NRJ6HM-1-PRE — the one Neutrik PCB jack
+  whose sleeve is tied to the panel).
+- **Control board** sloped under the top panel: level/MON/VOL pots
+  (Alpha 9 mm, vertical), mute and PTT buttons and intercom (C&K PVA,
+  latching for mute), override toggle (C&K 7201, V-bracket), LEDs (SMD
+  + light pipes to the panel), PTT logic and power-on hold, summing amp,
+  intercom mute, monitor buffers, headphone amps. Pot bushings nutted to
+  the panel (mounting + bonding).
+- **Rear board** horizontal, ~26 mm above the floor, rear edge at the
+  rear panel: power entry filter and regulators, right-angle DE-9 with
+  its protection, PTT jacks, the single CHASSIS–GND tie, rear trims
+  (Bourns 3386P side-adjust, screwdriver through the panel) with the
+  amplifiers they feed (mic-out driver U3301, line amps U3302, RX
+  buffers U3401) so no pot wiper crosses a ribbon, line-out
+  transformers (Triad TY-250P) and jack, gain/bias toggles (C&K 7101,
+  right-angle). The rear panel is a single row. The Powerpole is a
+  panel-mount clip wired to a JST XH header (J3101, through-hole on
+  purpose — a pigtail pulls on it); the GND post is a panel binding post
+  bonded through the panel (star washer, bare metal), not a board part.
+- **Ribbons**: two 2×13 0.1" IDC (J1005/J2001 front↔control,
+  J2002/J3001 control↔rear), keyed box headers — vertical on the front
+  and rear boards, right-angle on the control board (it sits ~18 mm
+  under the top panel) — straight-through cables. Every audio line is
+  flanked by GND; the four PH lines carry their own returns. GAIN_x_HI
+  and BIAS_x ride both ribbons and pass straight through the control
+  board. Rails on the ribbons: +9V, VREF, RAW_13V8 (LEDs), GND; each
+  board decouples them locally at the connector.
+- Board-to-board headers are out (the control board meets the others at
+  an angle); rigid-flex was priced out; FFC/FPC rejected for current and
+  robustness.
 - Layout note: with all three boards in one `.kicad_pcb`, the ribbon
   nets show as unrouted between the connector pairs; record them as DRC
   exclusions once, or route the panel as three PCB files fed by per-board

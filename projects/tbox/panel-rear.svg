@@ -51,109 +51,66 @@
 
   <!-- panel outline -->
   <rect class="panel" x="0" y="0" width="300" height="79" rx="2"/>
-
-  <!-- dimensions -->
   <line class="dimln" x1="0" y1="-13" x2="300" y2="-13"/>
   <text class="dim" x="140" y="-15">300 mm</text>
   <line class="dimln" x1="-8" y1="0" x2="-8" y2="79"/>
   <text class="dim" x="-11" y="48" transform="rotate(-90 -11 48)">79 mm</text>
-  <text class="dim" x="92" y="98">VIEWED FROM REAR — CH A on right, CH B on left</text>
-
-  <!-- ================= CHANNEL B (left) ================= -->
-  <rect class="grp" x="6" y="10" width="60" height="66" rx="2"/>
-  <rect class="gtbg" x="16" y="7.5" width="40" height="5"/>
-  <text class="gt" x="36" y="12">CHANNEL B</text>
-
-  <use href="#j14" x="21" y="30"/>
-  <text class="lbl" x="21" y="18">PTT 1/4"</text>
-  <use href="#j35" x="49" y="30"/>
-  <text class="lbl" x="49" y="18">PTT 3.5</text>
-
-  <text class="lbl" x="21" y="50">BIAS</text>
-  <text class="pos" x="21" y="56">ON</text>
-  <use href="#tog" x="21" y="67"/>
-  <text class="pos" x="21" y="75">OFF</text>
-
-  <text class="lbl" x="49" y="50">GAIN</text>
-  <text class="pos" x="49" y="56">HI</text>
-  <use href="#tog" x="49" y="67"/>
-  <text class="pos" x="49" y="75">LO</text>
-
-  <!-- ================= RIG (center) ================= -->
-  <rect class="grp" x="74" y="10" width="112" height="66" rx="2"/>
-  <rect class="gtbg" x="120" y="7.5" width="20" height="5"/>
-  <text class="gt" x="130" y="12">RIG</text>
-
-  <!-- DE-9 female, jackscrew holes -->
-  <g transform="translate(106,29)">
+  <text class="dim" x="40" y="92">VIEWED FROM REAR — CH A on right, CH B on left.  Rear board horizontal, top surface 26 mm above the floor (dashed);</text>
+  <text class="dim" x="40" y="98">every part is right-angle at the board edge, at its own centre height. Powerpole and GND post are panel-mount.</text>
+  <line class="dimln" x1="0" y1="53" x2="300" y2="53" stroke-dasharray="3 2"/>
+  <text class="dim" x="2" y="57.5">board</text>
+  <rect class="grp" x="4" y="10" width="66" height="62" rx="2"/>
+  <rect class="gtbg" x="17.0" y="7.5" width="40" height="5"/>
+  <text class="gt" x="37.0" y="12">CHANNEL B</text>
+  <use href="#j14" x="16" y="41"/>  <text class="lbl" x="16" y="27">PTT 1/4"</text>
+  <use href="#j35" x="35" y="47"/>  <text class="lbl" x="35" y="33">PTT 3.5</text>
+  <text class="lbl" x="49" y="27">BIAS</text>
+  <use href="#tog" x="49" y="46"/>
+  <text class="pos" x="49" y="36">ON</text>
+  <text class="pos" x="49" y="55">OFF</text>
+  <text class="lbl" x="62" y="27">GAIN</text>
+  <use href="#tog" x="62" y="46"/>
+  <text class="pos" x="62" y="36">HI</text>
+  <text class="pos" x="62" y="55">LO</text>
+  <rect class="grp" x="74" y="10" width="116" height="62" rx="2"/>
+  <rect class="gtbg" x="122.0" y="7.5" width="20" height="5"/>
+  <text class="gt" x="132.0" y="12">RIG</text>
+  <g transform="translate(96,46)">
     <rect class="de9" x="-16" y="-8" width="32" height="16" rx="3"/>
     <path d="M -12,-5 L 12,-5 L 10,5 L -10,5 Z" fill="#aaa" stroke="#555" stroke-width="0.4"/>
-    <circle class="pin" cx="-8" cy="-2" r="0.9"/>
-    <circle class="pin" cx="-4" cy="-2" r="0.9"/>
-    <circle class="pin" cx="0"  cy="-2" r="0.9"/>
-    <circle class="pin" cx="4"  cy="-2" r="0.9"/>
-    <circle class="pin" cx="8"  cy="-2" r="0.9"/>
-    <circle class="pin" cx="-6" cy="2.2" r="0.9"/>
-    <circle class="pin" cx="-2" cy="2.2" r="0.9"/>
-    <circle class="pin" cx="2"  cy="2.2" r="0.9"/>
-    <circle class="pin" cx="6"  cy="2.2" r="0.9"/>
-    <circle class="hole" cx="-20" cy="0" r="1.6"/>
-    <circle class="hole" cx="20"  cy="0" r="1.6"/>
+    <circle class="pin" cx="-8" cy="-2" r="0.9"/><circle class="pin" cx="-4" cy="-2" r="0.9"/><circle class="pin" cx="0" cy="-2" r="0.9"/><circle class="pin" cx="4" cy="-2" r="0.9"/><circle class="pin" cx="8" cy="-2" r="0.9"/>
+    <circle class="pin" cx="-6" cy="2.2" r="0.9"/><circle class="pin" cx="-2" cy="2.2" r="0.9"/><circle class="pin" cx="2" cy="2.2" r="0.9"/><circle class="pin" cx="6" cy="2.2" r="0.9"/>
+    <circle class="hole" cx="-20" cy="0" r="1.6"/><circle class="hole" cx="20" cy="0" r="1.6"/>
   </g>
-  <text class="lbl" x="106" y="18">RIG  DE-9</text>
-
-  <use href="#j35" x="152" y="29"/>
-  <text class="lbl" x="152" y="18">LINE OUT</text>
-
-  <!-- trims -->
-  <use href="#trim" x="88"  y="62"/>
-  <text class="lbl" x="88"  y="74">RX L</text>
-  <use href="#trim" x="110" y="62"/>
-  <text class="lbl" x="110" y="74">RX R</text>
-  <use href="#trim" x="132" y="62"/>
-  <text class="lbl" x="132" y="74">MIC</text>
-  <use href="#trim" x="154" y="62"/>
-  <text class="lbl" x="154" y="74">LINE L</text>
-  <use href="#trim" x="176" y="62"/>
-  <text class="lbl" x="176" y="74">LINE R</text>
-
-  <!-- ================= POWER (center-right) ================= -->
-  <rect class="grp" x="194" y="10" width="46" height="66" rx="2"/>
-  <rect class="gtbg" x="203" y="7.5" width="28" height="5"/>
-  <text class="gt" x="217" y="12">POWER</text>
-
-  <g transform="translate(217,27)">
-    <rect class="ppP" x="-16" y="-8" width="16" height="16" rx="1.5"/>
-    <rect class="ppN" x="0"   y="-8" width="16" height="16" rx="1.5"/>
-    <text class="wht" x="-8" y="2.2">+</text>
-    <text class="wht" x="8"  y="2.2">−</text>
+  <text class="lbl" x="96" y="27">RIG  DE-9</text>
+  <use href="#j35" x="126" y="47"/>  <text class="lbl" x="126" y="27">LINE OUT</text>
+  <use href="#trim" x="139" y="48"/>  <text class="lbl" x="139" y="33">RX L</text>
+  <use href="#trim" x="150" y="48"/>  <text class="lbl" x="150" y="27">RX R</text>
+  <use href="#trim" x="161" y="48"/>  <text class="lbl" x="161" y="33">MIC</text>
+  <use href="#trim" x="172" y="48"/>  <text class="lbl" x="172" y="27">LINE L</text>
+  <use href="#trim" x="183" y="48"/>  <text class="lbl" x="183" y="33">LINE R</text>
+  <rect class="grp" x="194" y="10" width="32" height="62" rx="2"/>
+  <rect class="gtbg" x="197.0" y="7.5" width="26" height="5"/>
+  <text class="gt" x="210.0" y="12">POWER</text>
+  <g transform="translate(210,46)">
+    <rect class="ppP" x="-14" y="-7" width="14" height="14" rx="1.5"/>
+    <rect class="ppN" x="0" y="-7" width="14" height="14" rx="1.5"/>
+    <text class="wht" x="-7" y="2.2">+</text><text class="wht" x="7" y="2.2">−</text>
   </g>
-  <text class="lbl" x="217" y="44">13.8 V</text>
-
-  <g transform="translate(217,63)">
-    <circle class="nut" r="4.5"/>
-    <circle class="bush" r="2.8"/>
-    <circle class="hole" r="1.3"/>
-  </g>
-  <text class="lbl" x="217" y="53">GND</text>
-
-  <!-- ================= CHANNEL A (right) ================= -->
-  <rect class="grp" x="234" y="10" width="60" height="66" rx="2"/>
-  <rect class="gtbg" x="244" y="7.5" width="40" height="5"/>
-  <text class="gt" x="264" y="12">CHANNEL A</text>
-
-  <use href="#j35" x="251" y="30"/>
-  <text class="lbl" x="251" y="18">PTT 3.5</text>
-  <use href="#j14" x="279" y="30"/>
-  <text class="lbl" x="279" y="18">PTT 1/4"</text>
-
-  <text class="lbl" x="251" y="50">GAIN</text>
-  <text class="pos" x="251" y="56">HI</text>
-  <use href="#tog" x="251" y="67"/>
-  <text class="pos" x="251" y="75">LO</text>
-
-  <text class="lbl" x="279" y="50">BIAS</text>
-  <text class="pos" x="279" y="56">ON</text>
-  <use href="#tog" x="279" y="67"/>
-  <text class="pos" x="279" y="75">OFF</text>
+  <text class="lbl" x="210" y="27">13.8 V</text>
+  <g transform="translate(210,63)"><circle class="nut" r="4.5"/><circle class="bush" r="2.8"/><circle class="hole" r="1.3"/></g>
+  <text class="lbl" x="210" y="71.5">GND</text>
+  <rect class="grp" x="230" y="10" width="66" height="62" rx="2"/>
+  <rect class="gtbg" x="243.0" y="7.5" width="40" height="5"/>
+  <text class="gt" x="263.0" y="12">CHANNEL A</text>
+  <text class="lbl" x="238" y="27">GAIN</text>
+  <use href="#tog" x="238" y="46"/>
+  <text class="pos" x="238" y="36">HI</text>
+  <text class="pos" x="238" y="55">LO</text>
+  <text class="lbl" x="251" y="27">BIAS</text>
+  <use href="#tog" x="251" y="46"/>
+  <text class="pos" x="251" y="36">ON</text>
+  <text class="pos" x="251" y="55">OFF</text>
+  <use href="#j35" x="265" y="47"/>  <text class="lbl" x="265" y="33">PTT 3.5</text>
+  <use href="#j14" x="284" y="41"/>  <text class="lbl" x="284" y="27">PTT 1/4"</text>
 </svg>
