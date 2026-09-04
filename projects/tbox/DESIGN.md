@@ -334,7 +334,16 @@ board, so panel holes sit at per-part heights along one row.
   and BIAS_x ride both ribbons and pass straight through the control
   board. Rails on the ribbons: +9V, VREF, GND to both boards and BIAS_5V
   to the rear (for its bias switches); each board decouples them locally
-  at the connector.
+  at the connector. **The ribbons never carry the raw supply current**:
+  the regulator's input current (up to ~300 mA, with the headphone
+  amps' class-B swings on it) returning through the ribbon grounds would
+  put a few hundred µV of headphone audio between the rear and control
+  grounds, in series with TX_MIX and the RX buses. The Powerpole pigtail
+  goes straight to the control board instead.
+- Input protection is the PTC (0.5 A hold), the series Schottky and the
+  TVS on the control board; they protect the board. The pigtail and the
+  supply cable are protected by the shack's fused distribution panel —
+  the box assumes one and does not carry an inline fuse.
 - Board-to-board headers are out (the control board meets the others at
   an angle); rigid-flex was priced out; FFC/FPC rejected for current and
   robustness.
