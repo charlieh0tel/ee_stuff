@@ -79,7 +79,7 @@ def main():
                 continue
             gap = GAP
             if ref == host:
-                b, gap = padbox(host_fp), 0.3
+                b, gap = padbox(host_fp), 0.6
             if (
                 b[0] < nb[2] + gap
                 and b[2] > nb[0] - gap

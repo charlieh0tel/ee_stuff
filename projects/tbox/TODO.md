@@ -13,7 +13,7 @@
   the drawings' positions (front, rear and top panels), ribbon headers in
   gaps between them, everything else clustered by sub-sheet and then
   pulled toward its connections for a few passes (ratsnest star length
-  ~14 m → ~9.4 m); `tools/place_decoupling.py` then parks every 100n
+  ~17 m → ~11.8 m); `tools/place_decoupling.py` then parks every 100n
   against its IC's V+ pin (≤ 4 mm, shoving stray passives aside) and the
   bulk caps beside the hungriest ICs. Neither orients ICs nor reserves
   the regulator's thermal pour; hand layout from there. The 22 ribbon
