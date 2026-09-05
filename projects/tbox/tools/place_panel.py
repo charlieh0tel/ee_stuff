@@ -115,7 +115,9 @@ ANCHOR = {
     "Rear Board/RX In": (140, 234),
     "Rear Board": (260, 190),
 }
-COHESION = 0.15  # weight of the cluster anchor vs. the connection centroid in refinement
+COHESION = (
+    0.15  # weight of the cluster anchor vs. the connection centroid in refinement
+)
 POWER_NETS = ("GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS")
 
 

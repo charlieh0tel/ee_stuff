@@ -84,8 +84,10 @@
   `tools/setup_pcb.py` owns the outline, V-cuts, stack-up and labels (the
   "panel-frame" group — never hand-edit those, rerun the script);
   `tools/place_panel.py` places parts onto their board from the schematic
-  sheet path and panel parts from `panel-*.svg`. Footprints enter the
-  board only through KiCad's Update PCB from Schematic.
+  sheet path and panel parts from `panel-*.svg`;
+  `tools/place_decoupling.py` then puts each decoupling cap on the power
+  pin of the IC it is drawn beside. Footprints enter the board only
+  through KiCad's Update PCB from Schematic.
 - `tools/check_footprints.py` fails on any board part without a footprint
   that exists (stock library or `kicad/tbox.pretty`); panel-only parts are
   `on_board no`. Every part with a specific vendor choice carries an
