@@ -2700,6 +2700,17 @@
 		)
 		(uuid "2c6b81f6-04cd-5c55-8a9f-3595d6cd0dc0")
 	)
+	(text "electret bias"
+		(exclude_from_sim no)
+		(at 91.44 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3e320f17-b754-5433-9364-60ddad71b78d")
+	)
 	(text "U2503 TPS7A4701 (ANY-OUT): 1.4 + 6.4 + 0.8 + 0.4 = 9.0 V -- pins 5/9/10 to GND, other set pins open. SENSE to OUT, EN to IN."
 		(exclude_from_sim no)
 		(at 137.16 93.98 0)
@@ -2745,29 +2756,49 @@
 		)
 		(uuid "7e81b57d-30df-4600-a7a0-d36cf68659d1")
 	)
-	(junction
-		(at 144.78 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0228a491-a109-5ea8-abcb-33eb7a696e8a")
+	(text "DC bias only, no load by design"
+		(exclude_from_sim no)
+		(at 73.66 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "95a51eb4-fd3d-5db0-be3f-0eb9cf77788e")
 	)
-	(junction
-		(at 156.21 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "03eb87d1-46a2-5273-be08-503ca2d13627")
+	(text "Pd <=1.5W @15V; dropout OK to 10V5"
+		(exclude_from_sim no)
+		(at 213.36 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9ff4c41c-b0e5-577f-af18-40d28bce688f")
 	)
-	(junction
-		(at 68.58 109.22)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "06b531f6-d817-4611-bd17-713e993d1393")
+	(text "load: 0 typ / 2 max mA"
+		(exclude_from_sim no)
+		(at 91.44 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b4fe45db-d09d-5459-bd3e-9c465b4a8c5c")
 	)
-	(junction
-		(at 152.4 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "125d16d3-757f-5307-9bf8-77da0ac12caa")
+	(text "load: 62 typ / 250 max mA (direct 62/248 + downstream)"
+		(exclude_from_sim no)
+		(at 213.36 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f6a021c5-ac08-5277-96de-a21f1a8c538f")
 	)
 	(junction
 		(at 55.88 78.74)
@@ -2782,12 +2813,6 @@
 		(uuid "168eaecb-1d02-5b5e-ab92-d0ffccecbd0a")
 	)
 	(junction
-		(at 198.12 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3a27e40f-dc0e-5347-9b56-400b93772702")
-	)
-	(junction
 		(at 83.82 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2798,18 +2823,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4f15a854-858d-4dfb-95d8-9a303d42d676")
-	)
-	(junction
-		(at 33.02 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "52f015b6-5034-4fd6-a922-35f2c624906b")
-	)
-	(junction
-		(at 185.42 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "553ec513-0586-5d29-abc8-59b5c0ed7b86")
 	)
 	(junction
 		(at 34.29 78.74)
@@ -2836,70 +2849,16 @@
 		(uuid "8b6a9ec3-f833-4485-a973-240902eb3f06")
 	)
 	(junction
-		(at 38.1 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "94d6021e-13a7-48e8-81ff-39d73ca5b170")
-	)
-	(junction
-		(at 137.16 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "982a7762-cef3-5577-84d1-1ad15bf87c43")
-	)
-	(junction
-		(at 53.34 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9a576c37-91e5-4531-84a6-378657f60b16")
-	)
-	(junction
-		(at 160.02 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a67b6b03-a2b8-5870-ade8-862babb0990f")
-	)
-	(junction
-		(at 182.88 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a8744939-22fb-5227-8d6a-f25afbbabfcf")
-	)
-	(junction
 		(at 78.74 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b18f64c2-474c-4364-a5e2-58c05b1be547")
 	)
 	(junction
-		(at 156.21 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "caa27542-4297-5de0-b96a-ceda23af0e90")
-	)
-	(junction
-		(at 129.54 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ded59930-ad80-5e81-8c61-28afadedb982")
-	)
-	(junction
 		(at 55.88 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "df2f0a1f-9eaf-4294-8f19-8120fadf3a96")
-	)
-	(junction
-		(at 101.6 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f12a6e77-7b74-4e24-867e-4c914917d6e0")
-	)
-	(junction
-		(at 33.02 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fe146c3f-d654-4096-bef8-897045bc8a85")
 	)
 	(no_connect
 		(at 160.02 60.96)
@@ -2930,16 +2889,6 @@
 			(type default)
 		)
 		(uuid "0613fee3-4807-427f-abcc-58f092dba599")
-	)
-	(wire
-		(pts
-			(xy 182.88 50.8) (xy 185.42 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "168d5801-2324-5b81-8eb7-039787089004")
 	)
 	(wire
 		(pts
@@ -3003,7 +2952,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 50.8) (xy 182.88 50.8)
+			(xy 180.34 50.8) (xy 205.74 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3103,6 +3052,16 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 114.3) (xy 33.02 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "692e5f28-7e78-583a-bc6a-c7295d5a6833")
+	)
+	(wire
+		(pts
 			(xy 64.77 78.74) (xy 77.47 78.74)
 		)
 		(stroke
@@ -3123,13 +3082,13 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 66.04) (xy 156.21 73.66)
+			(xy 33.02 106.68) (xy 33.02 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "72831194-9a33-5921-ae7c-41d4b4f7b5eb")
+		(uuid "7001152c-1067-5091-88f9-3ece74a79582")
 	)
 	(wire
 		(pts
@@ -3140,16 +3099,6 @@
 			(type default)
 		)
 		(uuid "75b943a4-9e6d-5069-8c2d-dadc4fc6e7b3")
-	)
-	(wire
-		(pts
-			(xy 144.78 50.8) (xy 152.4 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7bce8151-addb-5699-a972-3d7f8b9addfa")
 	)
 	(wire
 		(pts
@@ -3213,7 +3162,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 50.8) (xy 129.54 50.8)
+			(xy 124.46 50.8) (xy 160.02 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3223,7 +3172,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 63.5) (xy 156.21 66.04)
+			(xy 156.21 63.5) (xy 156.21 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3313,26 +3262,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 50.8) (xy 78.74 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb5490f7-1a31-4bed-8e11-6a880f42c428")
-	)
-	(wire
-		(pts
-			(xy 198.12 50.8) (xy 205.74 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c198532e-5389-5d38-8bdb-4f2f03066ec5")
-	)
-	(wire
-		(pts
 			(xy 30.48 48.26) (xy 30.48 43.18)
 		)
 		(stroke
@@ -3350,16 +3279,6 @@
 			(type default)
 		)
 		(uuid "c7250951-16c7-4d23-9b6d-ec74775a0e18")
-	)
-	(wire
-		(pts
-			(xy 156.21 73.66) (xy 156.21 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c95adf14-9a79-5f8e-a7af-b19cbe2864e2")
 	)
 	(wire
 		(pts
@@ -3383,16 +3302,6 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 50.8) (xy 198.12 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cea17248-71cf-587c-8679-e343e46c17fc")
-	)
-	(wire
-		(pts
 			(xy 68.58 109.22) (xy 68.58 116.84)
 		)
 		(stroke
@@ -3403,7 +3312,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 45.72) (xy 78.74 38.1)
+			(xy 78.74 38.1) (xy 78.74 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3443,16 +3352,6 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 50.8) (xy 160.02 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6f96c4b-977f-506a-8fcb-d21c5d994484")
-	)
-	(wire
-		(pts
 			(xy 33.02 50.8) (xy 33.02 55.88)
 		)
 		(stroke
@@ -3460,26 +3359,6 @@
 			(type default)
 		)
 		(uuid "e9d2ee8c-a855-455c-b375-b04a76405252")
-	)
-	(wire
-		(pts
-			(xy 137.16 50.8) (xy 144.78 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eab8d734-e168-5259-b354-282f71d73a5b")
-	)
-	(wire
-		(pts
-			(xy 129.54 50.8) (xy 137.16 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb7bdb25-5c70-50de-8ad7-14cd0a9787ff")
 	)
 	(wire
 		(pts
@@ -4006,11 +3885,13 @@
 		)
 		(property "MPN" "SMBJ18A"
 			(at 144.78 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4792,11 +4673,13 @@
 		)
 		(property "MPN" "5015"
 			(at 33.02 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5036,11 +4919,13 @@
 		)
 		(property "MPN" "5015"
 			(at 33.02 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5199,11 +5084,13 @@
 		)
 		(property "MPN" "ADP7142AUJZ-5.0-R7"
 			(at 45.72 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Rail_out" "BIAS_5V"
@@ -5790,11 +5677,13 @@
 		)
 		(property "MPN" "TPS7A4701RGWR"
 			(at 170.18 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Load_mA" "1"
@@ -6322,11 +6211,13 @@
 		)
 		(property "MPN" "5015"
 			(at 33.02 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6721,11 +6612,13 @@
 		)
 		(property "MPN" "OPA1678IDR"
 			(at 58.42 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Rail_out" "VREF"
@@ -6931,11 +6824,13 @@
 		)
 		(property "MPN" "5015"
 			(at 33.02 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -7093,11 +6988,13 @@
 		)
 		(property "MPN" "OPA1678IDR"
 			(at 104.14 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "4"
@@ -7592,11 +7489,13 @@
 		)
 		(property "MPN" "B2B-XH-A"
 			(at 25.4 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8069,11 +7968,13 @@
 		)
 		(property "MPN" "OPA1678IDR"
 			(at 58.42 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "5"
@@ -8175,11 +8076,13 @@
 		)
 		(property "MPN" "1812L050/60DR"
 			(at 38.1 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8417,11 +8320,13 @@
 		)
 		(property "MPN" "SS34"
 			(at 48.26 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8901,11 +8806,13 @@
 		)
 		(property "MPN" "5015"
 			(at 33.02 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
@@ -8997,29 +8904,4 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 33.02 106.68) (xy 33.02 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7001152c-1067-5091-88f9-3ece74a79582")
-	)
-	(wire
-		(pts
-			(xy 33.02 114.3) (xy 33.02 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "692e5f28-7e78-583a-bc6a-c7295d5a6833")
-	)
-  (text "Pd <=1.5W @15V; dropout OK to 10V5" (exclude_from_sim no) (at 213.36 73.66 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "9ff4c41c-b0e5-577f-af18-40d28bce688f"))
-  (text "load: 62 typ / 250 max mA (direct 62/248 + downstream)" (exclude_from_sim no) (at 213.36 71.12 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f6a021c5-ac08-5277-96de-a21f1a8c538f"))
-  (text "electret bias" (exclude_from_sim no) (at 91.44 80.01 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "3e320f17-b754-5433-9364-60ddad71b78d"))
-  (text "load: 0 typ / 2 max mA" (exclude_from_sim no) (at 91.44 77.47 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "b4fe45db-d09d-5459-bd3e-9c465b4a8c5c"))
-  (text "DC bias only, no load by design" (exclude_from_sim no) (at 73.66 125.73 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "95a51eb4-fd3d-5db0-be3f-0eb9cf77788e"))
 )

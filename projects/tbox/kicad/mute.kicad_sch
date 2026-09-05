@@ -954,24 +954,6 @@
 		)
 		(uuid "f8b52e84-3888-5dd9-9984-f1ab0c53bcc7")
 	)
-	(junction
-		(at 106.68 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6291c94d-296c-51b4-94df-34af107abf9b")
-	)
-	(junction
-		(at 45.72 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75f0f7dd-eefb-5e4a-b40d-f5ed9f0f7bec")
-	)
-	(junction
-		(at 106.68 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b05cf239-3839-5f56-bdb1-778e69c72860")
-	)
 	(no_connect
 		(at 114.3 55.88)
 		(uuid "1976ee63-1d26-52c4-b8b9-e1bbfd54b901")
@@ -1038,16 +1020,6 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 66.04) (xy 55.88 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7356292d-4a12-547e-9b7c-578a2e0728b1")
-	)
-	(wire
-		(pts
 			(xy 106.68 43.18) (xy 106.68 40.64)
 		)
 		(stroke
@@ -1108,7 +1080,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 66.04) (xy 45.72 66.04)
+			(xy 38.1 66.04) (xy 55.88 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1672,11 +1644,13 @@
 		)
 		(property "MPN" "TS12A12511DGKR"
 			(at 106.68 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "3"
@@ -1871,11 +1845,13 @@
 		)
 		(property "MPN" "TS12A12511DGKR"
 			(at 55.88 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(pin "1"
