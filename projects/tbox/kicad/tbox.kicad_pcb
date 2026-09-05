@@ -11219,7 +11219,7 @@
 			(size 3.5 1.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
-			(net "Net-(T3302-AA)")
+			(net "Net-(T3302-P1)")
 			(pintype "passive")
 			(uuid "fef450b5-c6b1-4ab4-8473-59a06a630934")
 		)
@@ -38813,9 +38813,28 @@
 				)
 			)
 		)
+		(property "MPN" "TY-250P"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e97307dd-e1f8-4510-86db-49f2d8f93466")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7/be5e9c13-cd29-55c6-b670-9a648a3c6576")
 		(sheetname "/Rear Board/Rig Out/")
 		(sheetfile "rigout.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "3" "4" "5" "6" "7" "8")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(pad "1" thru_hole circle
@@ -38833,6 +38852,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3302-P1)")
+			(pinfunction "P1_2")
+			(pintype "passive")
 			(uuid "4642081e-9215-4f69-b0b1-2c6c5f5cd246")
 		)
 		(pad "3" thru_hole circle
@@ -38841,6 +38862,9 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(net "unconnected-(T3302-CT-Pad3)")
+			(pinfunction "CT_3")
+			(pintype "passive+no_connect")
 			(uuid "124a3b6b-6396-4753-850c-84d13f8dc0f5")
 		)
 		(pad "4" thru_hole circle
@@ -38850,6 +38874,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
+			(pinfunction "P2_4")
+			(pintype "passive")
 			(uuid "ab6ce1ae-2f69-4d3d-a973-631611d9b96c")
 		)
 		(pad "5" thru_hole circle
@@ -38859,6 +38885,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3302-S1)")
+			(pinfunction "S1_5")
+			(pintype "passive")
 			(uuid "3898e5af-41d7-4363-b42d-5b06151dd68d")
 		)
 		(pad "6" thru_hole circle
@@ -38868,6 +38896,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3302-S1b)")
+			(pinfunction "S1b_6")
+			(pintype "passive")
 			(uuid "6e362e69-9fdf-4e4e-bc18-dbb495e78203")
 		)
 		(pad "7" thru_hole circle
@@ -38877,6 +38907,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3302-S1b)")
+			(pinfunction "S2b_7")
+			(pintype "passive")
 			(uuid "ff970de6-6610-44b1-bac5-66c3981e9062")
 		)
 		(pad "8" thru_hole circle
@@ -38886,6 +38918,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Rear Board/Rig Out/LOUT_RET")
+			(pinfunction "S2_8")
+			(pintype "passive")
 			(uuid "ff064581-8d82-447f-84f7-58d00f247f30")
 		)
 		(embedded_fonts no)
@@ -53011,7 +53045,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(T3302-SB)")
+			(net "Net-(T3302-S1)")
 			(pintype "passive")
 			(uuid "72853a54-1518-4c07-8c1b-8b0591c26903")
 		)
@@ -58038,9 +58072,28 @@
 				)
 			)
 		)
+		(property "MPN" "TY-250P"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5648bb6-6a4f-4cd7-bcec-488c5ffdb958")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7/bf3c0603-62d7-59f7-9893-5e4685d22213")
 		(sheetname "/Rear Board/Rig Out/")
 		(sheetfile "rigout.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "2" "3" "4" "5" "6" "7" "8")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(pad "1" thru_hole circle
@@ -58058,6 +58111,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3301-P1)")
+			(pinfunction "P1_2")
+			(pintype "passive")
 			(uuid "be044ba5-bf59-4530-be74-28c081735fc5")
 		)
 		(pad "3" thru_hole circle
@@ -58066,6 +58121,9 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(net "unconnected-(T3301-CT-Pad3)")
+			(pinfunction "CT_3")
+			(pintype "passive+no_connect")
 			(uuid "8ae37e59-d278-4916-b317-38b7899ef19b")
 		)
 		(pad "4" thru_hole circle
@@ -58075,6 +58133,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
+			(pinfunction "P2_4")
+			(pintype "passive")
 			(uuid "0555cb20-a949-4749-b12b-fc94c03072bf")
 		)
 		(pad "5" thru_hole circle
@@ -58084,6 +58144,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3301-S1)")
+			(pinfunction "S1_5")
+			(pintype "passive")
 			(uuid "8a640fcd-5c91-4ebd-8be3-65c47c0ac6a4")
 		)
 		(pad "6" thru_hole circle
@@ -58093,6 +58155,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3301-S1b)")
+			(pinfunction "S1b_6")
+			(pintype "passive")
 			(uuid "972ed094-6f3f-4876-9f6c-5ed6cbb4f589")
 		)
 		(pad "7" thru_hole circle
@@ -58102,6 +58166,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(T3301-S1b)")
+			(pinfunction "S2b_7")
+			(pintype "passive")
 			(uuid "1f195b92-58ed-452c-8202-2587499c4270")
 		)
 		(pad "8" thru_hole circle
@@ -58111,6 +58177,8 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Rear Board/Rig Out/LOUT_RET")
+			(pinfunction "S2_8")
+			(pintype "passive")
 			(uuid "a7a5e12d-d0cd-42ef-8498-228adc4288ec")
 		)
 		(embedded_fonts no)
@@ -58772,7 +58840,7 @@
 			(size 0.875 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(T3301-SB)")
+			(net "Net-(T3301-S1)")
 			(pintype "passive")
 			(uuid "0342ef8b-54e5-4bde-8237-c91ca9dd6aae")
 		)
@@ -59228,7 +59296,7 @@
 			(size 3.5 1.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.15625)
-			(net "Net-(T3301-AA)")
+			(net "Net-(T3301-P1)")
 			(pintype "passive")
 			(uuid "9110120a-0830-4c98-bbfd-c1e79d9c53ed")
 		)
