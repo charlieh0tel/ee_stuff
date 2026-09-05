@@ -1895,4 +1895,10 @@
 			)
 		)
 	)
+	(junction
+		(at 45.72 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4b20d011-23d3-4c0d-b1e0-78cffd91d77f")
+	)
 )

@@ -20,16 +20,26 @@ short that only shows up in the netlist.  This script reports:
 Junction symbols make T's and pin-on-wire intentional; power symbols
 (#PWR/#FLG) and stacked pins of one symbol are ignored.
 
+Why the T check matters: on load, eeschema merges two collinear wires
+that meet end to end and drops the junction at their meeting point.  A
+branch wire that ended there now ends on the interior of the merged wire
+with no junction, and KiCad no longer connects it -- the netlist (and
+Update PCB from Schematic) silently loses the connection while the CLI,
+which does no such cleanup, still sees it.  Never draw a T as two
+collinear segments; --fix adds the missing junctions.
+
 Usage:
     tools/check_sch.py                 # every kicad/*.kicad_sch
     tools/check_sch.py kicad/foo.kicad_sch ...
-Exit status 1 if anything is reported.
+    tools/check_sch.py --fix           # add a junction at every reported T / pin-on-wire
+Exit status 1 if anything is reported (and not fixed).
 """
 
 import glob
 import os
 import re
 import sys
+import uuid
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 KI = os.path.join(os.path.dirname(HERE), "kicad")
@@ -108,9 +118,10 @@ def r(p):
     return (round(p[0], 3), round(p[1], 3))
 
 
-def check(path):
+def check(path, fix=False):
     with open(path) as f:
         text = f.read()
+    needed = set()  # points where --fix drops a junction
     libs = lib_pins(text)
     pins, wires, junctions = [], [], set()
     seen = {}
@@ -177,6 +188,7 @@ def check(path):
         for a, b in wires:
             if interior(pt, a, b):
                 problems.append(f"{pt}: pin {ref} sits on the interior of wire {a}-{b}")
+                needed.add(pt)
     ends = {p for w in wires for p in w}
     for p in ends:
         if p in junctions:
@@ -186,16 +198,34 @@ def check(path):
                 problems.append(
                     f"{p}: wire end on the interior of wire {a}-{b} (no junction)"
                 )
+                needed.add(p)
+    if fix and needed:
+        blocks = "".join(
+            f"\t(junction\n\t\t(at {x:g} {y:g})\n\t\t(diameter 0)\n\t\t(color 0 0 0 0)\n"
+            f'\t\t(uuid "{uuid.uuid4()}")\n\t)\n'
+            for x, y in sorted(needed)
+        )
+        text = text.rstrip()
+        assert text.endswith(")")
+        with open(path, "w") as f:
+            f.write(text[:-1].rstrip("\n") + "\n" + blocks + ")\n")
+        problems = [f"added {len(needed)} junction(s)"] + [
+            p
+            for p in problems
+            if "no junction" not in p and "interior of wire" not in p
+        ]
     return problems
 
 
 def main(argv):
+    fix = "--fix" in argv
+    argv = [a for a in argv if a != "--fix"]
     files = argv or sorted(glob.glob(os.path.join(KI, "*.kicad_sch")))
     bad = 0
     for f in files:
-        for p in check(f):
+        for p in check(f, fix):
             print(f"{os.path.relpath(f)}: {p}")
-            bad += 1
+            bad += not p.startswith("added ")
     if bad:
         print(f"\n{bad} problem(s).")
         return 1

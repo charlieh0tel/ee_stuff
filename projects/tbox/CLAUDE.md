@@ -94,5 +94,12 @@
   `MPN` field — the BOM comes from the schematic, not a spreadsheet.
 - `tools/check_sch.py` flags pin ends sitting on the interior of a wire
   or on another symbol's pin without a junction — KiCad silently
-  connects those and ERC does not object. Run it (and ERC) after any
-  schematic edit.
+  connects those and ERC does not object — and any wire ending on the
+  interior of another wire without a junction. Run it (and ERC) after
+  any schematic edit; `--fix` adds the missing junctions.
+- **Never draw a T as two collinear wires meeting at the branch.** On
+  load eeschema merges collinear wires and drops the junction where they
+  met, so the branch ends on a wire interior with no junction and is
+  silently disconnected — in the GUI and in Update PCB from Schematic,
+  while `kicad-cli` (which does no cleanup) still shows it connected. A
+  T is one through-wire, a branch ending on it, and a junction dot.

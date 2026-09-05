@@ -1196,4 +1196,28 @@
 		)
 	)
 	(embedded_fonts no)
+	(junction
+		(at 190.5 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "564b8311-c32b-43f1-a24d-58d6073a282c")
+	)
+	(junction
+		(at 195.58 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "59e2a012-0a3b-45cc-85cd-61d2b157b26a")
+	)
+	(junction
+		(at 200.66 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ddfc4291-c88b-4967-9f06-eae40b285bdd")
+	)
+	(junction
+		(at 205.74 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c333d71-d5ea-4c2b-8319-7b04aacf1894")
+	)
 )
