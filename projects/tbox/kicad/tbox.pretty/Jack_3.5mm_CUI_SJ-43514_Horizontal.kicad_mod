@@ -1,0 +1,152 @@
+(footprint "Jack_3.5mm_CUI_SJ-43514_Horizontal"
+	(version 20240108)
+	(generator "tbox")
+	(generator_version "1.0")
+	(layer "F.Cu")
+	(descr "Same Sky / CUI SJ-43514 (SJ-43515TS with tip switch fits: hole 5 provided as NPTH), 3.5 mm 4-conductor (TRRS) right-angle PCB jack, plastic bushing (isolated from panel). Pads from the SJ-4351X drawing rev 1.06 (2024-09-12): S=pin1 sleeve, T=pin2 tip, R1=pin3 ring 1, R2=pin4 ring 2; two 1.0 mm locating pegs on the axis. PCB edge / body front at y=0; bushing protrudes 3.0 mm. The drawing asks for a 1.3 mm deep x 4.5 mm wide notch in the board edge centred on the axis (shown on F.Fab); pins 3/5 depth (10.8) is scaled from the drawing, not dimensioned - verify.")
+	(tags "jack 3.5mm TRRS CUI SJ-43514")
+	(attr through_hole)
+	(fp_text reference "REF**"
+		(at 0 13.5)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text value "Jack_3.5mm_CUI_SJ-43514_Horizontal"
+		(at 0 6.5)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "S" thru_hole circle
+		(at -4.8 2.9)
+		(size 1.9 1.9)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "R2" thru_hole circle
+		(at 4.5 2.9)
+		(size 1.9 1.9)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "T" thru_hole circle
+		(at 4.5 7.9)
+		(size 1.9 1.9)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "R1" thru_hole circle
+		(at -1.6 10.8)
+		(size 1.9 1.9)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "" np_thru_hole circle
+		(at 0.9 10.8)
+		(size 1.1 1.1)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 2.9)
+		(size 1.1 1.1)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 7.9)
+		(size 1.1 1.1)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_rect
+		(start -5.3 0)
+		(end 5.3 11.0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -3.0 -3.0)
+		(end 3.0 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -2.25 0)
+		(end 2.25 1.3)
+		(stroke
+			(width 0.1)
+			(type dash)
+		)
+		(fill none)
+		(layer "F.Fab")
+	)
+	(fp_text user "notch 4.5x1.3"
+		(at 0 -0.7)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.1)
+			)
+		)
+	)
+	(fp_line
+		(start -5.4 1.3)
+		(end -5.4 11.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 5.4 1.3)
+		(end 5.4 11.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -5.4 11.1)
+		(end 5.4 11.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_rect
+		(start -5.55 -3.25)
+		(end 5.55 11.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+	)
+)

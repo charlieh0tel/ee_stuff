@@ -28,9 +28,12 @@
 
 - Footprints are assigned (`tools/check_footprints.py` keeps it that way)
   and the chosen parts carry `MPN` fields. Before ordering boards:
-  - verify the four project footprints in `kicad/tbox.pretty` against the
+  - verify the five project footprints in `kicad/tbox.pretty` against the
     current vendor drawings (Switchcraft 35RAPC__H3 rev J, C&K 7000-series
-    AV2 and V-bracket patterns, Triad TY-250P 2019-05-31);
+    AV2 and V-bracket patterns, Triad TY-250P 2019-05-31, Same Sky
+    SJ-4351X rev 1.06 — the rear pins 3/5 are at y = 10.8 by scaling the
+    drawing, not by a dimension; confirm, and cut the 4.5 × 1.3 mm edge
+    notch the drawing calls for);
   - C&K PVA button height code (H1–H4) and the light-pipe length for the
     0805 LEDs, both set by the panel-to-board gap found in layout;
   - Bourns 3386 side-adjust style (W chosen; C/H/X share the function) —

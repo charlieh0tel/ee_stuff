@@ -4496,7 +4496,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ1-3535NG_Horizontal"
+		(property "Footprint" "tbox:Jack_3.5mm_CUI_SJ-43514_Horizontal"
 			(at 27.94 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -4529,7 +4529,7 @@
 				)
 			)
 		)
-		(property "MPN" "SJ1-3535NG"
+		(property "MPN" "SJ-43514"
 			(at 27.94 68.58 0)
 			(hide yes)
 			(show_name no)
