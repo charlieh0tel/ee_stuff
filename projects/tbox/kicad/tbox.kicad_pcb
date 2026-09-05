@@ -36596,7 +36596,7 @@
 	(footprint "tbox:Jack_3.5mm_CUI_SJ-43514_Horizontal"
 		(layer "F.Cu")
 		(uuid "664a9e30-9de0-4e3e-8c3c-210e1504b69d")
-		(at 224.9 2.9)
+		(at 225.0875 0.05)
 		(descr "Same Sky / CUI SJ-43514 (SJ-43515TS with tip switch fits: hole 5 provided as NPTH), 3.5 mm 4-conductor (TRRS) right-angle PCB jack, plastic bushing (isolated from panel). Pads from the SJ-4351X drawing rev 1.06 (2024-09-12): S=pin1 sleeve, T=pin2 tip, R1=pin3 ring 1, R2=pin4 ring 2; two 1.0 mm locating pegs on the axis. PCB edge / body front at y=0; bushing protrudes 3.0 mm. The drawing asks for a 1.3 mm deep x 4.5 mm wide notch in the board edge centred on the axis (shown on F.Fab); pins 3/5 depth (10.8) is scaled from the drawing, not dimensioned - verify.")
 		(tags "jack 3.5mm TRRS CUI SJ-43514")
 		(property "Reference" "J1103"
@@ -62374,7 +62374,7 @@
 	(footprint "tbox:Jack_3.5mm_CUI_SJ-43514_Horizontal"
 		(layer "F.Cu")
 		(uuid "bcf5bcfa-98ba-48a2-8e2c-9c4706c901d8")
-		(at 74.9 2.9)
+		(at 75.0875 0.05)
 		(descr "Same Sky / CUI SJ-43514 (SJ-43515TS with tip switch fits: hole 5 provided as NPTH), 3.5 mm 4-conductor (TRRS) right-angle PCB jack, plastic bushing (isolated from panel). Pads from the SJ-4351X drawing rev 1.06 (2024-09-12): S=pin1 sleeve, T=pin2 tip, R1=pin3 ring 1, R2=pin4 ring 2; two 1.0 mm locating pegs on the axis. PCB edge / body front at y=0; bushing protrudes 3.0 mm. The drawing asks for a 1.3 mm deep x 4.5 mm wide notch in the board edge centred on the axis (shown on F.Fab); pins 3/5 depth (10.8) is scaled from the drawing, not dimensioned - verify.")
 		(tags "jack 3.5mm TRRS CUI SJ-43514")
 		(property "Reference" "J1303"
