@@ -42,6 +42,10 @@ W = 300.0
 BOARDS = [("FRONT", 0.0, 50.0), ("CONTROL", 50.0, 180.0), ("REAR", 180.0, 270.0)]
 GROUP = "panel-frame"
 
+# Every class needs wire_width/bus_width/line_style: a class without them
+# gives schematic wires a width of 0, which collapses their bounding boxes and
+# makes eeschema's load-time cleanup drop T-junctions and merge wires (found
+# the hard way -- see CLAUDE.md).  Patterns live in net_settings.netclass_patterns.
 NETCLASSES = [
     {
         "name": "Default",
@@ -49,7 +53,11 @@ NETCLASSES = [
         "track_width": 0.25,
         "via_diameter": 0.6,
         "via_drill": 0.3,
+        "wire_width": 6,
+        "bus_width": 12,
+        "line_style": 0,
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
     },
     {
         "name": "Power",
@@ -57,8 +65,11 @@ NETCLASSES = [
         "track_width": 0.5,
         "via_diameter": 0.8,
         "via_drill": 0.4,
+        "wire_width": 6,
+        "bus_width": 12,
+        "line_style": 0,
         "pcb_color": "rgba(255, 128, 0, 0.400)",
-        "patterns": ["+9V", "RAW_13V8", "GND", "BIAS_5V", "VREF"],
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
     },
     {
         "name": "Phones",
@@ -66,10 +77,17 @@ NETCLASSES = [
         "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
+        "wire_width": 6,
+        "bus_width": 12,
+        "line_style": 0,
         "pcb_color": "rgba(0, 160, 255, 0.400)",
-        "patterns": ["/PH_*"],
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
     },
 ]
+NETCLASS_PATTERNS = [
+    {"netclass": "Power", "pattern": p}
+    for p in ("+9V", "RAW_13V8", "GND", "BIAS_5V", "VREF")
+] + [{"netclass": "Phones", "pattern": "/PH_*"}]
 
 
 def mm(v):
@@ -167,7 +185,8 @@ def netclasses():
         pro = json.load(f)
     ns = pro.setdefault("net_settings", {})
     ns["classes"] = NETCLASSES
-    ns.setdefault("meta", {"version": 4})
+    ns["netclass_patterns"] = NETCLASS_PATTERNS
+    ns.setdefault("meta", {"version": 5})
     with open(PRO, "w") as f:
         json.dump(pro, f, indent=2)
         f.write("\n")

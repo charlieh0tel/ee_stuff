@@ -97,9 +97,12 @@
   connects those and ERC does not object — and any wire ending on the
   interior of another wire without a junction. Run it (and ERC) after
   any schematic edit; `--fix` adds the missing junctions.
-- **Never draw a T as two collinear wires meeting at the branch.** On
-  load eeschema merges collinear wires and drops the junction where they
-  met, so the branch ends on a wire interior with no junction and is
-  silently disconnected — in the GUI and in Update PCB from Schematic,
-  while `kicad-cli` (which does no cleanup) still shows it connected. A
-  T is one through-wire, a branch ending on it, and a junction dot.
+- **Net classes written to `tbox.kicad_pro` must carry `wire_width`,
+  `bus_width` and `line_style`** (`tools/setup_pcb.py --netclasses` does).
+  A class without them gives every schematic wire a width of 0, which
+  collapses the wires' bounding boxes; eeschema's load-time cleanup then
+  misses the branch at each T, deletes the junction and merges the
+  through-wire, silently disconnecting ~240 pins — in the GUI and in
+  Update PCB from Schematic — while `kicad-cli` (no cleanup) still shows
+  them connected. If the GUI and the CLI ever disagree on connectivity,
+  check the project file first. `check_sch.py` flags the damage.
