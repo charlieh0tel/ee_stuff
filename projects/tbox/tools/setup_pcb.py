@@ -91,7 +91,7 @@ NETCLASS_PATTERNS = [
 
 
 def mm(v):
-    return int(round(v * 1_000_000))
+    return round(v * 1_000_000)
 
 
 def frame(board, pcbnew):
@@ -198,7 +198,7 @@ def main():
     ap.add_argument("--netclasses", action="store_true")
     args = ap.parse_args()
     try:
-        import pcbnew  # noqa: F401
+        import pcbnew
     except ImportError:
         # uv's interpreter has no pcbnew; run under the system python
         sys.exit(subprocess.call(["/usr/bin/python3", __file__] + sys.argv[1:]))

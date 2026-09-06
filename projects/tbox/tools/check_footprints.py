@@ -37,7 +37,8 @@ def main():
     # on_board is not in the netlist; read it from the sheets
     off_board = set()
     for p in glob.glob(os.path.join(KI, "*.kicad_sch")):
-        t = open(p).read()
+        with open(p) as f:
+            t = f.read()
         for m in re.finditer(r'\(property "Reference"\s*"([^"]+)"', t):
             blk_start = t.rfind("(symbol", 0, m.start())
             if re.search(r"\(on_board no\)", t[blk_start : m.start()]):

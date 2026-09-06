@@ -123,7 +123,8 @@ POWER_NETS = ("GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS")
 
 def front_positions():
     """x of each front-panel jack, left to right, from the circles in panel-front.svg."""
-    t = open(os.path.join(ROOT, "panel-front.svg")).read()
+    with open(os.path.join(ROOT, "panel-front.svg")) as f:
+        t = f.read()
     xs = sorted(
         {
             float(x)
@@ -148,7 +149,8 @@ def front_positions():
 
 def rear_positions():
     """x of each rear-panel part from panel-rear.svg: <use ... x=> or <g transform=translate()> nearest a label."""
-    t = open(os.path.join(ROOT, "panel-rear.svg")).read()
+    with open(os.path.join(ROOT, "panel-rear.svg")) as f:
+        t = f.read()
     parts = [
         (float(x), float(y))
         for x, y in re.findall(r'<use href="#\w+" x="([\d.]+)" y="([\d.]+)"/>', t)
@@ -215,7 +217,7 @@ def main():
     import pcbnew
 
     def mm(v):
-        return int(round(v * 1_000_000))
+        return round(v * 1_000_000)
 
     board = pcbnew.LoadBoard(PCB)
     fps = list(board.GetFootprints())
@@ -476,7 +478,7 @@ def main():
 
     def ratsnest_length():
         total = 0.0
-        for n, pads in signal_pads().items():
+        for pads in signal_pads().values():
             cx = sum(x for _r, x, _y in pads) / len(pads)
             cy = sum(y for _r, _x, y in pads) / len(pads)
             total += sum(math.hypot(x - cx, y - cy) for _r, x, y in pads)

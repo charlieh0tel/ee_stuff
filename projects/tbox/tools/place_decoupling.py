@@ -37,7 +37,7 @@ def main():
     import pcbnew
 
     def mm(v):
-        return int(round(v * 1_000_000))
+        return round(v * 1_000_000)
 
     board = pcbnew.LoadBoard(PCB)
     fps = list(board.GetFootprints())

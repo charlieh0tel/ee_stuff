@@ -57,7 +57,7 @@ def main():
     args = ap.parse_args()
     with open(args.netlist or export_netlist()) as f:
         netlist = f.read()
-    comps, touches = parse_netlist(netlist)
+    comps, _touches = parse_netlist(netlist)
 
     cables = {}
     for ref, c in comps.items():
@@ -139,7 +139,8 @@ def main():
         f.write("\n".join(lines) + "\n")
 
     # sheet symbol on the root, once
-    root = open(ROOT_FILE).read()
+    with open(ROOT_FILE) as f:
+        root = f.read()
     if SHEET_UUID not in root:
         blk = (
             "  (sheet (at 90.17 165.1) (size 50.8 20.32)\n"
