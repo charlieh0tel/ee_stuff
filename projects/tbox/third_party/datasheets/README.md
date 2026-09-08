@@ -22,6 +22,11 @@ board. Fetched 2026-09-08 unless noted.
 | Keystone_5015.pdf | 5015 SMT test points | keyelco.com |
 | Littelfuse_1812L_PTC.pdf | 1812L050/60DR (F2501) | littelfuse.com via web.archive.org |
 | Neutrik_jacks_circuits.pdf | NRJ6HM-1-PRE / NRJ6HF-1 contact arrangements (the page showing which jacks bond sleeve to panel) | neutrik.com (2026-09-04) |
+| Neutrik_NRJ6HF-1.pdf | NRJ6HF-1 phones jacks (J1002/J1004) — "sleeve contact / frontpanel connection": bonds GND to the panel (review 2026-09-08 #7) | neutrik.com (2026-09-08, by hand) |
+| Neutrik_NRJ6HM-1-PRE.pdf | NRJ6HM-1-PRE chassis-bonded 1/4" jacks (J1102/J1302/J3202/J3204) | neutrik.com (2026-09-08, by hand) |
+| Neutrik_NJ6FD-V.pdf | NJ6FD-V — isolated plastic vertical jack, candidate considered for the phones jacks | neutrik.com (2026-09-08, by hand) |
+| Rean_NYS216.pdf | NYS216 — isolated plastic-housing horizontal 1/4" jack with nut, candidate for the phones jacks | neutrik.com (2026-09-08, by hand) |
+| Rean_NYS229.pdf | NYS229 — mono variant of the above | neutrik.com (2026-09-08, by hand) |
 | Nisshinbo_NJM4556A.pdf | NJM4556AM phones amplifiers (U2401, U2403) | nisshinbo-microdevices.co.jp |
 | SameSky_SJ1-353xNG.pdf | SJ1-3533NG isolated 3.5 mm jacks (J1001/J1003/J3303) | sameskydevices.com |
 | SameSky_SJ-4351X.pdf | SJ-43514 TRRS headset jacks (J1103/J1303) | cuidevices.com (2026-09-06) |
@@ -36,6 +41,4 @@ board. Fetched 2026-09-08 unless noted.
 Not yet collected (vendor and distributor sites reject non-browser
 fetches and the Wayback Machine has no copy): Alpha RD901F-40 /
 RD902F-40 9 mm pot drawings (the stock KiCad footprints were built from
-them), the Neutrik NRJ6HM-1-PRE and NRJ6HF-1 product drawings. Grab
-them by hand from mouser.com/datasheet/3/140/1/RD901F.pdf and
-neutrik.com and drop them in.
+them) — mouser.com/datasheet/3/140/1/RD901F.pdf.
