@@ -2123,7 +2123,7 @@
 		)
 		(uuid "0dbde41a-c13b-5685-b025-e48f57f0bc21")
 	)
-	(text "D2119 discharges C2103 at power-off (quick re-arm)."
+	(text "both mutes on through D2120/D2121, PTT_ACTIVE shunted by Q2109, phones amps disabled."
 		(exclude_from_sim no)
 		(at 222.25 161.29 0)
 		(effects
@@ -2168,7 +2168,7 @@
 		)
 		(uuid "32a5ec99-301d-59bf-81e3-39237f71bd12")
 	)
-	(text "Power-on hold: MUTE_A/B > 5 V for ~1 s (C2103/R2121, 1M loads);"
+	(text "Power-on / brown-out hold: PWR_OK (TPS3808, Supply sheet) low -> Q2108 raises MUTE_HOLD:"
 		(exclude_from_sim no)
 		(at 222.25 158.75 0)
 		(effects
@@ -10743,16 +10743,6 @@
 		)
 		(uuid "75f5c3e8-a8ef-4f8b-a391-1fa353e30efe")
 	)
-	(label "MUTE_HOLD"
-		(at 218.44 125.73 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1dcc938e-6f79-4f08-a0d8-0ac4ded255de")
-	)
 	(symbol
 		(lib_id "Device:R")
 		(at 218.44 120.65 0)
@@ -11273,5 +11263,15 @@
 			(type default)
 		)
 		(uuid "de27174a-0356-4ff6-a5ad-8ac48b896232")
+	)
+	(label "MUTE_HOLD"
+		(at 218.44 126.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "72ac5010-3826-46ff-a370-26a4529fc6ec")
 	)
 )

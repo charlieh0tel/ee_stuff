@@ -35,6 +35,9 @@ board. Fetched 2026-09-08 unless noted.
 | TI_OPA1678.pdf | OPA1678IDR op-amps | ti.com (2026-09-04) |
 | TI_TPS7A47.pdf | TPS7A4701RGWR +9 V regulator (U2503), SBVS204G rev. May 2026 | ti.com |
 | TI_TS12A12511.pdf | TS12A12511DGKR mute switches | ti.com (2026-09-04) |
+| TI_OPA1622.pdf | OPA1622IDRCR headphone amplifiers (U2401/U2403, review Q2) | ti.com (2026-09-08) |
+| TI_TPS3808.pdf | TPS3808G01DBVR supply supervisor (U2504, review Q4), SBVS050N rev. Aug 2026 | ti.com (2026-09-08) |
+| Littelfuse_SP724.pdf | SP724AHTG ESD clamp arrays at the jacks (U1001, U1103/U1104, U1303/U1304, U3201; review Q8) | littelfuse.com via web.archive.org (2026-09-08) |
 | Triad_TY-250P.pdf | TY-250P line-out transformers (T3301/T3302), 2019-05-31 drawing | triadmagnetics.com (2026-09-04) |
 | Vishay_SS32-SS36.pdf | SS34 (D2501, reverse-supply) | vishay.com |
 
