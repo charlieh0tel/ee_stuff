@@ -45,14 +45,14 @@ def main():
     def band_of(y):
         return next((b for b, (lo, hi) in BOARDS.items() if lo <= y < hi), None)
 
-    ribbons = set()
+    ribbons = {}  # ref -> cable name, for the ribbon connectors
     for fp in board.GetFootprints():
         ref = fp.GetReference()
         want = fp.GetSheetname().strip("/").split("/")[0]
         if want not in BOARDS:
             continue
         if fp.HasField("Interconnect"):
-            ribbons.add(ref)
+            ribbons[ref] = fp.GetFieldText("Interconnect")
         c = fp.GetBoundingBox(False, False)
         top, bottom = c.GetTop() / 1e6, c.GetBottom() / 1e6
         lo, hi = BOARDS[want]
@@ -72,9 +72,18 @@ def main():
                 nets.setdefault(n, set()).add(fp.GetReference())
     for n, refs in sorted(nets.items()):
         boards = {board_at[r] for r in refs if r in board_at}
-        if len(boards) > 1 and not (refs & ribbons):
+        if len(boards) < 2:
+            continue
+        # every board the net touches needs its own ribbon connector on the
+        # net, and each cable must be present at both of its ends
+        cables = {}
+        for r in refs & ribbons.keys():
+            cables.setdefault(ribbons[r], set()).add(board_at[r])
+        reached = {b for bs in cables.values() if len(bs) == 2 for b in bs}
+        if not boards <= reached:
             problems.append(
-                f"net {n} spans {sorted(boards)} with no ribbon connector: {sorted(refs)}"
+                f"net {n} spans {sorted(boards)} but ribbons reach only "
+                f"{sorted(reached)}: {sorted(refs)}"
             )
     for p in problems:
         print(p)

@@ -7514,6 +7514,28 @@
 				(justify left)
 			)
 		)
+		(property "Load_mA" "0/1"
+			(at 38.1 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Load_rail" "BIAS_5V"
+			(at 38.1 152.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 38.1 152.4 0)
 			(show_name no)

@@ -177,8 +177,10 @@ Two identical, physically grouped channel sections (A and B). Each has:
   100k gate pull-down on the rear board, so a disconnected ribbon leaves
   it off.
 - **Supply supervisor (TPS3808G01, U2504):** watches +9 V through a
-  174k/10k divider (threshold ≈ 7.5 V), 1 µF on CT for ~1.2 s of hold,
-  open-drain RESET pulled up to +9 V as `PWR_OK`. While `PWR_OK` is low
+  174k/10k divider (threshold ≈ 7.5 V), 220 nF on CT for ~1.3 s of
+  hold (tD = CT[nF]/175 s), VDD on the 5 V bias rail with its own 100n,
+  open-drain RESET pulled up to that 5 V rail as `PWR_OK` (RESET is
+  rated 6.5 V, so it can never go to +9 V). While `PWR_OK` is low
   a 2N7002 inverter raises `MUTE_HOLD`, which diode-ORs both channel
   mutes on and shunts `PTT_ACTIVE` to ground (Q2109), and the OPA1622
   headphone amps are disabled through their EN pins. Nothing keys or
@@ -256,11 +258,14 @@ panel; front mic and phones jacks stay free.
     pin with click-free power-up/down): the NJM4556A in DMP8 was rated
     300 mW and two channels into 16 Ω at design level dissipate ~0.33 W.
     The series build-out is 3R3.
-  - Buffered mid-rail virtual ground (Vref) used as **DC bias only**: every
+  - Buffered mid-rail virtual ground (Vref) is the **DC bias and the
+  signal-return for the mute and summing nodes only**: every
   ground-referenced input or output (mic, RX in, mic out, line out,
   phones) keeps its gain-setting leg on GND, not Vref, so Vref noise is
-  never amplified. Vref itself is stiff and its rail divider is
-  filtered well below the audio band. All signal paths AC-coupled.
+  never amplified; the fade cell and the BLEND summer sit between two
+  Vref-biased nodes, so Vref noise is common-mode to them. Vref itself
+  is stiff and its rail divider is filtered well below the audio band.
+  All signal paths AC-coupled.
   - ~5 V **electret bias rail**, low-noise LDO (ADP7142, ~11 µVrms) + a
     light RC, decoupled again where it enters each mic node (bias noise
     appears directly in the mic signal).
@@ -446,7 +451,8 @@ service), wedge console profile:
   the rear GND post (J3207) is a panel binding post, not a board part
   (`on_board no`), bonded through the panel with a star washer.
 - Layout: TPS7A4701 thermal pad pour/vias (the 385 mA thermal max in
-  `power_tree.json` assumes it); single CHASSIS–GND tie at NT3201 only.
+  `power_tree.json` assumes it); one CHASSIS–GND tie per board (NT1001,
+  NT2401, NT3201) placed at the jacks it serves, see "Grounding".
 - Footprints assigned; vendor-drawing verification of the four project footprints before fab (see TODO.md).
 
 - RF immunity target, quantitative (e.g. "no audible artifacts with
