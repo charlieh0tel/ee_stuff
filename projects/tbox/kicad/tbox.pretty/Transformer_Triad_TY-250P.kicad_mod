@@ -82,8 +82,6 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-		(layer "F.Cu")
-	)
 	(fp_rect
 		(start -8.9 -11.4)
 		(end 8.9 11.4)

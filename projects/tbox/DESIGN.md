@@ -311,7 +311,7 @@ board, so panel holes sit at per-part heights along one row.
   Powerpole is a pigtail, the regulator's thermal pad gets the largest
   board, and VREF is generated in the middle), level/MON/VOL pots (Alpha
   9 mm, vertical), mute and PTT buttons and intercom (C&K PVA, latching
-  for mute), override toggle (C&K 7201, V-bracket), LEDs (SMD + light
+  for mute), override toggle (C&K 7203 ON-OFF-ON, V-bracket), LEDs (SMD + light
   pipes to the panel), PTT logic and power-on hold, summing amp,
   intercom mute, monitor buffers, headphone amps. Pot bushings nutted to
   the panel (mounting + bonding). The Powerpole is a panel-mount clip on

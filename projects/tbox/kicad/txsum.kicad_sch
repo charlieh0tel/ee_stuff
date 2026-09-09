@@ -3206,7 +3206,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 111.76 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -4386,7 +4386,7 @@
 				)
 			)
 		)
-		(property "MPN" "PVA1EEH2xxxxxxV2 (momentary; height at layout)"
+		(property "MPN" "PVA1OAH2xxxxxxV2 (OA = momentary; height code at layout)"
 			(at 35.56 104.14 0)
 			(hide yes)
 			(show_name no)
