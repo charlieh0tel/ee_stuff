@@ -73,12 +73,19 @@ def main():
                 print(f"{'':12}   {sheet}: {' '.join(refs)} = {fmt_ma(t)}/{fmt_ma(m)}")
 
     if tree.warnings:
-        print("\nwarnings:")
+        print("\nmodel problems (each one hides current from the budget):")
         for w in tree.warnings:
             print(f"  - {w}")
 
-    if failed:
-        print("\nFAIL: a rail exceeds its budget.")
+    if failed or tree.warnings:
+        print(
+            "\nFAIL: "
+            + (
+                "a rail exceeds its budget."
+                if failed
+                else "the load model is incomplete."
+            )
+        )
         return 1
     print("\nOK: all rails within budget.")
     return 0

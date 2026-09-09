@@ -32,6 +32,7 @@ converter's own quiescent/ground current is just its ``Load_mA`` and lands
 on its input rail like any other draw.
 """
 
+import math
 import os
 import re
 import subprocess
@@ -108,7 +109,12 @@ def parse_ma(s):
         nums = [float(p) for p in s.replace(" ", "").split("/") if p]
     except ValueError:
         return None
-    return (nums[0], nums[-1]) if nums else None
+    if not nums or len(nums) > 2:
+        return None
+    typ, mx = nums[0], nums[-1]
+    if not all(math.isfinite(v) and v >= 0 for v in (typ, mx)) or typ > mx:
+        return None
+    return (typ, mx)
 
 
 def attribute(ref, touches, rails):
@@ -186,9 +192,19 @@ class PowerTree:
     # -- loads ------------------------------------------------------------
     def _collect_loads(self):
         direct = {r: [] for r in self.rails}
+        if not self.comps:
+            self.warnings.append("netlist has no components")
         for ref, c in sorted(self.comps.items()):
             raw = c["fields"].get("Load_mA")
             if not raw:
+                # anything with a power_in pin on a rail draws current: it must say how much
+                if any(
+                    pt == "power_in" and n in self.rails
+                    for n, pt in self.touches.get(ref, [])
+                ) and not ref.startswith("#"):
+                    self.warnings.append(
+                        f"{ref}: has a power_in pin on a rail but no Load_mA"
+                    )
                 continue
             val = parse_ma(raw)
             if val is None:

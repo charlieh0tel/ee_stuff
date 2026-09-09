@@ -7,7 +7,8 @@
 
 One 300 x 270 mm outline holding the three boards edge to edge, split by
 two V-score lines on the "V-CUT" user layer (fabs want them off
-Edge.Cuts so the outline stays one closed shape) -- every board is a
+Edge.Cuts so the outline stays one closed shape), each with a copper keepout
+rule area SCORE_KEEP either side on every copper layer -- every board is a
 rectangle, so no tabs or rails:
 
     y   0 .. 50    FRONT board   (jack edge = panel top edge)
@@ -41,6 +42,7 @@ PRO = os.path.join(KI, "tbox.kicad_pro")
 W = 300.0
 BOARDS = [("FRONT", 0.0, 50.0), ("CONTROL", 50.0, 180.0), ("REAR", 180.0, 270.0)]
 GROUP = "panel-frame"
+SCORE_KEEP = 1.0  # mm of copper-free margin each side of a V-score (fab-dependent; 0.8-1.5 typical)
 
 # Every class needs wire_width/bus_width/line_style: a class without them
 # gives schematic wires a width of 0, which collapses their bounding boxes and
@@ -140,6 +142,27 @@ def frame(board, pcbnew):
         if y0 > 0:  # V-score between boards, full width, on the V-CUT layer
             line(-5, y0, W + 5, y0, V, 0.2)
             text(f"V-CUT y={y0:g}", W / 2, y0 - 2.5, V, 2.0, 0.3)
+            # nothing conductive within SCORE_KEEP of the score, on any copper layer:
+            # a rule area (keepout) the DRC enforces for tracks, vias, pads and fills
+            z = pcbnew.ZONE(board)
+            z.SetIsRuleArea(True)
+            z.SetDoNotAllowTracks(True)
+            z.SetDoNotAllowVias(True)
+            z.SetDoNotAllowPads(True)
+            z.SetDoNotAllowZoneFills(True)
+            z.SetDoNotAllowFootprints(False)
+            z.SetZoneName(f"V-CUT keepout y={y0:g}")
+            z.SetLayerSet(pcbnew.LSET.AllCuMask(4))
+            outline = z.Outline()  # edit in place: a fresh SHAPE_POLY_SET crashes SWIG
+            outline.NewOutline()
+            for x, y in (
+                (-1, y0 - SCORE_KEEP),
+                (W + 1, y0 - SCORE_KEEP),
+                (W + 1, y0 + SCORE_KEEP),
+                (-1, y0 + SCORE_KEEP),
+            ):
+                outline.Append(mm(x), mm(y))
+            add(z)
         text(
             f"TBOX {name} BOARD  rev 0.2  ({W:g} x {y1 - y0:g})",
             W / 2,

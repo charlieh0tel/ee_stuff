@@ -40,6 +40,10 @@
     pick whichever puts the screw at the board edge cleanly;
   - NJM4556AM: confirm the DMP8 land pattern against the SOIC-8 assigned;
   - bead MPN: any 0805 bead with ≥50 Ω at 3 MHz (the footprint is fixed);
+  - decoupling ownership: `place_decoupling.py` infers it (converter first,
+    then schematic proximity); C2501 (ADP7142 input 4u7) still lands at the
+    TPS7A4701 — move by hand or give caps a `Decouples` field if this
+    keeps mattering;
   - confirm NRJ6HM-1-PRE's "-1" (threaded nose + nut) suffix on ordering.
 
 - Bench: check TRRS mic↔phones crosstalk with a real headset before panel freeze;

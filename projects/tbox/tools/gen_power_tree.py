@@ -68,15 +68,24 @@ def strip_managed(sch, old):
             i = j + 7
             continue
         uid = sch[j + 7 : sch.find('"', j + 7)]
-        depth = 0
-        e = k + 1
-        for e in range(k + 1, len(sch)):
-            if sch[e] == "(":
+        # walk to the block's closing paren, ignoring parens inside quoted strings
+        depth, in_str, e = 0, False, k + 1
+        while e < len(sch):
+            c = sch[e]
+            if in_str:
+                if c == "\\":
+                    e += 1
+                elif c == '"':
+                    in_str = False
+            elif c == '"':
+                in_str = True
+            elif c == "(":
                 depth += 1
-            elif sch[e] == ")":
+            elif c == ")":
                 depth -= 1
                 if depth == 0:
                     break
+            e += 1
         kind = sch[k + 1 : e + 1].split("(", 2)[1].split()[0]
         if uid in old and kind in ("rectangle", "polyline", "text"):
             out.append(sch[i:k])

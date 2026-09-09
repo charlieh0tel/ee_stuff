@@ -1620,6 +1620,17 @@
 				)
 			)
 		)
+		(property "Load_mA" "0/0.01"
+			(at 106.68 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Datasheet" ""
 			(at 106.68 55.88 0)
 			(hide yes)
@@ -1815,6 +1826,17 @@
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Load_mA" "0/0.01"
+			(at 55.88 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)

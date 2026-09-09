@@ -7,7 +7,8 @@
 
 A decoupling cap is any C with one pad on a rail (+9V, BIAS_5V, RAW_13V8)
 and the other on GND.  Each is paired with the nearest unclaimed rail pad
-of an IC (U*) on the same sub-sheet and rail -- 100n first, then bulk -- and
+of an IC (U*) on the same sub-sheet and rail -- 100n first, then bulk (a
+regulator gets the bulk caps on its own rails before any load does) -- and
 placed just outside that pad: long axis along the pin's outward normal,
 rail pad against the IC, GND pad outward, on the same occupancy grid the
 placement tool respects so nothing overlaps.  Rerunnable.
@@ -53,8 +54,32 @@ def main():
 
     GAP = 0.4  # clearance kept between courtyard-less bounding boxes
     boxes = {fp.GetReference(): bbox(fp) for fp in fps}
-    # each board's y-range: a cap must not cross a V-score
-    bands = [(0.0, 50.0), (50.0, 180.0), (180.0, 270.0)]
+    # each board's y-range: a part must not cross a V-score
+    bands = {
+        "Front Board": (0.0, 50.0),
+        "Control Board": (50.0, 180.0),
+        "Rear Board": (180.0, 270.0),
+    }
+    band_of = {
+        fp.GetReference(): bands.get(
+            fp.GetSheetname().strip("/").split("/")[0], (0.0, 270.0)
+        )
+        for fp in fps
+    }
+    # pin types from the netlist: only power pins are decoupling targets
+    # (SENSE/EN/feedback inputs share the rail but are not where the cap goes)
+    sys.path.insert(0, HERE)
+    from power_model import export_netlist
+
+    with open(export_netlist()) as f:
+        netlist = f.read()
+    pintype = {
+        (m.group(1), m.group(2)): m.group(3)
+        for m in re.finditer(
+            r'\(node\s*\(ref "([^"]+)"\)\s*\(pin "([^"]+)"\)(?:\s*\(pinfunction "[^"]*"\))?\s*\(pintype "([^"]+)"',
+            netlist,
+        )
+    }
 
     def padbox(fp):
         bs = [p.GetBoundingBox() for p in fp.Pads()]
@@ -70,7 +95,7 @@ def main():
 
         The host IC counts only by its pads (its silk and courtyard outline
         may be hugged) -- the cap goes right up against the pin."""
-        band = next(b for b in bands if b[0] <= (nb[1] + nb[3]) / 2 < b[1])
+        band = band_of[skip]  # the cap's own board: never across a V-score
         if nb[0] < 1 or nb[2] > W - 1 or nb[1] < band[0] + 1 or nb[3] > band[1] - 1:
             return None
         out = []
@@ -176,7 +201,9 @@ def main():
             caps.append(fp)
         elif ref.startswith("U"):
             for p in pads:
-                if p.GetNetname() in RAILS:
+                if p.GetNetname() in RAILS and pintype.get(
+                    (ref, p.GetNumber()), "power_in"
+                ) in ("power_in", "power_out"):
                     targets.append((fp, p))
     caps.sort(key=value_rank)
     claimed = {}  # (ref, pad, bulk?) -> count
@@ -254,14 +281,23 @@ def main():
             ):
                 continue
             key = (ic.GetReference(), pad.GetNumber(), bulk)
-            # every IC gets its own 100n before any gets a second; bulk caps
-            # go to the hungriest ICs first; ties by where it is drawn
+            # every IC gets its own 100n before any gets a second; bulk caps go
+            # to a converter (pads on two rails: regulator IN/OUT, whose stability
+            # depends on them) before any load, then to the hungriest load;
+            # 100n ties by where the cap is drawn in the schematic
+            converter = (
+                len({q.GetNetname() for q in ic.Pads() if q.GetNetname() in RAILS}) > 1
+            )
             cands.append(
                 (
                     claimed.get(key, 0),
-                    -load(ic)
+                    (
+                        (0, sch_dist(cap.GetReference(), ic.GetReference()))
+                        if converter
+                        else (1, -load(ic))
+                    )
                     if bulk
-                    else sch_dist(cap.GetReference(), ic.GetReference()),
+                    else (1, sch_dist(cap.GetReference(), ic.GetReference())),
                     ic,
                     pad,
                 )

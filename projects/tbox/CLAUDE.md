@@ -86,8 +86,12 @@
   `tools/place_panel.py` places parts onto their board from the schematic
   sheet path and panel parts from `panel-*.svg`;
   `tools/place_decoupling.py` then puts each decoupling cap on the power
-  pin of the IC it is drawn beside. Footprints enter the board only
-  through KiCad's Update PCB from Schematic.
+  pin of the IC it is drawn beside (regulators get their bulk caps first).
+  Both keep every part inside its own board's band; `tools/check_placement.py`
+  proves it on the placed board and that no net crosses a V-score except
+  through a ribbon connector — run it with DRC. The frame carries a copper
+  keepout rule area either side of each V-score (`SCORE_KEEP`).
+  Footprints enter the board only through KiCad's Update PCB from Schematic.
 - `tools/check_footprints.py` fails on any board part without a footprint
   that exists (stock library or `kicad/tbox.pretty`); panel-only parts are
   `on_board no`. Every part with a specific vendor choice carries an

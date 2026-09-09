@@ -45,7 +45,7 @@ W = 300.0
 BOARDS = {
     "Front Board": (0.0, 50.0),
     "Control Board": (50.0, 180.0),
-    "Rear Board": (180.0, 250.0),
+    "Rear Board": (180.0, 270.0),
 }
 
 # panel label -> reference, per panel drawing (labels as they appear in the SVGs)
@@ -99,6 +99,13 @@ TOP = {
     "SW2103": (150, 72.67),
     "D2101": (150, 24),
     "D2118": (288, 12),
+}
+# where the operator datum (pot shaft, button plunger, toggle bushing, LED) sits in each
+# footprint's own coordinates at rotation 0; the panel drawings locate that point
+DATUM = {
+    "Potentiometer_Alpha_RD901F-40-00D_Single_Vertical": (7.5, 2.5),
+    "Potentiometer_Alpha_RD902F-40-00D_Dual_Vertical": (7.5, 2.5),
+    "SW_Push_2P1T_Toggle_CK_PVA1xxH2xxxxxxV2": (2.5, 3.0),
 }
 # cluster anchors (board x, y) for the free parts of each sub-sheet
 ANCHOR = {
@@ -322,7 +329,10 @@ def main():
         elif ref in TOP:
             px, py = TOP[ref]
             fp.SetOrientationDegrees(0)
-            fp.SetPosition(pcbnew.VECTOR2I(mm(W - px), mm(min(190 - py, y1 - 4.0))))
+            dx, dy = DATUM.get(str(fp.GetFPID().GetLibItemName()), (0.0, 0.0))
+            fp.SetPosition(
+                pcbnew.VECTOR2I(mm(W - px - dx), mm(min(190 - py, y1 - 4.0) - dy))
+            )
         else:
             if fp.GetPosition() == pcbnew.VECTOR2I(0, 0) or args.all:
                 free.setdefault((top, sheet.strip("/")), []).append(fp)
@@ -406,9 +416,11 @@ def main():
             frontier = nxt
         return {r: dist.get(r, 99) for r in refs}
 
-    def fits(lf, tp, r, b):
+    def fits(lf, tp, r, b, band=None):
         if lf < 0 or tp < 0 or r > W or b > H:
             return False
+        if band and (tp < band[0] or b > band[1]):
+            return False  # never off the part's own board, whatever the grid says
         return not occ[
             int(tp / RES) : int(b / RES) + 1, int(lf / RES) : int(r / RES) + 1
         ].any()
@@ -426,6 +438,7 @@ def main():
 
     for (top, sheet), items in sorted(free.items()):
         ax, ay = ANCHOR.get(sheet, ANCHOR[top])
+        band = keep[top]
         seeds = [
             r
             for r in anchored
@@ -448,7 +461,7 @@ def main():
             w, h = c[2] - c[0], c[3] - c[1]
             for cx, cy in spiral(ax, ay, w, h):
                 cx, cy = round(cx), round(cy)
-                if fits(cx, cy, cx + w, cy + h):
+                if fits(cx, cy, cx + w, cy + h, band):
                     pos = fp.GetPosition()
                     fp.SetPosition(
                         pcbnew.VECTOR2I(pos.x + mm(cx - c[0]), pos.y + mm(cy - c[1]))
@@ -486,6 +499,9 @@ def main():
 
     free_fps = [fp for items in free.values() for fp in items]
     fp_by_ref = {fp.GetReference(): fp for fp in fps}
+    top_of = {
+        fp.GetReference(): fp.GetSheetname().strip("/").split("/")[0] for fp in fps
+    }
     boxes = {fp.GetReference(): bboxes(fp)[0] for fp in fps}
     before = ratsnest_length()
     for _pass in range(args.refine):
@@ -543,7 +559,7 @@ def main():
                 w, h = c[2] - c[0], c[3] - c[1]
                 for cx, cy in spiral(tx, ty, w, h, step=0.5, rmax=60):
                     cx, cy = round(cx * 2) / 2, round(cy * 2) / 2
-                    if fits(cx, cy, cx + w, cy + h):
+                    if fits(cx, cy, cx + w, cy + h, keep[top_of[ref]]):
                         d = math.hypot(cx + w / 2 - tx, cy + h / 2 - ty)
                         if best is None or d < best[0]:
                             best = (d, ang, cx, cy, w, h)
