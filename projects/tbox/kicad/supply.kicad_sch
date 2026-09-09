@@ -3175,16 +3175,6 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 50.8) (xy 144.78 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5df865b1-caa3-5ee1-95e7-446c99d3849a")
-	)
-	(wire
-		(pts
 			(xy 180.34 55.88) (xy 182.88 55.88)
 		)
 		(stroke
@@ -3252,16 +3242,6 @@
 			(type default)
 		)
 		(uuid "75b943a4-9e6d-5069-8c2d-dadc4fc6e7b3")
-	)
-	(wire
-		(pts
-			(xy 144.78 59.69) (xy 144.78 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84ae55da-6c10-56a3-8def-6918f1c5c1a2")
 	)
 	(wire
 		(pts
@@ -3967,96 +3947,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
 					(reference "#PWR02526")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Zener")
-		(at 144.78 55.88 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0e30f4f6-a8ec-57a8-8feb-68f79da7ec0f")
-		(property "Reference" "D2502"
-			(at 147.6 54.61 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SMBJ18A"
-			(at 147.6 57.15 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SMB"
-			(at 144.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 144.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "SMBJ18A"
-			(at 144.78 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3a405a21-d92a-51bf-b545-b20b21f35d09")
-		)
-		(pin "2"
-			(uuid "a94af884-14cb-500e-8a30-f6297a9b1aaf")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
-					(reference "D2502")
 					(unit 1)
 				)
 			)
@@ -5558,6 +5448,17 @@
 				)
 			)
 		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 66.04 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 66.04 50.8 0)
 			(hide yes)
@@ -5982,83 +5883,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
 					(reference "#PWR02523")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 144.78 62.23 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "60fe04d2-04d0-5943-b395-891ffbe35658")
-		(property "Reference" "#PWR02520"
-			(at 144.78 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 144.78 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 144.78 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b670617e-838a-5960-9c71-6eecbe29c9e5")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
-					(reference "#PWR02520")
 					(unit 1)
 				)
 			)
@@ -9104,12 +8928,6 @@
 		(uuid "8d4cb34f-ffb0-4121-a263-01c7fee02b61")
 	)
 	(junction
-		(at 144.78 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c336c4dc-6cef-48e5-889a-980de60043d8")
-	)
-	(junction
 		(at 152.4 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10366,4 +10184,184 @@
   (text "electret bias" (exclude_from_sim no) (at 91.44 80.01 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "3e320f17-b754-5433-9364-60ddad71b78d"))
   (text "load: 0.02 typ / 4.1 max mA" (exclude_from_sim no) (at 91.44 77.47 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "b4fe45db-d09d-5459-bd3e-9c465b4a8c5c"))
   (text "DC bias only, no load by design" (exclude_from_sim no) (at 73.66 125.73 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "95a51eb4-fd3d-5db0-be3f-0eb9cf77788e"))
+	(symbol
+		(lib_id "Device:D_Zener")
+		(at 59.69 54.61 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4fb5a19a-f114-478a-a3c1-22c0fb3f0f2d")
+		(property "Reference" "D2502"
+			(at 62.23 52.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMBJ18A"
+			(at 62.23 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMB"
+			(at 59.69 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "SMBJ18A"
+			(at 59.69 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "d13448e8-695b-4e4d-b6e4-8665eb2ffa63")
+		)
+		(pin "2"
+			(uuid "58af771e-befb-4b7a-83d0-568eaf910c01")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
+					(reference "D2502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(junction
+		(at 59.69 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a4a3961c-870c-4aa1-b067-7b076a90c0de")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "264a648b-b972-4d83-a592-a2c9dc35ab6e")
+		(property "Reference" "#PWR02520"
+			(at 62.23 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 62.23 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "5addb142-c900-4d14-a325-2c0de009d894")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/ec376872-0fd3-415b-977e-2d7984375c54"
+					(reference "#PWR02520")
+					(unit 1)
+				)
+			)
+		)
+	)
 )

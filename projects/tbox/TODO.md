@@ -34,12 +34,13 @@
     SJ-4351X rev 1.06 — the rear pins 3/5 are at y = 10.8 by scaling the
     drawing, not by a dimension; confirm, and cut the 4.5 × 1.3 mm edge
     notch the drawing calls for);
-  - C&K PVA button height code (H1–H4) and the light-pipe length for the
-    0805 LEDs, both set by the panel-to-board gap found in layout;
+  - C&K PVA ordering code: the `xxxxxx` in `PVA1OAH2xxxxxxV2` /
+    `PVA1EEH2xxxxxxV2` is the actuator height/style, set by the
+    top-panel-to-control-board gap (the enclosure decision); the
+    light-pipe length for the 0805 LEDs comes from the same gap;
   - Bourns 3386 side-adjust style (W chosen; C/H/X share the function) —
     pick whichever puts the screw at the board edge cleanly;
   - NJM4556AM: confirm the DMP8 land pattern against the SOIC-8 assigned;
-  - bead MPN: any 0805 bead with ≥50 Ω at 3 MHz (the footprint is fixed);
   - decoupling ownership: `place_decoupling.py` infers it (converter first,
     then schematic proximity); C2501 (ADP7142 input 4u7) still lands at the
     TPS7A4701 — move by hand or give caps a `Decouples` field if this
@@ -53,13 +54,22 @@
   (HM-36/HM-219) at 94 dB SPL with 8 V through 2k2, into 600 Ω and open,
   and fill the LEVELS.md row; mute fade — listen at full monitor level
   for the residual click, trim R1203/C1202 (fade) and R1204/C1203
-  (switch delay) if needed; supervisor threshold and hold (7.5 V, ~1.2 s)
+  (switch delay) if needed, and confirm the shunt depth at ~3.5 V of
+  gate drive (Rds(on) is unspecified there); phones power-up with
+  headphones plugged, volume at zero and maximum — the 1k Vref
+  precharge (R2425–R2428) should leave no step at enable, and the
+  disabled OPA1622 output must tolerate the 4.5 mA it can supply;
+  supervisor threshold and hold (7.5 V, ~1.3 s)
   on a slow ramp, rapid cycling and a brown-out — rig PTT must stay
   released throughout; headphone amp temperature with both ears into
   16 Ω at full level.
+- Supply source envelope is a bench/rig PSU or rig accessory jack
+  (DESIGN.md). If the box ever goes mobile: fuse instead of the PTC,
+  SMCJ-class TVS, pulse-rated bead, and the reverse Schottky's surge
+  rating revisited.
 - Bench: check TRRS mic↔phones crosstalk with a real headset before panel freeze;
   confirm the mute switching step is inaudible at full monitor level;
-  measure the power-on hold (~1 s) and the logic highs (≥ 6 V at every
+  measure the power-on hold (~1.3 s) and the logic highs (≥ 6 V at every
   TS12A12511 IN pin).
 
 - Line-out transformers T3301/T3302 are Triad TY-250P (20 Hz–20 kHz,

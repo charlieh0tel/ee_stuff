@@ -9,7 +9,8 @@ One 300 x 270 mm outline holding the three boards edge to edge, split by
 two V-score lines on the "V-CUT" user layer (fabs want them off
 Edge.Cuts so the outline stays one closed shape), each with a copper keepout
 rule area SCORE_KEEP either side on every copper layer -- every board is a
-rectangle, so no tabs or rails:
+rectangle, so no tabs or rails (the only cut-outs are the SJ-43514
+headset-jack notches on the front edge, placed from the jacks on the board):
 
     y   0 .. 50    FRONT board   (jack edge = panel top edge)
     y  50 .. 180   CONTROL board (sloped under the top panel)
@@ -41,6 +42,10 @@ PRO = os.path.join(KI, "tbox.kicad_pro")
 
 W = 300.0
 BOARDS = [("FRONT", 0.0, 50.0), ("CONTROL", 50.0, 180.0), ("REAR", 180.0, 270.0)]
+NOTCH_W, NOTCH_D = (
+    4.5,
+    1.3,
+)  # SJ-43514 edge notch, width x depth (Same Sky drawing rev 1.06)
 GROUP = "panel-frame"
 SCORE_KEEP = 1.0  # mm of copper-free margin each side of a V-score (fab-dependent; 0.8-1.5 typical)
 
@@ -134,7 +139,22 @@ def frame(board, pcbnew):
     V = (
         pcbnew.User_1
     )  # named "V-CUT" below; the outline itself must stay one closed shape
-    line(0, 0, W, 0, E)
+    # top edge, with the 4.5 x 1.3 mm notch the SJ-43514 headset jacks need
+    # (centred on each jack's axis, cut into the board; the drawing's
+    # "PCB edge notch"), at every such jack the board already carries
+    notches = sorted(
+        fp.GetPosition().x / 1e6
+        for fp in board.GetFootprints()
+        if "SJ-43514" in str(fp.GetFPID().GetLibItemName())
+    )
+    x = 0.0
+    for nx in notches:
+        line(x, 0, nx - NOTCH_W / 2, 0, E)
+        line(nx - NOTCH_W / 2, 0, nx - NOTCH_W / 2, NOTCH_D, E)
+        line(nx - NOTCH_W / 2, NOTCH_D, nx + NOTCH_W / 2, NOTCH_D, E)
+        line(nx + NOTCH_W / 2, NOTCH_D, nx + NOTCH_W / 2, 0, E)
+        x = nx + NOTCH_W / 2
+    line(x, 0, W, 0, E)
     line(W, 0, W, H, E)
     line(W, H, 0, H, E)
     line(0, H, 0, 0, E)

@@ -4214,6 +4214,17 @@
 				)
 			)
 		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 46.99 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 46.99 60.96 0)
 			(hide yes)
@@ -4547,6 +4558,17 @@
 			(at 184.15 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 184.15 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5818,6 +5840,17 @@
 				)
 			)
 		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 46.99 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 46.99 101.6 0)
 			(hide yes)
@@ -6128,6 +6161,17 @@
 			(at 184.15 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 184.15 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6528,6 +6572,17 @@
 			(at 184.15 87.63 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 184.15 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8547,6 +8602,17 @@
 				)
 			)
 		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 184.15 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
 			(at 184.15 71.12 0)
 			(hide yes)
@@ -8620,6 +8686,17 @@
 			(at 184.15 49.53 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 184.15 45.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9836,6 +9913,248 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/c3cb403c-327b-5002-84bd-6f3dda072e1b"
 					(reference "#PWR03222")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 114.3 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8633eecd-c7f7-41ef-8aed-27d988a48f96")
+		(property "Reference" "C3208"
+			(at 116.84 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 116.84 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 114.3 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 114.3 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "810c130a-d9bf-4ce9-9900-8235c4b7b713")
+		)
+		(pin "2"
+			(uuid "4a24c018-bd46-4db8-b25f-dc15200a957f")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/c3cb403c-327b-5002-84bd-6f3dda072e1b"
+					(reference "C3208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+9V")
+		(at 114.3 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bfbd06b6-07f4-40f2-8799-f62a6ff92965")
+		(property "Reference" "#PWR03240"
+			(at 116.84 134.62 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+9V"
+			(at 116.84 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 114.3 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "566fbca2-f598-4abe-be51-8bb91262ee1e")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/c3cb403c-327b-5002-84bd-6f3dda072e1b"
+					(reference "#PWR03240")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 114.3 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e53e4949-e9a2-4c71-a59e-b73a454cd92d")
+		(property "Reference" "#PWR03241"
+			(at 116.84 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 114.3 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "77083aff-9404-44cd-b709-37d7fe97478f")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/c3cb403c-327b-5002-84bd-6f3dda072e1b"
+					(reference "#PWR03241")
 					(unit 1)
 				)
 			)

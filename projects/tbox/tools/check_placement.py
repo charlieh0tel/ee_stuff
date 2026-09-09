@@ -17,6 +17,7 @@ Usage:
 Exit status 1 if anything is reported.
 """
 
+import math
 import os
 import subprocess
 import sys
@@ -29,6 +30,9 @@ BOARDS = {
     "Rear Board": (180.0, 270.0),
 }
 POWER = {"GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS"}
+
+
+JACK_REACH = 20.0  # mm, ESD array to the jack it clamps
 
 
 def main():
@@ -84,6 +88,40 @@ def main():
             problems.append(
                 f"net {n} spans {sorted(boards)} but ribbons reach only "
                 f"{sorted(reached)}: {sorted(refs)}"
+            )
+    # an ESD array must sit at the jack it protects: within JACK_REACH of a
+    # jack footprint sharing one of its input nets
+    fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
+    for ref, fp in fps.items():
+        if fp.GetValue() != "SP724":
+            continue
+        # the jack may be one series passive (bead, resistor) upstream
+        reach = set()
+        for pad in fp.Pads():
+            reach.add(pad.GetNetname())
+            for r in nets.get(pad.GetNetname(), ()):
+                if len(fps[r].Pads()) == 2:
+                    reach.update(p.GetNetname() for p in fps[r].Pads())
+        jacks = {
+            r
+            for n in reach
+            for r in nets.get(n, ())
+            if "Jack" in str(fps[r].GetFPID().GetLibItemName())
+        }
+        if not jacks:
+            problems.append(f"{ref}: SP724 with no jack on any of its input nets")
+            continue
+        d = min(
+            math.hypot(
+                (fp.GetPosition().x - fps[j].GetPosition().x) / 1e6,
+                (fp.GetPosition().y - fps[j].GetPosition().y) / 1e6,
+            )
+            for j in jacks
+        )
+        if d > JACK_REACH:
+            problems.append(
+                f"{ref}: SP724 is {d:.1f} mm from its nearest jack "
+                f"({sorted(jacks)}), limit {JACK_REACH:g}"
             )
     for p in problems:
         print(p)

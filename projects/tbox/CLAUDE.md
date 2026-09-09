@@ -90,6 +90,11 @@
   sheet path and panel parts from `panel-*.svg`;
   `tools/place_decoupling.py` then puts each decoupling cap on the power
   pin of the IC it is drawn beside (regulators get their bulk caps first).
+  Parts that must sit at a panel jack (the SP724 arrays and their 100n)
+  are listed in `place_panel.py`'s `ATTACH` table and placed from the
+  jack; `check_placement.py` fails an array more than 20 mm from a jack
+  on its input nets. `setup_pcb.py` cuts the SJ-43514 edge notches
+  wherever those jacks sit on the board.
   Both keep every part inside its own board's band; `tools/check_placement.py`
   proves it on the placed board and that no net crosses a V-score except
   through a ribbon connector — run it with DRC. The frame carries a copper

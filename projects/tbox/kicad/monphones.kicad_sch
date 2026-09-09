@@ -10638,4 +10638,440 @@
 		)
 		(uuid "2b0655b1-cfe4-4ffa-962d-609973bbdc04")
 	)
+	(symbol
+		(lib_id "Device:R")
+		(at 76.2 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "23cd863e-a20c-4388-8efa-a011efd2ed6c")
+		(property "Reference" "R2425"
+			(at 78.74 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 78.74 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 76.2 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "e7dbc965-1a0d-4b72-8bb6-33191ab34bac")
+		)
+		(pin "2"
+			(uuid "8e3b69b7-c520-4d63-8c77-15e1865de710")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "R2425")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 76.2 119.38) (xy 76.2 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aff421d9-8750-4ac2-98b4-9fd3afbedf40")
+	)
+	(junction
+		(at 76.2 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8211e5bb-d9f0-44ab-94c2-7299606ca110")
+	)
+	(global_label "VREF"
+		(shape input)
+		(at 76.2 111.76 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "533fc7ba-c197-4d92-bc2b-427435075bc2")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 76.2 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8000d1c5-fe3a-4f61-b73c-7d0351720efc")
+		(property "Reference" "R2426"
+			(at 78.74 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 78.74 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 76.2 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 76.2 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "b1e2e56c-2c15-47dd-bfbd-8af81ad15dd0")
+		)
+		(pin "2"
+			(uuid "fabfb144-8b3a-465c-a61e-e321ed4874b9")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "R2426")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 76.2 147.32) (xy 76.2 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce6b7e34-d876-4942-aaf7-ccdb17a6b221")
+	)
+	(junction
+		(at 76.2 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7648d90d-2e9e-497a-b371-f679634c68fb")
+	)
+	(global_label "VREF"
+		(shape input)
+		(at 76.2 139.7 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "74e6a870-6ae5-4a6c-8965-f5173b988f1e")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 218.44 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "84020f04-320d-4143-9d34-d6fdd6d0b6a7")
+		(property "Reference" "R2427"
+			(at 220.98 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 220.98 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 218.44 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 115.57 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "2ad9447d-a475-467d-b279-525031147195")
+		)
+		(pin "2"
+			(uuid "6ebda2dd-7f3c-4eee-9f22-9b394d85f912")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "R2427")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 218.44 119.38) (xy 218.44 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bde7fd0-b392-424e-bba3-ccc06cb40fd0")
+	)
+	(junction
+		(at 218.44 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7a6a7c97-a434-45a6-9630-9cb7c9e1551b")
+	)
+	(global_label "VREF"
+		(shape input)
+		(at 218.44 111.76 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4691ad5f-1bbe-45d7-87da-856f1cc359e4")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 218.44 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bbd03aa6-9ac2-4e52-a98b-1cbf923023f6")
+		(property "Reference" "R2428"
+			(at 220.98 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 220.98 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 218.44 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 143.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "4a67d5db-73fd-4e55-ac12-c62fb68481b1")
+		)
+		(pin "2"
+			(uuid "25273ba8-af76-47cc-8f85-17eb21d42f7c")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "R2428")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 218.44 147.32) (xy 218.44 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0eb22bd0-e199-4840-af80-bfbe42eeb045")
+	)
+	(junction
+		(at 218.44 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "76a60af6-4867-4a13-a532-e1670505a548")
+	)
+	(global_label "VREF"
+		(shape input)
+		(at 218.44 139.7 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6ecdf063-0cf9-4786-aaeb-4f56a96c7410")
+	)
 )

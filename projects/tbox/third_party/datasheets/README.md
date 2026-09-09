@@ -11,6 +11,7 @@ board. Fetched 2026-09-08 unless noted.
 | ADI_ADP7142.pdf | ADP7142AUJZ-5.0 (U2501, BIAS_5V) | analog.com via web.archive.org (site blocks scripted fetches) |
 | Bourns_3386.pdf | 3386W-1-103LF trims (RV33xx, RV34xx) | bourns.com |
 | Bourns_SMAJ.pdf | SMAJ15A / SMAJ15CA TVS (rear I/O) | bourns.com (Littelfuse site blocks scripted fetches; same JEDEC part) |
+| Murata_BLM21PG.pdf | BLM21PG601SN1D beads (all FBxxxx: 600 Ω, 1.4 A, 0.14 Ω) | murata.com (ENFA0005 spec sheet) |
 | Bourns_SMBJ.pdf | SMBJ18A TVS (D2502, supply input) | bourns.com (as above) |
 | CK_7000-series_toggles.pdf | 7101MD9AV2BE rear toggles, 7201MD9V6BE override | ckswitches.com (fetched 2026-09-04) |
 | CK_PVA.pdf | PVA1EEH2 / PVA1OAH2 pushbuttons (SW21xx, SW2201) | ckswitches.com via web.archive.org |

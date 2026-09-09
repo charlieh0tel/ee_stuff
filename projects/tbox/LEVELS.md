@@ -21,9 +21,9 @@ filter buys ~8 dB beyond these figures.
 |---|---|---|---|
 | Mic jack, dynamic | -57 dBV | -42 | HI range; Heil HC-6/HC-7 spec |
 | Mic jack, electret | -45 dBV | -30 | LO range; OHIS/CMC-9745/Heil iC class |
-| Mic jack, powered desk mic | -28 dBV | -13 | LO range, level pot low; SM-30 class (reference only — Icom powered mics unsupported) |
+| Mic jack, powered desk mic | -28 dBV | -13 | **Out of scope**: SM-30 class (Icom powered mics unsupported anyway); at LO its peaks reach +12…+15 dBV and clip the preamp ahead of the level pot — use an in-line 10 dB pad |
 | Preamp out | ~-17 dBV | ~-2 | HI +40 dB / LO +28 dB (stage 1 +27.7 dB, stage 2 +12.1 dB; LO reaches nominal from a -45 dBV electret, HI from a -57 dBV dynamic; 8 dB peak margin to clip) |
-| Mute node | -16.7 dBV | | 2k2 fade resistor into the 10k pot: -1.7 dB insertion; mute depth >70 dB (see below) |
+| Mute node | -17.2 dBV | | 220R fade resistor into the 10k pot: -0.2 dB insertion; mute depth >70 dB (see below) |
 | Level pot (design center) | -21 dBV | | 10k audio taper, ~-4 dB nominal |
 | Summing amp / TX MIX bus | -15 dBV | ~0 | +6 dB makeup |
 | Mic out, MIC mode | -46 dBV (5 mV) | | +5 dB driver then -26 dB pad (~690 Ω source incl. the DE-9 series R); rear trim used range -20…0 dB ahead of the driver, nominal at -10 dB |
@@ -32,15 +32,23 @@ filter buys ~8 dB beyond these figures.
 **Mute depth:** the TS12A12511 SPDT opens the signal path and clamps
 the node to Vref in one move (series + shunt): off isolation is -70 dB
 at 1 MHz and better at audio. Ahead of it the 2N7002 shunt pair fades
-the node over ~5 ms (2k2 against ~6 Ω on: -51 dB) before the switch
-moves, so the switching step is the residual after the fade, not the
-instantaneous signal; the op-amp offset (≤4 mV) is the floor. Target:
-no audible click at full monitor level — a bench item, not a claim.
+the node over ~5 ms (220R against two ~4 Ω channels at the ~3.5 V of
+gate drive available above Vref: about -29 dB; the 2N7002 Rds(on) is
+only specified at 5 and 10 V, so this is an estimate) before the
+switch moves, so the switching step is the residual after the fade,
+not the instantaneous signal; the op-amp offset (≤4 mV) is the floor.
+On release the switch reconnects under the shunt and the fade-in
+follows (~50 ms). Target: no audible click at full monitor level — a
+bench item, not a claim. The intercom instance drives TX_MIX through
+the same 220R: 0.2–0.55 dB loss depending on how many 10k trims the
+line-out jumpers hang on it.
 
 **Gain range coverage:** with the level pot's reach (0…-∞ dB, design
-center -4 dB), LO covers roughly -50…-25 dBV sources (a -25 dBV source
-peaks at +3 dBV out of the stage, 6 dB below clip), HI covers
--65…-45 dBV. Overlap at -50…-45, no gap. The unselected stage still runs; in LO mode
+center -4 dB), LO covers roughly -50…-32 dBV sources (a -32 dBV source
+with a 15 dB crest factor peaks at +11 dBV out of the stage, at clip),
+HI covers -65…-45 dBV. Overlap at -50…-45, no gap. Hotter sources
+(-28 dBV powered desk mics) are out of scope: the pot is after the
+clip point, so they need an in-line pad. The unselected stage still runs; in LO mode
 with a hot electret it clips off-path (harmless but worth knowing on the
 bench).
 

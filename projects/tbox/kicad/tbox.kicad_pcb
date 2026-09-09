@@ -95051,13 +95051,13 @@
 	)
 	(gr_line
 		(start 0 0)
-		(end 300 0)
+		(end 72.8375 0)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "b1ca9fe8-3422-477e-9989-101abd20df3f")
+		(uuid "c846d0fe-5c92-4901-9e78-c7c260196e9d")
 	)
 	(gr_line
 		(start 0 270)
@@ -95067,7 +95067,87 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "568c0c4e-c69d-4036-8213-fde45903cc54")
+		(uuid "7d874aa9-2cfe-44ce-b15e-cebdbecbd7ca")
+	)
+	(gr_line
+		(start 72.8375 0)
+		(end 72.8375 1.3)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "1a3acb76-596d-4965-a928-1c822673de0d")
+	)
+	(gr_line
+		(start 72.8375 1.3)
+		(end 77.3375 1.3)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "b38b5787-baf5-4289-8035-5e44e5ca8ae1")
+	)
+	(gr_line
+		(start 77.3375 0)
+		(end 222.8375 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "440d2044-1c84-407c-8550-f9d5e4d8ef67")
+	)
+	(gr_line
+		(start 77.3375 1.3)
+		(end 77.3375 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c22b2ff0-b749-4b11-8036-d91a29546ff2")
+	)
+	(gr_line
+		(start 222.8375 0)
+		(end 222.8375 1.3)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "beb44260-1bc4-494e-9a97-885168b3c4fd")
+	)
+	(gr_line
+		(start 222.8375 1.3)
+		(end 227.3375 1.3)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "45c02321-04c6-4787-ba35-e34c39fd06cb")
+	)
+	(gr_line
+		(start 227.3375 0)
+		(end 300 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "0f468fbe-b378-434b-8528-26bb6397cb53")
+	)
+	(gr_line
+		(start 227.3375 1.3)
+		(end 227.3375 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c57ed4b3-a588-4a51-8658-db231e53e7e6")
 	)
 	(gr_line
 		(start 300 0)
@@ -95077,7 +95157,7 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "64d3ddb9-ffde-4ac4-98b0-842a007fe56f")
+		(uuid "3e5a4f54-ead2-40b1-82d1-1bb2a239f265")
 	)
 	(gr_line
 		(start 300 270)
@@ -95087,7 +95167,7 @@
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "aec57788-a756-43f6-9bd0-d4db94202464")
+		(uuid "b2df45f1-24b7-4a95-8de4-a31db769583b")
 	)
 	(gr_line
 		(start -5 50)
@@ -95097,7 +95177,7 @@
 			(type default)
 		)
 		(layer "User.1")
-		(uuid "d2346a4c-5c2c-4f99-add5-dbf7f30e63d3")
+		(uuid "611e1689-0b17-4beb-8dcf-30a4eb905282")
 	)
 	(gr_line
 		(start -5 180)
@@ -95107,12 +95187,12 @@
 			(type default)
 		)
 		(layer "User.1")
-		(uuid "baebdcec-9103-460b-a316-5eefc83b2e30")
+		(uuid "f1388209-21cc-4da2-9c1b-fd4f180ac7f5")
 	)
 	(gr_text "panel edge / jacks"
 		(at 150 6 0)
 		(layer "Cmts.User")
-		(uuid "d1b5bebc-c2a1-459b-8f05-1b17e79d9244")
+		(uuid "3aeb740d-58e6-4400-82f9-79e3f46d1534")
 		(effects
 			(font
 				(size 2 2)
@@ -95123,7 +95203,7 @@
 	(gr_text "top panel above"
 		(at 150 174 0)
 		(layer "Cmts.User")
-		(uuid "21ee66b5-5eef-4383-b8ff-3bee94189603")
+		(uuid "7107082c-75c1-4d7e-8b85-e1d32823f06d")
 		(effects
 			(font
 				(size 2 2)
@@ -95134,7 +95214,7 @@
 	(gr_text "panel edge / jacks"
 		(at 150 264 0)
 		(layer "Cmts.User")
-		(uuid "6398573b-ca95-4cdc-89db-cecc8e471ff4")
+		(uuid "844ae5ec-ef5d-451d-b9ac-532e07613a2a")
 		(effects
 			(font
 				(size 2 2)
@@ -95145,7 +95225,7 @@
 	(gr_text "TBox panel: 300 x 270, 4-layer 1.6 mm, two V-scores; snap apart into FRONT / CONTROL / REAR"
 		(at 6 -4 0)
 		(layer "Cmts.User")
-		(uuid "f177f6fb-b10b-4eb6-9457-f67bbd15662d")
+		(uuid "a9b53053-2c3c-4c5e-b528-70560c52783a")
 		(effects
 			(font
 				(size 2.5 2.5)
@@ -95156,7 +95236,7 @@
 	(gr_text "TBOX FRONT BOARD  rev 0.2  (300 x 50)"
 		(at 150 25 0)
 		(layer "Cmts.User")
-		(uuid "8119c429-e571-4116-8712-7a3d94d5414b")
+		(uuid "8c95e0c7-1c23-42f5-87ec-692fe1efeea2")
 		(effects
 			(font
 				(size 4 4)
@@ -95167,7 +95247,7 @@
 	(gr_text "TBOX CONTROL BOARD  rev 0.2  (300 x 130)"
 		(at 150 115 0)
 		(layer "Cmts.User")
-		(uuid "feda3f10-978f-46c4-bde4-0e933baf5622")
+		(uuid "be438e1d-6499-499d-8fae-eb222cebf39d")
 		(effects
 			(font
 				(size 4 4)
@@ -95178,7 +95258,7 @@
 	(gr_text "TBOX REAR BOARD  rev 0.2  (300 x 90)"
 		(at 150 225 0)
 		(layer "Cmts.User")
-		(uuid "a647240c-6580-4993-9a03-aab2675e8b25")
+		(uuid "038e2e3a-6a23-49b0-8ee7-a3b3a0e7b60b")
 		(effects
 			(font
 				(size 4 4)
@@ -95189,7 +95269,7 @@
 	(gr_text "V-CUT y=50"
 		(at 150 47.5 0)
 		(layer "User.1")
-		(uuid "27e0b92d-402b-4cb3-adb1-217c4fdd31c4")
+		(uuid "b162cffa-9726-4879-a10a-a9be30448dbc")
 		(effects
 			(font
 				(size 2 2)
@@ -95200,7 +95280,7 @@
 	(gr_text "V-CUT y=180"
 		(at 150 177.5 0)
 		(layer "User.1")
-		(uuid "7dbcc9a6-ab28-4159-b485-d895571e78ed")
+		(uuid "12bbba62-dafc-4785-9c3a-b2ffda7504ad")
 		(effects
 			(font
 				(size 2 2)
@@ -95210,7 +95290,7 @@
 	)
 	(zone
 		(layers "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
-		(uuid "86f2a444-c091-4390-8a6d-6e357a320a53")
+		(uuid "0dbec5ff-412e-4814-8140-c041e0a3cbae")
 		(name "V-CUT keepout y=180")
 		(hatch edge 0.5)
 		(connect_pads
@@ -95241,7 +95321,7 @@
 	)
 	(zone
 		(layers "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
-		(uuid "ac86bf73-f37d-4b4d-a15f-c37b16a809bc")
+		(uuid "1f84415e-4e62-4243-bd82-58ada7744d02")
 		(name "V-CUT keepout y=50")
 		(hatch edge 0.5)
 		(connect_pads
@@ -95271,16 +95351,20 @@
 		)
 	)
 	(group "panel-frame"
-		(uuid "78d4fd9b-a459-4626-8ae6-beaf666fca85")
-		(members "21ee66b5-5eef-4383-b8ff-3bee94189603" "27e0b92d-402b-4cb3-adb1-217c4fdd31c4"
-			"568c0c4e-c69d-4036-8213-fde45903cc54" "6398573b-ca95-4cdc-89db-cecc8e471ff4"
-			"64d3ddb9-ffde-4ac4-98b0-842a007fe56f" "7dbcc9a6-ab28-4159-b485-d895571e78ed"
-			"8119c429-e571-4116-8712-7a3d94d5414b" "86f2a444-c091-4390-8a6d-6e357a320a53"
-			"a647240c-6580-4993-9a03-aab2675e8b25" "ac86bf73-f37d-4b4d-a15f-c37b16a809bc"
-			"aec57788-a756-43f6-9bd0-d4db94202464" "b1ca9fe8-3422-477e-9989-101abd20df3f"
-			"baebdcec-9103-460b-a316-5eefc83b2e30" "d1b5bebc-c2a1-459b-8f05-1b17e79d9244"
-			"d2346a4c-5c2c-4f99-add5-dbf7f30e63d3" "f177f6fb-b10b-4eb6-9457-f67bbd15662d"
-			"feda3f10-978f-46c4-bde4-0e933baf5622"
+		(uuid "b9ab879f-151c-4e5e-87aa-27748bdbd69c")
+		(members "038e2e3a-6a23-49b0-8ee7-a3b3a0e7b60b" "0dbec5ff-412e-4814-8140-c041e0a3cbae"
+			"0f468fbe-b378-434b-8528-26bb6397cb53" "12bbba62-dafc-4785-9c3a-b2ffda7504ad"
+			"1a3acb76-596d-4965-a928-1c822673de0d" "1f84415e-4e62-4243-bd82-58ada7744d02"
+			"3aeb740d-58e6-4400-82f9-79e3f46d1534" "3e5a4f54-ead2-40b1-82d1-1bb2a239f265"
+			"440d2044-1c84-407c-8550-f9d5e4d8ef67" "45c02321-04c6-4787-ba35-e34c39fd06cb"
+			"611e1689-0b17-4beb-8dcf-30a4eb905282" "7107082c-75c1-4d7e-8b85-e1d32823f06d"
+			"7d874aa9-2cfe-44ce-b15e-cebdbecbd7ca" "844ae5ec-ef5d-451d-b9ac-532e07613a2a"
+			"8c95e0c7-1c23-42f5-87ec-692fe1efeea2" "a9b53053-2c3c-4c5e-b528-70560c52783a"
+			"b162cffa-9726-4879-a10a-a9be30448dbc" "b2df45f1-24b7-4a95-8de4-a31db769583b"
+			"b38b5787-baf5-4289-8035-5e44e5ca8ae1" "be438e1d-6499-499d-8fae-eb222cebf39d"
+			"beb44260-1bc4-494e-9a97-885168b3c4fd" "c22b2ff0-b749-4b11-8036-d91a29546ff2"
+			"c57ed4b3-a588-4a51-8658-db231e53e7e6" "c846d0fe-5c92-4901-9e78-c7c260196e9d"
+			"f1388209-21cc-4da2-9c1b-fd4f180ac7f5"
 		)
 	)
 	(embedded_fonts no)

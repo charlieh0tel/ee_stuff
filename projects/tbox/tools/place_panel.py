@@ -122,6 +122,23 @@ ANCHOR = {
     "Rear Board/RX In": (140, 234),
     "Rear Board": (260, 190),
 }
+# parts that belong directly behind a panel jack: ref -> (jack, dx, dy) in board mm.
+# The ESD arrays and their bypass must sit at the jack so the discharge loop
+# (jack pin, array, GND, tie, chassis) is short; check_placement.py enforces 20 mm.
+ATTACH = {
+    "U1103": ("J1103", -3.0, 15.5),  # mic-jack contacts, headset A
+    "C1110": ("J1103", 1.5, 15.5),
+    "U1104": ("J1103", -3.0, 19.5),  # phones lines, headset A
+    "C1111": ("J1103", 1.5, 19.5),
+    "U1303": ("J1303", -3.0, 15.5),
+    "C1310": ("J1303", 1.5, 15.5),
+    "U1304": ("J1303", -3.0, 19.5),
+    "C1311": ("J1303", 1.5, 19.5),
+    "U1001": ("J1001", -3.0, 15.5),  # phones lines at the dedicated phones jacks
+    "C1007": ("J1001", 1.5, 15.5),
+    "U3201": ("J3201", -3.0, -16.0),  # PTT jack lines, rear
+    "C3208": ("J3201", 1.5, -16.0),
+}
 COHESION = (
     0.15  # weight of the cluster anchor vs. the connection centroid in refinement
 )
@@ -337,6 +354,21 @@ def main():
             if fp.GetPosition() == pcbnew.VECTOR2I(0, 0) or args.all:
                 free.setdefault((top, sheet.strip("/")), []).append(fp)
             continue
+        anchored.add(ref)
+        placed += 1
+
+    # parts tied to a jack: placed from the jack's position, never free
+    for ref, (jref, dx, dy) in ATTACH.items():
+        fp = board.FindFootprintByReference(ref)
+        jack = board.FindFootprintByReference(jref)
+        if fp is None or jack is None:
+            continue
+        for lst in free.values():
+            if fp in lst:
+                lst.remove(fp)
+        fp.SetOrientationDegrees(0)
+        jp = jack.GetPosition()
+        fp.SetPosition(pcbnew.VECTOR2I(jp.x + mm(dx), jp.y + mm(dy)))
         anchored.add(ref)
         placed += 1
 

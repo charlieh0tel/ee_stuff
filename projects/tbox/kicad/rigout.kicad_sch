@@ -4395,28 +4395,6 @@
 	)
 	(global_label "VREF"
 		(shape input)
-		(at 73.66 157.48 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "538d6fd4-e8ea-5424-8e93-894c95ad82c8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.66 157.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "VREF"
-		(shape input)
 		(at 179.07 151.13 180)
 		(effects
 			(font
@@ -4770,6 +4748,17 @@
 			(at 262.89 104.95 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 262.89 107.95 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7127,6 +7116,17 @@
 			(at 262.89 135.43 90)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG601SN1D"
+			(at 262.89 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10292,16 +10292,6 @@
 		)
 		(uuid "a8d53a9a-eacb-4623-9367-7977fbdfa775")
 	)
-	(label "BLEND_SUM"
-		(at 73.66 162.56 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7b9432c5-a9c8-4491-a792-40f4697536b8")
-	)
 	(wire
 		(pts
 			(xy 91.44 160.02) (xy 93.98 160.02)
@@ -10404,16 +10394,6 @@
 			)
 		)
 	)
-	(label "BLEND_SUM"
-		(at 80.01 172.72 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5a8b7e32-bb29-4530-a85e-3c99857da674")
-	)
 	(label "BLEND"
 		(at 87.63 172.72 0)
 		(effects
@@ -10505,16 +10485,6 @@
 				)
 			)
 		)
-	)
-	(label "BLEND_SUM"
-		(at 80.01 180.34 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d420a8a0-e969-4397-a87c-58b4f8cb3dc4")
 	)
 	(label "BLEND"
 		(at 87.63 180.34 0)
@@ -10783,5 +10753,148 @@
 			(justify left bottom)
 		)
 		(uuid "2ad7644f-8766-49fe-8384-04e48fb85192")
+	)
+	(label "BLEND_SUM"
+		(at 73.66 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3dc204c0-fe78-487e-a83d-f8230837be9e")
+	)
+	(label "BLEND_FB"
+		(at 73.66 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "283f3aaa-54c4-4071-b710-04859814225e")
+	)
+	(label "BLEND_FB"
+		(at 80.01 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6db4a081-e3dc-41e5-9b00-5f37ef205c4e")
+	)
+	(label "BLEND_FB"
+		(at 80.01 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d9ecf2e2-ce76-4130-b98b-86f93bde6d4d")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 83.82 187.96 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c39348a1-db62-425a-8d7e-a4879f20e1c0")
+		(property "Reference" "R3319"
+			(at 86.36 185.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22k"
+			(at 86.36 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 83.82 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 187.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "9cb325c2-ae75-4768-a326-a18c8cf0e411")
+		)
+		(pin "2"
+			(uuid "6efdac37-4923-48e8-b5ed-f11bdc795f9b")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7"
+					(reference "R3319")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BLEND_FB"
+		(at 80.01 187.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9f0d6b10-fb12-49a0-80c8-02498c893004")
+	)
+	(global_label "VREF"
+		(shape input)
+		(at 87.63 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c443bb7a-0951-4161-a9ba-28415a98039c")
 	)
 )

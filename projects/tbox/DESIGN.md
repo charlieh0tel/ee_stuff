@@ -84,19 +84,28 @@ Two identical, physically grouped channel sections (A and B). Each has:
   at Vref and the load returns to Vref, so the switching step is only the
   op-amp offset (a few mV). That is only true at a zero crossing: a
   hard switch mid-waveform steps by the instantaneous signal (up to
-  ~1.4 V at 0 dBV), so the mute now **fades first**: a 2k2 series
-  resistor and a back-to-back 2N7002 pair shunting the node to Vref,
-  gate ramped by 47k/100n (~5 ms); the SPDT follows ~30 ms later
-  (100k/1u, diode-discharged so release is immediate and the fade-in
-  runs the other way). Insertion loss of the 2k2 into the 10k pot is
-  ~1.7 dB (LEVELS.md). A JFET series+shunt pair was the first design;
+  ~1.4 V at 0 dBV), so the mute now **fades first**: a 220R series
+  resistor and a back-to-back 2N7002 pair shunting the node to Vref
+  (about -29 dB with the ~3.5 V of gate drive the Vref-referenced
+  sources allow), then the SPDT opens ~30 ms later. Every timing node
+  has a defined source and sink: `MUTE` is a diode-OR of source-only
+  drivers with a 100k pull-down, and nothing discharges through it.
+  Mute: `MUTE` charges the fade gate through D1201/47k into 100n
+  (~5 ms), and 100k/1u ramps the switch control. Unmute: a 2N7002
+  inverter (Q1203, 100k pull-up) drives a second 2N7002 (Q1204) that
+  pulls the switch control hard to ground, so the SPDT reconnects
+  within microseconds while the shunt still holds; the fade gate then
+  bleeds off through 470k (~50 ms) and the audio fades in. Insertion
+  loss of the 220R into the 10k pot is 0.2 dB, and the same value in
+  the intercom instance keeps the TX_MIX level within 0.3 dB whatever
+  the line-out source jumpers select (LEVELS.md). A JFET series+shunt pair was the first design;
   at 9 V single-supply a worst-case J113 (|Vgs(off)| = 3 V) is neither
   fully off at 0 dBV peaks when muted nor fully off when unmuted, so it
   was dropped. Override mute uses the same circuit, triggered
   electrically. The mute is one shared sub-sheet (`kicad/mute.kicad_sch`,
   pins IN / OUT / MUTE) instantiated in each preamp and once more for the
   intercom; the supply supervisor (below) holds both channels muted until
-  +9 V has been valid for ~1 s.
+  +9 V has been valid for ~1.3 s.
 - **Channel level pot** into the TX mix bus.
 - **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure.
 - **Round-plug ham mics** (Yaesu/Kenwood/Icom/Elecraft 8-pin Foster)
@@ -136,10 +145,13 @@ Two identical, physically grouped channel sections (A and B). Each has:
   (two 600 Ω 1:1) to break the inevitable sound-card ground loop.
   Per-side source jumpers: RX L, RX R, RX blend, or TX mix. Levels via
   rear trims. TX tap is post-mute (recordings reflect what went out).
-  BLEND is an inverting summer on the spare half of U3301 (22k in, 22k
-  feedback: one -15 dBV source gives -15 dBV, both in phase +6 dB), so
-  jumpering it onto one or both sides loads nothing and the two sides
-  don't interact. The isolated secondaries return to the jack sleeve
+  BLEND is a non-inverting summer on the spare half of U3301: 22k from
+  each bus into the + input (a passive average) and a 22k/22k gain of
+  2, so one -15 dBV source gives -15 dBV, both in phase +6 dB, and
+  BLEND is in phase with the RX L / RX R selections (a downstream mono
+  mix of BLEND on one side and a single channel on the other adds,
+  never cancels). Jumpering it onto one or both sides loads nothing and
+  the two sides don't interact. The isolated secondaries return to the jack sleeve
   (`LOUT_RET`), never to signal ground, carry a DC block against
   sound-card plug-in power, and each has an SMAJ15CA across it to the
   sleeve so a hot-plugged sound card cannot punch through the isolation
@@ -186,6 +198,18 @@ Two identical, physically grouped channel sections (A and B). Each has:
   headphone amps are disabled through their EN pins. Nothing keys or
   passes audio until the rail is valid; a brown-out re-asserts all of
   it at the threshold rather than at whatever an RC happened to think.
+  The key inhibit shares `MUTE_HOLD` with the audio hold, whose 100k
+  pull-up also charges the mute cells, so after a brown-out Q2109 gets
+  its gate drive 15–35 ms after `PWR_OK` falls. Accepted: the operator
+  is already keyed when that happens and the rig cannot tell 30 ms of
+  extra key time from the operator's own release.
+  Each OPA1622 output node carries a 1k to Vref so the 470 µF phones
+  coupling caps charge through 1k + phones (a few mA, ~70 mV peak into
+  16 Ω) during the hold while the amplifier is still disabled; at
+  enable the output is already at Vref and there is no step into the
+  cap. The disabled output is not high-impedance (TI: a signal on it
+  can parasitically power the output stage), so the 4.5 mA the 1k can
+  supply is a bench check item.
 - Control lines (`MUTE_A/B`, `PTT_ACTIVE`, `IC_MUTE`) are DC logic,
   0 V / +9 V, active high. `PTT_ACTIVE` is high while the rig PTT output
   is asserted and gates the intercom.
@@ -340,7 +364,15 @@ board, so panel holes sit at per-part heights along one row.
   clamp array sit on this board at the jacks; the 3.5 mm mic jack's
   tip carries the mic and both tip and ring carry electret bias through
   2k2, so TS plugs, TRS plugs and PC headsets that expect ring bias all
-  work; every mic-jack contact has an SP724 clamp to +9 V/GND.
+  work; every mic-jack contact has an SP724 clamp to +9 V/GND, and the
+  mic RF caps (1 n on tip and ring) return to CHASSIS like the phones
+  ones. The clamps reference the op-amp rails because they bound the
+  op-amp inputs; continuous RF goes to chassis through the sleeves and
+  the RF caps, the arrays only carry the nanosecond ESD event. Each
+  array has its own 100n and `tools/place_panel.py` puts it directly
+  behind its jack (`ATTACH`), so the discharge loop is jack pin, array,
+  GND, tie, chassis in a few millimetres; `check_placement.py` fails an
+  array more than 20 mm from a jack on its input nets.
 - **Control board** sloped under the top panel: the **supply** (power
   entry filter, TPS7A4701, ADP7142, VREF buffer — moved here from the
   rear board because nothing ties it to the rear panel once the
@@ -379,7 +411,16 @@ board, so panel holes sit at per-part heights along one row.
 - Input protection is the PTC (0.5 A hold), the series Schottky and the
   TVS on the control board; they protect the board. The pigtail and the
   supply cable are protected by the shack's fused distribution panel —
-  the box assumes one and does not carry an inline fuse.
+  the box assumes one and does not carry an inline fuse. **Source
+  envelope:** a bench or rig supply, or a rig accessory jack, at
+  13.8 V nominal, fused at the source at a few amps, never a vehicle
+  battery — so there is no load dump and the prospective fault current
+  is bounded by the source fuse, inside the PTC's 10 A maximum. The
+  SMBJ18A sits on the node after the Schottky and ahead of the ferrite
+  bead (BLM21PG601, 1.4 A) so surge current never crosses the bead,
+  and reverse polarity is blocked by the Schottky before it can
+  forward-bias the TVS. Mobile use would need a fuse instead of the
+  PTC, an SMCJ-class TVS and a pulse-rated bead (TODO.md).
 - Board-to-board headers are out (the control board meets the others at
   an angle); rigid-flex was priced out; FFC/FPC rejected for current and
   robustness.
