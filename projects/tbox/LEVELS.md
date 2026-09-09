@@ -22,8 +22,8 @@ filter buys ~8 dB beyond these figures.
 | Mic jack, dynamic | -57 dBV | -42 | HI range; Heil HC-6/HC-7 spec |
 | Mic jack, electret | -45 dBV | -30 | LO range; OHIS/CMC-9745/Heil iC class |
 | Mic jack, powered desk mic | -28 dBV | -13 | LO range, level pot low; SM-30 class (reference only — Icom powered mics unsupported) |
-| Preamp out | ~-17 dBV | ~-2 | HI +40 dB / LO +20 dB (two +20 dB stages; 8 dB peak margin to clip) |
-| Mute node | -15 dBV | | ≤0.1 dB insertion (Ron ~5 Ω into 10k); mute depth >70 dB (see below) |
+| Preamp out | ~-17 dBV | ~-2 | HI +40 dB / LO +28 dB (stage 1 +27.7 dB, stage 2 +12.1 dB; LO reaches nominal from a -45 dBV electret, HI from a -57 dBV dynamic; 8 dB peak margin to clip) |
+| Mute node | -16.7 dBV | | 2k2 fade resistor into the 10k pot: -1.7 dB insertion; mute depth >70 dB (see below) |
 | Level pot (design center) | -21 dBV | | 10k audio taper, ~-4 dB nominal |
 | Summing amp / TX MIX bus | -15 dBV | ~0 | +6 dB makeup |
 | Mic out, MIC mode | -46 dBV (5 mV) | | +5 dB driver then -26 dB pad (~690 Ω source incl. the DE-9 series R); rear trim used range -20…0 dB ahead of the driver, nominal at -10 dB |
@@ -31,13 +31,16 @@ filter buys ~8 dB beyond these figures.
 
 **Mute depth:** the TS12A12511 SPDT opens the signal path and clamps
 the node to Vref in one move (series + shunt): off isolation is -70 dB
-at 1 MHz and better at audio. The residual is the switching step, which
-is the driving op-amp's offset (≤4 mV, ~-48 dBV, 33 dB below nominal)
-applied once — not a tone.
+at 1 MHz and better at audio. Ahead of it the 2N7002 shunt pair fades
+the node over ~5 ms (2k2 against ~6 Ω on: -51 dB) before the switch
+moves, so the switching step is the residual after the fade, not the
+instantaneous signal; the op-amp offset (≤4 mV) is the floor. Target:
+no audible click at full monitor level — a bench item, not a claim.
 
-**Gain range coverage:** with the level pot's reach (±10 dB around design
-center), LO covers roughly -50…-25 dBV sources, HI covers -65…-45 dBV.
-Overlap at -50…-45, no gap. The unselected stage still runs; in LO mode
+**Gain range coverage:** with the level pot's reach (0…-∞ dB, design
+center -4 dB), LO covers roughly -50…-25 dBV sources (a -25 dBV source
+peaks at +3 dBV out of the stage, 6 dB below clip), HI covers
+-65…-45 dBV. Overlap at -50…-45, no gap. The unselected stage still runs; in LO mode
 with a hot electret it clips off-path (harmless but worth knowing on the
 bench).
 
@@ -51,13 +54,16 @@ bench).
 | RX bus (per side) | -15 dBV | |
 | Monitor injection | up to -15 dBV | monitor pot (buffered): off → equal to RX |
 | Mix node (per ear) | -24.5 dBV per source | passive mix into the volume gang (-9.5 dB) |
-| Headphone amp out, max | -0.4 dBV open | +24 dB after the volume pot; 10 Ω build-out |
+| Headphone amp out, max | -0.4 dBV open | +24 dB after the volume pot; 3R3 build-out |
 
-**Headphone power:** 0.955 Vrms open through the 10 Ω build-out gives
-~17 mW into 32 Ω and ~22 mW into 16 Ω — meets the ≥20 mW/16 Ω spec for
-one headset per position; three paralleled 16 Ω headsets current-limit
-at ~4 mW each. Requires a 9 V-capable driver (NJM4556A); LM4880/TPA6112-
-class parts are 5.5 V max and are out.
+**Headphone power:** 0.955 Vrms open through the 3R3 build-out gives
+0.79 Vrms / ~39 mW into 16 Ω (70 mA peak) and 0.86 Vrms / ~23 mW into
+32 Ω — meets the ≥20 mW/16 Ω spec with margin for noisy operating
+positions; three paralleled 16 Ω headsets current-limit at ~10 mW each.
+The driver is the OPA1622 (150 mA, thermal pad; EN pin driven by
+PWR_OK): the NJM4556A in DMP8 was rated 300 mW and this duty dissipates
+~0.33 W per package. LM4880/TPA6112-class parts are 5.5 V max and are
+out.
 
 ## Line out
 
@@ -97,7 +103,7 @@ class parts are 5.5 V max and are out.
 | CUI CMC-9745 capsule | -44 dBV/Pa; 3 V std, 0.5 mA, 2.2 kΩ | [4] |
 | Icom SM-30 desk mic | -28 dB ±4 (re 1 V/Pa), 600 Ω, 8 V powered | [5] |
 | Icom SM-50 desk mic | -30 dB ±4 (re 1 V/Pa), 55 Ω | [6] |
-| Icom HM-36 | unpublished (electret, 8 V) | [7] |
+| Icom HM-36 | unpublished; schematic: bare electret capsule fed through 2 kΩ from the rig's 8 V, 0.33 µF out — a standard capsule, not an amplified one; HM-219 adds a 22 k series pad. Measure (bench) | [7], [9] |
 | Icom mic input | 600 Ω; pin 2 = +8 V, 10 mA max | [8] §12-2 |
 | Icom ACC MOD input | 100 mV rms nominal, 10 kΩ | [8] §12-1 |
 | Android TRRS bias | 1.8–2.9 V via 2.2 kΩ; mic ≥1 kΩ DC | [9], [10] |
@@ -121,6 +127,9 @@ within capsule ratings (10 V max), same practice as Icom's 8 V feed.
 6. Icom SM-50: <https://www.icomjapan.com/lineup/options/SM-50/>
 7. RigPix HM-36 (sensitivity listed "?"):
    <https://www.rigpix.com/microphones/icom_hm36.htm>
+9. HM-36 internals: IW7EHC, "icom radios microphone adapter"
+   <http://www.iw7ehc.altervista.org/interfacciamicroICOM_EN.htm> (2k
+   feed, 0.33 µF); HM-219 22 k pad from the mod threads.
 8. Icom IC-7300 Basic Manual:
    <https://www.hamradio.co.uk/userfiles/file/IC-7300_ENG_Basic_0.pdf>
 9. Android wired headset jack (device) spec:

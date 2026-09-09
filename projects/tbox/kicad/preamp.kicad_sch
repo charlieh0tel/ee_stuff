@@ -3839,7 +3839,7 @@
 		(dnp no)
 		(uuid "18a754c9-b540-4a55-8f68-bd51f18f309c")
 		(property "Reference" "R1105"
-			(at 92.71 57.15 90)
+			(at 92.71 58.42 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3849,7 +3849,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 92.71 64.77 90)
+			(at 92.71 63.5 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5081,7 +5081,7 @@
 		(dnp no)
 		(uuid "767bbd3e-2526-4636-abcb-1fe11ba0cee6")
 		(property "Reference" "C1103"
-			(at 63.5 49.53 90)
+			(at 63.5 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5091,7 +5091,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 63.5 57.15 90)
+			(at 63.5 55.88 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6332,7 +6332,7 @@
 		(dnp no)
 		(uuid "d8ca0c00-db92-4930-bcf1-b952b05a5f4c")
 		(property "Reference" "FB1103"
-			(at 41.91 62.23 90)
+			(at 41.91 63.5 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6342,7 +6342,7 @@
 			)
 		)
 		(property "Value" "600R"
-			(at 41.91 69.85 90)
+			(at 41.91 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6520,7 +6520,7 @@
 		(dnp no)
 		(uuid "deb7396b-8b3a-42fd-a54e-7448ecc7101c")
 		(property "Reference" "FB1101"
-			(at 41.91 34.29 90)
+			(at 41.91 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6530,7 +6530,7 @@
 			)
 		)
 		(property "Value" "600R"
-			(at 41.91 41.91 90)
+			(at 41.91 40.64 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6769,7 +6769,7 @@
 		(dnp no)
 		(uuid "f634f89b-3142-49a7-91c0-11db7f989460")
 		(property "Reference" "R1107"
-			(at 130.81 63.5 90)
+			(at 130.81 64.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6779,7 +6779,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 130.81 71.12 90)
+			(at 130.81 69.85 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6933,7 +6933,7 @@
 		(dnp no)
 		(uuid "fcd90d8e-16fb-4653-980b-ea3747d95db9")
 		(property "Reference" "FB1102"
-			(at 41.91 46.99 90)
+			(at 41.91 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6943,7 +6943,7 @@
 			)
 		)
 		(property "Value" "600R"
-			(at 41.91 54.61 90)
+			(at 41.91 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

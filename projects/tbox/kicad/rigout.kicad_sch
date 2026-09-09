@@ -2897,6 +2897,172 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_TVS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_TVS"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Bidirectional transient-voltage-suppression diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode TVS thyrector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_TVS_0_1"
+				(polyline
+					(pts
+						(xy -2.54 1.27) (xy -2.54 -1.27) (xy 2.54 1.27) (xy 2.54 -1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.27) (xy 0 -1.27) (xy -0.508 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_TVS_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "J3301/J3302: shunt 1-2 RX L, 3-4 RX R, 5-6 blend, 7-8 TX mix. T3301/T3302 Triad TY-250P used 1:1 (6-7 tied, CT open; verify 200 Hz"
 		(exclude_from_sim no)
@@ -3122,16 +3288,6 @@
 			(type default)
 		)
 		(uuid "10896817-c551-599e-8997-3b65b1bde26f")
-	)
-	(wire
-		(pts
-			(xy 93.98 160.02) (xy 93.98 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13faf915-f2fb-58aa-a4e3-ecaef72c263a")
 	)
 	(wire
 		(pts
@@ -3595,26 +3751,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 160.02) (xy 93.98 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c65ffe3-3183-55d1-b05d-7f935b95af51")
-	)
-	(wire
-		(pts
-			(xy 93.98 167.64) (xy 73.66 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8025a85d-c14a-5390-a7d1-b579c0b84f99")
-	)
-	(wire
-		(pts
 			(xy 142.24 137.16) (xy 135.89 137.16)
 		)
 		(stroke
@@ -3652,16 +3788,6 @@
 			(type default)
 		)
 		(uuid "890d1cf1-00ab-58f9-bb4a-167b242648dd")
-	)
-	(wire
-		(pts
-			(xy 73.66 162.56) (xy 76.2 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8b904968-e9d9-522e-b87a-37560bdb5d23")
 	)
 	(wire
 		(pts
@@ -3812,16 +3938,6 @@
 			(type default)
 		)
 		(uuid "b9771596-ebe0-5641-8a7a-6ae26cd89f66")
-	)
-	(wire
-		(pts
-			(xy 73.66 167.64) (xy 73.66 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bab11662-9470-53b2-8867-91428695e84e")
 	)
 	(wire
 		(pts
@@ -4222,16 +4338,6 @@
 			(justify left)
 		)
 		(uuid "8281efa2-7c33-57a4-b205-a610b3504b17")
-	)
-	(label "BLEND"
-		(at 152.4 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d77e6ba5-a480-5205-b418-170fe57ab2ac")
 	)
 	(label "BLEND"
 		(at 157.48 106.68 180)
@@ -10164,5 +10270,507 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96739f83-7340-4c76-b136-974db5de24df")
+	)
+	(wire
+		(pts
+			(xy 76.2 162.56) (xy 73.66 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8d53a9a-eacb-4623-9367-7977fbdfa775")
+	)
+	(label "BLEND_SUM"
+		(at 73.66 162.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7b9432c5-a9c8-4491-a792-40f4697536b8")
+	)
+	(wire
+		(pts
+			(xy 91.44 160.02) (xy 93.98 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d427687d-c8b3-420c-b900-84d443f1312d")
+	)
+	(label "BLEND"
+		(at 93.98 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "55e95374-350a-4eb9-8078-ca4315625dac")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 83.82 172.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4445e2d6-805f-441d-9b44-3a546e93b46b")
+		(property "Reference" "R3318"
+			(at 83.82 170.18 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22k"
+			(at 83.82 175.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 83.82 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 172.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "d5140141-7d4a-4998-821d-c57e23588125")
+		)
+		(pin "2"
+			(uuid "3264ad00-c240-499e-9bf7-c2033869c77e")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7"
+					(reference "R3318")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BLEND_SUM"
+		(at 80.01 172.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5a8b7e32-bb29-4530-a85e-3c99857da674")
+	)
+	(label "BLEND"
+		(at 87.63 172.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8824f19b-c510-4d30-a52a-4cd8056cbf2d")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 83.82 180.34 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8548c0e-9e01-4daf-8525-daec44a6500d")
+		(property "Reference" "C3317"
+			(at 83.82 177.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100p"
+			(at 83.82 182.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 83.82 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "23c56409-5a75-4543-8e45-67c60061be2b")
+		)
+		(pin "2"
+			(uuid "79295121-cfa3-407e-bc30-7d6451283b43")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7"
+					(reference "C3317")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BLEND_SUM"
+		(at 80.01 180.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d420a8a0-e969-4397-a87c-58b4f8cb3dc4")
+	)
+	(label "BLEND"
+		(at 87.63 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "00d6d7b7-7f11-4253-9e5a-d9369e602c78")
+	)
+	(label "BLEND_SUM"
+		(at 152.4 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f821206e-9600-4622-92c7-44b678a595c7")
+	)
+	(label "LOUT_L"
+		(at 279.4 152.4 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ee852e4b-7595-4fff-a751-9ce5fb059b07")
+	)
+	(label "LOUT_R"
+		(at 276.86 152.4 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5bc712b4-1ba3-4bdd-9b68-e622ad60c08f")
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 241.3 175.26 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6c938318-cc24-4806-b890-5b426a951e50")
+		(property "Reference" "D3301"
+			(at 241.3 172.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMAJ15CA"
+			(at 241.3 177.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 241.3 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 241.3 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "SMAJ15CA"
+			(at 241.3 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "812c8417-0e0d-4dbb-aef4-84ae0df6bf5c")
+		)
+		(pin "2"
+			(uuid "d8db022b-f614-4e1d-94e1-98fef625cbd3")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7"
+					(reference "D3301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "LOUT_L"
+		(at 241.3 179.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9d5c776a-ee01-4ac0-9e83-7d790ab11bae")
+	)
+	(label "LOUT_RET"
+		(at 241.3 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "061635e2-4131-42f6-b5f9-39e21475fdbb")
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 254 175.26 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4248542-12d9-406b-a174-1cdd8ee2d171")
+		(property "Reference" "D3302"
+			(at 254 172.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMAJ15CA"
+			(at 254 177.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 254 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 254 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 254 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "SMAJ15CA"
+			(at 254 175.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "88633de8-cc99-4977-b10b-66e41f93a889")
+		)
+		(pin "2"
+			(uuid "e3f15811-4eb0-4794-b002-4fb1566baa6e")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/4974373e-f1fc-57b5-bc5c-7a025f4d2dc7"
+					(reference "D3302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "LOUT_R"
+		(at 254 179.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a34d6f31-7ee6-438c-b831-e6d3f6801dd4")
+	)
+	(label "LOUT_RET"
+		(at 254 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2ad7644f-8766-49fe-8384-04e48fb85192")
 	)
 )

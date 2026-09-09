@@ -1345,6 +1345,193 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "tbox:1N4148W"
+	  		(pin_numbers
+	  			(hide yes)
+	  		)
+	  		(pin_names
+	  			(hide yes)
+	  		)
+	  		(exclude_from_sim no)
+	  		(in_bom yes)
+	  		(on_board yes)
+	  		(in_pos_files yes)
+	  		(duplicate_pin_numbers_are_jumpers no)
+	  		(property "Reference" "D"
+	  			(at 0 2.54 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Value" "1N4148W"
+	  			(at 0 -2.54 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Footprint" "Diode_SMD:D_SOD-123"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Description" "Fast switching diode 100 V 150 mA, SOD-123"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Sim.Device" "D"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "Sim.Pins" "1=K 2=A"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "ki_keywords" "diode"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(property "ki_fp_filters" "D*SOD?123*"
+	  			(at 0 0 0)
+	  			(show_name no)
+	  			(do_not_autoplace no)
+	  			(hide yes)
+	  			(effects
+	  				(font
+	  					(size 1.27 1.27)
+	  				)
+	  			)
+	  		)
+	  		(symbol "1N4148W_0_1"
+	  			(polyline
+	  				(pts
+	  					(xy -1.27 1.27) (xy -1.27 -1.27)
+	  				)
+	  				(stroke
+	  					(width 0.254)
+	  					(type default)
+	  				)
+	  				(fill
+	  					(type none)
+	  				)
+	  			)
+	  			(polyline
+	  				(pts
+	  					(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+	  				)
+	  				(stroke
+	  					(width 0.254)
+	  					(type default)
+	  				)
+	  				(fill
+	  					(type none)
+	  				)
+	  			)
+	  			(polyline
+	  				(pts
+	  					(xy 1.27 0) (xy -1.27 0)
+	  				)
+	  				(stroke
+	  					(width 0)
+	  					(type default)
+	  				)
+	  				(fill
+	  					(type none)
+	  				)
+	  			)
+	  		)
+	  		(symbol "1N4148W_1_1"
+	  			(pin passive line
+	  				(at -3.81 0 0)
+	  				(length 2.54)
+	  				(name "K"
+	  					(effects
+	  						(font
+	  							(size 1.27 1.27)
+	  						)
+	  					)
+	  				)
+	  				(number "1"
+	  					(effects
+	  						(font
+	  							(size 1.27 1.27)
+	  						)
+	  					)
+	  				)
+	  			)
+	  			(pin passive line
+	  				(at 3.81 0 180)
+	  				(length 2.54)
+	  				(name "A"
+	  					(effects
+	  						(font
+	  							(size 1.27 1.27)
+	  						)
+	  					)
+	  				)
+	  				(number "2"
+	  					(effects
+	  						(font
+	  							(size 1.27 1.27)
+	  						)
+	  					)
+	  				)
+	  			)
+	  		)
+	  		(embedded_fonts no)
+	  	)
 	)
 	(text "Max ~-0.4 dBV open (17 mW/32R, 22 mW/16R through the 10R build-out; one headset per position). 3.5 mm, 1/4\" and the TRRS phones side (J1103/J1303 on the preamp sheets, via PH_x_L/R) are paralleled."
 		(exclude_from_sim no)
@@ -3362,7 +3549,7 @@
 				)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "2k2"
 			(at 55.88 87.63 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3982,7 +4169,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
+		(lib_id "Device:C")
 		(at 46.99 54.61 270)
 		(unit 1)
 		(body_style 1)
@@ -4002,7 +4189,7 @@
 				)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u NP"
 			(at 46.99 51.6 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4012,7 +4199,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 46.99 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -4162,7 +4349,7 @@
 				)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "2k2"
 			(at 55.88 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4221,7 +4408,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
+		(lib_id "Device:C")
 		(at 46.99 90.17 270)
 		(unit 1)
 		(body_style 1)
@@ -4241,7 +4428,7 @@
 				)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "10u NP"
 			(at 46.99 87.16 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4251,7 +4438,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 46.99 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -4732,5 +4919,801 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0c4b8218-1d63-4d0a-8bce-2f653cb7b136")
+	)
+	(label "RXA_AMP"
+		(at 59.69 54.61 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7b586a3e-e139-43ac-a8ea-b4d61eac4c38")
+	)
+	(label "RXB_AMP"
+		(at 59.69 90.17 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2b4d71be-4404-4f16-92d4-abba3c24f918")
+	)
+	(symbol
+		(lib_id "tbox:1N4148W")
+		(at 35.56 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "82e77c83-9ae6-451d-9e2a-f0640e589684")
+		(property "Reference" "D3401"
+			(at 35.56 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 35.56 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 35.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 35.56 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "87fca26b-3eab-4a45-8e09-61c371721749")
+		)
+		(pin "2"
+			(uuid "d8f9c4f8-3759-4e4f-b065-aaca50427705")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "D3401")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "RXA_AMP"
+		(at 35.56 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c956279e-9588-4e43-bfad-875220b9f874")
+	)
+	(wire
+		(pts
+			(xy 35.56 130.81) (xy 35.56 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2ea6e27-e1ba-49ec-8551-8e00fa02fc2f")
+	)
+	(symbol
+		(lib_id "power:+9V")
+		(at 35.56 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "63bdd770-56fa-4856-8602-42350336e1cb")
+		(property "Reference" "#PWR03412"
+			(at 38.1 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+9V"
+			(at 38.1 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "08f0363b-d233-4e3d-8e08-7507c4a2b62e")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "#PWR03412")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "tbox:1N4148W")
+		(at 48.26 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d7248380-8258-4676-883d-86966d1a1b13")
+		(property "Reference" "D3402"
+			(at 48.26 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 48.26 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 48.26 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 48.26 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "01707914-610c-4e09-a51f-8ab5abc0385f")
+		)
+		(pin "2"
+			(uuid "229d19a3-aa1a-495c-a8cf-31e4c5dfd764")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "D3402")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "RXA_AMP"
+		(at 48.26 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1a1898a2-d308-4592-88b6-a38c6196c25d")
+	)
+	(wire
+		(pts
+			(xy 48.26 123.19) (xy 48.26 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbfe9164-cf6b-4c0b-aee2-aa06da19f58d")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 48.26 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fdbcd9e3-49d0-480a-9b43-8d6322a68b31")
+		(property "Reference" "#PWR03413"
+			(at 50.8 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 48.26 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "626739c3-2a4a-45df-96c6-0dcf4f7def38")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "#PWR03413")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "tbox:1N4148W")
+		(at 66.04 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "573ca239-d26e-4c91-8a35-73b9d9d1683f")
+		(property "Reference" "D3403"
+			(at 66.04 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 66.04 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 66.04 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 66.04 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c3bab4dd-c065-4b3e-9058-85c0a3993c71")
+		)
+		(pin "2"
+			(uuid "9deedf27-67c9-4b35-a5fa-2aaed870625c")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "D3403")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "RXB_AMP"
+		(at 66.04 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7fa76b4c-3624-4662-acfd-7d23c4401cb4")
+	)
+	(wire
+		(pts
+			(xy 66.04 130.81) (xy 66.04 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d91db25-3ca1-4200-bab9-9be36b956f65")
+	)
+	(symbol
+		(lib_id "power:+9V")
+		(at 66.04 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a5bc3c57-b002-4903-996f-5539e7e37071")
+		(property "Reference" "#PWR03414"
+			(at 68.58 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+9V"
+			(at 68.58 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "b3b7dcb1-0cbf-418e-988c-52928a034e6f")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "#PWR03414")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "tbox:1N4148W")
+		(at 78.74 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2aaaf74a-af84-4b87-9219-d5fba1fe4e18")
+		(property "Reference" "D3404"
+			(at 78.74 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 78.74 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 78.74 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "MPN" "1N4148W"
+			(at 78.74 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "c0962b11-adb0-4976-aa9a-aac33fa1f332")
+		)
+		(pin "2"
+			(uuid "d40095e4-d67c-4e9f-83fc-fcebba1615b0")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "D3404")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "RXB_AMP"
+		(at 78.74 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c7dda0c-92c8-490e-aaaa-e87dec9e55c3")
+	)
+	(wire
+		(pts
+			(xy 78.74 123.19) (xy 78.74 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6509642b-d010-4e96-a01b-e45ecd3a6e0a")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 78.74 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "68365c52-52bb-4a31-b64d-61b6a7ac7bc5")
+		(property "Reference" "#PWR03415"
+			(at 81.28 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 81.28 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "312f11ac-7204-4528-833e-45dd739dcf3a")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/6aedcaa5-d555-5688-b8e3-a5d8be255c1c/968a9734-8172-5b80-b889-97ec507a1fa0"
+					(reference "#PWR03415")
+					(unit 1)
+				)
+			)
+		)
 	)
 )

@@ -2073,6 +2073,597 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "tbox:OPA1622"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "OPA1622"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SON:Texas_DRC0010J"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "third_party/datasheets/TI_OPA1622.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "TI OPA1622 dual audio op amp, 150 mA output, EN pin with click-free enable; VSON-10 with thermal pad (PAD = V-)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "dual opamp headphone"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OPA1622_1_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OPA1622_2_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "OPA1622_3_1"
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -7.62 90)
+					(length 3.81)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -7.62 90)
+					(length 3.81)
+					(name "PAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:NetTie_2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "NT"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "NetTie_2"
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Net tie, 2 pins"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "net tie short"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Net*Tie*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NetTie_2_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NetTie_2_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Hierarchical: RX_x_BUS from the rear board (ribbon); PH_x_L/R to the front board (ribbon). TX_MON is board-local from TX Sum."
 		(exclude_from_sim no)
@@ -2108,7 +2699,7 @@
 		)
 		(uuid "323b6e89-68ea-5b27-b6c7-636c95261078")
 	)
-	(text "NJM4556A: 70 mA output, drives 16R phones from 9 V"
+	(text "OPA1622: 150 mA output, drives 16R phones from 9 V; EN = PWR_OK (click-free enable), PAD = V-"
 		(exclude_from_sim no)
 		(at 177.8 99.06 0)
 		(effects
@@ -2347,16 +2938,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 149.86) (xy 240.03 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1adcb4c5-ce35-509a-a9d6-71985388c089")
-	)
-	(wire
-		(pts
 			(xy 257.81 63.5) (xy 257.81 66.04)
 		)
 		(stroke
@@ -2447,16 +3028,6 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 121.92) (xy 102.87 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a0c5c08-de6b-5b6e-9e3c-7ce4f20127f9")
-	)
-	(wire
-		(pts
 			(xy 196.85 163.83) (xy 208.28 163.83)
 		)
 		(stroke
@@ -2474,16 +3045,6 @@
 			(type default)
 		)
 		(uuid "2d5d1f0e-d109-5cf1-be15-aed5340df430")
-	)
-	(wire
-		(pts
-			(xy 97.79 130.81) (xy 97.79 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d756068-cbf5-5bb2-82e0-3047e6929acb")
 	)
 	(wire
 		(pts
@@ -2577,16 +3138,6 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 121.92) (xy 229.87 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "416f0e11-e49f-5998-9b46-13d1f2d97236")
-	)
-	(wire
-		(pts
 			(xy 162.56 148.59) (xy 165.1 148.59)
 		)
 		(stroke
@@ -2637,16 +3188,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 158.75) (xy 240.03 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c11f7ea-a4bb-5785-a085-667bf91c9513")
-	)
-	(wire
-		(pts
 			(xy 162.56 120.65) (xy 165.1 120.65)
 		)
 		(stroke
@@ -2687,16 +3228,6 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 149.86) (xy 97.79 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f01db34-9f56-58aa-8c12-20f1b07afe0a")
-	)
-	(wire
-		(pts
 			(xy 39.37 151.13) (xy 39.37 153.67)
 		)
 		(stroke
@@ -2727,16 +3258,6 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 158.75) (xy 97.79 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53e51ed7-5742-5dc5-87ea-bf8ada6ef1f0")
-	)
-	(wire
-		(pts
 			(xy 20.32 120.65) (xy 22.86 120.65)
 		)
 		(stroke
@@ -2754,16 +3275,6 @@
 			(type default)
 		)
 		(uuid "57076115-1910-5cd7-9fba-2c8e0000f39a")
-	)
-	(wire
-		(pts
-			(xy 83.82 121.92) (xy 87.63 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "577e787a-c908-5d17-ab5b-259c7d73563c")
 	)
 	(wire
 		(pts
@@ -2827,36 +3338,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 121.92) (xy 240.03 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6855ecb5-745d-585c-a824-8abe8a9104f5")
-	)
-	(wire
-		(pts
-			(xy 95.25 149.86) (xy 102.87 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b7e4bf6-b660-5bb7-8681-913e05dc7c2f")
-	)
-	(wire
-		(pts
-			(xy 237.49 149.86) (xy 245.11 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c3a31ea-1350-502d-a313-97a5ecd52700")
-	)
-	(wire
-		(pts
 			(xy 186.69 132.08) (xy 187.96 132.08)
 		)
 		(stroke
@@ -2894,16 +3375,6 @@
 			(type default)
 		)
 		(uuid "722354a9-5749-5414-aaf5-9d3c6bce456d")
-	)
-	(wire
-		(pts
-			(xy 237.49 121.92) (xy 245.11 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72a7b906-0779-5198-bb1b-b50aa4a39483")
 	)
 	(wire
 		(pts
@@ -3024,16 +3495,6 @@
 			(type default)
 		)
 		(uuid "9950341c-e19c-5ff8-8e09-bcdc392a49b3")
-	)
-	(wire
-		(pts
-			(xy 226.06 149.86) (xy 229.87 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d4462ad-b29e-543e-972b-9994430b0cdd")
 	)
 	(wire
 		(pts
@@ -3337,26 +3798,6 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 121.92) (xy 97.79 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e956eb3f-e648-54c2-9800-59129bc1816f")
-	)
-	(wire
-		(pts
-			(xy 83.82 149.86) (xy 87.63 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eac00425-d6df-548a-a52f-cef231f4ee53")
-	)
-	(wire
-		(pts
 			(xy 186.69 152.4) (xy 186.69 163.83)
 		)
 		(stroke
@@ -3374,16 +3815,6 @@
 			(type default)
 		)
 		(uuid "ee110957-79bc-5c24-af16-08302d008642")
-	)
-	(wire
-		(pts
-			(xy 240.03 130.81) (xy 240.03 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f735e56a-c664-5b21-92cb-a678a9b30b3a")
 	)
 	(wire
 		(pts
@@ -4176,85 +4607,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 233.68 121.92 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "155ee8ec-ed0a-518f-bbc4-dce7e759a2bd")
-		(property "Reference" "FB2403"
-			(at 233.68 117.12 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "600R"
-			(at 233.68 119.62 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 233.68 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 233.68 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d2f08c56-91a5-5926-ac47-f97826583f5f")
-		)
-		(pin "2"
-			(uuid "55c76e8c-a12c-5240-8609-22ac4b9c117f")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "FB2403")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 86.36 127 0)
 		(unit 1)
@@ -4618,7 +4970,7 @@
 				)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "3R3"
 			(at 213.36 125.73 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4758,7 +5110,7 @@
 		)
 	)
 	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 196.85 121.92 0)
 		(unit 1)
 		(body_style 1)
@@ -4778,7 +5130,7 @@
 				)
 			)
 		)
-		(property "Value" "NJM4556A"
+		(property "Value" "OPA1622"
 			(at 196.85 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -4789,7 +5141,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 196.85 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -4822,7 +5174,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 196.85 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -4833,13 +5185,13 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "45bcf3a0-dbb2-5730-b833-220a579a7f74")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "46392923-9162-5fe7-931b-42b9fe7924e2")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "b2b10be7-d5a2-53b9-a972-350a8e73d711")
 		)
 		(pin "5"
@@ -4854,94 +5206,22 @@
 		(pin "4"
 			(uuid "0e4bfc57-651a-4c42-b42b-c777c0ef76aa")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "20d25d10-3f03-4ff1-b142-71ca6ae92301")
+		)
+		(pin "3"
+			(uuid "3f601aeb-d7aa-4359-83e2-1259f86a9a02")
+		)
+		(pin "8"
+			(uuid "9c3661d1-447b-4fd7-b6c5-76c7f337d022")
+		)
+		(pin "11"
+			(uuid "7978b2e1-fcc9-4f93-83af-5a08787ca36c")
 		)
 		(instances
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "U2403")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 97.79 154.94 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "34b64ddd-ab16-59a5-9ee7-2715abd3fd64")
-		(property "Reference" "C2404"
-			(at 100.33 153.67 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10n"
-			(at 100.33 156.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 97.79 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 97.79 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1f1946b2-1198-5674-88ed-8c1ce3c7ce96")
-		)
-		(pin "2"
-			(uuid "bf13bf16-8af3-5f00-a879-ca8a609b8f13")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "C2404")
 					(unit 1)
 				)
 			)
@@ -5404,166 +5684,6 @@
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "RV2404")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 91.44 149.86 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3767a6a9-f6bb-5a3e-8fe1-ec0c6425a31b")
-		(property "Reference" "FB2402"
-			(at 91.44 145.06 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "600R"
-			(at 91.44 147.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 91.44 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7718ef8c-1708-5b83-919b-c81f2494b639")
-		)
-		(pin "2"
-			(uuid "3dc282ca-1962-5387-9b79-d719883f3650")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "FB2402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 97.79 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3818a85e-2d58-55a9-bde9-2bed9c194a40")
-		(property "Reference" "C2403"
-			(at 100.33 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10n"
-			(at 100.33 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 97.79 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 97.79 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "47e6cfd3-1060-526f-bc12-dece8a24df16")
-		)
-		(pin "2"
-			(uuid "f60016e1-d432-5ec2-b255-b45a54a4d166")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "C2403")
-					(unit 1)
 				)
 			)
 		)
@@ -6239,7 +6359,7 @@
 				)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "3R3"
 			(at 71.12 153.67 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6318,7 +6438,7 @@
 				)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "3R3"
 			(at 71.12 125.73 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6448,85 +6568,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "#PWR02407")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 233.68 149.86 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "70b227e4-ebb6-59e1-b789-103a3e08578e")
-		(property "Reference" "FB2404"
-			(at 233.68 145.06 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "600R"
-			(at 233.68 147.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 233.68 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 233.68 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 233.68 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9d4510dc-2e5f-5911-87f3-fb59429ccd91")
-		)
-		(pin "2"
-			(uuid "f111be6b-30a2-509d-b14f-74375f55822f")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "FB2404")
 					(unit 1)
 				)
 			)
@@ -6687,83 +6728,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 240.03 132.08 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7bc7f55b-8c55-580b-a879-cdc75b272343")
-		(property "Reference" "#PWR02418"
-			(at 240.03 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 240.03 135.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "52ceb5a8-9234-5bbb-a780-abf0182779c6")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "#PWR02418")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+9V")
 		(at 218.44 81.28 0)
 		(unit 1)
@@ -6841,7 +6805,7 @@
 		)
 	)
 	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 266.7 63.5 0)
 		(unit 3)
 		(body_style 1)
@@ -6852,7 +6816,7 @@
 		(dnp no)
 		(uuid "7d68a9ce-b941-5682-9562-514953c73c7a")
 		(property "Reference" "U2403"
-			(at 269.24 62.23 0)
+			(at 271.78 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6862,8 +6826,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NJM4556A"
-			(at 269.24 64.77 0)
+		(property "Value" "OPA1622"
+			(at 271.78 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6873,7 +6837,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 266.7 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6906,7 +6870,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 266.7 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6917,7 +6881,7 @@
 				)
 			)
 		)
-		(property "Load_mA" "10/90"
+		(property "Load_mA" "6/95"
 			(at 266.7 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6931,16 +6895,16 @@
 		(pin "4"
 			(uuid "f15b7c98-c778-5c88-b3d2-d31fea1d7c3d")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "d63b9e5a-a9d6-5e43-aa41-6b23d1d1e2ed")
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "c8beeeb2-f861-462b-9b32-41dad0e8ba8d")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "21f123de-2c9c-4f24-aa59-62c20158db87")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "aab66811-3869-4317-a02f-c156417f9da8")
 		)
 		(pin "5"
@@ -6952,90 +6916,20 @@
 		(pin "7"
 			(uuid "2115b6fe-19f3-4b32-9393-47269438f812")
 		)
+		(pin "3"
+			(uuid "32ceb52f-fcf2-4447-b7b6-caa3dbe42c1c")
+		)
+		(pin "8"
+			(uuid "63af9391-9357-4ab8-a159-c2e742495e22")
+		)
+		(pin "11"
+			(uuid "c52c5cd5-7605-475c-bd0a-9ac6dfba0f1b")
+		)
 		(instances
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "U2403")
 					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 91.44 121.92 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7f24749c-97e9-58ee-9a39-0984138c4341")
-		(property "Reference" "FB2401"
-			(at 91.44 117.12 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "600R"
-			(at 91.44 119.62 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
-			(at 91.44 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 91.44 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7e1991bf-d894-549f-a0ad-f13c2cfb354b")
-		)
-		(pin "2"
-			(uuid "393ec830-abe7-58e4-8204-85d7136ac348")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "FB2401")
-					(unit 1)
 				)
 			)
 		)
@@ -7285,7 +7179,7 @@
 		)
 	)
 	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 54.61 149.86 0)
 		(unit 2)
 		(body_style 1)
@@ -7305,7 +7199,7 @@
 				)
 			)
 		)
-		(property "Value" "NJM4556A"
+		(property "Value" "OPA1622"
 			(at 54.61 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -7316,7 +7210,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 54.61 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -7349,7 +7243,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 54.61 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -7369,20 +7263,29 @@
 		(pin "7"
 			(uuid "bade7b1a-7043-502b-b40d-825a5f7baeb7")
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "47ecfb41-5700-477d-8c59-0f097ca983c1")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "40cd3c64-0cac-4de8-8e17-d4adc0d9f713")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "edaa31b8-bd73-40df-ba86-bb4cec0cdf7c")
 		)
 		(pin "4"
 			(uuid "9fca8401-20f0-4119-8dd1-5db32d66558d")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "a24bce81-ce86-4edb-be07-30de4cc1c816")
+		)
+		(pin "3"
+			(uuid "1fbe05e4-070f-4e23-a9b9-f924b327c13b")
+		)
+		(pin "8"
+			(uuid "7e310975-c530-41df-86c3-237355fbb3f9")
+		)
+		(pin "11"
+			(uuid "28cb0579-bc9e-45dd-affb-9eb7ea111188")
 		)
 		(instances
 			(project "tbox"
@@ -7467,87 +7370,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "R2403")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 240.03 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9c7d04d7-0832-5262-a2dc-262afb445c94")
-		(property "Reference" "C2411"
-			(at 242.57 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10n"
-			(at 242.57 128.27 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 240.03 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ffbfd095-2dc4-526a-95a2-1727298ba9f3")
-		)
-		(pin "2"
-			(uuid "6a52bc64-3240-5a81-834d-37561068da75")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "C2411")
 					(unit 1)
 				)
 			)
@@ -7872,88 +7694,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 240.03 154.94 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a44a2557-a85e-5c6f-975a-92deaee333a9")
-		(property "Reference" "C2412"
-			(at 242.57 153.67 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10n"
-			(at 242.57 156.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 240.03 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f2887568-bd1c-5a4d-8fdb-8c1cd166e2d7")
-		)
-		(pin "2"
-			(uuid "acaeea37-a667-523c-9bf3-ceb87e34e0aa")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "C2412")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 54.61 121.92 0)
 		(unit 1)
 		(body_style 1)
@@ -7973,7 +7714,7 @@
 				)
 			)
 		)
-		(property "Value" "NJM4556A"
+		(property "Value" "OPA1622"
 			(at 54.61 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -7984,7 +7725,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 54.61 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -8017,7 +7758,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 54.61 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -8028,13 +7769,13 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "2a7fb3e3-07b3-551b-84f6-042fc314cfc5")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "8c748053-bb79-5c2c-89d8-8de39e5d5e51")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "108c7f65-cd15-5ac3-8fc5-ac9e12718c93")
 		)
 		(pin "5"
@@ -8049,8 +7790,17 @@
 		(pin "4"
 			(uuid "7dbf4a02-9bd4-4b1a-bfbf-9f1beb63c5b0")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "15e450ae-e669-44b3-911d-90d80633cea6")
+		)
+		(pin "3"
+			(uuid "1f1c0314-7053-43e6-b733-18795730d291")
+		)
+		(pin "8"
+			(uuid "0329ad8e-4266-4171-99e7-94770f0dd3bd")
+		)
+		(pin "11"
+			(uuid "2bba6ff1-c8ce-422d-813c-d76d6107ea12")
 		)
 		(instances
 			(project "tbox"
@@ -8163,7 +7913,7 @@
 				)
 			)
 		)
-		(property "Value" "10R"
+		(property "Value" "3R3"
 			(at 213.36 153.67 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8222,7 +7972,7 @@
 		)
 	)
 	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 241.3 63.5 0)
 		(unit 3)
 		(body_style 1)
@@ -8233,7 +7983,7 @@
 		(dnp no)
 		(uuid "ad557e73-69e5-573c-a4b7-d5b667cbe624")
 		(property "Reference" "U2401"
-			(at 243.84 62.23 0)
+			(at 246.38 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8243,8 +7993,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NJM4556A"
-			(at 243.84 64.77 0)
+		(property "Value" "OPA1622"
+			(at 246.38 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8254,7 +8004,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 241.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -8287,7 +8037,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 241.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -8298,7 +8048,7 @@
 				)
 			)
 		)
-		(property "Load_mA" "10/90"
+		(property "Load_mA" "6/95"
 			(at 241.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -8312,16 +8062,16 @@
 		(pin "4"
 			(uuid "a8bc78ac-8163-59bd-879b-5c1ebdece880")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "ecbf1513-385f-5006-b6e2-d60e95522c80")
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "b19613c9-91e7-4ab6-a49f-70f5f4b2565b")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "74d93a34-b4bf-4d76-a246-173bbd332d1e")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "aee15954-bd78-4e7b-a706-59a73d6226ef")
 		)
 		(pin "5"
@@ -8332,6 +8082,15 @@
 		)
 		(pin "7"
 			(uuid "022913cf-3b86-4467-ac28-dc515f40726b")
+		)
+		(pin "3"
+			(uuid "35cafb5a-8326-4a2b-bb08-3598c11723c4")
+		)
+		(pin "8"
+			(uuid "ecc6c1c7-5e91-40fc-9737-b555da632af4")
+		)
+		(pin "11"
+			(uuid "453e2cb1-ad66-4eb0-9caf-1027c4ed07ce")
 		)
 		(instances
 			(project "tbox"
@@ -8422,7 +8181,7 @@
 		)
 	)
 	(symbol
-		(lib_id "tbox:NJM4556A")
+		(lib_id "tbox:OPA1622")
 		(at 196.85 149.86 0)
 		(unit 2)
 		(body_style 1)
@@ -8442,7 +8201,7 @@
 				)
 			)
 		)
-		(property "Value" "NJM4556A"
+		(property "Value" "OPA1622"
 			(at 196.85 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -8453,7 +8212,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SON:Texas_DRC0010J"
 			(at 196.85 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8486,7 +8245,7 @@
 				)
 			)
 		)
-		(property "MPN" "NJM4556AM"
+		(property "MPN" "OPA1622IDRCR"
 			(at 196.85 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8506,20 +8265,29 @@
 		(pin "7"
 			(uuid "6968afe5-a826-5036-8f5e-a72a1a949a40")
 		)
-		(pin "1"
+		(pin "9"
 			(uuid "6c884c3a-cf58-4f5d-a2b1-7a7c6806b69e")
 		)
-		(pin "2"
+		(pin "10"
 			(uuid "36fc8097-a622-47b3-ad0e-0ac61e1fb8f8")
 		)
-		(pin "3"
+		(pin "1"
 			(uuid "0e84a8b0-0d4d-4734-ba15-4f2dee409777")
 		)
 		(pin "4"
 			(uuid "ab9b0f41-7a3b-4697-93b9-1e7976f36e50")
 		)
-		(pin "8"
+		(pin "2"
 			(uuid "ca89d208-d8d5-4896-bcbb-0e75fbb6ff61")
+		)
+		(pin "3"
+			(uuid "680bef9c-6372-4257-a00d-94caae6f0eb0")
+		)
+		(pin "8"
+			(uuid "2832727c-0f82-4727-9536-c37b71b1ba6c")
+		)
+		(pin "11"
+			(uuid "8c38edd0-3520-44db-8dda-682ca3e3ed9d")
 		)
 		(instances
 			(project "tbox"
@@ -8922,83 +8690,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 240.03 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cad08cc6-a0ee-535f-8ba1-b683828fe9e1")
-		(property "Reference" "#PWR02419"
-			(at 240.03 162.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 240.03 163.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 240.03 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 240.03 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f180cd61-e0ef-5750-a279-6d36136a0094")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "#PWR02419")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+9V")
 		(at 213.36 53.34 0)
 		(unit 1)
@@ -9260,83 +8951,6 @@
 			(project "tbox"
 				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
 					(reference "RV2402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 97.79 132.08 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "de05b0b3-835a-5fd4-99a9-a621d1a4edf1")
-		(property "Reference" "#PWR02403"
-			(at 97.79 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 97.79 135.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.79 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 97.79 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7f05a609-b61f-5ae4-a281-2ff790a8ef51")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "#PWR02403")
 					(unit 1)
 				)
 			)
@@ -10185,83 +9799,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 97.79 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fc6d8a3c-d1ad-540c-87db-847af76b260c")
-		(property "Reference" "#PWR02404"
-			(at 97.79 162.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 97.79 163.83 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.79 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 97.79 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a1011da6-74be-588f-82ed-513962623e46")
-		)
-		(instances
-			(project "tbox"
-				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
-					(reference "#PWR02404")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 165.1 193.04 0)
 		(unit 1)
 		(body_style 1)
@@ -10540,18 +10077,6 @@
 		(uuid "4ccc30c9-2d44-45d3-bb7d-2654b7a3c164")
 	)
 	(junction
-		(at 97.79 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c6fb206-64e4-4626-a67a-515daf9aae35")
-	)
-	(junction
-		(at 97.79 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "67bd2e47-668b-4d89-877d-6324e50db61c")
-	)
-	(junction
 		(at 152.4 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -10611,16 +10136,473 @@
 		(color 0 0 0 0)
 		(uuid "a9d13f80-5376-4555-9464-587e162ee296")
 	)
-	(junction
-		(at 240.03 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a1034c79-270f-4460-b319-b6e7cf398a80")
+	(wire
+		(pts
+			(xy 243.84 71.12) (xy 243.84 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6037019a-ff93-4d17-91f9-205c66a7a151")
+	)
+	(wire
+		(pts
+			(xy 243.84 73.66) (xy 238.76 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c9b873-9985-49a9-82a6-b5ffe5b99e2e")
 	)
 	(junction
-		(at 240.03 149.86)
+		(at 238.76 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0cfc2a9f-670e-4480-a2e3-ccbd9667aecf")
+		(uuid "a778b754-dce0-4198-ad0e-44c0499b3751")
+	)
+	(wire
+		(pts
+			(xy 246.38 71.12) (xy 246.38 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e8e270d-3cd7-475f-8132-a5feb20e6a05")
+	)
+	(wire
+		(pts
+			(xy 246.38 73.66) (xy 243.84 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fa9819f-80df-4047-a98e-7b30918ab983")
+	)
+	(junction
+		(at 243.84 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b5f75cb-b23e-42ff-bb95-7f2992b2a8a1")
+	)
+	(global_label "PWR_OK"
+		(shape input)
+		(at 233.68 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d4bf6bfe-ca36-4cff-8bb3-6ad53e5d17a4")
+	)
+	(wire
+		(pts
+			(xy 269.24 71.12) (xy 269.24 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "406c393b-a2a3-4d4f-91a0-3ec6093dc581")
+	)
+	(wire
+		(pts
+			(xy 269.24 73.66) (xy 264.16 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98106afd-1413-44db-82e9-921a4b2cdc75")
+	)
+	(junction
+		(at 264.16 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c221489e-0b9c-4667-9deb-9241f191f1c5")
+	)
+	(wire
+		(pts
+			(xy 271.78 71.12) (xy 271.78 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b61e0bba-62bd-49ad-9a28-013c2b0e85ad")
+	)
+	(wire
+		(pts
+			(xy 271.78 73.66) (xy 269.24 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12bdd9aa-d916-4ec1-bd72-83d6c3eaaca9")
+	)
+	(junction
+		(at 269.24 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "931aaa2d-93cd-478c-bd22-80f2882f345f")
+	)
+	(global_label "PWR_OK"
+		(shape input)
+		(at 259.08 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "671f138f-c2ef-4631-a919-f89a449d4362")
+	)
+	(wire
+		(pts
+			(xy 83.82 121.92) (xy 102.87 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ecd9e49-f485-4667-b6b8-f77c676b97fd")
+	)
+	(wire
+		(pts
+			(xy 226.06 121.92) (xy 245.11 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbac6522-cf95-4ccb-9c56-3eb133365c2a")
+	)
+	(wire
+		(pts
+			(xy 83.82 149.86) (xy 102.87 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80b1e8fb-9a17-454d-a657-367227c78ba2")
+	)
+	(wire
+		(pts
+			(xy 226.06 149.86) (xy 245.11 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0566915e-5652-43bc-8d09-1b134f097182")
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 127 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b790441f-fffe-4bea-853b-66ffc9d98b39")
+		(property "Reference" "NT2401"
+			(at 129.54 177.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND-CHASSIS tie"
+			(at 129.54 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
+			(at 127 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 127 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "cff3cd45-b9e1-46a1-a3ee-7ec1a9b98931")
+		)
+		(pin "2"
+			(uuid "b2061890-ecf6-43f9-a709-3e2f00f896d4")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "NT2401")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 124.46 180.34) (xy 121.92 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f9a591d-2db4-488f-b403-acab29f41aa7")
+	)
+	(wire
+		(pts
+			(xy 121.92 180.34) (xy 121.92 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "835fba79-703a-44dd-975b-235e380cb97f")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 121.92 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d520d92-1108-4b54-857f-468f77e084fc")
+		(property "Reference" "#PWR02423"
+			(at 124.46 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 121.92 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 182.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "a112a825-828b-4845-a3be-70f9158fa051")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "#PWR02423")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 129.54 180.34) (xy 132.08 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e51c60c8-4b44-4385-a259-05fe00e5a1fd")
+	)
+	(global_label "CHASSIS"
+		(shape input)
+		(at 132.08 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "320ad691-e932-4908-ba02-d5734e7da4ff")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 144.78 180.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f8b4b7d6-6b73-454d-8ecd-048f5042c7db")
+		(property "Reference" "H2401"
+			(at 147.32 177.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CHASSIS STUD"
+			(at 147.32 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 144.78 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 180.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "02f87bf3-a03e-4548-9a2e-45952503dae4")
+		)
+		(instances
+			(project "tbox"
+				(path "/6a29b3f1-3e67-482d-942d-4557fa8bc2d6/7885f5d1-bf3d-5361-a0a2-98a329efbaa8/fbabc91c-7987-5a3f-8311-b090f39b0b2a"
+					(reference "H2401")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 144.78 182.88) (xy 144.78 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05ef8de5-a499-47f5-82ec-0021d6fe30cd")
+	)
+	(global_label "CHASSIS"
+		(shape input)
+		(at 144.78 185.42 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2b0655b1-cfe4-4ffa-962d-609973bbdc04")
 	)
 )

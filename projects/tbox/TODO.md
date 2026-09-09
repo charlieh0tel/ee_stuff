@@ -44,8 +44,19 @@
     then schematic proximity); C2501 (ADP7142 input 4u7) still lands at the
     TPS7A4701 — move by hand or give caps a `Decouples` field if this
     keeps mattering;
-  - confirm NRJ6HM-1-PRE's "-1" (threaded nose + nut) suffix on ordering.
+  - confirm NRJ6HM-1-PRE's "-1" (threaded nose + nut) suffix on ordering;
+  - OPA1622 (Texas_DRC0010J) land pattern and thermal-via count; SP724
+    pinout against the Littelfuse drawing (1/3/4/6 inputs, 2 V-, 5 V+);
+    TPS3808G01 divider values against the final +9 V threshold.
 
+- Bench (review 2026-09-08 follow-ups): measure an Icom hand mic
+  (HM-36/HM-219) at 94 dB SPL with 8 V through 2k2, into 600 Ω and open,
+  and fill the LEVELS.md row; mute fade — listen at full monitor level
+  for the residual click, trim R1203/C1202 (fade) and R1204/C1203
+  (switch delay) if needed; supervisor threshold and hold (7.5 V, ~1.2 s)
+  on a slow ramp, rapid cycling and a brown-out — rig PTT must stay
+  released throughout; headphone amp temperature with both ears into
+  16 Ω at full level.
 - Bench: check TRRS mic↔phones crosstalk with a real headset before panel freeze;
   confirm the mute switching step is inaudible at full monitor level;
   measure the power-on hold (~1 s) and the logic highs (≥ 6 V at every

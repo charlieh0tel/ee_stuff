@@ -14,7 +14,7 @@ and a generic rig connector with rig-specific cables.
 | Rig connection | Generic DE-9 on box + rig-specific cables |
 | Channel layout | Two fixed, identical channel groups (A and B) — no cross-assignment |
 | Headset usage | Both channels mixable; override selector: OFF / A→B / B→A |
-| Muting | Full mute only (no ducking), analog-switch SPDT to Vref, pop-free, LED indicated |
+| Muting | Full mute only (no ducking): ~5 ms fade, then an analog-switch SPDT to Vref; LED indicated |
 | Intercom | Global momentary button: mutes TX mix to rig, monitor stays live |
 | RX path | Stereo throughout (main/sub for dual-receive rigs; mono rigs feed both) |
 | Line out | Stereo, per-side source jumpers, levels via rear trims |
@@ -82,14 +82,21 @@ Two identical, physically grouped channel sections (A and B). Each has:
   the node (series + shunt in one part, >70 dB, no pinch-off
   dependence). No DC across the switch: the stage ahead has unity DC gain
   at Vref and the load returns to Vref, so the switching step is only the
-  op-amp offset (a few mV) and there is no pop. A JFET series+shunt pair
-  was the first design; at 9 V single-supply a worst-case J113
-  (|Vgs(off)| = 3 V) is neither fully off at 0 dBV peaks when muted nor
-  fully off when unmuted, so it was dropped. Override mute uses the same
-  circuit, triggered electrically. The mute is one shared sub-sheet
-  (`kicad/mute.kicad_sch`, pins IN / OUT / MUTE) instantiated in each
-  preamp and once more for the intercom; a power-on hold keeps both
-  channels muted for ~1 s while the audio coupling caps settle.
+  op-amp offset (a few mV). That is only true at a zero crossing: a
+  hard switch mid-waveform steps by the instantaneous signal (up to
+  ~1.4 V at 0 dBV), so the mute now **fades first**: a 2k2 series
+  resistor and a back-to-back 2N7002 pair shunting the node to Vref,
+  gate ramped by 47k/100n (~5 ms); the SPDT follows ~30 ms later
+  (100k/1u, diode-discharged so release is immediate and the fade-in
+  runs the other way). Insertion loss of the 2k2 into the 10k pot is
+  ~1.7 dB (LEVELS.md). A JFET series+shunt pair was the first design;
+  at 9 V single-supply a worst-case J113 (|Vgs(off)| = 3 V) is neither
+  fully off at 0 dBV peaks when muted nor fully off when unmuted, so it
+  was dropped. Override mute uses the same circuit, triggered
+  electrically. The mute is one shared sub-sheet (`kicad/mute.kicad_sch`,
+  pins IN / OUT / MUTE) instantiated in each preamp and once more for the
+  intercom; the supply supervisor (below) holds both channels muted until
+  +9 V has been valid for ~1 s.
 - **Channel level pot** into the TX mix bus.
 - **PTT jacks:** 3.5mm and 1/4", paralleled, contact-closure.
 - **Round-plug ham mics** (Yaesu/Kenwood/Icom/Elecraft 8-pin Foster)
@@ -129,9 +136,14 @@ Two identical, physically grouped channel sections (A and B). Each has:
   (two 600 Ω 1:1) to break the inevitable sound-card ground loop.
   Per-side source jumpers: RX L, RX R, RX blend, or TX mix. Levels via
   rear trims. TX tap is post-mute (recordings reflect what went out).
-  The isolated secondaries return to the jack sleeve (`LOUT_RET`), never
-  to signal ground, and carry a DC block against sound-card plug-in
-  power.
+  BLEND is an inverting summer on the spare half of U3301 (22k in, 22k
+  feedback: one -15 dBV source gives -15 dBV, both in phase +6 dB), so
+  jumpering it onto one or both sides loads nothing and the two sides
+  don't interact. The isolated secondaries return to the jack sleeve
+  (`LOUT_RET`), never to signal ground, carry a DC block against
+  sound-card plug-in power, and each has an SMAJ15CA across it to the
+  sleeve so a hot-plugged sound card cannot punch through the isolation
+  domain.
 - **Monitor bus:** TX mix (tapped ahead of the intercom mute) feeds each
   headphone position (both ears equally) through its monitor-mix pot; pot
   at zero = off. Tap is post-fader: the channel level pot affects the
@@ -161,7 +173,17 @@ Two identical, physically grouped channel sections (A and B). Each has:
   A's PTT keys the rig and fully mutes channel B while closed; B→A
   mirror. OFF (center): both PTTs just key the rig. Realized as a DPDT
   on-off-on toggle (SW2103); lever directions as marked on the top panel.
-- Rig PTT output: open-drain MOSFET (tolerates 12 V+ pull-ups).
+- Rig PTT output: open-drain MOSFET (tolerates 12 V+ pull-ups) with a
+  100k gate pull-down on the rear board, so a disconnected ribbon leaves
+  it off.
+- **Supply supervisor (TPS3808G01, U2504):** watches +9 V through a
+  174k/10k divider (threshold ≈ 7.5 V), 1 µF on CT for ~1.2 s of hold,
+  open-drain RESET pulled up to +9 V as `PWR_OK`. While `PWR_OK` is low
+  a 2N7002 inverter raises `MUTE_HOLD`, which diode-ORs both channel
+  mutes on and shunts `PTT_ACTIVE` to ground (Q2109), and the OPA1622
+  headphone amps are disabled through their EN pins. Nothing keys or
+  passes audio until the rail is valid; a brown-out re-asserts all of
+  it at the threshold rather than at whatever an RC happened to think.
 - Control lines (`MUTE_A/B`, `PTT_ACTIVE`, `IC_MUTE`) are DC logic,
   0 V / +9 V, active high. `PTT_ACTIVE` is high while the rig PTT output
   is asserted and gates the intercom.
@@ -229,8 +251,11 @@ panel; front mic and phones jacks stay free.
     2 mA/ch): at 9 V the output is guaranteed within 0.8 V of each rail
     and the input common-mode range is 0.5–7 V. The NE5532 it replaces
     is only specified from 10 V total and its input range at 9 V would
-    have been 3–6 V — 0.1 V of margin at 0 dBV peaks. The NJM4556A
-    headphone amps are specified at 9 V.
+    have been 3–6 V — 0.1 V of margin at 0 dBV peaks. The headphone amps
+    are OPA1622 (4.5–36 V, 150 mA, VSON-10 with a thermal pad, enable
+    pin with click-free power-up/down): the NJM4556A in DMP8 was rated
+    300 mW and two channels into 16 Ω at design level dissipate ~0.33 W.
+    The series build-out is 3R3.
   - Buffered mid-rail virtual ground (Vref) used as **DC bias only**: every
   ground-referenced input or output (mic, RX in, mic out, line out,
   phones) keeps its gain-setting leg on GND, not Vref, so Vref noise is
@@ -296,15 +321,21 @@ board, so panel holes sit at per-part heights along one row.
 
 - **Front board** horizontal, ~10–15 mm above the floor, front edge at
   the front panel. All ten front jacks, both preamps, gain switches and
-  mutes. Mic level never leaves the board. Phones jack sleeves and the
-  TRRS common return to *board GND*, not chassis: a headset is a
-  floating load, and a chassis return would put headphone current
-  through the single chassis tie and the rear ribbon ground — in series
-  with the mic inputs' reference (≈1.5 mV at +40 dB). Those jacks are
-  therefore plastic-bodied (CUI / Rean), isolated from the panel; the
-  mic jacks are metal, nutted, and bonded to CHASSIS at the panel
-  (Switchcraft 35RAPC, Neutrik NRJ6HM-1-PRE — the one Neutrik PCB jack
-  whose sleeve is tied to the panel).
+  mutes. Mic level never leaves the board. Every jack sleeve — mic,
+  phones and the TRRS ring 2 (its return) — is on CHASSIS, bonded at
+  the panel: the metal-bushing jacks through their nuts (Switchcraft
+  35RAPC, Neutrik NRJ6HM-1-PRE and NRJ6HF-1, whose sleeves are tied to
+  the panel by construction), the plastic 3.5 mm phones and TRRS jacks
+  through a short CHASSIS spur to the board's stud (H1001) beside them.
+  The phones return current then rides the chassis to the control
+  board's own tie (NT2401/H2401 at the amplifiers) and never enters
+  the ribbon ground, where 200 mA of phones current would have put
+  ~1 mV of monitor audio (≈ -41 dB) under the TX bus. The RF filters
+  for the four phones nets (600 Ω bead + 10 n to CHASSIS) and an SP724
+  clamp array sit on this board at the jacks; the 3.5 mm mic jack's
+  tip carries the mic and both tip and ring carry electret bias through
+  2k2, so TS plugs, TRS plugs and PC headsets that expect ring bias all
+  work; every mic-jack contact has an SP724 clamp to +9 V/GND.
 - **Control board** sloped under the top panel: the **supply** (power
   entry filter, TPS7A4701, ADP7142, VREF buffer — moved here from the
   rear board because nothing ties it to the rear panel once the
@@ -376,17 +407,33 @@ service), wedge console profile:
 
 - No shield current flows through PCB ground. Shields bond to chassis at
   the point of entry: every jack sleeve, TRRS ring 2 and DE-9 return is
-  on the `CHASSIS` net, which ties to signal `GND` at exactly one place
-  (NT3201, at the DE-9 on the Rear I/O sheet).
+  on the `CHASSIS` net. Signal `GND` ties to `CHASSIS` **once per board
+  that has entry jacks or return-carrying amplifiers**, right at them:
+  NT1001 on the front board at the headset jacks, NT2401 on the control
+  board at the headphone amplifiers, NT3201 on the rear board at the
+  DE-9 — Jim Brown's "shield to the enclosure, signal reference to the
+  enclosure, no common impedance" (Pin 1 Revisited, third_party/papers).
+  The loop the three ties form through the ribbon grounds is benign:
+  the chassis is orders of magnitude lower impedance than the ribbon
+  conductors, and the only externally grounded cables (DE-9, PTT) enter
+  at the rear tie.
 - Everything is unbalanced (sleeve = shield = signal return), so the
-  pin 1 problem can only be minimized: chassis-bonded sleeves + signal
-  ground referenced to chassis at one point.
+  pin 1 problem can only be minimized: chassis-bonded sleeves, and the
+  return current of each interface brought back to its own board's tie
+  over the chassis rather than over a ground shared with another stage.
+- **Finish:** the bonds are all made on the *inside* of panels and on
+  interior flanges (jack contact springs and washers, ties, seam
+  screws), so the enclosure is painted or powder-coated on the outside
+  only and stays chem-film bare inside; holes cut before finishing.
+  The phones return is a real current, not just an RF bond: internal-
+  tooth washers and a torque figure at the phones-jack nuts and the
+  control-board stud, and the front-panel-to-pan seam screws fitted.
 - Exception: the line-out jack J3303 is **insulated-bushing** — its
   sleeve is the transformer secondaries' return (`LOUT_RET`), and a
   chassis bond there would defeat the isolation.
-- **TRRS exception:** on CTIA the sleeve is the mic line and ground is
-  Ring 2. Bond Ring 2 to chassis at entry; treat the sleeve as a signal
-  line (ferrite + shunt cap).
+- **TRRS:** on CTIA the sleeve is the mic line and ground is Ring 2.
+  Ring 2 is on CHASSIS through the front board's spur to its stud; the
+  sleeve is a signal line (ferrite + shunt cap + clamp).
 - Metal-bushing chassis-mount jacks exist for 1/4" (Switchcraft
   11-series) and 3.5mm TRS (Switchcraft 35RAPC class); TRRS is scarce.
   For a PCB-mount plastic jack: mount hard against the grounded panel,
