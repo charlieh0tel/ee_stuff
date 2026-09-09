@@ -4463,6 +4463,17 @@
 				)
 			)
 		)
+		(property "Load_mA" "0/9"
+			(at 189.23 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 189.23 128.27 0)
 			(hide yes)
@@ -5706,6 +5717,28 @@
 				(justify left)
 			)
 		)
+		(property "Load_mA" "0/0.9"
+			(at 52.07 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Load_rail" "+9V"
+			(at 52.07 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 52.07 93.98 0)
 			(hide yes)
@@ -6917,6 +6950,17 @@
 				)
 			)
 		)
+		(property "Load_mA" "0/9"
+			(at 189.23 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 189.23 138.43 0)
 			(hide yes)
@@ -8061,6 +8105,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "Load_mA" "0/0.9"
+			(at 52.07 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Load_rail" "+9V"
+			(at 52.07 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"

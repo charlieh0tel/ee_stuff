@@ -101,16 +101,14 @@ def parse_netlist(text):
     return comps, touches
 
 
+_MA_RE = re.compile(r"\d+(?:\.\d+)?(?:/\d+(?:\.\d+)?)?")
+
+
 def parse_ma(s):
     """'typ' or 'typ/max' -> (typ, max) floats, or None."""
-    if s is None:
+    if s is None or not _MA_RE.fullmatch(s.strip()):
         return None
-    try:
-        nums = [float(p) for p in s.replace(" ", "").split("/") if p]
-    except ValueError:
-        return None
-    if not nums or len(nums) > 2:
-        return None
+    nums = [float(p) for p in s.strip().split("/")]
     typ, mx = nums[0], nums[-1]
     if not all(math.isfinite(v) and v >= 0 for v in (typ, mx)) or typ > mx:
         return None
@@ -140,6 +138,7 @@ class PowerTree:
         self.rails = set(self.nodes)
         self.root = src["input"]["rail"]
         self.warnings = []
+        self.feed_nets = set()  # nets a Rail_out converter drives through a passive
         if self.root not in self.rails:
             raise SystemExit(f"error: input.rail {self.root!r} is not a rail node")
         self.parent, self.converter = self._derive_topology()
@@ -162,6 +161,7 @@ class PowerTree:
                     self.warnings.append(f"{ref}: Rail_out {declared!r} is not a rail")
                     continue
                 outs.add(declared)
+                self.feed_nets |= {n for n, pt in seen if pt == "power_out"}
             for out in outs - ins:
                 if len(ins) != 1:
                     self.warnings.append(
@@ -205,6 +205,24 @@ class PowerTree:
                     self.warnings.append(
                         f"{ref}: has a power_in pin on a rail but no Load_mA"
                     )
+                # a resistor with an end on a rail is a load too (pull-up,
+                # divider, bias feed): it must say what it draws.  Rails that
+                # carry no DC load by design (Vref) and the passive feeding a
+                # Rail_out converter's rail are exempt.
+                elif (
+                    ref.startswith("R")
+                    and not ref.startswith("RV")
+                    and any(
+                        n in self.rails
+                        and not self.nodes[n].get("no_loads")
+                        and n not in self.feed_nets
+                        for n, _pt in self.touches.get(ref, [])
+                    )
+                    and not any(
+                        n in self.feed_nets for n, _pt in self.touches.get(ref, [])
+                    )
+                ):
+                    self.warnings.append(f"{ref}: resistor on a rail but no Load_mA")
                 continue
             val = parse_ma(raw)
             if val is None:

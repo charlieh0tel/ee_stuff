@@ -5803,6 +5803,17 @@
 				)
 			)
 		)
+		(property "Load_mA" "4/6"
+			(at 83.82 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 83.82 160.02 0)
 			(hide yes)
@@ -6463,7 +6474,7 @@
 				)
 			)
 		)
-		(property "Load_mA" "4/5"
+		(property "Load_mA" "4/10"
 			(at 144.78 144.78 0)
 			(hide yes)
 			(show_name no)
@@ -8085,7 +8096,7 @@
 				)
 			)
 		)
-		(property "Load_mA" "4/5"
+		(property "Load_mA" "4/6"
 			(at 45.72 144.78 0)
 			(hide yes)
 			(show_name no)

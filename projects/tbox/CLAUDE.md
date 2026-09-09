@@ -53,7 +53,10 @@
   the part's `power_in` pin and flattens the tree — every load is an
   occurrence on its own rail and on every rail upstream of it (1:1
   through linear stages). Set `Load_rail` only when attribution is
-  ambiguous.
+  ambiguous. The checker fails on any part with a `power_in` pin on a
+  rail, and on any resistor with an end on a rail (pull-ups, dividers,
+  bias feeds), that lacks `Load_mA`; Vref returns and the LDO's output
+  RC are exempt.
 - **Power symbols point the way current flows**: every GND symbol points
   down, every rail symbol (+9V, etc.) points up — never rotated to fit a
   wire. Where a connector has many GND or rail pins, collect them on a

@@ -12,8 +12,8 @@
     {
       "name": "RAW_13V8",
       "desc": "post-filter; LED droppers + U2503 input",
-      "max_ma": 500,
-      "max_basis": "upstream PTC 0.5A hold",
+      "max_ma": 400,
+      "max_basis": "upstream PTC 1812L050 hold, 0.4 A at 50 C",
       "_max_analysis": "No conversion stage; capability is the input PTC hold current, shared with everything downstream (the +9V regulator's input current is its output current plus ~1 mA ground current)."
     },
     {

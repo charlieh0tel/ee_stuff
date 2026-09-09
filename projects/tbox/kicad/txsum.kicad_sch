@@ -3419,7 +3419,7 @@
 				)
 			)
 		)
-		(property "Load_mA" "4/5"
+		(property "Load_mA" "4/6"
 			(at 114.3 144.78 0)
 			(hide yes)
 			(show_name no)
