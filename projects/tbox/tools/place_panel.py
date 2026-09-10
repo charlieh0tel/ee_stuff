@@ -124,7 +124,7 @@ ANCHOR = {
 }
 # parts that belong directly behind a panel jack: ref -> (jack, dx, dy) in board mm.
 # The ESD arrays and their bypass must sit at the jack so the discharge loop
-# (jack pin, array, GND, tie, chassis) is short; check_placement.py enforces 20 mm.
+# (jack pin, array, GND, tie, chassis) is short; check_placement.py enforces 25 mm.
 ATTACH = {
     "U1103": ("J1103", -3.0, 15.5),  # mic-jack contacts, headset A
     "C1110": ("J1103", 1.5, 15.5),
@@ -136,8 +136,8 @@ ATTACH = {
     "C1311": ("J1303", 1.5, 19.5),
     "U1001": ("J1001", -3.0, 15.5),  # phones lines at the dedicated phones jacks
     "C1007": ("J1001", 1.5, 15.5),
-    "U3201": ("J3201", -3.0, -16.0),  # PTT jack lines, rear
-    "C3208": ("J3201", 1.5, -16.0),
+    "U3201": ("J3201", -3.0, -21.0),  # PTT jack lines, rear (35RAPC body is 16 mm deep)
+    "C3208": ("J3201", 1.5, -21.0),
 }
 COHESION = (
     0.15  # weight of the cluster anchor vs. the connection centroid in refinement

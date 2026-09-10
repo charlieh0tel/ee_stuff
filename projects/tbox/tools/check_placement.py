@@ -32,7 +32,9 @@ BOARDS = {
 POWER = {"GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS"}
 
 
-JACK_REACH = 20.0  # mm, ESD array to the jack it clamps
+JACK_REACH = (
+    25.0  # mm, ESD array to the jack it clamps (a 1/4" jack body alone is ~20 mm deep)
+)
 
 
 def main():

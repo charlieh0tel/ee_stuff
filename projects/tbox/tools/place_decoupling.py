@@ -168,8 +168,14 @@ def main():
             for blk in f.read().split("\n\t(symbol\n")[1:]:
                 at = re.search(r"\(at ([\d.-]+) ([\d.-]+)", blk)
                 ref = re.search(r'\(property "Reference" "([^"]+)"', blk)
-                if at and ref:
-                    sch_pos.setdefault(ref.group(1), []).append(
+                if not (at and ref):
+                    continue
+                # a shared sub-sheet carries one symbol per part but one
+                # reference per instance (C1110 / C1310 / ...): every one of
+                # them sits at this position
+                refs = {ref.group(1), *re.findall(r'\(reference "([^"]+)"', blk)}
+                for r in refs:
+                    sch_pos.setdefault(r, []).append(
                         (float(at.group(1)), float(at.group(2)))
                     )
 

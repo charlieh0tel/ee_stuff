@@ -8,8 +8,9 @@
 - Layout: `kicad/tbox.kicad_pcb` is the 300 × 270 panel (FRONT 50 /
   CONTROL 130 / REAR 90, two V-scores on the V-CUT layer), 4-layer
   signal/GND/GND/signal, net classes Default/Power/Phones
-  (`tools/setup_pcb.py`). Next: in KiCad, Update PCB from Schematic
-  (F8) and save, then `tools/place_panel.py` (re)places: panel parts at
+  (`tools/setup_pcb.py`). `tools/sync_pcb.py` is Update PCB from
+  Schematic without the GUI (the F8 step is gone), then
+  `tools/place_panel.py` (re)places: panel parts at
   the drawings' positions (front, rear and top panels), ribbon headers in
   gaps between them, everything else clustered by sub-sheet and then
   pulled toward its connections for a few passes (ratsnest star length

@@ -372,7 +372,7 @@ board, so panel holes sit at per-part heights along one row.
   array has its own 100n and `tools/place_panel.py` puts it directly
   behind its jack (`ATTACH`), so the discharge loop is jack pin, array,
   GND, tie, chassis in a few millimetres; `check_placement.py` fails an
-  array more than 20 mm from a jack on its input nets.
+  array more than 25 mm from a jack on its input nets.
 - **Control board** sloped under the top panel: the **supply** (power
   entry filter, TPS7A4701, ADP7142, VREF buffer — moved here from the
   rear board because nothing ties it to the rear panel once the
