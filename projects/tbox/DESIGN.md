@@ -84,21 +84,31 @@ Two identical, physically grouped channel sections (A and B). Each has:
   at Vref and the load returns to Vref, so the switching step is only the
   op-amp offset (a few mV). That is only true at a zero crossing: a
   hard switch mid-waveform steps by the instantaneous signal (up to
-  ~1.4 V at 0 dBV), so the mute now **fades first**: a 220R series
-  resistor and a back-to-back 2N7002 pair shunting the node to Vref
-  (about -29 dB with the ~3.5 V of gate drive the Vref-referenced
-  sources allow), then the SPDT opens ~30 ms later. Every timing node
-  has a defined source and sink: `MUTE` is a diode-OR of source-only
-  drivers with a 100k pull-down, and nothing discharges through it.
-  Mute: `MUTE` charges the fade gate through D1201/47k into 100n
-  (~5 ms), and 100k/1u ramps the switch control. Unmute: a 2N7002
-  inverter (Q1203, 100k pull-up) drives a second 2N7002 (Q1204) that
-  pulls the switch control hard to ground, so the SPDT reconnects
-  within microseconds while the shunt still holds; the fade gate then
-  bleeds off through 470k (~50 ms) and the audio fades in. Insertion
-  loss of the 220R into the 10k pot is 0.2 dB, and the same value in
-  the intercom instance keeps the TX_MIX level within 0.3 dB whatever
-  the line-out source jumpers select (LEVELS.md). A JFET series+shunt pair was the first design;
+  ~1.4 V at 0 dBV), so the mute **fades first**: a 220R series resistor
+  and a back-to-back PMV30UN2 pair shunting the node to Vref, then the
+  SPDT opens later. The command `MUTE` is a diode-OR of source-only
+  drivers with a 100k pull-down (R1201), so it is **buffered once**
+  before it drives anything with a capacitor on it: Q1203 (BSS138BK,
+  Vgs(th) 0.48-1.6 V) inverts it to `MUTE_N`, and Q1204 inverts that to
+  `MUTE_DRV`, a stiff 0/+9 V copy with a 2k2 pull-up. Both timing
+  networks hang off `MUTE_DRV`; nothing can feed back into `MUTE`.
+  - **Fade gate:** charged from `MUTE_DRV` through 4k7 and D1201,
+    discharged through 100k **returned to `MUTE_DRV`**, into 470n. Both
+    ends sit at +9 V when muted, so there is no divider and no diode
+    drop in the final value: the gate reaches the full rail, 4.5 V above
+    Vref, rising with a 2.1 ms initial constant and falling with 47 ms.
+  - **Switch delay:** 470k into 1u from `MUTE_DRV`, so the switch opens
+    tens of ms after the shunt is conducting. D1202 and 220R across the
+    470k dump the capacitor into Q1204 on release, reconnecting the SPDT
+    in about 1 ms at ~35 mA while the shunt is still fully on. The shunt
+    then releases over 47 ms and the audio fades in.
+  The PMV30UN2 is the shunt because its R_DS(on) is specified **at
+  1.5 V** of gate drive (100 mΩ max, 43 mΩ at 2.5 V), so the attenuation
+  is established at brown-out drive rather than assumed from a 5 V
+  figure the 2N7002 would need. Insertion loss of the 220R into the 10k
+  pot is 0.2 dB, and the same value in the intercom instance keeps the
+  TX_MIX level within 0.3 dB whatever the line-out source jumpers
+  select (LEVELS.md). A JFET series+shunt pair was the first design;
   at 9 V single-supply a worst-case J113 (|Vgs(off)| = 3 V) is neither
   fully off at 0 dBV peaks when muted nor fully off when unmuted, so it
   was dropped. Override mute uses the same circuit, triggered
@@ -198,11 +208,15 @@ Two identical, physically grouped channel sections (A and B). Each has:
   headphone amps are disabled through their EN pins. Nothing keys or
   passes audio until the rail is valid; a brown-out re-asserts all of
   it at the threshold rather than at whatever an RC happened to think.
-  The key inhibit shares `MUTE_HOLD` with the audio hold, whose 100k
-  pull-up also charges the mute cells, so after a brown-out Q2109 gets
-  its gate drive 15–35 ms after `PWR_OK` falls. Accepted: the operator
-  is already keyed when that happens and the rig cannot tell 30 ms of
-  extra key time from the operator's own release.
+  `MUTE_HOLD` drives the key inhibit and both audio holds. Its pull-up
+  R2122 is **10k**, not 100k: it works into the two channels' 100k
+  command pull-downs, so the divider puts `MUTE_HOLD` at 7.0 V with the
+  rail at 9 V and 4.5 V with the rail at 6 V, against a 2N7002 threshold
+  specified as high as 2.5 V. At 100k those figures were 2.8 V and
+  1.8 V, i.e. marginal at full rail and absent in a brown-out. The
+  command line now carries no timing capacitors either (they sit behind
+  each cell's buffer), so the inhibit follows `PWR_OK` promptly instead
+  of waiting for the mute cells to charge.
   Each OPA1622 output node carries a 1k to Vref so the 470 µF phones
   coupling caps charge through 1k + phones (a few mA, ~70 mV peak into
   16 Ω) during the hold while the amplifier is still disabled; at

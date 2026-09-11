@@ -10763,7 +10763,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "10k"
 			(at 220.98 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10774,7 +10774,7 @@
 				(justify left)
 			)
 		)
-		(property "Load_mA" "0.09"
+		(property "Load_mA" "0.9"
 			(at 218.44 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)

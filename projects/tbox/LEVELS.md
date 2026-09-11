@@ -31,14 +31,15 @@ filter buys ~8 dB beyond these figures.
 
 **Mute depth:** the TS12A12511 SPDT opens the signal path and clamps
 the node to Vref in one move (series + shunt): off isolation is -70 dB
-at 1 MHz and better at audio. Ahead of it the 2N7002 shunt pair fades
-the node over ~5 ms (220R against two ~4 Ω channels at the ~3.5 V of
-gate drive available above Vref: about -29 dB; the 2N7002 Rds(on) is
-only specified at 5 and 10 V, so this is an estimate) before the
-switch moves, so the switching step is the residual after the fade,
-not the instantaneous signal; the op-amp offset (≤4 mV) is the floor.
-On release the switch reconnects under the shunt and the fade-in
-follows (~50 ms). Target: no audible click at full monitor level — a
+at 1 MHz and better at audio. Ahead of it the PMV30UN2 shunt pair fades
+the node over ~5 ms before the switch moves, so the switching step is
+the residual after the fade, not the instantaneous signal. The pair's
+R_DS(on) is specified at the drive actually available: 100 mΩ max at
+Vgs 1.5 V and 43 mΩ at 2.5 V, so against the 220R the attenuation is
+-60.8 dB at 1.5 V of drive and -70.7 dB at the 4.5 V the buffered
+command delivers at a healthy rail. On release the switch reconnects
+in ~1 ms under the still-conducting shunt, and the fade-in follows on
+a 47 ms electrical constant. Target: no audible click at full monitor level — a
 bench item, not a claim. The intercom instance drives TX_MIX through
 the same 220R: 0.2–0.55 dB loss depending on how many 10k trims the
 line-out jumpers hang on it.

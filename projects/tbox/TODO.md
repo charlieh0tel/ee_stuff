@@ -55,8 +55,16 @@
   (HM-36/HM-219) at 94 dB SPL with 8 V through 2k2, into 600 Ω and open,
   and fill the LEVELS.md row; mute fade — listen at full monitor level
   for the residual click, trim R1203/C1202 (fade) and R1204/C1203
-  (switch delay) if needed, and confirm the shunt depth at ~3.5 V of
-  gate drive (Rds(on) is unspecified there); phones power-up with
+  (switch delay) if needed. The fade's audible character still needs
+  measuring: 47 ms is an electrical time constant, and the audible part
+  is the few ms where the shunt resistance passes through something
+  comparable to the 220R, which these very low-R_DS devices cross
+  quickly. Check both the mute and the unmute transition, and confirm
+  the switch reconnects before the shunt lets go. Also confirm the
+  TS12A12511's actual logic trip point at 9 V, which the datasheet
+  bounds only as 0.8 V low / 5 V high at 12 V; the switch delay is
+  designed so that even the earliest trip finds the shunt conducting.
+  Phones power-up with
   headphones plugged, volume at zero and maximum — the 1k Vref
   precharge (R2425–R2428) should leave no step at enable, and the
   disabled OPA1622 output must tolerate the 4.5 mA it can supply;
