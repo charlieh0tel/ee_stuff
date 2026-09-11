@@ -3,7 +3,7 @@
 	(generator "tbox")
 	(generator_version "1.0")
 	(layer "F.Cu")
-	(descr "Switchcraft 35RAPC2AH3 (mono) / 35RAPC2BH3 (stereo) / 35RAPC4BH3, 3.5 mm right-angle PCB jack, threaded metal bushing, panel-nut. Pads: S=pin1, R=pin2, RN=pin3, TN=pin4, T=pin5 per Switchcraft drawing 35RAPC__H3 rev J. Panel mounting surface at y=0; bushing protrudes 3.5 mm.")
+	(descr "Switchcraft 35RAPC2AH3 (mono) / 35RAPC2BH3 (stereo) / 35RAPC4BH3, 3.5 mm right-angle PCB jack, threaded metal bushing, panel-nut. Pads: S=pin1, R=pin2, RN=pin3, TN=pin4, T=pin5 per the RECOMMENDED PC BOARD COMPONENT SIDE view of Switchcraft drawing 35RAPC__H3 rev J. Rebuilt 2026-09-11: that view is a TOP VIEW with the panel surface at the left, so it maps here by a 90 deg CLOCKWISE page rotation -- pins above the drawing axis (2 at 5.20 and 3 at 2.50) are at POSITIVE x, pins below (4 at 4.00 and 5 at 4.50) at NEGATIVE x. The previous version was mirrored, had 4.00/4.50 swapped between pins 4 and 5, and had every 1.75 x 0.75 slot turned 90 deg. Panel mounting surface at y=0; bushing protrudes 3.5 mm.")
 	(tags "jack 3.5mm switchcraft threaded")
 	(attr through_hole)
 	(fp_text reference "REF**"
@@ -27,43 +27,43 @@
 		)
 	)
 	(pad "S" thru_hole oval
-		(at 0.0 2.0)
-		(size 1.7 2.6)
-		(drill oval 1.0 1.9)
+		(at 0 2)
+		(size 2.6 1.7)
+		(drill oval 1.9 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
 	(pad "R" thru_hole oval
-		(at -5.2 9.8)
-		(size 2.6 1.7)
-		(drill oval 1.9 1.0)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-	)
-	(pad "RN" thru_hole oval
-		(at -2.5 8.4)
-		(size 2.6 1.7)
-		(drill oval 1.9 1.0)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-	)
-	(pad "TN" thru_hole oval
-		(at 4.5 13.0)
+		(at 5.2 9.8)
 		(size 1.7 2.6)
 		(drill oval 1.0 1.9)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
-	(pad "T" thru_hole oval
-		(at 4.0 5.4)
+	(pad "RN" thru_hole oval
+		(at 2.5 8.4)
+		(size 1.7 2.6)
+		(drill oval 1.0 1.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
+	(pad "TN" thru_hole oval
+		(at -4 13)
 		(size 2.6 1.7)
 		(drill oval 1.9 1.0)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 	)
+	(pad "T" thru_hole oval
+		(at -4.5 5.4)
+		(size 1.7 2.6)
+		(drill oval 1.0 1.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+	)
 	(fp_rect
-		(start -6.0 0)
-		(end 5.5 14.0)
+		(start -5.5 0)
+		(end 6 14)
 		(stroke
 			(width 0.1)
 			(type solid)
@@ -72,8 +72,8 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -6.5 -4.0)
-		(end 6.0 14.5)
+		(start -6 -4)
+		(end 6.5 14.5)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -82,8 +82,8 @@
 		(layer "F.CrtYd")
 	)
 	(fp_line
-		(start -6.0 0)
-		(end 5.5 0)
+		(start -5.5 0)
+		(end 6 0)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -91,8 +91,8 @@
 		(layer "F.SilkS")
 	)
 	(fp_line
-		(start -6.0 14.0)
-		(end 5.5 14.0)
+		(start -5.5 14)
+		(end 6 14)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -100,8 +100,8 @@
 		(layer "F.SilkS")
 	)
 	(fp_line
-		(start -6.0 0)
-		(end -6.0 14.0)
+		(start 6 0)
+		(end 6 14)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -109,8 +109,8 @@
 		(layer "F.SilkS")
 	)
 	(fp_line
-		(start 5.5 0)
-		(end 5.5 14.0)
+		(start -5.5 0)
+		(end -5.5 14)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -127,8 +127,8 @@
 		(layer "F.Fab")
 	)
 	(fp_line
-		(start -1.8 -3.5)
-		(end -1.8 0)
+		(start 1.8 -3.5)
+		(end 1.8 0)
 		(stroke
 			(width 0.1)
 			(type solid)
@@ -136,8 +136,8 @@
 		(layer "F.Fab")
 	)
 	(fp_line
-		(start 1.8 -3.5)
-		(end 1.8 0)
+		(start -1.8 -3.5)
+		(end -1.8 0)
 		(stroke
 			(width 0.1)
 			(type solid)

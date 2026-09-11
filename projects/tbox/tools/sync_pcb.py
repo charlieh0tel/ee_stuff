@@ -209,6 +209,13 @@ def main():
     )
     ap.add_argument("--dry-run", action="store_true", help="report only")
     ap.add_argument(
+        "--reload",
+        metavar="FPID[,FPID...]",
+        help="reload these footprints' geometry from the library even though the "
+        "library id has not changed (use 'all' for every footprint); needed after "
+        "editing a .kicad_mod in place, which a plain run cannot detect",
+    )
+    ap.add_argument(
         "--keep-orphans", action="store_true", help="keep footprints without a symbol"
     )
     args = ap.parse_args()
@@ -218,6 +225,10 @@ def main():
     except ImportError:
         os.execv("/usr/bin/python3", ["/usr/bin/python3", *sys.argv])
     import pcbnew
+
+    reload_set = set()
+    if args.reload:
+        reload_set = {f.strip() for f in args.reload.split(",") if f.strip()}
 
     comps, nets = read_netlist(args.netlist or export_netlist(args.sch))
     libs = find_libs()
@@ -247,7 +258,7 @@ def main():
         return fp
 
     # --- footprints: add, replace, update ---
-    added, replaced, removed = [], [], []
+    added, replaced, removed, reloaded = [], [], [], []
     for path, c in sorted(comps.items(), key=lambda kv: kv[1]["ref"]):
         if not c["footprint"]:
             problems.append(f"{c['ref']}: symbol has no footprint")
@@ -255,7 +266,10 @@ def main():
         fp = next((by_path[p] for p in c["paths"] if p in by_path), None)
         if fp is not None and fp.GetPath().AsString() != path:
             path = fp.GetPath().AsString()  # keep the uuid it was created with
-        if fp is not None and fpid_of(fp) != c["footprint"]:
+        stale = bool(reload_set) and (
+            "all" in reload_set or c["footprint"] in reload_set
+        )
+        if fp is not None and (fpid_of(fp) != c["footprint"] or stale):
             new = load(c["footprint"])
             if new is None:
                 continue
@@ -263,7 +277,10 @@ def main():
             new.SetOrientation(fp.GetOrientation())
             if fp.IsFlipped():
                 new.Flip(new.GetPosition(), False)
-            replaced.append(f"{c['ref']}: {fpid_of(fp)} -> {c['footprint']}")
+            if fpid_of(fp) == c["footprint"]:
+                reloaded.append(f"{c['ref']} ({c['footprint']})")
+            else:
+                replaced.append(f"{c['ref']}: {fpid_of(fp)} -> {c['footprint']}")
             if not args.dry_run:
                 board.Remove(fp)
                 board.Add(new)
@@ -356,6 +373,7 @@ def main():
     for title, items in (
         ("added", added),
         ("replaced", replaced),
+        ("reloaded from the library", reloaded),
         ("removed" if not args.keep_orphans else "orphans kept", removed),
     ):
         if items:

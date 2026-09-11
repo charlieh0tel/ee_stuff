@@ -29,12 +29,21 @@
 
 - Footprints are assigned (`tools/check_footprints.py` keeps it that way)
   and the chosen parts carry `MPN` fields. Before ordering boards:
-  - verify the five project footprints in `kicad/tbox.pretty` against the
-    current vendor drawings (Switchcraft 35RAPC__H3 rev J, C&K 7000-series
-    AV2 and V-bracket patterns, Triad TY-250P 2019-05-31, Same Sky
-    SJ-4351X rev 1.06 — the rear pins 3/5 are at y = 10.8 by scaling the
-    drawing, not by a dimension; confirm, and cut the 4.5 × 1.3 mm edge
-    notch the drawing calls for);
+  - **two of the five project footprints were rebuilt on 2026-09-11** after
+    the third review: `Jack_3.5mm_Switchcraft_35RAPCxxH3_Horizontal` and
+    `Jack_3.5mm_CUI_SJ-43514_Horizontal` were both **mirrored**, and the
+    Switchcraft one additionally had 4.00/4.50 swapped between pins 4 and 5
+    and all five 1.75 x 0.75 slots turned 90 degrees. Both vendor views are
+    TOP views with the panel/PCB edge at the left, so they map into a
+    footprint whose body runs along +y by a 90 degree CLOCKWISE page
+    rotation: pins above the drawing axis go to POSITIVE x. **Audit the
+    other three the same way** (C&K 7000-series AV2 and V-bracket, Triad
+    TY-250P 2019-05-31) — two of two checked were wrong, so assume the
+    rest are until shown otherwise. Still unconfirmed on the SJ-43514:
+    the rear pins 3/5 are at y = 10.8 by scaling the drawing, not by a
+    dimension (2.90 and 7.90 are dimensioned, 10.8 is not). The
+    4.5 x 1.3 mm edge notch is now cut by `setup_pcb.py`. Check a 1:1
+    print of both against real parts before fab regardless;
   - C&K PVA ordering code: the `xxxxxx` in `PVA1OAH2xxxxxxV2` /
     `PVA1EEH2xxxxxxV2` is the actuator height/style, set by the
     top-panel-to-control-board gap (the enclosure decision); the
