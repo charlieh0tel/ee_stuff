@@ -72,6 +72,19 @@
   on a slow ramp, rapid cycling and a brown-out — rig PTT must stay
   released throughout; headphone amp temperature with both ears into
   16 Ω at full level.
+- **Deferred decision: input PTC and the rail budget.** RAW_13V8 sits at
+  92% of its 400 mA cap (1812L050/60 hold at 50 C). Candidate swap is
+  **1812L075/33**: 0.60 A at 50 C, Vmax 33 V (above the SMBJ18A's 29.2 V
+  clamp, unlike the 24 V variant), Imax 20 A (vs 10 A, which also bears
+  on the fault-current question below), and lower series resistance,
+  0.110 vs 0.150 ohm. Costs a higher trip current, 1.5 A, against the
+  1.4 A rating of the BLM21PG601 downstream. Separately, +9V is at 83%
+  against the TPS7A4701's 385 mA thermal cap; that is driven by the two
+  OPA1622 at 101 mA each, a continuous-sine-at-clip worst case rather
+  than an operating state, and the 385 mA itself assumes the unverified
+  pad/via implementation. Decide the PTC and whether to re-state the
+  amplifier maximum. A smaller lever: the three mute buffer pull-ups at
+  4k7 instead of 2k2 save ~6 mA.
 - Supply source envelope is a bench/rig PSU or rig accessory jack
   (DESIGN.md). If the box ever goes mobile: fuse instead of the PTC,
   SMCJ-class TVS, pulse-rated bead, and the reverse Schottky's surge
