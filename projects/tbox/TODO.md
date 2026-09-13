@@ -42,8 +42,9 @@
     rest are until shown otherwise. Still unconfirmed on the SJ-43514:
     the rear pins 3/5 are at y = 10.8 by scaling the drawing, not by a
     dimension (2.90 and 7.90 are dimensioned, 10.8 is not). The
-    4.5 x 1.3 mm edge notch is now cut by `setup_pcb.py`. Check a 1:1
-    print of both against real parts before fab regardless;
+    4.5 x 1.3 mm edge notch is now cut by `setup_pcb.py`. **1:1 print
+    check passed 2026-09-12** on both rebuilt patterns; if that check
+    seated a real jack it also settles the scaled 10.8 above;
   - C&K PVA ordering code: the `xxxxxx` in `PVA1OAH2xxxxxxV2` /
     `PVA1EEH2xxxxxxV2` is the actuator height/style, set by the
     top-panel-to-control-board gap (the enclosure decision); the
