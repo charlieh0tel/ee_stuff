@@ -34,14 +34,20 @@ def load(path=SRC):
         return json.load(f)
 
 
-def part(model, fpid):
+#: what each question needs.  A trimmer reached *through* an aperture has no
+#: panel face at all, but its axis height is still what sets the hole.
+FOR_HOLE = ("axis_height",)
+FOR_PLACING = ("nose_dir", "axis_offset", "panel_face")
+
+
+def part(model, fpid, need=FOR_PLACING + FOR_HOLE):
     """Mechanical record for a footprint id, or raise Unresolved."""
     p = model["parts"].get(fpid)
     if p is None:
         raise Unresolved(f"{fpid}: no record in mech.json")
     if p.get("status") == "unverified":
         raise Unresolved(f"{fpid}: geometry unverified ({p.get('source', '')[:80]})")
-    for k in ("nose_dir", "axis_offset", "panel_face", "axis_height"):
+    for k in need:
         if p.get(k) is None:
             raise Unresolved(f"{fpid}: {k} not established")
     return p
@@ -58,7 +64,7 @@ def hole_y(model, board, fpid):
     """Panel y of the aperture centre: the PCB datum less the axis height."""
     return (
         datum(model, board)["pcb_top_below_panel_top"]
-        - part(model, fpid)["axis_height"]
+        - part(model, fpid, FOR_HOLE)["axis_height"]
     )
 
 
@@ -77,15 +83,20 @@ def axis_on_board(model, fpid, pos_mm, rot_deg, flipped=False):
     orientation, both as pcbnew reports them.
     """
     p = part(model, fpid)
-    nose = tuple(p["nose_dir"])
     if flipped:
-        nose = (-nose[0], nose[1])
+        # KiCad's Flip() mirrors the footprint's local y at a fixed reported
+        # orientation, and a bottom-side part also seats against the board from
+        # the other face, so its axis height needs a different vertical
+        # transform.  Neither is implemented; refuse rather than answer wrongly.
+        raise Unresolved(
+            f"{fpid}: on the back of the board -- flipped panel parts are not "
+            f"modelled (planar and vertical transforms both differ)"
+        )
+    nose = tuple(p["nose_dir"])
     # the axis sits `axis_offset` from the origin, perpendicular to the nose:
     # footprint +x when the nose runs along y, footprint +y when along x
     perp = (-nose[1], nose[0])
     off = p["axis_offset"]
-    if flipped:
-        off = -off
     ax_local = (perp[0] * off, perp[1] * off)
     face_local = (
         ax_local[0] + nose[0] * p["panel_face"],
@@ -102,15 +113,20 @@ def axis_on_board(model, fpid, pos_mm, rot_deg, flipped=False):
 
 
 def origin_for_axis(model, fpid, axis_xy, face_at, rot_deg, flipped=False):
-    """Inverse of `axis_on_board`: the footprint origin that puts the axis at
-    `axis_xy` and the panel face on the line `face_at` (a board coordinate
-    along the nose direction)."""
+    """Inverse of `axis_on_board`: the footprint origin that puts the part's
+    axis *line* through `axis_xy` and its panel face on the plane `face_at` (a
+    board coordinate measured along the nose direction).
+
+    Only the component of `axis_xy` across the nose is used -- sliding along
+    the nose is what seats the face, so the returned axis reference point is
+    generally not `axis_xy` itself.
+    """
     p = part(model, fpid)
-    nose = tuple(p["nose_dir"])
     if flipped:
-        nose = (-nose[0], nose[1])
+        raise Unresolved(f"{fpid}: flipped panel parts are not modelled")
+    nose = tuple(p["nose_dir"])
     perp = (-nose[1], nose[0])
-    off = -p["axis_offset"] if flipped else p["axis_offset"]
+    off = p["axis_offset"]
     ax_local = (perp[0] * off, perp[1] * off)
     ax = _rot(ax_local, rot_deg)
     nose_r = _rot(nose, rot_deg)

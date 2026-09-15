@@ -32,6 +32,7 @@ Usage:
 """
 
 import argparse
+import math
 import os
 import re
 import sys
@@ -43,7 +44,8 @@ sys.path.insert(0, HERE)
 import mech
 from place_panel import FRONT, REAR, W, front_positions, rear_positions
 
-TOL = 0.01  # mm; file agreement, not a fit tolerance
+TOL = 0.01  # mm; nominal file/board agreement, not a fit tolerance
+ANG_TOL = 0.1  # degrees
 PANELS = {
     "Front Board": ("panel-front.svg", 0.0),  # board edge the jacks face
     "Rear Board": ("panel-rear.svg", 270.0),
@@ -84,10 +86,17 @@ def annotate(text, wanted):
 def apertures(text):
     """-> {ref: [(attr, value, span), ...]} for every annotated aperture."""
     found = {}
-    for m in re.finditer(r'<(circle|use)\b[^>]*data-ref="([^"]+)"[^>]*/>', text):
+    for m in re.finditer(r'<(circle|use|g)\b[^>]*data-ref="([^"]+)"[^>]*>', text):
         tag, ref = m.group(1), m.group(2)
-        attr = "cy" if tag == "circle" else "y"
-        am = re.search(rf'\b{attr}="([-\d.]+)"', m.group(0))
+        if "transform" in m.group(0) and tag != "g":
+            found.setdefault(ref, [])  # a transform would move it; refuse
+            continue
+        if tag == "g":
+            am = re.search(r"translate\([-\d.]+,\s*([-\d.]+)\)", m.group(0))
+            attr = "translate"
+        else:
+            attr = "cy" if tag == "circle" else "y"
+            am = re.search(rf'\b{attr}="([-\d.]+)"', m.group(0))
         if am:
             start = m.start() + am.start(1)
             found.setdefault(ref, []).append(
@@ -99,24 +108,24 @@ def apertures(text):
 def main():
     ap = argparse.ArgumentParser(description="Panel apertures from mech.json.")
     ap.add_argument("--write", action="store_true", help="update the drawings")
-    ap.add_argument("--pcb", default="yes", help="'no' to skip the board check")
     args = ap.parse_args()
 
     model = mech.load()
     fx, rx = front_positions(), rear_positions()
     problems, notes = [], []
 
+    # the board is always read: the footprint ids come from it, and checking
+    # the drawings against the same inputs that generated them proves nothing
+    try:
+        import pcbnew
+    except ImportError:
+        os.execv("/usr/bin/python3", ["/usr/bin/python3", *sys.argv])
+    board = pcbnew.LoadBoard(os.path.join(ROOT, "kicad", "tbox.kicad_pcb"))
+    placed = {fp.GetReference(): fp for fp in board.GetFootprints()}
     fpid_of = {}
-    if args.pcb != "no":
-        try:
-            import pcbnew
-        except ImportError:
-            os.execv("/usr/bin/python3", ["/usr/bin/python3", *sys.argv])
-        board = pcbnew.LoadBoard(os.path.join(ROOT, "kicad", "tbox.kicad_pcb"))
-        placed = {fp.GetReference(): fp for fp in board.GetFootprints()}
-        for ref, fp in placed.items():
-            i = fp.GetFPID()
-            fpid_of[ref] = f"{i.GetLibNickname()}:{i.GetLibItemName()}"
+    for ref, fp in placed.items():
+        i = fp.GetFPID()
+        fpid_of[ref] = f"{i.GetLibNickname()}:{i.GetLibItemName()}"
 
     for brd, (svg, edge) in PANELS.items():
         path = os.path.join(ROOT, svg)
@@ -144,15 +153,13 @@ def main():
             if ref not in refs:
                 continue
             fpid = fpid_of.get(ref)
-            if args.pcb != "no" and fpid is None:
+            if fpid is None:
                 problems.append(f"{ref}: on the panel but not on the board")
                 continue
             try:
-                want = mech.hole_y(model, brd, fpid) if fpid else None
+                want = mech.hole_y(model, brd, fpid)
             except mech.Unresolved as e:
                 problems.append(f"{ref}: {e}")
-                continue
-            if want is None:
                 continue
             for _attr, have, span in found[ref]:
                 if abs(have - want) > TOL:
@@ -173,11 +180,15 @@ def main():
                 notes.append(f"{svg}: moved {len(edits)} aperture coordinate(s)")
 
         # --- the placed board ---
-        if args.pcb == "no":
-            continue
         for ref in sorted(refs):
             fp = placed.get(ref)
             if fp is None:
+                continue
+            if model["parts"].get(fpid_of[ref], {}).get("mount") == "through":
+                notes.append(
+                    f"{ref}: reached through the panel, not seated against it; "
+                    f"its depth behind the panel is an open assembly decision"
+                )
                 continue
             try:
                 axis, _nose, face = mech.axis_on_board(
@@ -191,17 +202,32 @@ def main():
                 problems.append(f"{ref}: {e}")
                 continue
             want_x = board_x(brd, wanted[ref])
-            if abs(axis[0] - want_x) > 0.05:
+            if abs(axis[0] - want_x) > TOL:
                 problems.append(
                     f"{ref}: axis on the board at x={axis[0]:.2f}, panel wants "
                     f"{want_x:.2f} ({axis[0] - want_x:+.2f} mm)"
                 )
-            want_face = edge
-            got = face[1]
-            if abs(got - want_face) > 0.05:
+            if abs(face[1] - edge) > TOL:
                 problems.append(
-                    f"{ref}: panel face at y={got:.2f}, board edge is "
-                    f"{want_face:.2f} ({got - want_face:+.2f} mm)"
+                    f"{ref}: panel face at y={face[1]:.2f}, board edge is "
+                    f"{edge:.2f} ({face[1] - edge:+.2f} mm)"
+                )
+            # facing: a part with no axis offset and no shoulder distance has
+            # coordinates that are invariant under rotation, so check the nose
+            want_nose = (0.0, -1.0) if brd == "Front Board" else (0.0, 1.0)
+            if abs(_nose[0] - want_nose[0]) > math.radians(ANG_TOL) or abs(
+                _nose[1] - want_nose[1]
+            ) > math.radians(ANG_TOL):
+                problems.append(
+                    f"{ref}: nose points ({_nose[0]:+.2f},{_nose[1]:+.2f}), "
+                    f"the panel is at ({want_nose[0]:+.0f},{want_nose[1]:+.0f})"
+                )
+            rec = model["parts"][fpid_of[ref]]
+            if rec.get("cutout_status") != "dimensioned":
+                problems.append(
+                    f"{ref}: panel cut-out for {fpid_of[ref]} is "
+                    f"{rec.get('cutout_status', 'missing')}, so the aperture "
+                    f"size is not established"
                 )
 
     for fpid, rec in sorted(model["parts"].items()):

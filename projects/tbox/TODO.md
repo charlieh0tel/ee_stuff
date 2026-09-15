@@ -99,6 +99,27 @@
   dimensioned 11.2 mm. Two values are `scaled` rather than dimensioned
   and want confirming on real parts: the Switchcraft 3.00 mm axis height
   (both source dimensions are REF) and the C&K AV2 panel face.
+- **Raised by the review of the panel implementation, still open.**
+  - The C&K AV2 footprint's own mechanical outline is 4.02 mm short (its
+    F.Fab front edge is 16.0 from terminal 1, the drawing says 20.02).
+    `mech.json` now carries the right number, but fix the footprint too.
+  - The SJ1-3533NG bushing is **brass, nickel-plated**, not plastic.
+    DESIGN.md's grounding section assumes the 3.5 mm phones jacks are
+    isolated from the panel and bonded through a CHASSIS spur to H1001.
+    If their nuts bond them to the panel directly, that assumption and the
+    single-tie-per-board story need revisiting.
+  - Placing by axis rather than by pad boundary removed the old 2 mm
+    pad-to-edge margin: the Switchcraft's nearest copper is now 1.15 mm
+    inside the edge and the SJ1's 0.42 mm. Neither is necessarily a
+    violation, but nothing constrains it any more -- add an explicit
+    clearance rule.
+  - Parts left unplaced (the trims, D2118) no longer contribute occupancy,
+    so the free-part placer can target the space they occupy.
+  - `gen_panels.py` still checks only the front and rear drawings, against
+    hardcoded board edges rather than actual `Edge.Cuts`, and does not
+    verify that a footprint's own geometry matches the part the model
+    describes. Rotating a jack 180 degrees at its origin is caught by the
+    new facing check, but shifting its pads is not.
 - **D2118 has nowhere to go.** `panel-top.svg` puts the power LED at
   y=12, which is board y=178, past the control board's 176 mm limit. The
   placer used to clamp this silently; it now reports it and fails.

@@ -1,6 +1,6 @@
 {
   "_comment": "Shared mechanical model for the TBox panels. One source of truth for every dimension that ties a PCB part to a panel aperture, consumed by tools/place_panel.py (where a panel part goes on the board) and tools/gen_panels.py (where its hole goes on the panel, and whether the drawings and the placed board agree). Nothing here is duplicated in the tools or the SVGs. Every entry carries the drawing it came from and a 'status': 'dimensioned' (read off an explicit dimension), 'scaled' (measured or inferred from the drawing, no explicit dimension), or 'unverified' (no authoritative source yet). gen_panels.py FAILS on any panel part whose geometry is missing or 'unverified' -- an unknown height must block, never default.",
-  "_frame": "Footprint coordinates, KiCad convention (x right, y down, front layer seen from above). 'nose_dir' is the unit vector in footprint coordinates pointing OUT through the panel toward the operator. 'axis_offset' is the signed offset of the connector's mechanical axis from the footprint origin, perpendicular to nose_dir, taken as the component of the origin-to-axis vector along nose_dir rotated -90 degrees. 'panel_face' is the distance from the footprint origin along nose_dir to the surface that seats against the inner face of the panel. 'nose_projection' is how far the bushing/thread stands proud of that face. 'axis_height' is the height of the mechanical axis above the PCB component-side seating plane.",
+  "_frame": "Footprint coordinates, KiCad convention (x right, y down, front layer seen from above). 'nose_dir' is the unit vector in footprint coordinates pointing OUT through the panel toward the operator. 'axis_offset' is the signed offset of the connector's mechanical axis from the footprint origin, perpendicular to nose_dir, taken as the component of the origin-to-axis vector along nose_dir rotated -90 degrees. 'panel_face' is the distance from the footprint origin along nose_dir to the surface that seats against the inner face of the panel. 'nose_projection' is how far the bushing/thread stands proud of that face. 'axis_height' is the height of the mechanical axis above the PCB component-side seating plane. 'mount' is 'panel' when the part seats against the inner face (so its panel_face must line up with the board edge) or 'through' when it is merely reached through an aperture, like a screwdriver-adjust trimmer, which has no panel face and whose depth is an assembly decision.",
   "datums": {
     "_comment": "Per board: where the PCB's component-side seating plane sits below the top edge of its panel, in that panel drawing's own coordinates. A hole centre is therefore at y = pcb_top_below_panel_top - axis_height.",
     "Front Board": {
@@ -47,7 +47,8 @@
       },
       "status": "dimensioned",
       "cutout_status": "unverified",
-      "source": "SameSky_SJ-4351X.pdf rev 1.06 (2024-09-12) p.2: front elevation '2.25 [0.089] +/-0.2' axis above the PCB; nose '\u00d86.00 [0.236]'; bushing protrudes 3.0. The drawing gives no panel cut-out because the bushing is not fastened to the panel: the aperture only has to clear \u00d86.00 plus alignment error."
+      "source": "SameSky_SJ-4351X.pdf rev 1.06 (2024-09-12) p.2: front elevation '2.25 [0.089] +/-0.2' axis above the PCB; nose '\u00d86.00 [0.236]'; bushing protrudes 3.0. The drawing gives no panel cut-out because the bushing is not fastened to the panel: the aperture only has to clear \u00d86.00 plus alignment error.",
+      "mount": "panel"
     },
     "tbox:Jack_3.5mm_Switchcraft_35RAPCxxH3_Horizontal": {
       "mpn": "35RAPC2BH3",
@@ -68,17 +69,18 @@
       },
       "status": "scaled",
       "cutout_status": "unverified",
-      "source": "Switchcraft_35RAPC__H3_drawing.pdf rev J front view: body 0.236 [6,00] REF tall with the bushing axis on its centreline, so the axis is 3.00 above the body bottom, and the body bottom seats on the PCB. The 0.098 [2,50] REF dimension is the terminal projection BELOW the body, not a standoff -- reading it as a standoff gives 5.5 and is wrong. Both dimensions are REF and the axis-to-seating-plane height is not toleranced: confirm on a mounted part before fab."
+      "source": "Switchcraft_35RAPC__H3_drawing.pdf rev J front view: body 0.236 [6,00] REF tall with the bushing axis on its centreline, so the axis is 3.00 above the body bottom, and the body bottom seats on the PCB. The 0.098 [2,50] REF dimension is the terminal projection BELOW the body, not a standoff -- reading it as a standoff gives 5.5 and is wrong. Both dimensions are REF and the axis-to-seating-plane height is not toleranced: confirm on a mounted part before fab.",
+      "mount": "panel"
     },
     "Connector_Audio:Jack_3.5mm_CUI_SJ1-3533NG_Horizontal": {
       "mpn": "SJ1-3533NG",
-      "desc": "Same Sky 3.5 mm phones jack, plastic bushing",
+      "desc": "Same Sky 3.5 mm phones jack, brass nickel-plated bushing",
       "nose_dir": [
         0,
         -1
       ],
       "axis_offset": 0.9,
-      "panel_face": 1.32,
+      "panel_face": 1.2,
       "nose_projection": 4.0,
       "axis_height": 7.0,
       "axis_height_tol": 0.15,
@@ -89,7 +91,8 @@
       },
       "status": "dimensioned",
       "cutout_status": "unverified",
-      "source": "SameSky_SJ1-353xNG.pdf p.2 front elevation: '7.00 +/-0.15' axis above the PCB, body 12.50 tall, nose \u00d86.00. Footprint geometry from the stock KiCad part: its F.Fab bushing block spans x -2.22..4.02 (centre +0.90, the axis) and y -5.32..-1.32, so the panel face is 1.32 ahead of the origin and the nose stands 4.00 proud."
+      "source": "SameSky_SJ1-353xNG.pdf p.2 front elevation: '7.00 +/-0.15' axis above the PCB, body 12.50 tall, nose \u00d86.00. Footprint geometry from the stock KiCad part's F.Fab (NOT its silkscreen, which is expanded 0.12 mm): bushing block x -2.10..3.90 (centre +0.90, the axis) and y -5.20..-1.20, so the panel face is 1.20 ahead of the origin and the nose stands 4.00 proud. Note the bushing is brass, nickel-plated, not plastic -- it bonds to the panel through its nut, which DESIGN.md's grounding section assumes it does not.",
+      "mount": "panel"
     },
     "Connector_Audio:Jack_6.35mm_Neutrik_NRJ6HF-1_Horizontal": {
       "mpn": "NRJ6HF-1",
@@ -99,7 +102,7 @@
         0
       ],
       "axis_offset": 7.23,
-      "panel_face": 17.07,
+      "panel_face": 16.95,
       "nose_projection": 8.9,
       "axis_height": 6.5,
       "axis_height_tol": null,
@@ -109,7 +112,8 @@
       },
       "status": "dimensioned",
       "cutout_status": "dimensioned",
-      "source": "Neutrik ST-NRJ6HF drawing (modified 2021-02-19, fetched 2026-09-14) end view: '6,5 [.256]' axis above the PCB, '12,7 [.500]' body height, '3,25 [.128]' terminal projection below; 'Panel cut out (rear side) \u00d811,2 [.441]'; thread length '8,9 [.350]'. Footprint: F.Fab bushing block x 17.07..25.97, y 1.61..12.85, centre y 7.23."
+      "source": "Neutrik ST-NRJ6HF drawing (modified 2021-02-19, fetched 2026-09-14) end view: '6,5 [.256]' axis above the PCB, '12,7 [.500]' body height, '3,25 [.128]' terminal projection below; 'Panel cut out (rear side) \u00d811,2 [.441]'; thread length '8,9 [.350]'. Footprint: F.Fab bushing block x 16.95..25.85, y 1.73..12.73, centre y 7.23 (the transverse offset is independently 11.43-4.20=7.23 from the drawing's own PCB layout).",
+      "mount": "panel"
     },
     "Connector_Audio:Jack_6.35mm_Neutrik_NRJ6HM-1-PRE_Horizontal": {
       "mpn": "NRJ6HM-1-PRE",
@@ -119,17 +123,18 @@
         0
       ],
       "axis_offset": 7.23,
-      "panel_face": 17.57,
+      "panel_face": 17.45,
       "nose_projection": 8.2,
       "axis_height": 6.5,
       "axis_height_tol": null,
       "cutout": {
         "shape": "round",
-        "dia": 11.2
+        "dia": 10.0
       },
       "status": "dimensioned",
       "cutout_status": "dimensioned",
-      "source": "Neutrik ST-NRJ6HM-1-PRE drawing (fetched 2026-09-14) end view: '6,5 [.256]' axis above the PCB, '12,7 [.500]' body height, '3,15 [.124]' terminal projection below. Cut-out \u00d811.2 as the HF variant (spec sheet 'Chassis shape 11.2 mm'). Footprint: F.Fab bushing block x 17.57..25.77, y 1.61..12.85, centre y 7.23."
+      "source": "Neutrik ST-NRJ6HM-1-PRE drawing (fetched 2026-09-14) end view: '6,5 [.256]' axis above the PCB, '12,7 [.500]' body height, '3,15 [.124]' terminal projection below; 'Panel cut out (rear side) \u00d810 [.394]' -- this variant is 10.0, NOT the HF's 11.2, and not the product page's 11.2 'chassis shape'. Footprint F.Fab bushing block x 17.45..25.65, y 1.73..12.73, centre y 7.23.",
+      "mount": "panel"
     },
     "tbox:SW_Toggle_CK_7101_AV2_Horizontal": {
       "mpn": "7101MD9AV2BE",
@@ -139,7 +144,7 @@
         -1
       ],
       "axis_offset": 0.0,
-      "panel_face": 16.0,
+      "panel_face": 20.02,
       "nose_projection": null,
       "axis_height": 6.35,
       "axis_height_tol": null,
@@ -147,9 +152,10 @@
         "shape": "round",
         "dia": null
       },
-      "status": "scaled",
+      "status": "dimensioned",
       "cutout_status": "unverified",
-      "source": "CK_7000-series_toggles.pdf printed page F-11, AV2 pattern: '.250 (6,35)' from the board to the bushing axis is dimensioned. The panel face is NOT dimensioned there; 16.0 is taken from the front edge of this footprint's own F.Fab outline, which the footprint's own descr still flags for checking against the current C&K drawing. Axis height dimensioned, panel face scaled."
+      "source": "CK_7000-series_toggles.pdf printed page F-11, AV2 pattern: '.250 (6,35)' axis above the board, and the side view dimensions shoulder-to-bracket 7.32 plus bracket-to-terminal-1 12.70, so with this footprint's origin on terminal 1 the panel face is 20.02 ahead of it. An earlier 16.00 taken from this footprint's own F.Fab outline was wrong by 4.02 mm; the footprint's mechanical outline still needs correcting to match.",
+      "mount": "panel"
     },
     "tbox:SW_Toggle_CK_7201_V-Bracket_Vertical": {
       "mpn": "7203MD9V6BE",
@@ -166,7 +172,29 @@
       },
       "status": "unverified",
       "cutout_status": "unverified",
-      "source": "Mounts through the sloped top panel, so it needs the control board transform as well as its own geometry. The C&K drawing (printed F-13) gives 11.68 mm shoulder plus 6.86 mm bushing; with the drawn panel separation only about 1 mm of thread would clear the panel, so nut engagement is unestablished. Its throw axis must run left/right across the panel (finding 14), which the current 0 degree placement does not give."
+      "source": "Mounts through the sloped top panel, so it needs the control board transform as well as its own geometry. The C&K drawing (printed F-13) gives 11.68 mm shoulder plus 6.86 mm bushing; with the drawn panel separation only about 1 mm of thread would clear the panel, so nut engagement is unestablished. Its throw axis must run left/right across the panel (finding 14), which the current 0 degree placement does not give.",
+      "mount": "panel"
+    },
+    "Potentiometer_THT:Potentiometer_Bourns_3386W_Horizontal": {
+      "mpn": "3386W-1-103LF",
+      "desc": "Bourns 3386W side-adjust trimmer, screwdriver access through the rear panel",
+      "nose_dir": [
+        0,
+        -1
+      ],
+      "axis_offset": 0.0,
+      "panel_face": null,
+      "nose_projection": null,
+      "axis_height": 5.64,
+      "axis_height_tol": 0.25,
+      "cutout": {
+        "shape": "round",
+        "dia": null
+      },
+      "status": "dimensioned",
+      "cutout_status": "unverified",
+      "source": "Bourns_3386.pdf p.1, 'Common Dimensions - Side Adjust Models H,S,W': 5.64 (.222) from the adjustment axis to the lower seating datum; sheet general tolerance +/-0.25. The 0.38 (.015) MIN is body relief above that datum and must NOT be added again. There is no panel face: the trimmer does not touch the panel, it is reached through it, so the aperture size and recess are an assembly decision still open.",
+      "mount": "through"
     }
   },
   "unresolved": {

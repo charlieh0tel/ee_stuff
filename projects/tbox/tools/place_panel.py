@@ -314,10 +314,14 @@ def main():
             dx, dy = DATUM.get(str(fp.GetFPID().GetLibItemName()), (0.0, 0.0))
             by = 190 - py - dy
             if by > y1 - 4.0:
+                # do not place it at all: moving it to a spot that is still
+                # wrong is what the old silent clamp did
                 unplaceable.append(
-                    f"{ref}: panel-top.svg puts it at y={py:g}, i.e. board "
-                    f"y={by:.1f}, past the control board's {y1 - 4.0:g} limit"
+                    f"{ref}: TOP table puts it at panel y={py:g}, i.e. board "
+                    f"y={by:.1f}, past the control board's {y1 - 4.0:g} limit; "
+                    f"left where it was"
                 )
+                continue
             fp.SetPosition(pcbnew.VECTOR2I(mm(W - px - dx), mm(by)))
         else:
             if fp.GetPosition() == pcbnew.VECTOR2I(0, 0) or args.all:

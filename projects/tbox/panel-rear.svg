@@ -84,11 +84,11 @@
   </g>
   <text class="lbl" x="96" y="27">RIG  DE-9</text>
   <use href="#j35" x="126" y="46" data-ref="J3303"/>  <text class="lbl" x="126" y="27">LINE OUT</text>
-  <use href="#trim" x="139" y="48" data-ref="RV3401"/>  <text class="lbl" x="139" y="33">RX L</text>
-  <use href="#trim" x="150" y="48" data-ref="RV3402"/>  <text class="lbl" x="150" y="27">RX R</text>
-  <use href="#trim" x="161" y="48" data-ref="RV3301"/>  <text class="lbl" x="161" y="33">MIC</text>
-  <use href="#trim" x="172" y="48" data-ref="RV3302"/>  <text class="lbl" x="172" y="27">LINE L</text>
-  <use href="#trim" x="183" y="48" data-ref="RV3303"/>  <text class="lbl" x="183" y="33">LINE R</text>
+  <use href="#trim" x="139" y="47.36" data-ref="RV3401"/>  <text class="lbl" x="139" y="33">RX L</text>
+  <use href="#trim" x="150" y="47.36" data-ref="RV3402"/>  <text class="lbl" x="150" y="27">RX R</text>
+  <use href="#trim" x="161" y="47.36" data-ref="RV3301"/>  <text class="lbl" x="161" y="33">MIC</text>
+  <use href="#trim" x="172" y="47.36" data-ref="RV3302"/>  <text class="lbl" x="172" y="27">LINE L</text>
+  <use href="#trim" x="183" y="47.36" data-ref="RV3303"/>  <text class="lbl" x="183" y="33">LINE R</text>
   <rect class="grp" x="194" y="10" width="32" height="62" rx="2"/>
   <rect class="gtbg" x="197.0" y="7.5" width="26" height="5"/>
   <text class="gt" x="210.0" y="12">POWER</text>
