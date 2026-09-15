@@ -82,6 +82,26 @@
   on a slow ramp, rapid cycling and a brown-out — rig PTT must stay
   released throughout; headphone amp temperature with both ears into
   16 Ω at full level.
+- **Panel geometry: what `mech.json` still cannot answer.** The jacks and
+  the rear toggles are resolved and `tools/gen_panels.py` passes on them.
+  Still blocking a clean run, each for want of an ordering identity or a
+  dimensioned drawing: the Bourns 3386W trims (side-adjust screw height
+  above the board is not cleanly dimensioned -- the 0.38 mm minimum
+  standoff means halving the body height is wrong), the DE-9 (no MPN, so
+  no shell cut-out, centre height or jackscrew pattern; the drawing's
+  40 mm fixing holes are unverified), the C&K PVA buttons (`xxxxxx` in
+  the ordering code is the actuator height/style), the LED light pipes
+  (none selected), the Alpha pots (shaft/bushing/nut stack unrecorded)
+  and the panel-mount Powerpole and GND post. Also unresolved: panel
+  thickness, which gates nut engagement everywhere; the control board's
+  own board-to-panel transform, since it is sloped and a single scalar
+  does not describe it; and every cut-out diameter except the Neutriks'
+  dimensioned 11.2 mm. Two values are `scaled` rather than dimensioned
+  and want confirming on real parts: the Switchcraft 3.00 mm axis height
+  (both source dimensions are REF) and the C&K AV2 panel face.
+- **D2118 has nowhere to go.** `panel-top.svg` puts the power LED at
+  y=12, which is board y=178, past the control board's 176 mm limit. The
+  placer used to clamp this silently; it now reports it and fails.
 - **Deferred decision: input PTC and the rail budget.** RAW_13V8 sits at
   92% of its 400 mA cap (1812L050/60 hold at 50 C). Candidate swap is
   **1812L075/33**: 0.60 A at 50 C, Vmax 33 V (above the SMBJ18A's 29.2 V

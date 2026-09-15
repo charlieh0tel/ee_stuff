@@ -49,7 +49,15 @@ def main():
     board_at = {}  # ref -> board the footprint physically sits on
 
     def band_of(y):
-        return next((b for b, (lo, hi) in BOARDS.items() if lo <= y < hi), None)
+        b = next((b for b, (lo, hi) in BOARDS.items() if lo <= y < hi), None)
+        if b is None:
+            # a panel part is placed by its mechanical axis, so its origin can
+            # land exactly on the outer board edge
+            b = next(
+                (b for b, (lo, hi) in BOARDS.items() if lo - 0.01 <= y <= hi + 0.01),
+                None,
+            )
+        return b
 
     ribbons = {}  # ref -> cable name, for the ribbon connectors
     for fp in board.GetFootprints():
@@ -77,7 +85,10 @@ def main():
             if n and not n.startswith("unconnected") and n.split("/")[-1] not in POWER:
                 nets.setdefault(n, set()).add(fp.GetReference())
     for n, refs in sorted(nets.items()):
-        boards = {board_at[r] for r in refs if r in board_at}
+        boards = {board_at[r] for r in refs if board_at.get(r)}
+        stray = sorted(r for r in refs if r in board_at and board_at[r] is None)
+        if stray:
+            problems.append(f"net {n}: {stray} sit outside every board band")
         if len(boards) < 2:
             continue
         # every board the net touches needs its own ribbon connector on the

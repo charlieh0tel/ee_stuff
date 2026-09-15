@@ -25,6 +25,8 @@ board. Fetched 2026-09-08 unless noted.
 | Keystone_5015.pdf | 5015 SMT test points | keyelco.com |
 | Littelfuse_1812L_PTC.pdf | 1812L050/60DR (F2501) | littelfuse.com via web.archive.org |
 | Neutrik_jacks_circuits.pdf | NRJ6HM-1-PRE / NRJ6HF-1 contact arrangements (the page showing which jacks bond sleeve to panel) | neutrik.com (2026-09-04) |
+| Neutrik_NRJ6HF-1_drawing.pdf | NRJ6HF-1 dimensioned drawing ST-NRJ6HF: axis 6.5 mm above the PCB, panel cut-out 11.2 mm | neutrik.com (the web spec sheet below carries no dimensions) |
+| Neutrik_NRJ6HM-1-PRE_drawing.pdf | NRJ6HM-1-PRE dimensioned drawing: axis 6.5 mm above the PCB | neutrik.com (as above) |
 | Neutrik_NRJ6HF-1.pdf | NRJ6HF-1 phones jacks (J1002/J1004) — "sleeve contact / frontpanel connection": bonds GND to the panel (review 2026-09-08 #7) | neutrik.com (2026-09-08, by hand) |
 | Neutrik_NRJ6HM-1-PRE.pdf | NRJ6HM-1-PRE chassis-bonded 1/4" jacks (J1102/J1302/J3202/J3204) | neutrik.com (2026-09-08, by hand) |
 | Neutrik_NJ6FD-V.pdf | NJ6FD-V — isolated plastic vertical jack, candidate considered for the phones jacks | neutrik.com (2026-09-08, by hand) |

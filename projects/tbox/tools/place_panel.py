@@ -38,10 +38,14 @@ import re
 import subprocess
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import mech
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PCB = os.path.join(ROOT, "kicad", "tbox.kicad_pcb")
 W = 300.0
+MECH = mech.load()
 BOARDS = {
     "Front Board": (0.0, 50.0),
     "Control Board": (50.0, 180.0),
@@ -145,80 +149,43 @@ COHESION = (
 POWER_NETS = ("GND", "+9V", "VREF", "RAW_13V8", "BIAS_5V", "CHASSIS")
 
 
-def front_positions():
-    """x of each front-panel jack, left to right, from the circles in panel-front.svg."""
-    with open(os.path.join(ROOT, "panel-front.svg")) as f:
+def _panel_refs(svg, mirror):
+    """{ref: panel x} from the data-ref attributes in a panel drawing.
+
+    The apertures carry their own reference designator (`tools/gen_panels.py
+    --write` puts it there), so nothing here depends on drawing order or on
+    guessing from a nearby label.
+    """
+    with open(os.path.join(ROOT, svg)) as f:
         t = f.read()
-    xs = sorted(
-        {
-            float(x)
-            for x in re.findall(r'<circle class="(?:qjack|mjack)" cx="([\d.]+)"', t)
-        }
-    )
-    order = [
-        ("A", "MIC 1/4"),
-        ("A", "MIC 3.5"),
-        ("A", "HEADSET"),
-        ("A", "PH 3.5"),
-        ("A", "PH 1/4"),
-        ("B", "PH 1/4"),
-        ("B", "PH 3.5"),
-        ("B", "HEADSET"),
-        ("B", "MIC 3.5"),
-        ("B", "MIC 1/4"),
-    ]
-    assert len(xs) == len(order), (xs, order)
-    return {FRONT[k]: W - x for k, x in zip(order, xs)}
+    out = {}
+    for m in re.finditer(r"<[a-z]+\b[^>]*data-ref=\"([^\"]+)\"[^>]*>", t):
+        ref, el = m.group(1), m.group(0)
+        xm = re.search(r'\b(?:cx|x)="([-\d.]+)"', el)
+        if not xm:
+            tm = re.search(r"translate\(([-\d.]+),", el)
+            if not tm:
+                continue
+            x = float(tm.group(1))
+        else:
+            x = float(xm.group(1))
+        out[ref] = W - x if mirror else x
+    return out
+
+
+def front_positions():
+    """x of each front-panel jack on the board, keyed by reference."""
+    out = _panel_refs("panel-front.svg", mirror=True)
+    missing = set(FRONT.values()) - set(out)
+    assert not missing, f"panel-front.svg: no data-ref aperture for {sorted(missing)}"
+    return out
 
 
 def rear_positions():
-    """x of each rear-panel part from panel-rear.svg: <use ... x=> or <g transform=translate()> nearest a label."""
-    with open(os.path.join(ROOT, "panel-rear.svg")) as f:
-        t = f.read()
-    parts = [
-        (float(x), float(y))
-        for x, y in re.findall(r'<use href="#\w+" x="([\d.]+)" y="([\d.]+)"/>', t)
-    ]
-    parts += [
-        (float(x), float(y))
-        for x, y in re.findall(
-            r'<g transform="translate\(([\d.]+),([\d.]+)\)">\s*\n\s*<rect class="de9"',
-            t,
-        )
-    ]
-    labels = [
-        (float(x), s)
-        for x, s in re.findall(
-            r'<text class="lbl" x="([\d.]+)" y="[\d.]+">([^<]+)</text>', t
-        )
-    ]
-    groups = [
-        (float(x), float(w), s)
-        for x, w, s in re.findall(
-            r'<rect class="grp" x="([\d.]+)" y="10" width="([\d.]+)"[^>]*/>\s*\n\s*<rect[^>]*/>\s*\n\s*<text class="gt"[^>]*>([^<]+)</text>',
-            t,
-        )
-    ]
-
-    def channel(x):
-        for gx, gw, name in groups:
-            if gx <= x <= gx + gw and name.startswith("CHANNEL"):
-                return name[-1]
-        return None
-
-    out = {}
-    for x, y in parts:
-        lab = min(labels, key=lambda lb: abs(lb[0] - x))[1]
-        ch = channel(x)
-        key = (
-            f"{ch}/{lab}"
-            if ch and lab in ('PTT 1/4"', "PTT 3.5", "BIAS", "GAIN")
-            else lab
-        )
-        if key in REAR:
-            out[REAR[key]] = x
+    """x of each rear-panel part on the board, keyed by reference."""
+    out = _panel_refs("panel-rear.svg", mirror=False)
     missing = set(REAR.values()) - set(out)
-    assert not missing, missing
+    assert not missing, f"panel-rear.svg: no data-ref aperture for {sorted(missing)}"
     return out
 
 
@@ -259,7 +226,6 @@ def main():
         "J3001": (180.0, "top", 275.0),
     }
     EDGE_KEEP = 26.0  # panel parts reach this far in from the panel edge
-    INSET = 2.0  # pads this far inside the panel edge; the nose overhangs
 
     def bboxes(fp):
         """((l, t, r, b) of the footprint incl. courtyard, (l, t, r, b) of its pads), in mm."""
@@ -291,32 +257,24 @@ def main():
             )
         return cb, pb
 
-    def orient_nose(fp, want):
-        """Rotate so the side where the courtyard overhangs the pads most faces `want` ('top'/'bottom')."""
-        best = None
-        for ang in (0, 90, 180, 270):
-            fp.SetOrientationDegrees(ang)
-            c, pd = bboxes(fp)
-            over = {
-                "left": pd[0] - c[0],
-                "right": c[2] - pd[2],
-                "top": pd[1] - c[1],
-                "bottom": c[3] - pd[3],
-            }
-            if best is None or over[want] > best[0]:
-                best = (over[want], ang)
-        fp.SetOrientationDegrees(best[1])
-
     def place_edge(fp, x, edge_y, side):
-        orient_nose(fp, side)
-        c, pd = bboxes(fp)
-        cx = (c[0] + c[2]) / 2
-        pos = fp.GetPosition()
-        dx = x - cx
-        dy = (edge_y + INSET) - pd[1] if side == "top" else (edge_y - INSET) - pd[3]
-        fp.SetPosition(pcbnew.VECTOR2I(pos.x + mm(dx), pos.y + mm(dy)))
+        """Put a panel part's mechanical axis on the panel position, with its
+        panel face on the board edge.
 
-    placed, gridded, unknown = 0, 0, []
+        Both come from mech.json, not from the footprint's bounding box: the
+        axis is what lines up with the hole and the face is what seats against
+        the panel, and neither moves when a pad changes size.  An unresolved
+        part stops the run rather than being placed on a guess.
+        """
+        i = fp.GetFPID()
+        fpid = f"{i.GetLibNickname()}:{i.GetLibItemName()}"
+        want_nose = (0.0, -1.0) if side == "top" else (0.0, 1.0)
+        rot = mech.orient_for(MECH, fpid, want_nose)
+        fp.SetOrientationDegrees(rot)
+        ox, oy = mech.origin_for_axis(MECH, fpid, (x, 0.0), edge_y, rot, fp.IsFlipped())
+        fp.SetPosition(pcbnew.VECTOR2I(mm(ox), mm(oy)))
+
+    placed, gridded, unknown, unplaceable = 0, 0, [], []
     free = {}  # (board, sheet) -> [fp]
     anchored = set()
 
@@ -337,19 +295,30 @@ def main():
             unknown.append((ref, sheet))
             continue
         y0, y1 = BOARDS[top]
-        if ref in fx:
-            place_edge(fp, fx[ref], y0, "top")
-        elif ref in rx:
-            place_edge(fp, rx[ref], y1, "bottom")
+        if ref in fx or ref in rx:
+            try:
+                if ref in fx:
+                    place_edge(fp, fx[ref], y0, "top")
+                else:
+                    place_edge(fp, rx[ref], y1, "bottom")
+            except mech.Unresolved as e:
+                # no verified geometry: say so and leave it where it is rather
+                # than anchoring it on a guess
+                unplaceable.append(str(e))
+                continue
         elif ref in INNER:
             ribbon_header(fp, ref)
         elif ref in TOP:
             px, py = TOP[ref]
             fp.SetOrientationDegrees(0)
             dx, dy = DATUM.get(str(fp.GetFPID().GetLibItemName()), (0.0, 0.0))
-            fp.SetPosition(
-                pcbnew.VECTOR2I(mm(W - px - dx), mm(min(190 - py, y1 - 4.0) - dy))
-            )
+            by = 190 - py - dy
+            if by > y1 - 4.0:
+                unplaceable.append(
+                    f"{ref}: panel-top.svg puts it at y={py:g}, i.e. board "
+                    f"y={by:.1f}, past the control board's {y1 - 4.0:g} limit"
+                )
+            fp.SetPosition(pcbnew.VECTOR2I(mm(W - px - dx), mm(by)))
         else:
             if fp.GetPosition() == pcbnew.VECTOR2I(0, 0) or args.all:
                 free.setdefault((top, sheet.strip("/")), []).append(fp)
@@ -616,7 +585,11 @@ def main():
         )
 
     pcbnew.SaveBoard(PCB, board)
+    for u in unplaceable:
+        print(f"UNPLACEABLE: {u}")
     print(f"panel parts placed: {placed}; gridded: {gridded}; footprints: {len(fps)}")
+    if unplaceable:
+        return 1
     if unknown:
         print("no board for:", unknown)
     return 0

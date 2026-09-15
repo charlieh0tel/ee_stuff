@@ -360,7 +360,15 @@ from the mainstream families; the sloped control board sits above them.
 (Boards parallel to their panels were considered and rejected: they need
 top-entry panel-nut jacks, which are rare for TRRS and for panel-bonded
 1/4".) Each family puts its centre at a different height above the
-board, so panel holes sit at per-part heights along one row.
+board, so panel holes sit at per-part heights along one row: 2.25 mm for
+the TRRS, 3.0 for the Switchcraft, 6.5 for the Neutriks, 7.0 for the
+3.5 mm phones jack. Those heights, the per-board PCB-to-panel datums
+(30 mm on the front, 53 mm on the rear, both to the component-side
+seating plane) and every aperture are held in `mech.json` and applied by
+`tools/place_panel.py` and `tools/gen_panels.py`; the drawings are an
+output of that model, not a hand-maintained source. Until 2026-09-14 the
+front drawing put all ten jacks on one line, which the TRRS holes missed
+by 3.75 mm.
 
 - **Front board** horizontal, ~10–15 mm above the floor, front edge at
   the front panel. All ten front jacks, both preamps, gain switches and

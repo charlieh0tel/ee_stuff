@@ -106,6 +106,22 @@
   pad's net; new parts park at (0, 0) for the placer). Run it after any
   schematic edit and before `place_panel.py`; the GUI's F8 is no longer
   needed and would give the same result (verified against one).
+- **Panel geometry is derived, never drawn by hand.** `mech.json` is the one
+  source of truth for every dimension tying a PCB part to a panel aperture:
+  per board, where the PCB's component-side seating plane sits below its
+  panel's top edge; per footprint, the mechanical axis, the face that seats
+  against the panel, the nose projection, the axis height above the board and
+  the cut-out, each with the drawing it came from and a `status` of
+  `dimensioned`, `scaled` or `unverified`. A hole centre is the board datum
+  less the axis height, so parts of different heights sit at their own
+  heights along one row. `tools/place_panel.py` places panel parts by that
+  axis and face (never by a pad or courtyard bounding box, which move when a
+  pad changes); `tools/gen_panels.py` writes the apertures into the drawings
+  (`--write`) and otherwise checks the drawings *and the placed board*
+  against the model. Apertures carry a `data-ref` attribute naming their
+  reference designator, so nothing depends on drawing order. **Anything
+  `unverified` or absent fails the run rather than defaulting** -- an axis
+  height nobody has read off a drawing must stop the build.
 - `tools/check_footprints.py` fails on any board part without a footprint
   that exists (stock library or `kicad/tbox.pretty`); panel-only parts are
   `on_board no`. Every part with a specific vendor choice carries an

@@ -26,55 +26,55 @@
 
   <text class="lbl" x="30" y="9">MIC</text>
   <text class="sm" x="30" y="42">1/4"</text>
-  <circle class="qjack" cx="30" cy="24" r="7.5"/>
-  <circle class="hole"  cx="30" cy="24" r="3.2"/>
+  <circle class="qjack" cx="30" cy="23.5" r="7.5" data-ref="J1102"/>
+  <circle class="hole"  cx="30" cy="23.5" r="3.2" data-ref="J1102"/>
 
   <text class="lbl" x="55" y="9">MIC</text>
   <text class="sm" x="55" y="42">3.5</text>
-  <circle class="mjack" cx="55" cy="24" r="4.5"/>
-  <circle class="hole"  cx="55" cy="24" r="1.8"/>
+  <circle class="mjack" cx="55" cy="27" r="4.5" data-ref="J1101"/>
+  <circle class="hole"  cx="55" cy="27" r="1.8" data-ref="J1101"/>
 
   <text class="lbl" x="75" y="9">HEADSET</text>
   <text class="sm" x="75" y="42">TRRS</text>
-  <circle class="mjack" cx="75" cy="24" r="4.5"/>
-  <circle class="hole"  cx="75" cy="24" r="1.8"/>
+  <circle class="mjack" cx="75" cy="27.75" r="4.5" data-ref="J1103"/>
+  <circle class="hole"  cx="75" cy="27.75" r="1.8" data-ref="J1103"/>
 
   <text class="lbl" x="95" y="9">PH</text>
   <text class="sm" x="95" y="42">3.5</text>
-  <circle class="mjack" cx="95" cy="24" r="4.5"/>
-  <circle class="hole"  cx="95" cy="24" r="1.8"/>
+  <circle class="mjack" cx="95" cy="23" r="4.5" data-ref="J1001"/>
+  <circle class="hole"  cx="95" cy="23" r="1.8" data-ref="J1001"/>
 
   <text class="lbl" x="120" y="9">PH</text>
   <text class="sm" x="120" y="42">1/4"</text>
-  <circle class="qjack" cx="120" cy="24" r="7.5"/>
-  <circle class="hole"  cx="120" cy="24" r="3.2"/>
+  <circle class="qjack" cx="120" cy="23.5" r="7.5" data-ref="J1002"/>
+  <circle class="hole"  cx="120" cy="23.5" r="3.2" data-ref="J1002"/>
 
   <!-- ============ SIDE B (right, mirrored) ============ -->
   <text class="dim" x="284" y="9">CH B</text>
 
   <text class="lbl" x="180" y="9">PH</text>
   <text class="sm" x="180" y="42">1/4"</text>
-  <circle class="qjack" cx="180" cy="24" r="7.5"/>
-  <circle class="hole"  cx="180" cy="24" r="3.2"/>
+  <circle class="qjack" cx="180" cy="23.5" r="7.5" data-ref="J1004"/>
+  <circle class="hole"  cx="180" cy="23.5" r="3.2" data-ref="J1004"/>
 
   <text class="lbl" x="205" y="9">PH</text>
   <text class="sm" x="205" y="42">3.5</text>
-  <circle class="mjack" cx="205" cy="24" r="4.5"/>
-  <circle class="hole"  cx="205" cy="24" r="1.8"/>
+  <circle class="mjack" cx="205" cy="23" r="4.5" data-ref="J1003"/>
+  <circle class="hole"  cx="205" cy="23" r="1.8" data-ref="J1003"/>
 
   <text class="lbl" x="225" y="9">HEADSET</text>
   <text class="sm" x="225" y="42">TRRS</text>
-  <circle class="mjack" cx="225" cy="24" r="4.5"/>
-  <circle class="hole"  cx="225" cy="24" r="1.8"/>
+  <circle class="mjack" cx="225" cy="27.75" r="4.5" data-ref="J1303"/>
+  <circle class="hole"  cx="225" cy="27.75" r="1.8" data-ref="J1303"/>
 
   <text class="lbl" x="245" y="9">MIC</text>
   <text class="sm" x="245" y="42">3.5</text>
-  <circle class="mjack" cx="245" cy="24" r="4.5"/>
-  <circle class="hole"  cx="245" cy="24" r="1.8"/>
+  <circle class="mjack" cx="245" cy="27" r="4.5" data-ref="J1301"/>
+  <circle class="hole"  cx="245" cy="27" r="1.8" data-ref="J1301"/>
 
   <text class="lbl" x="270" y="9">MIC</text>
   <text class="sm" x="270" y="42">1/4"</text>
-  <circle class="qjack" cx="270" cy="24" r="7.5"/>
-  <circle class="hole"  cx="270" cy="24" r="3.2"/>
+  <circle class="qjack" cx="270" cy="23.5" r="7.5" data-ref="J1302"/>
+  <circle class="hole"  cx="270" cy="23.5" r="3.2" data-ref="J1302"/>
 
 </svg>
