@@ -25,8 +25,14 @@ jobs:
       # needed -- no pip install of matplotlib/numpy here.
       - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4  # v10.1.0
 
+      # apt-get update first: without it this installs against the index baked
+      # into the runner image, and the moment Ubuntu publishes a new package
+      # the old .deb is gone from the mirror and the stale index 404s. That is
+      # what broke this workflow on 2026-09-22, on ghostscript.
       - name: Install TeX Live
-        run: sudo apt-get install -y texlive-full
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
 
       # `make` builds regimes_figure.pdf and regimes_figure_newsletter.pdf
       # itself, as prerequisites of the documents that embed them.
