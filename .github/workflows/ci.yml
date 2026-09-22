@@ -12,3 +12,7 @@ jobs:
     uses: charlieh0tel/deb-workflows/.github/workflows/python-ci.yml@v1
     with:
       test-command: ""
+      # This is a uv project, so pip-audit runs against the locked project
+      # environment and nothing else -- none of the runner image's own
+      # packages, which is why the shared workflow leaves it off by default.
+      audit-command: pip-audit
