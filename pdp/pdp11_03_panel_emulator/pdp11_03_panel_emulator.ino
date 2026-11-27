@@ -41,10 +41,14 @@
 #error "No pin definitions for this board."
 #endif
 
-// Line clock.
+// Line clock.  MsTimer2 only counts whole milliseconds, so a 1 ms tick feeds
+// a phase accumulator that toggles BEVNT twice per line clock period.  The
+// half-periods vary by up to 1 ms (8, 8, 9 ms at 60 Hz) but average exactly.
 constexpr bool supply_line_clock = true;
-constexpr int line_clock_freq_hz = 50;   // 60 Hz doesn't really work.
-constexpr int line_clock_half_period_ms = (int) (1000. * 1.0 / (double) (2 * line_clock_freq_hz));
+constexpr unsigned line_clock_freq_hz = 60;
+constexpr unsigned line_clock_tick_ms = 1;
+constexpr unsigned ms_per_second = 1000;
+constexpr unsigned bevnt_toggles_per_second = 2 * line_clock_freq_hz;
 
 // Power on first time automagically.
 const bool initial_power_on = true;
@@ -75,10 +79,15 @@ void delay_seconds(uint8_t s) {
   }
 }
 
-void toggle_bevent() {
+void tick_line_clock() {
+  static unsigned phase = 0;
   static bool value = true;
-  digitalWrite(BEVNT_L, value);
-  value = !value;
+  phase += bevnt_toggles_per_second * line_clock_tick_ms;
+  if (phase >= ms_per_second) {
+    phase -= ms_per_second;
+    digitalWrite(BEVNT_L, value);
+    value = !value;
+  }
 }
 
 void setup() {
@@ -98,8 +107,8 @@ void setup() {
 
   if (supply_line_clock) {
     Serial.print("Starting LTC at "); Serial.print(line_clock_freq_hz); Serial.print(" Hz ");
-    Serial.print("(half_period="); Serial.print(line_clock_half_period_ms); Serial.println(" ms).");
-    MsTimer2::set(line_clock_half_period_ms, toggle_bevent);
+    Serial.print("(tick="); Serial.print(line_clock_tick_ms); Serial.println(" ms).");
+    MsTimer2::set(line_clock_tick_ms, tick_line_clock);
     MsTimer2::start();
   } 
 }
